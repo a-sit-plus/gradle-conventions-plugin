@@ -1,4 +1,6 @@
 .gradle
+repo/
+.idea/
 **/build/
 !src/**/build/
 
@@ -9,7 +11,7 @@ gradle-app.setting
 !gradle-wrapper.jar
 
 # Avoid ignore Gradle wrappper properties
-!gradle-wrapper.properties
+gradle-wrapper.properties
 
 # Cache of project
 .gradletasknamecache
