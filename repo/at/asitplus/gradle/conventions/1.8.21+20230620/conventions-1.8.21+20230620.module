@@ -58,7 +58,7 @@
           "group": "org.jetbrains.dokka",
           "module": "dokka-gradle-plugin",
           "version": {
-            "requires": "1.8.10"
+            "requires": "1.8.20"
           }
         }
       ],
@@ -66,11 +66,11 @@
         {
           "name": "conventions-1.8.21+20230620.jar",
           "url": "conventions-1.8.21+20230620.jar",
-          "size": 84801,
-          "sha512": "ae5566c57a225a43543d20e88c4f920ff8e671046f404f69f25bc868783ab35b7859fc6c65db172bbb234d36e5af1d0257874ff64d2cb159d68fb3d54cae7aef",
-          "sha256": "2d4d2c9924ab507796d964db2a054101ec95b48cae0519666551d4a1ab8a2953",
-          "sha1": "09d5930bdd997c53472deac74dd486c7035b59ff",
-          "md5": "501f3a2c507f58cc3ebf85414a1cc4c2"
+          "size": 84917,
+          "sha512": "d1ed6ff38a7f053d9cba99f7d3e2141101cd750e248a1e279da6f8ef3b4b66a0b3bdb526d1b60e41e2089e301e0ab23158b306e34dd1884855d8982041e03cd6",
+          "sha256": "b5589df3063e6a12aaf5873170307536009a1aa5b29222791aa3a27a189bb19b",
+          "sha1": "6653d872838c919438fc4f30f49e25e71145e19c",
+          "md5": "14c7dc170e2cbedab108ff5f295aa85c"
         }
       ]
     },
@@ -118,7 +118,7 @@
           "group": "org.jetbrains.dokka",
           "module": "dokka-gradle-plugin",
           "version": {
-            "requires": "1.8.10"
+            "requires": "1.8.20"
           }
         }
       ],
@@ -126,11 +126,11 @@
         {
           "name": "conventions-1.8.21+20230620.jar",
           "url": "conventions-1.8.21+20230620.jar",
-          "size": 84801,
-          "sha512": "ae5566c57a225a43543d20e88c4f920ff8e671046f404f69f25bc868783ab35b7859fc6c65db172bbb234d36e5af1d0257874ff64d2cb159d68fb3d54cae7aef",
-          "sha256": "2d4d2c9924ab507796d964db2a054101ec95b48cae0519666551d4a1ab8a2953",
-          "sha1": "09d5930bdd997c53472deac74dd486c7035b59ff",
-          "md5": "501f3a2c507f58cc3ebf85414a1cc4c2"
+          "size": 84917,
+          "sha512": "d1ed6ff38a7f053d9cba99f7d3e2141101cd750e248a1e279da6f8ef3b4b66a0b3bdb526d1b60e41e2089e301e0ab23158b306e34dd1884855d8982041e03cd6",
+          "sha256": "b5589df3063e6a12aaf5873170307536009a1aa5b29222791aa3a27a189bb19b",
+          "sha1": "6653d872838c919438fc4f30f49e25e71145e19c",
+          "md5": "14c7dc170e2cbedab108ff5f295aa85c"
         }
       ]
     }
