@@ -134,13 +134,16 @@ class AspConventions : Plugin<Project> {
 
             val kotlin = target.kotlinExtension
 
-            kotlin.apply {
-                jvmToolchain {
-                    languageVersion.set(JavaLanguageVersion.of(AspVersions.Jvm.target))
-                }
-            }
-            if (target != target.rootProject) {
 
+            if (target != target.rootProject) {
+                if (!target.plugins.hasPlugin("me.champeau.mrjar")) //MRJAR
+                    kotlin.apply {
+                        println("  Setting jvmToolchain to JDK 11")
+                        jvmToolchain {
+                            languageVersion.set(JavaLanguageVersion.of(AspVersions.Jvm.target))
+                        }
+                    }
+                else println("  MR Jar plugin detected. Not setting jvmToolchain")
 
                 if (!isMultiplatform) /*TODO: actually check for JVM*/ {
                     println("  Assuming JVM-only Kotlin project")

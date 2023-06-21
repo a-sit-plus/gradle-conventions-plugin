@@ -1,6 +1,6 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-[![Version](https://img.shields.io/badge/stable_version-1.8.21+20230620-blue.svg?style=flat)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/stable_version-1.8.21+20230621-blue.svg?style=flat)](CHANGELOG.md)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Kotlin](https://img.shields.io/badge/kotlin-1.8.21-blue.svg?logo=kotlin)](http://kotlinlang.org)
 
@@ -50,7 +50,7 @@ pluginManagement {
 ```
 
 The composite build approach provides more flexibility and makes sense when contributing to or this plugin.
-Including plugins through composite builds works even in settings here the Kotlin Grade plugin would otherwise fail to
+Including plugins through composite builds works even in settings here the Kotlin Gradle plugin would otherwise fail to
 handle
 composite builds correctly (such as, when depending on a multiplatform library in an Android project).
 If, for example, you are developing a large piece of software, consisting of many individual Gradle projects, that
@@ -81,12 +81,12 @@ Note that is is important to (at least) add `gradlePluginPortal()`. Otherwise, *
 
 ## Applying the plugin
 
-Before being able to add this plugin to your project's modules, add the following to your Grade root project as show
+Before being able to add this plugin to your project's modules, add the following to your Gradle root project as show
 below.
 
 ```kotlin
 plugins {
-    id("at.asitplus.gradle.conventions") version "1.8.21+20230620" //version can be omitted when using this plugin through composite builds
+    id("at.asitplus.gradle.conventions") version "1.8.21+20230621" //version can be omitted when using this plugin through composite builds
 }
 ```
 
@@ -99,7 +99,7 @@ The logic behind this scheme is rooted in the fact that it manages more than jus
 other dependencies need to be captured as well.
 A full list of all plugin and dependency versions can be found
 in [versions.properties](src/main/resources/versions.properties).
-Access to all declared versions inside a Grade module is possible through
+Access to all declared versions inside a Gradle module is possible through
 the [AspVersions](src/main/kotlin/AspVersions.kt) object.
 <br>
 **Please refer to the [changelog](CHANGELOG.md) for detailed version information on each build of this plugin.**
@@ -118,6 +118,8 @@ plugins {
 }
 ```
 
+**Be sure to add the conventions plugin last!**
+
 ### JVM-Only
 
 The same approach show before also works for jvm-only projects:
@@ -131,11 +133,13 @@ plugins {
 }
 ```
 
+**Be sure to add the conventions plugin last!**
+
 ### Usage with other Kotlin Plugins
 
-Although adding this plugin to the root project completely removes the need to manage Kotlin plugin versions, it does
+Although adding this plugin to the root project completely removes the need to manage Kotlin plugin versions in the modules, it does
 come with a caveat:
-Only the following Grade plugins are directly supported with implicit versions:
+Only the following Gradle plugins are directly supported with implicit versions:
 
 * Kotlin
     * multiplatform
@@ -147,7 +151,7 @@ Only the following Grade plugins are directly supported with implicit versions:
 
 If, for example, you rely on other plugins, which must be in sync with the Kotlin version used by your project, you need
 to identify the plugin's artefact coordinates.
-You can usually obtain a plugin's coordinates through the Grade plugin portal by search for it, and then checking the "
+You can usually obtain a plugin's coordinates through the Gradle plugin portal by search for it, and then checking the "
 legacy" way of adding plugins.
 
 If you rely on `kotlin("plugin.spring")` and `kotlin("plugin.jpa")` as typical for a Spring + hibernate webservice, add
@@ -164,14 +168,14 @@ buildscript {
 ```
 
 You can then simply add `kotlin("plugin.spring")` and `kotlin("plugin.jpa")` to your module's `plugins` block and the
-version will be in sync with the core Kotlin Grade plugin.
+version will be in sync with the core Kotlin Gradle plugin.
 The reason why you cannot access `AspVersions.kotlin` inside the plugins-block to have it match the Kotlin version is
 that this property is not a compile-time constant.
 
 ## Extensions and Shorthands
 
-Common compiler options (opt-ins for serialization, coroutines, datetime, and `RequiresOptIn`), Kotest,
-and `jvmToolchain(11)` are applied by default.
+Common compiler options (opt-ins for serialization, coroutines, datetime, and `RequiresOptIn`), and Kotest are applied by default.
+`jvmToolchain(11)` is also applied, **unless** the multi-release jar plugin (me.champeau.mrjar) is applied as well.
 In addition, shorthand for dependencies and other extensions are available to streamline project setup.
 
 ### Dependency Shorthands
