@@ -1,6 +1,6 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-[![Version](https://img.shields.io/badge/stable_version-1.8.21+20230621-blue.svg?style=flat)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/stable_version-1.8.21+20230622-blue.svg?style=flat)](CHANGELOG.md)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Kotlin](https://img.shields.io/badge/kotlin-1.8.21-blue.svg?logo=kotlin)](http://kotlinlang.org)
 
@@ -13,7 +13,8 @@ Gradle version catalogues are great, they can only get you so far…
 
 This plugin targets Kotlin JVM and multiplatform projects and provides the following functionality:
 
-* Version management of core libraries, Dokka, Kotlin, certain Kotlin plugins, and JVM toolchain
+* Version management of core libraries, Dokka, Kotlin, certain Kotlin plugins, Gradle Ktor Plugin (and ktor libraries),
+  and JVM toolchain
 * Shorthands for various commonly-used dependencies
 * Natural extension functions to ass common dependencies
 * Autoconfiguration of Kotest for multiplatform projects
@@ -86,7 +87,7 @@ below.
 
 ```kotlin
 plugins {
-    id("at.asitplus.gradle.conventions") version "1.8.21+20230621" //version can be omitted when using this plugin through composite builds
+    id("at.asitplus.gradle.conventions") version "1.8.21+20230622" //version can be omitted when using this plugin through composite builds
 }
 ```
 
@@ -114,6 +115,7 @@ plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
     id("org.jetbrains.dokka")
+    id("io.ktor.plugin")
     id("at.asitplus.gradle.conventions")
 }
 ```
@@ -137,7 +139,8 @@ plugins {
 
 ### Usage with other Kotlin Plugins
 
-Although adding this plugin to the root project completely removes the need to manage Kotlin plugin versions in the modules, it does
+Although adding this plugin to the root project completely removes the need to manage Kotlin plugin versions in the
+modules, it does
 come with a caveat:
 Only the following Gradle plugins are directly supported with implicit versions:
 
@@ -145,6 +148,7 @@ Only the following Gradle plugins are directly supported with implicit versions:
     * multiplatform
     * jvm
     * serialization
+* Ktor
 * Kotest
 * Dokka
 * Nexus publishing
@@ -174,8 +178,11 @@ that this property is not a compile-time constant.
 
 ## Extensions and Shorthands
 
-Common compiler options (opt-ins for serialization, coroutines, datetime, and `RequiresOptIn`), and Kotest are applied by default.
-`jvmToolchain(11)` is also applied, **unless** the [multi-release jar plugin ("me.champeau.mrjar")](https://melix.github.io/mrjar-gradle-plugin/0.1/index.html) is applied as well.
+Common compiler options (opt-ins for serialization, coroutines, datetime, and `RequiresOptIn`), and Kotest are applied
+by default.
+`jvmToolchain(11)` is also applied, **unless**
+the [multi-release jar plugin ("me.champeau.mrjar")](https://melix.github.io/mrjar-gradle-plugin/0.1/index.html) is
+applied as well.
 Note that no version management is in place for the multi-release jar plugin, as we rarely need it internally.
 In addition, shorthand for dependencies and other extensions are available to streamline project setup.
 
