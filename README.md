@@ -320,7 +320,11 @@ specifying the `nameOverride` parameter.
 A sample project, which demonstrates automatic availability of property-based testing using kotest, is
 provided [here](sample-project).
 It includes this plugin through its maven repository.
-<!--TODO: Add reference to other OSS projects.-->
+
+In addition, thic plugin is also used in the following production projects:
+ * [VC KMM Library](https://github.com/a-sit-plus/kmm-vc-library) adds this repo as submodule and includes the plugin as part of a compoite build to add a more specialised custom plugin on top
+ * [Android Attestation Library](https://github.com/a-sit-plus/android-attestation) uses the prebuilt plugin from the maven repo
+ * [Server-Side Mobile Client Attestation Library](https://github.com/a-sit-plus/attestation-service) uses the prebuilt plugin from the maven repo
 
 ## Additional Notes
 
