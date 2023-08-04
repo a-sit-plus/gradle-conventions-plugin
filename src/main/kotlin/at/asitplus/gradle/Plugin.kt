@@ -28,6 +28,15 @@ private inline fun Project.extraProps() {
 
 class AspConventions : Plugin<Project> {
     override fun apply(target: Project) {
+
+        println("\n Using the following dependency versions:")
+        runCatching {
+            AspVersions.versions.entries.sortedBy { (k, _) -> k.toString() }
+                .forEach { (t, u) -> println("    ${String.format("%-14s","$t:")} $u") }
+            println()
+        }
+
+
         println("  Adding Nexus Publish plugin ${AspVersions.nexus}")
         target.rootProject.plugins.apply("io.github.gradle-nexus.publish-plugin")
 

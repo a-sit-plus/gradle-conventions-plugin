@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.utils.loadPropertyFromResources
+import java.util.*
 
 
 object AspVersions {
@@ -42,4 +43,8 @@ object AspVersions {
 
     @JvmStatic
     val jvm = Jvm //groovy workaround
+
+    internal val versions: Properties = javaClass.classLoader!!.getResourceAsStream("versions.properties").use {
+        Properties().apply { load(it) }
+    }
 }

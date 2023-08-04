@@ -1,3 +1,8 @@
+# 1.8.22 (Kotlin 1.8.22)
+ * Print versions used
+ * kotlinx.serialization 1.6.0-RC
+
+
 # 1.8.21 (Kotlin 1.8.21)
 
 * 20230622
