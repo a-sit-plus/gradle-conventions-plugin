@@ -53,6 +53,7 @@ class AspConventions : Plugin<Project> {
             println("  Adding Google and maven central repositories")
             target.allprojects {
                 repositories {
+                    maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
                     google()
                     mavenCentral()
                 }

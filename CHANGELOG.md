@@ -1,3 +1,7 @@
+# 19 0 (Kotlin 1.9.0)
+ * Dokka 1.9
+ * Serialization fork with COSE features
+
 # 1.8.22 (Kotlin 1.8.22)
  * Print versions used
  * kotlinx.serialization 1.6.0-RC
