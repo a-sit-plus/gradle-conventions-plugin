@@ -1,10 +1,15 @@
 # 1.9.0 (Kotlin 1.9.0)
- * Dokka 1.9
- * New Dokka helper
- * Make all publish tasks depend on all sign tasks
- * Serialization fork with COSE features
- * Print versions used
- * kotlinx.serialization 1.6.0-RC
+
+* New Dokka helper
+* Make all publish tasks depend on all sign tasks
+* Serialization fork with COSE features
+* Print versions used
+* Dependency Updates:
+  * Dokka 1.9
+  * kotlinx.serialization 1.6.0-RC
+  * Bouncy Castle 1.75
+  * kotlinx.coroutines 1.7.2
+  * ktor 2.3.3
 
 
 # 1.8.21 (Kotlin 1.8.21)
