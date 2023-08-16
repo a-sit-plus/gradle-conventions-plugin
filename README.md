@@ -28,12 +28,13 @@ This plugin targets Kotlin JVM and multiplatform projects and provides the follo
 * Introduction of a `clean` task to the root project
 * Auto-apply `idea` plugin to root project and set JDK name in accordance with JVM target
 * Autoconfiguration of test output format
+* Force dependency from publish tasks to sign tasks
+* Shorthand for Dokka setup
 
 This plugin is hosted on a public GitHub repo, because a) som of our publicly published projects depend on it and b)
 sharing is caring!
 We hope that this plugin can also help other seeking to streamline build processes across multiple projects following a
-common
-set of conventions.
+common set of conventions.
 
 ## Adding the Plugin
 
@@ -275,6 +276,14 @@ kotlin {
 }
 //whatever else needs to be configured
 ```
+
+### Dokka Setup Shorthands
+A shorthand to setup dokka is available as `setupDokka` which takes the following parameters:
+
+ * `outputDir` defaults to `"$buildDir/dokka"`
+ * `baseUrl` of the remote repository to configure source links
+ * `multiModuleDoc` to indicate whether multi-module documentation needs to be configured (defaults to `false`)
+ * `remoteLineSuffix` as per Dokka the manual; defaults to `#L`
 
 ### GitLab Repository Shorthands
 
