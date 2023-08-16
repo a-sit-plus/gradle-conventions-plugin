@@ -29,10 +29,10 @@ private inline fun Project.extraProps() {
 class AspConventions : Plugin<Project> {
     override fun apply(target: Project) {
 
-        println("\n Using the following dependency versions:")
+        println("\n ASP Conventions is using the following dependency versions:")
         runCatching {
             AspVersions.versions.entries.sortedBy { (k, _) -> k.toString() }
-                .forEach { (t, u) -> println("    ${String.format("%-14s","$t:")} $u") }
+                .forEach { (t, u) -> println("    ${String.format("%-14s", "$t:")} $u") }
             println()
         }
 
@@ -171,8 +171,6 @@ class AspConventions : Plugin<Project> {
                 target.plugins.apply("maven-publish")
 
                 target.afterEvaluate {
-
-
                     println("  Configuring Test output format")
                     target.tasks.withType<Test> {
                         if (name == "testReleaseUnitTest") return@withType
@@ -190,7 +188,9 @@ class AspConventions : Plugin<Project> {
                             exceptionFormat = TestExceptionFormat.FULL
                         }
                     }
+                    target.setupSignDependency()
                 }
+
             }
         }.getOrElse {
             println("No Kotlin plugin detected for ${if (target == target.rootProject) "root " else ""}project ${target.name}")
