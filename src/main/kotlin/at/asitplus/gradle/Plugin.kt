@@ -50,9 +50,14 @@ class AspConventions : Plugin<Project> {
             }
 
 
-            println("  Adding Google and maven central repositories")
+            println("  Adding repositories")
+            println("    * serialization fork")
+            println("    * dokka dev")
+            println("    * maven central")
+            println("    * google")
             target.allprojects {
                 repositories {
+                    maven(uri("https://raw.githubusercontent.com/a-sit-plus/kotlinx.serialization/mvn/repo"))
                     maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
                     google()
                     mavenCentral()
