@@ -198,7 +198,7 @@ class AspConventions : Plugin<Project> {
 
             }
         }.getOrElse {
-            println("No Kotlin plugin detected for ${if (target == target.rootProject) "root " else ""}project ${target.name}")
+            println("\n> No Kotlin plugin detected for ${if (target == target.rootProject) "root " else ""}project ${target.name}")
             if (target != target.rootProject) println("   Make sure to load the kotlin jvm or multiplatform plugin before the ASP conventions plugin\n")
             else println("  This is usually fine.")
         }

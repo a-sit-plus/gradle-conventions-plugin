@@ -38,10 +38,12 @@ fun Project.setupDokka(
 }
 
 internal fun Project.setupSignDependency() {
-    println("  Making sign tasks depend on publish tasks:")
     val signTasks = tasks.filter { it.name.startsWith("sign") }
-    tasks.filter { it.name.startsWith("publish") }.forEach {
-        println("   * ${it.name} now depends on ${signTasks.joinToString { it.name }}")
-        it.dependsOn(*signTasks.toTypedArray())
+    if (signTasks.isNotEmpty()) {
+        println("  Making sign tasks depend on publish tasks:")
+        tasks.filter { it.name.startsWith("publish") }.forEach {
+            println("   * ${it.name} now depends on ${signTasks.joinToString { it.name }}")
+            it.dependsOn(*signTasks.toTypedArray())
+        }
     }
 }
