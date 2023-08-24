@@ -3,7 +3,7 @@
 * Make all publish tasks depend on all sign tasks
 * Serialization fork with COSE features
 * Print versions used
-
+* Make embedding bitcode into xcframework configurable
 
 ## 20230823
 * Initial Kotlin 1.9 Release

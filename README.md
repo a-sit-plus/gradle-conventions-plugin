@@ -265,6 +265,7 @@ plugins {
 
 exportIosFramework(
     "MyAwesomeCustomVcFramework", //name of the resulting framework
+    BitcodeEmbeddingMode.BITCODE,  //this is the optional default value
     "at.asitplus:kmmresult:1.5.1", //with KMM result goodness
     "at.asitplus.wallet:vclib-openid:2.0.0", //and (in our opinion) the best KMM VC library ever built)
     datetime(), //and KMM datetime awesomeness (version managed by conventions plugin)
