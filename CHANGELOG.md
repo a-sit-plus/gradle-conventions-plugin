@@ -1,4 +1,4 @@
-# 1.9.0 (Kotlin 1.9.0)
+# 1.9.10 (Kotlin 1.9.10)
 * New Dokka helper
 * Make all publish tasks depend on all sign tasks
 * Serialization fork with COSE features
@@ -6,7 +6,7 @@
 
 
 ## 20230823
-* Initial 1.9 Release
+* Initial Kotlin 1.9 Release
 * Dependency Updates:
   * Dokka 1.9
   * kotlinx.serialization 1.6.0-RC
