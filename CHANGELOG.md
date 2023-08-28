@@ -5,7 +5,7 @@
 * Print versions used
 * Make embedding bitcode into xcframework configurable
 
-## 20230823
+## 202308238
 * Initial Kotlin 1.9 Release
 * Dependency Updates:
   * Dokka 1.9
