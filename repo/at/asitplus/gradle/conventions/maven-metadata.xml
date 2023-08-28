@@ -3,11 +3,11 @@
   <groupId>at.asitplus.gradle</groupId>
   <artifactId>conventions</artifactId>
   <versioning>
-    <latest>1.9.10+20230823</latest>
-    <release>1.9.10+20230823</release>
+    <latest>1.9.10+20230828</latest>
+    <release>1.9.10+20230828</release>
     <versions>
-      <version>1.9.10+20230823</version>
+      <version>1.9.10+20230828</version>
     </versions>
-    <lastUpdated>20230828175339</lastUpdated>
+    <lastUpdated>20230828184812</lastUpdated>
   </versioning>
 </metadata>
