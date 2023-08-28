@@ -10,7 +10,7 @@ private val versions = Properties().apply {
     kotlin.runCatching { load(FileInputStream(rootProject.file("src/main/resources/versions.properties"))) }
 }
 
-val buildDate = "20230622"
+val buildDate = "20230828"
 group = "at.asitplus.gradle"
 val kotlinVersion = versions["kotlin"] as String
 version = "$kotlinVersion+$buildDate"
@@ -38,6 +38,7 @@ dependencies {
 }
 
 repositories {
+    maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
     mavenCentral()
     gradlePluginPortal()
 }
@@ -45,6 +46,10 @@ kotlin {
     jvmToolchain {
         (this as JavaToolchainSpec).languageVersion.set(JavaLanguageVersion.of(jvmTarget))
     }
+    /*compilerOptions {
+        languageVersion.set(org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_1_9)
+        apiVersion.set(org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_1_9)
+    }*/
 }
 
 gradlePlugin {

@@ -28,6 +28,15 @@ private inline fun Project.extraProps() {
 
 class AspConventions : Plugin<Project> {
     override fun apply(target: Project) {
+
+        println("\n ASP Conventions is using the following dependency versions:")
+        runCatching {
+            AspVersions.versions.entries.sortedBy { (k, _) -> k.toString() }
+                .forEach { (t, u) -> println("    ${String.format("%-14s", "$t:")} $u") }
+            println()
+        }
+
+
         println("  Adding Nexus Publish plugin ${AspVersions.nexus}")
         target.rootProject.plugins.apply("io.github.gradle-nexus.publish-plugin")
 
@@ -41,9 +50,15 @@ class AspConventions : Plugin<Project> {
             }
 
 
-            println("  Adding Google and maven central repositories")
+            println("  Adding repositories")
+            println("    * serialization fork")
+            println("    * dokka dev")
+            println("    * maven central")
+            println("    * google")
             target.allprojects {
                 repositories {
+                    maven(uri("https://raw.githubusercontent.com/a-sit-plus/kotlinx.serialization/mvn/repo"))
+                    maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
                     google()
                     mavenCentral()
                 }
@@ -161,8 +176,6 @@ class AspConventions : Plugin<Project> {
                 target.plugins.apply("maven-publish")
 
                 target.afterEvaluate {
-
-
                     println("  Configuring Test output format")
                     target.tasks.withType<Test> {
                         if (name == "testReleaseUnitTest") return@withType
@@ -180,10 +193,12 @@ class AspConventions : Plugin<Project> {
                             exceptionFormat = TestExceptionFormat.FULL
                         }
                     }
+                    target.setupSignDependency()
                 }
+
             }
         }.getOrElse {
-            println("No Kotlin plugin detected for ${if (target == target.rootProject) "root " else ""}project ${target.name}")
+            println("\n> No Kotlin plugin detected for ${if (target == target.rootProject) "root " else ""}project ${target.name}")
             if (target != target.rootProject) println("   Make sure to load the kotlin jvm or multiplatform plugin before the ASP conventions plugin\n")
             else println("  This is usually fine.")
         }

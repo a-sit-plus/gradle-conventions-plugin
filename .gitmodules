@@ -1,0 +1,3 @@
+[submodule "dokka"]
+	path = dokka
+	url = https://github.com/Kotlin/dokka.git

@@ -1,8 +1,8 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-[![Version](https://img.shields.io/badge/stable_version-1.8.21+20230622-blue.svg?style=flat)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/stable_version-1.9.10+20230028-blue.svg?style=flat)](CHANGELOG.md)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
-[![Kotlin](https://img.shields.io/badge/kotlin-1.8.21-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/kotlin-1.9.10-blue.svg?logo=kotlin)](http://kotlinlang.org)
 
 **Note: This plugin is still in its early stages and may not work well for edge cases!
 Tested against Gradle 7.6 and 8.1.1. Requires Java 11!**
@@ -28,12 +28,13 @@ This plugin targets Kotlin JVM and multiplatform projects and provides the follo
 * Introduction of a `clean` task to the root project
 * Auto-apply `idea` plugin to root project and set JDK name in accordance with JVM target
 * Autoconfiguration of test output format
+* Force dependency from publish tasks to sign tasks
+* Shorthand for Dokka setup
 
 This plugin is hosted on a public GitHub repo, because a) som of our publicly published projects depend on it and b)
 sharing is caring!
 We hope that this plugin can also help other seeking to streamline build processes across multiple projects following a
-common
-set of conventions.
+common set of conventions.
 
 ## Adding the Plugin
 
@@ -264,6 +265,7 @@ plugins {
 
 exportIosFramework(
     "MyAwesomeCustomVcFramework", //name of the resulting framework
+    BitcodeEmbeddingMode.BITCODE,  //this is the optional default value
     "at.asitplus:kmmresult:1.5.1", //with KMM result goodness
     "at.asitplus.wallet:vclib-openid:2.0.0", //and (in our opinion) the best KMM VC library ever built)
     datetime(), //and KMM datetime awesomeness (version managed by conventions plugin)
@@ -275,6 +277,14 @@ kotlin {
 }
 //whatever else needs to be configured
 ```
+
+### Dokka Setup Shorthands
+A shorthand to setup dokka is available as `setupDokka` which takes the following parameters:
+
+ * `outputDir` defaults to `"$buildDir/dokka"`
+ * `baseUrl` of the remote repository to configure source links
+ * `multiModuleDoc` to indicate whether multi-module documentation needs to be configured (defaults to `false`)
+ * `remoteLineSuffix` as per Dokka the manual; defaults to `#L`
 
 ### GitLab Repository Shorthands
 
