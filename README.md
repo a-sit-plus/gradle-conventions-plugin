@@ -61,6 +61,18 @@ simply add it as a composite build to the new conventions plugin, and you are go
 In most cases, however, you want to depend on a specific version of this plugin that maps to the Kotlin version you want
 to use.
 
+Since 1.9.10 we depende on a development build of dokka, wich means, the dokka snapshot repo needs to be declared as a source
+of plugins in your root project's `settings.gradle.kts`:
+```kotlin
+pluginManagement {
+    repositories {
+        maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+```
+
 ### Adding the plugin's maven repository
 
 This plugin is directly published as a maven repository to GitHub (this repo, branch `mvn`).
@@ -73,6 +85,7 @@ pluginManagement {
             url = uri("https://raw.githubusercontent.com/a-sit-plus/gradle-conventions-plugin/mvn/repo")
             name = "aspConventions"
         }
+        maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
         mavenCentral()
         gradlePluginPortal()
     }
