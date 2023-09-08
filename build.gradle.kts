@@ -10,7 +10,7 @@ private val versions = Properties().apply {
     kotlin.runCatching { load(FileInputStream(rootProject.file("src/main/resources/versions.properties"))) }
 }
 
-val buildDate = "20230828"
+val buildDate = "20230908"
 group = "at.asitplus.gradle"
 val kotlinVersion = versions["kotlin"] as String
 version = "$kotlinVersion+$buildDate"

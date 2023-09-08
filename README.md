@@ -1,6 +1,6 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-[![Version](https://img.shields.io/badge/stable_version-1.9.10+20230028-blue.svg?style=flat)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/stable_version-1.9.10+20230908-blue.svg?style=flat)](CHANGELOG.md)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Kotlin](https://img.shields.io/badge/kotlin-1.9.10-blue.svg?logo=kotlin)](http://kotlinlang.org)
 
@@ -60,18 +60,6 @@ justifies the creation of additional conventions based on this plugin,
 simply add it as a composite build to the new conventions plugin, and you are good to go!
 In most cases, however, you want to depend on a specific version of this plugin that maps to the Kotlin version you want
 to use.
-
-Since 1.9.10 we depende on a development build of dokka, wich means, the dokka snapshot repo needs to be declared as a source
-of plugins in your root project's `settings.gradle.kts`:
-```kotlin
-pluginManagement {
-    repositories {
-        maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
-```
 
 ### Adding the plugin's maven repository
 

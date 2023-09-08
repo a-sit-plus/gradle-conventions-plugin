@@ -5,6 +5,15 @@
 * Print versions used
 * Make embedding bitcode into xcframework configurable
 
+## 20230908
+* Dependency Updates:
+  * ktor 2.3.4
+  * Kotest 5.7.1
+  * Dokka 1.9.0 Release
+  * kotlinx.datetime 0.4.1
+  * kotlinx.coroutines 1.7.3
+  * Bouncy Castle 1.7.6
+
 ## 202308238
 * Initial Kotlin 1.9 Release
 * Dependency Updates:
