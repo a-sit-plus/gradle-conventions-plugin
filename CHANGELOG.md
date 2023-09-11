@@ -5,6 +5,11 @@
 * Print versions used
 * Make embedding bitcode into xcframework configurable
 
+## 20230911
+* Manage ksp version
+* optimize loading of versions from properties
+
+
 ## 20230908
 * Dependency Updates:
   * ktor 2.3.4

@@ -7,7 +7,7 @@ plugins {
     `maven-publish`
 }
 private val versions = Properties().apply {
-    kotlin.runCatching { load(FileInputStream(rootProject.file("src/main/resources/versions.properties"))) }
+    kotlin.runCatching { FileInputStream(rootProject.file("src/main/resources/versions.properties")).use { load(it) } }
 }
 
 val buildDate = "20230908"
@@ -19,6 +19,7 @@ val dokka = versions["dokka"]
 val nexus = versions["nexus"]
 val kotest = versions["kotest"]
 val ktor = versions["ktor"]
+val ksp = "$kotlinVersion-${versions["ksp"]}"
 val jvmTarget = versions["jvmTarget"] as String
 
 
@@ -35,6 +36,7 @@ dependencies {
     api("io.kotest:kotest-framework-multiplatform-plugin-gradle:$kotest")
     api("io.github.gradle-nexus:publish-plugin:$nexus")
     api("org.jetbrains.dokka:dokka-gradle-plugin:$dokka")
+    api("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:$ksp")
 }
 
 repositories {

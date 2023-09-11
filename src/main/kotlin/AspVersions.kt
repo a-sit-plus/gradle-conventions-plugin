@@ -1,13 +1,20 @@
-import org.jetbrains.kotlin.gradle.utils.loadPropertyFromResources
 import java.util.*
 
 
 object AspVersions {
     @JvmStatic
-    private fun versionOf(dependency: String) = loadPropertyFromResources("versions.properties", dependency)
+    internal val versions by lazy {
+        javaClass.classLoader!!.getResourceAsStream("versions.properties").use { Properties().apply { load(it) } }
+    }
+
+    @JvmStatic
+    private fun versionOf(dependency: String) = versions[dependency] as String
 
     @JvmStatic
     val kotlin = versionOf("kotlin")
+
+    @JvmStatic
+    val ksp = versionOf("kotlin") + "-" + versionOf("ksp")
 
     @JvmStatic
     val serialization = versionOf("serialization")
@@ -43,8 +50,4 @@ object AspVersions {
 
     @JvmStatic
     val jvm = Jvm //groovy workaround
-
-    internal val versions: Properties = javaClass.classLoader!!.getResourceAsStream("versions.properties").use {
-        Properties().apply { load(it) }
-    }
 }
