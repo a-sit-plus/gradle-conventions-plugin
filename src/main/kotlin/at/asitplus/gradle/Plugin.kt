@@ -85,8 +85,6 @@ class AspConventions : Plugin<Project> {
                     }
                 }
             }
-
-
         }
 
         var isMultiplatform = false
@@ -121,7 +119,6 @@ class AspConventions : Plugin<Project> {
 
             target.afterEvaluate {
 
-
                 val kmp = extensions.getByType<KotlinMultiplatformExtension>()
 
                 kmp.experimentalOptIns()
@@ -144,11 +141,9 @@ class AspConventions : Plugin<Project> {
         }
 
 
-
         runCatching {
 
             val kotlin = target.kotlinExtension
-
 
             if (target != target.rootProject) {
                 if (!target.plugins.hasPlugin("me.champeau.mrjar")) //MRJAR
@@ -178,30 +173,29 @@ class AspConventions : Plugin<Project> {
                 target.afterEvaluate {
                     println("  Configuring Test output format")
                     target.tasks.withType<Test> {
-                        if (name == "testReleaseUnitTest") return@withType
-                        useJUnitPlatform()
-                        filter {
-                            isFailOnNoMatchingTests = false
-                        }
-                        testLogging {
-                            showExceptions = true
-                            showStandardStreams = true
-                            events = setOf(
-                                TestLogEvent.FAILED,
-                                TestLogEvent.PASSED
-                            )
-                            exceptionFormat = TestExceptionFormat.FULL
+                        if (name != "testReleaseUnitTest") {
+                            useJUnitPlatform()
+                            filter {
+                                isFailOnNoMatchingTests = false
+                            }
+                            testLogging {
+                                showExceptions = true
+                                showStandardStreams = true
+                                events = setOf(
+                                    TestLogEvent.FAILED,
+                                    TestLogEvent.PASSED
+                                )
+                                exceptionFormat = TestExceptionFormat.FULL
+                            }
                         }
                     }
                     target.setupSignDependency()
                 }
-
             }
         }.getOrElse {
             println("\n> No Kotlin plugin detected for ${if (target == target.rootProject) "root " else ""}project ${target.name}")
             if (target != target.rootProject) println("   Make sure to load the kotlin jvm or multiplatform plugin before the ASP conventions plugin\n")
             else println("  This is usually fine.")
         }
-
     }
 }

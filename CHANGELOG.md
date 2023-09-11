@@ -8,7 +8,7 @@
 ## 20230911
 * Manage ksp version
 * optimize loading of versions from properties
-
+* drop `inline` modifiers from all public functions
 
 ## 20230908
 * Dependency Updates:
