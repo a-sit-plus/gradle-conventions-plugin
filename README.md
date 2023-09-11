@@ -1,6 +1,6 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-[![Version](https://img.shields.io/badge/stable_version-1.9.10+20230908-blue.svg?style=flat)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/stable_version-1.9.10+20230911-blue.svg?style=flat)](CHANGELOG.md)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Kotlin](https://img.shields.io/badge/kotlin-1.9.10-blue.svg?logo=kotlin)](http://kotlinlang.org)
 
@@ -14,7 +14,7 @@ Gradle version catalogues are great, they can only get you so far…
 This plugin targets Kotlin JVM and multiplatform projects and provides the following functionality:
 
 * Version management of core libraries, Dokka, Kotlin, certain Kotlin plugins, Gradle Ktor Plugin (and ktor libraries),
-  and JVM toolchain
+  ksp plugin, and JVM toolchain (can be overridden)
 * Shorthands for various commonly-used dependencies
 * Natural extension functions to ass common dependencies
 * Autoconfiguration of Kotest for multiplatform projects
@@ -194,7 +194,7 @@ The following shorthands are available to declare dependencies:
 
 * `kotest(module: String, target: String? = null)`, where module is something like `datatest`, dor example and target
   can be blank for multiplatform or `jvm` to target the JVM.
-  <br>Not that the following kotest modules are available by default, and require not separate declaration:
+  <br>Note that the following kotest modules are available by default, and require no separate declaration:
     * `kotest-assertions-core`
     * `kotest-common`
     * `kotest-property`
