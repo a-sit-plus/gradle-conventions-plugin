@@ -20,14 +20,6 @@ val nexus = versions["nexus"]
 val kotest = versions["kotest"]
 val ktor = versions["ktor"]
 val ksp = "$kotlinVersion-${versions["ksp"]}"
-val jvmTarget = versions["jvmTarget"] as String
-
-
-idea {
-    project {
-        jdkName = jvmTarget
-    }
-}
 
 dependencies {
     api("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
@@ -43,15 +35,6 @@ repositories {
     maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
     mavenCentral()
     gradlePluginPortal()
-}
-kotlin {
-    jvmToolchain {
-        (this as JavaToolchainSpec).languageVersion.set(JavaLanguageVersion.of(jvmTarget))
-    }
-    /*compilerOptions {
-        languageVersion.set(org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_1_9)
-        apiVersion.set(org.jetbrains.kotlin.gradle.dsl.KotlinVersion.KOTLIN_1_9)
-    }*/
 }
 
 gradlePlugin {
