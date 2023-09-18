@@ -148,7 +148,7 @@ class AspConventions : Plugin<Project> {
             if (target != target.rootProject) {
                 if (!target.plugins.hasPlugin("me.champeau.mrjar")) //MRJAR
                     kotlin.apply {
-                        println("  Setting jvmToolchain to JDK 11")
+                        println("  Setting jvmToolchain to JDK ${AspVersions.Jvm.target}")
                         jvmToolchain {
                             languageVersion.set(JavaLanguageVersion.of(AspVersions.Jvm.target))
                         }

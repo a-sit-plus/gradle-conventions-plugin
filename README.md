@@ -182,7 +182,7 @@ that this property is not a compile-time constant.
 
 Common compiler options (opt-ins for serialization, coroutines, datetime, and `RequiresOptIn`), and Kotest are applied
 by default.
-`jvmToolchain(11)` is also applied, **unless**
+`jvmToolchain(17)` is also applied, **unless**
 the [multi-release jar plugin ("me.champeau.mrjar")](https://melix.github.io/mrjar-gradle-plugin/0.1/index.html) is
 applied as well.
 Note that no version management is in place for the multi-release jar plugin, as we rarely need it internally.
