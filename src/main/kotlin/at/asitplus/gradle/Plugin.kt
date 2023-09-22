@@ -17,8 +17,12 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinBasePlugin
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
+import org.jetbrains.kotlin.gradle.plugin.extraProperties
 
-private inline fun Project.extraProps() {
+private const val H ="\u001b[7m\u001b[1m"
+private const val R ="\u001b[0m"
+
+private inline fun Project.supportLocalProperties() {
     println("  Adding support for storing extra project properties in local.properties")
     java.util.Properties().apply {
         kotlin.runCatching { load(java.io.FileInputStream(rootProject.file("local.properties"))) }
@@ -26,12 +30,16 @@ private inline fun Project.extraProps() {
     }
 }
 
+private inline fun Project.hasMrJar() = plugins.hasPlugin("me.champeau.mrjar")
+
+inline val Project.jvmTarget: String get() = runCatching { extraProperties["jdk.version"] as String }.getOrElse { AspVersions.Jvm.defaultTarget }
+
 class AspConventions : Plugin<Project> {
     override fun apply(target: Project) {
 
         println("\n ASP Conventions is using the following dependency versions:")
         runCatching {
-            AspVersions.versions.entries.sortedBy { (k, _) -> k.toString() }
+            AspVersions.versions.entries.filterNot { (k, _) -> k == "jvmTarget" }.sortedBy { (k, _) -> k.toString() }
                 .forEach { (t, u) -> println("    ${String.format("%-14s", "$t:")} $u") }
             println()
         }
@@ -40,14 +48,29 @@ class AspConventions : Plugin<Project> {
         println("  Adding Nexus Publish plugin ${AspVersions.nexus}")
         target.rootProject.plugins.apply("io.github.gradle-nexus.publish-plugin")
 
-        target.extraProps()
+        target.supportLocalProperties()
 
         if (target == target.rootProject) {
 
             target.plugins.apply("idea")
-            target.extensions.getByType<IdeaModel>().project {
-                jdkName = AspVersions.Jvm.target
-            }
+
+            val mrJarModules = target.childProjects.filter { (_, p) -> p.hasMrJar() }
+                .map { (name, _) -> name }
+            if (mrJarModules.isEmpty()) { //MRJAR
+                println("  ${H}Configuring IDEA to use Java ${target.jvmTarget}$R")
+                target.extensions.getByType<IdeaModel>().project {
+                    jdkName = target.jvmTarget
+                }
+            } else println(
+                println("  MR Jar plugin detected in modules${
+                    mrJarModules.joinToString(
+                        prefix = "\n",
+                        separator = "\n      * ",
+                        postfix = "\n"
+                    ) { it }
+                }   Not setting IDEA Java version.\n")
+            )
+
 
 
             println("  Adding repositories")
@@ -90,13 +113,13 @@ class AspConventions : Plugin<Project> {
         var isMultiplatform = false
         runCatching {
             target.plugins.withType<KotlinBasePlugin>().let {
-                println("  Using Kotlin version ${it.first().pluginVersion} for project ${target.name}")
+                println("  ${H}Using Kotlin version ${it.first().pluginVersion} for project ${target.name}$R")
             }
         }
 
         target.plugins.withType<KotlinMultiplatformPluginWrapper> {
             isMultiplatform = true
-            println("  Multiplatform project detected")
+            println("  ${H}Multiplatform project detected$R")
             println("  Setting up Kotest multiplatform plugin ${AspVersions.kotest}")
             target.plugins.apply("io.kotest.multiplatform")
 
@@ -104,7 +127,10 @@ class AspConventions : Plugin<Project> {
                 println("  Setting jsr305=strict for JVM nullability annotations")
                 compilations.all {
                     kotlinOptions {
-                        jvmTarget = AspVersions.Jvm.target
+                        if (!target.hasMrJar()) { //MRJAR
+                            println("  ${H}Setting jvmTarget to ${target.jvmTarget} for $name$R")
+                            jvmTarget = target.jvmTarget
+                        } else println("  MR Jar plugin detected. Not setting jvmTarget")
                         freeCompilerArgs = listOf(
                             "-Xjsr305=strict"
                         )
@@ -146,11 +172,11 @@ class AspConventions : Plugin<Project> {
             val kotlin = target.kotlinExtension
 
             if (target != target.rootProject) {
-                if (!target.plugins.hasPlugin("me.champeau.mrjar")) //MRJAR
+                if (!target.hasMrJar()) //MRJAR
                     kotlin.apply {
-                        println("  Setting jvmToolchain to JDK 11")
+                        println("  ${H}Setting jvmToolchain to JDK ${target.jvmTarget}$R")
                         jvmToolchain {
-                            languageVersion.set(JavaLanguageVersion.of(AspVersions.Jvm.target))
+                            languageVersion.set(JavaLanguageVersion.of(target.jvmTarget))
                         }
                     }
                 else println("  MR Jar plugin detected. Not setting jvmToolchain")

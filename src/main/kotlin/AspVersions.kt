@@ -42,7 +42,7 @@ object AspVersions {
 
     object Jvm {
         @JvmStatic
-        val target = versionOf("jvmTarget")
+        val defaultTarget = versionOf("jvmTarget")
 
         @JvmStatic
         val bouncycastle = versionOf("bouncycastle")

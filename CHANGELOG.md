@@ -5,6 +5,9 @@
 * Print versions used
 * Make embedding bitcode into xcframework configurable
 
+## 20230922
+* make it possible to override jdk version using the property `jdk.version`
+
 ## 20230911
 * Manage ksp version
 * optimize loading of versions from properties
