@@ -1,11 +1,11 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-[![Version](https://img.shields.io/badge/stable_version-1.9.10+20230911-blue.svg?style=flat)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/stable_version-1.9.10+20230922-blue.svg?style=flat)](CHANGELOG.md)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Kotlin](https://img.shields.io/badge/kotlin-1.9.10-blue.svg?logo=kotlin)](http://kotlinlang.org)
 
 **Note: This plugin is still in its early stages and may not work well for edge cases!
-Tested against Gradle 7.6 and 8.1.1. Requires Java 11!**
+Tested against Gradle 7.6 and 8.1.1. Requires Java 11+!**
 
 This repository bundles conventions used inside A-SIT Plus into a plugin.
 The main motivation to go beyond a versions catalogue was re-usability inside complex, nested composite builds.
@@ -89,7 +89,7 @@ below.
 
 ```kotlin
 plugins {
-    id("at.asitplus.gradle.conventions") version "1.8.21+20230622" //version can be omitted when using this plugin through composite builds
+    id("at.asitplus.gradle.conventions") version "1.9.10+20230922" //version can be omitted for composite builds
 }
 ```
 
@@ -181,12 +181,16 @@ that this property is not a compile-time constant.
 ## Extensions and Shorthands
 
 Common compiler options (opt-ins for serialization, coroutines, datetime, and `RequiresOptIn`), and Kotest are applied
-by default.
-`jvmToolchain(17)` is also applied, **unless**
-the [multi-release jar plugin ("me.champeau.mrjar")](https://melix.github.io/mrjar-gradle-plugin/0.1/index.html) is
-applied as well.
-Note that no version management is in place for the multi-release jar plugin, as we rarely need it internally.
+by default
 In addition, shorthand for dependencies and other extensions are available to streamline project setup.
+
+### JDK Version Management
+`jvmToolchain(11)`, `jvmTarget = 11`, and `jdkName = 11` are applied by default, **unless**
+the [multi-release jar plugin ("me.champeau.mrjar")](https://melix.github.io/mrjar-gradle-plugin/0.1/index.html) is applied as well.
+Note that no version management is in place for the multi-release jar plugin, as we rarely need it internally.
+
+In addition, it is possible to override the JVM target version, using the property `jvm.target` (either in `gradle.properties` or `local.properties`).
+The JVM target in use is accessible inside gradle build scripts as `jvmTarget` 
 
 ### Dependency Shorthands
 
