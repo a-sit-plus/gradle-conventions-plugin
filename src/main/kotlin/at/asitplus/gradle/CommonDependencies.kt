@@ -14,6 +14,7 @@ internal inline fun KotlinDependencyHandler.addKotest(target: String? = null) {
     println("   * Assertions$targetInfo")
     println("   * Property-based testing$targetInfo")
     println("   * Datatest$targetInfo")
+    implementation(kotlin("reflect"))
     implementation(kotest("assertions-core", target))
     implementation(kotest("common", target))
     implementation(kotest("property", target))

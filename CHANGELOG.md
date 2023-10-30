@@ -5,6 +5,13 @@
 * Print versions used
 * Make embedding bitcode into xcframework configurable
 
+## 20231030
+* add `kotlin-reflect` to test dependencies (fixes inability to run single Kotest-tests under certain conditions)
+* Dependency updates:
+    * Ktor 2.3.5
+    * Kotest 5.7.2
+    * Dokka 1.9.10
+
 ## 20230922
 * make it possible to override jdk version using the property `jdk.version`
 
