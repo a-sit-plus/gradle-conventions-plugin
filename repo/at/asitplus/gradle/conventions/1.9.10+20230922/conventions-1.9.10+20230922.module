@@ -44,14 +44,14 @@
           "group": "io.ktor.plugin",
           "module": "plugin",
           "version": {
-            "requires": "2.3.4"
+            "requires": "2.3.5"
           }
         },
         {
           "group": "io.kotest",
           "module": "kotest-framework-multiplatform-plugin-gradle",
           "version": {
-            "requires": "5.7.1"
+            "requires": "5.7.2"
           }
         },
         {
@@ -65,7 +65,7 @@
           "group": "org.jetbrains.dokka",
           "module": "dokka-gradle-plugin",
           "version": {
-            "requires": "1.9.0"
+            "requires": "1.9.10"
           }
         },
         {
@@ -80,11 +80,11 @@
         {
           "name": "conventions-1.9.10+20230922.jar",
           "url": "conventions-1.9.10+20230922.jar",
-          "size": 107009,
-          "sha512": "446500b6c6ae3ed098172612839585511a91448bdac09ff2d516cc7fbc01a4bf38548a29a42aa273c6872e0623af53ce9deb1dffacf985121bd5bf5723bcd822",
-          "sha256": "4f0b241b9d4f6178c352cf75d71366ee38331f70a639c5f3cac6ea0a93ecec8e",
-          "sha1": "ec771ce7cec2ff708686b7d425bc628a807492d3",
-          "md5": "701aa15762230be7cfc5e37f73799f15"
+          "size": 107161,
+          "sha512": "ef049149ebf0450108d761a5461fa892f56a4b56e6a88bdb34aa5ad6dd86f008338d330fa00c7ded5edd5525abd0b79d521e500d584d9ba37af23870046800f2",
+          "sha256": "edcb1cf73a6c6f55c4427d8c1024e0e710b018366a58e661c0380a742ed463f3",
+          "sha1": "385ea4939de9c82efe01ae077b9e52b7955bef33",
+          "md5": "33b08b6161c3ee8d49604deaf46a2b6f"
         }
       ]
     },
@@ -118,14 +118,14 @@
           "group": "io.ktor.plugin",
           "module": "plugin",
           "version": {
-            "requires": "2.3.4"
+            "requires": "2.3.5"
           }
         },
         {
           "group": "io.kotest",
           "module": "kotest-framework-multiplatform-plugin-gradle",
           "version": {
-            "requires": "5.7.1"
+            "requires": "5.7.2"
           }
         },
         {
@@ -139,7 +139,7 @@
           "group": "org.jetbrains.dokka",
           "module": "dokka-gradle-plugin",
           "version": {
-            "requires": "1.9.0"
+            "requires": "1.9.10"
           }
         },
         {
@@ -154,11 +154,11 @@
         {
           "name": "conventions-1.9.10+20230922.jar",
           "url": "conventions-1.9.10+20230922.jar",
-          "size": 107009,
-          "sha512": "446500b6c6ae3ed098172612839585511a91448bdac09ff2d516cc7fbc01a4bf38548a29a42aa273c6872e0623af53ce9deb1dffacf985121bd5bf5723bcd822",
-          "sha256": "4f0b241b9d4f6178c352cf75d71366ee38331f70a639c5f3cac6ea0a93ecec8e",
-          "sha1": "ec771ce7cec2ff708686b7d425bc628a807492d3",
-          "md5": "701aa15762230be7cfc5e37f73799f15"
+          "size": 107161,
+          "sha512": "ef049149ebf0450108d761a5461fa892f56a4b56e6a88bdb34aa5ad6dd86f008338d330fa00c7ded5edd5525abd0b79d521e500d584d9ba37af23870046800f2",
+          "sha256": "edcb1cf73a6c6f55c4427d8c1024e0e710b018366a58e661c0380a742ed463f3",
+          "sha1": "385ea4939de9c82efe01ae077b9e52b7955bef33",
+          "md5": "33b08b6161c3ee8d49604deaf46a2b6f"
         }
       ]
     }
