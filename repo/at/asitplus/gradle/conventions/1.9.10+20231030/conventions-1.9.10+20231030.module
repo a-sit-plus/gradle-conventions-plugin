@@ -1,0 +1,166 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "at.asitplus.gradle",
+    "module": "conventions",
+    "version": "1.9.10+20231030",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.1.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "1.9.10"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-serialization",
+          "version": {
+            "requires": "1.9.10"
+          }
+        },
+        {
+          "group": "io.ktor.plugin",
+          "module": "plugin",
+          "version": {
+            "requires": "2.3.5"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-multiplatform-plugin-gradle",
+          "version": {
+            "requires": "5.7.2"
+          }
+        },
+        {
+          "group": "io.github.gradle-nexus",
+          "module": "publish-plugin",
+          "version": {
+            "requires": "1.3.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.dokka",
+          "module": "dokka-gradle-plugin",
+          "version": {
+            "requires": "1.9.10"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "com.google.devtools.ksp.gradle.plugin",
+          "version": {
+            "requires": "1.9.10-1.0.13"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "conventions-1.9.10+20231030.jar",
+          "url": "conventions-1.9.10+20231030.jar",
+          "size": 107161,
+          "sha512": "6176abd17687d624086817e3cdfd589690050be760ab517127563a9d9168b166359b38ea9af05ba1cc9cfb230fc377073ba2d0243313e1b4bb754a45d38551f8",
+          "sha256": "80797da0a50d78cd799dc399dc2b0f263e092df8080245f80c27c404ad78cebd",
+          "sha1": "1f1190dde874f4aa77b2dc18eedf2765ef2ad4c7",
+          "md5": "1a33a05ded985f04674f1a35b7c45eb3"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "1.9.10"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-serialization",
+          "version": {
+            "requires": "1.9.10"
+          }
+        },
+        {
+          "group": "io.ktor.plugin",
+          "module": "plugin",
+          "version": {
+            "requires": "2.3.5"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-multiplatform-plugin-gradle",
+          "version": {
+            "requires": "5.7.2"
+          }
+        },
+        {
+          "group": "io.github.gradle-nexus",
+          "module": "publish-plugin",
+          "version": {
+            "requires": "1.3.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.dokka",
+          "module": "dokka-gradle-plugin",
+          "version": {
+            "requires": "1.9.10"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "com.google.devtools.ksp.gradle.plugin",
+          "version": {
+            "requires": "1.9.10-1.0.13"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "conventions-1.9.10+20231030.jar",
+          "url": "conventions-1.9.10+20231030.jar",
+          "size": 107161,
+          "sha512": "6176abd17687d624086817e3cdfd589690050be760ab517127563a9d9168b166359b38ea9af05ba1cc9cfb230fc377073ba2d0243313e1b4bb754a45d38551f8",
+          "sha256": "80797da0a50d78cd799dc399dc2b0f263e092df8080245f80c27c404ad78cebd",
+          "sha1": "1f1190dde874f4aa77b2dc18eedf2765ef2ad4c7",
+          "md5": "1a33a05ded985f04674f1a35b7c45eb3"
+        }
+      ]
+    }
+  ]
+}
