@@ -1,3 +1,11 @@
+# 1.9.20 (Kotlin 1.9.20)
+* Kotlin 1.9.20
+
+## 20231102
+* Initial Kotlin 1.9.20 build
+* Requires explicit declaration of targets as per the [default hierarchy template](https://kotlinlang.org/docs/multiplatform-hierarchy.html?utm_campaign=hierarchy-template#default-hierarchy-template)
+  * As a consequence, `exportIosFramework` can only be called **after** the `koltin` block declaring the targets
+
 # 1.9.10 (Kotlin 1.9.10)
 * New Dokka helper
 * Make all publish tasks depend on all sign tasks
