@@ -7,6 +7,7 @@ import io.github.gradlenexus.publishplugin.NexusPublishExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.Delete
+import org.gradle.api.tasks.StopExecutionException
 import org.gradle.api.tasks.testing.Test
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 import org.gradle.api.tasks.testing.logging.TestLogEvent
@@ -19,8 +20,8 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinBasePlugin
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 import org.jetbrains.kotlin.gradle.plugin.extraProperties
 
-private const val H ="\u001b[7m\u001b[1m"
-private const val R ="\u001b[0m"
+private const val H = "\u001b[7m\u001b[1m"
+private const val R = "\u001b[0m"
 
 private inline fun Project.supportLocalProperties() {
     println("  Adding support for storing extra project properties in local.properties")
@@ -120,45 +121,57 @@ class AspConventions : Plugin<Project> {
         target.plugins.withType<KotlinMultiplatformPluginWrapper> {
             isMultiplatform = true
             println("  ${H}Multiplatform project detected$R")
-            println("  Setting up Kotest multiplatform plugin ${AspVersions.kotest}")
-            target.plugins.apply("io.kotest.multiplatform")
-
-            target.extensions.getByType<KotlinMultiplatformExtension>().jvm {
-                println("  Setting jsr305=strict for JVM nullability annotations")
-                compilations.all {
-                    kotlinOptions {
-                        if (!target.hasMrJar()) { //MRJAR
-                            println("  ${H}Setting jvmTarget to ${target.jvmTarget} for $name$R")
-                            jvmTarget = target.jvmTarget
-                        } else println("  MR Jar plugin detected. Not setting jvmTarget")
-                        freeCompilerArgs = listOf(
-                            "-Xjsr305=strict"
-                        )
-                    }
-                }
-
-                println("  Configuring Kotest JVM runner")
-                testRuns["test"].executionTask.configure {
-                    useJUnitPlatform()
-                }
-            }
 
             target.afterEvaluate {
+
+                val kmpTargets =
+                    extensions.getByType<KotlinMultiplatformExtension>().targets.filter { it.name != "metadata" }
+                if (kmpTargets.isEmpty())
+                    throw StopExecutionException("No buildable targets found! Declare at least a single one explicitly as per https://kotlinlang.org/docs/multiplatform-hierarchy.html#default-hierarchy-template")
+
+                println("\n  This project will be built for the following targets:")
+                kmpTargets.forEach { println("   * ${it.name}") }
+
+
+                println("\n  Setting up Kotest multiplatform plugin ${AspVersions.kotest}")
+                plugins.apply("io.kotest.multiplatform")
+
+                extensions.getByType<KotlinMultiplatformExtension>().jvm {
+                    println("  Setting jsr305=strict for JVM nullability annotations")
+                    compilations.all {
+                        kotlinOptions {
+                            if (!hasMrJar()) { //MRJAR
+                                println("  ${H}Setting jvmTarget to ${target.jvmTarget} for $name$R")
+                                kotlinOptions.jvmTarget = target.jvmTarget
+                            } else println("  MR Jar plugin detected. Not setting jvmTarget")
+                            freeCompilerArgs = listOf(
+                                "-Xjsr305=strict"
+                            )
+                        }
+                    }
+
+                    println("  Configuring Kotest JVM runner")
+                    testRuns["test"].executionTask.configure {
+                        useJUnitPlatform()
+                    }
+                }
 
                 val kmp = extensions.getByType<KotlinMultiplatformExtension>()
 
                 kmp.experimentalOptIns()
 
                 @Suppress("UNUSED_VARIABLE")
-                kmp.sourceSets {
-                    val commonTest by getting {
-                        dependencies {
-                            addKotest()
+                kmp.apply {
+                    sourceSets {
+                        commonTest {
+                            dependencies {
+                                addKotest()
+                            }
                         }
-                    }
-                    val jvmTest by getting {
-                        dependencies {
-                            addKotestJvmRunner()
+                        jvmTest {
+                            dependencies {
+                                addKotestJvmRunner()
+                            }
                         }
                     }
                 }

@@ -1,8 +1,8 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-[![Version](https://img.shields.io/badge/stable_version-1.9.10+20230922-blue.svg?style=flat)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/stable_version-1.9.20+20231106-blue.svg?style=flat)](CHANGELOG.md)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
-[![Kotlin](https://img.shields.io/badge/kotlin-1.9.10-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/kotlin-1.9.20-blue.svg?logo=kotlin)](http://kotlinlang.org)
 
 **Note: This plugin is still in its early stages and may not work well for edge cases!
 Tested against Gradle 7.6 and 8.1.1. Requires Java 11+!**
@@ -73,7 +73,6 @@ pluginManagement {
             url = uri("https://raw.githubusercontent.com/a-sit-plus/gradle-conventions-plugin/mvn/repo")
             name = "aspConventions"
         }
-        maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
         mavenCentral()
         gradlePluginPortal()
     }
@@ -89,7 +88,7 @@ below.
 
 ```kotlin
 plugins {
-    id("at.asitplus.gradle.conventions") version "1.9.10+20230922" //version can be omitted for composite builds
+    id("at.asitplus.gradle.conventions") version "1.9.20+20231102" //version can be omitted for composite builds
 }
 ```
 
@@ -185,12 +184,15 @@ by default
 In addition, shorthand for dependencies and other extensions are available to streamline project setup.
 
 ### JDK Version Management
+
 `jvmToolchain(11)`, `jvmTarget = 11`, and `jdkName = 11` are applied by default, **unless**
-the [multi-release jar plugin ("me.champeau.mrjar")](https://melix.github.io/mrjar-gradle-plugin/0.1/index.html) is applied as well.
+the [multi-release jar plugin ("me.champeau.mrjar")](https://melix.github.io/mrjar-gradle-plugin/0.1/index.html) is
+applied as well.
 Note that no version management is in place for the multi-release jar plugin, as we rarely need it internally.
 
-In addition, it is possible to override the JVM target version, using the property `jvm.target` (either in `gradle.properties` or `local.properties`).
-The JVM target in use is accessible inside gradle build scripts as `jvmTarget` 
+In addition, it is possible to override the JVM target version, using the property `jvm.target` (either
+in `gradle.properties` or `local.properties`).
+The JVM target in use is accessible inside gradle build scripts as `jvmTarget`
 
 ### Dependency Shorthands
 
@@ -220,29 +222,34 @@ Fhe following two examples illustrates valid dependency declarations for multipl
 
 ```kotlin
 //mutliplatform example
-sourceSets {
-    /* Main source sets */
-    val commonMain by getting {
-        dependencies {
-            api(serialization("cbor"))
-            api(ktor("client-core"))
-            api(ktor("client-logging"))
-            api(ktor("client-serialization"))
-            api(ktor("client-content-negotiation"))
-            api(ktor("serialization-kotlinx-json"))
-        }
-    }
+kotlin {
+    jvm()
+    iosArm64()
 
-    val iosMain by getting {
-        dependencies {
-            api(ktor("client-darwin"))
+    sourceSets {
+        /* Main source sets */
+        commonMain {
+            dependencies {
+                api(serialization("cbor"))
+                api(ktor("client-core"))
+                api(ktor("client-logging"))
+                api(ktor("client-serialization"))
+                api(ktor("client-content-negotiation"))
+                api(ktor("serialization-kotlinx-json"))
+            }
         }
-    }
 
-    val jvmMain by getting {
-        dependencies {
-            api(bouncycastle("bcpkix"))
-            api(ktor("client-okhttp"))
+        iosMain {
+            dependencies {
+                api(ktor("client-darwin"))
+            }
+        }
+
+        jvmMain {
+            dependencies {
+                api(bouncycastle("bcpkix"))
+                api(ktor("client-okhttp"))
+            }
         }
     }
 }
@@ -257,15 +264,25 @@ dependencies {
 
 ### Building iOS Framework
 
-This plugin adds a shorthand for building iOS frameworks form multiplatform projects. It targets `ios`
-and `iosSimulatorArm64`.
-Simply invoke `exportIosFramework(name: String, vararg additionalExport: Any)` in your module's build script as
-illustrated by the example below:
+This plugin adds a shorthand for building iOS frameworks form multiplatform projects.
+It is applied to all Kotlin/Native targets whose name starts with `ios`.
+Hence, it must be called after ios targets have been configured inside the `kotlin` block.
+
+Invoke `exportIosFramework(name: String, vararg additionalExport: Any)` in your module's build script as
+illustrated by the example below to export an XCode framework:
 
 ```kotlin
 plugins {
     kotlin("multiplatform") //version managed by conventions plugin
     kotlin("plugin.serialization") //version managed by conventions plugin
+}
+
+kotlin {
+    jvm()
+    iosArm64()
+    iosX64()
+    iosSimulatorArm64()
+    //other kotlin multiplatform plugin config (dependencies, targets, etc
 }
 
 exportIosFramework(
@@ -277,19 +294,17 @@ exportIosFramework(
     napier() // and elegant KMM-powered logging (version managed by conventions plugin)
 )
 
-kotlin {
-    //other kotlin multiplatform plugin config (dependencies, targets, etc
-}
 //whatever else needs to be configured
 ```
 
 ### Dokka Setup Shorthands
+
 A shorthand to setup dokka is available as `setupDokka` which takes the following parameters:
 
- * `outputDir` defaults to `"$buildDir/dokka"`
- * `baseUrl` of the remote repository to configure source links
- * `multiModuleDoc` to indicate whether multi-module documentation needs to be configured (defaults to `false`)
- * `remoteLineSuffix` as per Dokka the manual; defaults to `#L`
+* `outputDir` defaults to `"$buildDir/dokka"`
+* `baseUrl` of the remote repository to configure source links
+* `multiModuleDoc` to indicate whether multi-module documentation needs to be configured (defaults to `false`)
+* `remoteLineSuffix` as per Dokka the manual; defaults to `#L`
 
 ### GitLab Repository Shorthands
 
@@ -337,9 +352,13 @@ provided [here](sample-project).
 It includes this plugin through its maven repository.
 
 In addition, thic plugin is also used in the following production projects:
- * [VC KMM Library](https://github.com/a-sit-plus/kmm-vc-library) adds this repo as submodule and includes the plugin as part of a compoite build to add a more specialised custom plugin on top
- * [Android Attestation Library](https://github.com/a-sit-plus/android-attestation) uses the prebuilt plugin from the maven repo
- * [Server-Side Mobile Client Attestation Library](https://github.com/a-sit-plus/attestation-service) uses the prebuilt plugin from the maven repo
+
+* [VC KMM Library](https://github.com/a-sit-plus/kmm-vc-library) adds this repo as submodule and includes the plugin as
+  part of a compoite build to add a more specialised custom plugin on top
+* [Android Attestation Library](https://github.com/a-sit-plus/android-attestation) uses the prebuilt plugin from the
+  maven repo
+* [Server-Side Mobile Client Attestation Library](https://github.com/a-sit-plus/attestation-service) uses the prebuilt
+  plugin from the maven repo
 
 ## Additional Notes
 
