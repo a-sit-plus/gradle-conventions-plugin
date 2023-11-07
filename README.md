@@ -1,6 +1,6 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-[![Version](https://img.shields.io/badge/stable_version-1.9.20+20231106-blue.svg?style=flat)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/stable_version-1.9.20+20231107-blue.svg?style=flat)](CHANGELOG.md)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
 [![Kotlin](https://img.shields.io/badge/kotlin-1.9.20-blue.svg?logo=kotlin)](http://kotlinlang.org)
 

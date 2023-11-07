@@ -1,6 +1,10 @@
 # 1.9.20 (Kotlin 1.9.20)
 * Kotlin 1.9.20
 
+## 20231107
+* Ktor 2.3.6
+
+
 ## 20231106
 * Initial Kotlin 1.9.20 build
 * Requires explicit declaration of targets as per the [default hierarchy template](https://kotlinlang.org/docs/multiplatform-hierarchy.html?utm_campaign=hierarchy-template#default-hierarchy-template)
