@@ -1,6 +1,9 @@
 # 1.9.20 (Kotlin 1.9.20)
 * Kotlin 1.9.20
 
+## 20231114
+* Add KmmResult shorthand (version 1.5.4)
+
 ## 20231107
 * Ktor 2.3.6
 

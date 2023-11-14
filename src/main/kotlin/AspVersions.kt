@@ -40,6 +40,9 @@ object AspVersions {
     @JvmStatic
     val nexus = versionOf("nexus")
 
+    @JvmStatic
+    val kmmresult = versionOf("kmmresult")
+
     object Jvm {
         @JvmStatic
         val defaultTarget = versionOf("jvmTarget")

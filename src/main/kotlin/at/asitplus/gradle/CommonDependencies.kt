@@ -52,5 +52,9 @@ internal inline fun KotlinDependencyHandler.addKotestJvmRunner() {
     "org.jetbrains.kotlinx:kotlinx-datetime${target.toSuffix()}:${AspVersions.datetime}"
 
 @JvmOverloads
+ fun kmmresult(target: String? = null) =
+    "at.asitplus:kmmresult${target.toSuffix()}:${AspVersions.kmmresult}"
+
+@JvmOverloads
  fun bouncycastle(module: String, classifier: String = "jdk18on") =
     "org.bouncycastle:$module-$classifier:${AspVersions.Jvm.bouncycastle}"
