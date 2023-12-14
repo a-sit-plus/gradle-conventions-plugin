@@ -20,6 +20,7 @@ internal inline fun KotlinDependencyHandler.addKotest(target: String? = null) {
     implementation(kotest("property", target))
     implementation(kotest("framework-engine", target))
     implementation(kotest("framework-datatest", target))
+    implementation(kotlin("reflect"))
 }
 
 @JvmOverloads
