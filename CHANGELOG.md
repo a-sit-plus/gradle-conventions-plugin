@@ -1,3 +1,15 @@
+# 1.9.22 (Kotlin 1.9.22)
+* Kotlin 1.9.22
+
+## 20240115
+* Dependency Updates:
+  * KSP 1.9.22-1.0.16
+  * Ktor 2.3.7
+  * kotlinx.datetime 0.5.0
+  * Napier 2.7.1
+  * Bouncy Castle 1.77
+  * kotlinx.serialization (fork with COSE support) 1.6.3-SNAPSHOT
+
 # 1.9.20 (Kotlin 1.9.20)
 * Kotlin 1.9.20
 
