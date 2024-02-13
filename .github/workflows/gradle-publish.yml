@@ -46,6 +46,6 @@ jobs:
         source_file: 'repo'
         destination_repo: 'a-sit-plus/gradle-conventions-plugin'
         destination_branch: 'mvn'
-        user_email: 'bernd.pruenster@a-sit.at'
-        user_name: 'JesusMcCloud'
+        user_email: 'plus@a-sit.at'
+        user_name: 'asitplus'
         commit_message: 'Maven Release'

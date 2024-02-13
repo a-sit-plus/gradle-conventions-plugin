@@ -1,6 +1,11 @@
 # 1.9.22 (Kotlin 1.9.22)
 * Kotlin 1.9.22
 
+## 20240213
+* Dependency Updated
+  * KSP 1.9.22-1.0.17
+  * Ktor 2.3.8
+
 ## 20240115
 * Dependency Updates:
   * KSP 1.9.22-1.0.16
