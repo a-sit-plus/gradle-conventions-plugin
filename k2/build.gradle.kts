@@ -6,28 +6,27 @@ plugins {
     idea
     `maven-publish`
 }
+
 private val versions = Properties().apply {
-    kotlin.runCatching { FileInputStream(rootProject.file("src/main/resources/versions.properties")).use { load(it) } }
+    kotlin.runCatching {
+        FileInputStream(rootProject.file("legacy/src/main/resources/versions.properties")).use { load(it) }
+        FileInputStream(project.file("src/main/resources/k2versions.properties")).use { load(it) }
+    }
 }
 
-val buildDate = "20240213"
-group = "at.asitplus.gradle"
-val kotlinVersion = versions["kotlin"] as String
-version = "$kotlinVersion+$buildDate"
+val groupId: String by extra
+val buildDate: String by extra
 
-val dokka = versions["dokka"]
-val nexus = versions["nexus"]
-val kotest = versions["kotest"]
-val ktor = versions["ktor"]
+val kotlinVersion = versions["kotlin"] as String
 val ksp = "$kotlinVersion-${versions["ksp"]}"
 
+version = "$kotlinVersion+$buildDate"
+group = groupId
+
+
 dependencies {
+    api(project(":legacy"))
     api("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
-    api("org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion")
-    api("io.ktor.plugin:plugin:$ktor")
-    api("io.kotest:kotest-framework-multiplatform-plugin-gradle:$kotest")
-    api("io.github.gradle-nexus:publish-plugin:$nexus")
-    api("org.jetbrains.dokka:dokka-gradle-plugin:$dokka")
     api("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:$ksp")
 }
 
@@ -39,7 +38,7 @@ repositories {
 
 gradlePlugin {
     plugins.register("asp-conventions") {
-        id = "at.asitplus.gradle.conventions"
+        id = "$groupId.conventions"
         implementationClass = "at.asitplus.gradle.AspConventions"
     }
 }
@@ -47,7 +46,7 @@ gradlePlugin {
 publishing {
     repositories {
         maven {
-            url = uri(layout.projectDirectory.dir("repo"))
+            url = uri(rootProject.layout.projectDirectory.dir("repo"))
             name = "GitHub"
         }
     }

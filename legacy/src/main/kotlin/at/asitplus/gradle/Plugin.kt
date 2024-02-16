@@ -35,7 +35,22 @@ private inline fun Project.hasMrJar() = plugins.hasPlugin("me.champeau.mrjar")
 
 inline val Project.jvmTarget: String get() = runCatching { extraProperties["jdk.version"] as String }.getOrElse { AspVersions.Jvm.defaultTarget }
 
-class AspConventions : Plugin<Project> {
+open class AspLegacyConventions : Plugin<Project> {
+
+    protected open fun KotlinMultiplatformExtension.setupKotest() {
+        sourceSets {
+            val commonTest by getting {
+                dependencies {
+                    addKotest()
+                }
+            }
+            val jvmTest by getting {
+                dependencies {
+                    addKotestJvmRunner()
+                }
+            }
+        }
+    }
     override fun apply(target: Project) {
 
         println("\n ASP Conventions is using the following dependency versions:")
@@ -161,20 +176,7 @@ class AspConventions : Plugin<Project> {
                 kmp.experimentalOptIns()
 
                 @Suppress("UNUSED_VARIABLE")
-                kmp.apply {
-                    sourceSets {
-                        commonTest {
-                            dependencies {
-                                addKotest()
-                            }
-                        }
-                        jvmTest {
-                            dependencies {
-                                addKotestJvmRunner()
-                            }
-                        }
-                    }
-                }
+                kmp.setupKotest()
                 println() //to make it look less crammed
             }
         }

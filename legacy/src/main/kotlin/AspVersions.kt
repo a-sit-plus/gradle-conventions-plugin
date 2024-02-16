@@ -3,7 +3,7 @@ import java.util.*
 
 object AspVersions {
     @JvmStatic
-    internal val versions by lazy {
+     val versions by lazy {
         javaClass.classLoader!!.getResourceAsStream("versions.properties").use { Properties().apply { load(it) } }
     }
 

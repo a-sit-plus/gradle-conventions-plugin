@@ -8,7 +8,7 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
 
 fun String?.toSuffix() = this?.let { "-$it" } ?: ""
 
-internal inline fun KotlinDependencyHandler.addKotest(target: String? = null) {
+inline fun KotlinDependencyHandler.addKotest(target: String? = null) {
     val targetInfo = target?.let { " ($it)" } ?: ""
     println("  Adding Kotest libraries:")
     println("   * Assertions$targetInfo")
@@ -27,7 +27,7 @@ internal inline fun KotlinDependencyHandler.addKotest(target: String? = null) {
  fun kotest(module: String, target: String? = null) =
     "io.kotest:kotest-$module${target.toSuffix()}:${AspVersions.kotest}"
 
-internal inline fun KotlinDependencyHandler.addKotestJvmRunner() {
+inline fun KotlinDependencyHandler.addKotestJvmRunner() {
     println("  Adding Kotest JUnit runner")
     implementation(kotest("runner-junit5", "jvm"))
 }
