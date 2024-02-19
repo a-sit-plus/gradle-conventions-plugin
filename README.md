@@ -43,23 +43,33 @@ maven repository hosted in this GitHub repo. Then apply the plugin in your Gradl
 
 ### Adding the plugin as part of a composite build
 
-Add this repository as a git submodule to your project, then add the following to `settings.gradle`:
+Add this repository as a git submodule to your project, then add the following to `settings.gradle.kts`:
+
+<details open><summary>settings.gradle.kts</summary>
 
 ```kotlin
+//Set this property if you want to stick to Kotlin 1.9.10
+System.setProperty("at.asitplus.gradle", "legacy")
 pluginManagement {
-    includeBuild("gradle-conventions-plugin")
+    includeBuild("path/to/gradle-conventions-plugin")
+    repositories {
+        maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
+        google()
+        gradlePluginPortal()
+        mavenCentral()
+    }
 }
 ```
+
+</details>
 
 The composite build approach provides more flexibility and makes sense when contributing to or this plugin.
 Including plugins through composite builds works even in settings here the Kotlin Gradle plugin would otherwise fail to
 handle
 composite builds correctly (such as, when depending on a multiplatform library in an Android project).
-If, for example, you are developing a large piece of software, consisting of many individual Gradle projects, that
-justifies the creation of additional conventions based on this plugin,
-simply add it as a composite build to the new conventions plugin, and you are good to go!
-In most cases, however, you want to depend on a specific version of this plugin that maps to the Kotlin version you want
-to use.
+Note that applying the Kotlin 1.9.10 version requires setting a system property to prevent name shadowing as shown in
+the snippet above. 
+The Plugin version targeting Kotlin 1.9.20+ does not require settings the system property.
 
 ### Adding the plugin's maven repository
 
@@ -83,14 +93,17 @@ Note that is is important to (at least) add `gradlePluginPortal()`. Otherwise, *
 
 ## Applying the plugin
 
-Before being able to add this plugin to your project's modules, add the following to your Gradle root project as show
+Before being able to add this plugin to your project's modules, add it to your Gradle root project as shown
 below.
+
+<details open><summary>build.gradle.kts</summary>
 
 ```kotlin
 plugins {
-    id("at.asitplus.gradle.conventions") version "1.9.22+20240219" //Kotlin 1.9.22 variant
+    id("at.asitplus.gradle.conventions") version "1.9.22+20240219" //Version can be omitted for composite build
 }
 ```
+</details>
 
 Versions of various Kotlin plugins will then be managed by this conventions plugin for each module the plugin is applied
 to.
@@ -105,38 +118,6 @@ Access to all declared versions inside a Gradle module is possible through
 the [AspVersions](src/main/kotlin/AspVersions.kt) object.
 <br>
 **Please refer to the [changelog](CHANGELOG.md) for detailed version information on each build of this plugin.**
-
-### Including the Plugin in a composite build
-The plugin can be used in the same was as described before.
-Applying the Kotlin 1.9.10 version, when including this plugin as part of a composite build, however, requires setting a system property to prevent name shadowing:
-
-<details><summary>settings.gradle.kts</summary>
-
-```kotlin
-//We want to stick to Kotlin 1.9.20 plugin
-System.setProperty("at.asitplus.gradle", "legacy")
-pluginManagement {
-    includeBuild("path/to/gradle-conventions-plugin")
-    repositories {
-        maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
-        google()
-        gradlePluginPortal()
-        mavenCentral()
-    }
-}
-```
-</details>
-
-<details><summary>build.gradle.kts</summary>
-
-```kotlin
-plugins {
-    id("at.asitplus.gradle.conventions") //Omit version
-}
-```
-</details>
-
-The Plugin version targeting Kotlin 1.9.20+ does not require settings the system property
 
 ### Multiplatform
 
@@ -188,8 +169,8 @@ Only the following Gradle plugins are directly supported with implicit versions:
 
 If, for example, you rely on other plugins, which must be in sync with the Kotlin version used by your project, you need
 to identify the plugin's artefact coordinates.
-You can usually obtain a plugin's coordinates through the Gradle plugin portal by search for it, and then checking the "
-legacy" way of adding plugins.
+You can usually obtain a plugin's coordinates through the Gradle plugin portal by search for it, and then checking the
+"legacy" way of adding plugins.
 
 If you rely on `kotlin("plugin.spring")` and `kotlin("plugin.jpa")` as typical for a Spring + hibernate webservice, add
 the following to your **root project's** `build.gradle.kts`:
@@ -378,6 +359,20 @@ publishing {
 
 Again, the name of the repository defaults to _gitlab_ or _extgit_, respectively and can be overridden by optionally
 specifying the `nameOverride` parameter.
+
+## Extending this Plugin
+
+It is perfectly possible to create a Gradle plugin depending on this one, thus extending its functionality.
+If, for example, you are developing a large piece of software, consisting of many individual Gradle projects, such that it
+justifies the creation of additional conventions based on this plugin,
+simply add it as a composite build to the new conventions plugin, and you are good to go!
+In most cases, however, you want to depend on a specific version of this plugin that maps to the Kotlin version you want
+to use.
+
+
+**Note:** The considerations about including plugins as part of a composite build apply transitively, i.e. add
+`System.setProperty("at.asitplus.gradle", "legacy")` to the settings.gradle.kts file of the custom plugin that extends
+from this plugin, if you are targeting Kotlin 1.9.0.
 
 ## Showcase Projects
 
