@@ -114,8 +114,16 @@ Applying the Kotlin 1.9.10 version, when including this plugin as part of a comp
 
 ```kotlin
 //We want to stick to Kotlin 1.9.20 plugin
-System.setProperty("at.asitplus.gradle","legacy")
-includeBuild("path/to/gradle-conventions-plugin")
+System.setProperty("at.asitplus.gradle", "legacy")
+pluginManagement {
+    includeBuild("conventions-vclib")
+    repositories {
+        maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
+        google()
+        gradlePluginPortal()
+        mavenCentral()
+    }
+}
 ```
 </details>
 
