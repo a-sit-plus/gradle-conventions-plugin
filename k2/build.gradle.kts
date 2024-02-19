@@ -20,7 +20,7 @@ val buildDate: String by extra
 val kotlinVersion = versions["kotlin"] as String
 val ksp = "$kotlinVersion-${versions["ksp"]}"
 
-version = "$kotlinVersion+$buildDate"
+version = "$buildDate"
 group = groupId
 
 
@@ -38,7 +38,7 @@ repositories {
 
 gradlePlugin {
     plugins.register("asp-conventions") {
-        id = "$groupId.conventions"
+        id = "$groupId.conventions.$kotlinVersion"
         implementationClass = "at.asitplus.gradle.AspConventions"
     }
 }

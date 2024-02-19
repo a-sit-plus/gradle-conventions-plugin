@@ -24,7 +24,7 @@ val nexus = versions["nexus"]
 val kotest = versions["kotest"]
 val ktor = versions["ktor"]
 
-version = "$kotlinVersion+$buildDate"
+version = "$buildDate"
 group = groupId
 
 dependencies {
@@ -45,7 +45,7 @@ repositories {
 
 gradlePlugin {
     plugins.register("asp-conventions-legacy") {
-        id = "$groupId.conventions-legacy"
+        id = "$groupId.conventions.$kotlinVersion"
         implementationClass = "at.asitplus.gradle.AspLegacyConventions"
     }
 }
