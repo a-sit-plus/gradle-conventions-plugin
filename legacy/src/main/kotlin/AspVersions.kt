@@ -11,10 +11,10 @@ object AspVersions {
     private fun versionOf(dependency: String) = versions[dependency] as String
 
     @JvmStatic
-    val kotlin = versionOf("kotlin")
+    val kotlin get() = versionOf("kotlin")
 
     @JvmStatic
-    val ksp = versionOf("kotlin") + "-" + versionOf("ksp")
+    val ksp get() = versionOf("kotlin") + "-" + versionOf("ksp")
 
     @JvmStatic
     val serialization = versionOf("serialization")
@@ -45,12 +45,12 @@ object AspVersions {
 
     object Jvm {
         @JvmStatic
-        val defaultTarget = versionOf("jvmTarget")
+        val defaultTarget get() = versionOf("jvmTarget")
 
         @JvmStatic
         val bouncycastle = versionOf("bouncycastle")
     }
 
     @JvmStatic
-    val jvm = Jvm //groovy workaround
+    val jvm get() = Jvm //groovy workaround
 }

@@ -1,3 +1,4 @@
+import org.gradle.configurationcache.problems.PropertyTrace
 import java.io.FileInputStream
 import java.util.*
 
@@ -20,7 +21,7 @@ val buildDate: String by extra
 val kotlinVersion = versions["kotlin"] as String
 val ksp = "$kotlinVersion-${versions["ksp"]}"
 
-version = "$buildDate"
+version = "$kotlinVersion+$buildDate"
 group = groupId
 
 
@@ -36,9 +37,12 @@ repositories {
     gradlePluginPortal()
 }
 
-gradlePlugin {
+if(System.getProperty("at.asitplus.gradle") == "legacy")
+    println("  NOT registering A-SIT Plus K2 Conventions Plugin")
+else gradlePlugin {
+    println()
     plugins.register("asp-conventions") {
-        id = "$groupId.conventions.$kotlinVersion"
+        id = "$groupId.conventions"
         implementationClass = "at.asitplus.gradle.AspConventions"
     }
 }

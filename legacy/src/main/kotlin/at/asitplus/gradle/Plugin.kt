@@ -51,9 +51,15 @@ open class AspLegacyConventions : Plugin<Project> {
             }
         }
     }
+
     override fun apply(target: Project) {
 
-        println("\n ASP Conventions is using the following dependency versions:")
+        println(
+            "\n ASP Conventions ${H}${AspVersions.kotlin}$R is using the following dependency versions for project ${
+                if (target == target.rootProject) target.name
+                else "${target.rootProject.name}:${target.name}"
+            }:"
+        )
         runCatching {
             AspVersions.versions.entries.filterNot { (k, _) -> k == "jvmTarget" }.sortedBy { (k, _) -> k.toString() }
                 .forEach { (t, u) -> println("    ${String.format("%-14s", "$t:")} $u") }
