@@ -1,3 +1,11 @@
+# Dual-Version (Kotlin 1.9.10 and Kotlin 1.9.22)
+* Modularise into two plugins, such that Kotlin 1.9.10 and 1.9.22 are supported in parallel.
+  This is required, since working with source differs syntactically between Kotlin < 1.9.20
+  and Kotlin 1.9.20 upwards.
+
+## 20240216
+* First dual-version release
+
 # 1.9.22 (Kotlin 1.9.22)
 * Kotlin 1.9.22
 

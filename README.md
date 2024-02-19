@@ -1,8 +1,8 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-[![Version](https://img.shields.io/badge/stable_version-1.9.22+20240213-blue.svg?style=flat)](CHANGELOG.md)
-[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0)
-[![Kotlin](https://img.shields.io/badge/kotlin-1.9.22-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Version](https://img.shields.io/badge/Kotlin_1.9.10-+20240216-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Kotlin_1.9.22-+20240216-gray.svg?style=flat&logo=kotlin&labelColor=7463ce&logoColor=white)](CHANGELOG.md)
+[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat&)](http://www.apache.org/licenses/LICENSE-2.0)
 
 **Note: This plugin is still in its early stages and may not work well for edge cases!
 Tested against Gradle 7.6 and 8.1.1. Requires Java 11+!**
@@ -88,7 +88,7 @@ below.
 
 ```kotlin
 plugins {
-    id("at.asitplus.gradle.conventions") version "1.9.20+20231102" //version can be omitted for composite builds
+    id("at.asitplus.gradle.conventions") version "1.9.22+20240219" //Kotlin 1.9.22 variant
 }
 ```
 
@@ -105,6 +105,30 @@ Access to all declared versions inside a Gradle module is possible through
 the [AspVersions](src/main/kotlin/AspVersions.kt) object.
 <br>
 **Please refer to the [changelog](CHANGELOG.md) for detailed version information on each build of this plugin.**
+
+### Including the Plugin in a composite build
+The plugin can be used in the same was as described before.
+Applying the Kotlin 1.9.10 version, when including this plugin as part of a composite build, however, requires setting a system property to prevent name shadowing:
+
+<details><summary>settings.gradle.kts</summary>
+
+```kotlin
+//We want to stick to Kotlin 1.9.20 plugin
+System.setProperty("at.asitplus.gradle","legacy")
+includeBuild("path/to/gradle-conventions-plugin")
+```
+</details>
+
+<details><summary>build.gradle.kts</summary>
+
+```kotlin
+plugins {
+    id("at.asitplus.gradle.conventions") //Omit version
+}
+```
+</details>
+
+The Plugin version targeting Kotlin 1.9.20+ does not require settings the system property
 
 ### Multiplatform
 
@@ -190,7 +214,7 @@ the [multi-release jar plugin ("me.champeau.mrjar")](https://melix.github.io/mrj
 applied as well.
 Note that no version management is in place for the multi-release jar plugin, as we rarely need it internally.
 
-In addition, it is possible to override the JVM target version, using the property `jvm.target` (either
+In addition, it is possible to override the JVM target version, using the property `jdk.version` (either
 in `gradle.properties` or `local.properties`).
 The JVM target in use is accessible inside gradle build scripts as `jvmTarget`
 
@@ -276,6 +300,7 @@ illustrated by the example below to export an XCode framework:
 plugins {
     kotlin("multiplatform") //version managed by conventions plugin
     kotlin("plugin.serialization") //version managed by conventions plugin
+    id("at.asitplus.gradle.conventions")
 }
 
 kotlin {

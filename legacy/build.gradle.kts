@@ -6,20 +6,26 @@ plugins {
     idea
     `maven-publish`
 }
-private val versions = Properties().apply {
-    kotlin.runCatching { FileInputStream(rootProject.file("src/main/resources/versions.properties")).use { load(it) } }
-}
 
-val buildDate = "20240213"
-group = "at.asitplus.gradle"
+
+private val versions = Properties().apply {
+    kotlin.runCatching {
+        FileInputStream(project.file("src/main/resources/versions.properties")).use { load(it) }
+    }
+}
+val groupId: String by extra
+val buildDate: String by extra
+
 val kotlinVersion = versions["kotlin"] as String
-version = "$kotlinVersion+$buildDate"
+val ksp = "$kotlinVersion-${versions["ksp"]}"
 
 val dokka = versions["dokka"]
 val nexus = versions["nexus"]
 val kotest = versions["kotest"]
 val ktor = versions["ktor"]
-val ksp = "$kotlinVersion-${versions["ksp"]}"
+
+version = "$kotlinVersion+$buildDate"
+group = groupId
 
 dependencies {
     api("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
@@ -38,16 +44,16 @@ repositories {
 }
 
 gradlePlugin {
-    plugins.register("asp-conventions") {
-        id = "at.asitplus.gradle.conventions"
-        implementationClass = "at.asitplus.gradle.AspConventions"
+    plugins.register("asp-conventions-legacy") {
+        id = "$groupId.conventions"
+        implementationClass = "at.asitplus.gradle.AspLegacyConventions"
     }
 }
 
 publishing {
     repositories {
         maven {
-            url = uri(layout.projectDirectory.dir("repo"))
+            url = uri(rootProject.layout.projectDirectory.dir("repo"))
             name = "GitHub"
         }
     }
