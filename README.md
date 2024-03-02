@@ -30,6 +30,10 @@ This plugin targets Kotlin JVM and multiplatform projects and provides the follo
 * Autoconfiguration of test output format
 * Force dependency from publish tasks to sign tasks
 * Shorthand for Dokka setup
+* Shorthand for accessing environment variables (System.properties):
+  * `val my_env_prop by env` creates a final `String?` variable, set to the value of `System.getProperty("my_env_prop")`
+  * `env("my.prop")` is a shorthand for `System.getProperty("my.prop")`
+  * `val my_env_overridable_prop by envExtra` is a shorthand for first trying `System.getProperty("my_env_overridable_prop")`, then trying to read it read from `extra`. Returns `null` if absent.
 
 This plugin is hosted on a public GitHub repo, because a) som of our publicly published projects depend on it and b)
 sharing is caring!

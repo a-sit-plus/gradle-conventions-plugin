@@ -19,21 +19,49 @@ import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinBasePlugin
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 import org.jetbrains.kotlin.gradle.plugin.extraProperties
+import kotlin.reflect.KProperty
 
 private const val H = "\u001b[7m\u001b[1m"
 private const val R = "\u001b[0m"
 
 private inline fun Project.supportLocalProperties() {
-    println("  Adding support for storing extra project properties in local.properties")
+    println("  Adding support for storing extra project properties in local.properties and System Environment")
     java.util.Properties().apply {
         kotlin.runCatching { load(java.io.FileInputStream(rootProject.file("local.properties"))) }
         forEach { (k, v) -> extra.set(k as String, v) }
     }
 }
 
+object EnvDelegate {
+    operator fun getValue(thisRef: Any?, property: KProperty<*>): String? =
+        System.getProperty(property.name)
+}
+
+class EnvExtraDelegate(private val project: Project) {
+    operator fun getValue(thisRef: Any?, property: KProperty<*>): String? =
+        System.getProperty(property.name)
+            ?.also { println("  > Property ${property.name} set to $it from environment") }
+            ?: runCatching {
+                (project.extraProperties[property.name] as String).also {
+                    println("  > Property ${property.name} set to $it from extra properties")
+                }
+            }.getOrElse {
+                println()
+                println("w: Property ${property.name} could could be read from neither environment nor extra")
+                println()
+                null
+            }
+
+}
+val Project.env: EnvDelegate get() = EnvDelegate
+
+fun Project.env(property: String): String? = System.getProperty(property)
+
+val Project.envExtra: EnvExtraDelegate get() = EnvExtraDelegate(this)
+
 private inline fun Project.hasMrJar() = plugins.hasPlugin("me.champeau.mrjar")
 
-inline val Project.jvmTarget: String get() = runCatching { extraProperties["jdk.version"] as String }.getOrElse { AspVersions.Jvm.defaultTarget }
+val Project.jvmTarget: String get() = runCatching { extraProperties["jdk.version"] as String }.getOrElse { AspVersions.Jvm.defaultTarget }
 
 open class AspLegacyConventions : Plugin<Project> {
 

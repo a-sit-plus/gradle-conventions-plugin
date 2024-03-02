@@ -3,6 +3,10 @@
   This is required, since working with source differs syntactically between Kotlin < 1.9.20
   and Kotlin 1.9.20 upwards.
 
+## 20240301
+* Introduce `env` shorthands to access system properties (environment variables)
+* rename file `Plugin.kt` -> `K2Plugin.kt` in k2 plugin sources
+
 ## 20240216
 * First dual-version release
 
