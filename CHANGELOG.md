@@ -3,7 +3,7 @@
   This is required, since working with source differs syntactically between Kotlin < 1.9.20
   and Kotlin 1.9.20 upwards.
 
-## 20240319
+## 20240316
 * Add workaround for KT-65315
 * Update dependencies:
   * Kotlin 1.9.23 (K2 only)
