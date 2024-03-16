@@ -21,8 +21,8 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 import org.jetbrains.kotlin.gradle.plugin.extraProperties
 import kotlin.reflect.KProperty
 
-private const val H = "\u001b[7m\u001b[1m"
-private const val R = "\u001b[0m"
+internal const val H = "\u001b[7m\u001b[1m"
+internal const val R = "\u001b[0m"
 
 private inline fun Project.supportLocalProperties() {
     println("  Adding support for storing extra project properties in local.properties and System Environment")
@@ -178,6 +178,10 @@ open class AspLegacyConventions : Plugin<Project> {
                 if (kmpTargets.isEmpty())
                     throw StopExecutionException("No buildable targets found! Declare at least a single one explicitly as per https://kotlinlang.org/docs/multiplatform-hierarchy.html#default-hierarchy-template")
 
+
+                val kmp = extensions.getByType<KotlinMultiplatformExtension>()
+                kmp.sourceSets.shiftResources()
+
                 println("\n  This project will be built for the following targets:")
                 kmpTargets.forEach { println("   * ${it.name}") }
 
@@ -205,7 +209,6 @@ open class AspLegacyConventions : Plugin<Project> {
                     }
                 }
 
-                val kmp = extensions.getByType<KotlinMultiplatformExtension>()
 
                 kmp.experimentalOptIns()
 
@@ -223,7 +226,7 @@ open class AspLegacyConventions : Plugin<Project> {
             if (target != target.rootProject) {
                 if (!target.hasMrJar()) //MRJAR
                     kotlin.apply {
-                        println("  ${H}Setting jvmToolchain to JDK ${target.jvmTarget}$R")
+                        println("  ${H}Setting jvmToolchain to JDK ${target.jvmTarget} for ${target.name}$R")
                         jvmToolchain {
                             languageVersion.set(JavaLanguageVersion.of(target.jvmTarget))
                         }

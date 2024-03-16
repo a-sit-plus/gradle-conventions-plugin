@@ -11,7 +11,7 @@ import org.jetbrains.dokka.gradle.DokkaTaskPartial
 
 
 fun Project.setupDokka(
-    outputDir: String = "$buildDir/dokka",
+    outputDir: String = layout.buildDirectory.dir("dokka").get().asFile.canonicalPath,
     baseUrl: String,
     multiModuleDoc: Boolean = false,
     remoteLineSuffix: String = "#L"
@@ -40,7 +40,7 @@ fun Project.setupDokka(
 internal fun Project.setupSignDependency() {
     val signTasks = tasks.filter { it.name.startsWith("sign") }
     if (signTasks.isNotEmpty()) {
-        println("  Making sign tasks depend on publish tasks:")
+        println("\n  Making sign tasks depend on publish tasks:")
         tasks.filter { it.name.startsWith("publish") }.forEach {
             println("   * ${it.name} now depends on ${signTasks.joinToString { it.name }}")
             it.dependsOn(*signTasks.toTypedArray())
