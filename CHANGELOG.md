@@ -3,6 +3,15 @@
   This is required, since working with source differs syntactically between Kotlin < 1.9.20
   and Kotlin 1.9.20 upwards.
 
+## 20240319
+* Add workaround for KT-65315
+* Update dependencies:
+  * Kotlin 1.9.23 (K2 only)
+  * Kotest 5.8.1
+  * Ktor 2.3.9
+  * Dokka 1.9.20
+  * Coroutines 1.8.0
+
 ## 20240301
 * Introduce `env` shorthands to access system properties (environment variables)
 * rename file `Plugin.kt` -> `K2Plugin.kt` in k2 plugin sources
