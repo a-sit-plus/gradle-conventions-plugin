@@ -2,13 +2,16 @@
 package at.asitplus.gradle
 
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.kpm.external.ExternalVariantApi
+import org.jetbrains.kotlin.gradle.kpm.external.project
 
+@OptIn(ExternalVariantApi::class)
 internal inline fun KotlinMultiplatformExtension.experimentalOptIns() {
-    println("  Adding opt ins:")
-    println("   * Serialization")
-    println("   * Coroutines")
-    println("   * kotlinx.datetime")
-    println("   * RequiresOptIn\n")
+    Logger.lifecycle("  Adding opt ins")
+    Logger.info("   * Serialization")
+    Logger.info("   * Coroutines")
+    Logger.info("   * kotlinx.datetime")
+    Logger.info("   * RequiresOptIn\n")
 
     targets.all {
         compilations.all {

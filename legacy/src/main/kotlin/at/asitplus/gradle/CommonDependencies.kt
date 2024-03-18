@@ -10,10 +10,10 @@ fun String?.toSuffix() = this?.let { "-$it" } ?: ""
 
 inline fun KotlinDependencyHandler.addKotest(target: String? = null) {
     val targetInfo = target?.let { " ($it)" } ?: ""
-    println("  Adding Kotest libraries:")
-    println("   * Assertions$targetInfo")
-    println("   * Property-based testing$targetInfo")
-    println("   * Datatest$targetInfo")
+    Logger.lifecycle("  Adding Kotest libraries")
+    Logger.info("   * Assertions$targetInfo")
+    Logger.info("   * Property-based testing$targetInfo")
+    Logger.info("   * Datatest$targetInfo")
     implementation(kotlin("reflect"))
     implementation(kotest("assertions-core", target))
     implementation(kotest("common", target))
@@ -28,7 +28,7 @@ inline fun KotlinDependencyHandler.addKotest(target: String? = null) {
     "io.kotest:kotest-$module${target.toSuffix()}:${AspVersions.kotest}"
 
 inline fun KotlinDependencyHandler.addKotestJvmRunner() {
-    println("  Adding Kotest JUnit runner")
+    Logger.info("  Adding Kotest JUnit runner")
     implementation(kotest("runner-junit5", "jvm"))
 }
 

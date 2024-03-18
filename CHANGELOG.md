@@ -3,6 +3,9 @@
   This is required, since working with source differs syntactically between Kotlin < 1.9.20
   and Kotlin 1.9.20 upwards.
 
+## 20240318
+* Make it possible to disable workaround for KT-65315
+
 ## 20240316
 * Add workaround for KT-65315
 * Update dependencies:

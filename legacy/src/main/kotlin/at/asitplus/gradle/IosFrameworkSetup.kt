@@ -28,7 +28,7 @@ fun Project.exportIosFramework(
 
     extensions.getByType<KotlinMultiplatformExtension>().apply {
         XCFrameworkConfig(project, name).also { xcf ->
-            println("  \u001B[1mXCFrameworks will be exported for the following iOS targets: ${iosTargets.joinToString { it.name }}\u001B[0m")
+            Logger.lifecycle("  \u001B[1mXCFrameworks will be exported for the following iOS targets: ${iosTargets.joinToString { it.name }}\u001B[0m")
             iosTargets.forEach {
                 it.binaries.framework {
                     baseName = name

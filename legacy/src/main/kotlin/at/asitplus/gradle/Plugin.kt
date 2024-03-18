@@ -24,8 +24,10 @@ import kotlin.reflect.KProperty
 internal const val H = "\u001b[7m\u001b[1m"
 internal const val R = "\u001b[0m"
 
+lateinit var Logger:org.gradle.api.logging.Logger
+
 private inline fun Project.supportLocalProperties() {
-    println("  Adding support for storing extra project properties in local.properties and System Environment")
+    Logger.lifecycle("  Adding support for storing extra project properties in local.properties and System Environment")
     java.util.Properties().apply {
         kotlin.runCatching { load(java.io.FileInputStream(rootProject.file("local.properties"))) }
         forEach { (k, v) -> extra.set(k as String, v) }
@@ -40,15 +42,15 @@ object EnvDelegate {
 class EnvExtraDelegate(private val project: Project) {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): String? =
         System.getProperty(property.name)
-            ?.also { println("  > Property ${property.name} set to $it from environment") }
+            ?.also { Logger.lifecycle("  > Property ${property.name} set to $it from environment") }
             ?: runCatching {
                 (project.extraProperties[property.name] as String).also {
-                    println("  > Property ${property.name} set to $it from extra properties")
+                    Logger.lifecycle("  > Property ${property.name} set to $it from extra properties")
                 }
             }.getOrElse {
-                println()
-                println("w: Property ${property.name} could could be read from neither environment nor extra")
-                println()
+                Logger.lifecycle("")
+                Logger.warn("w: Property ${property.name} could could be read from neither environment nor extra")
+                Logger.lifecycle("")
                 null
             }
 
@@ -81,8 +83,8 @@ open class AspLegacyConventions : Plugin<Project> {
     }
 
     override fun apply(target: Project) {
-
-        println(
+        Logger = target.logger
+        Logger.lifecycle(
             "\n ASP Conventions ${H}${AspVersions.kotlin}$R is using the following dependency versions for project ${
                 if (target == target.rootProject) target.name
                 else "${target.rootProject.name}:${target.name}"
@@ -90,12 +92,12 @@ open class AspLegacyConventions : Plugin<Project> {
         )
         runCatching {
             AspVersions.versions.entries.filterNot { (k, _) -> k == "jvmTarget" }.sortedBy { (k, _) -> k.toString() }
-                .forEach { (t, u) -> println("    ${String.format("%-14s", "$t:")} $u") }
-            println()
+                .forEach { (t, u) -> Logger.lifecycle("    ${String.format("%-14s", "$t:")} $u") }
+            Logger.lifecycle("")
         }
 
 
-        println("  Adding Nexus Publish plugin ${AspVersions.nexus}")
+        Logger.lifecycle("  Adding Nexus Publish plugin ${AspVersions.nexus}")
         target.rootProject.plugins.apply("io.github.gradle-nexus.publish-plugin")
 
         target.supportLocalProperties()
@@ -107,27 +109,27 @@ open class AspLegacyConventions : Plugin<Project> {
             val mrJarModules = target.childProjects.filter { (_, p) -> p.hasMrJar() }
                 .map { (name, _) -> name }
             if (mrJarModules.isEmpty()) { //MRJAR
-                println("  ${H}Configuring IDEA to use Java ${target.jvmTarget}$R")
+                Logger.lifecycle("  ${H}Configuring IDEA to use Java ${target.jvmTarget}$R")
                 target.extensions.getByType<IdeaModel>().project {
                     jdkName = target.jvmTarget
                 }
-            } else println(
-                println("  MR Jar plugin detected in modules${
+            } else Logger.lifecycle(
+               "  MR Jar plugin detected in modules${
                     mrJarModules.joinToString(
                         prefix = "\n",
                         separator = "\n      * ",
                         postfix = "\n"
                     ) { it }
                 }   Not setting IDEA Java version.\n")
-            )
 
 
 
-            println("  Adding repositories")
-            println("    * serialization fork")
-            println("    * dokka dev")
-            println("    * maven central")
-            println("    * google")
+
+            Logger.lifecycle("  Adding maven repositories")
+            Logger.info("    * serialization fork")
+            Logger.info("    * dokka dev")
+            Logger.info("    * maven central")
+            Logger.info("    * google")
             target.allprojects {
                 repositories {
                     maven(uri("https://raw.githubusercontent.com/a-sit-plus/kotlinx.serialization/mvn/repo"))
@@ -139,17 +141,17 @@ open class AspLegacyConventions : Plugin<Project> {
 
             runCatching {
                 target.tasks.register<Delete>("clean") {
-                    println("  Adding clean task to root project")
+                    Logger.lifecycle("  Adding clean task to root project")
 
-                    doFirst { println("Cleaning all build files") }
+                    doFirst { Logger.lifecycle("> Cleaning all build files") }
 
-                    delete(target.rootProject.buildDir)
+                    delete(target.rootProject.layout.buildDirectory.get().asFile)
                     //delete(target.layout.projectDirectory.dir("repo"))
-                    doLast { println("Clean done") }
+                    doLast { Logger.lifecycle("> Clean done") }
                 }
             }
 
-            println("  Setting Nexus publishing URL to s01.oss.sonatype.org")
+            Logger.info("  Setting Nexus publishing URL to s01.oss.sonatype.org")
             target.extensions.getByType<NexusPublishExtension>().apply {
                 repositories {
                     sonatype {
@@ -163,13 +165,13 @@ open class AspLegacyConventions : Plugin<Project> {
         var isMultiplatform = false
         runCatching {
             target.plugins.withType<KotlinBasePlugin>().let {
-                println("  ${H}Using Kotlin version ${it.first().pluginVersion} for project ${target.name}$R")
+                Logger.lifecycle("  ${H}Using Kotlin version ${it.first().pluginVersion} for project ${target.name}$R")
             }
         }
 
         target.plugins.withType<KotlinMultiplatformPluginWrapper> {
             isMultiplatform = true
-            println("  ${H}Multiplatform project detected$R")
+            Logger.lifecycle("  ${H}Multiplatform project detected$R")
 
             target.afterEvaluate {
 
@@ -182,28 +184,28 @@ open class AspLegacyConventions : Plugin<Project> {
                 val kmp = extensions.getByType<KotlinMultiplatformExtension>()
                 kmp.sourceSets.shiftResources()
 
-                println("\n  This project will be built for the following targets:")
-                kmpTargets.forEach { println("   * ${it.name}") }
+                Logger.lifecycle("\n  This project will be built for the following targets:")
+                kmpTargets.forEach { Logger.lifecycle("   * ${it.name}") }
 
 
-                println("\n  Setting up Kotest multiplatform plugin ${AspVersions.kotest}")
+                Logger.info("\n  Setting up Kotest multiplatform plugin ${AspVersions.kotest}")
                 plugins.apply("io.kotest.multiplatform")
 
                 extensions.getByType<KotlinMultiplatformExtension>().jvm {
-                    println("  Setting jsr305=strict for JVM nullability annotations")
+                    Logger.info("  Setting jsr305=strict for JVM nullability annotations")
                     compilations.all {
                         kotlinOptions {
                             if (!hasMrJar()) { //MRJAR
-                                println("  ${H}Setting jvmTarget to ${target.jvmTarget} for $name$R")
+                                Logger.lifecycle("  ${H}Setting jvmTarget to ${target.jvmTarget} for $name$R")
                                 kotlinOptions.jvmTarget = target.jvmTarget
-                            } else println("  MR Jar plugin detected. Not setting jvmTarget")
+                            } else Logger.lifecycle("  MR Jar plugin detected. Not setting jvmTarget")
                             freeCompilerArgs = listOf(
                                 "-Xjsr305=strict"
                             )
                         }
                     }
 
-                    println("  Configuring Kotest JVM runner")
+                    Logger.info("  Configuring Kotest JVM runner")
                     testRuns["test"].executionTask.configure {
                         useJUnitPlatform()
                     }
@@ -214,7 +216,7 @@ open class AspLegacyConventions : Plugin<Project> {
 
                 @Suppress("UNUSED_VARIABLE")
                 kmp.setupKotest()
-                println() //to make it look less crammed
+                Logger.lifecycle("") //to make it look less crammed
             }
         }
 
@@ -226,15 +228,15 @@ open class AspLegacyConventions : Plugin<Project> {
             if (target != target.rootProject) {
                 if (!target.hasMrJar()) //MRJAR
                     kotlin.apply {
-                        println("  ${H}Setting jvmToolchain to JDK ${target.jvmTarget} for ${target.name}$R")
+                        Logger.lifecycle("  ${H}Setting jvmToolchain to JDK ${target.jvmTarget} for ${target.name}$R")
                         jvmToolchain {
                             languageVersion.set(JavaLanguageVersion.of(target.jvmTarget))
                         }
                     }
-                else println("  MR Jar plugin detected. Not setting jvmToolchain")
+                else Logger.lifecycle("  MR Jar plugin detected. Not setting jvmToolchain")
 
                 if (!isMultiplatform) /*TODO: actually check for JVM*/ {
-                    println("  Assuming JVM-only Kotlin project")
+                    Logger.lifecycle("  Assuming JVM-only Kotlin project")
                     target.afterEvaluate {
                         kotlin.apply {
                             sourceSets.getByName("test").dependencies {
@@ -245,11 +247,11 @@ open class AspLegacyConventions : Plugin<Project> {
                         }
                     }
                 }
-                println("  Adding maven publish plugin")
+                Logger.lifecycle("  Adding maven publish plugin\n")
                 target.plugins.apply("maven-publish")
 
                 target.afterEvaluate {
-                    println("  Configuring Test output format")
+                    Logger.info("  Configuring Test output format")
                     target.tasks.withType<Test> {
                         if (name != "testReleaseUnitTest") {
                             useJUnitPlatform()
@@ -271,9 +273,9 @@ open class AspLegacyConventions : Plugin<Project> {
                 }
             }
         }.getOrElse {
-            println("\n> No Kotlin plugin detected for ${if (target == target.rootProject) "root " else ""}project ${target.name}")
-            if (target != target.rootProject) println("   Make sure to load the kotlin jvm or multiplatform plugin before the ASP conventions plugin\n")
-            else println("  This is usually fine.")
+            Logger.warn("\n> No Kotlin plugin detected for ${if (target == target.rootProject) "root " else ""}project ${target.name}")
+            if (target != target.rootProject) Logger.warn("   Make sure to load the kotlin jvm or multiplatform plugin before the ASP conventions plugin\n")
+            else Logger.lifecycle("  This is usually fine.")
         }
     }
 }

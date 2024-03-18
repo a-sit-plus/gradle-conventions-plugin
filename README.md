@@ -211,6 +211,13 @@ In addition, it is possible to override the JVM target version, using the proper
 in `gradle.properties` or `local.properties`).
 The JVM target in use is accessible inside gradle build scripts as `jvmTarget`
 
+### KT-65315 Workaround 
+KT-65315 is nasty and effectively prevents usage of resources inside `commonMain` in KMP projects.
+By default, this plugin will move all resources from `commonMain` to the actual targets.
+
+**You do not want this in apps or services**, but only when authoring libraries, hence it can be disabled by
+adding `kt65315.workaround=true` to `gradle.properties`
+
 ### Dependency Shorthands
 
 The following shorthands are available to declare dependencies:

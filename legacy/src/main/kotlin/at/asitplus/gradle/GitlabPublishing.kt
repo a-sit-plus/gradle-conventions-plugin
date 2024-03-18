@@ -23,7 +23,8 @@ class GitlabPublishing(
             nameOverride
         )
 
-    infix fun withAccessToken(token: String) = handler.gitlabMavenRepo(token, group, extgit, nameOverride)
+    infix fun withAccessToken(token: String) =
+        handler.gitlabMavenRepo(token, group, extgit, nameOverride)
 
 }
 
@@ -42,10 +43,11 @@ private fun RepositoryHandler.gitlabMavenRepo(
 
     val instance = if (extgit) "extgit" else "gitlab"
     if (System.getenv("CI_JOB_TOKEN") != null || gitLabPrivateToken != null) {
-        println("  Adding $instance maven repo${nameOverride?.let { " with name $it" } ?: ""} to project")
+        Logger.lifecycle("  Adding $instance maven repo${nameOverride?.let { " with name $it" } ?: ""} to project")
         maven {
             name = nameOverride ?: instance
-            url = java.net.URI("https://$instance.iaik.tugraz.at/api/v4/groups/$gitLabGroupId/-/packages/maven")
+            url =
+                java.net.URI("https://$instance.iaik.tugraz.at/api/v4/groups/$gitLabGroupId/-/packages/maven")
             if (gitLabPrivateToken != null) {
                 credentials(HttpHeaderCredentials::class) {
                     name = "Private-Token"
@@ -62,8 +64,8 @@ private fun RepositoryHandler.gitlabMavenRepo(
             }
         }
     } else {
-        println("  Warning: neither CI_JOB_TOKEN nor gitlabPrivateToken configured. Not adding $instance maven repo to project!")
-        println("  If you want to locally fetch dependencies published to $instance be sure to add gitlabPrivateToken to either ~/.gradle/gradle.properties or \${project.rootDir}/local.properties!")
+        Logger.warn("  Warning: neither CI_JOB_TOKEN nor gitlabPrivateToken configured. Not adding $instance maven repo to project!")
+        Logger.warn("  If you want to locally fetch dependencies published to $instance be sure to add gitlabPrivateToken to either ~/.gradle/gradle.properties or \${project.rootDir}/local.properties!")
     }
 }
 
@@ -80,7 +82,7 @@ private fun PublishingExtension.gitLabPublishRepo(
 ) {
     val instance = if (extgit) "extgit" else "gitlab"
     if (System.getenv("CI_JOB_TOKEN") != null) {
-        println("  Adding publishing $instance maven repo${nameOverride?.let { " with name $it" } ?: ""} to project")
+        Logger.lifecycle("  Adding publishing $instance maven repo${nameOverride?.let { " with name $it" } ?: ""} to project")
         repositories.maven {
             name = nameOverride ?: instance
             url =
@@ -93,5 +95,5 @@ private fun PublishingExtension.gitLabPublishRepo(
                 create<HttpHeaderAuthentication>("header")
             }
         }
-    } else println("  CI_JOB_TOKEN not found. This is fine for local builds")
+    } else Logger.warn("  CI_JOB_TOKEN not found. This is fine for local builds")
 }

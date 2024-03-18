@@ -40,9 +40,10 @@ fun Project.setupDokka(
 internal fun Project.setupSignDependency() {
     val signTasks = tasks.filter { it.name.startsWith("sign") }
     if (signTasks.isNotEmpty()) {
-        println("\n  Making sign tasks depend on publish tasks:")
+        Logger.lifecycle("")
+        Logger.lifecycle("  Making sign tasks depend on publish tasks")
         tasks.filter { it.name.startsWith("publish") }.forEach {
-            println("   * ${it.name} now depends on ${signTasks.joinToString { it.name }}")
+            Logger.info("   * ${it.name} now depends on ${signTasks.joinToString { it.name }}")
             it.dependsOn(*signTasks.toTypedArray())
         }
     }
