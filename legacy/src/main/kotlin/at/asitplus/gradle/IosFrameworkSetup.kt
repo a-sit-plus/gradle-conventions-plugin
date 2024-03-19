@@ -13,10 +13,27 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFrameworkConfig
 fun Project.exportIosFramework(
     name: String,
     vararg additionalExports: Any
-) = exportIosFramework(name, bitcodeEmbeddingMode = BitcodeEmbeddingMode.BITCODE, additionalExports = additionalExports)
+) = exportIosFramework(
+    name,
+    bitcodeEmbeddingMode = BitcodeEmbeddingMode.BITCODE,
+    static = false,
+    additionalExports = additionalExports
+)
 
 fun Project.exportIosFramework(
     name: String,
+    static: Boolean,
+    vararg additionalExports: Any
+) = exportIosFramework(
+    name,
+    bitcodeEmbeddingMode = BitcodeEmbeddingMode.BITCODE,
+    static = static,
+    additionalExports = additionalExports
+)
+
+fun Project.exportIosFramework(
+    name: String,
+    static: Boolean,
     bitcodeEmbeddingMode: BitcodeEmbeddingMode,
     vararg additionalExports: Any
 ) {
@@ -32,6 +49,7 @@ fun Project.exportIosFramework(
             iosTargets.forEach {
                 it.binaries.framework {
                     baseName = name
+                    isStatic = static
                     embedBitcode(bitcodeEmbeddingMode)
                     additionalExports.forEach { export(it) }
                     xcf.add(this)
