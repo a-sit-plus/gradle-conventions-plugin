@@ -36,12 +36,12 @@ private inline fun Project.supportLocalProperties() {
 
 object EnvDelegate {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): String? =
-        System.getProperty(property.name)
+        System.getenv(property.name)
 }
 
 class EnvExtraDelegate(private val project: Project) {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): String? =
-        System.getProperty(property.name)
+        System.getenv(property.name)
             ?.also { Logger.lifecycle("  > Property ${property.name} set to $it from environment") }
             ?: runCatching {
                 (project.extraProperties[property.name] as String).also {
@@ -57,7 +57,7 @@ class EnvExtraDelegate(private val project: Project) {
 }
 val Project.env: EnvDelegate get() = EnvDelegate
 
-fun Project.env(property: String): String? = System.getProperty(property)
+fun Project.env(property: String): String? = System.getenv(property)
 
 val Project.envExtra: EnvExtraDelegate get() = EnvExtraDelegate(this)
 

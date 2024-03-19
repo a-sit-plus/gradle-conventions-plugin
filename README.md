@@ -1,7 +1,7 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-[![Version](https://img.shields.io/badge/Kotlin_1.9.10-+20240319-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)](CHANGELOG.md)
-[![Version](https://img.shields.io/badge/Kotlin_1.9.23-+20240319-gray.svg?style=flat&logo=kotlin&labelColor=7463ce&logoColor=white)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Kotlin_1.9.10-+20240319+1-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Kotlin_1.9.23-+20240319+1-gray.svg?style=flat&logo=kotlin&labelColor=7463ce&logoColor=white)](CHANGELOG.md)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat&)](http://www.apache.org/licenses/LICENSE-2.0)
 
 **Note: This plugin is still in its early stages and may not work well for edge cases!
@@ -30,7 +30,7 @@ This plugin targets Kotlin JVM and multiplatform projects and provides the follo
 * Autoconfiguration of test output format
 * Force dependency from publish tasks to sign tasks
 * Shorthand for Dokka setup
-* Shorthand for accessing environment variables (System.properties):
+* Shorthand for accessing environment variables:
   * `val my_env_prop by env` creates a final `String?` variable, set to the value of `System.getProperty("my_env_prop")`
   * `env("my.prop")` is a shorthand for `System.getProperty("my.prop")`
   * `val my_env_overridable_prop by envExtra` is a shorthand for first trying `System.getProperty("my_env_overridable_prop")`, then trying to read it read from `extra`. Returns `null` if absent.
