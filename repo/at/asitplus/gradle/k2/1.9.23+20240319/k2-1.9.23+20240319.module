@@ -53,10 +53,10 @@
           "name": "k2-1.9.23+20240319.jar",
           "url": "k2-1.9.23+20240319.jar",
           "size": 10231,
-          "sha512": "be1a39d4f0cc0cbc9f472a34930691706aae5054b90e11000b0274e4be8c88e2da0abb3ff38e16807744d12da971696df92a9fc1883f33562b7de26f1162879c",
-          "sha256": "b67db4df3c58c60e17dd0e8d74a66c8370cd918f9906c03c3348d17730db4f12",
-          "sha1": "b1e33883b3c4eabb0182a5fce1bb75be5d282824",
-          "md5": "dd822e9cd6aca55bcb560fbfc4a86896"
+          "sha512": "bf60f66694120d00c90b7901a61dc00d41a516e55be231ad57c7d428cf60ad71b2c04ad4d275f20638fd6c93fb81fd7d610ccd7511f66bc1d9e4c6fa3f0c6aae",
+          "sha256": "38273170923a5de09a906bb4a68c78c7a82357f0dd2fbd2223535ebfa1176f53",
+          "sha1": "2fd4163c65379ca8f961e6f3aa24a0a74d19c31a",
+          "md5": "c21dd975da8def45cb9b7ed90202cc2b"
         }
       ]
     },
@@ -99,10 +99,10 @@
           "name": "k2-1.9.23+20240319.jar",
           "url": "k2-1.9.23+20240319.jar",
           "size": 10231,
-          "sha512": "be1a39d4f0cc0cbc9f472a34930691706aae5054b90e11000b0274e4be8c88e2da0abb3ff38e16807744d12da971696df92a9fc1883f33562b7de26f1162879c",
-          "sha256": "b67db4df3c58c60e17dd0e8d74a66c8370cd918f9906c03c3348d17730db4f12",
-          "sha1": "b1e33883b3c4eabb0182a5fce1bb75be5d282824",
-          "md5": "dd822e9cd6aca55bcb560fbfc4a86896"
+          "sha512": "bf60f66694120d00c90b7901a61dc00d41a516e55be231ad57c7d428cf60ad71b2c04ad4d275f20638fd6c93fb81fd7d610ccd7511f66bc1d9e4c6fa3f0c6aae",
+          "sha256": "38273170923a5de09a906bb4a68c78c7a82357f0dd2fbd2223535ebfa1176f53",
+          "sha1": "2fd4163c65379ca8f961e6f3aa24a0a74d19c31a",
+          "md5": "c21dd975da8def45cb9b7ed90202cc2b"
         }
       ]
     }
