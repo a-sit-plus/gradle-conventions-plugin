@@ -2,7 +2,6 @@
 
 package at.asitplus.gradle
 
-import AspVersions
 import io.github.gradlenexus.publishplugin.NexusPublishExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -19,12 +18,13 @@ import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinBasePlugin
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 import org.jetbrains.kotlin.gradle.plugin.extraProperties
+import kotlin.random.Random
 import kotlin.reflect.KProperty
 
 internal const val H = "\u001b[7m\u001b[1m"
 internal const val R = "\u001b[0m"
 
-lateinit var Logger:org.gradle.api.logging.Logger
+lateinit var Logger: org.gradle.api.logging.Logger
 
 private inline fun Project.supportLocalProperties() {
     Logger.lifecycle("  Adding support for storing extra project properties in local.properties and System Environment")
@@ -55,6 +55,10 @@ class EnvExtraDelegate(private val project: Project) {
             }
 
 }
+
+private val KEY_ASP_VERSIONS = Random.nextBits(32).toString(36)
+
+val Project.AspVersions: AspVersions get() = rootProject.extraProperties[KEY_ASP_VERSIONS] as AspVersions
 val Project.env: EnvDelegate get() = EnvDelegate
 
 fun Project.env(property: String): String? = System.getenv(property)
@@ -63,7 +67,7 @@ val Project.envExtra: EnvExtraDelegate get() = EnvExtraDelegate(this)
 
 private inline fun Project.hasMrJar() = plugins.hasPlugin("me.champeau.mrjar")
 
-val Project.jvmTarget: String get() = runCatching { extraProperties["jdk.version"] as String }.getOrElse { AspVersions.Jvm.defaultTarget }
+val Project.jvmTarget: String get() = runCatching { extraProperties["jdk.version"] as String }.getOrElse { AspVersions.jvm.defaultTarget }
 
 open class AspLegacyConventions : Plugin<Project> {
 
@@ -84,25 +88,38 @@ open class AspLegacyConventions : Plugin<Project> {
 
     override fun apply(target: Project) {
         Logger = target.logger
+        target.supportLocalProperties()
+        if (target.rootProject == target)
+            target.extraProperties[KEY_ASP_VERSIONS] = AspVersions(target)
         Logger.lifecycle(
-            "\n ASP Conventions ${H}${AspVersions.kotlin}$R is using the following dependency versions for project ${
+            "\n ASP Conventions ${H}${target.AspVersions.versions["kotlin"]}$R is using the following dependency versions for project ${
                 if (target == target.rootProject) target.name
                 else "${target.rootProject.name}:${target.name}"
             }:"
         )
         runCatching {
-            AspVersions.versions.entries.filterNot { (k, _) -> k == "jvmTarget" }.sortedBy { (k, _) -> k.toString() }
-                .forEach { (t, u) -> Logger.lifecycle("    ${String.format("%-14s", "$t:")} $u") }
+            target.AspVersions.versions.entries.filterNot { (k, _) -> k == "jvmTarget" }
+                .sortedBy { (k, _) -> k.toString() }
+                .forEach { (t, _) ->
+                    Logger.lifecycle(
+                        "    ${
+                            String.format(
+                                "%-14s",
+                                "$t:"
+                            )
+                        } ${target.AspVersions.versionOf(t as String)}"
+                    )
+                }
             Logger.lifecycle("")
         }
 
-
-        Logger.lifecycle("  Adding Nexus Publish plugin ${AspVersions.nexus}")
-        target.rootProject.plugins.apply("io.github.gradle-nexus.publish-plugin")
-
-        target.supportLocalProperties()
+        if (target != target.rootProject) {
+            target.addVersionCatalogSupport()
+        }
 
         if (target == target.rootProject) {
+            Logger.lifecycle("  Adding Nexus Publish plugin ${target.AspVersions.nexus}")
+            target.plugins.apply("io.github.gradle-nexus.publish-plugin")
 
             target.plugins.apply("idea")
 
@@ -114,7 +131,7 @@ open class AspLegacyConventions : Plugin<Project> {
                     jdkName = target.jvmTarget
                 }
             } else Logger.lifecycle(
-               "  MR Jar plugin detected in modules${
+                "  MR Jar plugin detected in modules${
                     mrJarModules.joinToString(
                         prefix = "\n",
                         separator = "\n      * ",
@@ -270,6 +287,7 @@ open class AspLegacyConventions : Plugin<Project> {
                         }
                     }
                     target.setupSignDependency()
+                    target.compileVersionCatalog()
                 }
             }
         }.getOrElse {

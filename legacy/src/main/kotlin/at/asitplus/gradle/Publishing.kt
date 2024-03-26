@@ -1,11 +1,13 @@
 package at.asitplus.gradle
 
 import org.gradle.api.Project
+import org.gradle.api.plugins.catalog.CatalogPluginExtension
+import org.gradle.api.publish.PublishingExtension
+import org.gradle.api.publish.maven.MavenPublication
 import org.gradle.api.tasks.Delete
 import org.gradle.api.tasks.TaskProvider
 import org.gradle.api.tasks.bundling.Jar
-import org.gradle.kotlin.dsl.get
-import org.gradle.kotlin.dsl.register
+import org.gradle.kotlin.dsl.*
 import org.jetbrains.dokka.gradle.DokkaTask
 import org.jetbrains.dokka.gradle.DokkaTaskPartial
 
@@ -47,4 +49,27 @@ internal fun Project.setupSignDependency() {
             it.dependsOn(*signTasks.toTypedArray())
         }
     }
+}
+
+internal fun Project.addVersionCatalogSupport() {
+    Logger.lifecycle("  Adding version catalog plugin to project ${rootProject.name}:${project.name}")
+    project.plugins.apply("version-catalog")
+}
+
+internal fun Project.compileVersionCatalog() {
+    Logger.lifecycle("  Compiling version catalog of project ${rootProject.name}:${project.name}")
+    extensions.getByType(CatalogPluginExtension::class).versionCatalog {
+        collectedDependencies.versions.forEach { (alias, version) ->
+            version(alias, version)
+        }
+        collectedDependencies.libraries.forEach { (alias, module) ->
+            val split = module.first.indexOf(':')
+            library(alias, module.first.substring(0, split), module.first.substring(split + 1)).versionRef(module.second)
+        }
+    }
+
+    project.extensions.findByType(PublishingExtension::class)?.let {
+        it.publications.create<MavenPublication>("maven").from(components["versionCatalog"])
+    }
+
 }
