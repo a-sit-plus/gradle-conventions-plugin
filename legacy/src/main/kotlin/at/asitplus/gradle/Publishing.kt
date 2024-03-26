@@ -11,6 +11,8 @@ import org.gradle.api.tasks.bundling.Jar
 import org.gradle.kotlin.dsl.*
 import org.jetbrains.dokka.gradle.DokkaTask
 import org.jetbrains.dokka.gradle.DokkaTaskPartial
+import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
+import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 import org.tomlj.Toml
 import kotlin.jvm.optionals.getOrNull
 
@@ -63,6 +65,7 @@ internal fun Project.compileVersionCatalog() {
     Logger.lifecycle("  Compiling version catalog of project ${rootProject.name}:${project.name}")
     val userDefinedCatalog = extensions.getByType(VersionCatalogsExtension::class).find("libs").getOrNull()
     extensions.getByType(CatalogPluginExtension::class).versionCatalog {
+
         val setVersions = mutableSetOf<String>()
         collectedDependencies.versions.forEach { (alias, version) ->
             Logger.info("    * Adding version alias '$alias = $version' to version catalog 'libs'")
@@ -70,15 +73,15 @@ internal fun Project.compileVersionCatalog() {
             setVersions += alias
         }
 
-        version("kotlin", AspVersions.kotlin)
-        version("ksp", AspVersions.ksp)
-
         userDefinedCatalog?.versionAliases?.filterNot { setVersions.contains(it) }
             ?.forEach {
                 val requiredVersion = AspVersions.versionCatalog.getTable("versions")?.getString(it)!!
                 Logger.info("    * Adding version alias '$it = $requiredVersion' to version catalog 'libs'")
                 version(it, requiredVersion)
             }
+
+        version("kotlin", AspVersions.kotlin)
+        version("ksp", AspVersions.ksp)
 
         collectedDependencies.libraries.forEach { (alias, module) ->
             val split = module.first.indexOf(':')
@@ -112,6 +115,15 @@ internal fun Project.compileVersionCatalog() {
                     )
                     versionRef?.also { dep.versionRef(it) } ?: version?.also { dep.version(it) } ?: dep.withoutVersion()
                 }
+            }
+
+            var isKMP=false
+            plugins.withType<KotlinMultiplatformPluginWrapper>{
+                plugin("kotlin-multiplatform", "org.jetbrains.kotlin.multiplatform").versionRef("kotlin")
+                isKMP=true
+            }
+            if(!isKMP){
+                plugin("kotlin-jvm", "org.jetbrains.kotlin.jvm").versionRef("kotlin")
             }
 
 
