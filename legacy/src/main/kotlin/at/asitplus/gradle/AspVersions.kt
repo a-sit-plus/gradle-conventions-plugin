@@ -15,7 +15,7 @@ class AspVersions(private val project: Project) {
 
     internal fun versionOf(dependency: String) =
         project.extensions.getByType(VersionCatalogsExtension::class).find("libs").getOrNull()?.findVersion(dependency)
-            ?.getOrNull()?.displayName ?: versions[dependency] as String
+            ?.getOrNull()?.requiredVersion ?: versions[dependency] as String
 
     val kotlin get() = project.getKotlinPluginVersion()
 
