@@ -24,7 +24,7 @@ class AspVersions(private val project: Project) {
 
     val kotlin get() = project.getKotlinPluginVersion()
 
-    val ksp get() = versionOf("kotlin") + "-" + versionOf("ksp")
+    val ksp get() = kotlin + "-" + versions.getProperty("ksp")
 
     val serialization = versionOf("serialization")
 

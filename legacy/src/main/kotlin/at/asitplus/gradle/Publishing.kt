@@ -70,6 +70,9 @@ internal fun Project.compileVersionCatalog() {
             setVersions += alias
         }
 
+        version("kotlin", AspVersions.kotlin)
+        version("ksp", AspVersions.ksp)
+
         userDefinedCatalog?.versionAliases?.filterNot { setVersions.contains(it) }
             ?.forEach {
                 val requiredVersion = AspVersions.versionCatalog.getTable("versions")?.getString(it)!!
@@ -110,6 +113,7 @@ internal fun Project.compileVersionCatalog() {
                     versionRef?.also { dep.versionRef(it) } ?: version?.also { dep.version(it) } ?: dep.withoutVersion()
                 }
             }
+
 
             val pluginDeclarations = AspVersions.versionCatalog.getTable("plugins")
             pluginDeclarations?.keySet()?.forEach { alias ->

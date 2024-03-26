@@ -86,11 +86,16 @@ open class AspLegacyConventions : Plugin<Project> {
         }
     }
 
+    protected open fun versionOverrides(aspVersions: AspVersions) = Unit
+
     override fun apply(target: Project) {
         Logger = target.logger
         target.supportLocalProperties()
         if (target.rootProject == target)
-            target.extraProperties[KEY_ASP_VERSIONS] = AspVersions(target)
+            AspVersions(target).let {
+                target.extraProperties[KEY_ASP_VERSIONS] = it
+                versionOverrides(it)
+            }
         Logger.lifecycle(
             "\n ASP Conventions ${H}${target.AspVersions.versions["kotlin"]}$R is using the following dependency versions for project ${
                 if (target == target.rootProject) target.name

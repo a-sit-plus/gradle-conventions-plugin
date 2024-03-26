@@ -5,13 +5,14 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
 class AspConventions : AspLegacyConventions() {
 
-    /*TODO
-        init {
-            kotlin.runCatching {
-                javaClass.classLoader!!.getResourceAsStream("k2versions.properties").use { AspVersions.versions.load(it) }
-            }
 
-        }*/
+    override fun versionOverrides(aspVersions: AspVersions) {
+        super.versionOverrides(aspVersions)
+        kotlin.runCatching {
+            javaClass.classLoader!!.getResourceAsStream("k2versions.properties").use { aspVersions.versions.load(it) }
+        }
+
+    }
 
     override fun KotlinMultiplatformExtension.setupKotest() {
         sourceSets {
