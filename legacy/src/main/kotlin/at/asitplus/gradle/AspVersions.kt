@@ -1,10 +1,10 @@
 package at.asitplus.gradle
+
 import org.gradle.api.Project
-import org.gradle.api.artifacts.VersionCatalogsExtension
-import org.gradle.kotlin.dsl.getByType
 import org.jetbrains.kotlin.gradle.plugin.getKotlinPluginVersion
+import org.tomlj.Toml
+import org.tomlj.TomlParseResult
 import java.util.*
-import kotlin.jvm.optionals.getOrNull
 
 
 class AspVersions(private val project: Project) {
@@ -13,9 +13,14 @@ class AspVersions(private val project: Project) {
 
     }
 
+    val versionCatalog: TomlParseResult by lazy {
+        Toml.parse(
+            project.rootProject.layout.projectDirectory.dir("gradle").file("libs.versions.toml").asFile.inputStream()
+        )
+    }
+
     internal fun versionOf(dependency: String) =
-        project.extensions.getByType(VersionCatalogsExtension::class).find("libs").getOrNull()?.findVersion(dependency)
-            ?.getOrNull()?.requiredVersion ?: versions[dependency] as String
+        versionCatalog.getTable("versions")?.getString(dependency) ?: versions[dependency] as String
 
     val kotlin get() = project.getKotlinPluginVersion()
 

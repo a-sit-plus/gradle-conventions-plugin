@@ -11,6 +11,7 @@ import org.gradle.api.tasks.bundling.Jar
 import org.gradle.kotlin.dsl.*
 import org.jetbrains.dokka.gradle.DokkaTask
 import org.jetbrains.dokka.gradle.DokkaTaskPartial
+import org.tomlj.Toml
 import kotlin.jvm.optionals.getOrNull
 
 
@@ -64,16 +65,14 @@ internal fun Project.compileVersionCatalog() {
     extensions.getByType(CatalogPluginExtension::class).versionCatalog {
         val setVersions = mutableSetOf<String>()
         collectedDependencies.versions.forEach { (alias, version) ->
-            val setVersion = (userDefinedCatalog?.findVersion(alias)?.getOrNull()?.let { it.requiredVersion }
-                ?: version)
-            Logger.info("    * Adding version alias '$alias = $setVersion' to version catalog 'libs'")
-            version(alias, setVersion)
+            Logger.info("    * Adding version alias '$alias = $version' to version catalog 'libs'")
+            version(alias, version)
             setVersions += alias
         }
 
         userDefinedCatalog?.versionAliases?.filterNot { setVersions.contains(it) }
             ?.forEach {
-                val requiredVersion = userDefinedCatalog.findVersion(it).get().requiredVersion
+                val requiredVersion = AspVersions.versionCatalog.getTable("versions")?.getString(it)!!
                 Logger.info("    * Adding version alias '$it = $requiredVersion' to version catalog 'libs'")
                 version(it, requiredVersion)
             }
@@ -94,13 +93,38 @@ internal fun Project.compileVersionCatalog() {
             ).versionRef(module.second)
         }
 
-        //TODO maybe use TOML parser to get version ref?
-        userDefinedCatalog?.libraryAliases?.forEach {
-            val dependency = userDefinedCatalog.findLibrary(it).get().get()
-            val dep = library(it, dependency.group, dependency.name)
-            Logger.info("    * Adding library alias '$it = {group = \"${dependency.group}\", name = \"${dependency.name}\", version=\"${dependency.version}\"}' to version catalog 'libs'")
+        userDefinedCatalog?.let { udf ->
 
-            dependency.version?.also { dep.version(it) } ?: dep.withoutVersion()
+            AspVersions.versionCatalog.getTable("libraries")?.let { libs ->
+                libs.keySet().forEach { alias ->
+                    val versionRef = libs.getTable(alias)!!.getString("version.ref")
+                    val version = if (versionRef == null) libs.getTable(alias)!!.getString("version") else null
+
+                    val fromCatalog = udf.findLibrary(alias).get().get()
+                    val dep = library(alias, fromCatalog.group, fromCatalog.name)
+                    Logger.info(
+                        "    * Adding library alias '$alias = {group = \"${fromCatalog.group}\", name = \"${fromCatalog.name}\", version${versionRef?.let { ".ref" } ?: ""}=\"${
+                            versionRef ?: version
+                        }\"}' to version catalog 'libs'"
+                    )
+                    versionRef?.also { dep.versionRef(it) } ?: version?.also { dep.version(it) } ?: dep.withoutVersion()
+                }
+            }
+
+            val pluginDeclarations = AspVersions.versionCatalog.getTable("plugins")
+            pluginDeclarations?.keySet()?.forEach { alias ->
+                val currentPlugin = pluginDeclarations.getTable(alias)!!
+                val versionRef = currentPlugin.getString("version.ref")
+                val version = if (versionRef == null) currentPlugin.getString("version") else null
+                val dep = this.plugin(alias, currentPlugin.getString("id")!!)
+                versionRef?.also { dep.versionRef(it) } ?: dep.version(version ?: "")
+            }
+
+            val bundleDeclarations = AspVersions.versionCatalog.getTable("bundles")
+            bundleDeclarations?.keySet()?.forEach { alias ->
+                bundle(alias, bundleDeclarations!!.getArray(alias)!!.toList().map { it.toString() })
+            }
+
         }
     }
 
