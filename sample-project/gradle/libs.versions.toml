@@ -1,6 +1,6 @@
 [versions]
 kotest = "[5.8.0, 5.9.0)!!5.8.1"
-xampl = "0.0.0"
+xampl = "[0.0.0, 1.0.0) 0.0.1"
 
 [libraries]
 foo = { module = "some.dummy:example", version.ref = "xampl" }

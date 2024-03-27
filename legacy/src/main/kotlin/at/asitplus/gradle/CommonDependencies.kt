@@ -51,7 +51,7 @@ inline fun KotlinDependencyHandler.addKotest(target: String? = null) {
 
 @JvmOverloads
 fun Project.kotest(module: String, target: String? = null) =
-    addDependency("io.kotest:kotest-$module${target.toSuffix()}", "kotest")
+    "io.kotest:kotest-$module${target.toSuffix()}:${AspVersions.kotest}"
 
 inline fun KotlinDependencyHandler.addKotestJvmRunner() {
     Logger.info("  Adding Kotest JUnit runner")
