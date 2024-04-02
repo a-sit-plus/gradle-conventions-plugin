@@ -107,12 +107,7 @@ open class AspLegacyConventions : Plugin<Project> {
                 .sortedBy { (k, _) -> k.toString() }
                 .forEach { (t, _) ->
                     Logger.lifecycle(
-                        "    ${
-                            String.format(
-                                "%-14s",
-                                "$t:"
-                            )
-                        } ${target.AspVersions.versionOf(t as String)}"
+                        "    ${String.format("%-14s", "$t:")} ${target.AspVersions.versionOf(t as String)}"
                     )
                 }
             Logger.lifecycle("")

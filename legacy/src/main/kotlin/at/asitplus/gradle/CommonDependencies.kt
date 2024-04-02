@@ -19,8 +19,8 @@ class CollectedDependencies(
     val libraries: MutableMap<String, Pair<String,String>> = mutableMapOf()
 
     fun add(module: String, versionRef: String): String {
-        val split = module.indexOf(':')
-        val name = module.substring(split + 1)
+        val components= module.split(':')
+        val name = components[1]
         versions[versionRef] = project.AspVersions.versionOf(versionRef)
         libraries[name] = module to versionRef
         return "$module:${versions[versionRef]}"
