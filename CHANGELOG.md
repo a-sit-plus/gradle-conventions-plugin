@@ -3,6 +3,9 @@
   This is required, since working with source differs syntactically between Kotlin < 1.9.20
   and Kotlin 1.9.20 upwards.
 
+## NEXT
+  * **Breaking Change:** Groovy build scripts are no longer supported
+
 ## 20240319+1
 * Make it possible to export static XCFrameworks
 
