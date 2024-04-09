@@ -7,6 +7,7 @@
   * **Breaking Change:** Groovy build scripts are no longer supported
   * Auto-Generate Gradle version catalog for maven publication
   * Make it possible to override versions for dependency-shorthands through version catalog
+  * Minimum supported gradle version: 8.5
 
 ## 20240319+1
 * Make it possible to export static XCFrameworks

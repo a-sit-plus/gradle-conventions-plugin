@@ -5,7 +5,8 @@
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat&)](http://www.apache.org/licenses/LICENSE-2.0)
 
 **Note: This plugin is still in its early stages and may not work well for edge cases!
-Tested against Gradle 7.6 and 8.1.1. Requires Java 11+!**
+<br>
+Minimum supported Gradle version: 8.5. Requires Java 11+!**
 
 This repository bundles conventions used inside A-SIT Plus into a plugin.
 The main motivation to go beyond a versions catalogue was re-usability inside complex, nested composite builds.
