@@ -80,11 +80,11 @@
         {
           "name": "legacy-1.9.10+20240409.jar",
           "url": "legacy-1.9.10+20240409.jar",
-          "size": 138436,
-          "sha512": "b004547d59c9c2552b0b4ea1a0d1b4cae915913fe3c89041e705efe807baec78bec4ba35aa38e483cdc9b75245ca2584a548d6f18f23c74fdc56aa9d7445dbd0",
-          "sha256": "56731513e6539231b721e0d299bea908ab3101988ad90bdefeb2d65de6bfeca4",
-          "sha1": "bf8beb81dc74cac70ea86704ae61d5f6a00e3a55",
-          "md5": "727aa411c4df1079bbdc88b5ec19d977"
+          "size": 138353,
+          "sha512": "34c7894744775d49ca2e7b078a8e823fd829ae6a25adf87a7f71662283e4f81436c20c9051ed4d66bafe533dd72601a63e2b5bf0b618702db1f32e7228e7ea2f",
+          "sha256": "49636873480d8ae9fd1b93294d0f1ea271b3e36f736c4b568b437a4d2052868d",
+          "sha1": "56319aeec230bbfdd2b0de03c96f0f657a7e6473",
+          "md5": "d257395e19ae70da5990e9c5e747575a"
         }
       ]
     },
@@ -161,11 +161,11 @@
         {
           "name": "legacy-1.9.10+20240409.jar",
           "url": "legacy-1.9.10+20240409.jar",
-          "size": 138436,
-          "sha512": "b004547d59c9c2552b0b4ea1a0d1b4cae915913fe3c89041e705efe807baec78bec4ba35aa38e483cdc9b75245ca2584a548d6f18f23c74fdc56aa9d7445dbd0",
-          "sha256": "56731513e6539231b721e0d299bea908ab3101988ad90bdefeb2d65de6bfeca4",
-          "sha1": "bf8beb81dc74cac70ea86704ae61d5f6a00e3a55",
-          "md5": "727aa411c4df1079bbdc88b5ec19d977"
+          "size": 138353,
+          "sha512": "34c7894744775d49ca2e7b078a8e823fd829ae6a25adf87a7f71662283e4f81436c20c9051ed4d66bafe533dd72601a63e2b5bf0b618702db1f32e7228e7ea2f",
+          "sha256": "49636873480d8ae9fd1b93294d0f1ea271b3e36f736c4b568b437a4d2052868d",
+          "sha1": "56319aeec230bbfdd2b0de03c96f0f657a7e6473",
+          "md5": "d257395e19ae70da5990e9c5e747575a"
         }
       ]
     }
