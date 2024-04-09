@@ -3,6 +3,11 @@
   This is required, since working with source differs syntactically between Kotlin < 1.9.20
   and Kotlin 1.9.20 upwards.
 
+
+## 20240409+1
+* Fix gathering of declared versions in absence of version catalog
+
+ 
 ## 20240409
   * **Breaking Change:** Groovy build scripts are no longer supported
   * Auto-Generate Gradle version catalog for maven publication

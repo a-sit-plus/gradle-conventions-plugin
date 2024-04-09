@@ -141,7 +141,6 @@ internal fun Project.compileVersionCatalog() {
             ).versionRef(module.second)
         }
 
-        userDefinedCatalog?.let { udf ->
             // get manually defined dependencies (i.e. those not defined in `gradle/libs.versions.toml` and not declared through shorthands provided by the conventions plugin
             var declaredDeps = getDependencies("api") + getDependencies("implementation") + getDependencies("ksp")
 
@@ -151,6 +150,7 @@ internal fun Project.compileVersionCatalog() {
                     val versionRef = libs.getTable(alias)!!.getString("version.ref")
                     val version = if (versionRef == null) libs.getTable(alias)!!.getString("version") else null
 
+                    userDefinedCatalog?.let { udf ->
                     val fromCatalog = udf.findLibrary(alias).get().get()
                     declaredDeps =
                         declaredDeps.filterNot { it.group == fromCatalog.group && it.name == fromCatalog.name }
@@ -162,6 +162,7 @@ internal fun Project.compileVersionCatalog() {
                     )
                     versionRef?.also { dep.versionRef(it) } ?: version?.also { dep.version(it) } ?: dep.withoutVersion()
                 }
+            }
             }
 
             declaredDeps.filterNot { dep -> collectedDependencies.libraries.values.firstOrNull { it.first == dep.group + ":" + dep.name } != null }
@@ -191,7 +192,7 @@ internal fun Project.compileVersionCatalog() {
             bundleDeclarations?.keySet()?.forEach { alias ->
                 bundle(alias, bundleDeclarations.getArray(alias)!!.toList().map { it.toString() })
             }
-        }
+
     }
 
     project.extensions.findByType(PublishingExtension::class)?.let {
