@@ -286,8 +286,10 @@ open class AspLegacyConventions : Plugin<Project> {
                             }
                         }
                     }
-                    target.setupSignDependency()
                     target.compileVersionCatalog()
+                }
+                target.gradle.taskGraph.whenReady {
+                    target.setupSignDependency()
                 }
             }
         }.getOrElse {

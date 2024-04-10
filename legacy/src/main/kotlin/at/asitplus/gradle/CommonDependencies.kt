@@ -37,7 +37,7 @@ internal val Project.collectedDependencies: CollectedDependencies
         return extraProperties[KEY_COLLECTED_DEPS] as CollectedDependencies
     }
 
-private fun Project.addDependency(module: String, versionRef: String) = collectedDependencies.add(module, versionRef)
+fun Project.addDependency(module: String, versionRef: String) = collectedDependencies.add(module, versionRef)
 
 private fun String?.toSuffix() = this?.let { "-$it" } ?: ""
 

@@ -1,8 +1,14 @@
-# Dual-Version (Kotlin 1.9.10 and Kotlin 1.9.22)
+# Dual-Version (Kotlin 1.9.10 and Kotlin 1.9.22+)
 * Modularise into two plugins, such that Kotlin 1.9.10 and 1.9.22 are supported in parallel.
   This is required, since working with source differs syntactically between Kotlin < 1.9.20
   and Kotlin 1.9.20 upwards.
 
+
+## 20240410
+* Fix missing sign-publish task dependency
+* Make adding versionRef-managed versions extensible (for VcLib conventions plugin)
+* ktor 2.3.10
+* K2: KSP 1.0.20
 
 ## 20240409+1
 * Fix gathering of declared versions in absence of version catalog

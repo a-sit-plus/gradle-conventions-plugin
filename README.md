@@ -1,7 +1,7 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-[![Version](https://img.shields.io/badge/Kotlin_1.9.10-+20240409+1-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)](CHANGELOG.md)
-[![Version](https://img.shields.io/badge/Kotlin_1.9.23-+20240409+1-gray.svg?style=flat&logo=kotlin&labelColor=7463ce&logoColor=white)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Kotlin_1.9.10-+20240410-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Kotlin_1.9.23-+20240410-gray.svg?style=flat&logo=kotlin&labelColor=7463ce&logoColor=white)](CHANGELOG.md)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat&)](http://www.apache.org/licenses/LICENSE-2.0)
 
 **Note: This plugin is still in its early stages and may not work well for edge cases!
@@ -17,7 +17,7 @@ This plugin targets Kotlin JVM and multiplatform projects and provides the follo
 * Version management of core libraries, Dokka, Kotlin, certain Kotlin plugins, Gradle Ktor Plugin (and ktor libraries),
   ksp plugin, and JVM toolchain (can be overridden)
 * Shorthands for various commonly-used dependencies
-* Natural extension functions to ass common dependencies
+* Natural extension functions to add common dependencies
 * Autoconfiguration of Kotest for multiplatform projects
 * Automatically adding of google and maven central repository
 * Auto-setup of gradle-nexus-plugin (but no configuration of publishing)

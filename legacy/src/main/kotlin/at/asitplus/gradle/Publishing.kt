@@ -141,16 +141,16 @@ internal fun Project.compileVersionCatalog() {
             ).versionRef(module.second)
         }
 
-            // get manually defined dependencies (i.e. those not defined in `gradle/libs.versions.toml` and not declared through shorthands provided by the conventions plugin
-            var declaredDeps = getDependencies("api") + getDependencies("implementation") + getDependencies("ksp")
+        // get manually defined dependencies (i.e. those not defined in `gradle/libs.versions.toml` and not declared through shorthands provided by the conventions plugin
+        var declaredDeps = getDependencies("api") + getDependencies("implementation") + getDependencies("ksp")
 
-            AspVersions.versionCatalog?.getTable("libraries")?.let { libs ->
-                libs.keySet().forEach { alias ->
-                    //the version catalog can uses versionRefs and/or plain versions strings
-                    val versionRef = libs.getTable(alias)!!.getString("version.ref")
-                    val version = if (versionRef == null) libs.getTable(alias)!!.getString("version") else null
+        AspVersions.versionCatalog?.getTable("libraries")?.let { libs ->
+            libs.keySet().forEach { alias ->
+                //the version catalog can uses versionRefs and/or plain versions strings
+                val versionRef = libs.getTable(alias)!!.getString("version.ref")
+                val version = if (versionRef == null) libs.getTable(alias)!!.getString("version") else null
 
-                    userDefinedCatalog?.let { udf ->
+                userDefinedCatalog?.let { udf ->
                     val fromCatalog = udf.findLibrary(alias).get().get()
                     declaredDeps =
                         declaredDeps.filterNot { it.group == fromCatalog.group && it.name == fromCatalog.name }
@@ -163,35 +163,35 @@ internal fun Project.compileVersionCatalog() {
                     versionRef?.also { dep.versionRef(it) } ?: version?.also { dep.version(it) } ?: dep.withoutVersion()
                 }
             }
+        }
+
+        declaredDeps.filterNot { dep -> collectedDependencies.libraries.values.firstOrNull { it.first == dep.group + ":" + dep.name } != null }
+            .forEach {
+                library(it.name, it.group + ":" + it.name + (it.version?.let { ":$it" } ?: ""))
             }
 
-            declaredDeps.filterNot { dep -> collectedDependencies.libraries.values.firstOrNull { it.first == dep.group + ":" + dep.name } != null }
-                .forEach {
-                    library(it.name, it.group + ":" + it.name + (it.version?.let { ":$it" } ?: ""))
-                }
+        // add kotlin plugin to version catalog
+        var isKMP = false
+        plugins.withType<KotlinMultiplatformPluginWrapper> {
+            plugin("kotlin-multiplatform", "org.jetbrains.kotlin.multiplatform").versionRef("kotlin")
+            isKMP = true
+        }
+        if (!isKMP) plugin("kotlin-jvm", "org.jetbrains.kotlin.jvm").versionRef("kotlin")
 
-            // add kotlin plugin to version catalog
-            var isKMP = false
-            plugins.withType<KotlinMultiplatformPluginWrapper> {
-                plugin("kotlin-multiplatform", "org.jetbrains.kotlin.multiplatform").versionRef("kotlin")
-                isKMP = true
-            }
-            if (!isKMP) plugin("kotlin-jvm", "org.jetbrains.kotlin.jvm").versionRef("kotlin")
+        //also add all plugins to the version catalog. This also covers the KSP plugin
+        val pluginDeclarations = AspVersions.versionCatalog?.getTable("plugins")
+        pluginDeclarations?.keySet()?.forEach { alias ->
+            val currentPlugin = pluginDeclarations.getTable(alias)!!
+            val versionRef = currentPlugin.getString("version.ref")
+            val version = if (versionRef == null) currentPlugin.getString("version") else null
+            val dep = this.plugin(alias, currentPlugin.getString("id")!!)
+            versionRef?.also { dep.versionRef(it) } ?: dep.version(version ?: "")
+        }
 
-            //also add all plugins to the version catalog. This also covers the KSP plugin
-            val pluginDeclarations = AspVersions.versionCatalog?.getTable("plugins")
-            pluginDeclarations?.keySet()?.forEach { alias ->
-                val currentPlugin = pluginDeclarations.getTable(alias)!!
-                val versionRef = currentPlugin.getString("version.ref")
-                val version = if (versionRef == null) currentPlugin.getString("version") else null
-                val dep = this.plugin(alias, currentPlugin.getString("id")!!)
-                versionRef?.also { dep.versionRef(it) } ?: dep.version(version ?: "")
-            }
-
-            val bundleDeclarations = AspVersions.versionCatalog?.getTable("bundles")
-            bundleDeclarations?.keySet()?.forEach { alias ->
-                bundle(alias, bundleDeclarations.getArray(alias)!!.toList().map { it.toString() })
-            }
+        val bundleDeclarations = AspVersions.versionCatalog?.getTable("bundles")
+        bundleDeclarations?.keySet()?.forEach { alias ->
+            bundle(alias, bundleDeclarations.getArray(alias)!!.toList().map { it.toString() })
+        }
 
     }
 
