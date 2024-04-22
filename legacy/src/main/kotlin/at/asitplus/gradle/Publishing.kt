@@ -2,6 +2,7 @@ package at.asitplus.gradle
 
 import org.gradle.api.Project
 import org.gradle.api.artifacts.Dependency
+import org.gradle.api.artifacts.FileCollectionDependency
 import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.plugins.catalog.CatalogPluginExtension
 import org.gradle.api.publish.PublishingExtension
@@ -167,7 +168,13 @@ internal fun Project.compileVersionCatalog() {
 
         declaredDeps.filterNot { dep -> collectedDependencies.libraries.values.firstOrNull { it.first == dep.group + ":" + dep.name } != null }
             .forEach {
-                library(it.name, it.group + ":" + it.name + (it.version?.let { ":$it" } ?: ""))
+
+                it.version?.let { version ->
+                    library(it.name, it.group + ":" + it.name + ":" + version)
+                } ?: run {
+                    if (it !is FileCollectionDependency)
+                        library(it.name, it.group!!, it.name).withoutVersion()
+                }
             }
 
         // add kotlin plugin to version catalog

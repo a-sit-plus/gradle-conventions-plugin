@@ -4,6 +4,9 @@
   and Kotlin 1.9.20 upwards.
 
 
+## 20240422
+* Fix version catalog building issue for version-less dependencies
+
 ## 20240410
 * Fix missing sign-publish task dependency
 * Make adding versionRef-managed versions extensible (for VcLib conventions plugin)
