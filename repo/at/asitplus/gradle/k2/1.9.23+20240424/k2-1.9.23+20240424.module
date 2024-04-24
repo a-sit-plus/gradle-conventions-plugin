@@ -1,0 +1,110 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "at.asitplus.gradle",
+    "module": "k2",
+    "version": "1.9.23+20240424",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "at.asitplus.gradle",
+          "module": "legacy",
+          "version": {
+            "requires": "1.9.10+20240424"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "1.9.23"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "com.google.devtools.ksp.gradle.plugin",
+          "version": {
+            "requires": "1.9.23-1.0.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "k2-1.9.23+20240424.jar",
+          "url": "k2-1.9.23+20240424.jar",
+          "size": 10383,
+          "sha512": "1f5f9fd87adc54d56302308a32cc3f68b4161e5e669fde7b908f7bd51f26b4bdc1071eb0de6f8bdfbb19e921b535f08869ab7e86ab988f62b5f97a4c87bf28c9",
+          "sha256": "f18684b5693076b3bd18b3e1e8fade2ddddba7dfe5cf2629de60c4cfa51b0c70",
+          "sha1": "4189690c7d0fca74b6c4d951eb33ec92a7cb2fa7",
+          "md5": "45ff2bc1d09760168a181416af5d3fd0"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "at.asitplus.gradle",
+          "module": "legacy",
+          "version": {
+            "requires": "1.9.10+20240424"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "1.9.23"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "com.google.devtools.ksp.gradle.plugin",
+          "version": {
+            "requires": "1.9.23-1.0.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "k2-1.9.23+20240424.jar",
+          "url": "k2-1.9.23+20240424.jar",
+          "size": 10383,
+          "sha512": "1f5f9fd87adc54d56302308a32cc3f68b4161e5e669fde7b908f7bd51f26b4bdc1071eb0de6f8bdfbb19e921b535f08869ab7e86ab988f62b5f97a4c87bf28c9",
+          "sha256": "f18684b5693076b3bd18b3e1e8fade2ddddba7dfe5cf2629de60c4cfa51b0c70",
+          "sha1": "4189690c7d0fca74b6c4d951eb33ec92a7cb2fa7",
+          "md5": "45ff2bc1d09760168a181416af5d3fd0"
+        }
+      ]
+    }
+  ]
+}

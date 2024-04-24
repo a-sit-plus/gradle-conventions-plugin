@@ -1,0 +1,173 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "at.asitplus.gradle",
+    "module": "legacy",
+    "version": "1.9.10+20240424",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.5"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "1.9.10"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-serialization",
+          "version": {
+            "requires": "1.9.10"
+          }
+        },
+        {
+          "group": "io.ktor.plugin",
+          "module": "plugin",
+          "version": {
+            "requires": "2.3.10"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-multiplatform-plugin-gradle",
+          "version": {
+            "requires": "5.8.1"
+          }
+        },
+        {
+          "group": "io.github.gradle-nexus",
+          "module": "publish-plugin",
+          "version": {
+            "requires": "1.3.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.dokka",
+          "module": "dokka-gradle-plugin",
+          "version": {
+            "requires": "1.9.20"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "com.google.devtools.ksp.gradle.plugin",
+          "version": {
+            "requires": "1.9.10-1.0.13"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "legacy-1.9.10+20240424.jar",
+          "url": "legacy-1.9.10+20240424.jar",
+          "size": 142159,
+          "sha512": "4a71d4cccde1182b60bd07898941bc22afb657c8cba05a62a110d2f7d3b311d230109180de351bd0b689f849ff7d67f14c7ec87566d087b8c0b9217619614fd8",
+          "sha256": "cd35f7922950a842c9db3beddeed98faf4a0950448f287947a4793235705c7e6",
+          "sha1": "2a113629d901d886b8994e2c6e969364b59f7079",
+          "md5": "d2bea4d90e2d5ff6bef16f40e395f143"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.tomlj",
+          "module": "tomlj",
+          "version": {
+            "requires": "1.1.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "1.9.10"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-serialization",
+          "version": {
+            "requires": "1.9.10"
+          }
+        },
+        {
+          "group": "io.ktor.plugin",
+          "module": "plugin",
+          "version": {
+            "requires": "2.3.10"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-multiplatform-plugin-gradle",
+          "version": {
+            "requires": "5.8.1"
+          }
+        },
+        {
+          "group": "io.github.gradle-nexus",
+          "module": "publish-plugin",
+          "version": {
+            "requires": "1.3.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.dokka",
+          "module": "dokka-gradle-plugin",
+          "version": {
+            "requires": "1.9.20"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "com.google.devtools.ksp.gradle.plugin",
+          "version": {
+            "requires": "1.9.10-1.0.13"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "legacy-1.9.10+20240424.jar",
+          "url": "legacy-1.9.10+20240424.jar",
+          "size": 142159,
+          "sha512": "4a71d4cccde1182b60bd07898941bc22afb657c8cba05a62a110d2f7d3b311d230109180de351bd0b689f849ff7d67f14c7ec87566d087b8c0b9217619614fd8",
+          "sha256": "cd35f7922950a842c9db3beddeed98faf4a0950448f287947a4793235705c7e6",
+          "sha1": "2a113629d901d886b8994e2c6e969364b59f7079",
+          "md5": "d2bea4d90e2d5ff6bef16f40e395f143"
+        }
+      ]
+    }
+  ]
+}
