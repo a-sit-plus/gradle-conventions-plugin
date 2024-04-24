@@ -10,7 +10,10 @@ import org.gradle.api.publish.maven.MavenPublication
 import org.gradle.api.tasks.Delete
 import org.gradle.api.tasks.TaskProvider
 import org.gradle.api.tasks.bundling.Jar
-import org.gradle.kotlin.dsl.*
+import org.gradle.kotlin.dsl.get
+import org.gradle.kotlin.dsl.getByType
+import org.gradle.kotlin.dsl.register
+import org.gradle.kotlin.dsl.withType
 import org.jetbrains.dokka.gradle.DokkaTask
 import org.jetbrains.dokka.gradle.DokkaTaskPartial
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
@@ -96,7 +99,7 @@ private fun Project.getDependencies(type: String): List<Dependency> =
  */
 internal fun Project.compileVersionCatalog() {
 
-    Logger.lifecycle("  Compiling version catalog of project ${rootProject.name}:${project.name}")
+    Logger.lifecycle("\n  Compiling version catalog of project ${rootProject.name}:${project.name}")
 
     //Get `libs` version catalog, which is the default and only supported one
     val userDefinedCatalog = extensions.getByType(VersionCatalogsExtension::class).find("libs").getOrNull()
@@ -199,11 +202,17 @@ internal fun Project.compileVersionCatalog() {
         bundleDeclarations?.keySet()?.forEach { alias ->
             bundle(alias, bundleDeclarations.getArray(alias)!!.toList().map { it.toString() })
         }
+        library(project.name, project.group.toString() + ":" + project.name + ":" + project.version.toString())
+
 
     }
 
-    project.extensions.findByType(PublishingExtension::class)?.let {
-        it.publications.create<MavenPublication>("maven").from(components["versionCatalog"])
+    project.extensions.getByType<PublishingExtension>().let { publishingExtension ->
+        publishingExtension.publications.register<MavenPublication>("versions") {
+            this.artifactId += "-versionCatalog"
+            Logger.lifecycle("    Creating publication 'version' with artifact $artifactId for version catalog publishing")
+            from(project.components.getByName("versionCatalog"))
+        }
     }
 
 }

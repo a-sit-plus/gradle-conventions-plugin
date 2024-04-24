@@ -3,21 +3,23 @@
   This is required, since working with source differs syntactically between Kotlin < 1.9.20
   and Kotlin 1.9.20 upwards.
 
+## 20240424
+* Publish version catalog to separate publication with claissifier "versionCatalog"
 
-## 20240422
+## 20240422 (broken publishing!)
 * Fix version catalog building issue for version-less dependencies
 
-## 20240410
+## 20240410 (broken publishing!)
 * Fix missing sign-publish task dependency
 * Make adding versionRef-managed versions extensible (for VcLib conventions plugin)
 * ktor 2.3.10
 * K2: KSP 1.0.20
 
-## 20240409+1
+## 20240409+1 (broken publishing!)
 * Fix gathering of declared versions in absence of version catalog
 
  
-## 20240409
+## 20240409 (broken publishing!)
   * **Breaking Change:** Groovy build scripts are no longer supported
   * Auto-Generate Gradle version catalog for maven publication
   * Make it possible to override versions for dependency-shorthands through version catalog

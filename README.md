@@ -1,7 +1,7 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-[![Version](https://img.shields.io/badge/Kotlin_1.9.10-+20240422-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)](CHANGELOG.md)
-[![Version](https://img.shields.io/badge/Kotlin_1.9.23-+20240422-gray.svg?style=flat&logo=kotlin&labelColor=7463ce&logoColor=white)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Kotlin_1.9.10-+20240424-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Kotlin_1.9.23-+20240424-gray.svg?style=flat&logo=kotlin&labelColor=7463ce&logoColor=white)](CHANGELOG.md)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat&)](http://www.apache.org/licenses/LICENSE-2.0)
 
 **Note: This plugin is still in its early stages and may not work well for edge cases!
@@ -302,7 +302,11 @@ regular (i.e. non-plugin) dependencies are possible as part of the default versi
 at `gradle/libs.versions.toml`).
 Currently only string representations of versions are supported (i.e. "1.0.0", "(1.0.0,2.0.0[!!1.5.2").
 
-In addition, a dependency catalog is compiled and added to maven publications.
+**NOTE:** When adding published version catalogs through `settings.gradle.kts` be sure to *never* name them `libs`, since this will result in a name clash!
+
+
+In addition, a version catalog publication is added to projects using the classifier `versionCatalog`.
+(Due to a limitation in the KMP plugin, it is impossible to add the version catalog variant to the common publication.)
 This version catalog consists of everything declared in `gradle/libs.versions.toml` plus,
 whenever a dependency shorthand is called, this dependency is automatically added to the compiled catalog.
 Finally, any non-test dependency declared in a build script is added too.
