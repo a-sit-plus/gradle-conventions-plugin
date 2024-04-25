@@ -218,9 +218,14 @@ internal fun Project.compileVersionCatalog() {
             this.artifactId += "-versionCatalog"
             Logger.lifecycle("    Creating publication 'version' with artifact $artifactId for version catalog publishing")
             from(project.components.getByName("versionCatalog"))
+
         }
 
         val newlyRegistered = publishingExtension.publications.getByName("versions") as DefaultMavenPublication
+
+        if (!newlyRegistered.pom.name.isPresent) {
+            newlyRegistered.pom.name.set(configured?.pom?.name?.get() +" Version Catalog")
+        }
 
         configured?.pom?.description?.get()?.also {
             newlyRegistered.pom.description.set("$it version catalog")
