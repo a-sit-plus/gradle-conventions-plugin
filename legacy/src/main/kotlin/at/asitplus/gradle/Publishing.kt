@@ -7,6 +7,7 @@ import org.gradle.api.artifacts.VersionCatalogsExtension
 import org.gradle.api.plugins.catalog.CatalogPluginExtension
 import org.gradle.api.publish.PublishingExtension
 import org.gradle.api.publish.maven.MavenPublication
+import org.gradle.api.publish.maven.internal.publication.DefaultMavenPublication
 import org.gradle.api.tasks.Delete
 import org.gradle.api.tasks.TaskProvider
 import org.gradle.api.tasks.bundling.Jar
@@ -208,11 +209,54 @@ internal fun Project.compileVersionCatalog() {
     }
 
     project.extensions.getByType<PublishingExtension>().let { publishingExtension ->
+
+        val configured = publishingExtension.publications.filterIsInstance<DefaultMavenPublication>()
+            .firstOrNull { it.pom?.scm != null }
+
+
         publishingExtension.publications.register<MavenPublication>("versions") {
             this.artifactId += "-versionCatalog"
             Logger.lifecycle("    Creating publication 'version' with artifact $artifactId for version catalog publishing")
             from(project.components.getByName("versionCatalog"))
         }
-    }
 
+        val newlyRegistered = publishingExtension.publications.getByName("versions") as DefaultMavenPublication
+
+        configured?.pom?.description?.get()?.also {
+            newlyRegistered.pom.description.set("$it version catalog")
+        }
+
+        if (!newlyRegistered.pom.url.isPresent)
+            configured?.pom?.url?.get()?.also {
+                newlyRegistered.pom.url.set(it)
+            }
+
+        if (newlyRegistered.pom.licenses.isEmpty()) {
+            configured?.pom?.licenses?.forEach {
+                newlyRegistered.pom.licenses += it
+            }
+        }
+        if (newlyRegistered.pom.developers.isEmpty()) {
+            configured?.pom?.developers?.forEach {
+                newlyRegistered.pom.developers += it
+            }
+        }
+
+        if (newlyRegistered.pom.scm == null) {
+            newlyRegistered.pom {
+                scm {
+                    configured?.pom?.scm?.connection?.get()?.also {
+                        connection.set(it)
+                    }
+                    configured?.pom?.scm?.url?.get()?.also {
+                        url.set(it)
+                    }
+                    configured?.pom?.scm?.developerConnection?.get()?.also {
+                        developerConnection.set(it)
+                    }
+                }
+
+            }
+        }
+    }
 }

@@ -3,6 +3,9 @@
   This is required, since working with source differs syntactically between Kotlin < 1.9.20
   and Kotlin 1.9.20 upwards.
 
+## 20240425
+* Add maven metadata to jvm-only version catalog
+
 ## 20240424
 * Publish version catalog to separate publication with claissifier "versionCatalog"
 
