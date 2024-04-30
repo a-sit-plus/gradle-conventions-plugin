@@ -11,12 +11,11 @@ import org.gradle.api.publish.maven.internal.publication.DefaultMavenPublication
 import org.gradle.api.tasks.Delete
 import org.gradle.api.tasks.TaskProvider
 import org.gradle.api.tasks.bundling.Jar
-import org.gradle.kotlin.dsl.get
-import org.gradle.kotlin.dsl.getByType
-import org.gradle.kotlin.dsl.register
-import org.gradle.kotlin.dsl.withType
+import org.gradle.kotlin.dsl.*
 import org.jetbrains.dokka.gradle.DokkaTask
 import org.jetbrains.dokka.gradle.DokkaTaskPartial
+import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 import kotlin.jvm.optionals.getOrNull
 
@@ -213,18 +212,25 @@ internal fun Project.compileVersionCatalog() {
         val configured = publishingExtension.publications.filterIsInstance<DefaultMavenPublication>()
             .firstOrNull { it.pom?.scm != null }
 
+        if (project.kotlinExtension is KotlinMultiplatformExtension)
+            publishingExtension.publications.create<MavenPublication>("versions") {
+                this.artifactId += "-versionCatalog"
+                Logger.lifecycle("    Creating publication 'version' with artifact $artifactId for version catalog publishing")
+                from(project.components.getByName("versionCatalog"))
+            }
+        else
+            publishingExtension.publications.register<MavenPublication>("versions") {
+                this.artifactId += "-versionCatalog"
+                Logger.lifecycle("    Creating publication 'version' with artifact $artifactId for version catalog publishing")
+                from(project.components.getByName("versionCatalog"))
+            }
 
-        publishingExtension.publications.register<MavenPublication>("versions") {
-            this.artifactId += "-versionCatalog"
-            Logger.lifecycle("    Creating publication 'version' with artifact $artifactId for version catalog publishing")
-            from(project.components.getByName("versionCatalog"))
-
-        }
 
         val newlyRegistered = publishingExtension.publications.getByName("versions") as DefaultMavenPublication
+        newlyRegistered.isAlias = true
 
         if (!newlyRegistered.pom.name.isPresent) {
-            newlyRegistered.pom.name.set(configured?.pom?.name?.get() +" Version Catalog")
+            newlyRegistered.pom.name.set(configured?.pom?.name?.get() + " Version Catalog")
         }
 
         configured?.pom?.description?.get()?.also {

@@ -3,6 +3,9 @@
   This is required, since working with source differs syntactically between Kotlin < 1.9.20
   and Kotlin 1.9.20 upwards.
 
+## 20240430
+* more version catalog publishign workarounds
+
 ## 20240425+1
 * Add missing name to version catalog maven metadata to jvm-only version catalog
 
