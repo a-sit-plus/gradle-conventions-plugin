@@ -287,8 +287,8 @@ open class AspLegacyConventions : Plugin<Project> {
                         }
                     }
                     target.compileVersionCatalog()
+                    target.setupSignDependency()
                 }
-                target.gradle.taskGraph.whenReady { target.setupSignDependency() }
             }
         }.getOrElse {
             Logger.warn("\n> No Kotlin plugin detected for ${if (target == target.rootProject) "root " else ""}project ${target.name}")

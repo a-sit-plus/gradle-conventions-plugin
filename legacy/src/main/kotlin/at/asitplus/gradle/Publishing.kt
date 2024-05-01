@@ -8,10 +8,12 @@ import org.gradle.api.plugins.catalog.CatalogPluginExtension
 import org.gradle.api.publish.PublishingExtension
 import org.gradle.api.publish.maven.MavenPublication
 import org.gradle.api.publish.maven.internal.publication.DefaultMavenPublication
+import org.gradle.api.publish.maven.tasks.AbstractPublishToMaven
 import org.gradle.api.tasks.Delete
 import org.gradle.api.tasks.TaskProvider
 import org.gradle.api.tasks.bundling.Jar
 import org.gradle.kotlin.dsl.*
+import org.gradle.plugins.signing.Sign
 import org.jetbrains.dokka.gradle.DokkaTask
 import org.jetbrains.dokka.gradle.DokkaTaskPartial
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
@@ -57,14 +59,15 @@ fun Project.setupDokka(
  * which (more often than anticipated) makes the build process stumble over its own feet.
  */
 internal fun Project.setupSignDependency() {
-    val signTasks = tasks.filter { it.name.startsWith("sign") }
-    if (signTasks.isNotEmpty()) {
+    val signingTasks = tasks.withType<Sign>()
+    if (signingTasks.isNotEmpty()) {
         Logger.lifecycle("")
-        Logger.lifecycle("  Making publish tasks depend on signing tasks")
-        tasks.filter { it.name.startsWith("publish") }.forEach {
-            Logger.info("   * ${it.name} now depends on ${signTasks.joinToString { it.name }}")
-            it.dependsOn(*signTasks.toTypedArray())
+        Logger.lifecycle("  Making signing tasks of project $H${name}$R run after publish tasks")
+        tasks.withType<AbstractPublishToMaven>().configureEach {
+            mustRunAfter(*signingTasks.toTypedArray())
+            Logger.info("   * $name must now run after ${signingTasks.joinToString { it.name }}")
         }
+        Logger.info("")
     }
 }
 
@@ -215,13 +218,13 @@ internal fun Project.compileVersionCatalog() {
         if (project.kotlinExtension is KotlinMultiplatformExtension)
             publishingExtension.publications.create<MavenPublication>("versions") {
                 this.artifactId += "-versionCatalog"
-                Logger.lifecycle("    Creating publication 'version' with artifact $artifactId for version catalog publishing")
+                Logger.lifecycle("  Creating publication 'version' with artifact $artifactId for version catalog publishing")
                 from(project.components.getByName("versionCatalog"))
             }
         else
             publishingExtension.publications.register<MavenPublication>("versions") {
                 this.artifactId += "-versionCatalog"
-                Logger.lifecycle("    Creating publication 'version' with artifact $artifactId for version catalog publishing")
+                Logger.lifecycle("  Creating publication 'version' with artifact $artifactId for version catalog publishing")
                 from(project.components.getByName("versionCatalog"))
             }
 
