@@ -3,6 +3,9 @@
   This is required, since working with source differs syntactically between Kotlin < 1.9.20
   and Kotlin 1.9.20 upwards.
 
+## 20240531
+* Explicitly use `jvmToolchain(17)` in plugin build scripts
+
 ## 20240501
 * Work around Gradle bug [26091](https://github.com/gradle/gradle/issues/26091) in yet another ways
 
