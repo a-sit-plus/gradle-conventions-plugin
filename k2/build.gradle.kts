@@ -24,7 +24,6 @@ val ksp = "$kotlinVersion-${versions["ksp"]}"
 version = "$kotlinVersion+$buildDate"
 group = groupId
 
-
 dependencies {
     api(project(":legacy"))
     api("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
@@ -54,4 +53,8 @@ publishing {
             name = "GitHub"
         }
     }
+}
+
+kotlin {
+    jvmToolchain(17)
 }
