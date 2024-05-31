@@ -3,6 +3,17 @@
   This is required, since working with source differs syntactically between Kotlin < 1.9.20
   and Kotlin 1.9.20 upwards.
 
+##NEXT
+* Koltin 1.9.10/2.0.0
+* Bouncycastle 1.78.1
+* KSP 2.0.0-1.0.21 (K2 only)
+* Kotest 5.9.0 (K2 only)
+* Ktor 2.3.11
+* koltinx.datetime 0.6.0
+* kotlinx.coroutines 1.8.1
+* JVM 17 by default
+
+
 ## 20240531
 * Explicitly use `jvmToolchain(17)` in plugin build scripts
 

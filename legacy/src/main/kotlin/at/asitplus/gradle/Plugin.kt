@@ -199,7 +199,6 @@ open class AspLegacyConventions : Plugin<Project> {
 
 
                 val kmp = extensions.getByType<KotlinMultiplatformExtension>()
-                kmp.sourceSets.shiftResources()
 
                 Logger.lifecycle("\n  This project will be built for the following targets:")
                 kmpTargets.forEach { Logger.lifecycle("   * ${it.name}") }
