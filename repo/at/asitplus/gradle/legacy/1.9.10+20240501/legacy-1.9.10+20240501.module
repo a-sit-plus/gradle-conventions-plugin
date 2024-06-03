@@ -10,7 +10,7 @@
   },
   "createdBy": {
     "gradle": {
-      "version": "8.5"
+      "version": "8.8"
     }
   },
   "variants": [
@@ -44,7 +44,7 @@
           "group": "io.ktor.plugin",
           "module": "plugin",
           "version": {
-            "requires": "2.3.10"
+            "requires": "2.3.11"
           }
         },
         {
@@ -80,11 +80,11 @@
         {
           "name": "legacy-1.9.10+20240501.jar",
           "url": "legacy-1.9.10+20240501.jar",
-          "size": 148074,
-          "sha512": "cab31ae5c9883b103138314bd9ce2b385d449d3c5a6bf52b83e4fb18ccd8711d650d88a9da21aaaaa32805f7bbe2b3d2f3798e9a9ff3920cf8df8442bb086485",
-          "sha256": "1cca5102e406a409b0ddf00c1da68c84618d66f684d7c5e34e510d00e8833697",
-          "sha1": "400ae8287b4609aabe7864c724e4a7e8bbe17ecd",
-          "md5": "e1e42a863039ac058dcc9a4c176596f1"
+          "size": 141786,
+          "sha512": "7cf122adb3b517135ca686d5f41b461568c2ee775fd032dc0d0c2b0632f966c6758e541aff0a0a5fd8d0cc2e7366ee91ade47d5a9245fba60b0c8219e36e9ca2",
+          "sha256": "af5c9c3b5024546f8783c6e84472b326b7f11fd1242b85fd4d47696f0cfe0318",
+          "sha1": "2e41bef71d2a510e8ae8053b30bc08d75b35311f",
+          "md5": "9fd4880259a2dc0289e5c9d382cff364"
         }
       ]
     },
@@ -125,7 +125,7 @@
           "group": "io.ktor.plugin",
           "module": "plugin",
           "version": {
-            "requires": "2.3.10"
+            "requires": "2.3.11"
           }
         },
         {
@@ -161,11 +161,11 @@
         {
           "name": "legacy-1.9.10+20240501.jar",
           "url": "legacy-1.9.10+20240501.jar",
-          "size": 148074,
-          "sha512": "cab31ae5c9883b103138314bd9ce2b385d449d3c5a6bf52b83e4fb18ccd8711d650d88a9da21aaaaa32805f7bbe2b3d2f3798e9a9ff3920cf8df8442bb086485",
-          "sha256": "1cca5102e406a409b0ddf00c1da68c84618d66f684d7c5e34e510d00e8833697",
-          "sha1": "400ae8287b4609aabe7864c724e4a7e8bbe17ecd",
-          "md5": "e1e42a863039ac058dcc9a4c176596f1"
+          "size": 141786,
+          "sha512": "7cf122adb3b517135ca686d5f41b461568c2ee775fd032dc0d0c2b0632f966c6758e541aff0a0a5fd8d0cc2e7366ee91ade47d5a9245fba60b0c8219e36e9ca2",
+          "sha256": "af5c9c3b5024546f8783c6e84472b326b7f11fd1242b85fd4d47696f0cfe0318",
+          "sha1": "2e41bef71d2a510e8ae8053b30bc08d75b35311f",
+          "md5": "9fd4880259a2dc0289e5c9d382cff364"
         }
       ]
     }

@@ -25,7 +25,7 @@
     <dependency>
       <groupId>io.ktor.plugin</groupId>
       <artifactId>plugin</artifactId>
-      <version>2.3.10</version>
+      <version>2.3.11</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
