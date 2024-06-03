@@ -3,6 +3,22 @@
   This is required, since working with source differs syntactically between Kotlin < 1.9.20
   and Kotlin 1.9.20 upwards.
 
+## 20240603
+* Gradle 8.8
+* Default to Kotlin 1.9.10 (legacy) / 2.0.0 (k2)
+* JVM 17 by default
+* Bouncy Castle 1.78.1
+* KSP 2.0.0-1.0.21 (K2 only)
+* Kotest 5.9.0 (K2 only)
+* Ktor 2.3.11
+* kotlinx.datetime 0.6.0
+* kotlinx.coroutines 1.8.1
+* KmmResult 1.6.0
+
+
+## 20240531
+* Explicitly use `jvmToolchain(17)` in plugin build scripts
+
 ## 20240531
 * Explicitly use `jvmToolchain(17)` in plugin build scripts
 
@@ -10,7 +26,7 @@
 * Work around Gradle bug [26091](https://github.com/gradle/gradle/issues/26091) in yet another ways
 
 ## 20240430
-* more version catalog publishign workarounds
+* more version catalog publishing workarounds
 
 ## 20240425+1
 * Add missing name to version catalog maven metadata to jvm-only version catalog
@@ -19,7 +35,7 @@
 * Add maven metadata to jvm-only version catalog
 
 ## 20240424
-* Publish version catalog to separate publication with claissifier "versionCatalog"
+* Publish version catalog to separate publication with classifier "versionCatalog"
 
 ## 20240422 (broken publishing!)
 * Fix version catalog building issue for version-less dependencies
