@@ -1,0 +1,124 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "at.asitplus.gradle",
+    "module": "k2",
+    "version": "2.0.0+20240604",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.8"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "at.asitplus.gradle",
+          "module": "legacy",
+          "version": {
+            "requires": "1.9.10+20240604"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "com.google.devtools.ksp.gradle.plugin",
+          "version": {
+            "requires": "2.0.0-1.0.21"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-multiplatform-plugin-gradle",
+          "version": {
+            "requires": "5.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "k2-2.0.0+20240604.jar",
+          "url": "k2-2.0.0+20240604.jar",
+          "size": 10399,
+          "sha512": "77202a60cd48a2431c1e3e42117f20cf3ec715a71438243e121a25d05269894f144157dac6a5b663ca391e9067cc01379cb8ad16c31268a4138dea13a506a010",
+          "sha256": "4e2938f658de24991ec5d9f9e74104384edaac5bce1964996c4cb599b1aedbb2",
+          "sha1": "c900322f789547a847980c79b6f82393a02b6089",
+          "md5": "2f8b3767ba0d5d8c9cd13af2174aa9f6"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "at.asitplus.gradle",
+          "module": "legacy",
+          "version": {
+            "requires": "1.9.10+20240604"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "com.google.devtools.ksp.gradle.plugin",
+          "version": {
+            "requires": "2.0.0-1.0.21"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-multiplatform-plugin-gradle",
+          "version": {
+            "requires": "5.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "k2-2.0.0+20240604.jar",
+          "url": "k2-2.0.0+20240604.jar",
+          "size": 10399,
+          "sha512": "77202a60cd48a2431c1e3e42117f20cf3ec715a71438243e121a25d05269894f144157dac6a5b663ca391e9067cc01379cb8ad16c31268a4138dea13a506a010",
+          "sha256": "4e2938f658de24991ec5d9f9e74104384edaac5bce1964996c4cb599b1aedbb2",
+          "sha1": "c900322f789547a847980c79b6f82393a02b6089",
+          "md5": "2f8b3767ba0d5d8c9cd13af2174aa9f6"
+        }
+      ]
+    }
+  ]
+}
