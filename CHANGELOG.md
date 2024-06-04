@@ -1,7 +1,7 @@
-# Dual-Version (Kotlin 1.9.10 and Kotlin 1.9.22+)
-* Modularise into two plugins, such that Kotlin 1.9.10 and 1.9.22 are supported in parallel.
-  This is required, since working with source differs syntactically between Kotlin < 1.9.20
-  and Kotlin 1.9.20 upwards.
+# Dual-Version Kotlin 1.9.10 / 2.0.0
+
+## 20240604
+* Fix Kotest version for K2
 
 ## 20240603
 * Gradle 8.8
@@ -15,9 +15,10 @@
 * kotlinx.coroutines 1.8.1
 * KmmResult 1.6.0
 
-
-## 20240531
-* Explicitly use `jvmToolchain(17)` in plugin build scripts
+# Dual-Version (Kotlin 1.9.10 and Kotlin 1.9.22+)
+* Modularise into two plugins, such that Kotlin 1.9.10 and 1.9.22 are supported in parallel.
+  This is required, since working with source differs syntactically between Kotlin < 1.9.20
+  and Kotlin 1.9.20 upwards.
 
 ## 20240531
 * Explicitly use `jvmToolchain(17)` in plugin build scripts

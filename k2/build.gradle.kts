@@ -20,6 +20,7 @@ val buildDate: String by extra
 
 val kotlinVersion = versions["kotlin"] as String
 val ksp = "$kotlinVersion-${versions["ksp"]}"
+val kotest = versions["kotest"]
 
 version = "$kotlinVersion+$buildDate"
 group = groupId
@@ -28,6 +29,7 @@ dependencies {
     api(project(":legacy"))
     api("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     api("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:$ksp")
+    api("io.kotest:kotest-framework-multiplatform-plugin-gradle:$kotest")
 }
 
 repositories {
