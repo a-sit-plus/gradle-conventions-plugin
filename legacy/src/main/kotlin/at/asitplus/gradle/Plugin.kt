@@ -86,6 +86,15 @@ open class AspLegacyConventions : Plugin<Project> {
         }
     }
 
+    protected open fun Project.addKotestPlugin(isMultiplatform: Boolean) {
+        if (isMultiplatform) {
+            afterEvaluate {
+                Logger.info("\n  Setting up Kotest multiplatform plugin")
+                plugins.apply("io.kotest.multiplatform")
+            }
+        }
+    }
+
     protected open fun versionOverrides(aspVersions: AspVersions) = Unit
 
     override fun apply(target: Project) {
@@ -189,9 +198,12 @@ open class AspLegacyConventions : Plugin<Project> {
         target.plugins.withType<KotlinMultiplatformPluginWrapper> {
             isMultiplatform = true
             Logger.lifecycle("  ${H}Multiplatform project detected$R")
+        }
+        target.addKotestPlugin(isMultiplatform)
 
+
+        target.plugins.withType<KotlinMultiplatformPluginWrapper> {
             target.afterEvaluate {
-
                 val kmpTargets =
                     extensions.getByType<KotlinMultiplatformExtension>().targets.filter { it.name != "metadata" }
                 if (kmpTargets.isEmpty())
@@ -204,8 +216,7 @@ open class AspLegacyConventions : Plugin<Project> {
                 kmpTargets.forEach { Logger.lifecycle("   * ${it.name}") }
 
 
-                Logger.info("\n  Setting up Kotest multiplatform plugin ${AspVersions.kotest}")
-                plugins.apply("io.kotest.multiplatform")
+
 
                 extensions.getByType<KotlinMultiplatformExtension>().jvm {
                     Logger.info("  Setting jsr305=strict for JVM nullability annotations")

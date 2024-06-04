@@ -1,5 +1,6 @@
 package at.asitplus.gradle
 
+import org.gradle.api.Project
 import org.gradle.kotlin.dsl.invoke
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 
@@ -11,7 +12,12 @@ class AspConventions : AspLegacyConventions() {
         kotlin.runCatching {
             javaClass.classLoader!!.getResourceAsStream("k2versions.properties").use { aspVersions.versions.load(it) }
         }
+    }
 
+    override fun Project.addKotestPlugin(isMultiplatform: Boolean) {
+
+        Logger.info("\n  Setting up Kotest multiplatform plugin")
+        plugins.apply("io.kotest.multiplatform")
     }
 
     override fun KotlinMultiplatformExtension.setupKotest() {

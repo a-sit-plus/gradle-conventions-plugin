@@ -1,5 +1,9 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.0
 
+
+## 20240604+1
+* Fix Kotest multiplatform plugin loading for K2
+
 ## 20240604
 * Fix Kotest version for K2
 
