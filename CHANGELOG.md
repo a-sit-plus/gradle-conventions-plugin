@@ -1,6 +1,10 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.0
 
 
+## 20240607
+* Kotest 5.9.1 for K2
+* kotlinx.serialization 1.7.1-SNAPSHOT for K2
+
 ## 20240604+1
 * Fix Kotest multiplatform plugin loading for K2
 
