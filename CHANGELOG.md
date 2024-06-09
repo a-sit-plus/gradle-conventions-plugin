@@ -1,5 +1,7 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.0
 
+## 20240609
+* KSP 1.0.22 for K2
 
 ## 20240607
 * Kotest 5.9.1 for K2
