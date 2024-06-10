@@ -160,6 +160,7 @@ open class AspLegacyConventions : Plugin<Project> {
                 repositories {
                     maven(uri("https://raw.githubusercontent.com/a-sit-plus/kotlinx.serialization/mvn/repo"))
                     maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
+                    maven("https://oss.sonatype.org/content/repositories/snapshots")
                     google()
                     mavenCentral()
                 }

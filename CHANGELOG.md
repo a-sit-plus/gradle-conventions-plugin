@@ -1,5 +1,9 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.0
 
+## 20240610
+* KmmResult 1.6.1
+* Maven central snapshot repo added by default
+
 ## 20240609
 * KSP 1.0.22 for K2
 
