@@ -119,9 +119,10 @@ internal fun Project.compileVersionCatalog() {
         //we did the magic already for those special dependencies we used shorthands for, so we skip 'em here
         userDefinedCatalog?.versionAliases?.filterNot { setVersions.contains(it) }
             ?.forEach {
+                println("IT: $it")
                 //we can take the risk of using !! here, because userDefineCatalog and AspVersions.versionCatalog point to the same source file
                 //and `versionAliases` contains the versions defined in the `versions` table
-                val requiredVersion = AspVersions.versionCatalog!!.getTable("versions")?.getString(it)!!
+                val requiredVersion = AspVersions.versionCatalog!!.getTable("versions")?.getString(it.replace(".","-"))!!
                 Logger.info("    * Adding version alias '$it = $requiredVersion' to version catalog 'libs'")
                 version(it, requiredVersion)
             }

@@ -217,7 +217,7 @@ open class AspLegacyConventions : Plugin<Project> {
                 kmpTargets.forEach { Logger.lifecycle("   * ${it.name}") }
 
 
-
+/*
 
                 extensions.getByType<KotlinMultiplatformExtension>().jvm {
                     Logger.info("  Setting jsr305=strict for JVM nullability annotations")
@@ -237,7 +237,7 @@ open class AspLegacyConventions : Plugin<Project> {
                     testRuns["test"].executionTask.configure {
                         useJUnitPlatform()
                     }
-                }
+                }*/
 
 
                 kmp.experimentalOptIns()
