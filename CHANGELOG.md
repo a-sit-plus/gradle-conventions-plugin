@@ -1,5 +1,9 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.0
 
+## 20240619
+* Fix Multiplatform builds without JVM target (i.e. compose mobile, without desktop target)
+* Fix version catalog version reading
+
 ## 20240610
 * KmmResult 1.6.1
 * Maven central snapshot repo added by default

@@ -116,7 +116,12 @@ open class AspLegacyConventions : Plugin<Project> {
                 .sortedBy { (k, _) -> k.toString() }
                 .forEach { (t, _) ->
                     Logger.lifecycle(
-                        "    ${String.format("%-14s", "$t:")} ${target.AspVersions.versionOf(t as String)}"
+                        "    ${
+                            String.format(
+                                "%-14s",
+                                "$t:"
+                            )
+                        } ${target.AspVersions.versionOf(t as String)}"
                     )
                 }
             Logger.lifecycle("")
@@ -216,28 +221,49 @@ open class AspLegacyConventions : Plugin<Project> {
                 Logger.lifecycle("\n  This project will be built for the following targets:")
                 kmpTargets.forEach { Logger.lifecycle("   * ${it.name}") }
 
+                runCatching {
+                    kmp.jvm {
+                        Logger.info("  [JVM] Setting jsr305=strict for JVM nullability annotations")
+                        compilations.all {
+                            kotlinOptions {
+                                if (!hasMrJar()) { //MRJAR
+                                    Logger.lifecycle("  ${H}[JVM] Setting jvmTarget to ${target.jvmTarget} for $name$R")
+                                    kotlinOptions.jvmTarget = target.jvmTarget
+                                } else Logger.lifecycle("  [JVM] MR Jar plugin detected. Not setting jvmTarget")
+                                freeCompilerArgs = listOf(
+                                    "-Xjsr305=strict"
+                                )
+                            }
+                        }
 
-/*
-
-                extensions.getByType<KotlinMultiplatformExtension>().jvm {
-                    Logger.info("  Setting jsr305=strict for JVM nullability annotations")
-                    compilations.all {
-                        kotlinOptions {
-                            if (!hasMrJar()) { //MRJAR
-                                Logger.lifecycle("  ${H}Setting jvmTarget to ${target.jvmTarget} for $name$R")
-                                kotlinOptions.jvmTarget = target.jvmTarget
-                            } else Logger.lifecycle("  MR Jar plugin detected. Not setting jvmTarget")
-                            freeCompilerArgs = listOf(
-                                "-Xjsr305=strict"
-                            )
+                        Logger.info("  [JVM] Configuring Kotest JVM runner")
+                        testRuns["test"].executionTask.configure {
+                            useJUnitPlatform()
                         }
                     }
+                }
 
-                    Logger.info("  Configuring Kotest JVM runner")
-                    testRuns["test"].executionTask.configure {
-                        useJUnitPlatform()
+                val hasAgp =
+                    ((pluginManager.findPlugin("com.android.library")
+                        ?: pluginManager.findPlugin("com.android.application")) != null)
+                if (hasAgp) {
+                    kmp.androidTarget {
+                        Logger.info("  [AND] Setting jsr305=strict for JVM nullability annotations")
+                        compilations.all {
+                            kotlinOptions {
+
+                                Logger.lifecycle("  ${H}[AND] Setting jvmTarget to ${target.jvmTarget} for $name$R")
+                                kotlinOptions.jvmTarget = target.jvmTarget
+
+                                freeCompilerArgs = listOf(
+                                    "-Xjsr305=strict"
+                                )
+                            }
+                        }
+                        //TODO test runner setup
                     }
-                }*/
+                }
+
 
 
                 kmp.experimentalOptIns()
