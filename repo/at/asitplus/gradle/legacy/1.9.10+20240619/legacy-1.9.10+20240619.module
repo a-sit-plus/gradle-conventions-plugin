@@ -67,6 +67,13 @@
           "version": {
             "requires": "1.9.20"
           }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "com.google.devtools.ksp.gradle.plugin",
+          "version": {
+            "requires": "1.9.10-1.0.13"
+          }
         }
       ],
       "files": [
@@ -74,10 +81,10 @@
           "name": "legacy-1.9.10+20240619.jar",
           "url": "legacy-1.9.10+20240619.jar",
           "size": 147810,
-          "sha512": "e9e95db634cd9d6a7b393e6a365ebd675077e2a28ca1f1070c7348bc0b0067ae93ce208e522736f5b8d6e260667bb7c71cd8caa963e3e76b99fe2d0b99ca28a4",
-          "sha256": "8dc2fa67494da460ca223289196266577a29436fc719f8bca8b89e6b19829ac7",
-          "sha1": "fd8aa7d17c9f68554a03dfb1a13d479d0a26cd76",
-          "md5": "6c73ebea3e33c94634452f84f3c753d9"
+          "sha512": "1f500587d407e9147f2aa93dc90e0406a5cf2de88e79b84282dee3f965454318b1fbfbeb0d31cdae8da439cb2826ea7fa097bec18fd821bc95afa5b0a4dee06c",
+          "sha256": "3d887349e12e7dd1b831ad82501223743b94069c3f8307c4e3e7460d8590bd41",
+          "sha1": "0adf5eb7676ee57001c73a1db3de0fd56f7db121",
+          "md5": "794e6c37eabc0195c8bc41ab4737345b"
         }
       ]
     },
@@ -141,6 +148,13 @@
           "version": {
             "requires": "1.9.20"
           }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "com.google.devtools.ksp.gradle.plugin",
+          "version": {
+            "requires": "1.9.10-1.0.13"
+          }
         }
       ],
       "files": [
@@ -148,10 +162,10 @@
           "name": "legacy-1.9.10+20240619.jar",
           "url": "legacy-1.9.10+20240619.jar",
           "size": 147810,
-          "sha512": "e9e95db634cd9d6a7b393e6a365ebd675077e2a28ca1f1070c7348bc0b0067ae93ce208e522736f5b8d6e260667bb7c71cd8caa963e3e76b99fe2d0b99ca28a4",
-          "sha256": "8dc2fa67494da460ca223289196266577a29436fc719f8bca8b89e6b19829ac7",
-          "sha1": "fd8aa7d17c9f68554a03dfb1a13d479d0a26cd76",
-          "md5": "6c73ebea3e33c94634452f84f3c753d9"
+          "sha512": "1f500587d407e9147f2aa93dc90e0406a5cf2de88e79b84282dee3f965454318b1fbfbeb0d31cdae8da439cb2826ea7fa097bec18fd821bc95afa5b0a4dee06c",
+          "sha256": "3d887349e12e7dd1b831ad82501223743b94069c3f8307c4e3e7460d8590bd41",
+          "sha1": "0adf5eb7676ee57001c73a1db3de0fd56f7db121",
+          "md5": "794e6c37eabc0195c8bc41ab4737345b"
         }
       ]
     }

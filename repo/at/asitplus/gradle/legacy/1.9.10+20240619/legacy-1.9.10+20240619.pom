@@ -47,6 +47,12 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
+      <groupId>com.google.devtools.ksp</groupId>
+      <artifactId>symbol-processing-gradle-plugin</artifactId>
+      <version>1.9.10-1.0.13</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
       <groupId>org.tomlj</groupId>
       <artifactId>tomlj</artifactId>
       <version>1.1.1</version>
