@@ -15,7 +15,7 @@ fun Project.exportIosFramework(
     vararg additionalExports: Any
 ) = exportIosFramework(
     name,
-    bitcodeEmbeddingMode = BitcodeEmbeddingMode.BITCODE,
+    bitcodeEmbeddingMode = BitcodeEmbeddingMode.DISABLE,
     static = false,
     additionalExports = additionalExports
 )
@@ -26,7 +26,7 @@ fun Project.exportIosFramework(
     vararg additionalExports: Any
 ) = exportIosFramework(
     name,
-    bitcodeEmbeddingMode = BitcodeEmbeddingMode.BITCODE,
+    bitcodeEmbeddingMode = BitcodeEmbeddingMode.DISABLE,
     static = static,
     additionalExports = additionalExports
 )

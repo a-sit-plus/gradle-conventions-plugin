@@ -1,5 +1,12 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.0
 
+## 20240717
+* XCFramework: Disable bitcode embedding by default
+* Dependency Updates:
+  * KmmResult 1.7.0
+  * Ktor 2.3.12
+  * KSP 2.0.0-2.0.23 (K2 only)
+
 ## 20240619
 * Fix Multiplatform builds without JVM target (i.e. compose mobile, without desktop target)
 * Fix version catalog version reading
