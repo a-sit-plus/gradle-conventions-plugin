@@ -1,7 +1,7 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-[![Version](https://img.shields.io/badge/Kotlin_1.9.10-+20240717-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)](CHANGELOG.md)
-[![Version](https://img.shields.io/badge/Kotlin_2.0.0-+20240717-gray.svg?style=flat&logo=kotlin&labelColor=7463ce&logoColor=white)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Kotlin_1.9.10-+20240725-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Kotlin_2.0.0-+20240725-gray.svg?style=flat&logo=kotlin&labelColor=7463ce&logoColor=white)](CHANGELOG.md)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat&)](http://www.apache.org/licenses/LICENSE-2.0)
 
 **Note: This plugin is still in its early stages and may not work well for edge cases!
@@ -209,7 +209,7 @@ In addition, shorthand for dependencies and other extensions are available to st
 
 ### JDK Version Management
 
-`jvmToolchain(11)`, `jvmTarget = 11`, and `jdkName = 11` are applied by default, **unless**
+`jvmToolchain(17)`, `jvmTarget = 17`, and `jdkName = 17` are applied by default, **unless**
 the [multi-release jar plugin ("me.champeau.mrjar")](https://melix.github.io/mrjar-gradle-plugin/0.1/index.html) is
 applied as well.
 Note that no version management is in place for the multi-release jar plugin, as we rarely need it internally.

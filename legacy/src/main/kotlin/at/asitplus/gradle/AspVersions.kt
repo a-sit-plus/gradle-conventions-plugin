@@ -55,7 +55,7 @@ class AspVersions(private val project: Project) {
     val kmmresult = versionOf("kmmresult")
 
     inner class Jvm {
-        val defaultTarget = 11.toString()
+        val defaultTarget = 17.toString()
 
         val bouncycastle get() = versionOf("bouncycastle")
     }
