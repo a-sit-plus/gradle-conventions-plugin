@@ -1,5 +1,9 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.0
 
+## 20240828
+* Kotest 6.0 Snapshot
+* KSP 2.0.20-2.0.24 (K2 only)
+
 ## 20240725
 
 * Don't depend on SNAPSHOT serialization by default. If you need COSE features that were previously pulled in form the snapshot, simply add `serialization = 1.8.0-SNAPSHOT` (or: even safer: `serialization = 1.8.0-SNAPSHOT!!`) to your project' `gradle/libs.verions.toml`. This changes comes with a huge advantage: It does not add this snapshot dependency virally to all projects that rely on this conventions plugin.

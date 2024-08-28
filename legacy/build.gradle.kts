@@ -53,6 +53,7 @@ gradlePlugin {
 
 publishing {
     repositories {
+        mavenLocal()
         maven {
             url = uri(rootProject.layout.projectDirectory.dir("repo"))
             name = "GitHub"
