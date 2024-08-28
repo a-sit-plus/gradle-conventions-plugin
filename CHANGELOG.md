@@ -1,8 +1,10 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.0
 
-## 20240828
+## 20240829
 * Kotest 6.0 Snapshot
 * KSP 2.0.20-2.0.24 (K2 only)
+* kotlinx.serialization 1.7.2 with full COSE support
+* kotlinx-datetime 0.6.1
 
 ## 20240725
 

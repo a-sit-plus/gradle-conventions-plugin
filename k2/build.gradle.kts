@@ -36,7 +36,6 @@ dependencies {
 
 repositories {
     maven("https://s01.oss.sonatype.org/content/repositories/snapshots") //KOTEST snapshot
-    maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
     mavenCentral()
     gradlePluginPortal()
 }

@@ -1,12 +1,13 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-[![Version](https://img.shields.io/badge/Kotlin_1.9.10-+20240725-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)](CHANGELOG.md)
-[![Version](https://img.shields.io/badge/Kotlin_2.0.0-+20240725-gray.svg?style=flat&logo=kotlin&labelColor=7463ce&logoColor=white)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Kotlin_1.9.10-+20240829-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Kotlin_2.0.20-+20240829-gray.svg?style=flat&logo=kotlin&labelColor=7463ce&logoColor=white)](CHANGELOG.md)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat&)](http://www.apache.org/licenses/LICENSE-2.0)
 
-**Note: This plugin is still in its early stages and may not work well for edge cases!
+**Note: This plugin is used internally at A-SIT Plus and there are no guarantees whatsoever wrt. stability, reliability, and even making any sense at all.
+It may eat your cat! Hopefully, though, it won't, but will instead help others understand some of the intricacies when writing custom plugins.
 <br>
-Minimum supported Gradle version: 8.5. Requires Java 11+!**
+Minimum supported Gradle version: 8.5. Requires Java 17+!**
 
 This repository bundles conventions used inside A-SIT Plus into a plugin.
 The main motivation to go beyond a versions catalogue was re-usability inside complex, nested composite builds.
@@ -19,7 +20,7 @@ This plugin targets Kotlin JVM and multiplatform projects and provides the follo
 * Shorthands for various commonly-used dependencies
 * Natural extension functions to add common dependencies
 * Autoconfiguration of Kotest for multiplatform projects
-* Automatically adding of google and maven central repository
+* Automatically adding of Google and maven central repository
 * Auto-setup of gradle-nexus-plugin (but no configuration of publishing)
 * Experimental opt-ins for multiplatform projects
 * Gitlab publishing shorthands
@@ -62,7 +63,7 @@ System.setProperty("at.asitplus.gradle", "legacy")
 pluginManagement {
     includeBuild("path/to/gradle-conventions-plugin")
     repositories {
-        maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
+      maven("https://s01.oss.sonatype.org/content/repositories/snapshots") //Kotest snapshot for Kotlin 2.0.20 until new Kotest stable is released
         google()
         gradlePluginPortal()
         mavenCentral()
@@ -92,13 +93,14 @@ pluginManagement {
             url = uri("https://raw.githubusercontent.com/a-sit-plus/gradle-conventions-plugin/mvn/repo")
             name = "aspConventions"
         }
+        maven("https://s01.oss.sonatype.org/content/repositories/snapshots") //Kotest snapshot for Kotlin 2.0.20 until new Kotest stable is released
         mavenCentral()
         gradlePluginPortal()
     }
 }
 ```
 
-Note that is is important to (at least) add `gradlePluginPortal()`. Otherwise, **no plugins at all** can be resolved!
+Note that it is important to (at least) add `gradlePluginPortal()`. Otherwise, **no plugins at all** can be resolved!
 
 ## Applying the plugin
 
@@ -109,7 +111,7 @@ below.
 
 ```kotlin
 plugins {
-    id("at.asitplus.gradle.conventions") version "1.9.22+20240219" //Version can be omitted for composite build
+    id("at.asitplus.gradle.conventions") version "2.0.20+20240829" //Version can be omitted for composite build
 }
 ```
 

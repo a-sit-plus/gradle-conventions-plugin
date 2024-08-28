@@ -157,15 +157,13 @@ open class AspLegacyConventions : Plugin<Project> {
 
 
             Logger.lifecycle("  Adding maven repositories")
-            Logger.info("    * serialization fork")
-            Logger.info("    * dokka dev")
+            Logger.info("    * maven snapshots")
             Logger.info("    * maven central")
             Logger.info("    * google")
             target.allprojects {
                 repositories {
-                    maven(uri("https://raw.githubusercontent.com/a-sit-plus/kotlinx.serialization/mvn/repo"))
-                    maven("https://maven.pkg.jetbrains.space/kotlin/p/dokka/dev")
                     maven("https://oss.sonatype.org/content/repositories/snapshots")
+                    maven("https://s01.oss.sonatype.org/content/repositories/snapshots")
                     google()
                     mavenCentral()
                 }
@@ -178,7 +176,6 @@ open class AspLegacyConventions : Plugin<Project> {
                     doFirst { Logger.lifecycle("> Cleaning all build files") }
 
                     delete(target.rootProject.layout.buildDirectory.get().asFile)
-                    //delete(target.layout.projectDirectory.dir("repo"))
                     doLast { Logger.lifecycle("> Clean done") }
                 }
             }
