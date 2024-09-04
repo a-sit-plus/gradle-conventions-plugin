@@ -1,5 +1,8 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.0
 
+## 20240904
+* Pin Kotest Snapshot version to 6.0.0.1564-20240722.131423-1
+
 ## 20240829
 * Kotest 6.0 Snapshot
 * KSP 2.0.20-2.0.24 (K2 only)
