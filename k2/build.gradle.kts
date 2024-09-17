@@ -20,7 +20,7 @@ val buildDate: String by extra
 
 val kotlinVersion = versions["kotlin"] as String
 val ksp = "$kotlinVersion-${versions["ksp"]}"
-val kotest = versions["kotest"]
+val kotest = versions["kotest-plugin"]
 
 version = "$kotlinVersion+$buildDate"
 group = groupId

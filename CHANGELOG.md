@@ -1,4 +1,10 @@
-# Dual-Version Kotlin 1.9.10 / 2.0.0
+# Dual-Version Kotlin 1.9.10 / 2.0.20
+
+## 20240917
+* Coroutines 1.9.0
+* Kotest plugin 6.0.0-20240905.065253-61
+* Kotest dependencies 5.9.1
+* Print out build date in plugin info
 
 ## 20240905
 * Pin Kotest Snapshot version to 6.0.0-20240905.065253-61

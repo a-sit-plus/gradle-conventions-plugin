@@ -106,7 +106,7 @@ open class AspLegacyConventions : Plugin<Project> {
                 versionOverrides(it)
             }
         Logger.lifecycle(
-            "\n ASP Conventions ${H}${target.AspVersions.versions["kotlin"]}$R is using the following dependency versions for project ${
+            "\n ASP Conventions ${H}${target.AspVersions.versions["kotlin"]}+$buildDate$R is using the following dependency versions for project ${
                 if (target == target.rootProject) target.name
                 else "${target.rootProject.name}:${target.name}"
             }:"

@@ -16,6 +16,10 @@ private val versions = Properties().apply {
 val groupId: String by extra
 val buildDate: String by extra
 
+project.file("src/main/kotlin/BuildDate.kt").bufferedWriter().use { writer ->
+    writer.write("package at.asitplus.gradle\nval buildDate = \"$buildDate\"")
+}
+
 val kotlinVersion = versions["kotlin"] as String
 val ksp = "$kotlinVersion-${versions["ksp"]}"
 
