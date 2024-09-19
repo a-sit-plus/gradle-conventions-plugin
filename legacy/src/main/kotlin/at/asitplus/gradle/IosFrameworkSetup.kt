@@ -12,30 +12,21 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFrameworkConfig
 
 fun Project.exportIosFramework(
     name: String,
+    transitiveExports: Boolean,
     vararg additionalExports: Any
 ) = exportIosFramework(
     name,
-    bitcodeEmbeddingMode = BitcodeEmbeddingMode.DISABLE,
+    transitiveExports = transitiveExports,
     static = false,
     additionalExports = additionalExports
 )
 
 fun Project.exportIosFramework(
     name: String,
+    transitiveExports: Boolean,
     static: Boolean,
-    vararg additionalExports: Any
-) = exportIosFramework(
-    name,
-    bitcodeEmbeddingMode = BitcodeEmbeddingMode.DISABLE,
-    static = static,
-    additionalExports = additionalExports
-)
-
-fun Project.exportIosFramework(
-    name: String,
-    static: Boolean,
-    bitcodeEmbeddingMode: BitcodeEmbeddingMode,
-    vararg additionalExports: Any
+    vararg additionalExports: Any,
+    additionalConfig: XCFrameworkConfig.() -> Unit = {}
 ) {
     val iosTargets = kotlinExtension.let {
         if (it is KotlinMultiplatformExtension) {
@@ -50,11 +41,13 @@ fun Project.exportIosFramework(
                 it.binaries.framework {
                     baseName = name
                     isStatic = static
-                    embedBitcode(bitcodeEmbeddingMode)
+                    transitiveExport = transitiveExports
+                    embedBitcode(BitcodeEmbeddingMode.DISABLE)
                     additionalExports.forEach { export(it) }
                     xcf.add(this)
                 }
             }
+            xcf.additionalConfig()
         }
     }
 }
