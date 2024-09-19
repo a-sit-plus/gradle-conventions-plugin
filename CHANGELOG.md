@@ -1,5 +1,8 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.20
 
+## 20240920
+* Kotest plugin 6.0.0-20240918.002009-71
+
 ## 20240917
 * Coroutines 1.9.0
 * Kotest plugin 6.0.0-20240905.065253-61
