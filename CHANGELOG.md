@@ -1,5 +1,9 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.20
 
+## 20240919
+* KSP 1.0.25 (K2 only)
+* allow fine-grained XCodeFramework export-config with shorthand for transitive dependency export
+
 ## 20240917
 * Coroutines 1.9.0
 * Kotest plugin 6.0.0-20240905.065253-61
