@@ -101,6 +101,7 @@ private fun Project.getDependencies(type: String): List<Dependency> =
  *  Once the version catalog is compiled, it is added to the maven publication
  */
 internal fun Project.compileVersionCatalog() {
+    if (!publishVersionCatalog) Logger.lifecycle(("NOT publishing version catalog for project $project"))
 
     Logger.lifecycle("\n  Compiling version catalog of project ${rootProject.name}:${project.name}")
 
