@@ -101,8 +101,10 @@ private fun Project.getDependencies(type: String): List<Dependency> =
  *  Once the version catalog is compiled, it is added to the maven publication
  */
 internal fun Project.compileVersionCatalog() {
-    if (!publishVersionCatalog) Logger.lifecycle(("NOT publishing version catalog for project $project"))
-
+    if (!publishVersionCatalog) {
+        Logger.lifecycle(("\n  NOT publishing version catalog for project $project"))
+        return
+    }
     Logger.lifecycle("\n  Compiling version catalog of project ${rootProject.name}:${project.name}")
 
     //Get `libs` version catalog, which is the default and only supported one
