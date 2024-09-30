@@ -1,7 +1,7 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-[![Version](https://img.shields.io/badge/Kotlin_2.0.20-+20240920-gray.svg?style=flat&logo=kotlin&labelColor=7463ce&logoColor=white)](CHANGELOG.md)
-[![Version](https://img.shields.io/badge/Kotlin_1.9.10-+20240920-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Kotlin_2.0.20-+20240930-gray.svg?style=flat&logo=kotlin&labelColor=7463ce&logoColor=white)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Kotlin_1.9.10-+20240930-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)](CHANGELOG.md)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat&)](http://www.apache.org/licenses/LICENSE-2.0)
 
 **Note: This plugin is used internally at A-SIT Plus and there are no guarantees whatsoever wrt. stability, reliability, and even making any sense at all.
@@ -40,6 +40,7 @@ This plugin targets Kotlin JVM and multiplatform projects and provides the follo
       trying `System.getProperty("my_env_overridable_prop")`, then trying to read it read from `extra`. Returns `null`
       if absent.
 * Automatic compilation and publication of Gradle version catalog for all non-test dependencies
+  * Can be disabled by setting `publishVersionCatalog = false` in a module's `build.gradle.kts`
 
 This plugin is hosted on a public GitHub repo, because a) some of our publicly published projects depend on it and b)
 sharing is caring!

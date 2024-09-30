@@ -43,6 +43,7 @@ repositories {
     gradlePluginPortal()
 }
 
+
 if(System.getProperty("at.asitplus.gradle") == "legacy")
     logger.lifecycle("  NOT registering A-SIT Plus K2 Conventions Plugin")
 else gradlePlugin {

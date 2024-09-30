@@ -57,6 +57,13 @@ class EnvExtraDelegate(private val project: Project) {
 }
 
 private val KEY_ASP_VERSIONS = Random.nextBits(32).toString(36)
+private val KEY_VERSION_CATALOG_PUBLISH = Random.nextBits(32).toString(36)
+
+var Project.publishVersionCatalog: Boolean
+    get() = kotlin.runCatching { extraProperties[KEY_VERSION_CATALOG_PUBLISH] as Boolean }.getOrElse { false }
+    set(value) {
+        extraProperties[KEY_VERSION_CATALOG_PUBLISH] = value
+    }
 
 val Project.AspVersions: AspVersions get() = rootProject.extraProperties[KEY_ASP_VERSIONS] as AspVersions
 val Project.env: EnvDelegate get() = EnvDelegate
@@ -105,6 +112,7 @@ open class AspLegacyConventions : Plugin<Project> {
                 target.extraProperties[KEY_ASP_VERSIONS] = it
                 versionOverrides(it)
             }
+        target.publishVersionCatalog = true
         Logger.lifecycle(
             "\n ASP Conventions ${H}${target.AspVersions.versions["kotlin"]}+$buildDate$R is using the following dependency versions for project ${
                 if (target == target.rootProject) target.name
