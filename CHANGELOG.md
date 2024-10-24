@@ -1,8 +1,12 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.20
 
+## 20241024
+* Kotest 6.0.0.M1
+* KmmResult 1.8.0
+
 ## 20240930
 * kotlinx.serialization 1.7.3
-* Add flrag to disable version Catalog publishing
+* Add flag to disable version Catalog publishing
 
 ## 20240920
 * Kotest plugin 6.0.0-20240918.002009-71
