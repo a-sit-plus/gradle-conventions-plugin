@@ -66,10 +66,10 @@
           "name": "k2-2.0.20+20241029.jar",
           "url": "k2-2.0.20+20241029.jar",
           "size": 10771,
-          "sha512": "e5a4609e01710af9f0825d9cc920df909ff08c06bf8029ac85464948171ec5501ae6e941359df78671e4e08771e8a29f4db1a4c5f98fe6ef4cdd733c6662c38b",
-          "sha256": "8f857ee984bcd336a68f67b82f6c1147d1a03af16db18255ed234dcc10f1ef09",
-          "sha1": "f127428343e6f9a38d95fcc7fa111ab3e5509e53",
-          "md5": "4071e23aae610c3336eaf7b5accad5d2"
+          "sha512": "49fb4c9c5ad5bb2c37473db55a838e692531c5906f832c7de70a7a6ae9581ebf89643baa3ecc4fa5ab0f84491274b258d6c7a0e28588175cf6d074c8726c1db6",
+          "sha256": "587351e73b6dcd4b63379cd253361221339b090fc91e197ad9f210d5fff64bb3",
+          "sha1": "782525cecf37847a3005b1c09bc7508d981fbb98",
+          "md5": "7e985ebbc5867a2080f474cd888c363b"
         }
       ]
     },
@@ -125,10 +125,10 @@
           "name": "k2-2.0.20+20241029.jar",
           "url": "k2-2.0.20+20241029.jar",
           "size": 10771,
-          "sha512": "e5a4609e01710af9f0825d9cc920df909ff08c06bf8029ac85464948171ec5501ae6e941359df78671e4e08771e8a29f4db1a4c5f98fe6ef4cdd733c6662c38b",
-          "sha256": "8f857ee984bcd336a68f67b82f6c1147d1a03af16db18255ed234dcc10f1ef09",
-          "sha1": "f127428343e6f9a38d95fcc7fa111ab3e5509e53",
-          "md5": "4071e23aae610c3336eaf7b5accad5d2"
+          "sha512": "49fb4c9c5ad5bb2c37473db55a838e692531c5906f832c7de70a7a6ae9581ebf89643baa3ecc4fa5ab0f84491274b258d6c7a0e28588175cf6d074c8726c1db6",
+          "sha256": "587351e73b6dcd4b63379cd253361221339b090fc91e197ad9f210d5fff64bb3",
+          "sha1": "782525cecf37847a3005b1c09bc7508d981fbb98",
+          "md5": "7e985ebbc5867a2080f474cd888c363b"
         }
       ]
     }
