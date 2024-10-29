@@ -177,17 +177,6 @@ open class AspLegacyConventions : Plugin<Project> {
                 }
             }
 
-            runCatching {
-                target.tasks.register<Delete>("clean") {
-                    Logger.lifecycle("  Adding clean task to root project")
-
-                    doFirst { Logger.lifecycle("> Cleaning all build files") }
-
-                    delete(target.rootProject.layout.buildDirectory.get().asFile)
-                    doLast { Logger.lifecycle("> Clean done") }
-                }
-            }
-
             Logger.info("  Setting Nexus publishing URL to s01.oss.sonatype.org")
             target.extensions.getByType<NexusPublishExtension>().apply {
                 repositories {
@@ -310,6 +299,19 @@ open class AspLegacyConventions : Plugin<Project> {
                 target.plugins.apply("maven-publish")
 
                 target.afterEvaluate {
+                    runCatching {
+                        if (target.tasks.findByName(("clean")) == null)
+                            target.tasks.register<Delete>("clean") {
+                                Logger.lifecycle("  Adding clean task to root project")
+
+                                doFirst { Logger.lifecycle("> Cleaning all build files") }
+
+                                delete(target.rootProject.layout.buildDirectory.get().asFile)
+                                doLast { Logger.lifecycle("> Clean done") }
+                            }
+                    }
+
+
                     Logger.info("  Configuring Test output format")
                     target.tasks.withType<Test> {
                         if (name != "testReleaseUnitTest") {

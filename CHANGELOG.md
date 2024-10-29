@@ -1,5 +1,9 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.20
 
+## 20241029
+* KmmResult 1.9.0
+* Only add Clean task when it does not yet exist
+
 ## 20241024
 * Kotest 6.0.0.M1
 * KmmResult 1.8.0
