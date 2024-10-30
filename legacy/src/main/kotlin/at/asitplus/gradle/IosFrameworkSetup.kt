@@ -10,34 +10,55 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFrameworkConfig
 
 
+@Deprecated("Renamed to exportXCFramework", ReplaceWith("exportXCFramework"))
 fun Project.exportIosFramework(
     name: String,
     transitiveExports: Boolean,
     vararg additionalExports: Any
-) = exportIosFramework(
+) = exportXCFramework(name, transitiveExports, *additionalExports)
+
+fun Project.exportXCFramework(
+    name: String,
+    transitiveExports: Boolean,
+    vararg additionalExports: Any
+) = exportXCFramework(
     name,
     transitiveExports = transitiveExports,
     static = false,
     additionalExports = additionalExports
 )
 
+@Deprecated("Renamed to exportXCFramework", ReplaceWith("exportXCFramework"))
 fun Project.exportIosFramework(
     name: String,
     transitiveExports: Boolean,
     static: Boolean,
     vararg additionalExports: Any,
     additionalConfig: XCFrameworkConfig.() -> Unit = {}
+) = exportXCFramework(name, transitiveExports, static, additionalExports, additionalConfig)
+
+fun Project.exportXCFramework(
+    name: String,
+    transitiveExports: Boolean,
+    static: Boolean,
+    vararg additionalExports: Any,
+    additionalConfig: XCFrameworkConfig.() -> Unit = {}
 ) {
-    val iosTargets = kotlinExtension.let {
+    val appleTargets = kotlinExtension.let {
         if (it is KotlinMultiplatformExtension) {
-            it.targets.filterIsInstance<KotlinNativeTarget>().filter { it.name.startsWith("ios") }
-        } else throw StopExecutionException("No iOS Targets found! Declare them explicitly before calling exportIosFramework!")
+            it.targets.filterIsInstance<KotlinNativeTarget>().filter {
+                it.name.startsWith("ios") ||
+                        it.name.startsWith("tvos") ||
+                        it.name.startsWith("macos")
+
+            }
+        } else throw StopExecutionException("No Apple Targets found! Declare them explicitly before calling exportXCFramework!")
     }
 
     extensions.getByType<KotlinMultiplatformExtension>().apply {
         XCFrameworkConfig(project, name).also { xcf ->
-            Logger.lifecycle("  \u001B[1mXCFrameworks will be exported for the following iOS targets: ${iosTargets.joinToString { it.name }}\u001B[0m")
-            iosTargets.forEach {
+            Logger.lifecycle("  \u001B[1mXCFrameworks will be exported for the following iOS targets: ${appleTargets.joinToString { it.name }}\u001B[0m")
+            appleTargets.forEach {
                 it.binaries.framework {
                     baseName = name
                     isStatic = static
