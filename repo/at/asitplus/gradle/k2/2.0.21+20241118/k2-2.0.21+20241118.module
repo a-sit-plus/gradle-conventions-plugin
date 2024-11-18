@@ -1,0 +1,136 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "at.asitplus.gradle",
+    "module": "k2",
+    "version": "2.0.21+20241118",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.8"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "at.asitplus.gradle",
+          "module": "legacy",
+          "version": {
+            "requires": "1.9.10+20241118"
+          },
+          "excludes": [
+            {
+              "group": "io.kotest",
+              "module": "kotest-framework-multiplatform-plugin-gradle"
+            }
+          ]
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "2.0.21"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "com.google.devtools.ksp.gradle.plugin",
+          "version": {
+            "requires": "2.0.21-1.0.28"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-multiplatform-plugin-gradle",
+          "version": {
+            "requires": "6.0.0.M1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "k2-2.0.21+20241118.jar",
+          "url": "k2-2.0.21+20241118.jar",
+          "size": 10772,
+          "sha512": "ba8b30cd10933ee5426bd9bfa948dac5c18a4b30ab02df75801816ed9af66629f4a94c3a0a8e84e13959e1791f63ea374b4248a24bc41b93616b3b305b0709d7",
+          "sha256": "fb3e57f82ae96fda8737f938f847ff02f0e03fbc1c6f74ca9b8eeb01477fee09",
+          "sha1": "db18055a46731866bfd79a4134cda5ce00d6f730",
+          "md5": "44e0a4511e1ef200e424d01185eeb1cd"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "at.asitplus.gradle",
+          "module": "legacy",
+          "version": {
+            "requires": "1.9.10+20241118"
+          },
+          "excludes": [
+            {
+              "group": "io.kotest",
+              "module": "kotest-framework-multiplatform-plugin-gradle"
+            }
+          ]
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "2.0.21"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "com.google.devtools.ksp.gradle.plugin",
+          "version": {
+            "requires": "2.0.21-1.0.28"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-multiplatform-plugin-gradle",
+          "version": {
+            "requires": "6.0.0.M1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "k2-2.0.21+20241118.jar",
+          "url": "k2-2.0.21+20241118.jar",
+          "size": 10772,
+          "sha512": "ba8b30cd10933ee5426bd9bfa948dac5c18a4b30ab02df75801816ed9af66629f4a94c3a0a8e84e13959e1791f63ea374b4248a24bc41b93616b3b305b0709d7",
+          "sha256": "fb3e57f82ae96fda8737f938f847ff02f0e03fbc1c6f74ca9b8eeb01477fee09",
+          "sha1": "db18055a46731866bfd79a4134cda5ce00d6f730",
+          "md5": "44e0a4511e1ef200e424d01185eeb1cd"
+        }
+      ]
+    }
+  ]
+}
