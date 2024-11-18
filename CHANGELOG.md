@@ -1,4 +1,12 @@
-# Dual-Version Kotlin 1.9.10 / 2.0.20
+# Dual-Version Kotlin 1.9.10 / 2.0.20+
+
+# 2.0.21
+* Kotlin 2.0.21 with XCode 1 Support
+
+## 20241118
+* KSP 1.0.28
+* Bouncy Castle 1.79!! **with PQC support**
+* Ktor 3.0.1
 
 ## 20241030
 * Export XCFramework to all targets
