@@ -1,7 +1,13 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.20+
 
+# 2.1.0
+* Kotlin 2.1.0
+
+## 20241204
+* KSP 1.0.29
+
 # 2.0.21
-* Kotlin 2.0.21 with XCode 1 Support
+* Kotlin 2.0.21 with XCode 16 Support
 
 ## 20241118
 * KSP 1.0.28
