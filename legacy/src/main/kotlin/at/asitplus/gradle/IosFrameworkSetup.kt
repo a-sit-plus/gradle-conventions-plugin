@@ -7,42 +7,16 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.mpp.BitcodeEmbeddingMode
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
+import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBinary
 import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFrameworkConfig
 
-
-@Deprecated("Renamed to exportXCFramework", ReplaceWith("exportXCFramework"))
-fun Project.exportIosFramework(
-    name: String,
-    transitiveExports: Boolean,
-    vararg additionalExports: Any
-) = exportXCFramework(name, transitiveExports, *additionalExports)
-
 fun Project.exportXCFramework(
     name: String,
     transitiveExports: Boolean,
-    vararg additionalExports: Any
-) = exportXCFramework(
-    name,
-    transitiveExports = transitiveExports,
-    static = false,
-    additionalExports = additionalExports
-)
-
-@Deprecated("Renamed to exportXCFramework", ReplaceWith("exportXCFramework"))
-fun Project.exportIosFramework(
-    name: String,
-    transitiveExports: Boolean,
-    static: Boolean,
+    static: Boolean = false,
     vararg additionalExports: Any,
-    additionalConfig: XCFrameworkConfig.() -> Unit = {}
-) = exportXCFramework(name, transitiveExports, static, additionalExports, additionalConfig)
-
-fun Project.exportXCFramework(
-    name: String,
-    transitiveExports: Boolean,
-    static: Boolean,
-    vararg additionalExports: Any,
-    additionalConfig: XCFrameworkConfig.() -> Unit = {}
+    additionalConfig: XCFrameworkConfig.() -> Unit = {},
+    nativeBinaryOpts: NativeBinary.() -> Unit = {}
 ) {
     val appleTargets = kotlinExtension.let {
         if (it is KotlinMultiplatformExtension) {
@@ -58,14 +32,14 @@ fun Project.exportXCFramework(
     extensions.getByType<KotlinMultiplatformExtension>().apply {
         XCFrameworkConfig(project, name).also { xcf ->
             Logger.lifecycle("  \u001B[1mXCFrameworks will be exported for the following iOS targets: ${appleTargets.joinToString { it.name }}\u001B[0m")
-            appleTargets.forEach {
-                it.binaries.framework {
+            appleTargets.forEach { target ->
+                target.binaries.framework {
                     baseName = name
                     isStatic = static
                     transitiveExport = transitiveExports
                     embedBitcode(BitcodeEmbeddingMode.DISABLE)
                     additionalExports.forEach { export(it) }
-                    xcf.add(this)
+                    nativeBinaryOpts()
                 }
             }
             xcf.additionalConfig()

@@ -21,3 +21,4 @@ gradle-wrapper.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+/legacy/src/main/kotlin/BuildDate.kt

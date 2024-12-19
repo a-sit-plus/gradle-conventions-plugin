@@ -3,6 +3,13 @@
 # 2.1.0
 * Kotlin 2.1.0
 
+## 20241219
+* Ktor 3.0.3
+* Improve XCF export
+  * Add `NativeBinary` customization options
+  * Remove deprecated alias `exportIosFramework`
+  * Explicitly require specifying `static` **and** `transitiveExports`
+
 ## 20241204
 * KSP 1.0.29
 
