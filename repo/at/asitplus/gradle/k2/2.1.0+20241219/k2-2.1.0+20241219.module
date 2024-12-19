@@ -1,0 +1,136 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "at.asitplus.gradle",
+    "module": "k2",
+    "version": "2.1.0+20241219",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.8"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "at.asitplus.gradle",
+          "module": "legacy",
+          "version": {
+            "requires": "1.9.10+20241219"
+          },
+          "excludes": [
+            {
+              "group": "io.kotest",
+              "module": "kotest-framework-multiplatform-plugin-gradle"
+            }
+          ]
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "2.1.0"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "com.google.devtools.ksp.gradle.plugin",
+          "version": {
+            "requires": "2.1.0-1.0.29"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-multiplatform-plugin-gradle",
+          "version": {
+            "requires": "6.0.0.M1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "k2-2.1.0+20241219.jar",
+          "url": "k2-2.1.0+20241219.jar",
+          "size": 10771,
+          "sha512": "63b4879c4e258522855e874e8f12f9e8cd7048c436eab5f67628dee590d43277378de6d5449cd5ae45a6b2a4bc01c82bac9f6e3c2893a2667d7479281d794a1c",
+          "sha256": "699a85c34025a21a0e73acd03407088a1398869323ef4112755ee2c7b4a6dc66",
+          "sha1": "d36bfede778b47aaded23bcc931b759c03e6dee4",
+          "md5": "32a8d427e88e316bb7d1f2bfa90373cf"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "at.asitplus.gradle",
+          "module": "legacy",
+          "version": {
+            "requires": "1.9.10+20241219"
+          },
+          "excludes": [
+            {
+              "group": "io.kotest",
+              "module": "kotest-framework-multiplatform-plugin-gradle"
+            }
+          ]
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "2.1.0"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "com.google.devtools.ksp.gradle.plugin",
+          "version": {
+            "requires": "2.1.0-1.0.29"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-multiplatform-plugin-gradle",
+          "version": {
+            "requires": "6.0.0.M1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "k2-2.1.0+20241219.jar",
+          "url": "k2-2.1.0+20241219.jar",
+          "size": 10771,
+          "sha512": "63b4879c4e258522855e874e8f12f9e8cd7048c436eab5f67628dee590d43277378de6d5449cd5ae45a6b2a4bc01c82bac9f6e3c2893a2667d7479281d794a1c",
+          "sha256": "699a85c34025a21a0e73acd03407088a1398869323ef4112755ee2c7b4a6dc66",
+          "sha1": "d36bfede778b47aaded23bcc931b759c03e6dee4",
+          "md5": "32a8d427e88e316bb7d1f2bfa90373cf"
+        }
+      ]
+    }
+  ]
+}
