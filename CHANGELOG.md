@@ -1,5 +1,12 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.20+
 
+# 2.1.10
+* Kotlin 2.1.20
+
+## 20250107
+* Serialization 1.8.0
+* Kotlin 2.1.20-Beta1
+
 # 2.1.0
 * Kotlin 2.1.0
 
