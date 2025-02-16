@@ -3,6 +3,7 @@
 package at.asitplus.gradle
 
 import io.github.gradlenexus.publishplugin.NexusPublishExtension
+import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.Delete
@@ -76,8 +77,14 @@ val Project.envExtra: EnvExtraDelegate get() = EnvExtraDelegate(this)
 
 private inline fun Project.hasMrJar() = plugins.hasPlugin("me.champeau.mrjar")
 
-val Project.jvmTarget: String get() = runCatching { extraProperties["jdk.jvm"] as String }.getOrElse { AspVersions.jvm.defaultTarget }
-val Project.androidJvmTarget: String get() = runCatching { extraProperties["jdk.android"] as String }.getOrElse { "1.8" }
+val Project.jvmTarget: String get() = runCatching { extraProperties["jdk.version"] as String }.getOrElse { AspVersions.jvm.defaultTarget }
+val Project.androidMinSdk: Int?
+    get() = runCatching { (extraProperties["android.minSdk"] as String).toInt() }.getOrNull()
+
+val Project.androidJvmTarget: String?
+    get() = runCatching { extraProperties["android.jvmTarget"] as String }.getOrElse {
+        androidMinSdk?.let { at.asitplus.gradle.AspVersions.Android.jdkFor(it).toString() }
+    }
 
 open class K2Conventions : Plugin<Project> {
 
@@ -203,6 +210,22 @@ open class K2Conventions : Plugin<Project> {
             ((target.pluginManager.findPlugin("com.android.library")
                 ?: target.pluginManager.findPlugin("com.android.application")) != null)
 
+        if (hasAgp) target.extensions.getByType<com.android.build.gradle.BaseExtension>().apply {
+            compileOptions {
+
+                if (target.androidMinSdk == null)
+                    throw StopExecutionException("Android Gradle Plugin found, but no android.minSdk set in properties! To fix this add android.minSdk=<sdk-version> to gradle.properties")
+                else {
+                    val compat = target.androidJvmTarget
+                    Logger.lifecycle("  ${H}Setting Android source and target compatibility to ${compat}.$R")
+                    sourceCompatibility = JavaVersion.toVersion(compat!!)
+                    targetCompatibility = JavaVersion.toVersion(compat)
+                }
+            }
+            Logger.lifecycle("  ${H}Setting Android defaultConfig minSDK to ${target.androidMinSdk}$R")
+            defaultConfig.minSdk = target.androidMinSdk!!
+        }
+
         target.plugins.withType<KotlinMultiplatformPluginWrapper> {
             target.extensions.getByType<KotlinMultiplatformExtension>().applyDefaultHierarchyTemplate()
             target.afterEvaluate {
@@ -237,14 +260,16 @@ open class K2Conventions : Plugin<Project> {
                 }
 
                 val hasAndroidTarget = kmp.targets.firstOrNull { it is KotlinAndroidTarget } != null
-                if (hasAgp && hasAndroidTarget) {
+                if (hasAndroidTarget) {
                     kmp.androidTarget {
                         Logger.info("  [AND] Setting jsr305=strict for JVM nullability annotations")
                         compilerOptions {
-
-                            Logger.lifecycle("  ${H}[AND] Setting jvmTarget to ${target.androidJvmTarget} for $name$R")
-                            jvmTarget = JvmTarget.fromTarget(target.androidJvmTarget)
-
+                            if (androidJvmTarget == null)
+                                throw StopExecutionException("Android target configured found, but neither android.minSdk set nor android.jvmTarget override set in properties! To fix this add at least android.minSdk=<sdk-version> to gradle.properties")
+                            else {
+                                Logger.lifecycle("  ${H}[AND] Setting jvmTarget to $androidJvmTarget for $name$R")
+                                jvmTarget = JvmTarget.fromTarget(androidJvmTarget!!)
+                            }
                             freeCompilerArgs = listOf(
                                 "-Xjsr305=strict"
                             )

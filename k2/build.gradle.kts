@@ -27,6 +27,7 @@ val dokka = versions["dokka"]
 val nexus = versions["nexus"]
 val kotest = versions["kotest"]
 val ktor = versions["ktor"]
+val agp = versions["agp"]
 
 version = "$kotlinVersion+$buildDate"
 group = groupId
@@ -40,11 +41,13 @@ dependencies {
     api("org.jetbrains.dokka:dokka-gradle-plugin:$dokka")
     api("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:$ksp")
     implementation("org.tomlj:tomlj:1.1.1")
+    compileOnly("com.android.tools.build:gradle:$agp")
 }
 
 repositories {
     mavenCentral()
     gradlePluginPortal()
+    google()
 }
 
 gradlePlugin {
