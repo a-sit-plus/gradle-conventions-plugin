@@ -3,6 +3,20 @@
 # 2.1.10
 * Kotlin 2.1.20
 
+## 20250217
+* **Drop Kotlin 1.9 support**
+* Rename property `jdk.version` -> `jdk.jvm`
+* Add new property `jdk.android`
+* Allow separate JVM targets for Android and JVM. To use it:
+  * Add the AGP to your project
+  * Add at least one `androidTaget` and configure at least one variant to publish
+  * Configure the toplevel `android` block
+  * Once this is done
+    * A shared `androidJvmMain` source set automagically available to Android and JVM targets
+    * Compile for JVM target using `jdk.jvm`
+    * Compile for Android target using `jdk.android`
+  * **The `jvmToolchain`**
+
 ## 20250107
 * Serialization 1.8.0
 * Kotlin 2.1.20-Beta1

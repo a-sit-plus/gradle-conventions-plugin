@@ -13,11 +13,13 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.kotlin.dsl.*
 import org.gradle.plugins.ide.idea.model.IdeaModel
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinBasePlugin
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 import org.jetbrains.kotlin.gradle.plugin.extraProperties
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinAndroidTarget
 import kotlin.random.Random
 import kotlin.reflect.KProperty
 
@@ -74,18 +76,19 @@ val Project.envExtra: EnvExtraDelegate get() = EnvExtraDelegate(this)
 
 private inline fun Project.hasMrJar() = plugins.hasPlugin("me.champeau.mrjar")
 
-val Project.jvmTarget: String get() = runCatching { extraProperties["jdk.version"] as String }.getOrElse { AspVersions.jvm.defaultTarget }
+val Project.jvmTarget: String get() = runCatching { extraProperties["jdk.jvm"] as String }.getOrElse { AspVersions.jvm.defaultTarget }
+val Project.androidJvmTarget: String get() = runCatching { extraProperties["jdk.android"] as String }.getOrElse { "1.8" }
 
-open class AspLegacyConventions : Plugin<Project> {
+open class K2Conventions : Plugin<Project> {
 
     protected open fun KotlinMultiplatformExtension.setupKotest() {
         sourceSets {
-            val commonTest by getting {
+            commonTest {
                 dependencies {
                     addKotest()
                 }
             }
-            val jvmTest by getting {
+            jvmTest {
                 dependencies {
                     addKotestJvmRunner()
                 }
@@ -94,12 +97,8 @@ open class AspLegacyConventions : Plugin<Project> {
     }
 
     protected open fun Project.addKotestPlugin(isMultiplatform: Boolean) {
-        if (isMultiplatform) {
-            afterEvaluate {
-                Logger.info("\n  Setting up Kotest multiplatform plugin")
-                plugins.apply("io.kotest.multiplatform")
-            }
-        }
+        Logger.info("\n  Setting up Kotest multiplatform plugin")
+        plugins.apply("io.kotest.multiplatform")
     }
 
     protected open fun versionOverrides(aspVersions: AspVersions) = Unit
@@ -200,10 +199,14 @@ open class AspLegacyConventions : Plugin<Project> {
             Logger.lifecycle("  ${H}Multiplatform project detected$R")
         }
         target.addKotestPlugin(isMultiplatform)
-
+        val hasAgp =
+            ((target.pluginManager.findPlugin("com.android.library")
+                ?: target.pluginManager.findPlugin("com.android.application")) != null)
 
         target.plugins.withType<KotlinMultiplatformPluginWrapper> {
+            target.extensions.getByType<KotlinMultiplatformExtension>().applyDefaultHierarchyTemplate()
             target.afterEvaluate {
+
                 val kmpTargets =
                     extensions.getByType<KotlinMultiplatformExtension>().targets.filter { it.name != "metadata" }
                 if (kmpTargets.isEmpty())
@@ -218,16 +221,12 @@ open class AspLegacyConventions : Plugin<Project> {
                 runCatching {
                     kmp.jvm {
                         Logger.info("  [JVM] Setting jsr305=strict for JVM nullability annotations")
-                        compilations.all {
-                            kotlinOptions {
-                                if (!hasMrJar()) { //MRJAR
-                                    Logger.lifecycle("  ${H}[JVM] Setting jvmTarget to ${target.jvmTarget} for $name$R")
-                                    kotlinOptions.jvmTarget = target.jvmTarget
-                                } else Logger.lifecycle("  [JVM] MR Jar plugin detected. Not setting jvmTarget")
-                                freeCompilerArgs = listOf(
-                                    "-Xjsr305=strict"
-                                )
-                            }
+                        compilerOptions {
+                            freeCompilerArgs = listOf(
+                                "-Xjsr305=strict"
+                            )
+                            Logger.lifecycle("  ${H}[JVM] Setting jvmTarget to ${target.jvmTarget} for $name$R")
+                            jvmTarget = JvmTarget.Companion.fromTarget(target.jvmTarget)
                         }
 
                         Logger.info("  [JVM] Configuring Kotest JVM runner")
@@ -237,22 +236,18 @@ open class AspLegacyConventions : Plugin<Project> {
                     }
                 }
 
-                val hasAgp =
-                    ((pluginManager.findPlugin("com.android.library")
-                        ?: pluginManager.findPlugin("com.android.application")) != null)
-                if (hasAgp) {
+                val hasAndroidTarget = kmp.targets.firstOrNull { it is KotlinAndroidTarget } != null
+                if (hasAgp && hasAndroidTarget) {
                     kmp.androidTarget {
                         Logger.info("  [AND] Setting jsr305=strict for JVM nullability annotations")
-                        compilations.all {
-                            kotlinOptions {
+                        compilerOptions {
 
-                                Logger.lifecycle("  ${H}[AND] Setting jvmTarget to ${target.jvmTarget} for $name$R")
-                                kotlinOptions.jvmTarget = target.jvmTarget
+                            Logger.lifecycle("  ${H}[AND] Setting jvmTarget to ${target.androidJvmTarget} for $name$R")
+                            jvmTarget = JvmTarget.fromTarget(target.androidJvmTarget)
 
-                                freeCompilerArgs = listOf(
-                                    "-Xjsr305=strict"
-                                )
-                            }
+                            freeCompilerArgs = listOf(
+                                "-Xjsr305=strict"
+                            )
                         }
                         //TODO test runner setup
                     }
@@ -264,6 +259,19 @@ open class AspLegacyConventions : Plugin<Project> {
 
                 @Suppress("UNUSED_VARIABLE")
                 kmp.setupKotest()
+                if (hasAgp) kmp.apply {
+                    val hasAndroidTarget = kmp.targets.firstOrNull { it is KotlinAndroidTarget } != null
+                    if (hasAndroidTarget) {
+                        Logger.lifecycle("  ${H}Creating androidJvmMain shared source set$R")
+                        sourceSets.apply {
+                            val androidJvmMain by creating {
+                                dependsOn(get("commonMain"))
+                            }
+                            get("androidMain").dependsOn(androidJvmMain)
+                            get("jvmMain").dependsOn(androidJvmMain)
+                        }
+                    }
+                }
                 Logger.lifecycle("") //to make it look less crammed
             }
         }

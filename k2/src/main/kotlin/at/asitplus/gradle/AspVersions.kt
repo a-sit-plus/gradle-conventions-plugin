@@ -1,6 +1,7 @@
 package at.asitplus.gradle
 
 import org.gradle.api.Project
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.plugin.getKotlinPluginVersion
 import org.tomlj.Toml
 import org.tomlj.TomlParseResult
@@ -56,7 +57,6 @@ class AspVersions(private val project: Project) {
 
     inner class Jvm {
         val defaultTarget = 17.toString()
-
         val bouncycastle get() = versionOf("bouncycastle")
     }
 
