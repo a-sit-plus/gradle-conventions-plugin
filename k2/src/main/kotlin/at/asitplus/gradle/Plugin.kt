@@ -37,12 +37,28 @@ private inline fun Project.supportLocalProperties() {
     }
 }
 
+/**
+ * System environment delegate to fetch system values.
+ */
 object EnvDelegate {
+    /**
+     * gets a system environment [property] if present
+     */
     operator fun getValue(thisRef: Any?, property: KProperty<*>): String? =
         System.getenv(property.name)
 }
 
+/**
+ * Chained system environment / Extra properties delegate
+ */
 class EnvExtraDelegate(private val project: Project) {
+    /**
+     * Gets a [property] value
+     * * from the system environment properties, if present.
+     * * If not: gets it from extra properties (`gradle.properties`, can be overridden by `local.properties`)
+     * * Returns `null` if the property is not set.
+     *
+     */
     operator fun getValue(thisRef: Any?, property: KProperty<*>): String? =
         System.getenv(property.name)
             ?.also { Logger.lifecycle("  > Property ${property.name} set to $it from environment") }
@@ -62,25 +78,63 @@ class EnvExtraDelegate(private val project: Project) {
 private val KEY_ASP_VERSIONS = Random.nextBits(32).toString(36)
 private val KEY_VERSION_CATALOG_PUBLISH = Random.nextBits(32).toString(36)
 
+/**
+ * Toggle automagic version catalog publishing as `${artefactName}-versionCatalog`
+ */
 var Project.publishVersionCatalog: Boolean
     get() = kotlin.runCatching { extraProperties[KEY_VERSION_CATALOG_PUBLISH] as Boolean }.getOrElse { false }
     set(value) {
         extraProperties[KEY_VERSION_CATALOG_PUBLISH] = value
     }
 
+/**
+ * access to [at.asitplus.gradle.AspVersions]
+ */
 val Project.AspVersions: AspVersions get() = rootProject.extraProperties[KEY_ASP_VERSIONS] as AspVersions
+
+/**
+ * Use as: `val propertyToGet by env` to get the desired system environment property, if present
+ */
 val Project.env: EnvDelegate get() = EnvDelegate
 
+/**
+ * Get a system environment [property] if present
+ */
 fun Project.env(property: String): String? = System.getenv(property)
 
+
+/**
+ * Use as: `val propertyToGet by envExtra` to get the desired property:
+ * * from the system environment properties, if present.
+ * * If not: gets it from extra properties (`gradle.properties`, can be overridden by `local.properties`)
+ * * Returns `null` if the property is not set.
+ *
+ */
 val Project.envExtra: EnvExtraDelegate get() = EnvExtraDelegate(this)
 
 private inline fun Project.hasMrJar() = plugins.hasPlugin("me.champeau.mrjar")
 
+/**
+ * The JVM version to target. This sets `jvmToolchain` and applies to the JVM Kotlin target
+ */
 val Project.jvmTarget: String get() = runCatching { extraProperties["jdk.version"] as String }.getOrElse { AspVersions.jvm.defaultTarget }
+
+/**
+ * Minimum Android SDK version read from the `android.minSdk` property. **This property must be set, if you are targeting Android!**.
+ */
 val Project.androidMinSdk: Int?
     get() = runCatching { (extraProperties["android.minSdk"] as String).toInt() }.getOrNull()
 
+/**
+ * Android compile SDK version read from the `android.compileSdk` property. If unset, specify it manually in side the `android` DSL.
+ */
+val Project.androidCompileSdk: Int?
+    get() = runCatching { (extraProperties["android.compileSdk"] as String).toInt() }.getOrNull()
+
+/**
+ * The Android JVM version to target. Automagically set for the `defaultConfig` matching `android.minSdk`.
+ * May be overridden by specifying `android.jvmTarget`.
+ */
 val Project.androidJvmTarget: String?
     get() = runCatching { extraProperties["android.jvmTarget"] as String }.getOrElse {
         androidMinSdk?.let { at.asitplus.gradle.AspVersions.Android.jdkFor(it).toString() }
@@ -212,7 +266,6 @@ open class K2Conventions : Plugin<Project> {
 
         if (hasAgp) target.extensions.getByType<com.android.build.gradle.BaseExtension>().apply {
             compileOptions {
-
                 if (target.androidMinSdk == null)
                     throw StopExecutionException("Android Gradle Plugin found, but no android.minSdk set in properties! To fix this add android.minSdk=<sdk-version> to gradle.properties")
                 else {
@@ -224,6 +277,10 @@ open class K2Conventions : Plugin<Project> {
             }
             Logger.lifecycle("  ${H}Setting Android defaultConfig minSDK to ${target.androidMinSdk}$R")
             defaultConfig.minSdk = target.androidMinSdk!!
+            target.androidCompileSdk?.let {
+                Logger.lifecycle("  ${H}Setting Android compileSDK to ${it}$R")
+                compileSdkVersion = it.toString()
+            }
         }
 
         target.plugins.withType<KotlinMultiplatformPluginWrapper> {
