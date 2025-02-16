@@ -42,6 +42,8 @@ This plugin targets Kotlin JVM and multiplatform projects and provides the follo
 * Automatic compilation and publication of Gradle version catalog for all non-test dependencies
   * Can be disabled by setting `publishVersionCatalog = false` in a module's `build.gradle.kts`
 
+**Do read the section on JDK version management!**
+
 This plugin is hosted on a public GitHub repo, because a) some of our publicly published projects depend on it and b)
 sharing is caring!
 We hope that this plugin can also help other seeking to streamline build processes across multiple projects following a
@@ -210,24 +212,23 @@ Common compiler options (opt-ins for serialization, coroutines, datetime, and `R
 by default
 In addition, shorthand for dependencies and other extensions are available to streamline project setup.
 
-### JDK Version Management
+### JDK Version Management and Android Targets
 
 `jvmToolchain(17)`, `jvmTarget = 17`, and `jdkName = 17` are applied by default, **unless**
-the [multi-release jar plugin ("me.champeau.mrjar")](https://melix.github.io/mrjar-gradle-plugin/0.1/index.html) is
-applied as well.
-Note that no version management is in place for the multi-release jar plugin, as we rarely need it internally.
+`jdk.version` (either in `gradle.properties` or `local.properties`) is set.
+The JVM target in use is accessible inside gradle build scripts as `jvmTarget`.
 
-In addition, it is possible to override the JVM target version, using the property `jdk.version` (either
-in `gradle.properties` or `local.properties`).
-The JVM target in use is accessible inside gradle build scripts as `jvmTarget`
-
-### KT-65315 Workaround
-
-KT-65315 is nasty and effectively prevents usage of resources inside `commonMain` in KMP projects.
-By default, this plugin will move all resources from `commonMain` to the actual targets.
-
-**You do not want this in apps or services**, but only when authoring libraries, hence it can be disabled by
-adding `kt65315.workaround=true` to `gradle.properties`
+In addition, Android targets use a different JDK version. To publish for Android:
+  * Add the AGP to your project
+  * Set `android.minSdk` (either in `gradle.properties` or `local.properties`)
+  * Set `android.compileSdk` (either in `gradle.properties` or `local.properties`)
+  * Add at least one `androidTaget` and configure at least one variant to publish
+  * Configure the toplevel `android` block (minSdk, and compileSdk can be omitted, as they are read from properties)
+  * Once this is done
+    * A shared `androidJvmMain` source set automagically available to Android and JVM targets
+    * The JVM target is compiled using `jdk.version`
+    * The Android targets will be using the JDK version matching `android.minSdk` (can be overridden by `android.jvmTarget`)
+  * **The `jvmToolchain` will always be set to `jdk.version`**
 
 ### Dependency Shorthands
 
@@ -341,13 +342,16 @@ kotlin {
     //other kotlin multiplatform plugin config (dependencies, targets, etc
 }
 
-exportIosFramework(
+exportXCFramework(
     "MyAwesomeCustomVcFramework", //name of the resulting framework
-    BitcodeEmbeddingMode.BITCODE,  //this is the optional default value
-    "at.asitplus:kmmresult:1.5.1", //with KMM result goodness
-    "at.asitplus.wallet:vclib-openid:2.0.0", //and (in our opinion) the best KMM VC library ever built)
-    datetime(), //and KMM datetime awesomeness (version managed by conventions plugin)
-    napier() // and elegant KMM-powered logging (version managed by conventions plugin)
+    transitiveExports= false, //do not automatically export all transitive dependencies
+    static = true, //Defaults to false
+    additionalExports= arrayOf( //since we don't automatically export everything transitively
+      "at.asitplus:kmmresult:1.5.1", //with KMM result goodness
+      "at.asitplus.wallet:vclib-openid:2.0.0", //and (in our opinion) the best KMM VC library ever built)
+      datetime(), //and KMM datetime awesomeness (version managed by conventions plugin)
+      napier() // and elegant KMM-powered logging (version managed by conventions plugin)
+    )
 )
 
 //whatever else needs to be configured

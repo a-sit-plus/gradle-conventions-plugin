@@ -5,17 +5,21 @@
 
 ## 20250217
 * **Drop Kotlin 1.9 support**
-* Rename property `jdk.version` -> `jdk.jvm`
-* Add new property `jdk.android`
+* **Drop MRJAR support**, since it was flaky anyway
+* Add new property `android.minSdk`
+* Add new property `android.compileSdk`
+* Add new property `android.jvmTarget`
 * Allow separate JVM targets for Android and JVM. To use it:
   * Add the AGP to your project
+  * Set `android.minSdk`
+  * Set `android.compileSdk`
   * Add at least one `androidTaget` and configure at least one variant to publish
-  * Configure the toplevel `android` block
+  * Configure the toplevel `android` block (minSdk, and compileSdk can be omitted, as they are read from properties)
   * Once this is done
     * A shared `androidJvmMain` source set automagically available to Android and JVM targets
-    * Compile for JVM target using `jdk.jvm`
-    * Compile for Android target using `jdk.android`
-  * **The `jvmToolchain`**
+    * Compile for JVM target using `jdk.version`
+    * Compile for Android target using the JDK version matching `android.minSdk` (can be overridden by `android.jvmTarget`)
+  * **The `jvmToolchain` will always be set to `jdk.version`**
 
 ## 20250107
 * Serialization 1.8.0

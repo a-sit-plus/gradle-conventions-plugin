@@ -112,8 +112,6 @@ fun Project.env(property: String): String? = System.getenv(property)
  */
 val Project.envExtra: EnvExtraDelegate get() = EnvExtraDelegate(this)
 
-private inline fun Project.hasMrJar() = plugins.hasPlugin("me.champeau.mrjar")
-
 /**
  * The JVM version to target. This sets `jvmToolchain` and applies to the JVM Kotlin target
  */
@@ -205,22 +203,10 @@ open class K2Conventions : Plugin<Project> {
 
             target.plugins.apply("idea")
 
-            val mrJarModules = target.childProjects.filter { (_, p) -> p.hasMrJar() }
-                .map { (name, _) -> name }
-            if (mrJarModules.isEmpty()) { //MRJAR
-                Logger.lifecycle("  ${H}Configuring IDEA to use Java ${target.jvmTarget}$R")
-                target.extensions.getByType<IdeaModel>().project {
-                    jdkName = target.jvmTarget
-                }
-            } else Logger.lifecycle(
-                "  MR Jar plugin detected in modules${
-                    mrJarModules.joinToString(
-                        prefix = "\n",
-                        separator = "\n      * ",
-                        postfix = "\n"
-                    ) { it }
-                }   Not setting IDEA Java version.\n")
-
+            Logger.lifecycle("  ${H}Configuring IDEA to use Java ${target.jvmTarget}$R")
+            target.extensions.getByType<IdeaModel>().project {
+                jdkName = target.jvmTarget
+            }
 
 
 
@@ -364,14 +350,12 @@ open class K2Conventions : Plugin<Project> {
             val kotlin = target.kotlinExtension
 
             if (target != target.rootProject) {
-                if (!target.hasMrJar()) //MRJAR
-                    kotlin.apply {
-                        Logger.lifecycle("  ${H}Setting jvmToolchain to JDK ${target.jvmTarget} for ${target.name}$R")
-                        jvmToolchain {
-                            languageVersion.set(JavaLanguageVersion.of(target.jvmTarget))
-                        }
+                kotlin.apply {
+                    Logger.lifecycle("  ${H}Setting jvmToolchain to JDK ${target.jvmTarget} for ${target.name}$R")
+                    jvmToolchain {
+                        languageVersion.set(JavaLanguageVersion.of(target.jvmTarget))
                     }
-                else Logger.lifecycle("  MR Jar plugin detected. Not setting jvmToolchain")
+                }
 
                 if (!isMultiplatform) /*TODO: actually check for JVM*/ {
                     Logger.lifecycle("  Assuming JVM-only Kotlin project")
