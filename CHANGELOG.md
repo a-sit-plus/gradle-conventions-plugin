@@ -1,9 +1,7 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.20+
 
-# 2.1.10
-* Kotlin 2.1.20
 
-## 20250217
+## 20250218
 * **Drop Kotlin 1.9 support**
 * **Drop MRJAR support**, since it was flaky anyway
 * Add new property `android.minSdk`
