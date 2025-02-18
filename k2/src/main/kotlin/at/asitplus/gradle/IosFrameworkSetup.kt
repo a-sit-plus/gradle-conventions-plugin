@@ -10,6 +10,9 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import org.jetbrains.kotlin.gradle.plugin.mpp.NativeBinary
 import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFrameworkConfig
 
+/**
+ * Export an XCode framework for all configured apple targets
+ */
 fun Project.exportXCFramework(
     name: String,
     transitiveExports: Boolean,

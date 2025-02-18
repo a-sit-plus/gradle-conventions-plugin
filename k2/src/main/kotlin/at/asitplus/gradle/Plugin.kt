@@ -3,6 +3,7 @@
 package at.asitplus.gradle
 
 import io.github.gradlenexus.publishplugin.NexusPublishExtension
+import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.Delete
@@ -13,11 +14,13 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.kotlin.dsl.*
 import org.gradle.plugins.ide.idea.model.IdeaModel
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinBasePlugin
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 import org.jetbrains.kotlin.gradle.plugin.extraProperties
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinAndroidTarget
 import kotlin.random.Random
 import kotlin.reflect.KProperty
 
@@ -34,12 +37,28 @@ private inline fun Project.supportLocalProperties() {
     }
 }
 
+/**
+ * System environment delegate to fetch system values.
+ */
 object EnvDelegate {
+    /**
+     * gets a system environment [property] if present
+     */
     operator fun getValue(thisRef: Any?, property: KProperty<*>): String? =
         System.getenv(property.name)
 }
 
+/**
+ * Chained system environment / Extra properties delegate
+ */
 class EnvExtraDelegate(private val project: Project) {
+    /**
+     * Gets a [property] value
+     * * from the system environment properties, if present.
+     * * If not: gets it from extra properties (`gradle.properties`, can be overridden by `local.properties`)
+     * * Returns `null` if the property is not set.
+     *
+     */
     operator fun getValue(thisRef: Any?, property: KProperty<*>): String? =
         System.getenv(property.name)
             ?.also { Logger.lifecycle("  > Property ${property.name} set to $it from environment") }
@@ -59,33 +78,76 @@ class EnvExtraDelegate(private val project: Project) {
 private val KEY_ASP_VERSIONS = Random.nextBits(32).toString(36)
 private val KEY_VERSION_CATALOG_PUBLISH = Random.nextBits(32).toString(36)
 
+/**
+ * Toggle automagic version catalog publishing as `${artefactName}-versionCatalog`
+ */
 var Project.publishVersionCatalog: Boolean
     get() = kotlin.runCatching { extraProperties[KEY_VERSION_CATALOG_PUBLISH] as Boolean }.getOrElse { false }
     set(value) {
         extraProperties[KEY_VERSION_CATALOG_PUBLISH] = value
     }
 
+/**
+ * access to [at.asitplus.gradle.AspVersions]
+ */
 val Project.AspVersions: AspVersions get() = rootProject.extraProperties[KEY_ASP_VERSIONS] as AspVersions
+
+/**
+ * Use as: `val propertyToGet by env` to get the desired system environment property, if present
+ */
 val Project.env: EnvDelegate get() = EnvDelegate
 
+/**
+ * Get a system environment [property] if present
+ */
 fun Project.env(property: String): String? = System.getenv(property)
 
+
+/**
+ * Use as: `val propertyToGet by envExtra` to get the desired property:
+ * * from the system environment properties, if present.
+ * * If not: gets it from extra properties (`gradle.properties`, can be overridden by `local.properties`)
+ * * Returns `null` if the property is not set.
+ *
+ */
 val Project.envExtra: EnvExtraDelegate get() = EnvExtraDelegate(this)
 
-private inline fun Project.hasMrJar() = plugins.hasPlugin("me.champeau.mrjar")
-
+/**
+ * The JVM version to target. This sets `jvmToolchain` and applies to the JVM Kotlin target
+ */
 val Project.jvmTarget: String get() = runCatching { extraProperties["jdk.version"] as String }.getOrElse { AspVersions.jvm.defaultTarget }
 
-open class AspLegacyConventions : Plugin<Project> {
+/**
+ * Minimum Android SDK version read from the `android.minSdk` property. **This property must be set, if you are targeting Android!**.
+ */
+val Project.androidMinSdk: Int?
+    get() = runCatching { (extraProperties["android.minSdk"] as String).toInt() }.getOrNull()
+
+/**
+ * Android compile SDK version read from the `android.compileSdk` property. If unset, specify it manually in side the `android` DSL.
+ */
+val Project.androidCompileSdk: Int?
+    get() = runCatching { (extraProperties["android.compileSdk"] as String).toInt() }.getOrNull()
+
+/**
+ * The Android JVM version to target. Automagically set for the `defaultConfig` matching `android.minSdk`.
+ * May be overridden by specifying `android.jvmTarget`.
+ */
+val Project.androidJvmTarget: String?
+    get() = runCatching { extraProperties["android.jvmTarget"] as String }.getOrElse {
+        androidMinSdk?.let { at.asitplus.gradle.AspVersions.Android.jdkFor(it).toString() }
+    }
+
+open class K2Conventions : Plugin<Project> {
 
     protected open fun KotlinMultiplatformExtension.setupKotest() {
         sourceSets {
-            val commonTest by getting {
+            commonTest {
                 dependencies {
                     addKotest()
                 }
             }
-            val jvmTest by getting {
+            jvmTest {
                 dependencies {
                     addKotestJvmRunner()
                 }
@@ -94,12 +156,8 @@ open class AspLegacyConventions : Plugin<Project> {
     }
 
     protected open fun Project.addKotestPlugin(isMultiplatform: Boolean) {
-        if (isMultiplatform) {
-            afterEvaluate {
-                Logger.info("\n  Setting up Kotest multiplatform plugin")
-                plugins.apply("io.kotest.multiplatform")
-            }
-        }
+        Logger.info("\n  Setting up Kotest multiplatform plugin")
+        plugins.apply("io.kotest.multiplatform")
     }
 
     protected open fun versionOverrides(aspVersions: AspVersions) = Unit
@@ -145,22 +203,10 @@ open class AspLegacyConventions : Plugin<Project> {
 
             target.plugins.apply("idea")
 
-            val mrJarModules = target.childProjects.filter { (_, p) -> p.hasMrJar() }
-                .map { (name, _) -> name }
-            if (mrJarModules.isEmpty()) { //MRJAR
-                Logger.lifecycle("  ${H}Configuring IDEA to use Java ${target.jvmTarget}$R")
-                target.extensions.getByType<IdeaModel>().project {
-                    jdkName = target.jvmTarget
-                }
-            } else Logger.lifecycle(
-                "  MR Jar plugin detected in modules${
-                    mrJarModules.joinToString(
-                        prefix = "\n",
-                        separator = "\n      * ",
-                        postfix = "\n"
-                    ) { it }
-                }   Not setting IDEA Java version.\n")
-
+            Logger.lifecycle("  ${H}Configuring IDEA to use Java ${target.jvmTarget}$R")
+            target.extensions.getByType<IdeaModel>().project {
+                jdkName = target.jvmTarget
+            }
 
 
 
@@ -200,10 +246,33 @@ open class AspLegacyConventions : Plugin<Project> {
             Logger.lifecycle("  ${H}Multiplatform project detected$R")
         }
         target.addKotestPlugin(isMultiplatform)
+        val hasAgp =
+            ((target.pluginManager.findPlugin("com.android.library")
+                ?: target.pluginManager.findPlugin("com.android.application")) != null)
 
+        if (hasAgp) target.extensions.getByType<com.android.build.gradle.BaseExtension>().apply {
+            compileOptions {
+                if (target.androidMinSdk == null)
+                    throw StopExecutionException("Android Gradle Plugin found, but no android.minSdk set in properties! To fix this add android.minSdk=<sdk-version> to gradle.properties")
+                else {
+                    val compat = target.androidJvmTarget
+                    Logger.lifecycle("  ${H}Setting Android source and target compatibility to ${compat}.$R")
+                    sourceCompatibility = JavaVersion.toVersion(compat!!)
+                    targetCompatibility = JavaVersion.toVersion(compat)
+                }
+            }
+            Logger.lifecycle("  ${H}Setting Android defaultConfig minSDK to ${target.androidMinSdk}$R")
+            defaultConfig.minSdk = target.androidMinSdk!!
+            target.androidCompileSdk?.let {
+                Logger.lifecycle("  ${H}Setting Android compileSDK to ${it}$R")
+                compileSdkVersion = it.toString()
+            }
+        }
 
         target.plugins.withType<KotlinMultiplatformPluginWrapper> {
+            target.extensions.getByType<KotlinMultiplatformExtension>().applyDefaultHierarchyTemplate()
             target.afterEvaluate {
+
                 val kmpTargets =
                     extensions.getByType<KotlinMultiplatformExtension>().targets.filter { it.name != "metadata" }
                 if (kmpTargets.isEmpty())
@@ -218,16 +287,12 @@ open class AspLegacyConventions : Plugin<Project> {
                 runCatching {
                     kmp.jvm {
                         Logger.info("  [JVM] Setting jsr305=strict for JVM nullability annotations")
-                        compilations.all {
-                            kotlinOptions {
-                                if (!hasMrJar()) { //MRJAR
-                                    Logger.lifecycle("  ${H}[JVM] Setting jvmTarget to ${target.jvmTarget} for $name$R")
-                                    kotlinOptions.jvmTarget = target.jvmTarget
-                                } else Logger.lifecycle("  [JVM] MR Jar plugin detected. Not setting jvmTarget")
-                                freeCompilerArgs = listOf(
-                                    "-Xjsr305=strict"
-                                )
-                            }
+                        compilerOptions {
+                            freeCompilerArgs = listOf(
+                                "-Xjsr305=strict"
+                            )
+                            Logger.lifecycle("  ${H}[JVM] Setting jvmTarget to ${target.jvmTarget} for $name$R")
+                            jvmTarget = JvmTarget.Companion.fromTarget(target.jvmTarget)
                         }
 
                         Logger.info("  [JVM] Configuring Kotest JVM runner")
@@ -237,22 +302,20 @@ open class AspLegacyConventions : Plugin<Project> {
                     }
                 }
 
-                val hasAgp =
-                    ((pluginManager.findPlugin("com.android.library")
-                        ?: pluginManager.findPlugin("com.android.application")) != null)
-                if (hasAgp) {
+                val hasAndroidTarget = kmp.targets.firstOrNull { it is KotlinAndroidTarget } != null
+                if (hasAndroidTarget) {
                     kmp.androidTarget {
                         Logger.info("  [AND] Setting jsr305=strict for JVM nullability annotations")
-                        compilations.all {
-                            kotlinOptions {
-
-                                Logger.lifecycle("  ${H}[AND] Setting jvmTarget to ${target.jvmTarget} for $name$R")
-                                kotlinOptions.jvmTarget = target.jvmTarget
-
-                                freeCompilerArgs = listOf(
-                                    "-Xjsr305=strict"
-                                )
+                        compilerOptions {
+                            if (androidJvmTarget == null)
+                                throw StopExecutionException("Android target configured found, but neither android.minSdk set nor android.jvmTarget override set in properties! To fix this add at least android.minSdk=<sdk-version> to gradle.properties")
+                            else {
+                                Logger.lifecycle("  ${H}[AND] Setting jvmTarget to $androidJvmTarget for $name$R")
+                                jvmTarget = JvmTarget.fromTarget(androidJvmTarget!!)
                             }
+                            freeCompilerArgs = listOf(
+                                "-Xjsr305=strict"
+                            )
                         }
                         //TODO test runner setup
                     }
@@ -264,6 +327,19 @@ open class AspLegacyConventions : Plugin<Project> {
 
                 @Suppress("UNUSED_VARIABLE")
                 kmp.setupKotest()
+                if (hasAgp) kmp.apply {
+                    val hasAndroidTarget = kmp.targets.firstOrNull { it is KotlinAndroidTarget } != null
+                    if (hasAndroidTarget) {
+                        Logger.lifecycle("  ${H}Creating androidJvmMain shared source set$R")
+                        sourceSets.apply {
+                            val androidJvmMain by creating {
+                                dependsOn(get("commonMain"))
+                            }
+                            get("androidMain").dependsOn(androidJvmMain)
+                            get("jvmMain").dependsOn(androidJvmMain)
+                        }
+                    }
+                }
                 Logger.lifecycle("") //to make it look less crammed
             }
         }
@@ -274,14 +350,12 @@ open class AspLegacyConventions : Plugin<Project> {
             val kotlin = target.kotlinExtension
 
             if (target != target.rootProject) {
-                if (!target.hasMrJar()) //MRJAR
-                    kotlin.apply {
-                        Logger.lifecycle("  ${H}Setting jvmToolchain to JDK ${target.jvmTarget} for ${target.name}$R")
-                        jvmToolchain {
-                            languageVersion.set(JavaLanguageVersion.of(target.jvmTarget))
-                        }
+                kotlin.apply {
+                    Logger.lifecycle("  ${H}Setting jvmToolchain to JDK ${target.jvmTarget} for ${target.name}$R")
+                    jvmToolchain {
+                        languageVersion.set(JavaLanguageVersion.of(target.jvmTarget))
                     }
-                else Logger.lifecycle("  MR Jar plugin detected. Not setting jvmToolchain")
+                }
 
                 if (!isMultiplatform) /*TODO: actually check for JVM*/ {
                     Logger.lifecycle("  Assuming JVM-only Kotlin project")

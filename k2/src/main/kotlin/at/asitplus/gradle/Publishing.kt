@@ -22,7 +22,7 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 import kotlin.jvm.optionals.getOrNull
 
 /**
- * Configured Dokka to publish documentation to [outputDir]. Also add a `deleteDokkaOutputDirectory` task which is executed
+ * Configures Dokka to publish documentation to [outputDir]. Also add a `deleteDokkaOutputDirectory` task which is executed
  * before documentation is written, s.t. [outputDir] is always clean.
  *
  * @return a `Jar`-type task, which can directly be fed into a maven publication
