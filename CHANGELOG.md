@@ -1,5 +1,9 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.20+
 
+## 20250219+1
+* Fix Kotest plugin version mishap
+* Update kotest plugin to 6.0.0 M2
+
 ## 20250219
 * KmmResult 1.9.1
 * Fix Android SDK version parsing

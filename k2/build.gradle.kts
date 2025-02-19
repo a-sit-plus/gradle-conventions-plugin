@@ -25,7 +25,7 @@ val ksp = "$kotlinVersion-${versions["ksp"]}"
 
 val dokka = versions["dokka"]
 val nexus = versions["nexus"]
-val kotest = versions["kotest"]
+val kotest = versions["kotest-plugin"]
 val ktor = versions["ktor"]
 val agp = versions["agp"]
 
