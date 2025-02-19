@@ -265,7 +265,7 @@ open class K2Conventions : Plugin<Project> {
             defaultConfig.minSdk = target.androidMinSdk!!
             target.androidCompileSdk?.let {
                 Logger.lifecycle("  ${H}Setting Android compileSDK to ${it}$R")
-                compileSdkVersion = it.toString()
+                compileSdkVersion(it)
             }
         }
 

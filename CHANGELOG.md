@@ -1,5 +1,8 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.20+
 
+## 20250219
+* KmmResult 1.9.1
+* Fix Android SDK version parsing
 
 ## 20250218
 * **Drop Kotlin 1.9 support**

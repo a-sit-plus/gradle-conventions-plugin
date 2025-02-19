@@ -40,7 +40,6 @@ fun Project.exportXCFramework(
                     baseName = name
                     isStatic = static
                     transitiveExport = transitiveExports
-                    embedBitcode(BitcodeEmbeddingMode.DISABLE)
                     additionalExports.forEach { export(it) }
                     nativeBinaryOpts()
                 }
