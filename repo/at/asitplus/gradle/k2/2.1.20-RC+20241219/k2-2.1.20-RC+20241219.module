@@ -1,0 +1,136 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "at.asitplus.gradle",
+    "module": "k2",
+    "version": "2.1.20-RC+20241219",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.8"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "at.asitplus.gradle",
+          "module": "legacy",
+          "version": {
+            "requires": "1.9.10+20241219"
+          },
+          "excludes": [
+            {
+              "group": "io.kotest",
+              "module": "kotest-framework-multiplatform-plugin-gradle"
+            }
+          ]
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "2.1.20-RC"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "com.google.devtools.ksp.gradle.plugin",
+          "version": {
+            "requires": "2.1.20-RC-1.0.30"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-multiplatform-plugin-gradle",
+          "version": {
+            "requires": "6.0.0.M2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "k2-2.1.20-RC+20241219.jar",
+          "url": "k2-2.1.20-RC+20241219.jar",
+          "size": 10775,
+          "sha512": "7e654716152e98e82c32ba4e7489bef63acfc404918f2d3f2ec6a018329fda4a68e974c6189acd2ba698187bfa59be08d10c0c2beb68e15273438b1d0fd47cfe",
+          "sha256": "d0a5c6226a73be96a32f9fed99c2a92e2ab97483c1fe1ff383f6c5bf476587f6",
+          "sha1": "fb47818bee6ffb59505bf8c461d7426e33d17361",
+          "md5": "877b2b3f46e3c41f68cc0b1da584a6b9"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "at.asitplus.gradle",
+          "module": "legacy",
+          "version": {
+            "requires": "1.9.10+20241219"
+          },
+          "excludes": [
+            {
+              "group": "io.kotest",
+              "module": "kotest-framework-multiplatform-plugin-gradle"
+            }
+          ]
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "2.1.20-RC"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "com.google.devtools.ksp.gradle.plugin",
+          "version": {
+            "requires": "2.1.20-RC-1.0.30"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-multiplatform-plugin-gradle",
+          "version": {
+            "requires": "6.0.0.M2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "k2-2.1.20-RC+20241219.jar",
+          "url": "k2-2.1.20-RC+20241219.jar",
+          "size": 10775,
+          "sha512": "7e654716152e98e82c32ba4e7489bef63acfc404918f2d3f2ec6a018329fda4a68e974c6189acd2ba698187bfa59be08d10c0c2beb68e15273438b1d0fd47cfe",
+          "sha256": "d0a5c6226a73be96a32f9fed99c2a92e2ab97483c1fe1ff383f6c5bf476587f6",
+          "sha1": "fb47818bee6ffb59505bf8c461d7426e33d17361",
+          "md5": "877b2b3f46e3c41f68cc0b1da584a6b9"
+        }
+      ]
+    }
+  ]
+}
