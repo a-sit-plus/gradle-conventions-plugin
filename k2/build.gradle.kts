@@ -21,7 +21,7 @@ project.file("src/main/kotlin/BuildDate.kt").bufferedWriter().use { writer ->
 }
 
 val kotlinVersion = versions["kotlin"] as String
-val ksp = "$kotlinVersion-${versions["ksp"]}"
+//val ksp = "$kotlinVersion-${versions["ksp"]}"
 
 val dokka = versions["dokka"]
 val nexus = versions["nexus"]
@@ -39,7 +39,7 @@ dependencies {
     api("io.kotest:kotest-framework-multiplatform-plugin-gradle:$kotest")
     api("io.github.gradle-nexus:publish-plugin:$nexus")
     api("org.jetbrains.dokka:dokka-gradle-plugin:$dokka")
-    api("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:$ksp")
+//    api("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:$ksp")
     implementation("org.tomlj:tomlj:1.1.1")
     compileOnly("com.android.tools.build:gradle:$agp")
 }
