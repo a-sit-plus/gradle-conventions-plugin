@@ -4,6 +4,7 @@ package at.asitplus.gradle
 
 import io.github.gradlenexus.publishplugin.NexusPublishExtension
 import org.gradle.api.JavaVersion
+import org.gradle.api.NamedDomainObjectContainer
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.Delete
@@ -15,12 +16,15 @@ import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.kotlin.dsl.*
 import org.gradle.plugins.ide.idea.model.IdeaModel
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinBasePlugin
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
+import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import org.jetbrains.kotlin.gradle.plugin.extraProperties
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinAndroidTarget
+import org.jetbrains.kotlin.gradle.targets.jvm.KotlinJvmTarget
 import kotlin.random.Random
 import kotlin.reflect.KProperty
 
@@ -140,6 +144,10 @@ val Project.androidJvmTarget: String?
 
 open class K2Conventions : Plugin<Project> {
 
+    private fun KotlinMultiplatformExtension.hasJvmTarget(): Boolean =
+        targets.firstOrNull { it is KotlinJvmTarget } != null
+
+
     protected open fun KotlinMultiplatformExtension.setupKotest() {
         sourceSets {
             commonTest {
@@ -147,7 +155,7 @@ open class K2Conventions : Plugin<Project> {
                     addKotest()
                 }
             }
-            jvmTest {
+            if (hasJvmTarget()) jvmTest {
                 dependencies {
                     addKotestJvmRunner()
                 }
@@ -270,7 +278,27 @@ open class K2Conventions : Plugin<Project> {
         }
 
         target.plugins.withType<KotlinMultiplatformPluginWrapper> {
-            target.extensions.getByType<KotlinMultiplatformExtension>().applyDefaultHierarchyTemplate()
+            var sharedAdded = false
+            val kmp = target.extensions.getByType<KotlinMultiplatformExtension>()
+
+            kmp.targets.whenObjectAdded {
+                if (sharedAdded) return@whenObjectAdded
+                val hasAndroidTarget = kmp.targets.firstOrNull { it is KotlinAndroidTarget } != null
+                kmp.applyDefaultHierarchyTemplate()
+                if (hasAgp && kmp.hasJvmTarget()) kmp.apply {
+                    if (hasAndroidTarget) {
+                        sharedAdded = true
+                        Logger.lifecycle("  ${H}Creating androidJvmMain shared source set$R")
+                        sourceSets.apply {
+                            val androidJvmMain by creating {
+                                dependsOn(get("commonMain"))
+                            }
+                        }
+                    }
+                }
+            }
+
+
             target.afterEvaluate {
 
                 val kmpTargets =
@@ -284,7 +312,7 @@ open class K2Conventions : Plugin<Project> {
                 Logger.lifecycle("\n  This project will be built for the following targets:")
                 kmpTargets.forEach { Logger.lifecycle("   * ${it.name}") }
 
-                runCatching {
+                if (kmp.hasJvmTarget()) runCatching {
                     kmp.jvm {
                         Logger.info("  [JVM] Setting jsr305=strict for JVM nullability annotations")
                         compilerOptions {
@@ -327,14 +355,11 @@ open class K2Conventions : Plugin<Project> {
 
                 @Suppress("UNUSED_VARIABLE")
                 kmp.setupKotest()
-                if (hasAgp) kmp.apply {
-                    val hasAndroidTarget = kmp.targets.firstOrNull { it is KotlinAndroidTarget } != null
+                if (hasAgp && kmp.hasJvmTarget()) kmp.apply {
                     if (hasAndroidTarget) {
                         Logger.lifecycle("  ${H}Creating androidJvmMain shared source set$R")
                         sourceSets.apply {
-                            val androidJvmMain by creating {
-                                dependsOn(get("commonMain"))
-                            }
+                            val androidJvmMain by getting
                             get("androidMain").dependsOn(androidJvmMain)
                             get("jvmMain").dependsOn(androidJvmMain)
                         }
@@ -350,14 +375,20 @@ open class K2Conventions : Plugin<Project> {
             val kotlin = target.kotlinExtension
 
             if (target != target.rootProject) {
+                val hasJvm = target.extensions.findByType<KotlinMultiplatformExtension>()?.hasJvmTarget()
+                    ?: target.extensions.findByType<KotlinJvmExtension>()?.let { true } ?: false
+                if (!hasJvm) Logger.info("  ${H}No JVM target found for project ${target.name}.$R")
+
                 kotlin.apply {
-                    Logger.lifecycle("  ${H}Setting jvmToolchain to JDK ${target.jvmTarget} for ${target.name}$R")
-                    jvmToolchain {
-                        languageVersion.set(JavaLanguageVersion.of(target.jvmTarget))
+                    if (hasJvm) {
+                        Logger.lifecycle("  ${H}Setting jvmToolchain to JDK ${target.jvmTarget} for ${target.name}$R")
+                        jvmToolchain {
+                            languageVersion.set(JavaLanguageVersion.of(target.jvmTarget))
+                        }
                     }
                 }
 
-                if (!isMultiplatform) /*TODO: actually check for JVM*/ {
+                if (!isMultiplatform && hasJvm) /*TODO: actually check for JVM*/ {
                     Logger.lifecycle("  Assuming JVM-only Kotlin project")
                     target.afterEvaluate {
                         kotlin.apply {

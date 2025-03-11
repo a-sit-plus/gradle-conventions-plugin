@@ -1,5 +1,10 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.20+
 
+## 20250311 
+* Don't assume a JVM target is always present
+  * If both JVM and Android targets are present, automagically create the shared `androidJvmMain` **and also make it available right away!**
+  * Simply use `val androidJvmMain by getting {…}` to declare any shared dependencies inside the regular source sets block and you're golden. No need to put it into `afterEvaluate` anymore
+
 ## 20250219+1
 * Fix Kotest plugin version mishap
 * Update kotest plugin to 6.0.0 M2
