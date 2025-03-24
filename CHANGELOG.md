@@ -1,5 +1,11 @@
 # Dual-Version Kotlin 1.9.10 / 2.0.20+
 
+# 2.1.0.20
+
+## 20250324
+* Kotlin 2.1.20
+* KSP 1.0.31
+
 ## 20250311 
 * Don't assume a JVM target is always present
   * If both JVM and Android targets are present, automagically create the shared `androidJvmMain` **and also make it available right away!**

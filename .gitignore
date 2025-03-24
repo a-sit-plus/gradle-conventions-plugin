@@ -3,6 +3,9 @@ repo/
 .idea/
 **/build/
 !src/**/build/
+k2/src/main/kotlin/BuildDate.kt
+local.properties
+
 
 # Ignore Gradle GUI config
 gradle-app.setting
