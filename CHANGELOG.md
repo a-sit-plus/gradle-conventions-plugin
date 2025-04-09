@@ -2,6 +2,10 @@
 
 # 2.1.20
 
+## 20250409
+* Fail on misconfigured Android Projects
+* Fix opt-in typo
+
 ## 20250324
 * Kotlin 2.1.20
 * KSP 1.0.31

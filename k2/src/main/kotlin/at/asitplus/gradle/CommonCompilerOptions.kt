@@ -14,7 +14,7 @@ internal inline fun KotlinMultiplatformExtension.experimentalOptIns() {
 
     compilerOptions {
         optIn.add("kotlinx.serialization.ExperimentalSerializationApi")
-        optIn.add("kotlinx.coroutines.ExperimentalCoroutinesAp")
+        optIn.add("kotlinx.coroutines.ExperimentalCoroutinesApi")
         optIn.add("kotlin.time.ExperimentalTime")
         optIn.add("kotlin.RequiresOptIn")
 

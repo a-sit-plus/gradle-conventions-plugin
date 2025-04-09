@@ -4,7 +4,6 @@ package at.asitplus.gradle
 
 import io.github.gradlenexus.publishplugin.NexusPublishExtension
 import org.gradle.api.JavaVersion
-import org.gradle.api.NamedDomainObjectContainer
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.Delete
@@ -21,7 +20,6 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinBasePlugin
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
-import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import org.jetbrains.kotlin.gradle.plugin.extraProperties
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinAndroidTarget
 import org.jetbrains.kotlin.gradle.targets.jvm.KotlinJvmTarget
@@ -254,9 +252,10 @@ open class K2Conventions : Plugin<Project> {
             Logger.lifecycle("  ${H}Multiplatform project detected$R")
         }
         target.addKotestPlugin(isMultiplatform)
-        val hasAgp =
-            ((target.pluginManager.findPlugin("com.android.library")
-                ?: target.pluginManager.findPlugin("com.android.application")) != null)
+
+        val isAndroidApplication = target.pluginManager.findPlugin("com.android.application") != null
+        val isAndroidLibrary = target.pluginManager.findPlugin("com.android.library") != null
+        val hasAgp = isAndroidApplication || isAndroidLibrary
 
         if (hasAgp) target.extensions.getByType<com.android.build.gradle.BaseExtension>().apply {
             compileOptions {
@@ -298,7 +297,6 @@ open class K2Conventions : Plugin<Project> {
                 }
             }
 
-
             target.afterEvaluate {
 
                 val kmpTargets =
@@ -333,10 +331,15 @@ open class K2Conventions : Plugin<Project> {
                 val hasAndroidTarget = kmp.targets.firstOrNull { it is KotlinAndroidTarget } != null
                 if (hasAndroidTarget) {
                     kmp.androidTarget {
+                        if(isAndroidLibrary) publishLibraryVariants.let {
+                            if(it==null || it.isEmpty())
+                                throw StopExecutionException("Android target found, but no publishing variant set. Setting publishing variants is mandatory for Android libraries! Otherwise no Android library artefact will be created.")
+
+                        }
                         Logger.info("  [AND] Setting jsr305=strict for JVM nullability annotations")
                         compilerOptions {
                             if (androidJvmTarget == null)
-                                throw StopExecutionException("Android target configured found, but neither android.minSdk set nor android.jvmTarget override set in properties! To fix this add at least android.minSdk=<sdk-version> to gradle.properties")
+                                throw StopExecutionException("Android target found, but neither android.minSdk set nor android.jvmTarget override set in properties! To fix this add at least android.minSdk=<sdk-version> to gradle.properties")
                             else {
                                 Logger.lifecycle("  ${H}[AND] Setting jvmTarget to $androidJvmTarget for $name$R")
                                 jvmTarget = JvmTarget.fromTarget(androidJvmTarget!!)
