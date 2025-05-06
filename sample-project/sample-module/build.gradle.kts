@@ -19,7 +19,7 @@ publishing {
 dependencies {
     api(kmmresult())
     implementation(napier())
-    implementation("at.asitplus.crypto:datatypes:2.5.0")
+    implementation("at.asitplus.signum:indispensable:3.16.1")
 }
 
 

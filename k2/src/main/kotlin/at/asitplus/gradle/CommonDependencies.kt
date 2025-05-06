@@ -61,7 +61,6 @@ inline fun KotlinDependencyHandler.addKotest(target: String? = null) {
     implementation(project.kotest("common", target))
     implementation(project.kotest("property", target))
     implementation(project.kotest("framework-engine", target))
-    implementation(project.kotest("framework-datatest", target))
 }
 
 /**

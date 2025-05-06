@@ -1,4 +1,21 @@
-# Dual-Version Kotlin 1.9.10 / 2.0.20+
+# No-Kotlin-Version
+
+Starting with May 2025, the conventions plugin does not include a Kotlin version anymore. Instead, it lets any consuming
+project set it, just as with the Android Gradle Plugin. **This is a breaking change, as there is no fallback version specified.**
+
+## 20250506
+* First version not to ship with a fixed-version Kotlin plugin
+* Drop bundling KSP as it makes no sense without a bundled Kotlin version
+* Dependency updates
+  * Bouncy Castle 1.80!!
+  * Serialization 1.8.1
+  * Coroutines 1.10.2
+  * Ktor 3.1.2
+  * Datetime 0.6.2
+  * Kotest 6.0.0.M4
+  * Kotest Plugin 6.0.0.M3
+
+# Single-Version Kotlin 1.9.10 / 2+
 
 # 2.1.20
 
@@ -9,6 +26,8 @@
 ## 20250324
 * Kotlin 2.1.20
 * KSP 1.0.31
+
+# 2.0.20
 
 ## 20250311 
 * Don't assume a JVM target is always present
@@ -40,6 +59,9 @@
     * Compile for JVM target using `jdk.version`
     * Compile for Android target using the JDK version matching `android.minSdk` (can be overridden by `android.jvmTarget`)
   * **The `jvmToolchain` will always be set to `jdk.version`**
+
+
+# Dual-Version Kotlin 1.9.10 / 2.0.20+
 
 ## 20250107
 * Serialization 1.8.0

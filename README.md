@@ -1,6 +1,6 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-[![Version](https://img.shields.io/badge/Kotlin_2.1.20-+20250409-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)](CHANGELOG.md)
+![Version](https://img.shields.io/badge/20250506-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat&)](http://www.apache.org/licenses/LICENSE-2.0)
 
 **Note: This plugin is used internally at A-SIT Plus and there are no guarantees whatsoever wrt. stability, reliability, and even making any sense at all.
@@ -14,8 +14,8 @@ Gradle version catalogues are great, they can only get you so far…
 
 This plugin targets Kotlin JVM and multiplatform projects and provides the following functionality:
 
-* Version management of core libraries, Dokka, Kotlin, certain Kotlin plugins, Gradle Ktor Plugin (and ktor libraries),
-  ksp plugin, and JVM toolchain (can be overridden)
+* Version management of core libraries, Dokka, ~~Kotlin~~, certain Kotlin plugins, Gradle Ktor Plugin (and ktor libraries),
+  ~~KSP plugin~~, and JVM toolchain (can be overridden)
 * Shorthands for various commonly-used dependencies
 * Natural extension functions to add common dependencies
 * Autoconfiguration of Kotest for multiplatform projects
@@ -60,12 +60,9 @@ Add this repository as a git submodule to your project, then add the following t
 <details open><summary>settings.gradle.kts</summary>
 
 ```kotlin
-//Set this property if you want to stick to Kotlin 1.9.10
-System.setProperty("at.asitplus.gradle", "legacy")
 pluginManagement {
     includeBuild("path/to/gradle-conventions-plugin")
     repositories {
-      maven("https://s01.oss.sonatype.org/content/repositories/snapshots") //Kotest snapshot for Kotlin 2.0.20 until new Kotest stable is released
         google()
         gradlePluginPortal()
         mavenCentral()
@@ -95,7 +92,6 @@ pluginManagement {
             url = uri("https://raw.githubusercontent.com/a-sit-plus/gradle-conventions-plugin/mvn/repo")
             name = "aspConventions"
         }
-        maven("https://s01.oss.sonatype.org/content/repositories/snapshots") //Kotest snapshot for Kotlin 2.0.20 until new Kotest stable is released
         mavenCentral()
         gradlePluginPortal()
     }
@@ -113,7 +109,8 @@ below.
 
 ```kotlin
 plugins {
-    id("at.asitplus.gradle.conventions") version "2.0.20+20240829" //Version can be omitted for composite build
+    kotlin("jvm") version "<kotlin version here>" apply false //or multiplatform
+    id("at.asitplus.gradle.conventions") version "$version" //Version can be omitted for composite build
 }
 ```
 
@@ -141,7 +138,7 @@ following `plugins` block:
 ```kotlin
 plugins {
     kotlin("multiplatform")
-    kotlin("plugin.serialization")
+    kotlin("plugin.serialization") version "<match kotlin version>" //or add it to the root project with apply(false)
     id("org.jetbrains.dokka")
     id("io.ktor.plugin")
     id("at.asitplus.gradle.conventions")
@@ -157,7 +154,7 @@ The same approach show before also works for jvm-only projects:
 ```kotlin
 plugins {
     kotlin("jvm")
-    kotlin("plugin.serialization")
+    kotlin("plugin.serialization") version "<match kotlin version>" //or add it to the root project with apply(false)
     id("org.jetbrains.dokka")
     id("at.asitplus.gradle.conventions")
 }
@@ -172,13 +169,12 @@ modules, it does
 come with a caveat:
 Only the following Gradle plugins are directly supported with implicit versions:
 
-* Kotlin
-    * multiplatform
-    * jvm
-    * serialization
+* ~~Kotlin~~
+    * ~~multiplatform~~
+    * ~~jvm~~
+    * ~~serialization~~
 * Ktor
-* KSP
-* Kotest
+* ~~Kotest~~
 * Dokka
 * Nexus publishing
 
@@ -328,8 +324,8 @@ illustrated by the example below to export an XCode framework:
 
 ```kotlin
 plugins {
-    kotlin("multiplatform") //version managed by conventions plugin
-    kotlin("plugin.serialization") //version managed by conventions plugin
+    kotlin("multiplatform")
+    kotlin("plugin.serialization") version "<match kotlin version>"
     id("at.asitplus.gradle.conventions")
 }
 
@@ -413,10 +409,6 @@ justifies the creation of additional conventions based on this plugin,
 simply add it as a composite build to the new conventions plugin, and you are good to go!
 In most cases, however, you want to depend on a specific version of this plugin that maps to the Kotlin version you want
 to use.
-
-**Note:** The considerations about including plugins as part of a composite build apply transitively, i.e. add
-`System.setProperty("at.asitplus.gradle", "legacy")` to the settings.gradle.kts file of the custom plugin that extends
-from this plugin, if you are targeting Kotlin 1.9.0.
 
 ## Showcase Projects
 

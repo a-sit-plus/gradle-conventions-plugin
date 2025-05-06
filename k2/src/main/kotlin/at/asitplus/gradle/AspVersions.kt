@@ -40,11 +40,6 @@ class AspVersions(private val project: Project) {
     val kotlin get() = project.getKotlinPluginVersion()
 
     /**
-     * KSP version. Cannot be overridden
-     */
-    val ksp get() = kotlin + "-" + versions.getProperty("ksp")
-
-    /**
      * kotlinx.serialization version (libraries, not plugin!). Override by adding setting a `serialization` in `libs.versions.toml`.
      */
     val serialization = versionOf("serialization")

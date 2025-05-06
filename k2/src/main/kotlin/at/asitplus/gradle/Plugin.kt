@@ -3,7 +3,6 @@
 package at.asitplus.gradle
 
 import io.github.gradlenexus.publishplugin.NexusPublishExtension
-import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.Delete
@@ -21,7 +20,6 @@ import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinBasePlugin
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 import org.jetbrains.kotlin.gradle.plugin.extraProperties
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinAndroidTarget
 import org.jetbrains.kotlin.gradle.targets.jvm.KotlinJvmTarget
 import kotlin.random.Random
 import kotlin.reflect.KProperty
@@ -119,32 +117,10 @@ val Project.envExtra: EnvExtraDelegate get() = EnvExtraDelegate(this)
  */
 val Project.jvmTarget: String get() = runCatching { extraProperties["jdk.version"] as String }.getOrElse { AspVersions.jvm.defaultTarget }
 
-/**
- * Minimum Android SDK version read from the `android.minSdk` property. **This property must be set, if you are targeting Android!**.
- */
-val Project.androidMinSdk: Int?
-    get() = runCatching { (extraProperties["android.minSdk"] as String).toInt() }.getOrNull()
-
-/**
- * Android compile SDK version read from the `android.compileSdk` property. If unset, specify it manually in side the `android` DSL.
- */
-val Project.androidCompileSdk: Int?
-    get() = runCatching { (extraProperties["android.compileSdk"] as String).toInt() }.getOrNull()
-
-/**
- * The Android JVM version to target. Automagically set for the `defaultConfig` matching `android.minSdk`.
- * May be overridden by specifying `android.jvmTarget`.
- */
-val Project.androidJvmTarget: String?
-    get() = runCatching { extraProperties["android.jvmTarget"] as String }.getOrElse {
-        androidMinSdk?.let { at.asitplus.gradle.AspVersions.Android.jdkFor(it).toString() }
-    }
+internal fun KotlinMultiplatformExtension.hasJvmTarget(): Boolean =
+    targets.firstOrNull { it is KotlinJvmTarget } != null
 
 open class K2Conventions : Plugin<Project> {
-
-    private fun KotlinMultiplatformExtension.hasJvmTarget(): Boolean =
-        targets.firstOrNull { it is KotlinJvmTarget } != null
-
 
     protected open fun KotlinMultiplatformExtension.setupKotest() {
         sourceSets {
@@ -177,25 +153,25 @@ open class K2Conventions : Plugin<Project> {
                 versionOverrides(it)
             }
         target.publishVersionCatalog = true
+
         Logger.lifecycle(
-            "\n ASP Conventions ${H}${target.AspVersions.versions["kotlin"]}+$buildDate$R is using the following dependency versions for project ${
+            "\n ASP Conventions ${H}${target.AspVersions.kotlin}+$buildDate$R is using the following dependency versions for project $H${
                 if (target == target.rootProject) target.name
                 else "${target.rootProject.name}:${target.name}"
-            }:"
+            }$R:"
         )
         runCatching {
             target.AspVersions.versions.entries.filterNot { (k, _) -> k == "jvmTarget" }
+                .filterNot { (k, _) -> k == "agp" }.filterNot { (k, _) -> k == "kotlin" }
                 .sortedBy { (k, _) -> k.toString() }
                 .forEach { (t, _) ->
                     Logger.lifecycle(
-                        "    ${
-                            String.format(
-                                "%-14s",
-                                "$t:"
-                            )
-                        } ${target.AspVersions.versionOf(t as String)}"
+                        "    ${String.format("%-14s", "$t:")} ${target.AspVersions.versionOf(t as String)}"
                     )
                 }
+            if (target.agpVersion != null)
+                Logger.lifecycle("    ${String.format("%-14s", "AGP:")} ${target.agpVersion}")
+
             Logger.lifecycle("")
         }
 
@@ -213,8 +189,6 @@ open class K2Conventions : Plugin<Project> {
             target.extensions.getByType<IdeaModel>().project {
                 jdkName = target.jvmTarget
             }
-
-
 
             Logger.lifecycle("  Adding maven repositories")
             Logger.info("    * maven snapshots")
@@ -253,49 +227,10 @@ open class K2Conventions : Plugin<Project> {
         }
         target.addKotestPlugin(isMultiplatform)
 
-        val isAndroidApplication = target.pluginManager.findPlugin("com.android.application") != null
-        val isAndroidLibrary = target.pluginManager.findPlugin("com.android.library") != null
-        val hasAgp = isAndroidApplication || isAndroidLibrary
-
-        if (hasAgp) target.extensions.getByType<com.android.build.gradle.BaseExtension>().apply {
-            compileOptions {
-                if (target.androidMinSdk == null)
-                    throw StopExecutionException("Android Gradle Plugin found, but no android.minSdk set in properties! To fix this add android.minSdk=<sdk-version> to gradle.properties")
-                else {
-                    val compat = target.androidJvmTarget
-                    Logger.lifecycle("  ${H}Setting Android source and target compatibility to ${compat}.$R")
-                    sourceCompatibility = JavaVersion.toVersion(compat!!)
-                    targetCompatibility = JavaVersion.toVersion(compat)
-                }
-            }
-            Logger.lifecycle("  ${H}Setting Android defaultConfig minSDK to ${target.androidMinSdk}$R")
-            defaultConfig.minSdk = target.androidMinSdk!!
-            target.androidCompileSdk?.let {
-                Logger.lifecycle("  ${H}Setting Android compileSDK to ${it}$R")
-                compileSdkVersion(it)
-            }
-        }
+        target.setAndroidOptions()
 
         target.plugins.withType<KotlinMultiplatformPluginWrapper> {
-            var sharedAdded = false
-            val kmp = target.extensions.getByType<KotlinMultiplatformExtension>()
-
-            kmp.targets.whenObjectAdded {
-                if (sharedAdded) return@whenObjectAdded
-                val hasAndroidTarget = kmp.targets.firstOrNull { it is KotlinAndroidTarget } != null
-                kmp.applyDefaultHierarchyTemplate()
-                if (hasAgp && kmp.hasJvmTarget()) kmp.apply {
-                    if (hasAndroidTarget) {
-                        sharedAdded = true
-                        Logger.lifecycle("  ${H}Creating androidJvmMain shared source set$R")
-                        sourceSets.apply {
-                            val androidJvmMain by creating {
-                                dependsOn(get("commonMain"))
-                            }
-                        }
-                    }
-                }
-            }
+            target.createAndroidJvmSharedSources()
 
             target.afterEvaluate {
 
@@ -328,46 +263,10 @@ open class K2Conventions : Plugin<Project> {
                     }
                 }
 
-                val hasAndroidTarget = kmp.targets.firstOrNull { it is KotlinAndroidTarget } != null
-                if (hasAndroidTarget) {
-                    kmp.androidTarget {
-                        if(isAndroidLibrary) publishLibraryVariants.let {
-                            if(it==null || it.isEmpty())
-                                throw StopExecutionException("Android target found, but no publishing variant set. Setting publishing variants is mandatory for Android libraries! Otherwise no Android library artefact will be created.")
-
-                        }
-                        Logger.info("  [AND] Setting jsr305=strict for JVM nullability annotations")
-                        compilerOptions {
-                            if (androidJvmTarget == null)
-                                throw StopExecutionException("Android target found, but neither android.minSdk set nor android.jvmTarget override set in properties! To fix this add at least android.minSdk=<sdk-version> to gradle.properties")
-                            else {
-                                Logger.lifecycle("  ${H}[AND] Setting jvmTarget to $androidJvmTarget for $name$R")
-                                jvmTarget = JvmTarget.fromTarget(androidJvmTarget!!)
-                            }
-                            freeCompilerArgs = listOf(
-                                "-Xjsr305=strict"
-                            )
-                        }
-                        //TODO test runner setup
-                    }
-                }
-
-
-
+                kmp.setupAndroidTarget()
                 kmp.experimentalOptIns()
-
-                @Suppress("UNUSED_VARIABLE")
                 kmp.setupKotest()
-                if (hasAgp && kmp.hasJvmTarget()) kmp.apply {
-                    if (hasAndroidTarget) {
-                        Logger.lifecycle("  ${H}Creating androidJvmMain shared source set$R")
-                        sourceSets.apply {
-                            val androidJvmMain by getting
-                            get("androidMain").dependsOn(androidJvmMain)
-                            get("jvmMain").dependsOn(androidJvmMain)
-                        }
-                    }
-                }
+                kmp.linkAgpJvmSharedSources()
                 Logger.lifecycle("") //to make it look less crammed
             }
         }

@@ -55,8 +55,8 @@ fun Project.setupDokka(
 }
 
 /**
- * Makes all publishing tasks depend on all signing tasks. Hampers parallelization, but works around dodgy task dependencies
- * which (more often than anticipated) makes the build process stumble over its own feet.
+ * Makes all publishing tasks depend on all signing tasks. Hampers parallelization but works around dodgy task dependencies
+ * that (more often than anticipated) make the build process stumble over its own feet.
  */
 internal fun Project.setupSignDependency() {
     val signingTasks = tasks.withType<Sign>()
@@ -129,9 +129,8 @@ internal fun Project.compileVersionCatalog() {
                 version(it, requiredVersion)
             }
 
-        //always add kotlin and ksp version, as they need to be aligned!
+        //always add kotlin version, as they need to be aligned!
         version("kotlin", AspVersions.kotlin)
-        version("ksp", AspVersions.ksp)
 
         //this sanity check makes sure that `gradle/libs.versions.toml` does not define a dependency handled by a called shorthand function.
         //If no shorthand functions are used, no problem!
@@ -194,7 +193,7 @@ internal fun Project.compileVersionCatalog() {
         }
         if (!isKMP) plugin("kotlin-jvm", "org.jetbrains.kotlin.jvm").versionRef("kotlin")
 
-        //also add all plugins to the version catalog. This also covers the KSP plugin
+        //also add all plugins to the version catalog.
         val pluginDeclarations = AspVersions.versionCatalog?.getTable("plugins")
         pluginDeclarations?.keySet()?.forEach { alias ->
             val currentPlugin = pluginDeclarations.getTable(alias)!!
