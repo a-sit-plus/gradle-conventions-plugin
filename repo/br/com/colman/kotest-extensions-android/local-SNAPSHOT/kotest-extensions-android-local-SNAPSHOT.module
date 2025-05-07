@@ -1,0 +1,117 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "br.com.colman",
+    "module": "kotest-extensions-android",
+    "version": "local-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.1.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-android-local-SNAPSHOT.aar",
+          "url": "kotest-extensions-android-local-SNAPSHOT.aar",
+          "size": 30759,
+          "sha512": "19bead51842ac5067559ca944487d1a728617b1fbe2d381dd5f3477eafb520ee4f48806d0fae5a09b50e4fad6890fd598fdba004085306a1712ce8ef57a8d73d",
+          "sha256": "4ddd08137b55f0fed86a25e8322f0c9b415c60f72c60e62489d4db6c1bebdafe",
+          "sha1": "d221e24005f027b321f35594a661408ac4df5e0f",
+          "md5": "341563648ac3d561f90b4a7f43d52aba"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect"
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M4"
+          }
+        },
+        {
+          "group": "org.robolectric",
+          "module": "robolectric",
+          "version": {
+            "requires": "4.12.2"
+          }
+        },
+        {
+          "group": "junit",
+          "module": "junit",
+          "version": {
+            "requires": "4.13.2"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.7.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.1.20"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.1.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-android-local-SNAPSHOT.aar",
+          "url": "kotest-extensions-android-local-SNAPSHOT.aar",
+          "size": 30759,
+          "sha512": "19bead51842ac5067559ca944487d1a728617b1fbe2d381dd5f3477eafb520ee4f48806d0fae5a09b50e4fad6890fd598fdba004085306a1712ce8ef57a8d73d",
+          "sha256": "4ddd08137b55f0fed86a25e8322f0c9b415c60f72c60e62489d4db6c1bebdafe",
+          "sha1": "d221e24005f027b321f35594a661408ac4df5e0f",
+          "md5": "341563648ac3d561f90b4a7f43d52aba"
+        }
+      ]
+    }
+  ]
+}
