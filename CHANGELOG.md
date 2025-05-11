@@ -3,6 +3,14 @@
 Starting with May 2025, the conventions plugin does not include a Kotlin version anymore. Instead, it lets any consuming
 project set it, just as with the Android Gradle Plugin. **This is a breaking change, as there is no fallback version specified.**
 
+## 20250628
+* Kotest Multiplatform must be manually added to the root project, as it is now an optional dependency
+* Publish to new maven Central endpoint
+* Dependency Updated:
+  * Bouncy Castle 1.81!!
+  * Ktor 3.2.0
+  * KmmResult 1.9.3
+
 ## 20250506
 * First version not to ship with a fixed-version Kotlin plugin
 * Drop bundling KSP as it makes no sense without a bundled Kotlin version

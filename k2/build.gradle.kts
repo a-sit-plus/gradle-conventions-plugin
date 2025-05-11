@@ -24,7 +24,7 @@ val kotlinVersion = versions["kotlin"] as String
 
 val dokka = versions["dokka"]
 val nexus = versions["nexus"]
-val kotest = versions["kotest-plugin"]
+val kotest = versions["kotest"]
 val ktor = versions["ktor"]
 val agp = versions["agp"]
 
@@ -35,7 +35,7 @@ dependencies {
     compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     compileOnly("org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion")
     api("io.ktor.plugin:plugin:$ktor")
-    api("io.kotest:kotest-framework-multiplatform-plugin-gradle:$kotest")
+    compileOnly("io.kotest:kotest-framework-multiplatform-plugin-gradle:$kotest")
     api("io.github.gradle-nexus:publish-plugin:$nexus")
     api("org.jetbrains.dokka:dokka-gradle-plugin:$dokka")
     implementation("org.tomlj:tomlj:1.1.1")
@@ -43,6 +43,7 @@ dependencies {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
     gradlePluginPortal()
     google()

@@ -110,6 +110,7 @@ below.
 ```kotlin
 plugins {
     kotlin("jvm") version "<kotlin version here>" apply false //or multiplatform
+    id("io.kotest.multiplatform") version libs.versions.kotest //if you want to keep pluign and extensions in sync
     id("at.asitplus.gradle.conventions") version "$version" //Version can be omitted for composite build
 }
 ```

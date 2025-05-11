@@ -42,38 +42,12 @@ fun Project.addDependency(module: String, versionRef: String) = collectedDepende
 private fun String?.toSuffix() = this?.let { "-$it" } ?: ""
 
 /**
- * Adds Kotest (to test dependencies, as it is called there)
- * * assertions-core
- * * common
- * * property
- * * datatest
- *
- * Also adds `kotlin-reflect` to make kotest work smoothly with IDEA
- */
-inline fun KotlinDependencyHandler.addKotest(target: String? = null) {
-    val targetInfo = target?.let { " ($it)" } ?: ""
-    Logger.lifecycle("  Adding Kotest libraries")
-    Logger.info("   * Assertions$targetInfo")
-    Logger.info("   * Property-based testing$targetInfo")
-    Logger.info("   * Datatest$targetInfo")
-    implementation(kotlin("reflect"))
-    implementation(project.kotest("assertions-core", target))
-    implementation(project.kotest("common", target))
-    implementation(project.kotest("property", target))
-    implementation(project.kotest("framework-engine", target))
-}
-
-/**
  * Shorthand function to get the coordinates for a specific kotest dependency (*NOT added to the version catalog*)
  */
 @JvmOverloads
 fun Project.kotest(module: String, target: String? = null) =
     "io.kotest:kotest-$module${target.toSuffix()}:${AspVersions.kotest}"
 
-inline fun KotlinDependencyHandler.addKotestJvmRunner() {
-    Logger.info("  Adding Kotest JUnit runner")
-    implementation(project.kotest("runner-junit5", "jvm"))
-}
 
 /**
  * get coordinates for kotlinx-serialization-[format]. Version can be overridden using `serialization` version alias in `gradle/libs.versions.toml`

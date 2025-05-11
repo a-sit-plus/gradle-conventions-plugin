@@ -2,6 +2,7 @@
 
 package at.asitplus.gradle
 
+import at.asitplus.gradle.at.asitplus.gradle.*
 import io.github.gradlenexus.publishplugin.NexusPublishExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -117,30 +118,19 @@ val Project.envExtra: EnvExtraDelegate get() = EnvExtraDelegate(this)
  */
 val Project.jvmTarget: String get() = runCatching { extraProperties["jdk.version"] as String }.getOrElse { AspVersions.jvm.defaultTarget }
 
+
 internal fun KotlinMultiplatformExtension.hasJvmTarget(): Boolean =
     targets.firstOrNull { it is KotlinJvmTarget } != null
 
 open class K2Conventions : Plugin<Project> {
 
-    protected open fun KotlinMultiplatformExtension.setupKotest() {
-        sourceSets {
-            commonTest {
-                dependencies {
-                    addKotest()
-                }
-            }
-            if (hasJvmTarget()) jvmTest {
-                dependencies {
-                    addKotestJvmRunner()
-                }
-            }
-        }
-    }
+    protected open fun KotlinMultiplatformExtension.setupKotestKmp() =
+        defaultSetupKotest()
 
-    protected open fun Project.addKotestPlugin(isMultiplatform: Boolean) {
-        Logger.info("\n  Setting up Kotest multiplatform plugin")
-        plugins.apply("io.kotest.multiplatform")
-    }
+
+    protected open fun Project.addKotestPlugin() =
+        defaultAddKotestKmpPlugin()
+
 
     protected open fun versionOverrides(aspVersions: AspVersions) = Unit
 
@@ -196,8 +186,9 @@ open class K2Conventions : Plugin<Project> {
             Logger.info("    * google")
             target.allprojects {
                 repositories {
-                    maven("https://oss.sonatype.org/content/repositories/snapshots")
+                    maven("https://central.sonatype.com/repository/maven-snapshots/")
                     maven("https://s01.oss.sonatype.org/content/repositories/snapshots")
+                    maven("https://oss.sonatype.org/content/repositories/snapshots")
                     google()
                     mavenCentral()
                 }
@@ -207,8 +198,8 @@ open class K2Conventions : Plugin<Project> {
             target.extensions.getByType<NexusPublishExtension>().apply {
                 repositories {
                     sonatype {
-                        nexusUrl.set(java.net.URI("https://s01.oss.sonatype.org/service/local/"))
-                        snapshotRepositoryUrl.set(java.net.URI("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+                        nexusUrl.set(java.net.URI("https://ossrh-staging-api.central.sonatype.com/service/local/"))
+                        snapshotRepositoryUrl.set(java.net.URI("https://central.sonatype.com/repository/maven-snapshots/"))
                     }
                 }
             }
@@ -225,7 +216,8 @@ open class K2Conventions : Plugin<Project> {
             isMultiplatform = true
             Logger.lifecycle("  ${H}Multiplatform project detected$R")
         }
-        target.addKotestPlugin(isMultiplatform)
+        if (isMultiplatform && target.hasKotestKmp)
+            target.addKotestPlugin()
 
         target.setAndroidOptions()
 
@@ -265,7 +257,12 @@ open class K2Conventions : Plugin<Project> {
 
                 kmp.setupAndroidTarget()
                 kmp.experimentalOptIns()
-                kmp.setupKotest()
+                if (project.hasKotestKmp) kmp.setupKotestKmp()
+                else Logger.warn(
+                    "No Kotest Multiplatform Plugin found. If you want to use Kotest on all modules, please manually add the Kotest Multiplatform plugin to your root project's plugin's block:" +
+                            "\tid(\"io.kotest.multiplatform\") version libs.versions.kotest //add a version called `kotest` to your libs.versions.toml\n" +
+                            "\tto keep the kotest plugin and all kotest extensions in sync. Use a different alias to keep them out-of-sync."
+                )
                 kmp.linkAgpJvmSharedSources()
                 Logger.lifecycle("") //to make it look less crammed
             }
@@ -295,7 +292,7 @@ open class K2Conventions : Plugin<Project> {
                     target.afterEvaluate {
                         kotlin.apply {
                             sourceSets.getByName("test").dependencies {
-                                addKotest("jvm")
+                                addKotestExtensions("jvm")
                                 addKotestJvmRunner()
                             }
 
