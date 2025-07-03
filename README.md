@@ -36,7 +36,7 @@ This plugin targets Kotlin JVM and multiplatform projects and provides the follo
       of `System.getProperty("my_env_prop")`
     * `env("my.prop")` is a shorthand for `System.getProperty("my.prop")`
     * `val my_env_overridable_prop by envExtra` is a shorthand for first
-      trying `System.getProperty("my_env_overridable_prop")`, then trying to read it read from `extra`. Returns `null`
+      trying `System.getProperty("my_env_overridable_prop")`, then trying to read from `extra`. Returns `null`
       if absent.
 * Automatic compilation and publication of Gradle version catalog for all non-test dependencies
   * Can be disabled by setting `publishVersionCatalog = false` in a module's `build.gradle.kts`
@@ -72,7 +72,7 @@ pluginManagement {
 
 </details>
 
-The composite build approach provides more flexibility and makes sense when contributing to or this plugin.
+The composite build approach provides more flexibility and makes sense when contributing to this plugin.
 Including plugins through composite builds works even in settings here the Kotlin Gradle plugin would otherwise fail to
 handle
 composite builds correctly (such as, when depending on a multiplatform library in an Android project).
@@ -110,7 +110,7 @@ below.
 ```kotlin
 plugins {
     kotlin("jvm") version "<kotlin version here>" apply false //or multiplatform
-    id("io.kotest.multiplatform") version libs.versions.kotest //if you want to keep pluign and extensions in sync
+    id("io.kotest.multiplatform") version libs.versions.kotest //if you want to keep plugin and extensions in sync
     id("at.asitplus.gradle.conventions") version "$version" //Version can be omitted for composite build
 }
 ```
