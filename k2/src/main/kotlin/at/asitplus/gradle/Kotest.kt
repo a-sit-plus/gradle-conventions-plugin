@@ -10,7 +10,6 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
 
 
-val Project.hasKotestKmp: Boolean get() = project.rootProject.plugins.hasPlugin("io.kotest.multiplatform")
 
 internal fun KotlinMultiplatformExtension.defaultSetupKotest() {
     sourceSets {
@@ -26,12 +25,6 @@ internal fun KotlinMultiplatformExtension.defaultSetupKotest() {
         }
     }
 }
-
-internal fun Project.defaultAddKotestKmpPlugin() {
-    Logger.info("\n  Setting up Kotest multiplatform plugin")
-    plugins.apply("io.kotest.multiplatform")
-}
-
 
 /**
  * Adds Kotest (to test dependencies, as it is called there)

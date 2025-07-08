@@ -124,14 +124,6 @@ internal fun KotlinMultiplatformExtension.hasJvmTarget(): Boolean =
 
 open class K2Conventions : Plugin<Project> {
 
-    protected open fun KotlinMultiplatformExtension.setupKotestKmp() =
-        defaultSetupKotest()
-
-
-    protected open fun Project.addKotestPlugin() =
-        defaultAddKotestKmpPlugin()
-
-
     protected open fun versionOverrides(aspVersions: AspVersions) = Unit
 
     override fun apply(target: Project) {
@@ -216,8 +208,6 @@ open class K2Conventions : Plugin<Project> {
             isMultiplatform = true
             Logger.lifecycle("  ${H}Multiplatform project detected$R")
         }
-        if (isMultiplatform && target.hasKotestKmp)
-            target.addKotestPlugin()
 
         target.setAndroidOptions()
 
@@ -257,12 +247,8 @@ open class K2Conventions : Plugin<Project> {
 
                 kmp.setupAndroidTarget()
                 kmp.experimentalOptIns()
-                if (project.hasKotestKmp) kmp.setupKotestKmp()
-                else Logger.warn(
-                    "No Kotest Multiplatform Plugin found. If you want to use Kotest on all modules, please manually add the Kotest Multiplatform plugin to your root project's plugin's block:" +
-                            "\tid(\"io.kotest.multiplatform\") version libs.versions.kotest //add a version called `kotest` to your libs.versions.toml\n" +
-                            "\tto keep the kotest plugin and all kotest extensions in sync. Use a different alias to keep them out-of-sync."
-                )
+                kmp.defaultSetupKotest()
+
                 kmp.linkAgpJvmSharedSources()
                 Logger.lifecycle("") //to make it look less crammed
             }

@@ -133,7 +133,9 @@ internal fun KotlinMultiplatformExtension.setupAndroidTarget() {
 
         compilations.filter { it.name.contains("test", ignoreCase = true) }.forEach {
             Logger.lifecycle("  ${H}[AND] Setting $name ${String.format("%-14s", it.name)} jvmTarget to ${project.jvmTarget}$R")
-            it.kotlinOptions.jvmTarget = project.jvmTarget
+            it.target.compilerOptions {
+                jvmTarget.set(JvmTarget.fromTarget(project.jvmTarget))
+            }
         }
         //TODO test runner setup
     }

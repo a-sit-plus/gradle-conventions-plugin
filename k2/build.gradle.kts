@@ -35,7 +35,7 @@ dependencies {
     compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     compileOnly("org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion")
     api("io.ktor.plugin:plugin:$ktor")
-    compileOnly("io.kotest:kotest-framework-multiplatform-plugin-gradle:$kotest")
+    compileOnly("io.kotest:io.kotest.gradle.plugin:$kotest")
     api("io.github.gradle-nexus:publish-plugin:$nexus")
     api("org.jetbrains.dokka:dokka-gradle-plugin:$dokka")
     implementation("org.tomlj:tomlj:1.1.1")
