@@ -3,9 +3,10 @@
 Starting with May 2025, the conventions plugin does not include a Kotlin version anymore. Instead, it lets any consuming
 project set it, just as with the Android Gradle Plugin. **This is a breaking change, as there is no fallback version specified.**
 
-## 20250709-pre
+## 20250711
 * Kotlin 2.2.0
 * KSP-based Kotest 6.0.0.M5
+* Allow overriding Kotest version through environment variable `KOTEST_VERSION_OVERRIDE`, which takes precedence over version catalog
 
 ## 20250708
 * breaking change: kotlinx.datetime 0.7.1

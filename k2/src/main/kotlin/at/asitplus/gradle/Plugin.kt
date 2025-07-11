@@ -2,7 +2,10 @@
 
 package at.asitplus.gradle
 
-import at.asitplus.gradle.at.asitplus.gradle.*
+import at.asitplus.gradle.at.asitplus.gradle.addKotestExtensions
+import at.asitplus.gradle.at.asitplus.gradle.addKotestJvmRunner
+import at.asitplus.gradle.at.asitplus.gradle.defaultSetupKotest
+import at.asitplus.gradle.at.asitplus.gradle.wireKotestKsp
 import io.github.gradlenexus.publishplugin.NexusPublishExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -213,6 +216,7 @@ open class K2Conventions : Plugin<Project> {
 
         target.plugins.withType<KotlinMultiplatformPluginWrapper> {
             target.createAndroidJvmSharedSources()
+            if (target != target.rootProject) target.extensions.getByType<KotlinMultiplatformExtension>().wireKotestKsp()
 
             target.afterEvaluate {
 
@@ -273,9 +277,11 @@ open class K2Conventions : Plugin<Project> {
                     }
                 }
 
-                if (!isMultiplatform && hasJvm) /*TODO: actually check for JVM*/ {
+                if (!isMultiplatform && hasJvm) {
                     Logger.lifecycle("  Assuming JVM-only Kotlin project")
                     target.afterEvaluate {
+                        //work around IDEA bug
+                        (kotlin as KotlinJvmExtension).forceApiVersion()
                         kotlin.apply {
                             sourceSets.getByName("test").dependencies {
                                 addKotestExtensions("jvm")

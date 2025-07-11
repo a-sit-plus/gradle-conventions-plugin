@@ -3,7 +3,6 @@
 package at.asitplus.gradle
 
 import org.gradle.api.Project
-import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
 import org.jetbrains.kotlin.gradle.plugin.extraProperties
 import kotlin.random.Random
 
@@ -16,10 +15,10 @@ class CollectedDependencies(
     private val project: Project
 ) {
     val versions: MutableMap<String, String> = mutableMapOf()
-    val libraries: MutableMap<String, Pair<String,String>> = mutableMapOf()
+    val libraries: MutableMap<String, Pair<String, String>> = mutableMapOf()
 
     fun add(module: String, versionRef: String): String {
-        val components= module.split(':')
+        val components = module.split(':')
         val name = components[1]
         versions[versionRef] = project.AspVersions.versionOf(versionRef)
         libraries[name] = module to versionRef

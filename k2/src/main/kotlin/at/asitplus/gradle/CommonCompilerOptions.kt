@@ -2,8 +2,9 @@
 
 package at.asitplus.gradle
 
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
-import kotlin.text.get
+import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 internal inline fun KotlinMultiplatformExtension.experimentalOptIns() {
     Logger.lifecycle("  Adding opt ins")
@@ -12,7 +13,11 @@ internal inline fun KotlinMultiplatformExtension.experimentalOptIns() {
     Logger.info("   * kotlinx.datetime")
     Logger.info("   * RequiresOptIn\n")
 
+
+    //work around IDEA bug
+    forceApiVersion()
     compilerOptions {
+
         optIn.add("kotlinx.serialization.ExperimentalSerializationApi")
         optIn.add("kotlinx.coroutines.ExperimentalCoroutinesApi")
         optIn.add("kotlin.time.ExperimentalTime")
@@ -31,5 +36,23 @@ internal inline fun KotlinMultiplatformExtension.experimentalOptIns() {
                 freeCompilerArgs.add("-Xexpect-actual-classes")
             }
         }
+    }
+}
+
+internal fun KotlinMultiplatformExtension.forceApiVersion() {
+    val kotlinVer = coreLibrariesVersion.split(".").let { it.first() + "." + it[1] }
+    Logger.info("  [ForceApi] Forcing Api Version: $kotlinVer")
+    compilerOptions {
+        apiVersion.set(KotlinVersion.fromVersion(kotlinVer))
+        languageVersion.set(KotlinVersion.fromVersion(kotlinVer))
+    }
+}
+
+internal fun KotlinJvmExtension.forceApiVersion() {
+    val kotlinVer = coreLibrariesVersion.split(".").let { it.first() + "." + it[1] }
+    Logger.info("  [ForceApi] Forcing Api Version: $kotlinVer")
+    compilerOptions {
+        apiVersion.set(KotlinVersion.fromVersion(kotlinVer))
+        languageVersion.set(KotlinVersion.fromVersion(kotlinVer))
     }
 }

@@ -50,9 +50,9 @@ class AspVersions(private val project: Project) {
     val datetime = versionOf("datetime")
 
     /**
-     *  Kotest version (libraries, not plugin!). Override by adding setting a `kotest` in `libs.versions.toml`.
+     *  Kotest version (libraries and plugin). Override by adding setting a `kotest` in `libs.versions.toml`.
      */
-    val kotest = versionOf("kotest")
+    val kotest = System.getenv("KOTEST_VERSION_OVERRIDE")?.ifBlank { null } ?:versionOf("kotest")
 
     /**
      * Ktor version.  Override by adding setting a `ktor` in `libs.versions.toml`.

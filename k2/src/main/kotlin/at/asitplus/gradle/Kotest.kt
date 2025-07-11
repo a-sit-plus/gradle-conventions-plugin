@@ -4,11 +4,13 @@ import at.asitplus.gradle.AspVersions
 import at.asitplus.gradle.Logger
 import at.asitplus.gradle.hasJvmTarget
 import at.asitplus.gradle.kotest
-import org.gradle.api.Project
+import org.gradle.api.tasks.StopExecutionException
+import org.gradle.api.tasks.testing.AbstractTestTask
+import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.invoke
+import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
-
 
 
 internal fun KotlinMultiplatformExtension.defaultSetupKotest() {
@@ -25,6 +27,27 @@ internal fun KotlinMultiplatformExtension.defaultSetupKotest() {
         }
     }
 }
+
+internal fun KotlinMultiplatformExtension.wireKotestKsp() {
+
+    if (!project.rootProject.pluginManager.hasPlugin("com.google.devtools.ksp")) throw StopExecutionException("KSP not found in root project, please add 'com.google.devtools.ksp' to the root project's plugins")
+
+    project.pluginManager.apply("com.google.devtools.ksp")
+
+
+    targets.whenObjectAdded {
+        project.dependencies {
+            project.tasks.withType<AbstractTestTask> {
+                runCatching {
+                    val configurationName = "ksp${name.replaceFirstChar { it.uppercase() }}"
+                    logger.info("  ${this.name}::Adding Kotest ${project.AspVersions.kotest} to $configurationName")
+                    add(configurationName, "io.kotest:kotest-framework-symbol-processor-jvm:${project.AspVersions.kotest}")
+                }.getOrElse { logger.warn(it.message, it) }
+            }
+        }
+    }
+}
+
 
 /**
  * Adds Kotest (to test dependencies, as it is called there)
@@ -47,7 +70,6 @@ inline fun KotlinDependencyHandler.addKotestExtensions(target: String? = null) {
     implementation(project.kotest("property", target))
     implementation(project.kotest("framework-engine", target))
 }
-
 
 
 inline fun KotlinDependencyHandler.addKotestJvmRunner() {

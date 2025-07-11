@@ -232,12 +232,13 @@ The following shorthands are available to declare dependencies:
 
 * `kotest(module: String, target: String? = null)`, where module is something like `datatest`, dor example and target
   can be blank for multiplatform or `jvm` to target the JVM.
-  <br>Note that the following kotest modules are available by default, and require no separate declaration:
-    * `kotest-assertions-core`
-    * `kotest-common`
-    * `kotest-property`
-    * `kotest-framework-engine`
-    * `kotest-framework-datatest`
+    * The kotest version can be overridden by the environment variable `KOTEST_VERSION_OVERRIDE`, which takes precedence ofer the version catalog 
+    * Note that the following kotest modules are available by default, and require no separate declaration:
+      * `kotest-assertions-core`
+      * `kotest-common`
+      * `kotest-property`
+      * `kotest-framework-engine`
+      * `kotest-framework-datatest`
 * `serialization(format: String, target: String? = null)` declares a dependency for kotlinx-serialization
   format `format` (i.e. `json`, `cbor`, …) to target `target` (leave blank for multiplatform)
 * `ktor(module: String, target: String? = null)` declares a dependency to a ktor module `module` for target `target` (
