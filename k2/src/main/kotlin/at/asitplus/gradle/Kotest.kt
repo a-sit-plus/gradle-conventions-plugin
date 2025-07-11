@@ -42,7 +42,7 @@ internal fun KotlinMultiplatformExtension.wireKotestKsp() {
                     val configurationName = "ksp${name.replaceFirstChar { it.uppercase() }}"
                     logger.info("  ${this.name}::Adding Kotest ${project.AspVersions.kotest} to $configurationName")
                     add(configurationName, "io.kotest:kotest-framework-symbol-processor-jvm:${project.AspVersions.kotest}")
-                }.getOrElse { logger.warn(it.message, it) }
+                }.getOrElse { logger.warn(it.message) }
             }
         }
     }
