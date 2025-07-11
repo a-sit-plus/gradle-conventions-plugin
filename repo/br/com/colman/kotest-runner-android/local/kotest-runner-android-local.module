@@ -1,0 +1,124 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "br.com.colman",
+    "module": "kotest-runner-android",
+    "version": "local",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "junit",
+          "module": "junit",
+          "version": {
+            "requires": "4.13.2"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-core",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-runner-android-local.jar",
+          "url": "kotest-runner-android-local.jar",
+          "size": 20106,
+          "sha512": "f8176500a7a4c1276c5e66c240e2f9ca1a94301edce5b2d3fafa889c51e98c26bfc3171a7af318deb03b4ac5e4b7ad03d7ccbf26cd21ace1bee05d8883ab579e",
+          "sha256": "e68a545f5ed727505547625480a85b3cb3b2d1d6cd409820a3b76a103df1d264",
+          "sha1": "2d3c8c625503f256dfff63b6b2c56238d176e038",
+          "md5": "9f0f8c70e81b7650566e3f832b521346"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "junit",
+          "module": "junit",
+          "version": {
+            "requires": "4.13.2"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-core",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-runner-android-local.jar",
+          "url": "kotest-runner-android-local.jar",
+          "size": 20106,
+          "sha512": "f8176500a7a4c1276c5e66c240e2f9ca1a94301edce5b2d3fafa889c51e98c26bfc3171a7af318deb03b4ac5e4b7ad03d7ccbf26cd21ace1bee05d8883ab579e",
+          "sha256": "e68a545f5ed727505547625480a85b3cb3b2d1d6cd409820a3b76a103df1d264",
+          "sha1": "2d3c8c625503f256dfff63b6b2c56238d176e038",
+          "md5": "9f0f8c70e81b7650566e3f832b521346"
+        }
+      ]
+    }
+  ]
+}

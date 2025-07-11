@@ -3,12 +3,11 @@
   <groupId>br.com.colman</groupId>
   <artifactId>kotest-extensions-android</artifactId>
   <versioning>
-    <latest>local-SNAPSHOT</latest>
+    <latest>local</latest>
     <release>local</release>
     <versions>
       <version>local</version>
-      <version>local-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20250507153343</lastUpdated>
+    <lastUpdated>20250711081834</lastUpdated>
   </versioning>
 </metadata>
