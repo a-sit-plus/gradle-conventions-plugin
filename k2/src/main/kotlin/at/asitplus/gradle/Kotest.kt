@@ -34,14 +34,23 @@ internal fun KotlinMultiplatformExtension.wireKotestKsp() {
 
     project.pluginManager.apply("com.google.devtools.ksp")
 
-
+    var kspConfigsWithKotest = mutableSetOf<String>()
     targets.whenObjectAdded {
         project.dependencies {
             project.tasks.withType<AbstractTestTask> {
                 runCatching {
-                    val configurationName = "ksp${name.replaceFirstChar { it.uppercase() }}"
-                    logger.info("  ${this.name}::Adding Kotest ${project.AspVersions.kotest} to $configurationName")
-                    add(configurationName, "io.kotest:kotest-framework-symbol-processor-jvm:${project.AspVersions.kotest}")
+                    project.configurations.names.filter { it.startsWith("ksp") && it.endsWith("Test") }
+                        .forEach { configurationName ->
+                            if (!kspConfigsWithKotest.contains(configurationName)) {
+                                kspConfigsWithKotest.add(configurationName)
+                                logger.lifecycle("  ${this.name}::Adding Kotest ${project.AspVersions.kotest} to $configurationName")
+                                add(
+                                    configurationName,
+                                    "io.kotest:kotest-framework-symbol-processor-jvm:${project.AspVersions.kotest}"
+                                )
+                            }
+                        }
+
                 }.getOrElse { logger.warn(it.message) }
             }
         }
