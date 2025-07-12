@@ -5,6 +5,7 @@ package at.asitplus.gradle
 import at.asitplus.gradle.at.asitplus.gradle.addKotestExtensions
 import at.asitplus.gradle.at.asitplus.gradle.addKotestJvmRunner
 import at.asitplus.gradle.at.asitplus.gradle.defaultSetupKotest
+import at.asitplus.gradle.at.asitplus.gradle.registerKotestCopyTask
 import at.asitplus.gradle.at.asitplus.gradle.wireKotestKsp
 import io.github.gradlenexus.publishplugin.NexusPublishExtension
 import org.gradle.api.Plugin
@@ -139,6 +140,14 @@ open class K2Conventions : Plugin<Project> {
             }
         target.publishVersionCatalog = true
 
+        target.plugins.withType<KotlinMultiplatformPluginWrapper> {
+            if (target != target.rootProject) {
+                target.registerKotestCopyTask()
+                target.extensions.getByType<KotlinMultiplatformExtension>()
+                    .wireKotestKsp()
+            }
+        }
+
         Logger.lifecycle(
             "\n ASP Conventions ${H}${target.AspVersions.kotlin}+$buildDate$R is using the following dependency versions for project $H${
                 if (target == target.rootProject) target.name
@@ -216,7 +225,6 @@ open class K2Conventions : Plugin<Project> {
 
         target.plugins.withType<KotlinMultiplatformPluginWrapper> {
             target.createAndroidJvmSharedSources()
-            if (target != target.rootProject) target.extensions.getByType<KotlinMultiplatformExtension>().wireKotestKsp()
 
             target.afterEvaluate {
 

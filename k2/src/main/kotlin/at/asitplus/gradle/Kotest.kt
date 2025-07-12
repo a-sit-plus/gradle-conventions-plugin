@@ -4,14 +4,31 @@ import at.asitplus.gradle.AspVersions
 import at.asitplus.gradle.Logger
 import at.asitplus.gradle.hasJvmTarget
 import at.asitplus.gradle.kotest
+import kotlinx.io.files.Path
+import kotlinx.io.files.SystemTemporaryDirectory
+import org.gradle.api.Project
 import org.gradle.api.tasks.StopExecutionException
-import org.gradle.api.tasks.testing.AbstractTestTask
-import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.invoke
-import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
+import java.io.File
 
+internal fun Project.registerKotestCopyTask() {
+    if (System.getProperty("KOTEST_NO_ASP_HELPER") != "true") afterEvaluate {
+        //cannot filter for test instance, since kmp tests do not inherit Test
+        tasks.matching { it.name.endsWith("Test") }.forEach {
+            it.doLast {
+                val tempDir = SystemTemporaryDirectory
+                val kotestReportDir = Path(tempDir, "kotest-report")
+
+                logger.lifecycle("  >> Copying tests from $kotestReportDir")
+                val source = File(kotestReportDir.toString())
+                source.copyRecursively(layout.buildDirectory.asFile.get(), overwrite = true)
+            }
+        }
+    }
+
+}
 
 internal fun KotlinMultiplatformExtension.defaultSetupKotest() {
     sourceSets {
@@ -29,31 +46,19 @@ internal fun KotlinMultiplatformExtension.defaultSetupKotest() {
 }
 
 internal fun KotlinMultiplatformExtension.wireKotestKsp() {
-
     if (!project.rootProject.pluginManager.hasPlugin("com.google.devtools.ksp")) throw StopExecutionException("KSP not found in root project, please add 'com.google.devtools.ksp' to the root project's plugins")
 
     project.pluginManager.apply("com.google.devtools.ksp")
 
-    var kspConfigsWithKotest = mutableSetOf<String>()
-    targets.whenObjectAdded {
-        project.dependencies {
-            project.tasks.withType<AbstractTestTask> {
-                runCatching {
-                    project.configurations.names.filter { it.startsWith("ksp") && it.endsWith("Test") }
-                        .forEach { configurationName ->
-                            if (!kspConfigsWithKotest.contains(configurationName)) {
-                                kspConfigsWithKotest.add(configurationName)
-                                logger.lifecycle("  ${this.name}::Adding Kotest ${project.AspVersions.kotest} to $configurationName")
-                                add(
-                                    configurationName,
-                                    "io.kotest:kotest-framework-symbol-processor-jvm:${project.AspVersions.kotest}"
-                                )
-                            }
-                        }
-
-                }.getOrElse { logger.warn(it.message) }
-            }
+    project.configurations.whenObjectAdded {
+        if (name.startsWith("ksp") && name.endsWith("Test")) {
+            project.logger.lifecycle("  >>[${project.name}] Adding Kotest symbol processor dependency to $name")
+            project.dependencies.add(
+                name,
+                "io.kotest:kotest-framework-symbol-processor-jvm:${project.AspVersions.kotest}"
+            )
         }
+
     }
 }
 
@@ -78,6 +83,10 @@ inline fun KotlinDependencyHandler.addKotestExtensions(target: String? = null) {
     implementation(project.kotest("common", target))
     implementation(project.kotest("property", target))
     implementation(project.kotest("framework-engine", target))
+
+    if (System.getProperty("KOTEST_NO_ASP_HELPER") != "true") {
+        implementation("at.asitplus.gradle:kmpotest" + (target?.let { "-$it" } ?: "") + ":0.0.1")
+    }
 }
 
 

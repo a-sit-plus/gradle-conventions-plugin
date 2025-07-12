@@ -40,6 +40,7 @@ dependencies {
     api("org.jetbrains.dokka:dokka-gradle-plugin:$dokka")
     implementation("org.tomlj:tomlj:1.1.1")
     compileOnly("com.android.tools.build:gradle:$agp")
+    implementation("org.jetbrains.kotlinx:kotlinx-io-core:0.7.0")
 }
 
 repositories {
