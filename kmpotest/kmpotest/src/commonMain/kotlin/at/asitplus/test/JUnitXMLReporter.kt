@@ -11,6 +11,7 @@ import io.kotest.core.test.TestResult
 import kotlinx.io.buffered
 import kotlinx.io.files.Path
 import kotlinx.io.files.SystemFileSystem
+import kotlinx.io.files.SystemPathSeparator
 import kotlinx.io.files.SystemTemporaryDirectory
 import kotlinx.io.writeString
 import kotlinx.serialization.KSerializer
@@ -33,7 +34,11 @@ import kotlin.uuid.ExperimentalUuidApi
 
 internal expect val target: String
 private val tempPath =
-    Path(SystemTemporaryDirectory, "kotest-report", "test-results", "${target}Test").apply { deleteRecursively() }
+    Path(SystemTemporaryDirectory.let {
+        if(it.toString().split(SystemPathSeparator).last().startsWith("com.apple.CoreSimulator"))
+            Path(it.toString().substring(0,it.toString().lastIndexOf("/")))
+        else it
+    }, "kotest-report", "test-results", "${target}Test").apply { deleteRecursively() }
 
 private fun deleteRecursivelyInternal(path: Path) {
     if (!SystemFileSystem.exists(path)) return
@@ -66,6 +71,7 @@ abstract class FreeSpec(produceJvmReport: Boolean, body: FreeSpec.() -> Unit = {
 private fun writeXmlFile(xml: String, filename: String) {
     val path = Path(tempPath, filename)
     SystemFileSystem.createDirectories(tempPath)
+    println(" >> Test report will be written to $path")
     val sink = SystemFileSystem.sink(path, append = false).buffered()
     sink.writeString(xml)
     sink.close()
