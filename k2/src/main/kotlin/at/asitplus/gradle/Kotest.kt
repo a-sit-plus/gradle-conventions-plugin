@@ -12,18 +12,21 @@ import org.gradle.kotlin.dsl.invoke
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
 import java.io.File
+private val tempDir = SystemTemporaryDirectory
+private val kotestReportDir = Path(tempDir, "kotest-report")
 
 internal fun Project.registerKotestCopyTask() {
     if (System.getProperty("KOTEST_NO_ASP_HELPER") != "true") afterEvaluate {
         //cannot filter for test instance, since kmp tests do not inherit Test
         tasks.matching { it.name.endsWith("Test") }.forEach {
             it.doLast {
-                val tempDir = SystemTemporaryDirectory
-                val kotestReportDir = Path(tempDir, "kotest-report")
-
+                runCatching {
                 logger.lifecycle("  >> Copying tests from $kotestReportDir")
                 val source = File(kotestReportDir.toString())
                 source.copyRecursively(layout.buildDirectory.asFile.get(), overwrite = true)
+                }.getOrElse {
+                    Logger.warn(" >> Copying tests from $kotestReportDir failed: ${it.message}")
+                }
             }
         }
     }
