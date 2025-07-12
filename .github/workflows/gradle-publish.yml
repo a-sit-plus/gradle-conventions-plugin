@@ -59,7 +59,7 @@ jobs:
     needs: build
     steps:
     - name: Download folder from previous job
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: repo-artifact
         path: repo/
