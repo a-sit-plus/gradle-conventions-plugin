@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kmpotest/0.0.1/kmpotest-0.0.1.module",
+    "group": "at.asitplus.gradle",
+    "module": "kmpotest",
+    "version": "0.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-js-0.0.1.klib",
+          "url": "kmpotest-js-0.0.1.klib",
+          "size": 80112,
+          "sha512": "6555e9a8f1d7d990ed93332ee28f4d8480465b29bb47d3362a1df2c4c6c2c48c4ff53827f12447c50a0524f7a87c8045a190e498218f84f5dcb145ae21e60a43",
+          "sha256": "9f11e161aed207669837b9412db87f27df97f8171cd5f7226bbb6fd0f6388d72",
+          "sha1": "46681dd3b2b06321a75a153a567fe299f0cbba82",
+          "md5": "a25a75e66cacc5f53a630950541ba159"
+        }
+      ]
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization",
+          "version": {
+            "requires": "0.91.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-io-core",
+          "version": {
+            "requires": "0.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-js-0.0.1.klib",
+          "url": "kmpotest-js-0.0.1.klib",
+          "size": 80112,
+          "sha512": "6555e9a8f1d7d990ed93332ee28f4d8480465b29bb47d3362a1df2c4c6c2c48c4ff53827f12447c50a0524f7a87c8045a190e498218f84f5dcb145ae21e60a43",
+          "sha256": "9f11e161aed207669837b9412db87f27df97f8171cd5f7226bbb6fd0f6388d72",
+          "sha1": "46681dd3b2b06321a75a153a567fe299f0cbba82",
+          "md5": "a25a75e66cacc5f53a630950541ba159"
+        }
+      ]
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "kmpotest-js-0.0.1-sources.jar",
+          "url": "kmpotest-js-0.0.1-sources.jar",
+          "size": 3776,
+          "sha512": "ed809f388c449908ade01e7e184d96fd4f695319d4699c7391bcbb3c503a9da3f28100ac9156fdbc051aa7834c871a9c60cbfcad61ad03d58562abca3a0407fa",
+          "sha256": "0b0cd392ef2b321ab90569b8e562735237056c9158b86356e705245a47d28a4d",
+          "sha1": "bb370836904d333a472404117a8ef12b24160a69",
+          "md5": "b4a4247d357b06c567625254d4e3452e"
+        }
+      ]
+    }
+  ]
+}

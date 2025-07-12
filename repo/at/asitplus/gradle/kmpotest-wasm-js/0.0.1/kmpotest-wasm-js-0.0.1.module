@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kmpotest/0.0.1/kmpotest-0.0.1.module",
+    "group": "at.asitplus.gradle",
+    "module": "kmpotest",
+    "version": "0.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-wasm-js-0.0.1.klib",
+          "url": "kmpotest-wasm-js-0.0.1.klib",
+          "size": 80051,
+          "sha512": "aabcb80ac3fd4a6623cfd6d4243a645b66ff5506d0104c66bdb8c176ef05a9644412f0aebbfb2cb01c7d796b9ed1eabbd8d8400ca602306943b177004466e107",
+          "sha256": "433590650f368fa884417638a26c64da9e52f4997f4903ee4f38a7522986b2f5",
+          "sha1": "8d3ff00ccdb04f48be3028eb5aa24e2d9eba706f",
+          "md5": "4846dfae70ef2bd06ae71908c1c8138a"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization",
+          "version": {
+            "requires": "0.91.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-io-core",
+          "version": {
+            "requires": "0.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-wasm-js-0.0.1.klib",
+          "url": "kmpotest-wasm-js-0.0.1.klib",
+          "size": 80051,
+          "sha512": "aabcb80ac3fd4a6623cfd6d4243a645b66ff5506d0104c66bdb8c176ef05a9644412f0aebbfb2cb01c7d796b9ed1eabbd8d8400ca602306943b177004466e107",
+          "sha256": "433590650f368fa884417638a26c64da9e52f4997f4903ee4f38a7522986b2f5",
+          "sha1": "8d3ff00ccdb04f48be3028eb5aa24e2d9eba706f",
+          "md5": "4846dfae70ef2bd06ae71908c1c8138a"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "files": [
+        {
+          "name": "kmpotest-wasm-js-0.0.1-sources.jar",
+          "url": "kmpotest-wasm-js-0.0.1-sources.jar",
+          "size": 3820,
+          "sha512": "3cdfc2accb967b75d1c9b83035b397aa5f7409d7a48f75e0374ca4310482d357d1e7ef37647c6280cbe21b78f6f784bd6408c75ae43542688694e1edc3c40a8f",
+          "sha256": "81de4552e9a9a51170d8d75beac05e1f4b168bd195ca8d3b8533912097bbc674",
+          "sha1": "18b7688e8b9e8788070ac8d49d740210e768dfbc",
+          "md5": "ee671cc7f9a1ec631102859df867cf5f"
+        }
+      ]
+    }
+  ]
+}
