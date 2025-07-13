@@ -25,7 +25,7 @@ internal fun Project.registerKotestCopyTask() {
                     val source = File(kotestReportDir.toString())
                     source.copyRecursively(layout.buildDirectory.asFile.get(), overwrite = true)
                 }.getOrElse {
-                    val source = File("kotest-report")
+                    val source = project.layout.projectDirectory.dir("kotest-report").asFile
                     if (source.exists()) {
                         logger.lifecycle("  >> Copying tests from kotest-report")
                         source.copyRecursively(layout.buildDirectory.asFile.get(), overwrite = true)
