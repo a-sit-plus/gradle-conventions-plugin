@@ -1,0 +1,184 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kmpotest/20250713+1/kmpotest-20250713+1.module",
+    "group": "at.asitplus.gradle",
+    "module": "kmpotest",
+    "version": "20250713+1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-release.aar",
+          "url": "kmpotest-android-20250713+1.aar",
+          "size": 46774,
+          "sha512": "e1f5ae4893a1d38e8908f0dd19daa762f186c3e23221aca51e678f3d70acc916b30d060d47ce080932a94d2e75483fb5f3c19666d11caf24d42e8cd9369082b2",
+          "sha256": "b305b1e8149421f07583cca6ba9f82a5261b14d5971a05f56c7be1062c3459e9",
+          "sha1": "c1f827e5c3550541775e46a2a82e01ad36f02d5e",
+          "md5": "1063b83ac914a106130038f08d2bafc4"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization",
+          "version": {
+            "requires": "0.91.1"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-io-core",
+          "version": {
+            "requires": "0.7.0"
+          },
+          "excludes": [
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-stdlib-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-common"
+            },
+            {
+              "group": "org.jetbrains.kotlin",
+              "module": "kotlin-test-annotations-common"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-release.aar",
+          "url": "kmpotest-android-20250713+1.aar",
+          "size": 46774,
+          "sha512": "e1f5ae4893a1d38e8908f0dd19daa762f186c3e23221aca51e678f3d70acc916b30d060d47ce080932a94d2e75483fb5f3c19666d11caf24d42e8cd9369082b2",
+          "sha256": "b305b1e8149421f07583cca6ba9f82a5261b14d5971a05f56c7be1062c3459e9",
+          "sha1": "c1f827e5c3550541775e46a2a82e01ad36f02d5e",
+          "md5": "1063b83ac914a106130038f08d2bafc4"
+        }
+      ]
+    },
+    {
+      "name": "releaseSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "kmpotest-android-20250713+1-sources.jar",
+          "url": "kmpotest-android-20250713+1-sources.jar",
+          "size": 3845,
+          "sha512": "370d95ce2915817752fb0767f6f3984389327ee6a25a2e858b4f509704e00ccb5ea0100eaca7bdf4009a4ffaa183e81647b819f712ae49ae93b07462b25bdc73",
+          "sha256": "d2241be467e2cb8c5c692e3b606cc6ed5a36c3f2fd3acc18eab41953716e29aa",
+          "sha1": "3b2b3c8867c1cb949308f9cef6cd3acd69aebbea",
+          "md5": "b543e8b6bbc9f0a9dd16c80ccd2447a2"
+        }
+      ]
+    }
+  ]
+}
