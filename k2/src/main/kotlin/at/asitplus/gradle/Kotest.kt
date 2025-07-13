@@ -2,16 +2,20 @@ package at.asitplus.gradle.at.asitplus.gradle
 
 import at.asitplus.gradle.AspVersions
 import at.asitplus.gradle.Logger
+import at.asitplus.gradle.buildDate
 import at.asitplus.gradle.hasJvmTarget
 import at.asitplus.gradle.kotest
 import kotlinx.io.files.Path
 import kotlinx.io.files.SystemTemporaryDirectory
 import org.gradle.api.Project
 import org.gradle.api.tasks.StopExecutionException
+import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.invoke
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import java.io.File
+
 private val tempDir = SystemTemporaryDirectory
 private val kotestReportDir = Path(tempDir, "kotest-report")
 
@@ -21,17 +25,30 @@ internal fun Project.registerKotestCopyTask() {
         tasks.matching { it.name.endsWith("Test") }.forEach {
             it.doLast {
                 runCatching {
-                logger.lifecycle("  >> Copying tests from $kotestReportDir")
-                val source = File(kotestReportDir.toString())
-                source.copyRecursively(layout.buildDirectory.asFile.get(), overwrite = true)
+                    logger.lifecycle("  >> Copying tests from $kotestReportDir")
+                    val source = File(kotestReportDir.toString())
+                    source.copyRecursively(layout.buildDirectory.asFile.get(), overwrite = true)
                 }.getOrElse {
                     Logger.warn(" >> Copying tests from $kotestReportDir failed: ${it.message}")
                 }
             }
         }
     }
-
 }
+
+fun Project.getBuildableTargets() =
+    project.extensions.getByType<KotlinMultiplatformExtension>().targets.filter { target ->
+        when {
+            // Non-native targets are always buildable
+            target.platformType != org.jetbrains.kotlin.gradle.plugin.KotlinPlatformType.native -> true
+            else -> {
+                runCatching {
+                    val konanTarget = (target as? KotlinNativeTarget)
+                    konanTarget?.publishable == true
+                }.getOrElse { false }
+            }
+        }
+    }
 
 internal fun KotlinMultiplatformExtension.defaultSetupKotest() {
     sourceSets {
@@ -55,11 +72,16 @@ internal fun KotlinMultiplatformExtension.wireKotestKsp() {
 
     project.configurations.whenObjectAdded {
         if (name.startsWith("ksp") && name.endsWith("Test")) {
-            project.logger.lifecycle("  >>[${project.name}] Adding Kotest symbol processor dependency to $name")
-            project.dependencies.add(
-                name,
-                "io.kotest:kotest-framework-symbol-processor-jvm:${project.AspVersions.kotest}"
-            )
+            val target = name.substring(3, name.length - 4).replaceFirstChar { it.lowercase() }
+            if (project.getBuildableTargets().firstOrNull { target == it.name } != null) {
+                project.logger.lifecycle("  >>[${project.name}] Adding Kotest symbol processor dependency to $name")
+                project.dependencies.add(
+                    name,
+                    "io.kotest:kotest-framework-symbol-processor-jvm:${project.AspVersions.kotest}"
+                )
+            } else {
+                project.logger.lifecycle("  >>[${project.name}] Not wiring Kotest symbol processor dependency to non-buildable configuration $name")
+            }
         }
 
     }
@@ -88,7 +110,7 @@ inline fun KotlinDependencyHandler.addKotestExtensions(target: String? = null) {
     implementation(project.kotest("framework-engine", target))
 
     if (System.getProperty("KOTEST_NO_ASP_HELPER") != "true") {
-        implementation("at.asitplus.gradle:kmpotest" + (target?.let { "-$it" } ?: "") + ":0.0.1")
+        implementation("at.asitplus.gradle:kmpotest" + (target?.let { "-$it" } ?: "") + ":$buildDate")
     }
 }
 

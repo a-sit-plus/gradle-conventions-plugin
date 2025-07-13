@@ -1,8 +1,9 @@
 import at.asitplus.gradle.kotest
 import at.asitplus.gradle.publishVersionCatalog
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
+import java.util.*
 
-System.setProperty("KOTEST_NO_ASP_HELPER","true")
+System.setProperty("KOTEST_NO_ASP_HELPER", "true")
 
 plugins {
     id("com.android.library")
@@ -11,8 +12,10 @@ plugins {
     id("at.asitplus.gradle.conventions")
 }
 group = "at.asitplus.gradle"
-val artifactVersion: String by extra
-version = artifactVersion
+version = Properties().apply {
+    load(project.rootProject.layout.projectDirectory.dir("..").file("gradle.properties").asFile.inputStream())
+}.getProperty("buildDate")
+
 
 publishVersionCatalog = false
 
