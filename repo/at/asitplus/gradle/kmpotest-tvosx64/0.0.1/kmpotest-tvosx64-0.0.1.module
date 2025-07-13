@@ -135,10 +135,10 @@
           "name": "kmpotest-tvosx64-0.0.1-metadata.jar",
           "url": "kmpotest-tvosx64-0.0.1-metadata.jar",
           "size": 261,
-          "sha512": "e75ce590209d34b7fb2b87c7f7f89466f5b9f06f89cf26c89fe95f612b5c65a01cb69d4726d89eca5ca12d2ab9565db5c5a8e5772e249a0f5ce105a31afa3000",
-          "sha256": "444106c7773e9322fb4f03dfdb825bf7f872da1235cbd5a93d21753e2f07a715",
-          "sha1": "2401488e4a09f938d389bb953c46d20b35bfae74",
-          "md5": "b4f8ac6e4679ba8dc4ebaebb52ccfb04"
+          "sha512": "dd06b5cf33d650b9af97146271ca1a6767acacd9ec92609cb58b8aec3fa5035364f933a52d60ce5c98136967454b814611f62cfd723d1f402ff46bb468886386",
+          "sha256": "9343944a3e972171329d6cba02f7581aea926e3a0502d44494395f3b02c1be4f",
+          "sha1": "29a5ccc38bf6cd1487730187ba2ed17e707216e0",
+          "md5": "adadab6ca86ba612076933e09fc286e3"
         }
       ]
     }

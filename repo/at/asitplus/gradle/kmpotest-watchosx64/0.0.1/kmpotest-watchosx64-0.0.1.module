@@ -135,10 +135,10 @@
           "name": "kmpotest-watchosx64-0.0.1-metadata.jar",
           "url": "kmpotest-watchosx64-0.0.1-metadata.jar",
           "size": 261,
-          "sha512": "6f43a8be3ec6ee8c3279b89aa461909138b55817e4cd6ed8d77283b23b9038de00471d00b8b2f3c38017e1d6cc62ab37d6111b4757a2844bfdd4af75f4bc2afc",
-          "sha256": "8b6cfcd8a89b0ed3787f1ded08816b1fbfdb1b225433b3fac6fd3e030970b566",
-          "sha1": "6e130d912f3e34ba3ae3003a18da730d692dd0b5",
-          "md5": "f94ace76507c1575cf061a70805d5946"
+          "sha512": "dd06b5cf33d650b9af97146271ca1a6767acacd9ec92609cb58b8aec3fa5035364f933a52d60ce5c98136967454b814611f62cfd723d1f402ff46bb468886386",
+          "sha256": "9343944a3e972171329d6cba02f7581aea926e3a0502d44494395f3b02c1be4f",
+          "sha1": "29a5ccc38bf6cd1487730187ba2ed17e707216e0",
+          "md5": "adadab6ca86ba612076933e09fc286e3"
         }
       ]
     }
