@@ -1,10 +1,6 @@
 package at.asitplus.gradle.at.asitplus.gradle
 
-import at.asitplus.gradle.AspVersions
-import at.asitplus.gradle.Logger
-import at.asitplus.gradle.buildDate
-import at.asitplus.gradle.hasJvmTarget
-import at.asitplus.gradle.kotest
+import at.asitplus.gradle.*
 import kotlinx.io.files.Path
 import kotlinx.io.files.SystemTemporaryDirectory
 import org.gradle.api.Project
@@ -29,7 +25,11 @@ internal fun Project.registerKotestCopyTask() {
                     val source = File(kotestReportDir.toString())
                     source.copyRecursively(layout.buildDirectory.asFile.get(), overwrite = true)
                 }.getOrElse {
-                    Logger.warn(" >> Copying tests from $kotestReportDir failed: ${it.message}")
+                    val source = File("kotest-report")
+                    if (source.exists()) {
+                        logger.lifecycle("  >> Copying tests from kotest-report")
+                        source.copyRecursively(layout.buildDirectory.asFile.get(), overwrite = true)
+                    } else Logger.warn(" >> Copying tests from $kotestReportDir failed: ${it.message}")
                 }
             }
         }

@@ -4,6 +4,9 @@ Starting with May 2025, the conventions plugin does not include a Kotlin version
 project set it, just as with the Android Gradle Plugin. **This is a breaking change, as there is no fallback version specified.**
 
 ## 20250713
+* fix linux test report dir
+
+## 20250713
 * Don't wire Kotest KMP processor to non-buildable targets
 
 ## 20250712

@@ -1,3 +1,4 @@
 package at.asitplus.test
 
-internal actual val target: String ="wasmJS"
+
+internal actual val target: String ="wasmJs$"
