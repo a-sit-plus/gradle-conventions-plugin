@@ -3,7 +3,9 @@
 Starting with May 2025, the conventions plugin does not include a Kotlin version anymore. Instead, it lets any consuming
 project set it, just as with the Android Gradle Plugin. **This is a breaking change, as there is no fallback version specified.**
 
-## 20250713
+## 20250714
+* fix signing dependency workaround
+* add ASP repo to main repos too
 * fix linux test report dir
 
 ## 20250713

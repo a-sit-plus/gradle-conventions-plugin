@@ -188,8 +188,10 @@ open class K2Conventions : Plugin<Project> {
             Logger.info("    * maven snapshots")
             Logger.info("    * maven central")
             Logger.info("    * google")
+            Logger.info("    * ASP")
             target.allprojects {
                 repositories {
+                    maven("https://github.com/a-sit-plus/gradle-conventions-plugin/raw/mvn/repo/")
                     maven("https://central.sonatype.com/repository/maven-snapshots/")
                     maven("https://s01.oss.sonatype.org/content/repositories/snapshots")
                     maven("https://oss.sonatype.org/content/repositories/snapshots")
