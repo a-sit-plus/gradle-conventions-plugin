@@ -135,10 +135,10 @@
           "name": "kmpotest-tvosarm64-20250714-metadata.jar",
           "url": "kmpotest-tvosarm64-20250714-metadata.jar",
           "size": 261,
-          "sha512": "6a3b40f06db19e8028e9bc49e73733c6af46c6d890c50bb2a54a4e19827a50f57aaaa1e1c39b7cda26a585263f2a76a172afc6e5693e41bb4d14fa591695b1e9",
-          "sha256": "2ae9be181f223ac925eb09bbea8fb785d2bedafb5d83aeccc463f7677a1c6d77",
-          "sha1": "4e37bb5d43b1cd870963642552c722711bde20fd",
-          "md5": "700dca09fa09950a235fb3f1405bcb58"
+          "sha512": "cc09fb0a916bd58b19a67225442d0f660e3fc767c6456cca6e333bf0a580a0de5da9ddca3cee417b4f5324afae67c42817745fbd1586470a4e5fb07df918c0dd",
+          "sha256": "284ce19c344e37ca1bc5dd90894baf972b0390fbebe518af443dec71afff2567",
+          "sha1": "3d8b42d1b7d0b57501a6324a969033818b5f8a42",
+          "md5": "6d0e38834df7e68f1487ccf79e61763d"
         }
       ]
     }

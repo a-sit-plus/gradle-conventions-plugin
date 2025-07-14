@@ -52,11 +52,11 @@
         {
           "name": "k2-20250714.jar",
           "url": "k2-20250714.jar",
-          "size": 187175,
-          "sha512": "0c8ac50a3270bb50dcd643bf5db0221ab7eec7c79b1b269f4c05799c0f00a5b6e9ec1fbf8ad6592fbf1481ec14d732c4060ecd600a0c9d1e54e379d3f07fe519",
-          "sha256": "2994fd3f21ef5cb12c6b5134279ad4288ade71b8acc24cda983527bd64c6ba9a",
-          "sha1": "1d634a9045196911305be490d955b7b411d9a5ec",
-          "md5": "9551ea362a38ba8beaac80b7d2f14422"
+          "size": 187220,
+          "sha512": "55c1019db58d2854ee1c1aa961b84de51df716c8ca3009e37e62f0af87201964940366cc5f094da151f5994080655a1a72b7d49dba2ca0fcc737da3a922a1fb4",
+          "sha256": "2704be4c6701a1e0d1167db2c50de92e80ac4a2bd1498de025d36fba63b525aa",
+          "sha1": "3cd42de7be37efb3fa13f593ba1f0421b4a062a3",
+          "md5": "04ce55c719d1f7e4b86f15d98253d304"
         }
       ]
     },
@@ -112,11 +112,11 @@
         {
           "name": "k2-20250714.jar",
           "url": "k2-20250714.jar",
-          "size": 187175,
-          "sha512": "0c8ac50a3270bb50dcd643bf5db0221ab7eec7c79b1b269f4c05799c0f00a5b6e9ec1fbf8ad6592fbf1481ec14d732c4060ecd600a0c9d1e54e379d3f07fe519",
-          "sha256": "2994fd3f21ef5cb12c6b5134279ad4288ade71b8acc24cda983527bd64c6ba9a",
-          "sha1": "1d634a9045196911305be490d955b7b411d9a5ec",
-          "md5": "9551ea362a38ba8beaac80b7d2f14422"
+          "size": 187220,
+          "sha512": "55c1019db58d2854ee1c1aa961b84de51df716c8ca3009e37e62f0af87201964940366cc5f094da151f5994080655a1a72b7d49dba2ca0fcc737da3a922a1fb4",
+          "sha256": "2704be4c6701a1e0d1167db2c50de92e80ac4a2bd1498de025d36fba63b525aa",
+          "sha1": "3cd42de7be37efb3fa13f593ba1f0421b4a062a3",
+          "md5": "04ce55c719d1f7e4b86f15d98253d304"
         }
       ]
     }
