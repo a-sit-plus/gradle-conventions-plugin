@@ -59,15 +59,55 @@ fun Project.setupDokka(
  * that (more often than anticipated) make the build process stumble over its own feet.
  */
 internal fun Project.setupSignDependency() {
-    val signingTasks = tasks.withType<Sign>()
-    if (signingTasks.isNotEmpty()) {
-        Logger.lifecycle("")
-        Logger.lifecycle("  Making signing tasks of project $H${name}$R run after publish tasks")
-        tasks.withType<AbstractPublishToMaven>().configureEach {
-            mustRunAfter(*signingTasks.toTypedArray())
-            Logger.info("   * $name must now run after ${signingTasks.joinToString { it.name }}")
+
+    Logger.lifecycle("")
+    Logger.lifecycle("  Making signing tasks of project $H${name}$R run after publish tasks")
+    Logger.info("")
+    tasks.whenTaskAdded {
+        if (this is Sign) {
+            val publishTasks = tasks.withType<AbstractPublishToMaven>()
+            publishTasks.forEach {
+                it.dependsOn(this)
+                it.mustRunAfter(this)
+            }
         }
+
+        if (this is AbstractPublishToMaven) {
+            val signTasks = tasks.withType<Sign>()
+            signTasks.forEach {
+                this.dependsOn(it)
+                this.mustRunAfter(it)
+            }
+        }
+    }
+
+    tasks.withType<Sign>().configureEach {
+        val sign = this
+        tasks.withType<AbstractPublishToMaven>().forEach {
+            it.dependsOn(sign)
+            it.mustRunAfter(sign)
+        }
+
+    }
+
+    gradle.taskGraph.whenReady {
         Logger.info("")
+        Logger.info("  Task Graph for project $name is ready. The following publish tasks are present:")
+        tasks.withType<AbstractPublishToMaven>().forEach {
+            Logger.info("    * ${it.name}")
+        }
+        Logger.info("\n  The following signing tasks are present:")
+        tasks.withType<Sign>().forEach {
+            Logger.info("    * ${it.name}")
+        }
+        tasks.withType<AbstractPublishToMaven>().forEach { publishTask ->
+            val signingTasks = publishTask.dependsOn.filterIsInstance<Sign>()
+            Logger.info("   * ${publishTask.name} must now run after")
+            signingTasks.forEach {
+                Logger.info("      * ${it.name}")
+            }
+        }
+        logger.info("")
     }
 }
 
@@ -124,7 +164,8 @@ internal fun Project.compileVersionCatalog() {
             ?.forEach {
                 //we can take the risk of using !! here, because userDefineCatalog and AspVersions.versionCatalog point to the same source file
                 //and `versionAliases` contains the versions defined in the `versions` table
-                val requiredVersion = AspVersions.versionCatalog!!.getTable("versions")?.getString(it.replace(".","-"))!!
+                val requiredVersion =
+                    AspVersions.versionCatalog!!.getTable("versions")?.getString(it.replace(".", "-"))!!
                 Logger.info("    * Adding version alias '$it = $requiredVersion' to version catalog 'libs'")
                 version(it, requiredVersion)
             }
