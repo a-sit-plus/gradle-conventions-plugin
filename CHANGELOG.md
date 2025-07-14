@@ -7,6 +7,7 @@ project set it, just as with the Android Gradle Plugin. **This is a breaking cha
 * fix signing dependency workaround
 * add ASP repo to main repos too
 * fix linux test report dir
+* Serialization 1.9.0
 
 ## 20250713
 * Don't wire Kotest KMP processor to non-buildable targets
