@@ -58,11 +58,11 @@
         {
           "name": "kotest-framework-engine-wasm-js-6.0.0-LOCAL.klib",
           "url": "kotest-framework-engine-wasm-js-6.0.0-LOCAL.klib",
-          "size": 909164,
-          "sha512": "1561a1a4849f33686e8ad41c63e69762c1824e2a25bda6fcc7e54a4a3d74fa213997426f58c9ec365d7dd2bb243eb8b9414a1c648b524b74079154e51fc3cac2",
-          "sha256": "86f209bfbb6055c42a68a19f866e0f36086e2aa7b72670623affa8f497bdd31d",
-          "sha1": "2aa7bfc135745525e1efe101a56b9fa328ac7cd5",
-          "md5": "40bf2643f06785895244480e92a4bbae"
+          "size": 911551,
+          "sha512": "49031be8bdaa1ed3c081ad187bc76b5479abc07516720421364f13846c17cc1fb7c75bb9473b555dff7b81f5d290933fc704d921f79d5bbed459072ca033ceb7",
+          "sha256": "af18adea62701a8f6569720b8e3f6139f9879d89d543f3e955109912db785a29",
+          "sha1": "f25cb4c693388795eb4b713f015f102284de557a",
+          "md5": "e4228c00efeecea5f60e681b60bbdcbe"
         }
       ]
     },
@@ -123,11 +123,11 @@
         {
           "name": "kotest-framework-engine-wasm-js-6.0.0-LOCAL.klib",
           "url": "kotest-framework-engine-wasm-js-6.0.0-LOCAL.klib",
-          "size": 909164,
-          "sha512": "1561a1a4849f33686e8ad41c63e69762c1824e2a25bda6fcc7e54a4a3d74fa213997426f58c9ec365d7dd2bb243eb8b9414a1c648b524b74079154e51fc3cac2",
-          "sha256": "86f209bfbb6055c42a68a19f866e0f36086e2aa7b72670623affa8f497bdd31d",
-          "sha1": "2aa7bfc135745525e1efe101a56b9fa328ac7cd5",
-          "md5": "40bf2643f06785895244480e92a4bbae"
+          "size": 911551,
+          "sha512": "49031be8bdaa1ed3c081ad187bc76b5479abc07516720421364f13846c17cc1fb7c75bb9473b555dff7b81f5d290933fc704d921f79d5bbed459072ca033ceb7",
+          "sha256": "af18adea62701a8f6569720b8e3f6139f9879d89d543f3e955109912db785a29",
+          "sha1": "f25cb4c693388795eb4b713f015f102284de557a",
+          "md5": "e4228c00efeecea5f60e681b60bbdcbe"
         }
       ]
     },
@@ -146,11 +146,11 @@
         {
           "name": "kotest-framework-engine-wasm-js-6.0.0-LOCAL-sources.jar",
           "url": "kotest-framework-engine-wasm-js-6.0.0-LOCAL-sources.jar",
-          "size": 259500,
-          "sha512": "fac3832af530faaaae8a4d14d35792bf0cf915a1393b6eb89d155f8ff17a09c7d65474760155d92b8e4e8919f30f0647524db01f9f484eda1892b03971a49df5",
-          "sha256": "a519d2a0d72728acbf73c50b41d4eea3758c58fd66d170d5b09e0471793a54f8",
-          "sha1": "78781c82f05f1dc8efe4c6a11db677920a2fa01a",
-          "md5": "85424218f539607cf25b4c85f4bff0f6"
+          "size": 258981,
+          "sha512": "edc485a4c81698721eb78779188ab06b019748a35bc768fc33225fdb8d1c2be420318394e8db79762c4e573b10408ce4792c3636efb0b9dfa38d0f9b4941fd2d",
+          "sha256": "10744d950e16795fcb9e482f3543ecd6b09ad0f1d413254643a3ebd1f6794a50",
+          "sha1": "862f22d75c9eefcf33ca1d67d083870a95dde937",
+          "md5": "9b2b60689acaf8f4e932d89412694050"
         }
       ]
     }

@@ -44,11 +44,11 @@
         {
           "name": "kotest-extensions-wiremock-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-wiremock-jvm-6.0.0-LOCAL.jar",
-          "size": 5107,
-          "sha512": "b7319f542919580ebbebe1dc9274109c7e31f4e12ce1263a8d3fb6c582db0ae8cd117f0f1141976f3b486c993ef3fb276750e95c56d1edd3d7103405840838e6",
-          "sha256": "0a1ccd1ee290a8045ef6a9697f0be042b35fbfd32fe84daf9fe3f50e511d993e",
-          "sha1": "ae877ced97efc29f9c5c6f12d2d8a1c17d7819ae",
-          "md5": "6e8c1834d167da14229478be428f8cc9"
+          "size": 5109,
+          "sha512": "18061d69dd0a5c55410daa537d3ea0cac0fc1d7bf3e808a94dc400ea54bc5cd62e09eff892387864e357ade19da480cfbf778d6f6f4a444b63ac66a3b05b3985",
+          "sha256": "643d646dc5ed9e5f686c3f1c2f3ebf67f6f117c1540c715f75b62ea111968bbb",
+          "sha1": "029575c42287f6ab1301e2e35a2a98a13b131377",
+          "md5": "daf27f0cd68b62e6e3a0076a30e6a01a"
         }
       ]
     },
@@ -88,11 +88,11 @@
         {
           "name": "kotest-extensions-wiremock-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-wiremock-jvm-6.0.0-LOCAL.jar",
-          "size": 5107,
-          "sha512": "b7319f542919580ebbebe1dc9274109c7e31f4e12ce1263a8d3fb6c582db0ae8cd117f0f1141976f3b486c993ef3fb276750e95c56d1edd3d7103405840838e6",
-          "sha256": "0a1ccd1ee290a8045ef6a9697f0be042b35fbfd32fe84daf9fe3f50e511d993e",
-          "sha1": "ae877ced97efc29f9c5c6f12d2d8a1c17d7819ae",
-          "md5": "6e8c1834d167da14229478be428f8cc9"
+          "size": 5109,
+          "sha512": "18061d69dd0a5c55410daa537d3ea0cac0fc1d7bf3e808a94dc400ea54bc5cd62e09eff892387864e357ade19da480cfbf778d6f6f4a444b63ac66a3b05b3985",
+          "sha256": "643d646dc5ed9e5f686c3f1c2f3ebf67f6f117c1540c715f75b62ea111968bbb",
+          "sha1": "029575c42287f6ab1301e2e35a2a98a13b131377",
+          "md5": "daf27f0cd68b62e6e3a0076a30e6a01a"
         }
       ]
     },
@@ -111,11 +111,11 @@
         {
           "name": "kotest-extensions-wiremock-jvm-6.0.0-LOCAL-sources.jar",
           "url": "kotest-extensions-wiremock-jvm-6.0.0-LOCAL-sources.jar",
-          "size": 1488,
-          "sha512": "485064e383f5a0844df22ad2949fce8e709f527513c7c9674a426416f98aa46571aa3e67d3ff69b7e6a916ccaef8cd485c4e703560b1e5638d1dda254aa35843",
-          "sha256": "8a942e9f70025a4151b7cf71538a29e21be9dea83e4eb9fa6fc7d2c45c35278a",
-          "sha1": "c83cb235c7b6cdfffad7cc721dbd52f3cf66cc9b",
-          "md5": "13b7ed889349cd887e2c22607af69c0d"
+          "size": 1494,
+          "sha512": "b2a283ad3811f6a7a3a88c77eec81cccec987f162924ce0520a639bd1c184d63b5b37e13af284d1690a463005887dd50804bc2a202669e1400ab042279faf2a9",
+          "sha256": "8a44db27221833cc51a17c4fe17482dff04ee9acc20931055e3dab09faa9c34d",
+          "sha1": "c217b0554d36a516fbf880d800e3f62e4f8968de",
+          "md5": "5985a213de0eb66bd95e54d386b635ed"
         }
       ]
     }

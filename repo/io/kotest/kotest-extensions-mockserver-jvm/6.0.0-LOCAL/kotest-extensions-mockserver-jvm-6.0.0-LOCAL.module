@@ -51,11 +51,11 @@
         {
           "name": "kotest-extensions-mockserver-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-mockserver-jvm-6.0.0-LOCAL.jar",
-          "size": 7735,
-          "sha512": "4855f10ee0eebbd57fc3a8aeb57e7b07e37ad709564b9afc81a1b959bdeee0695f3832babb7b7f17d13cb8c80447394555d8d262325d6328709ffae2c84dfb7f",
-          "sha256": "bd0779f9bb7aa85084f5caf9ef973799ef1d31f353f50fd673f488cebfd35f3f",
-          "sha1": "7741ad6255d92b768437624c8a33bb77a67f25f2",
-          "md5": "fc40aef5a993f291a6606ac214c8f4a4"
+          "size": 7737,
+          "sha512": "89f2a0e37d7166fbee803a9533c605b95690becb387cdd9465bbffa2fdd3fe35ef9abe6f85f93c2d6f7079e402235ce302afda0c3cfce24aefcf4172d9b20ca6",
+          "sha256": "1cf640b5d48436a4813dcd38d95f9c2c149a03ca2737e1c365a1c307fbfdc3cb",
+          "sha1": "8a456e8e619066da7a9d240cdc8120f06e3a28b9",
+          "md5": "9728c5accf014c15e4e1bee05e0bd56d"
         }
       ]
     },
@@ -102,11 +102,11 @@
         {
           "name": "kotest-extensions-mockserver-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-mockserver-jvm-6.0.0-LOCAL.jar",
-          "size": 7735,
-          "sha512": "4855f10ee0eebbd57fc3a8aeb57e7b07e37ad709564b9afc81a1b959bdeee0695f3832babb7b7f17d13cb8c80447394555d8d262325d6328709ffae2c84dfb7f",
-          "sha256": "bd0779f9bb7aa85084f5caf9ef973799ef1d31f353f50fd673f488cebfd35f3f",
-          "sha1": "7741ad6255d92b768437624c8a33bb77a67f25f2",
-          "md5": "fc40aef5a993f291a6606ac214c8f4a4"
+          "size": 7737,
+          "sha512": "89f2a0e37d7166fbee803a9533c605b95690becb387cdd9465bbffa2fdd3fe35ef9abe6f85f93c2d6f7079e402235ce302afda0c3cfce24aefcf4172d9b20ca6",
+          "sha256": "1cf640b5d48436a4813dcd38d95f9c2c149a03ca2737e1c365a1c307fbfdc3cb",
+          "sha1": "8a456e8e619066da7a9d240cdc8120f06e3a28b9",
+          "md5": "9728c5accf014c15e4e1bee05e0bd56d"
         }
       ]
     },

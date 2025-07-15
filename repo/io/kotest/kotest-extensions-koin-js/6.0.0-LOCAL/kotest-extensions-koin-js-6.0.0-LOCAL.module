@@ -44,11 +44,11 @@
         {
           "name": "kotest-extensions-koin-js-6.0.0-LOCAL.klib",
           "url": "kotest-extensions-koin-js-6.0.0-LOCAL.klib",
-          "size": 9589,
-          "sha512": "aea22b240d24708d15289a5d1937c50391fa649b68a82da859cfc9fb989c4b25eebbc0ab2349a06ee85c744076fa5a2b21178b6a106c58625d80b64d0e335cc7",
-          "sha256": "ee33da0e7652d2d2226af019ce9969c7810995b78d94f624a0b7cbaf5fda387c",
-          "sha1": "6aee45feda8777fcc42be051a8e20209615d963a",
-          "md5": "f996f60cb2c62d76dda0eb184f74d8c6"
+          "size": 9604,
+          "sha512": "ae22e770769acd11253b4d8caef7150639a2e7b63529ca6e9761f56b6383be0b3c8002d1f595ef8228e13c9c071ab7ca5753450599edc7bff770c00001ab3941",
+          "sha256": "3470c3aac80e720b273840027900b55cc87c037bf61e2cfbfef1eea411fcd50b",
+          "sha1": "da7537dc10eda6a00f2a1459662409c04cebae23",
+          "md5": "58549b361904707a0c855984beb9258b"
         }
       ]
     },
@@ -115,11 +115,11 @@
         {
           "name": "kotest-extensions-koin-js-6.0.0-LOCAL.klib",
           "url": "kotest-extensions-koin-js-6.0.0-LOCAL.klib",
-          "size": 9589,
-          "sha512": "aea22b240d24708d15289a5d1937c50391fa649b68a82da859cfc9fb989c4b25eebbc0ab2349a06ee85c744076fa5a2b21178b6a106c58625d80b64d0e335cc7",
-          "sha256": "ee33da0e7652d2d2226af019ce9969c7810995b78d94f624a0b7cbaf5fda387c",
-          "sha1": "6aee45feda8777fcc42be051a8e20209615d963a",
-          "md5": "f996f60cb2c62d76dda0eb184f74d8c6"
+          "size": 9604,
+          "sha512": "ae22e770769acd11253b4d8caef7150639a2e7b63529ca6e9761f56b6383be0b3c8002d1f595ef8228e13c9c071ab7ca5753450599edc7bff770c00001ab3941",
+          "sha256": "3470c3aac80e720b273840027900b55cc87c037bf61e2cfbfef1eea411fcd50b",
+          "sha1": "da7537dc10eda6a00f2a1459662409c04cebae23",
+          "md5": "58549b361904707a0c855984beb9258b"
         }
       ]
     },
@@ -138,11 +138,11 @@
         {
           "name": "kotest-extensions-koin-js-6.0.0-LOCAL-sources.jar",
           "url": "kotest-extensions-koin-js-6.0.0-LOCAL-sources.jar",
-          "size": 1914,
-          "sha512": "d24b705b1e846c21232846f56774368cfe714df6f42b41ef69fbcc10e781e1a6c7d4d8175a340a8b4cd987e437dc8797d84ebb373cdaeb2d2869f323ded03c44",
-          "sha256": "969a405501f838614b715e11b14f19f12fceb6cf5a992d43adc1a19e0564f908",
-          "sha1": "1ecdff34977c560614b258fd47225b380be410a5",
-          "md5": "513a077f681c429e302f50e55dc28ef1"
+          "size": 1921,
+          "sha512": "90abf70609469a92a4d21efe1e3450939678a685c5c59e2293ba6bda8c7618a8a13522139b7a9c9cb2e873c71fac2297385d0671e078c5bbc7cb80c124446589",
+          "sha256": "005c8e142c3177baedc3130fb2ed2067171fa388a1b9c2218ad848d94516147b",
+          "sha1": "587d26289d3c20e40b135a90ba4fd791758f6ba0",
+          "md5": "f412afa78e5f7c5fd02cb0b819ccda38"
         }
       ]
     }

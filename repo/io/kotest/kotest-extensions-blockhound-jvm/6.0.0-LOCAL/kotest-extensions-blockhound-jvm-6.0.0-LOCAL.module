@@ -37,11 +37,11 @@
         {
           "name": "kotest-extensions-blockhound-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-blockhound-jvm-6.0.0-LOCAL.jar",
-          "size": 15657,
-          "sha512": "2fa86b06f8cbc501103d5242f78d5d82594c67ea0f84f5804d8045bff5738e762005dde708a5293a6128a43cd6ee4e83f78cabc01f45db31f5dba489f7d20907",
-          "sha256": "0c459451b0d3303d064213e12cb29ce3cfe8f0d89baa00600dc1b7e3459bfcc0",
-          "sha1": "2c0214f585f87e1682921bac2dbd9d1ac9aedb42",
-          "md5": "691bdadce0d047b0e547f9a74c363f73"
+          "size": 15670,
+          "sha512": "803f79cd9a7b392d33917f828acf972dc06fe0807f807b6d67c055619b42cbd22cee7c5affc29267f4d69a3b542dbb9e103ebea7868db49f624f5859200e31fc",
+          "sha256": "4c021433122797c531358ead1b7681e07e0392db02040232db298e98057302fe",
+          "sha1": "aa3377da5b05651deca98078da7840cbe4b6960f",
+          "md5": "ad001d2f913c16adc9f8408fe1dadade"
         }
       ]
     },
@@ -88,11 +88,11 @@
         {
           "name": "kotest-extensions-blockhound-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-blockhound-jvm-6.0.0-LOCAL.jar",
-          "size": 15657,
-          "sha512": "2fa86b06f8cbc501103d5242f78d5d82594c67ea0f84f5804d8045bff5738e762005dde708a5293a6128a43cd6ee4e83f78cabc01f45db31f5dba489f7d20907",
-          "sha256": "0c459451b0d3303d064213e12cb29ce3cfe8f0d89baa00600dc1b7e3459bfcc0",
-          "sha1": "2c0214f585f87e1682921bac2dbd9d1ac9aedb42",
-          "md5": "691bdadce0d047b0e547f9a74c363f73"
+          "size": 15670,
+          "sha512": "803f79cd9a7b392d33917f828acf972dc06fe0807f807b6d67c055619b42cbd22cee7c5affc29267f4d69a3b542dbb9e103ebea7868db49f624f5859200e31fc",
+          "sha256": "4c021433122797c531358ead1b7681e07e0392db02040232db298e98057302fe",
+          "sha1": "aa3377da5b05651deca98078da7840cbe4b6960f",
+          "md5": "ad001d2f913c16adc9f8408fe1dadade"
         }
       ]
     },
@@ -111,11 +111,11 @@
         {
           "name": "kotest-extensions-blockhound-jvm-6.0.0-LOCAL-sources.jar",
           "url": "kotest-extensions-blockhound-jvm-6.0.0-LOCAL-sources.jar",
-          "size": 2651,
-          "sha512": "4c7fe4a3ac5901898ff9f9202b973e1524dd695888aba1802d036edf9037540761a9a433d02cf41209de8a152d0d05fd8c06283488dd1516ad6a5b4cad2eeec7",
-          "sha256": "2cfd695dcc5570a7f8a4449a2d0a613124ac15b347b61ba9100cee0c67f917dd",
-          "sha1": "9ae2f8cebf28c20f12469d7f299992a055553ccd",
-          "md5": "50e95b9a62e51cfe05daa3779fb057c1"
+          "size": 2655,
+          "sha512": "56190b431627f1a599381a7a002f7ebaa20c9e1367f22dadf8ec36b09b6a2082109bc0ec5e999370f7ebeacce2be90f694014ab45910c10763a9892437bdb8ed",
+          "sha256": "6bce690761525a21462c84f2db5cc7a67a4ef745649cf15972cd8e7ae2a4c086",
+          "sha1": "6385411a85dfa56fabea270e8c8803188b205ac8",
+          "md5": "23a8d17b6570442186d39e1cbb5b4b18"
         }
       ]
     }

@@ -37,11 +37,11 @@
         {
           "name": "kotest-extensions-koin-wasm-js-6.0.0-LOCAL.klib",
           "url": "kotest-extensions-koin-wasm-js-6.0.0-LOCAL.klib",
-          "size": 9599,
-          "sha512": "199bde2148e3ff0b4003b2766bc9b5e1562d83a871cf0fd016537fe10b0a41d59816ac621b460f39e4fc803018a260e7d4e2d7ec37983b7b6345248a15aa9108",
-          "sha256": "57db608ceb65177900dda4cd24f9088db467ca804dd7f7c7bc259e8b18bde0ad",
-          "sha1": "0e5396c930efa622a6a606724be947cb3bd182fa",
-          "md5": "4c9d7b6ace7ee85a3c7c496b8c96a034"
+          "size": 9614,
+          "sha512": "c84ad86046f0e442515ad4f0b6c8587d1f77519622dd05246f4646e9948fba1b150acbfc7b97f20ef81443c0721279b0c2daa159bf424a634fc03e0829ceb0c0",
+          "sha256": "8d256b6950f31864ce01d8680d4cfa92b390ce3c5768d834603ef06ebbff6a9d",
+          "sha1": "f82e56f68d8e0257992c356d0655e6a5c03dc3bf",
+          "md5": "267c71534cdd68f93cb92435860b4d52"
         }
       ]
     },
@@ -101,11 +101,11 @@
         {
           "name": "kotest-extensions-koin-wasm-js-6.0.0-LOCAL.klib",
           "url": "kotest-extensions-koin-wasm-js-6.0.0-LOCAL.klib",
-          "size": 9599,
-          "sha512": "199bde2148e3ff0b4003b2766bc9b5e1562d83a871cf0fd016537fe10b0a41d59816ac621b460f39e4fc803018a260e7d4e2d7ec37983b7b6345248a15aa9108",
-          "sha256": "57db608ceb65177900dda4cd24f9088db467ca804dd7f7c7bc259e8b18bde0ad",
-          "sha1": "0e5396c930efa622a6a606724be947cb3bd182fa",
-          "md5": "4c9d7b6ace7ee85a3c7c496b8c96a034"
+          "size": 9614,
+          "sha512": "c84ad86046f0e442515ad4f0b6c8587d1f77519622dd05246f4646e9948fba1b150acbfc7b97f20ef81443c0721279b0c2daa159bf424a634fc03e0829ceb0c0",
+          "sha256": "8d256b6950f31864ce01d8680d4cfa92b390ce3c5768d834603ef06ebbff6a9d",
+          "sha1": "f82e56f68d8e0257992c356d0655e6a5c03dc3bf",
+          "md5": "267c71534cdd68f93cb92435860b4d52"
         }
       ]
     },
@@ -124,11 +124,11 @@
         {
           "name": "kotest-extensions-koin-wasm-js-6.0.0-LOCAL-sources.jar",
           "url": "kotest-extensions-koin-wasm-js-6.0.0-LOCAL-sources.jar",
-          "size": 1914,
-          "sha512": "d24b705b1e846c21232846f56774368cfe714df6f42b41ef69fbcc10e781e1a6c7d4d8175a340a8b4cd987e437dc8797d84ebb373cdaeb2d2869f323ded03c44",
-          "sha256": "969a405501f838614b715e11b14f19f12fceb6cf5a992d43adc1a19e0564f908",
-          "sha1": "1ecdff34977c560614b258fd47225b380be410a5",
-          "md5": "513a077f681c429e302f50e55dc28ef1"
+          "size": 1921,
+          "sha512": "90abf70609469a92a4d21efe1e3450939678a685c5c59e2293ba6bda8c7618a8a13522139b7a9c9cb2e873c71fac2297385d0671e078c5bbc7cb80c124446589",
+          "sha256": "005c8e142c3177baedc3130fb2ed2067171fa388a1b9c2218ad848d94516147b",
+          "sha1": "587d26289d3c20e40b135a90ba4fd791758f6ba0",
+          "md5": "f412afa78e5f7c5fd02cb0b819ccda38"
         }
       ]
     }

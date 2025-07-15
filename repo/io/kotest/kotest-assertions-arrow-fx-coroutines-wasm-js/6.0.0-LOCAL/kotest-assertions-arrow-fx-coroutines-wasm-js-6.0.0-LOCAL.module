@@ -65,11 +65,11 @@
         {
           "name": "kotest-assertions-arrow-fx-coroutines-wasm-js-6.0.0-LOCAL.klib",
           "url": "kotest-assertions-arrow-fx-coroutines-wasm-js-6.0.0-LOCAL.klib",
-          "size": 24050,
-          "sha512": "08097fbc46bfd964db62855dc52146743f3bc432918c44ba66c298955e3151d4707cb07cf5f0f9363528e036ac5af55aa8825bc912808a8e1860ab65a26a081e",
-          "sha256": "c1c9826f31a1616c38742cb8e535fab41367c109d4ce595b07cb31366efec4fa",
-          "sha1": "b9b23f00eaf2dc4e6205fbb3c2b4d3f7cc49d319",
-          "md5": "7de2bb4bb35fcd4236e43f43891bfa9d"
+          "size": 24065,
+          "sha512": "db2e64d70f5a4e0b8725f9e0cd008f23142d99aac6193fb95fb8a6f904ba892fa686f029536edbfe632f640cb0337519a1b6e64e66582ef9dae6e9127d4ab01d",
+          "sha256": "716d00e87436f55f12e15a13cd63f0bd45c579688413d993a5fa4bedea41c47a",
+          "sha1": "741bb94677e92e0ab82e758532964f1677aeb8e4",
+          "md5": "4812bb02e0d3d42d17a3485678ebc97d"
         }
       ]
     },
@@ -130,11 +130,11 @@
         {
           "name": "kotest-assertions-arrow-fx-coroutines-wasm-js-6.0.0-LOCAL.klib",
           "url": "kotest-assertions-arrow-fx-coroutines-wasm-js-6.0.0-LOCAL.klib",
-          "size": 24050,
-          "sha512": "08097fbc46bfd964db62855dc52146743f3bc432918c44ba66c298955e3151d4707cb07cf5f0f9363528e036ac5af55aa8825bc912808a8e1860ab65a26a081e",
-          "sha256": "c1c9826f31a1616c38742cb8e535fab41367c109d4ce595b07cb31366efec4fa",
-          "sha1": "b9b23f00eaf2dc4e6205fbb3c2b4d3f7cc49d319",
-          "md5": "7de2bb4bb35fcd4236e43f43891bfa9d"
+          "size": 24065,
+          "sha512": "db2e64d70f5a4e0b8725f9e0cd008f23142d99aac6193fb95fb8a6f904ba892fa686f029536edbfe632f640cb0337519a1b6e64e66582ef9dae6e9127d4ab01d",
+          "sha256": "716d00e87436f55f12e15a13cd63f0bd45c579688413d993a5fa4bedea41c47a",
+          "sha1": "741bb94677e92e0ab82e758532964f1677aeb8e4",
+          "md5": "4812bb02e0d3d42d17a3485678ebc97d"
         }
       ]
     },
@@ -153,11 +153,11 @@
         {
           "name": "kotest-assertions-arrow-fx-coroutines-wasm-js-6.0.0-LOCAL-sources.jar",
           "url": "kotest-assertions-arrow-fx-coroutines-wasm-js-6.0.0-LOCAL-sources.jar",
-          "size": 5182,
-          "sha512": "97b35792098da52be5ab07d619a60f04798ededce71a7e0cd892310abcbdd4c028eac84dacf1f9dfed4861d10c8282a83152f62f28e551fc2d2a8e1a80973548",
-          "sha256": "6929929f1d5c6a03094dc1e1e38a8f5be54df790235e94a5d9a9cd55ed4142ae",
-          "sha1": "233e5f770f464a77f489a78280a762a4b20bc822",
-          "md5": "d794af342155e408c597894a98027777"
+          "size": 5189,
+          "sha512": "213f753fc92f5e0df095d79f91afcb2bfaea52d15cec513c50da5c2bb0f65bc93ecd6454cf4dd6d8fcfcd92d172dc2571f4651ab7426d816434d68f07ea80f8e",
+          "sha256": "53256b46333a7c37138c0de43eb58401ec40f0df70c11302b73f137ca4e24bac",
+          "sha1": "00ad21bba9c65e64c6e3588774923f20f5f7a701",
+          "md5": "fa7b6257b0f3cc4cc60c88cbd373f00a"
         }
       ]
     }

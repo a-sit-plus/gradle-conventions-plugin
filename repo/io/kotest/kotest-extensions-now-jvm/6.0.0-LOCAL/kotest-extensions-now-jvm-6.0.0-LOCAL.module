@@ -37,11 +37,11 @@
         {
           "name": "kotest-extensions-now-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-now-jvm-6.0.0-LOCAL.jar",
-          "size": 10081,
-          "sha512": "f0fa0952671a50a726c82d18da11349d973f68573a2323f6ebd7644ca8783749a618eea9897b2ffd734d0be4842f233544297d2fa15129deec36297577c4678f",
-          "sha256": "931d8a22224cf04336367529a910b1df34dbc7b7c5cfc86b6792799d3b629bea",
-          "sha1": "07abc1e61cafcab0ffbca54bcde1529414ff5eb5",
-          "md5": "db1a174ac50e71354c13b4dd6dda1886"
+          "size": 10083,
+          "sha512": "e67c363bd830b6a60ff6a29e0e55f7cdd9204003bba0ac16aa97c473efb07b3ef449c3a6fb34e8f60ee3ae109712abec2a0d2f5b9f9e507d750fed418318a4b6",
+          "sha256": "81925a713a580d5a63ee30c2d1999d00b856b69fb777f30e10129338c4c58bab",
+          "sha1": "f955f590877772b06a25d2b7496eff458e108202",
+          "md5": "a5dbfcceff70503a9c08993e7de168d0"
         }
       ]
     },
@@ -88,11 +88,11 @@
         {
           "name": "kotest-extensions-now-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-now-jvm-6.0.0-LOCAL.jar",
-          "size": 10081,
-          "sha512": "f0fa0952671a50a726c82d18da11349d973f68573a2323f6ebd7644ca8783749a618eea9897b2ffd734d0be4842f233544297d2fa15129deec36297577c4678f",
-          "sha256": "931d8a22224cf04336367529a910b1df34dbc7b7c5cfc86b6792799d3b629bea",
-          "sha1": "07abc1e61cafcab0ffbca54bcde1529414ff5eb5",
-          "md5": "db1a174ac50e71354c13b4dd6dda1886"
+          "size": 10083,
+          "sha512": "e67c363bd830b6a60ff6a29e0e55f7cdd9204003bba0ac16aa97c473efb07b3ef449c3a6fb34e8f60ee3ae109712abec2a0d2f5b9f9e507d750fed418318a4b6",
+          "sha256": "81925a713a580d5a63ee30c2d1999d00b856b69fb777f30e10129338c4c58bab",
+          "sha1": "f955f590877772b06a25d2b7496eff458e108202",
+          "md5": "a5dbfcceff70503a9c08993e7de168d0"
         }
       ]
     },
@@ -111,11 +111,11 @@
         {
           "name": "kotest-extensions-now-jvm-6.0.0-LOCAL-sources.jar",
           "url": "kotest-extensions-now-jvm-6.0.0-LOCAL-sources.jar",
-          "size": 2230,
-          "sha512": "a87224990abb8ea91d1b68738f8e171ee09529cf8630faca3755c5215b21647eec3ab1c3de783d4dee4339aa1bc37338eec99144978f9f08379869fe2ce06b87",
-          "sha256": "71949ed0c5375b37317b39eeaf9bbfc14954a7b89de609aeccd577ab94db2cc9",
-          "sha1": "91a06d54543c06c57da101c7b6a32ee93292f890",
-          "md5": "9d024edad94d85b70f1aaad71e71e84f"
+          "size": 2235,
+          "sha512": "1eed8b0ad39e2b0c7d2789e54a4f9365190969d900dae20e10febf9bb613b3982beed88aef1cbc2b8b22ef5170afb5db6d31b278db85428cbd276e9ce545c1b2",
+          "sha256": "cb0d4a97f694f54b243d72fd4b66de9346f38819c75e92ba8724686bca8cb4a1",
+          "sha1": "c05d41a49751ce6de7f90c4f794de8425638c099",
+          "md5": "bfde9823f5dddd3ab5a570805ff7e269"
         }
       ]
     }

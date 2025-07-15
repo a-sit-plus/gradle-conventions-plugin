@@ -37,11 +37,11 @@
         {
           "name": "kotest-framework-symbol-processor-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-framework-symbol-processor-jvm-6.0.0-LOCAL.jar",
-          "size": 15303,
-          "sha512": "60f4c77aa67d3eaedb2e78db8d6a195453c50dae228a4cd1c41738d747b71c3bec5d8048e6281142c58794ca102681b8e40e976ce01056cc2cea6b4c6ae3eb72",
-          "sha256": "80fa8b456ff8166480d9426401c68b6320dd500ab3e4f2f424b53ce9baf4b189",
-          "sha1": "ce262987af675fa8de0904501327b817383f1ce9",
-          "md5": "60594cd96237d56bae598f710650306f"
+          "size": 18059,
+          "sha512": "697fba5460ee26957bf4096f5a817cf870523fb5bb5e14641c3c38177aeb1c8ca0e952d88e3ff9a2b7fea630f210d201811e3034a24c9e7d41417dd70e635c99",
+          "sha256": "f6f8bac9a1ab31e6b68c2b121143d80d698bd9a4cee5291eaec5f2933d3a8eac",
+          "sha1": "476aab9b1fb7e10f1d28fc3627e2d7b9e040113d",
+          "md5": "aeb6df1385bda4c44f158aaa1f37785d"
         }
       ]
     },
@@ -68,17 +68,24 @@
           "version": {
             "requires": "2.2.0-2.0.2"
           }
+        },
+        {
+          "group": "com.squareup",
+          "module": "kotlinpoet",
+          "version": {
+            "requires": "2.2.0"
+          }
         }
       ],
       "files": [
         {
           "name": "kotest-framework-symbol-processor-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-framework-symbol-processor-jvm-6.0.0-LOCAL.jar",
-          "size": 15303,
-          "sha512": "60f4c77aa67d3eaedb2e78db8d6a195453c50dae228a4cd1c41738d747b71c3bec5d8048e6281142c58794ca102681b8e40e976ce01056cc2cea6b4c6ae3eb72",
-          "sha256": "80fa8b456ff8166480d9426401c68b6320dd500ab3e4f2f424b53ce9baf4b189",
-          "sha1": "ce262987af675fa8de0904501327b817383f1ce9",
-          "md5": "60594cd96237d56bae598f710650306f"
+          "size": 18059,
+          "sha512": "697fba5460ee26957bf4096f5a817cf870523fb5bb5e14641c3c38177aeb1c8ca0e952d88e3ff9a2b7fea630f210d201811e3034a24c9e7d41417dd70e635c99",
+          "sha256": "f6f8bac9a1ab31e6b68c2b121143d80d698bd9a4cee5291eaec5f2933d3a8eac",
+          "sha1": "476aab9b1fb7e10f1d28fc3627e2d7b9e040113d",
+          "md5": "aeb6df1385bda4c44f158aaa1f37785d"
         }
       ]
     },
@@ -97,11 +104,11 @@
         {
           "name": "kotest-framework-symbol-processor-jvm-6.0.0-LOCAL-sources.jar",
           "url": "kotest-framework-symbol-processor-jvm-6.0.0-LOCAL-sources.jar",
-          "size": 4083,
-          "sha512": "bc1e11b329c9ffa07c310e4c0f23efb3bcaed95035a086792f0af18fffb18bae9bd7560df395f488e393bb772443b8bfe050f4a5e54c0bdb27d35b593fb4bf1b",
-          "sha256": "51adf8251923298693ac1ed9120c05994cf008cea90d472f92793f67ddb18060",
-          "sha1": "1d4011017062b59e8df5f5102bf4e09912e88f05",
-          "md5": "18dd77a4e42136f12c00e869d5d09a61"
+          "size": 4722,
+          "sha512": "ec8ea2ed6f6c3d81b3595e3c1f278034c5b0c5b75a6877e6d2e43ba96cf1ff4beeb006474fa1b264e84cbc4ad3a744d13613c2073cc10cb79bf9965875796a73",
+          "sha256": "b41898ba57828072b123a4c8d72e31096dd7bb6fed6def24a961ea26faf63318",
+          "sha1": "339248ce3467bbd482d1f43c3ba03dd03b1b5bda",
+          "md5": "307a9f3b18c97bfb7e214c772614b7c4"
         }
       ]
     }

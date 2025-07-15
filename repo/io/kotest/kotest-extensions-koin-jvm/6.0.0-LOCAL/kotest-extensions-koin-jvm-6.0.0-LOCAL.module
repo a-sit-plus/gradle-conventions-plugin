@@ -37,11 +37,11 @@
         {
           "name": "kotest-extensions-koin-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-koin-jvm-6.0.0-LOCAL.jar",
-          "size": 7755,
-          "sha512": "fb566b104b81b7e82c4a6e166d87e4b7f7a3cad66ab76252e01b95531a8a698ae49ceadf4c2ee9e71769e7806b4e93f86fb169ab4bdfb11481e65febf4ddd40e",
-          "sha256": "f835ad0fa91bf16e06acaf7231dadb096f8dfb54044b20e93d1e55c73de73cb1",
-          "sha1": "6e8d6f1e695f3f4f4af1eb10d10dec406049dd53",
-          "md5": "6417d217c777a983b5c8b50b104ac5e4"
+          "size": 7765,
+          "sha512": "45f232db14edd20b16428c510732e67aede4d309a0d0594f5506db8eb2408619a70e506595c7b26df64a7220310403957b4096544570a0f2aa30a82c168a1dad",
+          "sha256": "8a4a2fda6121b7cb7f680b8804c7bae73c4236203e85af86e58800c8799b2d7c",
+          "sha1": "69383b4a6cb98fd8d7e76b37e3eb5c9584ad5e49",
+          "md5": "5db9515a4421e71374be43dea481526a"
         }
       ]
     },
@@ -115,11 +115,11 @@
         {
           "name": "kotest-extensions-koin-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-koin-jvm-6.0.0-LOCAL.jar",
-          "size": 7755,
-          "sha512": "fb566b104b81b7e82c4a6e166d87e4b7f7a3cad66ab76252e01b95531a8a698ae49ceadf4c2ee9e71769e7806b4e93f86fb169ab4bdfb11481e65febf4ddd40e",
-          "sha256": "f835ad0fa91bf16e06acaf7231dadb096f8dfb54044b20e93d1e55c73de73cb1",
-          "sha1": "6e8d6f1e695f3f4f4af1eb10d10dec406049dd53",
-          "md5": "6417d217c777a983b5c8b50b104ac5e4"
+          "size": 7765,
+          "sha512": "45f232db14edd20b16428c510732e67aede4d309a0d0594f5506db8eb2408619a70e506595c7b26df64a7220310403957b4096544570a0f2aa30a82c168a1dad",
+          "sha256": "8a4a2fda6121b7cb7f680b8804c7bae73c4236203e85af86e58800c8799b2d7c",
+          "sha1": "69383b4a6cb98fd8d7e76b37e3eb5c9584ad5e49",
+          "md5": "5db9515a4421e71374be43dea481526a"
         }
       ]
     },
@@ -138,11 +138,11 @@
         {
           "name": "kotest-extensions-koin-jvm-6.0.0-LOCAL-sources.jar",
           "url": "kotest-extensions-koin-jvm-6.0.0-LOCAL-sources.jar",
-          "size": 1914,
-          "sha512": "d24b705b1e846c21232846f56774368cfe714df6f42b41ef69fbcc10e781e1a6c7d4d8175a340a8b4cd987e437dc8797d84ebb373cdaeb2d2869f323ded03c44",
-          "sha256": "969a405501f838614b715e11b14f19f12fceb6cf5a992d43adc1a19e0564f908",
-          "sha1": "1ecdff34977c560614b258fd47225b380be410a5",
-          "md5": "513a077f681c429e302f50e55dc28ef1"
+          "size": 1921,
+          "sha512": "90abf70609469a92a4d21efe1e3450939678a685c5c59e2293ba6bda8c7618a8a13522139b7a9c9cb2e873c71fac2297385d0671e078c5bbc7cb80c124446589",
+          "sha256": "005c8e142c3177baedc3130fb2ed2067171fa388a1b9c2218ad848d94516147b",
+          "sha1": "587d26289d3c20e40b135a90ba4fd791758f6ba0",
+          "md5": "f412afa78e5f7c5fd02cb0b819ccda38"
         }
       ]
     }

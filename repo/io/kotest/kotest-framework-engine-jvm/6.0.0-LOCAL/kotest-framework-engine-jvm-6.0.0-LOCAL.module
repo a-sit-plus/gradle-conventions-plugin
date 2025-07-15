@@ -79,11 +79,11 @@
         {
           "name": "kotest-framework-engine-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-framework-engine-jvm-6.0.0-LOCAL.jar",
-          "size": 1664469,
-          "sha512": "a528fe343f33a2048aa2bebfaafeddcac3fd61ddc67c00b3a7be2e673831aa4848195bb493f16b6954cd0eb55bbd6d2f56f676c3b621e64c8a8b450e4a4194a1",
-          "sha256": "1121d4da4c1b43b8652e5c0f4174db7d767dd115049940baa80a2debbd72c4a1",
-          "sha1": "0779863f17234c29c173a8012f654442c4e5a7c9",
-          "md5": "9dc9e7f6143162c612c968dc33dad958"
+          "size": 1665384,
+          "sha512": "a49b9d773bb1c855c9e5b4d4cb06a7bcbeeed6dc703fff033c49d962521244699f4c4fc92b63baf80822196675466b942e515d1d867579d5682958e36bcbebc7",
+          "sha256": "95ffbfd5e747c4b883a3a618b1509d1b409e1bdfbd5c846957f96301c08969bc",
+          "sha1": "a73f28358a34014ede63bf13d94a37286bf512fa",
+          "md5": "e7b966abc01698c290d9cc7726b89d4c"
         }
       ]
     },
@@ -165,11 +165,11 @@
         {
           "name": "kotest-framework-engine-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-framework-engine-jvm-6.0.0-LOCAL.jar",
-          "size": 1664469,
-          "sha512": "a528fe343f33a2048aa2bebfaafeddcac3fd61ddc67c00b3a7be2e673831aa4848195bb493f16b6954cd0eb55bbd6d2f56f676c3b621e64c8a8b450e4a4194a1",
-          "sha256": "1121d4da4c1b43b8652e5c0f4174db7d767dd115049940baa80a2debbd72c4a1",
-          "sha1": "0779863f17234c29c173a8012f654442c4e5a7c9",
-          "md5": "9dc9e7f6143162c612c968dc33dad958"
+          "size": 1665384,
+          "sha512": "a49b9d773bb1c855c9e5b4d4cb06a7bcbeeed6dc703fff033c49d962521244699f4c4fc92b63baf80822196675466b942e515d1d867579d5682958e36bcbebc7",
+          "sha256": "95ffbfd5e747c4b883a3a618b1509d1b409e1bdfbd5c846957f96301c08969bc",
+          "sha1": "a73f28358a34014ede63bf13d94a37286bf512fa",
+          "md5": "e7b966abc01698c290d9cc7726b89d4c"
         }
       ]
     },
@@ -188,11 +188,11 @@
         {
           "name": "kotest-framework-engine-jvm-6.0.0-LOCAL-sources.jar",
           "url": "kotest-framework-engine-jvm-6.0.0-LOCAL-sources.jar",
-          "size": 280957,
-          "sha512": "70df18e645dc6bfd7d2430348474c042a58ba92393f3fcfe02ff2764a2e63726e705d1d798adf595562d123f2757c0b85c73de8a663a4883bbdf8b510d4fbb5d",
-          "sha256": "7d73a5f89c1ae9933a8ffc2f6444cfb628e905af8e72431667015a6d7d702646",
-          "sha1": "d02d02129db302adc11f8eff8932d75cb8a295cc",
-          "md5": "a7071abf181237b1ef9be16fcb2b8244"
+          "size": 280482,
+          "sha512": "b58a10c8e0e67aaf891bc992bf0393ece3cb1f9b44b8134b08a82c4274e57e8ec42e33ca8042c8d1ff6567274d6de3dbdd8cb323cecb96ef81a955205d1fef31",
+          "sha256": "86f534cc2ac91cfff7374a36d35b4ac4494ad22a650645c1372358c96c6c835e",
+          "sha1": "dc1391d5623da2f0359d6f48beb126c971fc56e1",
+          "md5": "1926c0d352a30d2810b45bdf9f252b41"
         }
       ]
     }

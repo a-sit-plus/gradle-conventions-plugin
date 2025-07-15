@@ -3,12 +3,11 @@
   <groupId>io.kotest</groupId>
   <artifactId>kotest-extensions-allure</artifactId>
   <versioning>
-    <latest>6.0.0-LOCAL-PRE</latest>
-    <release>6.0.0-LOCAL-PRE</release>
+    <latest>6.0.0-LOCAL</latest>
+    <release>6.0.0-LOCAL</release>
     <versions>
       <version>6.0.0-LOCAL</version>
-      <version>6.0.0-LOCAL-PRE</version>
     </versions>
-    <lastUpdated>20250715073600</lastUpdated>
+    <lastUpdated>20250715115901</lastUpdated>
   </versioning>
 </metadata>

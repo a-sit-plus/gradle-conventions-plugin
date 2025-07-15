@@ -72,11 +72,11 @@
         {
           "name": "kotest-runner-junit4-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-runner-junit4-jvm-6.0.0-LOCAL.jar",
-          "size": 20206,
-          "sha512": "2855213f167482a7d59b0a61104e0b45958edc90d3d7e0e4fbf748229851abc54803a51ca5ca4ac15624e2f3a049e3074511bf4650f57570017bda66c9c4b6b2",
-          "sha256": "759ce4c75b076af65eabe5a4e153d22b984215545446dd8d1505835566c714ec",
-          "sha1": "77933aec73ac3b7aa84b8a146b2bd33d2d78732c",
-          "md5": "e381034f99515dbf8f8e0b638022a19c"
+          "size": 20210,
+          "sha512": "0a7f406e1ed6f857dc69f167d035a19b5e883c4307ecbcf0986edc1cb07b1338c8719f7b4f4f61325507589d04b0a0206db38dcb7d5403fb75987e38ca0c57bd",
+          "sha256": "1037ceb0a7555842347ef0c5bb6c7cd5d590faca86ec75a3262729fe442ff193",
+          "sha1": "3753856bfaecb0f0378901264fd3accb00b90606",
+          "md5": "2b6264c0fce1c66e0d114f4705317565"
         }
       ]
     },
@@ -137,11 +137,11 @@
         {
           "name": "kotest-runner-junit4-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-runner-junit4-jvm-6.0.0-LOCAL.jar",
-          "size": 20206,
-          "sha512": "2855213f167482a7d59b0a61104e0b45958edc90d3d7e0e4fbf748229851abc54803a51ca5ca4ac15624e2f3a049e3074511bf4650f57570017bda66c9c4b6b2",
-          "sha256": "759ce4c75b076af65eabe5a4e153d22b984215545446dd8d1505835566c714ec",
-          "sha1": "77933aec73ac3b7aa84b8a146b2bd33d2d78732c",
-          "md5": "e381034f99515dbf8f8e0b638022a19c"
+          "size": 20210,
+          "sha512": "0a7f406e1ed6f857dc69f167d035a19b5e883c4307ecbcf0986edc1cb07b1338c8719f7b4f4f61325507589d04b0a0206db38dcb7d5403fb75987e38ca0c57bd",
+          "sha256": "1037ceb0a7555842347ef0c5bb6c7cd5d590faca86ec75a3262729fe442ff193",
+          "sha1": "3753856bfaecb0f0378901264fd3accb00b90606",
+          "md5": "2b6264c0fce1c66e0d114f4705317565"
         }
       ]
     },
@@ -161,10 +161,10 @@
           "name": "kotest-runner-junit4-jvm-6.0.0-LOCAL-sources.jar",
           "url": "kotest-runner-junit4-jvm-6.0.0-LOCAL-sources.jar",
           "size": 3005,
-          "sha512": "21bf2fa9262ea0380d332d67c000fd1da7b708a321570c4315aebb869dc22c24202fbdb169e588978d160971bb191a02873eea0abeed5bfb90231d38c1c750ff",
-          "sha256": "77703dfe9ec26a2ae36006988810a81d2c47aaeb78ae29872325627fadb33659",
-          "sha1": "d4951ffa58dcbab157479552544b4ad636202924",
-          "md5": "aa944258ec19580fcbe4b91a87a7394c"
+          "sha512": "2d957692b4c40e3633f2032c3056b72241991716e74b5c72f80741c3a6465acfe0420ef27258111e4c750734886845e70abc442c4a8a81121a242ff4dafea8ca",
+          "sha256": "aa74e912a5ea88d594ff65b75b39c9bc8f88298cfcd496f4c59e161c1f6d1945",
+          "sha1": "ce2725ba75b408aa9d0d0b122a8cfa487e8025fb",
+          "md5": "44a45731763abcc3511044f1ac806107"
         }
       ]
     }

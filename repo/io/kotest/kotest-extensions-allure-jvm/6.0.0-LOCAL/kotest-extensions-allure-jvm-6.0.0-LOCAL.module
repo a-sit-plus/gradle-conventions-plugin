@@ -44,11 +44,11 @@
         {
           "name": "kotest-extensions-allure-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-allure-jvm-6.0.0-LOCAL.jar",
-          "size": 19553,
-          "sha512": "40a46641e46236582503b73ad60a2d4872022f56005f44d2e554282bc6cc0a40d74345d097d3bf1bc05ff52a071e1869c113f3034540bb4b50c27733d2750f18",
-          "sha256": "f41252eba216227c9d055a82f4238626ca69e0bd30870b814b5a51d8a2ad60ff",
-          "sha1": "0ce8179220b5c9baf2adf12284e09f468fbac434",
-          "md5": "0c4c65b52ad2f88cdc2fdf6225f7ca5d"
+          "size": 19560,
+          "sha512": "6d6a612d2a52dc651bf6fefaf141d0d0a0f13aada78806ab58fc73628b3bc0613ac516019c914fde962e7e05666b35e3beb0bbcacf5f4164f2eb487e9b115a96",
+          "sha256": "aa2744cf495ae6be77ef1665471500fa1e0e98ca2dabe589adb7a6cfc58d3f1a",
+          "sha1": "2477ea09afc822dc5d65794fcca2977926445dc3",
+          "md5": "b516f527e736062fb0bcdb8e4cf06eae"
         }
       ]
     },
@@ -95,11 +95,11 @@
         {
           "name": "kotest-extensions-allure-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-allure-jvm-6.0.0-LOCAL.jar",
-          "size": 19553,
-          "sha512": "40a46641e46236582503b73ad60a2d4872022f56005f44d2e554282bc6cc0a40d74345d097d3bf1bc05ff52a071e1869c113f3034540bb4b50c27733d2750f18",
-          "sha256": "f41252eba216227c9d055a82f4238626ca69e0bd30870b814b5a51d8a2ad60ff",
-          "sha1": "0ce8179220b5c9baf2adf12284e09f468fbac434",
-          "md5": "0c4c65b52ad2f88cdc2fdf6225f7ca5d"
+          "size": 19560,
+          "sha512": "6d6a612d2a52dc651bf6fefaf141d0d0a0f13aada78806ab58fc73628b3bc0613ac516019c914fde962e7e05666b35e3beb0bbcacf5f4164f2eb487e9b115a96",
+          "sha256": "aa2744cf495ae6be77ef1665471500fa1e0e98ca2dabe589adb7a6cfc58d3f1a",
+          "sha1": "2477ea09afc822dc5d65794fcca2977926445dc3",
+          "md5": "b516f527e736062fb0bcdb8e4cf06eae"
         }
       ]
     },
@@ -118,11 +118,11 @@
         {
           "name": "kotest-extensions-allure-jvm-6.0.0-LOCAL-sources.jar",
           "url": "kotest-extensions-allure-jvm-6.0.0-LOCAL-sources.jar",
-          "size": 4769,
-          "sha512": "d50600495f434c7a787176df87970c7cb49e22ec66f875e6634dcab4ec7e536bb63c9591ca4be3e095d36dff2aec02a7a46f393f64039017f7f2cba20aaaed74",
-          "sha256": "cfc0e4e266f6e46c0b54532aff56e673850a26fe5c34e583dd323128cd79a45b",
-          "sha1": "1155fee3609cfb217f100c58015866b1aeeddc1b",
-          "md5": "c1f67337feb170927ae14f3fe904eb1c"
+          "size": 4775,
+          "sha512": "63e574f8a860f4ecead6678d43f52645ed35c8857fefc6fc017215670b3586f0c1d49297e2f89754d76bf681ca81700f227929a9ccc0e208624ffbb7a9e156af",
+          "sha256": "51e9849d7d614157a7e2732636d930cceb20bac819e8333dbe1ad565cac6e018",
+          "sha1": "8144eb475f271776128661b2c4c3294c38598ec1",
+          "md5": "8a35271b595bc24ae0c0e9d493154dcc"
         }
       ]
     }

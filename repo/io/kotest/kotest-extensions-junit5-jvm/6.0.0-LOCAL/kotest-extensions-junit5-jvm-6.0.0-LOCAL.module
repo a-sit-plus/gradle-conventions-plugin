@@ -37,11 +37,11 @@
         {
           "name": "kotest-extensions-junit5-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-junit5-jvm-6.0.0-LOCAL.jar",
-          "size": 11144,
-          "sha512": "95e9b1a71fc696499beec099936b8badd83ad60462773b8116c07c6ec64ca9ead5d9d487fb46d555fba12c9f0ee5af2bbf249b5cb0544434a9255bf6f8b0325b",
-          "sha256": "b5b824ac731a2c8d2ca9776d5bbdb6fb97ea9c08a5aeca578e4265fa0daef193",
-          "sha1": "8425c03a872b14305b906019579b40d42d7b910c",
-          "md5": "5a6347390bc2741317b0f9de3ba98d2c"
+          "size": 11146,
+          "sha512": "bbc46d7e918f3b211f553a901d9f63d10bd5ed1c001c53fdd6d6d023bb368dd10dc761664e611684b850b77f75522b2147ccc42cec0dcb754d9775fc819eeb60",
+          "sha256": "9f7f7dbcf20e01e9f8e76fd94a716ab93f7a5d8936e223aac7c0a909fa256efb",
+          "sha1": "c22c1bf73809e9803b993336dd7762ee2ba440c7",
+          "md5": "05cd3f280e31c2863bb850763c1d3eae"
         }
       ]
     },
@@ -95,11 +95,11 @@
         {
           "name": "kotest-extensions-junit5-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-junit5-jvm-6.0.0-LOCAL.jar",
-          "size": 11144,
-          "sha512": "95e9b1a71fc696499beec099936b8badd83ad60462773b8116c07c6ec64ca9ead5d9d487fb46d555fba12c9f0ee5af2bbf249b5cb0544434a9255bf6f8b0325b",
-          "sha256": "b5b824ac731a2c8d2ca9776d5bbdb6fb97ea9c08a5aeca578e4265fa0daef193",
-          "sha1": "8425c03a872b14305b906019579b40d42d7b910c",
-          "md5": "5a6347390bc2741317b0f9de3ba98d2c"
+          "size": 11146,
+          "sha512": "bbc46d7e918f3b211f553a901d9f63d10bd5ed1c001c53fdd6d6d023bb368dd10dc761664e611684b850b77f75522b2147ccc42cec0dcb754d9775fc819eeb60",
+          "sha256": "9f7f7dbcf20e01e9f8e76fd94a716ab93f7a5d8936e223aac7c0a909fa256efb",
+          "sha1": "c22c1bf73809e9803b993336dd7762ee2ba440c7",
+          "md5": "05cd3f280e31c2863bb850763c1d3eae"
         }
       ]
     },
@@ -118,11 +118,11 @@
         {
           "name": "kotest-extensions-junit5-jvm-6.0.0-LOCAL-sources.jar",
           "url": "kotest-extensions-junit5-jvm-6.0.0-LOCAL-sources.jar",
-          "size": 3128,
-          "sha512": "e9fef67fed16b258ad8cdc6f2a351eae60bf5ac88a8f30bcc620834a6028eec644983bbaa6093df6d2a96020e1d45d4bd95ebdb993aad5a2e647a9b05d7895f6",
-          "sha256": "5fecaa51dc16c266b317ba8f3ac6d10d1320dba55f365be7264b0d4b313181bc",
-          "sha1": "a94b4ff9bf0f5c0013e0ce874c857dfa57b9321b",
-          "md5": "dbdc93932a5848e246c03deb2437d03c"
+          "size": 3133,
+          "sha512": "925c35bf7802ff41814b66bc5fc647de3cc9c1dd935787971aa275fe260d041217dfa2fb9cc34df18365aa9f308b12583504737da18ea3f790e1c5a396c3c56f",
+          "sha256": "7bb47fe9834dfe941c2c060b2c3550d9dda10601684a7f70aa4b91e1ec6cb393",
+          "sha1": "26be4c79c7eeaca0cdbee80c71c65ee93188933d",
+          "md5": "b356cf041321c599e44ace390170ff29"
         }
       ]
     }

@@ -37,11 +37,11 @@
         {
           "name": "kotest-extensions-spring-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-spring-jvm-6.0.0-LOCAL.jar",
-          "size": 29774,
-          "sha512": "cff16d656b4a8ec4f6d6d4c819232656fb247702731618b4b37ee48e981f59e3732096aba19ad72b75a83186a8698efd61389645dd057175e9ece0e307406e22",
-          "sha256": "bcbfb698d375b1c11e3a0be6f4d88f0caeedfbf2309acc862843053cbefc6b55",
-          "sha1": "bbc1921056eb11623b1231cf5149caa406feef76",
-          "md5": "1467f2e8f7f7f1af9bae6d5a9748ca93"
+          "size": 29794,
+          "sha512": "e4cd070b3060a9b833964d4e59abb69c0aff9742d4b137e7a6a1ad03df7ac272b693d44aae45b1b4db67694fda31ad8381c07cf2ab62ff106d51168c839a4ebc",
+          "sha256": "c089638e86ac0fdf84b49786f3152a365c0747573bf3246c96f71b56977498c3",
+          "sha1": "b40c17bc43feb283ce9e43dd4115f88276906d92",
+          "md5": "01e026e086a80ce56cef0d1e2a4727d3"
         }
       ]
     },
@@ -102,11 +102,11 @@
         {
           "name": "kotest-extensions-spring-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-spring-jvm-6.0.0-LOCAL.jar",
-          "size": 29774,
-          "sha512": "cff16d656b4a8ec4f6d6d4c819232656fb247702731618b4b37ee48e981f59e3732096aba19ad72b75a83186a8698efd61389645dd057175e9ece0e307406e22",
-          "sha256": "bcbfb698d375b1c11e3a0be6f4d88f0caeedfbf2309acc862843053cbefc6b55",
-          "sha1": "bbc1921056eb11623b1231cf5149caa406feef76",
-          "md5": "1467f2e8f7f7f1af9bae6d5a9748ca93"
+          "size": 29794,
+          "sha512": "e4cd070b3060a9b833964d4e59abb69c0aff9742d4b137e7a6a1ad03df7ac272b693d44aae45b1b4db67694fda31ad8381c07cf2ab62ff106d51168c839a4ebc",
+          "sha256": "c089638e86ac0fdf84b49786f3152a365c0747573bf3246c96f71b56977498c3",
+          "sha1": "b40c17bc43feb283ce9e43dd4115f88276906d92",
+          "md5": "01e026e086a80ce56cef0d1e2a4727d3"
         }
       ]
     },
@@ -125,11 +125,11 @@
         {
           "name": "kotest-extensions-spring-jvm-6.0.0-LOCAL-sources.jar",
           "url": "kotest-extensions-spring-jvm-6.0.0-LOCAL-sources.jar",
-          "size": 6595,
-          "sha512": "7b3b217a9018382c66e8a99a233acac876df9b92217823e9ada4595773ee837e9179717f5285acb3f0ee30cb0af7be7dc5bd3d5890b229073318c03a04f908ab",
-          "sha256": "151e0098bfc3624a533fb2c72fc2655cf4e31b172794828dfcad4813b7b66bbf",
-          "sha1": "2d331060aa6751c5437da4f9d06d552ab16434fa",
-          "md5": "064623f7eeeb781f48edbf776e31d97f"
+          "size": 6609,
+          "sha512": "404d70f55f4ffa8c7819138512053ea2fb68d68d13817594188217c3ad34d19c64e9e6027d2971701db29b7a333e609db89f03a431cdedfd3e98eb25083ca55e",
+          "sha256": "8f20bc01b4fd769b14b6542519a417dd99c2034ca2a5bb12c45d3bfaaa7b3c0d",
+          "sha1": "20c67b90dd37e82de50122e7eec06cd789b31a7d",
+          "md5": "7a69eb363663051c90fa08832e38fee6"
         }
       ]
     }

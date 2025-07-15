@@ -65,11 +65,11 @@
         {
           "name": "kotest-framework-engine-js-6.0.0-LOCAL.klib",
           "url": "kotest-framework-engine-js-6.0.0-LOCAL.klib",
-          "size": 911687,
-          "sha512": "1ad672bdccc4a2953814586b9e3a63f963ed2d023edca480f15d9bd4ccbe23592873aab31d66715f661d2f6fd2265865e456ee0f971c34ff2a622e1e868a1c88",
-          "sha256": "3f302df30b80775ca61e10c1afe44b7394a7c1928adbb0e0fcd9e8af193b5ead",
-          "sha1": "0aad5dfa58f1ec1c7f5d95a0d0eedf70cc7da5ac",
-          "md5": "bcfaf9a794099bca67afcf7bb5e903ed"
+          "size": 914058,
+          "sha512": "a1427bbdb8b11878f32d6997fac6d624bf120bbd4ff2ef101a5fe56837806cb5cc0c00b5d3f3efd828a07191d9c423d0556770affda660af78db54bbecf433d0",
+          "sha256": "fade93e9440c0655e959f9e6a025f98ef96ad514f03982b7e1888139a9c80409",
+          "sha1": "58a2d972c4e9a62154509a5bf70b1155b647a168",
+          "md5": "fb313e9323748f7b714533d780fddcdc"
         }
       ]
     },
@@ -144,11 +144,11 @@
         {
           "name": "kotest-framework-engine-js-6.0.0-LOCAL.klib",
           "url": "kotest-framework-engine-js-6.0.0-LOCAL.klib",
-          "size": 911687,
-          "sha512": "1ad672bdccc4a2953814586b9e3a63f963ed2d023edca480f15d9bd4ccbe23592873aab31d66715f661d2f6fd2265865e456ee0f971c34ff2a622e1e868a1c88",
-          "sha256": "3f302df30b80775ca61e10c1afe44b7394a7c1928adbb0e0fcd9e8af193b5ead",
-          "sha1": "0aad5dfa58f1ec1c7f5d95a0d0eedf70cc7da5ac",
-          "md5": "bcfaf9a794099bca67afcf7bb5e903ed"
+          "size": 914058,
+          "sha512": "a1427bbdb8b11878f32d6997fac6d624bf120bbd4ff2ef101a5fe56837806cb5cc0c00b5d3f3efd828a07191d9c423d0556770affda660af78db54bbecf433d0",
+          "sha256": "fade93e9440c0655e959f9e6a025f98ef96ad514f03982b7e1888139a9c80409",
+          "sha1": "58a2d972c4e9a62154509a5bf70b1155b647a168",
+          "md5": "fb313e9323748f7b714533d780fddcdc"
         }
       ]
     },
@@ -167,11 +167,11 @@
         {
           "name": "kotest-framework-engine-js-6.0.0-LOCAL-sources.jar",
           "url": "kotest-framework-engine-js-6.0.0-LOCAL-sources.jar",
-          "size": 259760,
-          "sha512": "fe39f3115e8549414e8e02a03d2990810c25813350076c4db0c7ca05884a7bf7dca15840d3388e0e19c76a14a35f84648d902b311247bb88e97b950c0cf6a52b",
-          "sha256": "81c3cb9af0c037b984685fa330dcf41280e4e7ac024cd99a0b09b395c04cf30b",
-          "sha1": "58e9caec0aabe89f94dd3f07158fec7a3c061803",
-          "md5": "98af850246754fa0dcec3700e1ec61f8"
+          "size": 259241,
+          "sha512": "c51d43f23c72998fdff5cac0d58fb0e34660135e570c788bf80b619a0b3d09ef09395d977b27bad81dc1d2f50a48bffea417a3e94f2d6095e18e0beb17368b99",
+          "sha256": "00da47b355737bb48867c650f129cfe5521fad4638e4dc535da2b6b51634adfe",
+          "sha1": "1012b200f449b45e95fd5ae8c5f12cc0b1d1d9de",
+          "md5": "ad003b80b12d6a8054d1ea490d0e2476"
         }
       ]
     }

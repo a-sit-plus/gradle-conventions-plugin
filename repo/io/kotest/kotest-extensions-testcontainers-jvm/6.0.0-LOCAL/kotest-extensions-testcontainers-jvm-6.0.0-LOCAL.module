@@ -37,11 +37,11 @@
         {
           "name": "kotest-extensions-testcontainers-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-testcontainers-jvm-6.0.0-LOCAL.jar",
-          "size": 202971,
-          "sha512": "df16de30ce18181d0fa43ef373641f1e157191c80059079a4460b37299814fef8036385e652d7c55ccc1832eb126902b47f7ba0126336f3ba8defeb22ea3e536",
-          "sha256": "8d2cfbfa3163bc6dd63afa5c6d150601bd5fc66c87833d58fb91878f49ad3756",
-          "sha1": "bcdfa1ae717864a2ed5ca1d42c192e3d0efa4035",
-          "md5": "8c3f8e09d3fbe235d7fca1384f7427ae"
+          "size": 203075,
+          "sha512": "d88e739865bff6c3bf5ef2adc966836242c8589598a2484dc5cbf6213fdda5ee86e651052e3c7273cbba72c0e667cfc027937c7ea869fdf1ad27dcff70641af6",
+          "sha256": "1e9b566799a7b236c7bc6a1af7e720e397b3a8a4f6e7e3bed1b0c2787f481446",
+          "sha1": "b9dd334fe21c9de6c10be681840263dd23792019",
+          "md5": "60231d82bceb3afdb74a3c2e8aee47c3"
         }
       ]
     },
@@ -116,11 +116,11 @@
         {
           "name": "kotest-extensions-testcontainers-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-testcontainers-jvm-6.0.0-LOCAL.jar",
-          "size": 202971,
-          "sha512": "df16de30ce18181d0fa43ef373641f1e157191c80059079a4460b37299814fef8036385e652d7c55ccc1832eb126902b47f7ba0126336f3ba8defeb22ea3e536",
-          "sha256": "8d2cfbfa3163bc6dd63afa5c6d150601bd5fc66c87833d58fb91878f49ad3756",
-          "sha1": "bcdfa1ae717864a2ed5ca1d42c192e3d0efa4035",
-          "md5": "8c3f8e09d3fbe235d7fca1384f7427ae"
+          "size": 203075,
+          "sha512": "d88e739865bff6c3bf5ef2adc966836242c8589598a2484dc5cbf6213fdda5ee86e651052e3c7273cbba72c0e667cfc027937c7ea869fdf1ad27dcff70641af6",
+          "sha256": "1e9b566799a7b236c7bc6a1af7e720e397b3a8a4f6e7e3bed1b0c2787f481446",
+          "sha1": "b9dd334fe21c9de6c10be681840263dd23792019",
+          "md5": "60231d82bceb3afdb74a3c2e8aee47c3"
         }
       ]
     },
@@ -139,11 +139,11 @@
         {
           "name": "kotest-extensions-testcontainers-jvm-6.0.0-LOCAL-sources.jar",
           "url": "kotest-extensions-testcontainers-jvm-6.0.0-LOCAL-sources.jar",
-          "size": 31693,
-          "sha512": "c003e33991dbcd8da41d25070a64d772ddd9d3ae01bc7acb5142301af26cb8653b8092be3214660b92aa28de9148c906e4f77bb0307976827eb7cf8b3ae0bb5f",
-          "sha256": "9a940d96b7545c3c68759bb17ef3e2e246ba2b8a2224fb4ef72e427a01436bbf",
-          "sha1": "72d46851aed7dfa84856b01ca726fa4e065aca55",
-          "md5": "2497e2a849c2ce30d3af8773e33d0ce0"
+          "size": 31763,
+          "sha512": "66b6e429f09b3f862e3b661e9c9845dfbc491e4b2f14177b0605db6fd6c2d3fc8bb32e42fcacc6ee1305cef077297657e1ac902e813ecd12be7055b2a7ff24c7",
+          "sha256": "1c062863b1407f1a4ae60bb0c8b7e083f34ae6c4a2bc62e9e7fd95b97be5ee41",
+          "sha1": "1b6f7fe327d5d306802e89aba5a458204aee3ba2",
+          "md5": "b2d4bbb8564d00033233a2f349af4512"
         }
       ]
     }

@@ -37,11 +37,11 @@
         {
           "name": "kotest-extensions-junitxml-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-junitxml-jvm-6.0.0-LOCAL.jar",
-          "size": 13036,
-          "sha512": "5391e43b224e031e64d67f7b118af6d2c6054c2ae504951d910675f4dc08994dad4a08e88b65799f7080dc8d727faa57a3e7cdf82325f7e037b18d4cec17b377",
-          "sha256": "6695177dfe74d072e5e359e7fa5416b73653bc8911a7b44ee4cec9b5943775b3",
-          "sha1": "5a484f0fe127a9c22157e45918c6288ff7f4fe70",
-          "md5": "3439c6064ce56c7deb750ccc76b477e3"
+          "size": 13039,
+          "sha512": "deb54cf9345395ca060ba292f7ed912d0a30e07833b3c26e2e0d7cfebfc945272afd199506339ad9a59eed1515520a2959c8662d6ebcd6ea677fdeb9c1edf00e",
+          "sha256": "36ac2048a101c889d58eefd6c33394bfd87459cad80f85d7ce68810d92b6db0d",
+          "sha1": "c475df7a266ab8046bac113dc18239ef7d7953e2",
+          "md5": "61c1461c1bbbe561586bc324899fea2d"
         }
       ]
     },
@@ -88,11 +88,11 @@
         {
           "name": "kotest-extensions-junitxml-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-junitxml-jvm-6.0.0-LOCAL.jar",
-          "size": 13036,
-          "sha512": "5391e43b224e031e64d67f7b118af6d2c6054c2ae504951d910675f4dc08994dad4a08e88b65799f7080dc8d727faa57a3e7cdf82325f7e037b18d4cec17b377",
-          "sha256": "6695177dfe74d072e5e359e7fa5416b73653bc8911a7b44ee4cec9b5943775b3",
-          "sha1": "5a484f0fe127a9c22157e45918c6288ff7f4fe70",
-          "md5": "3439c6064ce56c7deb750ccc76b477e3"
+          "size": 13039,
+          "sha512": "deb54cf9345395ca060ba292f7ed912d0a30e07833b3c26e2e0d7cfebfc945272afd199506339ad9a59eed1515520a2959c8662d6ebcd6ea677fdeb9c1edf00e",
+          "sha256": "36ac2048a101c889d58eefd6c33394bfd87459cad80f85d7ce68810d92b6db0d",
+          "sha1": "c475df7a266ab8046bac113dc18239ef7d7953e2",
+          "md5": "61c1461c1bbbe561586bc324899fea2d"
         }
       ]
     },
@@ -111,11 +111,11 @@
         {
           "name": "kotest-extensions-junitxml-jvm-6.0.0-LOCAL-sources.jar",
           "url": "kotest-extensions-junitxml-jvm-6.0.0-LOCAL-sources.jar",
-          "size": 3460,
-          "sha512": "b42324b32a1ec889bef65304e5a18366e92acf3794108f8adb0ac4baae36549028a8ae2434347bb6d78506de40cfd533016e1b95b91c885b5227c7de29c2e071",
-          "sha256": "29a147f5d2a101d592b934218f9fc1a90d95b8bc35d6f581c270e98c50fbb03d",
-          "sha1": "80ac14e22eca03dcf3c82024b6fd771a5bc7a77e",
-          "md5": "814893da81cf65d761baf3456cbf497b"
+          "size": 3459,
+          "sha512": "b38c09dd73bd1b7d896a8e1f0abd4295d187efc2af13de3675e0884cbf27a3c2428d7ad971defb256d0ea629f35a70e4564365ec1512ea529140a8662de4111a",
+          "sha256": "02c8922f985069565b88714e912152ebe62f52eb38627ed23305af39d92c9660",
+          "sha1": "677e6bd4166a4026bc9521571eca277638410907",
+          "md5": "471dba22d0fc984354e593f9c85b7283"
         }
       ]
     }

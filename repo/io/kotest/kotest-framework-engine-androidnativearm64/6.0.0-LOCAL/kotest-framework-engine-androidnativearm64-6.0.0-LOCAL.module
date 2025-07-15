@@ -56,20 +56,6 @@
         },
         {
           "group": "org.jetbrains.kotlin",
-          "module": "kotlin-test-common",
-          "version": {
-            "requires": "2.2.0"
-          }
-        },
-        {
-          "group": "org.jetbrains.kotlin",
-          "module": "kotlin-test-annotations-common",
-          "version": {
-            "requires": "2.2.0"
-          }
-        },
-        {
-          "group": "org.jetbrains.kotlin",
           "module": "kotlin-reflect",
           "version": {
             "requires": "2.2.0"
@@ -87,11 +73,11 @@
         {
           "name": "kotest-framework-engine-androidNativeArm64Main-6.0.0-LOCAL.klib",
           "url": "kotest-framework-engine-androidnativearm64-6.0.0-LOCAL.klib",
-          "size": 895708,
-          "sha512": "8229ccac61706a79e171850847e54077e4a79255420168809892a16c9c928cee348b08bb9a7349dc5958cf5564f09ea910eb241189958f86767ab397d969fab6",
-          "sha256": "cf4846d9c6c2172cef07e52e72594104ea87eb3a71f40fbd3886eee1cf28c2dd",
-          "sha1": "a2095de45a2180eb8cac18a4e154f9a9f6581652",
-          "md5": "7b3edc6db285aaf4be7f7706339bf57d"
+          "size": 898126,
+          "sha512": "38f54812f7545d75ded6e96aeffa7f5b9a2a616db3d7d16895c5b3d5527ca2f390e6265fc96e1011db914f27f9de1231a8390fc9e856d97f63c2126b8012460c",
+          "sha256": "a0b0acb51d5541002a1ed5e1446286e7c6958c2d2582a7ac302620a35f7a7ccc",
+          "sha1": "97603e3e9fc0f28e1767bd48ac6339b28edebc01",
+          "md5": "b914ace542d45141678a5292f37d62bc"
         }
       ]
     },
@@ -110,11 +96,11 @@
         {
           "name": "kotest-framework-engine-androidnativearm64-6.0.0-LOCAL-sources.jar",
           "url": "kotest-framework-engine-androidnativearm64-6.0.0-LOCAL-sources.jar",
-          "size": 254969,
-          "sha512": "cdf9587afa2d40784945c92b6758498cd02029e8d9480c556fd931c602a69e4f99c5e2dc5c74297aca1e9c60bccd3e37474de47103db922067f053be0b6d0196",
-          "sha256": "e5b07c38a7046a37355c93366c418aa2c4cc2fc59590893596f4f04215b35266",
-          "sha1": "227ab836a9feffbbe0580cd6e43c2f5123adb859",
-          "md5": "d6b5bb8d0e176cc07a7c33478c74625c"
+          "size": 254450,
+          "sha512": "92a8ae393afb4f7e27b20f4b4ee62bc76d34cf5b57e1cb95ba8625513ba8e3f7a480094dc285d8b626120dce969d1ef9eb9b4af7bdaefdf795481b6db794cf08",
+          "sha256": "182428b1ba3acd61626c47ff3c47c5a111528b38b01ca2b7ec7ee4f35e4e426c",
+          "sha1": "aabf1c71b3665d95f9295d35721a8ca3af697b2e",
+          "md5": "1048582fc97c09411d03dc101e430037"
         }
       ]
     }

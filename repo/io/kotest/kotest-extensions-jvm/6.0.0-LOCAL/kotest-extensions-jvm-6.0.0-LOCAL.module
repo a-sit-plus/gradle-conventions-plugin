@@ -37,11 +37,11 @@
         {
           "name": "kotest-extensions-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-jvm-6.0.0-LOCAL.jar",
-          "size": 47744,
-          "sha512": "d340aeb2b393230fcd46b29b1dcace6a12e803bc95553d224cdb550957c54f99b326823ce80d1a9a1f74730612055dae1f0be4df9e622c45c339481b8e459634",
-          "sha256": "4128046d8fb877abd686aa7e6657f90b1d299eec372b090f3bc51caa2a78de59",
-          "sha1": "89a4c8d946bdc39f188f62ee5c74b300d5b12c05",
-          "md5": "61d8ef8cb5245951ad7ad9ec5aa77231"
+          "size": 47749,
+          "sha512": "ee6bc27f32b19aeb1236d2bbfdefab519abf112545cbd0d40ef1d5c6c2a4c21d68933aca463ab4e9a6859e937ff4c50a88a0f12b2d9b29919ecef8297f37abb7",
+          "sha256": "70cc70ee9c2b5f79ccf8680a28bceabee840a402f3d388f38aefe350e4ca0a59",
+          "sha1": "116b2f7b93562d61ef803ffb09f9766ce470888a",
+          "md5": "80d871bed2cb8c0ccffc0814c9816954"
         }
       ]
     },
@@ -88,11 +88,11 @@
         {
           "name": "kotest-extensions-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-extensions-jvm-6.0.0-LOCAL.jar",
-          "size": 47744,
-          "sha512": "d340aeb2b393230fcd46b29b1dcace6a12e803bc95553d224cdb550957c54f99b326823ce80d1a9a1f74730612055dae1f0be4df9e622c45c339481b8e459634",
-          "sha256": "4128046d8fb877abd686aa7e6657f90b1d299eec372b090f3bc51caa2a78de59",
-          "sha1": "89a4c8d946bdc39f188f62ee5c74b300d5b12c05",
-          "md5": "61d8ef8cb5245951ad7ad9ec5aa77231"
+          "size": 47749,
+          "sha512": "ee6bc27f32b19aeb1236d2bbfdefab519abf112545cbd0d40ef1d5c6c2a4c21d68933aca463ab4e9a6859e937ff4c50a88a0f12b2d9b29919ecef8297f37abb7",
+          "sha256": "70cc70ee9c2b5f79ccf8680a28bceabee840a402f3d388f38aefe350e4ca0a59",
+          "sha1": "116b2f7b93562d61ef803ffb09f9766ce470888a",
+          "md5": "80d871bed2cb8c0ccffc0814c9816954"
         }
       ]
     },
@@ -111,11 +111,11 @@
         {
           "name": "kotest-extensions-jvm-6.0.0-LOCAL-sources.jar",
           "url": "kotest-extensions-jvm-6.0.0-LOCAL-sources.jar",
-          "size": 8181,
-          "sha512": "fdfde05682137630922d1083c69be5add2e47e70bfd2568ebbdd06d0f3832dd5a35f0485eca28d070944e9982796a1cd47a013f8060b804ae85dacf1d1fc8a38",
-          "sha256": "2a4805a7eaef406e19ac436ab69ef8d41a1b87d743765526a3967d1043473820",
-          "sha1": "670719cbb9a7c3ada7f39b50610e1264adc83ef5",
-          "md5": "ab2ea6912c28c1591c92c16e253f52d5"
+          "size": 8212,
+          "sha512": "f0ef497c18fdd6c5d0f6c12a14bc2e1109d245e5661360e9887ae93573b55d87986500263c27d0f969e4ade4d9d757cd7e6886f9bd0f387031dabf59a3c41c38",
+          "sha256": "ca1c959e7f5f542c6f33d25f5ea719fb845f724ace54cecc38518df042ba093a",
+          "sha1": "60e273acb19ce9ba0848794c51c9a35dd8b6bd85",
+          "md5": "3d1ef6a26a2d2fa9ac4c802bcaa8a0be"
         }
       ]
     }

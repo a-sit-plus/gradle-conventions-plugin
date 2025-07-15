@@ -65,11 +65,11 @@
         {
           "name": "kotest-assertions-arrow-fx-coroutines-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-assertions-arrow-fx-coroutines-jvm-6.0.0-LOCAL.jar",
-          "size": 39141,
-          "sha512": "ba84430c4e385ca119c02527102a79dde13ac496c074bbc76ce188aee81da7d40ec8b16b896ad803df7d7c4de1adf6dd1df86e49020bce4f8284b0ae61d541e1",
-          "sha256": "c64a1316e3651d0bc374609f557799bf0d6bba9fa42f553e4b9f37338e8a0948",
-          "sha1": "76e79df900df7ecc34409df5486f5d6b21624932",
-          "md5": "18f18bd8b8ef241ec10b1e5afefa17ac"
+          "size": 39144,
+          "sha512": "5c65ff8e5aa4bd6e725790e3bac09d165462d393bef68c82694279cda20edcc5f21997b1e999b67f155c23c68b85bb89728e9872cfbb22ec6a2782dd2902eb46",
+          "sha256": "d5c4b96deee6f344c746982f54e6ce54320f65095c91d8c7591a0b551c6bb7b4",
+          "sha1": "9a71c15135331f24cb86f48809574a2143364ef1",
+          "md5": "67f1bbd883a1c847550663faf53b1964"
         }
       ]
     },
@@ -130,11 +130,11 @@
         {
           "name": "kotest-assertions-arrow-fx-coroutines-jvm-6.0.0-LOCAL.jar",
           "url": "kotest-assertions-arrow-fx-coroutines-jvm-6.0.0-LOCAL.jar",
-          "size": 39141,
-          "sha512": "ba84430c4e385ca119c02527102a79dde13ac496c074bbc76ce188aee81da7d40ec8b16b896ad803df7d7c4de1adf6dd1df86e49020bce4f8284b0ae61d541e1",
-          "sha256": "c64a1316e3651d0bc374609f557799bf0d6bba9fa42f553e4b9f37338e8a0948",
-          "sha1": "76e79df900df7ecc34409df5486f5d6b21624932",
-          "md5": "18f18bd8b8ef241ec10b1e5afefa17ac"
+          "size": 39144,
+          "sha512": "5c65ff8e5aa4bd6e725790e3bac09d165462d393bef68c82694279cda20edcc5f21997b1e999b67f155c23c68b85bb89728e9872cfbb22ec6a2782dd2902eb46",
+          "sha256": "d5c4b96deee6f344c746982f54e6ce54320f65095c91d8c7591a0b551c6bb7b4",
+          "sha1": "9a71c15135331f24cb86f48809574a2143364ef1",
+          "md5": "67f1bbd883a1c847550663faf53b1964"
         }
       ]
     },
@@ -153,11 +153,11 @@
         {
           "name": "kotest-assertions-arrow-fx-coroutines-jvm-6.0.0-LOCAL-sources.jar",
           "url": "kotest-assertions-arrow-fx-coroutines-jvm-6.0.0-LOCAL-sources.jar",
-          "size": 5182,
-          "sha512": "97b35792098da52be5ab07d619a60f04798ededce71a7e0cd892310abcbdd4c028eac84dacf1f9dfed4861d10c8282a83152f62f28e551fc2d2a8e1a80973548",
-          "sha256": "6929929f1d5c6a03094dc1e1e38a8f5be54df790235e94a5d9a9cd55ed4142ae",
-          "sha1": "233e5f770f464a77f489a78280a762a4b20bc822",
-          "md5": "d794af342155e408c597894a98027777"
+          "size": 5189,
+          "sha512": "213f753fc92f5e0df095d79f91afcb2bfaea52d15cec513c50da5c2bb0f65bc93ecd6454cf4dd6d8fcfcd92d172dc2571f4651ab7426d816434d68f07ea80f8e",
+          "sha256": "53256b46333a7c37138c0de43eb58401ec40f0df70c11302b73f137ca4e24bac",
+          "sha1": "00ad21bba9c65e64c6e3588774923f20f5f7a701",
+          "md5": "fa7b6257b0f3cc4cc60c88cbd373f00a"
         }
       ]
     }
