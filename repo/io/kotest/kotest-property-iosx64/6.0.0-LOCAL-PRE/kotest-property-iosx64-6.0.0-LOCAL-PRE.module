@@ -1,0 +1,160 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-property/6.0.0-LOCAL-PRE/kotest-property-6.0.0-LOCAL-PRE.module",
+    "group": "io.kotest",
+    "module": "kotest-property",
+    "version": "6.0.0-LOCAL-PRE",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-property-iosX64Main-6.0.0-LOCAL-PRE.klib",
+          "url": "kotest-property-iosx64-6.0.0-LOCAL-PRE.klib",
+          "size": 783035,
+          "sha512": "2aad36ef1b6d02d55bd183e2d11029eb9e8ca0de6fb38ff6ee77c16c1e1e92f495fd852f6b7b2bdb4f214be6617aeaefe9079719ca72ac09a02d0e93cf498ace",
+          "sha256": "f1050cd00ee03059e80b6f8a151d30be1332b3d21d1ee471ddd879c41677754f",
+          "sha1": "95efe5460452e2b7cd033a03e9bad4b6ca095f02",
+          "md5": "cb7f30a9c83a805f75ec0baf3fd339b6"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotest-property-iosx64-6.0.0-LOCAL-PRE-sources.jar",
+          "url": "kotest-property-iosx64-6.0.0-LOCAL-PRE-sources.jar",
+          "size": 104410,
+          "sha512": "e8bb801cddb72452ed072e8b781c464e067cf6e0180468b15e6b4fdd34fb83564c69fc32e98ea547353487237299e094ff14e58207673f2c894b0875ce4cb20e",
+          "sha256": "fc649612ac43a12d2f5131f36adc73328b4747e5e658e7d224c5783ee6f40ee2",
+          "sha1": "6b9f3cc7d279ebb9bb635410452140525df6eed4",
+          "md5": "9e2593e855c104fa9eb0fa0fc29ad305"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-property-iosx64-6.0.0-LOCAL-PRE-metadata.jar",
+          "url": "kotest-property-iosx64-6.0.0-LOCAL-PRE-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

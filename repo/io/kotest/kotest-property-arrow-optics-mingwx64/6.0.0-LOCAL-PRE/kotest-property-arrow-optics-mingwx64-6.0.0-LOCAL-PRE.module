@@ -1,0 +1,101 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-property-arrow-optics/6.0.0-LOCAL-PRE/kotest-property-arrow-optics-6.0.0-LOCAL-PRE.module",
+    "group": "io.kotest",
+    "module": "kotest-property-arrow-optics",
+    "version": "6.0.0-LOCAL-PRE",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "mingwX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-property-arrow",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-optics",
+          "version": {
+            "requires": "2.1.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-functions",
+          "version": {
+            "requires": "2.1.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-property-arrow-optics-mingwX64Main-6.0.0-LOCAL-PRE.klib",
+          "url": "kotest-property-arrow-optics-mingwx64-6.0.0-LOCAL-PRE.klib",
+          "size": 26377,
+          "sha512": "1f85b6d3fbc6dcf41e71023e14548c6c6780b18284c459bce4fcb8ce5d2867927c21d347c7676270b4b425b730f1bdcccd43dad8a0ec717c85d0b9a765bd2eab",
+          "sha256": "c27538b309db6182e80483fa6d01325f98ad13433201d58236c6f23f31d51035",
+          "sha1": "92a247cc37644bae921cc368aa7c6d1cff1ccb2a",
+          "md5": "78072bc9d42c8f4c6a9219455134217e"
+        }
+      ]
+    },
+    {
+      "name": "mingwX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotest-property-arrow-optics-mingwx64-6.0.0-LOCAL-PRE-sources.jar",
+          "url": "kotest-property-arrow-optics-mingwx64-6.0.0-LOCAL-PRE-sources.jar",
+          "size": 5271,
+          "sha512": "b0aa690de09fe3d692815caa0efeabcc9ab7d6bef51824c3e7e53df0f91690be294293cbc4121cf8531588dd1a5b3a725cefa2c9c6387e8b4dd701de1d15fe16",
+          "sha256": "31669bb69c0409a059385c659213f9a1408467b801213ec61fc1852daeedf727",
+          "sha1": "9708b9f9672c101d46e491e9b04f415625030692",
+          "md5": "d49d957d3be0a85d7310c99eb3362544"
+        }
+      ]
+    }
+  ]
+}

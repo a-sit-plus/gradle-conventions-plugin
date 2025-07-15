@@ -1,0 +1,122 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-framework-engine/6.0.0-LOCAL-PRE/kotest-framework-engine-6.0.0-LOCAL-PRE.module",
+    "group": "io.kotest",
+    "module": "kotest-framework-engine",
+    "version": "6.0.0-LOCAL-PRE",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidNativeX86ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-test-common",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-test-annotations-common",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-test",
+          "version": {
+            "requires": "1.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-framework-engine-androidNativeX86Main-6.0.0-LOCAL-PRE.klib",
+          "url": "kotest-framework-engine-androidnativex86-6.0.0-LOCAL-PRE.klib",
+          "size": 895696,
+          "sha512": "a9ce1b0a0fc54ba7539f405b04bba452e167ea5912c4abe646d4d8001946cae2feba209542ce8413c21f6fb187c2495ed4b7bc890e2d56e07357cc6bb37506f1",
+          "sha256": "666b847fddc44176680dcd51cf206cb20b595ea5f058b424aa912065a1f36057",
+          "sha1": "aee7f444c0f7ff13876153e308090213ebcbf31d",
+          "md5": "dbe6e9355838bef979f143aa7332734f"
+        }
+      ]
+    },
+    {
+      "name": "androidNativeX86SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotest-framework-engine-androidnativex86-6.0.0-LOCAL-PRE-sources.jar",
+          "url": "kotest-framework-engine-androidnativex86-6.0.0-LOCAL-PRE-sources.jar",
+          "size": 254969,
+          "sha512": "cdf9587afa2d40784945c92b6758498cd02029e8d9480c556fd931c602a69e4f99c5e2dc5c74297aca1e9c60bccd3e37474de47103db922067f053be0b6d0196",
+          "sha256": "e5b07c38a7046a37355c93366c418aa2c4cc2fc59590893596f4f04215b35266",
+          "sha1": "227ab836a9feffbbe0580cd6e43c2f5123adb859",
+          "md5": "d6b5bb8d0e176cc07a7c33478c74625c"
+        }
+      ]
+    }
+  ]
+}

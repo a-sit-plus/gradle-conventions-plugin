@@ -1,0 +1,132 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-assertions-arrow/6.0.0-LOCAL-PRE/kotest-assertions-arrow-6.0.0-LOCAL-PRE.module",
+    "group": "io.kotest",
+    "module": "kotest-assertions-arrow",
+    "version": "6.0.0-LOCAL-PRE",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "tvosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-core",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-core",
+          "version": {
+            "requires": "2.1.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-arrow-tvosSimulatorArm64Main-6.0.0-LOCAL-PRE.klib",
+          "url": "kotest-assertions-arrow-tvossimulatorarm64-6.0.0-LOCAL-PRE.klib",
+          "size": 25814,
+          "sha512": "86042fc89cd343c226a9de7a6a025938a4290ed5b16b5e2c5d0696048d8bed5c54b355e4287e110cc6244a9b53d59b1d5768f78e0c600f5c62559b5bf3e97ddb",
+          "sha256": "8cf167671ad8ad0cc5a8bd9f38d4f062a04fa092ee0b0a58292677069f11d840",
+          "sha1": "80f00fcbca993608b4c3cc6eb33814291fe2dcf2",
+          "md5": "69e7e47d6e46c36e6a72605264115545"
+        }
+      ]
+    },
+    {
+      "name": "tvosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotest-assertions-arrow-tvossimulatorarm64-6.0.0-LOCAL-PRE-sources.jar",
+          "url": "kotest-assertions-arrow-tvossimulatorarm64-6.0.0-LOCAL-PRE-sources.jar",
+          "size": 5886,
+          "sha512": "47f310168f28a95b4891a58033e2d2f033c378cf1df484945f61e2246699c7a28d7f88b3ac756dec60b4eeeed90896f4320c7b8b11887ff1f20e5dbc5eb6f376",
+          "sha256": "c79bc48d7979091cdee82371143e7d9d6aee6075362a6cac7928162e416fce25",
+          "sha1": "4326d6be6dea17da849809ee10b7d03f17366b05",
+          "md5": "1b8fe5fcd85a859b5d4532f68c7d1e4f"
+        }
+      ]
+    },
+    {
+      "name": "tvosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-core",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-core",
+          "version": {
+            "requires": "2.1.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-arrow-tvossimulatorarm64-6.0.0-LOCAL-PRE-metadata.jar",
+          "url": "kotest-assertions-arrow-tvossimulatorarm64-6.0.0-LOCAL-PRE-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-assertions-kotlinx-datetime/6.0.0-LOCAL-PRE/kotest-assertions-kotlinx-datetime-6.0.0-LOCAL-PRE.module",
+    "group": "io.kotest",
+    "module": "kotest-assertions-kotlinx-datetime",
+    "version": "6.0.0-LOCAL-PRE",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "tvosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-datetime",
+          "version": {
+            "requires": "0.6.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-kotlinx-datetime-tvosX64Main-6.0.0-LOCAL-PRE.klib",
+          "url": "kotest-assertions-kotlinx-datetime-tvosx64-6.0.0-LOCAL-PRE.klib",
+          "size": 23920,
+          "sha512": "b4b39a41464142de5bc4cb05ca4835e6412432b20cbaeb9c367fa9c7accfbf0277da993f96e120d1ce6d46f39ae7255684e1111b19603e8ebc157fd1739b8c64",
+          "sha256": "e3a5832caaacb57c0f24f78c4fe3ef040876fafe502aae9c63ed68ff5cc5e503",
+          "sha1": "f69a3e73c1cbc95c495e4529b2d34afa7b56d293",
+          "md5": "b2c46a55eb7f745705ecdddc7b3a5749"
+        }
+      ]
+    },
+    {
+      "name": "tvosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotest-assertions-kotlinx-datetime-tvosx64-6.0.0-LOCAL-PRE-sources.jar",
+          "url": "kotest-assertions-kotlinx-datetime-tvosx64-6.0.0-LOCAL-PRE-sources.jar",
+          "size": 5894,
+          "sha512": "3c4de6915eb75ce5c779ab644be50368f319599a32a90792083f2b01924a992cab4482e49850a3a4e2594e20cc5e3743eb31b6d0689d44ea02917db3e172b86a",
+          "sha256": "caa4b864e009f1f040b1bbb4a76f0a4ed698f5625cc56a93553bc5730cd63822",
+          "sha1": "c35d27219f982a289125ae27434b952f613c7b43",
+          "md5": "b5e5cf5e1e0de91477301be67a048bf5"
+        }
+      ]
+    },
+    {
+      "name": "tvosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-datetime",
+          "version": {
+            "requires": "0.6.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-kotlinx-datetime-tvosx64-6.0.0-LOCAL-PRE-metadata.jar",
+          "url": "kotest-assertions-kotlinx-datetime-tvosx64-6.0.0-LOCAL-PRE-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

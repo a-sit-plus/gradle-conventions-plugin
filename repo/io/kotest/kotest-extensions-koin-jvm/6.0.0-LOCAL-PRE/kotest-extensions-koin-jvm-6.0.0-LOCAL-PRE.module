@@ -1,0 +1,150 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-extensions-koin/6.0.0-LOCAL-PRE/kotest-extensions-koin-6.0.0-LOCAL-PRE.module",
+    "group": "io.kotest",
+    "module": "kotest-extensions-koin",
+    "version": "6.0.0-LOCAL-PRE",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-koin-jvm-6.0.0-LOCAL-PRE.jar",
+          "url": "kotest-extensions-koin-jvm-6.0.0-LOCAL-PRE.jar",
+          "size": 7755,
+          "sha512": "fb566b104b81b7e82c4a6e166d87e4b7f7a3cad66ab76252e01b95531a8a698ae49ceadf4c2ee9e71769e7806b4e93f86fb169ab4bdfb11481e65febf4ddd40e",
+          "sha256": "f835ad0fa91bf16e06acaf7231dadb096f8dfb54044b20e93d1e55c73de73cb1",
+          "sha1": "6e8d6f1e695f3f4f4af1eb10d10dec406049dd53",
+          "md5": "6417d217c777a983b5c8b50b104ac5e4"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-runner-junit5",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.mockk",
+          "module": "mockk",
+          "version": {
+            "requires": "1.13.17"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-core",
+          "version": {
+            "requires": "4.0.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-test",
+          "version": {
+            "requires": "4.0.0"
+          },
+          "excludes": [
+            {
+              "group": "junit",
+              "module": "junit"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-koin-jvm-6.0.0-LOCAL-PRE.jar",
+          "url": "kotest-extensions-koin-jvm-6.0.0-LOCAL-PRE.jar",
+          "size": 7755,
+          "sha512": "fb566b104b81b7e82c4a6e166d87e4b7f7a3cad66ab76252e01b95531a8a698ae49ceadf4c2ee9e71769e7806b4e93f86fb169ab4bdfb11481e65febf4ddd40e",
+          "sha256": "f835ad0fa91bf16e06acaf7231dadb096f8dfb54044b20e93d1e55c73de73cb1",
+          "sha1": "6e8d6f1e695f3f4f4af1eb10d10dec406049dd53",
+          "md5": "6417d217c777a983b5c8b50b104ac5e4"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kotest-extensions-koin-jvm-6.0.0-LOCAL-PRE-sources.jar",
+          "url": "kotest-extensions-koin-jvm-6.0.0-LOCAL-PRE-sources.jar",
+          "size": 1914,
+          "sha512": "d24b705b1e846c21232846f56774368cfe714df6f42b41ef69fbcc10e781e1a6c7d4d8175a340a8b4cd987e437dc8797d84ebb373cdaeb2d2869f323ded03c44",
+          "sha256": "969a405501f838614b715e11b14f19f12fceb6cf5a992d43adc1a19e0564f908",
+          "sha1": "1ecdff34977c560614b258fd47225b380be410a5",
+          "md5": "513a077f681c429e302f50e55dc28ef1"
+        }
+      ]
+    }
+  ]
+}

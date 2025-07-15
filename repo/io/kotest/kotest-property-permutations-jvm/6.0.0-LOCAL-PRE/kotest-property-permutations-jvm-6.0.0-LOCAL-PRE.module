@@ -1,0 +1,165 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-property-permutations/6.0.0-LOCAL-PRE/kotest-property-permutations-6.0.0-LOCAL-PRE.module",
+    "group": "io.kotest",
+    "module": "kotest-property-permutations",
+    "version": "6.0.0-LOCAL-PRE",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-property-permutations-jvm-6.0.0-LOCAL-PRE.jar",
+          "url": "kotest-property-permutations-jvm-6.0.0-LOCAL-PRE.jar",
+          "size": 89674,
+          "sha512": "e47e38fb3e5e2107ca4a48d4f4fbe5bf88563edd576e0b8f936eb78c332a8dd2492e97036d2ce8e3ab11eb359d528197c7179ab8e16af544827f9ef75e6b8c2d",
+          "sha256": "53108a4975771485eba6ae8679b1fca42869303baf40420be229bde637a6ab2c",
+          "sha1": "ad3237e57fc3c79c66a091c8968c84b114118704",
+          "md5": "51383bb70378cc8895a6090db6b7a076"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-property-permutations-jvm-6.0.0-LOCAL-PRE.jar",
+          "url": "kotest-property-permutations-jvm-6.0.0-LOCAL-PRE.jar",
+          "size": 89674,
+          "sha512": "e47e38fb3e5e2107ca4a48d4f4fbe5bf88563edd576e0b8f936eb78c332a8dd2492e97036d2ce8e3ab11eb359d528197c7179ab8e16af544827f9ef75e6b8c2d",
+          "sha256": "53108a4975771485eba6ae8679b1fca42869303baf40420be229bde637a6ab2c",
+          "sha1": "ad3237e57fc3c79c66a091c8968c84b114118704",
+          "md5": "51383bb70378cc8895a6090db6b7a076"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kotest-property-permutations-jvm-6.0.0-LOCAL-PRE-sources.jar",
+          "url": "kotest-property-permutations-jvm-6.0.0-LOCAL-PRE-sources.jar",
+          "size": 23097,
+          "sha512": "6affddf5ec436918757340015315a840ce30740d7035a3ea0e1de303c46a795411d41e202033f95cefb3c0cd4aa1f253fbf62d6e48660c4caaf26555edce031e",
+          "sha256": "3b676ab2a6f25f4c0da6cf79d4b043ae943f6be5072106a8b8446bbbe2b7d427",
+          "sha1": "3d4d8c3cb18c918ad7f68ba3e8c16311c004a0d6",
+          "md5": "1aa59cb00d831290679dd54e63e3e193"
+        }
+      ]
+    }
+  ]
+}

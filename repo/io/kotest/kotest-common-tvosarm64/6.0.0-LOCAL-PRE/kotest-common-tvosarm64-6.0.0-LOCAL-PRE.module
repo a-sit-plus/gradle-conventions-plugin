@@ -1,0 +1,146 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-common/6.0.0-LOCAL-PRE/kotest-common-6.0.0-LOCAL-PRE.module",
+    "group": "io.kotest",
+    "module": "kotest-common",
+    "version": "6.0.0-LOCAL-PRE",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "tvosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-test",
+          "version": {
+            "requires": "1.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-common-tvosArm64Main-6.0.0-LOCAL-PRE.klib",
+          "url": "kotest-common-tvosarm64-6.0.0-LOCAL-PRE.klib",
+          "size": 28770,
+          "sha512": "f10878de9051a94449d0991ba52be054247df1f3031759f6e8e6f87f4f55bd22a44a15b8bad7334dd8758b3a11eba6c1570d8ee3e0d36e5723cfdccb673c1cf2",
+          "sha256": "157c7f40ba88ee94835418dcec383e71de011f7f6d66f81374bb2f6f84618781",
+          "sha1": "17cba7a2baa52119e9f150cd3d474fdde0074799",
+          "md5": "f8361195df0d87867ae704bfa2727d6f"
+        }
+      ]
+    },
+    {
+      "name": "tvosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotest-common-tvosarm64-6.0.0-LOCAL-PRE-sources.jar",
+          "url": "kotest-common-tvosarm64-6.0.0-LOCAL-PRE-sources.jar",
+          "size": 8119,
+          "sha512": "0caf444a201bf9d61f7d677787ee7974a0c20118a65e8c5293ed5291a9fa21a401f404ed7146d283da97d5716aaea0b0806d6388132bdfbcc830ed42183599c2",
+          "sha256": "95156022732dac7ca3157a3c11c4f21f40344bf258b48115ac68bd7559ee4fc9",
+          "sha1": "b1c173c573b0722ee82dfb3e1d2e1ed23292943e",
+          "md5": "7d6e3d9f2e28eda894bd6561856eddac"
+        }
+      ]
+    },
+    {
+      "name": "tvosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-test",
+          "version": {
+            "requires": "1.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-common-tvosarm64-6.0.0-LOCAL-PRE-metadata.jar",
+          "url": "kotest-common-tvosarm64-6.0.0-LOCAL-PRE-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

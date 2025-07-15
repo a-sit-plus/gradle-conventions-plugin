@@ -1,0 +1,172 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-extensions-koin/6.0.0-LOCAL-PRE/kotest-extensions-koin-6.0.0-LOCAL-PRE.module",
+    "group": "io.kotest",
+    "module": "kotest-extensions-koin",
+    "version": "6.0.0-LOCAL-PRE",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-core",
+          "version": {
+            "requires": "4.0.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-test",
+          "version": {
+            "requires": "4.0.0"
+          },
+          "excludes": [
+            {
+              "group": "junit",
+              "module": "junit"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-koin-iosX64Main-6.0.0-LOCAL-PRE.klib",
+          "url": "kotest-extensions-koin-iosx64-6.0.0-LOCAL-PRE.klib",
+          "size": 9794,
+          "sha512": "2ec37c8502001528919f2186d27d55a342ed340293a15d0af2e457ad8d1835b9e90c80aa48a5aba50611a42a35e3f56139fc3319dbd82e9accfa188fba4b0da4",
+          "sha256": "66cd9d040c25ce4d787cd49fb865c503e03015ba3b5d8d21be1e8b50bd1ea968",
+          "sha1": "6ff36b3ffb12cf7d20ddf058ea12f9b5bc51ad55",
+          "md5": "d4fac5836eb1c4bc56fccfc13d054f02"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotest-extensions-koin-iosx64-6.0.0-LOCAL-PRE-sources.jar",
+          "url": "kotest-extensions-koin-iosx64-6.0.0-LOCAL-PRE-sources.jar",
+          "size": 1914,
+          "sha512": "d24b705b1e846c21232846f56774368cfe714df6f42b41ef69fbcc10e781e1a6c7d4d8175a340a8b4cd987e437dc8797d84ebb373cdaeb2d2869f323ded03c44",
+          "sha256": "969a405501f838614b715e11b14f19f12fceb6cf5a992d43adc1a19e0564f908",
+          "sha1": "1ecdff34977c560614b258fd47225b380be410a5",
+          "md5": "513a077f681c429e302f50e55dc28ef1"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-core",
+          "version": {
+            "requires": "4.0.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-test",
+          "version": {
+            "requires": "4.0.0"
+          },
+          "excludes": [
+            {
+              "group": "junit",
+              "module": "junit"
+            }
+          ]
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-koin-iosx64-6.0.0-LOCAL-PRE-metadata.jar",
+          "url": "kotest-extensions-koin-iosx64-6.0.0-LOCAL-PRE-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

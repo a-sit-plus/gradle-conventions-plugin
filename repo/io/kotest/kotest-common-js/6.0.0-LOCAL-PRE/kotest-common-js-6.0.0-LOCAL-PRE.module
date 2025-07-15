@@ -1,0 +1,137 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-common/6.0.0-LOCAL-PRE/kotest-common-6.0.0-LOCAL-PRE.module",
+    "group": "io.kotest",
+    "module": "kotest-common",
+    "version": "6.0.0-LOCAL-PRE",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-common-js-6.0.0-LOCAL-PRE.klib",
+          "url": "kotest-common-js-6.0.0-LOCAL-PRE.klib",
+          "size": 28730,
+          "sha512": "d799a6792ad0f7fdafc8a2a483afdec9f69f9135044be32931281a8a18806e9f109d932a8907e6b8372e7dd50071f67af747cdd37aff13da69615aca0a12d2e7",
+          "sha256": "2d91b073f5d0a84d88c46ab0ee402ddaf56ed1dd97875d178e84ae39506ddddf",
+          "sha1": "58456aff34b98a45e0f4a0f322bef2d2532d0549",
+          "md5": "b61121f0d21eb0eb58030de385f7793d"
+        }
+      ]
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-test",
+          "version": {
+            "requires": "1.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-common-js-6.0.0-LOCAL-PRE.klib",
+          "url": "kotest-common-js-6.0.0-LOCAL-PRE.klib",
+          "size": 28730,
+          "sha512": "d799a6792ad0f7fdafc8a2a483afdec9f69f9135044be32931281a8a18806e9f109d932a8907e6b8372e7dd50071f67af747cdd37aff13da69615aca0a12d2e7",
+          "sha256": "2d91b073f5d0a84d88c46ab0ee402ddaf56ed1dd97875d178e84ae39506ddddf",
+          "sha1": "58456aff34b98a45e0f4a0f322bef2d2532d0549",
+          "md5": "b61121f0d21eb0eb58030de385f7793d"
+        }
+      ]
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "kotest-common-js-6.0.0-LOCAL-PRE-sources.jar",
+          "url": "kotest-common-js-6.0.0-LOCAL-PRE-sources.jar",
+          "size": 8693,
+          "sha512": "d54403c9e6281fc854e0cbb349fabc9fb15c12c4ea3409f654769c1cb2859daacb5892d8f02d19026084cbf0d7b54a12b1a341a900dad7aec8c14405ad802919",
+          "sha256": "b718f88d008864e4e6aa3c0802dab0ef3382b73b9b8d73a4c83dcaee87d0ea76",
+          "sha1": "6a0db8032aab04bfff4b1f0481cdfd2c974548dc",
+          "md5": "4a424923613977dc22e734e3f55b12ec"
+        }
+      ]
+    }
+  ]
+}

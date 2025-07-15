@@ -1,0 +1,123 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-common/6.0.0-LOCAL-PRE/kotest-common-6.0.0-LOCAL-PRE.module",
+    "group": "io.kotest",
+    "module": "kotest-common",
+    "version": "6.0.0-LOCAL-PRE",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-common-jvm-6.0.0-LOCAL-PRE.jar",
+          "url": "kotest-common-jvm-6.0.0-LOCAL-PRE.jar",
+          "size": 44259,
+          "sha512": "6e76fcd3e2d4b6c78d435e2a96551aca8428ba38e16ab70662663f2af33d52ef26e55d86f9163fc61d69cff34d63253d0c322362fe258b51c1594dfe314402ca",
+          "sha256": "8433a6c9c60958bdc6ae367c7f5df706b2f0ebcc0910cac2f191e98fece588bc",
+          "sha1": "6e140d49726a4f5c0cb51fc3d222adba953d332d",
+          "md5": "1e180fa7bcffe9d3e8e3f2732205f3ef"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-test",
+          "version": {
+            "requires": "1.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-common-jvm-6.0.0-LOCAL-PRE.jar",
+          "url": "kotest-common-jvm-6.0.0-LOCAL-PRE.jar",
+          "size": 44259,
+          "sha512": "6e76fcd3e2d4b6c78d435e2a96551aca8428ba38e16ab70662663f2af33d52ef26e55d86f9163fc61d69cff34d63253d0c322362fe258b51c1594dfe314402ca",
+          "sha256": "8433a6c9c60958bdc6ae367c7f5df706b2f0ebcc0910cac2f191e98fece588bc",
+          "sha1": "6e140d49726a4f5c0cb51fc3d222adba953d332d",
+          "md5": "1e180fa7bcffe9d3e8e3f2732205f3ef"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kotest-common-jvm-6.0.0-LOCAL-PRE-sources.jar",
+          "url": "kotest-common-jvm-6.0.0-LOCAL-PRE-sources.jar",
+          "size": 10717,
+          "sha512": "6dfc592d6352e8f2f40c22fbf0d06780a40e3085cd9e6cce3af758fe3b0e4aa251b07cac269cbf5b22bfb8b52481ef86d707b2a52e95029fd48b52524a989e29",
+          "sha256": "2099301749d0089f36150243e8db8eb9c3d899ef978406ff8fa19b46eede618b",
+          "sha1": "5b020077755ca7ab41b91798f594d173a0c2222a",
+          "md5": "14ce3d57ce353d52fe47458a2a8868a7"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-property-permutations/6.0.0-LOCAL-PRE/kotest-property-permutations-6.0.0-LOCAL-PRE.module",
+    "group": "io.kotest",
+    "module": "kotest-property-permutations",
+    "version": "6.0.0-LOCAL-PRE",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidNativeX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-property-permutations-androidNativeX64Main-6.0.0-LOCAL-PRE.klib",
+          "url": "kotest-property-permutations-androidnativex64-6.0.0-LOCAL-PRE.klib",
+          "size": 86442,
+          "sha512": "9f947cd31ae0920fa81cc58c9082948d4acd41a8ba8fe714dc9a6e0a66d72c54b9ecd9c850a96689ebb3886d15517d8b7613607466831fa5a5d68ad249d4e00e",
+          "sha256": "0a6aa68ea42377337d5a6f13a029106b99ba41ccddf69d5bb77ce51a972f886c",
+          "sha1": "21f9baae03cf06cc5443cbfd62e9be99df5f1eb7",
+          "md5": "4107f32f1dfe1b295b5a8ca1e0c9ff3a"
+        }
+      ]
+    },
+    {
+      "name": "androidNativeX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotest-property-permutations-androidnativex64-6.0.0-LOCAL-PRE-sources.jar",
+          "url": "kotest-property-permutations-androidnativex64-6.0.0-LOCAL-PRE-sources.jar",
+          "size": 22643,
+          "sha512": "ea996bacc1897a5ca866e5cd2f1307f4b1bb06f05bfdcb43ddb5cbe9d7e01b92030af4729d2c8c53ab0258218de15d411ed85d0c02603bbbd174e971fee53043",
+          "sha256": "1b0cf9b556bee7371b6e85976b5623e35183ac61d5507984729937cf9ff17852",
+          "sha1": "374f3d45bd73ed5594a4920a99d2bf8360233e61",
+          "md5": "bf424b8d1f25088f5f1f49824ae6db3b"
+        }
+      ]
+    }
+  ]
+}

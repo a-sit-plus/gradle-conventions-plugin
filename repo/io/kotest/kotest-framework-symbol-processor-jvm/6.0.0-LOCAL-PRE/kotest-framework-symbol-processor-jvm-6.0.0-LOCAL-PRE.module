@@ -1,0 +1,109 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-framework-symbol-processor/6.0.0-LOCAL-PRE/kotest-framework-symbol-processor-6.0.0-LOCAL-PRE.module",
+    "group": "io.kotest",
+    "module": "kotest-framework-symbol-processor",
+    "version": "6.0.0-LOCAL-PRE",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-framework-symbol-processor-jvm-6.0.0-LOCAL-PRE.jar",
+          "url": "kotest-framework-symbol-processor-jvm-6.0.0-LOCAL-PRE.jar",
+          "size": 15303,
+          "sha512": "60f4c77aa67d3eaedb2e78db8d6a195453c50dae228a4cd1c41738d747b71c3bec5d8048e6281142c58794ca102681b8e40e976ce01056cc2cea6b4c6ae3eb72",
+          "sha256": "80fa8b456ff8166480d9426401c68b6320dd500ab3e4f2f424b53ce9baf4b189",
+          "sha1": "ce262987af675fa8de0904501327b817383f1ce9",
+          "md5": "60594cd96237d56bae598f710650306f"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "com.google.devtools.ksp",
+          "module": "symbol-processing-api",
+          "version": {
+            "requires": "2.2.0-2.0.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-framework-symbol-processor-jvm-6.0.0-LOCAL-PRE.jar",
+          "url": "kotest-framework-symbol-processor-jvm-6.0.0-LOCAL-PRE.jar",
+          "size": 15303,
+          "sha512": "60f4c77aa67d3eaedb2e78db8d6a195453c50dae228a4cd1c41738d747b71c3bec5d8048e6281142c58794ca102681b8e40e976ce01056cc2cea6b4c6ae3eb72",
+          "sha256": "80fa8b456ff8166480d9426401c68b6320dd500ab3e4f2f424b53ce9baf4b189",
+          "sha1": "ce262987af675fa8de0904501327b817383f1ce9",
+          "md5": "60594cd96237d56bae598f710650306f"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kotest-framework-symbol-processor-jvm-6.0.0-LOCAL-PRE-sources.jar",
+          "url": "kotest-framework-symbol-processor-jvm-6.0.0-LOCAL-PRE-sources.jar",
+          "size": 4083,
+          "sha512": "bc1e11b329c9ffa07c310e4c0f23efb3bcaed95035a086792f0af18fffb18bae9bd7560df395f488e393bb772443b8bfe050f4a5e54c0bdb27d35b593fb4bf1b",
+          "sha256": "51adf8251923298693ac1ed9120c05994cf008cea90d472f92793f67ddb18060",
+          "sha1": "1d4011017062b59e8df5f5102bf4e09912e88f05",
+          "md5": "18dd77a4e42136f12c00e869d5d09a61"
+        }
+      ]
+    }
+  ]
+}

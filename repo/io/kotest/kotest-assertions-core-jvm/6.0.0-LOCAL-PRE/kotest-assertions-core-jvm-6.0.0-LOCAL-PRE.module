@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-assertions-core/6.0.0-LOCAL-PRE/kotest-assertions-core-6.0.0-LOCAL-PRE.module",
+    "group": "io.kotest",
+    "module": "kotest-assertions-core",
+    "version": "6.0.0-LOCAL-PRE",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-core-jvm-6.0.0-LOCAL-PRE.jar",
+          "url": "kotest-assertions-core-jvm-6.0.0-LOCAL-PRE.jar",
+          "size": 1343481,
+          "sha512": "736ac26b28ae9f54de0e5cae21e98a5fd69f0da9ff40be6c2d95526ea59b9991567fa5daec518b47d1b9c9b20f12635b02cc4246252e2c8ff3abec3368699bbb",
+          "sha256": "670ca9100acb5aa31e780a5a33006dbf33769f9480da4cd60c0b67e6ad38189e",
+          "sha1": "3ef06ab3320ecdaf5f147774a3665118165c7a34",
+          "md5": "af52eb4bc26be8bc175272efaa47008b"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-jdk8",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL-PRE"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-core-jvm-6.0.0-LOCAL-PRE.jar",
+          "url": "kotest-assertions-core-jvm-6.0.0-LOCAL-PRE.jar",
+          "size": 1343481,
+          "sha512": "736ac26b28ae9f54de0e5cae21e98a5fd69f0da9ff40be6c2d95526ea59b9991567fa5daec518b47d1b9c9b20f12635b02cc4246252e2c8ff3abec3368699bbb",
+          "sha256": "670ca9100acb5aa31e780a5a33006dbf33769f9480da4cd60c0b67e6ad38189e",
+          "sha1": "3ef06ab3320ecdaf5f147774a3665118165c7a34",
+          "md5": "af52eb4bc26be8bc175272efaa47008b"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kotest-assertions-core-jvm-6.0.0-LOCAL-PRE-sources.jar",
+          "url": "kotest-assertions-core-jvm-6.0.0-LOCAL-PRE-sources.jar",
+          "size": 170602,
+          "sha512": "a636ab9be3646f9cf66622f24233aed33248f81a61a0ef37c0ae7b8811149629b95c83e22556eba1f9fa571c266f4c65c1df778ce3bff078503c834615340a21",
+          "sha256": "f3d1a258174155a49081a5305ebc78f0ce726ba73080693e2c92c9ce044780a2",
+          "sha1": "157c3bbcb41dc0137f559a12b4d5334a14c51ab5",
+          "md5": "db7dcfc2dc5408df2baeb2b00b89e1f9"
+        }
+      ]
+    }
+  ]
+}
