@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-assertions-json/6.0.0-LOCAL/kotest-assertions-json-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-assertions-json",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains",
+          "module": "annotations",
+          "version": {
+            "requires": "26.0.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-json-wasm-js-6.0.0-LOCAL.klib",
+          "url": "kotest-assertions-json-wasm-js-6.0.0-LOCAL.klib",
+          "size": 120164,
+          "sha512": "1b2579c653ae757c7ff7d06b847d2b13419a3d4fad7d2e7131b598c6414109d7066f6f9bde17432cb46eb251b4d5c00bffdd47b4cf2e014bc6b3cf1ec9e00b7f",
+          "sha256": "f26fff3ebaf8ad05ea123f9fe11c7c2349c3a3290e9471f380bd6c5bb1081d7d",
+          "sha1": "df4febc0fdcc852a8a16a475d39390ac6b25d301",
+          "md5": "31edf8a20bad9cd5c6f9dec802a533a9"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains",
+          "module": "annotations",
+          "version": {
+            "requires": "26.0.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.6.3"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-core",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-json-wasm-js-6.0.0-LOCAL.klib",
+          "url": "kotest-assertions-json-wasm-js-6.0.0-LOCAL.klib",
+          "size": 120164,
+          "sha512": "1b2579c653ae757c7ff7d06b847d2b13419a3d4fad7d2e7131b598c6414109d7066f6f9bde17432cb46eb251b4d5c00bffdd47b4cf2e014bc6b3cf1ec9e00b7f",
+          "sha256": "f26fff3ebaf8ad05ea123f9fe11c7c2349c3a3290e9471f380bd6c5bb1081d7d",
+          "sha1": "df4febc0fdcc852a8a16a475d39390ac6b25d301",
+          "md5": "31edf8a20bad9cd5c6f9dec802a533a9"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "files": [
+        {
+          "name": "kotest-assertions-json-wasm-js-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-assertions-json-wasm-js-6.0.0-LOCAL-sources.jar",
+          "size": 20443,
+          "sha512": "eb8ebd7a643ae6f5902e5ad4e6f6b753755cf0478289fbb2f4fd880e3eaa0f58add77816bc2a0ce44de8fa4ff73596fee093e52d3e735244f97f4f41b6c78d63",
+          "sha256": "f3d8a5977f9e66616c5fef08b2efb4aa9c41a634c83f279e4128afc5bd88c269",
+          "sha1": "2527d6f2c4e9218f0948c09665b16bf2df036100",
+          "md5": "ec89d3f3d2f941bb3a864d85b529cb72"
+        }
+      ]
+    }
+  ]
+}

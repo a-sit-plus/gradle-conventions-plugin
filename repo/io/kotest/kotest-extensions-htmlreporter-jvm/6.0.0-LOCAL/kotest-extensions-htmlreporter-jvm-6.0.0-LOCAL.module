@@ -1,0 +1,116 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-extensions-htmlreporter/6.0.0-LOCAL/kotest-extensions-htmlreporter-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-extensions-htmlreporter",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-htmlreporter-jvm-6.0.0-LOCAL.jar",
+          "url": "kotest-extensions-htmlreporter-jvm-6.0.0-LOCAL.jar",
+          "size": 19687,
+          "sha512": "d73f3fd10b47284a7faacc4c3d539d25d86c8f598058242942897bc6c2c5833509d891932e7553fdf02b92de321d721fcb98c82eb3a71c6e679e4db29c20d6a2",
+          "sha256": "bff26ae3ddba7050dfea66113223e64d6a9df53922e017020f99c8d642e57f11",
+          "sha1": "31705de5e8017a7da4dd31bf49235be972456a91",
+          "md5": "fd876ec974104f5de17e311be1406b90"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "org.jdom",
+          "module": "jdom2",
+          "version": {
+            "requires": "2.0.6.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-htmlreporter-jvm-6.0.0-LOCAL.jar",
+          "url": "kotest-extensions-htmlreporter-jvm-6.0.0-LOCAL.jar",
+          "size": 19687,
+          "sha512": "d73f3fd10b47284a7faacc4c3d539d25d86c8f598058242942897bc6c2c5833509d891932e7553fdf02b92de321d721fcb98c82eb3a71c6e679e4db29c20d6a2",
+          "sha256": "bff26ae3ddba7050dfea66113223e64d6a9df53922e017020f99c8d642e57f11",
+          "sha1": "31705de5e8017a7da4dd31bf49235be972456a91",
+          "md5": "fd876ec974104f5de17e311be1406b90"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kotest-extensions-htmlreporter-jvm-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-extensions-htmlreporter-jvm-6.0.0-LOCAL-sources.jar",
+          "size": 3448,
+          "sha512": "e988122ddaf21fa0bb6ef7ea26490c2757ac1b3fb047dcebd0b2115269cf7eedeaa8949c43d80ccc18553f9c3943fdd31bdcbcaa291e81a0fafe81bc1babdf55",
+          "sha256": "6a191b4ae2460fd48e32d334039837a3c1918b82b25833743f4ccea6f6d9c20b",
+          "sha1": "bcc42556e1d5d7b708dd48e79a36e2b01f633d13",
+          "md5": "e40c16c17dbaf2fa714f7316917c199a"
+        }
+      ]
+    }
+  ]
+}

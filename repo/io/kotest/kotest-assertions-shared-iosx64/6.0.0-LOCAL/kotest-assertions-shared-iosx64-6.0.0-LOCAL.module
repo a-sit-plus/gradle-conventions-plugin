@@ -1,0 +1,146 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-assertions-shared/6.0.0-LOCAL/kotest-assertions-shared-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-assertions-shared",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-shared-iosX64Main-6.0.0-LOCAL.klib",
+          "url": "kotest-assertions-shared-iosx64-6.0.0-LOCAL.klib",
+          "size": 518944,
+          "sha512": "3f41ebf28a833ab540b7a35e6e713859a5a45cc7df9b3860d65a8bfd1d91110618dce37aa53232156dc55ed82ebca9f4dc38facbdff03c770e7a125b23201de4",
+          "sha256": "1132b7b13cc976a9ceb6318868d451cfb27f5f4b3f47e5c4840ac326e1e214ee",
+          "sha1": "739e3865e641531441b9192d6de63da8900400e0",
+          "md5": "79b813891ed8801a882900fcb2c90f50"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotest-assertions-shared-iosx64-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-assertions-shared-iosx64-6.0.0-LOCAL-sources.jar",
+          "size": 77938,
+          "sha512": "b5c969d0987f5e71a50f6010a1a80107871c9c489921b389014b0db501180b66806644aaf13ee5aadf824378e645262c6fe4a6f8d7c9c3c9f518524df0341505",
+          "sha256": "ba74c3e22c240c62b27a683cbe446dbfc3fe135c2b0cc0372cde386d888abe7f",
+          "sha1": "dd781dc336d4ffc1824a1d6d4e7c9f97c958f222",
+          "md5": "5cc81b4ff78f4fd9674c0a7ab0e9def4"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-shared-iosx64-6.0.0-LOCAL-metadata.jar",
+          "url": "kotest-assertions-shared-iosx64-6.0.0-LOCAL-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

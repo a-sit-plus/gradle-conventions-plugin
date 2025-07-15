@@ -1,0 +1,158 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-assertions-json/6.0.0-LOCAL/kotest-assertions-json-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-assertions-json",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains",
+          "module": "annotations",
+          "version": {
+            "requires": "26.0.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-json-js-6.0.0-LOCAL.klib",
+          "url": "kotest-assertions-json-js-6.0.0-LOCAL.klib",
+          "size": 120354,
+          "sha512": "43658863b76026c118b82988ea60bd4fdd976c59bccc332d1fbec4aed5e60a793df532ce1df134313a18871970bad20c033ac21fd0f5603bd1681a36bba84b10",
+          "sha256": "b4d36bb874ef7458ca0babeec6799e1c6ab9e7341fbed6e621fd538ffc2b0b99",
+          "sha1": "7397a69c988531cfb3c84c8d671e2793131ba59e",
+          "md5": "031e42cd1e70513886ef80c01f3fdf48"
+        }
+      ]
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains",
+          "module": "annotations",
+          "version": {
+            "requires": "26.0.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.6.3"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-core",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-json-js-6.0.0-LOCAL.klib",
+          "url": "kotest-assertions-json-js-6.0.0-LOCAL.klib",
+          "size": 120354,
+          "sha512": "43658863b76026c118b82988ea60bd4fdd976c59bccc332d1fbec4aed5e60a793df532ce1df134313a18871970bad20c033ac21fd0f5603bd1681a36bba84b10",
+          "sha256": "b4d36bb874ef7458ca0babeec6799e1c6ab9e7341fbed6e621fd538ffc2b0b99",
+          "sha1": "7397a69c988531cfb3c84c8d671e2793131ba59e",
+          "md5": "031e42cd1e70513886ef80c01f3fdf48"
+        }
+      ]
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "kotest-assertions-json-js-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-assertions-json-js-6.0.0-LOCAL-sources.jar",
+          "size": 20443,
+          "sha512": "eb8ebd7a643ae6f5902e5ad4e6f6b753755cf0478289fbb2f4fd880e3eaa0f58add77816bc2a0ce44de8fa4ff73596fee093e52d3e735244f97f4f41b6c78d63",
+          "sha256": "f3d8a5977f9e66616c5fef08b2efb4aa9c41a634c83f279e4128afc5bd88c269",
+          "sha1": "2527d6f2c4e9218f0948c09665b16bf2df036100",
+          "md5": "ec89d3f3d2f941bb3a864d85b529cb72"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>io.kotest</groupId>
+  <artifactId>kotest-property-androidnativex86</artifactId>
+  <versioning>
+    <latest>6.0.0-LOCAL</latest>
+    <release>6.0.0-LOCAL</release>
+    <versions>
+      <version>6.0.0-LOCAL</version>
+    </versions>
+    <lastUpdated>20250715072511</lastUpdated>
+  </versioning>
+</metadata>

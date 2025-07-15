@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-extensions-allure/6.0.0-LOCAL/kotest-extensions-allure-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-extensions-allure",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.qameta.allure",
+          "module": "allure-java-commons",
+          "version": {
+            "requires": "2.24.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-allure-jvm-6.0.0-LOCAL.jar",
+          "url": "kotest-extensions-allure-jvm-6.0.0-LOCAL.jar",
+          "size": 19553,
+          "sha512": "40a46641e46236582503b73ad60a2d4872022f56005f44d2e554282bc6cc0a40d74345d097d3bf1bc05ff52a071e1869c113f3034540bb4b50c27733d2750f18",
+          "sha256": "f41252eba216227c9d055a82f4238626ca69e0bd30870b814b5a51d8a2ad60ff",
+          "sha1": "0ce8179220b5c9baf2adf12284e09f468fbac434",
+          "md5": "0c4c65b52ad2f88cdc2fdf6225f7ca5d"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.qameta.allure",
+          "module": "allure-java-commons",
+          "version": {
+            "requires": "2.24.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-allure-jvm-6.0.0-LOCAL.jar",
+          "url": "kotest-extensions-allure-jvm-6.0.0-LOCAL.jar",
+          "size": 19553,
+          "sha512": "40a46641e46236582503b73ad60a2d4872022f56005f44d2e554282bc6cc0a40d74345d097d3bf1bc05ff52a071e1869c113f3034540bb4b50c27733d2750f18",
+          "sha256": "f41252eba216227c9d055a82f4238626ca69e0bd30870b814b5a51d8a2ad60ff",
+          "sha1": "0ce8179220b5c9baf2adf12284e09f468fbac434",
+          "md5": "0c4c65b52ad2f88cdc2fdf6225f7ca5d"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kotest-extensions-allure-jvm-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-extensions-allure-jvm-6.0.0-LOCAL-sources.jar",
+          "size": 4769,
+          "sha512": "d50600495f434c7a787176df87970c7cb49e22ec66f875e6634dcab4ec7e536bb63c9591ca4be3e095d36dff2aec02a7a46f393f64039017f7f2cba20aaaed74",
+          "sha256": "cfc0e4e266f6e46c0b54532aff56e673850a26fe5c34e583dd323128cd79a45b",
+          "sha1": "1155fee3609cfb217f100c58015866b1aeeddc1b",
+          "md5": "c1f67337feb170927ae14f3fe904eb1c"
+        }
+      ]
+    }
+  ]
+}

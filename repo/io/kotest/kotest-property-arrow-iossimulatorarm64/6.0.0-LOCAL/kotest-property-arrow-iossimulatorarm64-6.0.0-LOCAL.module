@@ -1,0 +1,160 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-property-arrow/6.0.0-LOCAL/kotest-property-arrow-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-property-arrow",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-optics",
+          "version": {
+            "requires": "2.1.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-functions",
+          "version": {
+            "requires": "2.1.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-property-arrow-iosSimulatorArm64Main-6.0.0-LOCAL.klib",
+          "url": "kotest-property-arrow-iossimulatorarm64-6.0.0-LOCAL.klib",
+          "size": 22721,
+          "sha512": "ebf9e10a919ac7bbb67682738357de15dd9879055063f7ca9a2aa29a6587c9e844f847e68bbc2b526b41efc9d13d89d751edb5acaee67f936eb23bda96341156",
+          "sha256": "4221fc414c880a2b8b0417e2773f4febbb2749c755873c4334dbd126ccef66d5",
+          "sha1": "148919c9f3ee3d32162cb73cc56c8c7fa7501519",
+          "md5": "83261ffff6d8c8009b64d22b86e77617"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotest-property-arrow-iossimulatorarm64-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-property-arrow-iossimulatorarm64-6.0.0-LOCAL-sources.jar",
+          "size": 5869,
+          "sha512": "01f2332f8fea760472bb4d9f2bb4f81ab3f3b16c43dc8072b40dfbe961e012ed461c69ea1937149f93305e5760994280d12babb4370643bfa618bc597f293ad8",
+          "sha256": "946d2d763280f02406abe7958afbb3f815ee3b18ee5ec78b5be170aa853a4589",
+          "sha1": "c50319cf0fedf615e37bf79dccde5b9ed1c5cdc6",
+          "md5": "1f4faa4bf55fcdb1f135020333f718e6"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-optics",
+          "version": {
+            "requires": "2.1.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-functions",
+          "version": {
+            "requires": "2.1.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-property-arrow-iossimulatorarm64-6.0.0-LOCAL-metadata.jar",
+          "url": "kotest-property-arrow-iossimulatorarm64-6.0.0-LOCAL-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

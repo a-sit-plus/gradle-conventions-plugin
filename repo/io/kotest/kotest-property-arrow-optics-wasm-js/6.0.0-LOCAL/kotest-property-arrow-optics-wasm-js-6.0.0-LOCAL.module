@@ -1,0 +1,151 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-property-arrow-optics/6.0.0-LOCAL/kotest-property-arrow-optics-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-property-arrow-optics",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-property-arrow",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-optics",
+          "version": {
+            "requires": "2.1.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-property-arrow-optics-wasm-js-6.0.0-LOCAL.klib",
+          "url": "kotest-property-arrow-optics-wasm-js-6.0.0-LOCAL.klib",
+          "size": 26226,
+          "sha512": "1969ff96929e903aee86172ab6e6e25a9c4bc07d2aa24382b57425816fbd2baa4b4547c02a3bf3e91b8efd94bd8af15174bf02836cf8d5ea0fbb6f88dca1558f",
+          "sha256": "8a6dcb79d501f85500e65b0388ebc677ce388def719416dda67af866042e2681",
+          "sha1": "5c8b05b6c9cbc70ae65e9441a3a2135c487003d7",
+          "md5": "8e93569a8f5c55bad599848c8fc547db"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-property-arrow",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-optics",
+          "version": {
+            "requires": "2.1.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-functions",
+          "version": {
+            "requires": "2.1.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-property-arrow-optics-wasm-js-6.0.0-LOCAL.klib",
+          "url": "kotest-property-arrow-optics-wasm-js-6.0.0-LOCAL.klib",
+          "size": 26226,
+          "sha512": "1969ff96929e903aee86172ab6e6e25a9c4bc07d2aa24382b57425816fbd2baa4b4547c02a3bf3e91b8efd94bd8af15174bf02836cf8d5ea0fbb6f88dca1558f",
+          "sha256": "8a6dcb79d501f85500e65b0388ebc677ce388def719416dda67af866042e2681",
+          "sha1": "5c8b05b6c9cbc70ae65e9441a3a2135c487003d7",
+          "md5": "8e93569a8f5c55bad599848c8fc547db"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "files": [
+        {
+          "name": "kotest-property-arrow-optics-wasm-js-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-property-arrow-optics-wasm-js-6.0.0-LOCAL-sources.jar",
+          "size": 5271,
+          "sha512": "b0aa690de09fe3d692815caa0efeabcc9ab7d6bef51824c3e7e53df0f91690be294293cbc4121cf8531588dd1a5b3a725cefa2c9c6387e8b4dd701de1d15fe16",
+          "sha256": "31669bb69c0409a059385c659213f9a1408467b801213ec61fc1852daeedf727",
+          "sha1": "9708b9f9672c101d46e491e9b04f415625030692",
+          "md5": "d49d957d3be0a85d7310c99eb3362544"
+        }
+      ]
+    }
+  ]
+}

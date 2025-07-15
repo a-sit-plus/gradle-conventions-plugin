@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>at.asitplus.gradle</groupId>
+  <artifactId>k2</artifactId>
+  <versioning>
+    <lastUpdated>20250715065242</lastUpdated>
+    <snapshot>
+      <timestamp>20250715.065242</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>20250715-20250715.065242-1</value>
+        <updated>20250715065242</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>module</extension>
+        <value>20250715-20250715.065242-1</value>
+        <updated>20250715065242</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>20250715-20250715.065242-1</value>
+        <updated>20250715065242</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>20250715-SNAPSHOT</version>
+</metadata>

@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kmpotest/20250715-SNAPSHOT/kmpotest-20250715-SNAPSHOT.module",
+    "group": "at.asitplus.gradle",
+    "module": "kmpotest",
+    "version": "20250715-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-jvm-20250715-SNAPSHOT.jar",
+          "url": "kmpotest-jvm-20250715-SNAPSHOT.jar",
+          "size": 91198,
+          "sha512": "2e6c59536b065dde97de86d64d0e99f9b44772c03fba43420d2e4e966bbb143945089ac37f5dcd69c7cfc1645bbc40a7186f5868db93876709f8ee464e985fc6",
+          "sha256": "c92e398f006375845b83c3bddbc1b783763da99c57304af4093386c1873a87eb",
+          "sha1": "4533fb4029ae21201fa0b2c73113b52e1ab239fa",
+          "md5": "ec76ac556ce51d1ce63ed322a9369f1a"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization",
+          "version": {
+            "requires": "0.91.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-io-core",
+          "version": {
+            "requires": "0.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-jvm-20250715-SNAPSHOT.jar",
+          "url": "kmpotest-jvm-20250715-SNAPSHOT.jar",
+          "size": 91198,
+          "sha512": "2e6c59536b065dde97de86d64d0e99f9b44772c03fba43420d2e4e966bbb143945089ac37f5dcd69c7cfc1645bbc40a7186f5868db93876709f8ee464e985fc6",
+          "sha256": "c92e398f006375845b83c3bddbc1b783763da99c57304af4093386c1873a87eb",
+          "sha1": "4533fb4029ae21201fa0b2c73113b52e1ab239fa",
+          "md5": "ec76ac556ce51d1ce63ed322a9369f1a"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kmpotest-jvm-20250715-SNAPSHOT-sources.jar",
+          "url": "kmpotest-jvm-20250715-SNAPSHOT-sources.jar",
+          "size": 4391,
+          "sha512": "af1f1cdc114751ca56b11515c7f3584c740d94d82b05ac5f78b3afc5021898980b99e733d86c19d2fe7029f0cf274744338001ff64a6451910a000a5007dd2a8",
+          "sha256": "af4bbdcdb77740edd694290c57b3930dffc62aba66d5c49e661a0c6b0c0f9bb8",
+          "sha1": "798a03a2eca046101fa2d4d125b6c4645dcd3f61",
+          "md5": "0ed60144397bab1f78d36cfdb4c76aef"
+        }
+      ]
+    }
+  ]
+}

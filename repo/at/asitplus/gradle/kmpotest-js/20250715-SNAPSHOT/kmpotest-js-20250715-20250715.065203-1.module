@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kmpotest/20250715-SNAPSHOT/kmpotest-20250715-SNAPSHOT.module",
+    "group": "at.asitplus.gradle",
+    "module": "kmpotest",
+    "version": "20250715-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-js-20250715-SNAPSHOT.klib",
+          "url": "kmpotest-js-20250715-SNAPSHOT.klib",
+          "size": 80540,
+          "sha512": "6cb9cb0b2c14b32bf09e7aede48958055538dbc875e9ccbfd6ac759dfaa17541c320193abaa8de3b9bbece4f50f5e61555a7241d488f9ffeb413a95dc0b625d5",
+          "sha256": "b23e01858c1029247d4a59f4d0a3f5454600f2dcb940b737d31659bed4f38455",
+          "sha1": "52c6bac0711e1b737ee8213aae525a278523295d",
+          "md5": "e8e6d05b06e66be1a2743f321e2a6565"
+        }
+      ]
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization",
+          "version": {
+            "requires": "0.91.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-io-core",
+          "version": {
+            "requires": "0.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-js-20250715-SNAPSHOT.klib",
+          "url": "kmpotest-js-20250715-SNAPSHOT.klib",
+          "size": 80540,
+          "sha512": "6cb9cb0b2c14b32bf09e7aede48958055538dbc875e9ccbfd6ac759dfaa17541c320193abaa8de3b9bbece4f50f5e61555a7241d488f9ffeb413a95dc0b625d5",
+          "sha256": "b23e01858c1029247d4a59f4d0a3f5454600f2dcb940b737d31659bed4f38455",
+          "sha1": "52c6bac0711e1b737ee8213aae525a278523295d",
+          "md5": "e8e6d05b06e66be1a2743f321e2a6565"
+        }
+      ]
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "kmpotest-js-20250715-SNAPSHOT-sources.jar",
+          "url": "kmpotest-js-20250715-SNAPSHOT-sources.jar",
+          "size": 4502,
+          "sha512": "391971515dffc78b990b8764dc52b8804310cbd78e9adb32860044eb49dbe4c5b078a209fc142a1ebd40df444c0b6b2aa8c8d98f05d7b7fb5b1f819c3f27bf73",
+          "sha256": "d74b84943a9ebb7b4bb1d1b250b2dd2f9b6282e988685f046b1506f18c375fca",
+          "sha1": "dd1e8dc7327ea9b004bdd37eebeaa0f9e912b7fd",
+          "md5": "10e87f211a22270d9c69ca375ba155e8"
+        }
+      ]
+    }
+  ]
+}

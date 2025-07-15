@@ -1,0 +1,158 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-framework-engine/6.0.0-LOCAL/kotest-framework-engine-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-framework-engine",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-framework-engine-wasm-js-6.0.0-LOCAL.klib",
+          "url": "kotest-framework-engine-wasm-js-6.0.0-LOCAL.klib",
+          "size": 909164,
+          "sha512": "1561a1a4849f33686e8ad41c63e69762c1824e2a25bda6fcc7e54a4a3d74fa213997426f58c9ec365d7dd2bb243eb8b9414a1c648b524b74079154e51fc3cac2",
+          "sha256": "86f209bfbb6055c42a68a19f866e0f36086e2aa7b72670623affa8f497bdd31d",
+          "sha1": "2aa7bfc135745525e1efe101a56b9fa328ac7cd5",
+          "md5": "40bf2643f06785895244480e92a4bbae"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-test",
+          "version": {
+            "requires": "1.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-framework-engine-wasm-js-6.0.0-LOCAL.klib",
+          "url": "kotest-framework-engine-wasm-js-6.0.0-LOCAL.klib",
+          "size": 909164,
+          "sha512": "1561a1a4849f33686e8ad41c63e69762c1824e2a25bda6fcc7e54a4a3d74fa213997426f58c9ec365d7dd2bb243eb8b9414a1c648b524b74079154e51fc3cac2",
+          "sha256": "86f209bfbb6055c42a68a19f866e0f36086e2aa7b72670623affa8f497bdd31d",
+          "sha1": "2aa7bfc135745525e1efe101a56b9fa328ac7cd5",
+          "md5": "40bf2643f06785895244480e92a4bbae"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "files": [
+        {
+          "name": "kotest-framework-engine-wasm-js-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-framework-engine-wasm-js-6.0.0-LOCAL-sources.jar",
+          "size": 259500,
+          "sha512": "fac3832af530faaaae8a4d14d35792bf0cf915a1393b6eb89d155f8ff17a09c7d65474760155d92b8e4e8919f30f0647524db01f9f484eda1892b03971a49df5",
+          "sha256": "a519d2a0d72728acbf73c50b41d4eea3758c58fd66d170d5b09e0471793a54f8",
+          "sha1": "78781c82f05f1dc8efe4c6a11db677920a2fa01a",
+          "md5": "85424218f539607cf25b4c85f4bff0f6"
+        }
+      ]
+    }
+  ]
+}

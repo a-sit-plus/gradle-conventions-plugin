@@ -1,0 +1,123 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-extensions-wiremock/6.0.0-LOCAL/kotest-extensions-wiremock-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-extensions-wiremock",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.wiremock",
+          "module": "wiremock-standalone",
+          "version": {
+            "requires": "3.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-wiremock-jvm-6.0.0-LOCAL.jar",
+          "url": "kotest-extensions-wiremock-jvm-6.0.0-LOCAL.jar",
+          "size": 5107,
+          "sha512": "b7319f542919580ebbebe1dc9274109c7e31f4e12ce1263a8d3fb6c582db0ae8cd117f0f1141976f3b486c993ef3fb276750e95c56d1edd3d7103405840838e6",
+          "sha256": "0a1ccd1ee290a8045ef6a9697f0be042b35fbfd32fe84daf9fe3f50e511d993e",
+          "sha1": "ae877ced97efc29f9c5c6f12d2d8a1c17d7819ae",
+          "md5": "6e8c1834d167da14229478be428f8cc9"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.wiremock",
+          "module": "wiremock-standalone",
+          "version": {
+            "requires": "3.11.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-wiremock-jvm-6.0.0-LOCAL.jar",
+          "url": "kotest-extensions-wiremock-jvm-6.0.0-LOCAL.jar",
+          "size": 5107,
+          "sha512": "b7319f542919580ebbebe1dc9274109c7e31f4e12ce1263a8d3fb6c582db0ae8cd117f0f1141976f3b486c993ef3fb276750e95c56d1edd3d7103405840838e6",
+          "sha256": "0a1ccd1ee290a8045ef6a9697f0be042b35fbfd32fe84daf9fe3f50e511d993e",
+          "sha1": "ae877ced97efc29f9c5c6f12d2d8a1c17d7819ae",
+          "md5": "6e8c1834d167da14229478be428f8cc9"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kotest-extensions-wiremock-jvm-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-extensions-wiremock-jvm-6.0.0-LOCAL-sources.jar",
+          "size": 1488,
+          "sha512": "485064e383f5a0844df22ad2949fce8e709f527513c7c9674a426416f98aa46571aa3e67d3ff69b7e6a916ccaef8cd485c4e703560b1e5638d1dda254aa35843",
+          "sha256": "8a942e9f70025a4151b7cf71538a29e21be9dea83e4eb9fa6fc7d2c45c35278a",
+          "sha1": "c83cb235c7b6cdfffad7cc721dbd52f3cf66cc9b",
+          "md5": "13b7ed889349cd887e2c22607af69c0d"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-extensions-blockhound/6.0.0-LOCAL/kotest-extensions-blockhound-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-extensions-blockhound",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-blockhound-jvm-6.0.0-LOCAL.jar",
+          "url": "kotest-extensions-blockhound-jvm-6.0.0-LOCAL.jar",
+          "size": 15657,
+          "sha512": "2fa86b06f8cbc501103d5242f78d5d82594c67ea0f84f5804d8045bff5738e762005dde708a5293a6128a43cd6ee4e83f78cabc01f45db31f5dba489f7d20907",
+          "sha256": "0c459451b0d3303d064213e12cb29ce3cfe8f0d89baa00600dc1b7e3459bfcc0",
+          "sha1": "2c0214f585f87e1682921bac2dbd9d1ac9aedb42",
+          "md5": "691bdadce0d047b0e547f9a74c363f73"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.projectreactor.tools",
+          "module": "blockhound",
+          "version": {
+            "requires": "1.0.13.RELEASE"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-debug",
+          "version": {
+            "requires": "1.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-blockhound-jvm-6.0.0-LOCAL.jar",
+          "url": "kotest-extensions-blockhound-jvm-6.0.0-LOCAL.jar",
+          "size": 15657,
+          "sha512": "2fa86b06f8cbc501103d5242f78d5d82594c67ea0f84f5804d8045bff5738e762005dde708a5293a6128a43cd6ee4e83f78cabc01f45db31f5dba489f7d20907",
+          "sha256": "0c459451b0d3303d064213e12cb29ce3cfe8f0d89baa00600dc1b7e3459bfcc0",
+          "sha1": "2c0214f585f87e1682921bac2dbd9d1ac9aedb42",
+          "md5": "691bdadce0d047b0e547f9a74c363f73"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kotest-extensions-blockhound-jvm-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-extensions-blockhound-jvm-6.0.0-LOCAL-sources.jar",
+          "size": 2651,
+          "sha512": "4c7fe4a3ac5901898ff9f9202b973e1524dd695888aba1802d036edf9037540761a9a433d02cf41209de8a152d0d05fd8c06283488dd1516ad6a5b4cad2eeec7",
+          "sha256": "2cfd695dcc5570a7f8a4449a2d0a613124ac15b347b61ba9100cee0c67f917dd",
+          "sha1": "9ae2f8cebf28c20f12469d7f299992a055553ccd",
+          "md5": "50e95b9a62e51cfe05daa3779fb057c1"
+        }
+      ]
+    }
+  ]
+}

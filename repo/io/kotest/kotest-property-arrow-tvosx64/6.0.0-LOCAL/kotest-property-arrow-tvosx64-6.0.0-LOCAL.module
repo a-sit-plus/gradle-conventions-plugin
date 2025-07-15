@@ -1,0 +1,160 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-property-arrow/6.0.0-LOCAL/kotest-property-arrow-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-property-arrow",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "tvosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-optics",
+          "version": {
+            "requires": "2.1.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-functions",
+          "version": {
+            "requires": "2.1.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-property-arrow-tvosX64Main-6.0.0-LOCAL.klib",
+          "url": "kotest-property-arrow-tvosx64-6.0.0-LOCAL.klib",
+          "size": 22650,
+          "sha512": "266b1cc353475e05f0f2cf991397d24c3395e7a6477591945bb7b3cc966df8a693db55e44d943d62a7f22a63ee24c37e37108606ac65b4690a60e8b733ebd61d",
+          "sha256": "1cbb3ddc63f68034f3a85455a3e7f87fc225883e7ce1cfdd35f544bd3736da6f",
+          "sha1": "c858343249413a98be83c7426a3c1903815fae4f",
+          "md5": "1f3873c0340d1d775f870d7a4d7689e6"
+        }
+      ]
+    },
+    {
+      "name": "tvosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotest-property-arrow-tvosx64-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-property-arrow-tvosx64-6.0.0-LOCAL-sources.jar",
+          "size": 5869,
+          "sha512": "01f2332f8fea760472bb4d9f2bb4f81ab3f3b16c43dc8072b40dfbe961e012ed461c69ea1937149f93305e5760994280d12babb4370643bfa618bc597f293ad8",
+          "sha256": "946d2d763280f02406abe7958afbb3f815ee3b18ee5ec78b5be170aa853a4589",
+          "sha1": "c50319cf0fedf615e37bf79dccde5b9ed1c5cdc6",
+          "md5": "1f4faa4bf55fcdb1f135020333f718e6"
+        }
+      ]
+    },
+    {
+      "name": "tvosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-optics",
+          "version": {
+            "requires": "2.1.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-functions",
+          "version": {
+            "requires": "2.1.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-property-arrow-tvosx64-6.0.0-LOCAL-metadata.jar",
+          "url": "kotest-property-arrow-tvosx64-6.0.0-LOCAL-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

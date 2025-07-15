@@ -1,0 +1,123 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-extensions/6.0.0-LOCAL/kotest-extensions-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-extensions",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-jvm-6.0.0-LOCAL.jar",
+          "url": "kotest-extensions-jvm-6.0.0-LOCAL.jar",
+          "size": 47744,
+          "sha512": "d340aeb2b393230fcd46b29b1dcace6a12e803bc95553d224cdb550957c54f99b326823ce80d1a9a1f74730612055dae1f0be4df9e622c45c339481b8e459634",
+          "sha256": "4128046d8fb877abd686aa7e6657f90b1d299eec372b090f3bc51caa2a78de59",
+          "sha1": "89a4c8d946bdc39f188f62ee5c74b300d5b12c05",
+          "md5": "61d8ef8cb5245951ad7ad9ec5aa77231"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-jvm-6.0.0-LOCAL.jar",
+          "url": "kotest-extensions-jvm-6.0.0-LOCAL.jar",
+          "size": 47744,
+          "sha512": "d340aeb2b393230fcd46b29b1dcace6a12e803bc95553d224cdb550957c54f99b326823ce80d1a9a1f74730612055dae1f0be4df9e622c45c339481b8e459634",
+          "sha256": "4128046d8fb877abd686aa7e6657f90b1d299eec372b090f3bc51caa2a78de59",
+          "sha1": "89a4c8d946bdc39f188f62ee5c74b300d5b12c05",
+          "md5": "61d8ef8cb5245951ad7ad9ec5aa77231"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kotest-extensions-jvm-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-extensions-jvm-6.0.0-LOCAL-sources.jar",
+          "size": 8181,
+          "sha512": "fdfde05682137630922d1083c69be5add2e47e70bfd2568ebbdd06d0f3832dd5a35f0485eca28d070944e9982796a1cd47a013f8060b804ae85dacf1d1fc8a38",
+          "sha256": "2a4805a7eaef406e19ac436ab69ef8d41a1b87d743765526a3967d1043473820",
+          "sha1": "670719cbb9a7c3ada7f39b50610e1264adc83ef5",
+          "md5": "ab2ea6912c28c1591c92c16e253f52d5"
+        }
+      ]
+    }
+  ]
+}

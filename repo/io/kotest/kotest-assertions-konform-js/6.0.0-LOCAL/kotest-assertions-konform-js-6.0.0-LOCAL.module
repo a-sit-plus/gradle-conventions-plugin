@@ -1,0 +1,137 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-assertions-konform/6.0.0-LOCAL/kotest-assertions-konform-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-assertions-konform",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-konform-js-6.0.0-LOCAL.klib",
+          "url": "kotest-assertions-konform-js-6.0.0-LOCAL.klib",
+          "size": 7255,
+          "sha512": "e04547d58d57155adb08b80c06880a7c3583f05b0142cbc936815e83c810a096ec2cb01771fc0d5493a5bec2ef44f29e7b6c5a7618db87fb4c3f26112e3d3c8a",
+          "sha256": "dc6d1e1b765aebf9ba3f887f905021977eab754f76227a222e7e51367139561d",
+          "sha1": "89169e6a9b4ff79760b87c254f48a6eef45b063d",
+          "md5": "ded25faa55aa7ca6b84e03f9dc4a44e0"
+        }
+      ]
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-core",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.konform",
+          "module": "konform",
+          "version": {
+            "requires": "0.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-konform-js-6.0.0-LOCAL.klib",
+          "url": "kotest-assertions-konform-js-6.0.0-LOCAL.klib",
+          "size": 7255,
+          "sha512": "e04547d58d57155adb08b80c06880a7c3583f05b0142cbc936815e83c810a096ec2cb01771fc0d5493a5bec2ef44f29e7b6c5a7618db87fb4c3f26112e3d3c8a",
+          "sha256": "dc6d1e1b765aebf9ba3f887f905021977eab754f76227a222e7e51367139561d",
+          "sha1": "89169e6a9b4ff79760b87c254f48a6eef45b063d",
+          "md5": "ded25faa55aa7ca6b84e03f9dc4a44e0"
+        }
+      ]
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "kotest-assertions-konform-js-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-assertions-konform-js-6.0.0-LOCAL-sources.jar",
+          "size": 1533,
+          "sha512": "9dad5d7b6c8e098f3760c41c47d91557ed0185eb3bb32a238014c33b5f8c4543bf2147a98d8f7e953daac7112553968cbf2ad5c098380a7b012a3999d1e1555d",
+          "sha256": "bd40aba3ef3bd047b26e471f5b0430581b6ee0f926a0682f52c4e6a72859edd9",
+          "sha1": "50c182a4d8f0c2b3641def2caa1d4eee44bd7dce",
+          "md5": "2bff17d389f5a20f65fc89fe38a4bb60"
+        }
+      ]
+    }
+  ]
+}

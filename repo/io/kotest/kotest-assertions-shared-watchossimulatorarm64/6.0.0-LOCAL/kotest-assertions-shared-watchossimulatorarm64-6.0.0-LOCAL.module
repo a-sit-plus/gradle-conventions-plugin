@@ -1,0 +1,146 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-assertions-shared/6.0.0-LOCAL/kotest-assertions-shared-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-assertions-shared",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "watchosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-shared-watchosSimulatorArm64Main-6.0.0-LOCAL.klib",
+          "url": "kotest-assertions-shared-watchossimulatorarm64-6.0.0-LOCAL.klib",
+          "size": 519049,
+          "sha512": "e52a877f7618126406fd7f045d446a34b3bbb366e96a94297217439844a20faf8e6268ba64549a8e816254fac11780f7963bc51f14b7e5b9f5ad9a8a89c069a3",
+          "sha256": "ca17b75691af2905d91e68343afe1d43ec39188b10dd7d0c03d363d46b7e51d2",
+          "sha1": "7d149386566dbf74d877837a832ae7001e189315",
+          "md5": "6005d5ece03f3698ba80e726e1326fcc"
+        }
+      ]
+    },
+    {
+      "name": "watchosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotest-assertions-shared-watchossimulatorarm64-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-assertions-shared-watchossimulatorarm64-6.0.0-LOCAL-sources.jar",
+          "size": 77938,
+          "sha512": "b5c969d0987f5e71a50f6010a1a80107871c9c489921b389014b0db501180b66806644aaf13ee5aadf824378e645262c6fe4a6f8d7c9c3c9f518524df0341505",
+          "sha256": "ba74c3e22c240c62b27a683cbe446dbfc3fe135c2b0cc0372cde386d888abe7f",
+          "sha1": "dd781dc336d4ffc1824a1d6d4e7c9f97c958f222",
+          "md5": "5cc81b4ff78f4fd9674c0a7ab0e9def4"
+        }
+      ]
+    },
+    {
+      "name": "watchosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-shared-watchossimulatorarm64-6.0.0-LOCAL-metadata.jar",
+          "url": "kotest-assertions-shared-watchossimulatorarm64-6.0.0-LOCAL-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

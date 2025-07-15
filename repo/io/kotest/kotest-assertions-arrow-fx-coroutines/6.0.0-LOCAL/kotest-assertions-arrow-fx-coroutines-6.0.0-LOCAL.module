@@ -1,0 +1,983 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.kotest",
+    "module": "kotest-assertions-arrow-fx-coroutines",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "metadataApiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-arrow",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-fx-coroutines",
+          "version": {
+            "requires": "2.1.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-arrow-fx-coroutines-metadata-6.0.0-LOCAL.jar",
+          "url": "kotest-assertions-arrow-fx-coroutines-6.0.0-LOCAL.jar",
+          "size": 6227,
+          "sha512": "d84986e28eb0316cb09fc9e0eb281d40625eb7b2f289ae4270ce40737fb7c3a0f234e6e79f2495b83555703fadaa7d0836ed449e7133617889f65a44a784e9ae",
+          "sha256": "a66e148c8fb9122ba2ddfccd4e63bc281594980aa2e4e0fe6609a0e7eb90bcac",
+          "sha1": "50b7a920d51be53ecad21fe5a60dc60cb0c0bc93",
+          "md5": "ed9de53b6337d2cf37e2764686bb2160"
+        }
+      ]
+    },
+    {
+      "name": "metadataSourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "files": [
+        {
+          "name": "kotest-assertions-arrow-fx-coroutines-kotlin-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-assertions-arrow-fx-coroutines-6.0.0-LOCAL-sources.jar",
+          "size": 5182,
+          "sha512": "97b35792098da52be5ab07d619a60f04798ededce71a7e0cd892310abcbdd4c028eac84dacf1f9dfed4861d10c8282a83152f62f28e551fc2d2a8e1a80973548",
+          "sha256": "6929929f1d5c6a03094dc1e1e38a8f5be54df790235e94a5d9a9cd55ed4142ae",
+          "sha1": "233e5f770f464a77f489a78280a762a4b20bc822",
+          "md5": "d794af342155e408c597894a98027777"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-iosarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-iosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-iosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-iosarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-iosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-iosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-iosarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-iosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-iosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-iossimulatorarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-iossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-iossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-iossimulatorarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-iossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-iossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-iossimulatorarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-iossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-iossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-iosx64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-iosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-iosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-iosx64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-iosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-iosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-iosx64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-iosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-iosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-js/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-js-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-js",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-js/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-js-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-js",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-js/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-js-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-js",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-jvm/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-jvm-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-jvm",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-jvm/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-jvm-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-jvm",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-jvm/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-jvm-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-jvm",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "linuxArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-linuxarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-linuxarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-linuxarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "linuxArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-linuxarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-linuxarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-linuxarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "linuxX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-linuxx64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-linuxx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-linuxx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "linuxX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-linuxx64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-linuxx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-linuxx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "macosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-macosarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-macosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-macosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "macosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-macosarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-macosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-macosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "macosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-macosarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-macosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-macosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "macosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-macosx64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-macosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-macosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "macosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-macosx64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-macosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-macosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "macosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-macosx64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-macosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-macosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "mingwX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-mingwx64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-mingwx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-mingwx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "mingwX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-mingwx64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-mingwx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-mingwx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-tvosarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-tvosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-tvosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-tvosarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-tvosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-tvosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-tvosarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-tvosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-tvosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-tvossimulatorarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-tvossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-tvossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-tvossimulatorarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-tvossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-tvossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-tvossimulatorarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-tvossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-tvossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-tvosx64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-tvosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-tvosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-tvosx64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-tvosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-tvosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-tvosx64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-tvosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-tvosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-wasm-js/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-wasm-js-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-wasm-js",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-wasm-js/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-wasm-js-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-wasm-js",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-wasm-js/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-wasm-js-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-wasm-js",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosArm32ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-watchosarm32/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-watchosarm32-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-watchosarm32",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosArm32SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-watchosarm32/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-watchosarm32-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-watchosarm32",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosArm32MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-watchosarm32/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-watchosarm32-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-watchosarm32",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-watchosarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-watchosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-watchosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-watchosarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-watchosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-watchosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-watchosarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-watchosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-watchosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-watchossimulatorarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-watchossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-watchossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-watchossimulatorarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-watchossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-watchossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-watchossimulatorarm64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-watchossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-watchossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-watchosx64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-watchosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-watchosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-watchosx64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-watchosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-watchosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-arrow-fx-coroutines-watchosx64/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-watchosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-arrow-fx-coroutines-watchosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-extensions-now/6.0.0-LOCAL/kotest-extensions-now-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-extensions-now",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-now-jvm-6.0.0-LOCAL.jar",
+          "url": "kotest-extensions-now-jvm-6.0.0-LOCAL.jar",
+          "size": 10081,
+          "sha512": "f0fa0952671a50a726c82d18da11349d973f68573a2323f6ebd7644ca8783749a618eea9897b2ffd734d0be4842f233544297d2fa15129deec36297577c4678f",
+          "sha256": "931d8a22224cf04336367529a910b1df34dbc7b7c5cfc86b6792799d3b629bea",
+          "sha1": "07abc1e61cafcab0ffbca54bcde1529414ff5eb5",
+          "md5": "db1a174ac50e71354c13b4dd6dda1886"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.mockk",
+          "module": "mockk",
+          "version": {
+            "requires": "1.13.17"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-extensions-now-jvm-6.0.0-LOCAL.jar",
+          "url": "kotest-extensions-now-jvm-6.0.0-LOCAL.jar",
+          "size": 10081,
+          "sha512": "f0fa0952671a50a726c82d18da11349d973f68573a2323f6ebd7644ca8783749a618eea9897b2ffd734d0be4842f233544297d2fa15129deec36297577c4678f",
+          "sha256": "931d8a22224cf04336367529a910b1df34dbc7b7c5cfc86b6792799d3b629bea",
+          "sha1": "07abc1e61cafcab0ffbca54bcde1529414ff5eb5",
+          "md5": "db1a174ac50e71354c13b4dd6dda1886"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kotest-extensions-now-jvm-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-extensions-now-jvm-6.0.0-LOCAL-sources.jar",
+          "size": 2230,
+          "sha512": "a87224990abb8ea91d1b68738f8e171ee09529cf8630faca3755c5215b21647eec3ab1c3de783d4dee4339aa1bc37338eec99144978f9f08379869fe2ce06b87",
+          "sha256": "71949ed0c5375b37317b39eeaf9bbfc14954a7b89de609aeccd577ab94db2cc9",
+          "sha1": "91a06d54543c06c57da101c7b6a32ee93292f890",
+          "md5": "9d024edad94d85b70f1aaad71e71e84f"
+        }
+      ]
+    }
+  ]
+}

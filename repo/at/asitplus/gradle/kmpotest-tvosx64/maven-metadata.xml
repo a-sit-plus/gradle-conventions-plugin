@@ -3,11 +3,10 @@
   <groupId>at.asitplus.gradle</groupId>
   <artifactId>kmpotest-tvosx64</artifactId>
   <versioning>
-    <latest>20250714</latest>
-    <release>20250714</release>
+    <latest>20250715-SNAPSHOT</latest>
     <versions>
-      <version>20250714</version>
+      <version>20250715-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20250714085616</lastUpdated>
+    <lastUpdated>20250715065321</lastUpdated>
   </versioning>
 </metadata>

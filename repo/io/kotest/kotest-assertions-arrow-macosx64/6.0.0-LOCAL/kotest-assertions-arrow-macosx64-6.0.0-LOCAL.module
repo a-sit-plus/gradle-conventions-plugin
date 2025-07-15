@@ -1,0 +1,132 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-assertions-arrow/6.0.0-LOCAL/kotest-assertions-arrow-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-assertions-arrow",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "macosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-core",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-core",
+          "version": {
+            "requires": "2.1.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-arrow-macosX64Main-6.0.0-LOCAL.klib",
+          "url": "kotest-assertions-arrow-macosx64-6.0.0-LOCAL.klib",
+          "size": 25742,
+          "sha512": "99e6c170bec517cc771bbc9bad7267c49cf4a82bbe9f026dfc6e5fcacbf96fceef9cd672151a42d77b883bcb7c08f3716f7da4bbe91ff7dc4d775e28afc6fb8f",
+          "sha256": "e2ab32f8723043e9453e65c57517fa92e38554a9b148d9560112608ad5bfb6f9",
+          "sha1": "1f34b2dd03c5ae7a55df680e260be67e7153c36e",
+          "md5": "9b72e56bd7c1e96732455f1bed19e25f"
+        }
+      ]
+    },
+    {
+      "name": "macosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotest-assertions-arrow-macosx64-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-assertions-arrow-macosx64-6.0.0-LOCAL-sources.jar",
+          "size": 5886,
+          "sha512": "47f310168f28a95b4891a58033e2d2f033c378cf1df484945f61e2246699c7a28d7f88b3ac756dec60b4eeeed90896f4320c7b8b11887ff1f20e5dbc5eb6f376",
+          "sha256": "c79bc48d7979091cdee82371143e7d9d6aee6075362a6cac7928162e416fce25",
+          "sha1": "4326d6be6dea17da849809ee10b7d03f17366b05",
+          "md5": "1b8fe5fcd85a859b5d4532f68c7d1e4f"
+        }
+      ]
+    },
+    {
+      "name": "macosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-core",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-core",
+          "version": {
+            "requires": "2.1.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-arrow-macosx64-6.0.0-LOCAL-metadata.jar",
+          "url": "kotest-assertions-arrow-macosx64-6.0.0-LOCAL-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

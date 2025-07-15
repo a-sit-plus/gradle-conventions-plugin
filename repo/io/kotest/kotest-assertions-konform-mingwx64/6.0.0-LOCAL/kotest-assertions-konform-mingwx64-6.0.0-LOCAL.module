@@ -1,0 +1,94 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-assertions-konform/6.0.0-LOCAL/kotest-assertions-konform-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-assertions-konform",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "mingwX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-core",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.konform",
+          "module": "konform",
+          "version": {
+            "requires": "0.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-konform-mingwX64Main-6.0.0-LOCAL.klib",
+          "url": "kotest-assertions-konform-mingwx64-6.0.0-LOCAL.klib",
+          "size": 7482,
+          "sha512": "69c44e4fea86618f75a222fef5fecde73f79215a4f9ebb93f45db6cf6241bde372ded90ff1e008e1909cab0768b4dd3c42115e5ad538448c5805394fc4ea732c",
+          "sha256": "b2deb5808e169003950041c8758a2f93e6b5dd9fc6a9c4d05a17f64718600fb8",
+          "sha1": "f26202e672c9531f1a2bb13bf00e942637244e95",
+          "md5": "da488e0d0c2ef80a6a4e88a68cc61007"
+        }
+      ]
+    },
+    {
+      "name": "mingwX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotest-assertions-konform-mingwx64-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-assertions-konform-mingwx64-6.0.0-LOCAL-sources.jar",
+          "size": 1533,
+          "sha512": "9dad5d7b6c8e098f3760c41c47d91557ed0185eb3bb32a238014c33b5f8c4543bf2147a98d8f7e953daac7112553968cbf2ad5c098380a7b012a3999d1e1555d",
+          "sha256": "bd40aba3ef3bd047b26e471f5b0430581b6ee0f926a0682f52c4e6a72859edd9",
+          "sha1": "50c182a4d8f0c2b3641def2caa1d4eee44bd7dce",
+          "md5": "2bff17d389f5a20f65fc89fe38a4bb60"
+        }
+      ]
+    }
+  ]
+}

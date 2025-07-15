@@ -1,0 +1,87 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-property-datetime/6.0.0-LOCAL/kotest-property-datetime-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-property-datetime",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidNativeArm32ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-datetime",
+          "version": {
+            "requires": "0.6.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-property-datetime-androidNativeArm32Main-6.0.0-LOCAL.klib",
+          "url": "kotest-property-datetime-androidnativearm32-6.0.0-LOCAL.klib",
+          "size": 7952,
+          "sha512": "c5283ea4c2e2f3b9c37d012cc8630909cd0a3cd0b47192b43f2d5bce7435c331c32ada8544da85051680bca82de886ed7e7193bb224bf7e2887e5e60779add6d",
+          "sha256": "1850642a734980ace010fc22370cb81a3e6eaa08da9dda9594f0f6a6ed6769e6",
+          "sha1": "ac121bcc0a73c6870a30b96530e566b156a4345a",
+          "md5": "6738acb8da62eb672f7e656f90877455"
+        }
+      ]
+    },
+    {
+      "name": "androidNativeArm32SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kotest-property-datetime-androidnativearm32-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-property-datetime-androidnativearm32-6.0.0-LOCAL-sources.jar",
+          "size": 2321,
+          "sha512": "244f648dfc6340d235d3d4977a11ebf90807554457d265b8bd8f18d38968ab409d24e7b95c784c908f63395d405d73b08cb02ce3df7a70f041578871f9470614",
+          "sha256": "bd65a98761fda08f9bd822ccd321ff8fa5d08e39bf650a01315ab9cf6e52d277",
+          "sha1": "7399b8325c330f539f1ddc48b203a006a9304612",
+          "md5": "1a0b7fcd34fb52e48d8169b2bddf2f3a"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1161 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.kotest",
+    "module": "kotest-assertions-shared",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "metadataApiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-reflect",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-common",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-shared-metadata-6.0.0-LOCAL.jar",
+          "url": "kotest-assertions-shared-6.0.0-LOCAL.jar",
+          "size": 77397,
+          "sha512": "c45d31362a7cb289b30a2077317df7075844c710a070cd769a5a4ba145e0f17965f3cda202266ada75393622ce52f25aff6a990c46a75e76324bf53e984b1c71",
+          "sha256": "b5bc32fd1d99373ce602c33776b9a8c13afb559954754c96f9d84ddd93bfb11b",
+          "sha1": "6b78a751fd7dfedca9cdce021e3eb0c56be818fb",
+          "md5": "602bae0b4b4efc36a5fd968db72ae0e4"
+        }
+      ]
+    },
+    {
+      "name": "metadataSourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "files": [
+        {
+          "name": "kotest-assertions-shared-kotlin-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-assertions-shared-6.0.0-LOCAL-sources.jar",
+          "size": 81095,
+          "sha512": "7bf1371f05ecd88a640d1454b070e52438bb513405ba2db163d935f4923696c13d05f3e5377fcb1eca86a1f8296191dd42bc05baf262a1ca1a11100b58043fdf",
+          "sha256": "3f290742bb6c3f4201a3f4aeebbef234719eee154c5bdcde9f9bf74861b78ae5",
+          "sha1": "fcddecdce6aeac85cd4315f46f68b63b7ad68395",
+          "md5": "447f3e100909a4a4aa62c3c53c4950a1"
+        }
+      ]
+    },
+    {
+      "name": "androidNativeArm32ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-androidnativearm32/6.0.0-LOCAL/kotest-assertions-shared-androidnativearm32-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-androidnativearm32",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "androidNativeArm32SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-androidnativearm32/6.0.0-LOCAL/kotest-assertions-shared-androidnativearm32-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-androidnativearm32",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "androidNativeArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-androidnativearm64/6.0.0-LOCAL/kotest-assertions-shared-androidnativearm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-androidnativearm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "androidNativeArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-androidnativearm64/6.0.0-LOCAL/kotest-assertions-shared-androidnativearm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-androidnativearm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "androidNativeX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-androidnativex64/6.0.0-LOCAL/kotest-assertions-shared-androidnativex64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-androidnativex64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "androidNativeX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-androidnativex64/6.0.0-LOCAL/kotest-assertions-shared-androidnativex64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-androidnativex64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "androidNativeX86ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-androidnativex86/6.0.0-LOCAL/kotest-assertions-shared-androidnativex86-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-androidnativex86",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "androidNativeX86SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-androidnativex86/6.0.0-LOCAL/kotest-assertions-shared-androidnativex86-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-androidnativex86",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-iosarm64/6.0.0-LOCAL/kotest-assertions-shared-iosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-iosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-iosarm64/6.0.0-LOCAL/kotest-assertions-shared-iosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-iosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-iosarm64/6.0.0-LOCAL/kotest-assertions-shared-iosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-iosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-iossimulatorarm64/6.0.0-LOCAL/kotest-assertions-shared-iossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-iossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-iossimulatorarm64/6.0.0-LOCAL/kotest-assertions-shared-iossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-iossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-iossimulatorarm64/6.0.0-LOCAL/kotest-assertions-shared-iossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-iossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-iosx64/6.0.0-LOCAL/kotest-assertions-shared-iosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-iosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-iosx64/6.0.0-LOCAL/kotest-assertions-shared-iosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-iosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-iosx64/6.0.0-LOCAL/kotest-assertions-shared-iosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-iosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-js/6.0.0-LOCAL/kotest-assertions-shared-js-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-js",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-js/6.0.0-LOCAL/kotest-assertions-shared-js-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-js",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-js/6.0.0-LOCAL/kotest-assertions-shared-js-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-js",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-jvm/6.0.0-LOCAL/kotest-assertions-shared-jvm-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-jvm",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-jvm/6.0.0-LOCAL/kotest-assertions-shared-jvm-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-jvm",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-jvm/6.0.0-LOCAL/kotest-assertions-shared-jvm-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-jvm",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "linuxArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-linuxarm64/6.0.0-LOCAL/kotest-assertions-shared-linuxarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-linuxarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "linuxArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-linuxarm64/6.0.0-LOCAL/kotest-assertions-shared-linuxarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-linuxarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "linuxX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-linuxx64/6.0.0-LOCAL/kotest-assertions-shared-linuxx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-linuxx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "linuxX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-linuxx64/6.0.0-LOCAL/kotest-assertions-shared-linuxx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-linuxx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "macosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-macosarm64/6.0.0-LOCAL/kotest-assertions-shared-macosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-macosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "macosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-macosarm64/6.0.0-LOCAL/kotest-assertions-shared-macosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-macosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "macosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-macosarm64/6.0.0-LOCAL/kotest-assertions-shared-macosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-macosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "macosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-macosx64/6.0.0-LOCAL/kotest-assertions-shared-macosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-macosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "macosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-macosx64/6.0.0-LOCAL/kotest-assertions-shared-macosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-macosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "macosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-macosx64/6.0.0-LOCAL/kotest-assertions-shared-macosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-macosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "mingwX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-mingwx64/6.0.0-LOCAL/kotest-assertions-shared-mingwx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-mingwx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "mingwX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-mingwx64/6.0.0-LOCAL/kotest-assertions-shared-mingwx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-mingwx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-tvosarm64/6.0.0-LOCAL/kotest-assertions-shared-tvosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-tvosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-tvosarm64/6.0.0-LOCAL/kotest-assertions-shared-tvosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-tvosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-tvosarm64/6.0.0-LOCAL/kotest-assertions-shared-tvosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-tvosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-tvossimulatorarm64/6.0.0-LOCAL/kotest-assertions-shared-tvossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-tvossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-tvossimulatorarm64/6.0.0-LOCAL/kotest-assertions-shared-tvossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-tvossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-tvossimulatorarm64/6.0.0-LOCAL/kotest-assertions-shared-tvossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-tvossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-tvosx64/6.0.0-LOCAL/kotest-assertions-shared-tvosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-tvosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-tvosx64/6.0.0-LOCAL/kotest-assertions-shared-tvosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-tvosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "tvosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-tvosx64/6.0.0-LOCAL/kotest-assertions-shared-tvosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-tvosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-wasm-js/6.0.0-LOCAL/kotest-assertions-shared-wasm-js-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-wasm-js",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-wasm-js/6.0.0-LOCAL/kotest-assertions-shared-wasm-js-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-wasm-js",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-wasm-js/6.0.0-LOCAL/kotest-assertions-shared-wasm-js-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-wasm-js",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosArm32ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-watchosarm32/6.0.0-LOCAL/kotest-assertions-shared-watchosarm32-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-watchosarm32",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosArm32SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-watchosarm32/6.0.0-LOCAL/kotest-assertions-shared-watchosarm32-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-watchosarm32",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosArm32MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-watchosarm32/6.0.0-LOCAL/kotest-assertions-shared-watchosarm32-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-watchosarm32",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-watchosarm64/6.0.0-LOCAL/kotest-assertions-shared-watchosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-watchosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-watchosarm64/6.0.0-LOCAL/kotest-assertions-shared-watchosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-watchosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-watchosarm64/6.0.0-LOCAL/kotest-assertions-shared-watchosarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-watchosarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosDeviceArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-watchosdevicearm64/6.0.0-LOCAL/kotest-assertions-shared-watchosdevicearm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-watchosdevicearm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosDeviceArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-watchosdevicearm64/6.0.0-LOCAL/kotest-assertions-shared-watchosdevicearm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-watchosdevicearm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosDeviceArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-watchosdevicearm64/6.0.0-LOCAL/kotest-assertions-shared-watchosdevicearm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-watchosdevicearm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-watchossimulatorarm64/6.0.0-LOCAL/kotest-assertions-shared-watchossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-watchossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-watchossimulatorarm64/6.0.0-LOCAL/kotest-assertions-shared-watchossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-watchossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-watchossimulatorarm64/6.0.0-LOCAL/kotest-assertions-shared-watchossimulatorarm64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-watchossimulatorarm64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-watchosx64/6.0.0-LOCAL/kotest-assertions-shared-watchosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-watchosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-watchosx64/6.0.0-LOCAL/kotest-assertions-shared-watchosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-watchosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    },
+    {
+      "name": "watchosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../kotest-assertions-shared-watchosx64/6.0.0-LOCAL/kotest-assertions-shared-watchosx64-6.0.0-LOCAL.module",
+        "group": "io.kotest",
+        "module": "kotest-assertions-shared-watchosx64",
+        "version": "6.0.0-LOCAL"
+      }
+    }
+  ]
+}

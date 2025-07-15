@@ -1,0 +1,165 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kotest-assertions-arrow-fx-coroutines/6.0.0-LOCAL/kotest-assertions-arrow-fx-coroutines-6.0.0-LOCAL.module",
+    "group": "io.kotest",
+    "module": "kotest-assertions-arrow-fx-coroutines",
+    "version": "6.0.0-LOCAL",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-arrow",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-fx-coroutines",
+          "version": {
+            "requires": "2.1.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-arrow-fx-coroutines-wasm-js-6.0.0-LOCAL.klib",
+          "url": "kotest-assertions-arrow-fx-coroutines-wasm-js-6.0.0-LOCAL.klib",
+          "size": 24050,
+          "sha512": "08097fbc46bfd964db62855dc52146743f3bc432918c44ba66c298955e3151d4707cb07cf5f0f9363528e036ac5af55aa8825bc912808a8e1860ab65a26a081e",
+          "sha256": "c1c9826f31a1616c38742cb8e535fab41367c109d4ce595b07cb31366efec4fa",
+          "sha1": "b9b23f00eaf2dc4e6205fbb3c2b4d3f7cc49d319",
+          "md5": "7de2bb4bb35fcd4236e43f43891bfa9d"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-shared",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-arrow",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        },
+        {
+          "group": "io.arrow-kt",
+          "module": "arrow-fx-coroutines",
+          "version": {
+            "requires": "2.1.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0-LOCAL"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-arrow-fx-coroutines-wasm-js-6.0.0-LOCAL.klib",
+          "url": "kotest-assertions-arrow-fx-coroutines-wasm-js-6.0.0-LOCAL.klib",
+          "size": 24050,
+          "sha512": "08097fbc46bfd964db62855dc52146743f3bc432918c44ba66c298955e3151d4707cb07cf5f0f9363528e036ac5af55aa8825bc912808a8e1860ab65a26a081e",
+          "sha256": "c1c9826f31a1616c38742cb8e535fab41367c109d4ce595b07cb31366efec4fa",
+          "sha1": "b9b23f00eaf2dc4e6205fbb3c2b4d3f7cc49d319",
+          "md5": "7de2bb4bb35fcd4236e43f43891bfa9d"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "files": [
+        {
+          "name": "kotest-assertions-arrow-fx-coroutines-wasm-js-6.0.0-LOCAL-sources.jar",
+          "url": "kotest-assertions-arrow-fx-coroutines-wasm-js-6.0.0-LOCAL-sources.jar",
+          "size": 5182,
+          "sha512": "97b35792098da52be5ab07d619a60f04798ededce71a7e0cd892310abcbdd4c028eac84dacf1f9dfed4861d10c8282a83152f62f28e551fc2d2a8e1a80973548",
+          "sha256": "6929929f1d5c6a03094dc1e1e38a8f5be54df790235e94a5d9a9cd55ed4142ae",
+          "sha1": "233e5f770f464a77f489a78280a762a4b20bc822",
+          "md5": "d794af342155e408c597894a98027777"
+        }
+      ]
+    }
+  ]
+}
