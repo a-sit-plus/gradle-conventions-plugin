@@ -1,6 +1,6 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-![Version](https://img.shields.io/badge/20250713+2-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)
+![Version](https://img.shields.io/badge/20250724-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat&)](http://www.apache.org/licenses/LICENSE-2.0)
 
 **Note: This plugin is used internally at A-SIT Plus and there are no guarantees whatsoever wrt. stability, reliability, and even making any sense at all.
