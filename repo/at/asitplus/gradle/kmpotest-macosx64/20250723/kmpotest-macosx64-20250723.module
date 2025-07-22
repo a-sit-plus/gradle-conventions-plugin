@@ -1,0 +1,146 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kmpotest/20250723/kmpotest-20250723.module",
+    "group": "at.asitplus.gradle",
+    "module": "kmpotest",
+    "version": "20250723",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "macosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization",
+          "version": {
+            "requires": "0.91.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-io-core",
+          "version": {
+            "requires": "0.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-macosX64Main-20250723.klib",
+          "url": "kmpotest-macosx64-20250723.klib",
+          "size": 38163,
+          "sha512": "f872358bbca5bd6ad04bf925177f55431fa8b88659b44d449c417bc4eb1ed01bbb00d0fcffe2c979aaa43e12f7daf2e1b2445c08c4adbe697119c4feafaafe0c",
+          "sha256": "a5eb421fa1ef2c989f23c0c3fc610eac389591c2bf3814f44037aa4d507538e0",
+          "sha1": "fd09781ec854998312a5dac2cfc26f764abe02d1",
+          "md5": "e32a1fe56ae3a2e317430b3fcd526467"
+        }
+      ]
+    },
+    {
+      "name": "macosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kmpotest-macosx64-20250723-sources.jar",
+          "url": "kmpotest-macosx64-20250723-sources.jar",
+          "size": 3842,
+          "sha512": "7558ba403a569c00e5fb0c0f860c03d749b3175822fbdfa06a5d7672b5b075f3a04a1149016f41d91af608914546185e303cddfe3ac32de4e43b9295f116ea4a",
+          "sha256": "14ca287394c99d9c2f8bdb60b98670f50c25882d51af24637bc9e160b2f9317b",
+          "sha1": "cc15e6664ce98f3046c5db1fd6bd0ae6f7b66141",
+          "md5": "5973c51ee2a400cbfdbbdaa1986f5319"
+        }
+      ]
+    },
+    {
+      "name": "macosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization",
+          "version": {
+            "requires": "0.91.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-io-core",
+          "version": {
+            "requires": "0.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-macosx64-20250723-metadata.jar",
+          "url": "kmpotest-macosx64-20250723-metadata.jar",
+          "size": 261,
+          "sha512": "2ceff66ddf9d710bd25769545922277183147a187567a5b0079c16e62a4146d1fede5d18e3020c12f144f89f5aeb19a2b60d4dda62ebfc98ea90c60dd12d1a67",
+          "sha256": "f768d5c38d56d04d830ea6a0aded37587034959cbb5cddef7c718fa4f6115198",
+          "sha1": "40027c4d031ab681ef9c12e07a1d437cce138d38",
+          "md5": "0ad97215e57d039c2bd0a616d7d9815e"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kmpotest/20250723/kmpotest-20250723.module",
+    "group": "at.asitplus.gradle",
+    "module": "kmpotest",
+    "version": "20250723",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "tvosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization",
+          "version": {
+            "requires": "0.91.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-io-core",
+          "version": {
+            "requires": "0.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-tvosArm64Main-20250723.klib",
+          "url": "kmpotest-tvosarm64-20250723.klib",
+          "size": 38170,
+          "sha512": "991d73a6a9740745c8316a52d22a4bf10960981e6a74ca274f59e1589c3babe7c463da53f8fad258b7ce4797ae210f05d2ac2a7dd59c98f71ff964675a9c997a",
+          "sha256": "3aca7f8de2f743794d00381ff5f499c16b936fe9fb49552e5005a0c4fa78ee6b",
+          "sha1": "4522858d82755efaeac00d75d30a52ee156945ee",
+          "md5": "450b8c551c842306541a187643a626d0"
+        }
+      ]
+    },
+    {
+      "name": "tvosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kmpotest-tvosarm64-20250723-sources.jar",
+          "url": "kmpotest-tvosarm64-20250723-sources.jar",
+          "size": 3853,
+          "sha512": "273c76c061ddeaf1641691cac950b95331d253c4c9bd96fb3b480df5a5481ca373618702fc763dec799e3202c5df224fcbc599420629de57c8f34ca4ce49accd",
+          "sha256": "bef9ec8bbb96be60f5b791ee1622f689625c9ce5a25bd81cab9ebaf2e63b0dde",
+          "sha1": "e88adb27aafbc7f53b4c5da51fac13c6632037ba",
+          "md5": "8e85c4e5001daa6d63bce8445661af20"
+        }
+      ]
+    },
+    {
+      "name": "tvosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization",
+          "version": {
+            "requires": "0.91.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-io-core",
+          "version": {
+            "requires": "0.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-tvosarm64-20250723-metadata.jar",
+          "url": "kmpotest-tvosarm64-20250723-metadata.jar",
+          "size": 261,
+          "sha512": "2ceff66ddf9d710bd25769545922277183147a187567a5b0079c16e62a4146d1fede5d18e3020c12f144f89f5aeb19a2b60d4dda62ebfc98ea90c60dd12d1a67",
+          "sha256": "f768d5c38d56d04d830ea6a0aded37587034959cbb5cddef7c718fa4f6115198",
+          "sha1": "40027c4d031ab681ef9c12e07a1d437cce138d38",
+          "md5": "0ad97215e57d039c2bd0a616d7d9815e"
+        }
+      ]
+    }
+  ]
+}
