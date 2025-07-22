@@ -1,6 +1,6 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-![Version](https://img.shields.io/badge/20250724-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)
+![Version](https://img.shields.io/badge/20250722-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat&)](http://www.apache.org/licenses/LICENSE-2.0)
 
 **Note: This plugin is used internally at A-SIT Plus and there are no guarantees whatsoever wrt. stability, reliability, and even making any sense at all.
@@ -232,13 +232,12 @@ The following shorthands are available to declare dependencies:
 
 * `kotest(module: String, target: String? = null)`, where module is something like `datatest`, dor example and target
   can be blank for multiplatform or `jvm` to target the JVM.
-    * The kotest version can be overridden by the environment variable `KOTEST_VERSION_OVERRIDE`, which takes precedence ofer the version catalog 
-    * Note that the following kotest modules are available by default, and require no separate declaration:
-      * `kotest-assertions-core`
-      * `kotest-common`
-      * `kotest-property`
-      * `kotest-framework-engine`
-      * `kotest-framework-datatest`
+  <br>Note that the following kotest modules are available by default, and require no separate declaration:
+    * `kotest-assertions-core`
+    * `kotest-common`
+    * `kotest-property`
+    * `kotest-framework-engine`
+    * `kotest-framework-datatest`
 * `serialization(format: String, target: String? = null)` declares a dependency for kotlinx-serialization
   format `format` (i.e. `json`, `cbor`, …) to target `target` (leave blank for multiplatform)
 * `ktor(module: String, target: String? = null)` declares a dependency to a ktor module `module` for target `target` (

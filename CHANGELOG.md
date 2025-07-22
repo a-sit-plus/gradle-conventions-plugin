@@ -5,6 +5,7 @@ project set it, just as with the Android Gradle Plugin. **This is a breaking cha
 
 ## 20250722
 * Ktor 3.2.2
+* fix XCF export
 
 ## 20250714
 * fix signing dependency workaround
@@ -22,6 +23,10 @@ project set it, just as with the Android Gradle Plugin. **This is a breaking cha
 * Kotlin 2.2.0
 * KSP-based Kotest 6.0.0.M5
 * Allow overriding Kotest version through environment variable `KOTEST_VERSION_OVERRIDE`, which takes precedence over version catalog
+
+
+## 20250708+1
+* fix XCF export
 
 ## 20250708
 * breaking change: kotlinx.datetime 0.7.1
