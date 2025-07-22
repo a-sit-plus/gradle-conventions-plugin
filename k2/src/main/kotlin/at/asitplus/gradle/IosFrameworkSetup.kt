@@ -17,6 +17,7 @@ fun Project.exportXCFramework(
     name: String,
     transitiveExports: Boolean,
     static: Boolean = false,
+    bundleIdentifier: String = "$group.$name",
     vararg additionalExports: Any,
     additionalConfig: XCFrameworkConfig.() -> Unit = {},
     nativeBinaryOpts: NativeBinary.() -> Unit = {}
@@ -34,14 +35,16 @@ fun Project.exportXCFramework(
 
     extensions.getByType<KotlinMultiplatformExtension>().apply {
         XCFrameworkConfig(project, name).also { xcf ->
-            Logger.lifecycle("  \u001B[1mXCFrameworks will be exported for the following iOS targets: ${appleTargets.joinToString { it.name }}\u001B[0m")
+            Logger.lifecycle("  \u001B[1mXCFrameworks with bundle identifier '$bundleIdentifier' will be exported for the following iOS targets: ${appleTargets.joinToString { it.name }}\u001B[0m")
             appleTargets.forEach { target ->
                 target.binaries.framework {
                     baseName = name
                     isStatic = static
                     transitiveExport = transitiveExports
                     additionalExports.forEach { export(it) }
+                    binaryOption("bundleId", bundleIdentifier)
                     nativeBinaryOpts()
+                    xcf.add(this)
                 }
             }
             xcf.additionalConfig()
