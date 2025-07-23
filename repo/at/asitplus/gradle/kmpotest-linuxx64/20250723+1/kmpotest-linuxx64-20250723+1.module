@@ -1,0 +1,94 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kmpotest/20250723+1/kmpotest-20250723+1.module",
+    "group": "at.asitplus.gradle",
+    "module": "kmpotest",
+    "version": "20250723+1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "linuxX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M5"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization",
+          "version": {
+            "requires": "0.91.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-io-core",
+          "version": {
+            "requires": "0.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-linuxX64Main-20250723+1.klib",
+          "url": "kmpotest-linuxx64-20250723+1.klib",
+          "size": 38191,
+          "sha512": "11223bf124f8af3962742e9c9f652f19314815b2d82fb946d647bfe53a0c906bd69bbb9f6057c5d810a4bf0176df3ce79762c1626c012ff0f0f4eda063f255ca",
+          "sha256": "2803871e4fc8b2e21d49f5dc22dd9728e96c30e8288bf87def6d37f269b3fc85",
+          "sha1": "9f58cb081e23726f3b1f77afaf8f9aada0330f5b",
+          "md5": "97d5670c8d0c69a0cc1d028b7b0734a6"
+        }
+      ]
+    },
+    {
+      "name": "linuxX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kmpotest-linuxx64-20250723+1-sources.jar",
+          "url": "kmpotest-linuxx64-20250723+1-sources.jar",
+          "size": 3842,
+          "sha512": "1c48b6b56e3631a20ccd617209217bc961139cfd36a073e5f8994cab412443b71de35d88749ba83b39dfb49f3ae48adab35c1a203db6e4b26b6682feec12624f",
+          "sha256": "caac909eaea78a95bc2c68d9ca9402657aee2ff1dc7e18699e153050fa46b550",
+          "sha1": "c96970d08623e5a7593368b6738a5965859f07c8",
+          "md5": "bd71e99679220cd21392b53ca0a56f97"
+        }
+      ]
+    }
+  ]
+}
