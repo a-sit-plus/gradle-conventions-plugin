@@ -6,7 +6,7 @@ plugins {
     id("io.kotest") version libs.versions.kotest.get()
     kotlin("multiplatform") version libs.versions.kotlin.get() apply false
     kotlin("plugin.serialization") version libs.versions.kotlin.get() apply false
-    id("com.android.library") version "8.6.1" apply (false)
+    id("com.android.library") version "8.10.0" apply (false)
 }
 group = "at.asitplus.gradle"
 version = "0.0.1"
