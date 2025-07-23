@@ -16,8 +16,8 @@ fun Project.exportXCFramework(
     name: String,
     transitiveExports: Boolean,
     static: Boolean = false,
-    bundleIdentifier: String = "$group.$name",
     vararg additionalExports: Any,
+    bundleIdentifier: String = "$group.$name",
     additionalConfig: XCFrameworkConfig.() -> Unit = {},
     nativeBinaryOpts: NativeBinary.() -> Unit = {}
 ) {
