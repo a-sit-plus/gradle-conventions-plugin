@@ -135,10 +135,10 @@
           "name": "kmpotest-watchosdevicearm64-20250727-metadata.jar",
           "url": "kmpotest-watchosdevicearm64-20250727-metadata.jar",
           "size": 261,
-          "sha512": "1365a43c62c05236049b2cfb5df48ff556806f3c4b49fb78a77ea96e4cd52afc545a62afeacaafb04263d9ffd7bfc45eae6efa7d591968a1e601bf4597d3baa3",
-          "sha256": "0e22ca79a10c712ffa891c634981bdfec9032d69cc5e2353542024270c3c1917",
-          "sha1": "99206441326d8afabfc99e0c46edca386727c64f",
-          "md5": "f9e31d68fd5ff981aca53213273ea960"
+          "sha512": "7d9558319d27a71e70e7bc1576543b3724856516cabc54944f051a2caa004e505d69e4f585b0e35875a63a252cce97ffb673d4f1eed298937e7d208afdb84bf0",
+          "sha256": "1916f4af472e50ec6a46ca8843e21b2c6cd7e46ed78903d44f9173a09f59b21e",
+          "sha1": "626f02b49cd4a58927795634da21d1eeedad7968",
+          "md5": "2d28224cddf17cfed32eaa512718c084"
         }
       ]
     }

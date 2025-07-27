@@ -135,10 +135,10 @@
           "name": "kmpotest-macosarm64-20250727-metadata.jar",
           "url": "kmpotest-macosarm64-20250727-metadata.jar",
           "size": 261,
-          "sha512": "6daf8557542e22b03cee3413849e6ded51cea06e10e04d323e73c7ec06a5c53ef389aa1f34bf43dce56513dcf81b6e89637f4e887668f2d5515f0e1826f9dd8c",
-          "sha256": "8ebd35f232015196cb343a75b0a50d2ff3616250e22641b6b8a89955a8e3ec29",
-          "sha1": "a54eee17550cee317689477ab513b78e27ec445a",
-          "md5": "c4c1872b155e7284ee106972da1ae8db"
+          "sha512": "821a29abbe2f271b777973cb7e26e13ac676a2af2918304291c2c438ce36a504312a2744aa1fb7f59bc27e80bacfc0c661c20a9a57ab322b4da41ef2f9ff52db",
+          "sha256": "46724e451cd90c4c9967f0e5c5d3c5b03381960a432671b5c52f7879ffdbe766",
+          "sha1": "9e32e62660bda2bbed2e2e55aec38c3c9418778f",
+          "md5": "40d044dc0427b77a4d55b0f0f2484f4f"
         }
       ]
     }

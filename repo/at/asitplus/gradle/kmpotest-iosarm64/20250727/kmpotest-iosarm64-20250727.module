@@ -135,10 +135,10 @@
           "name": "kmpotest-iosarm64-20250727-metadata.jar",
           "url": "kmpotest-iosarm64-20250727-metadata.jar",
           "size": 261,
-          "sha512": "415320927fe2a141beafd3ec343bf0cd1f0f83ce5d4aff87030854b7b9c931fed713dadbb680236da16e882d333d3a659ac706a7c0c66fbe035d4c6d297d5fc6",
-          "sha256": "67d028a45292dcca4ce51096d87bca1f49af36be81f5f6734f573b688ba0dc75",
-          "sha1": "47c11788b29ffedb1c8d68f9c11986b9e9e157d4",
-          "md5": "9fd1ff1370a18c9baead299ee0d1deb8"
+          "sha512": "75d6990357748f9ff7fad59c69f731411c3e5ecbe96087abc1571910c68c43faecfbab94c30a439df5443f6a8c83c361536b1d759502e06c7a120ec506062570",
+          "sha256": "34f9681a020cfa0d4c22829ef0148c5df000a48aceb3d9f298a1b5ac1b281022",
+          "sha1": "2ea47d9c8a1e8cdf9814308143e083b75149c830",
+          "md5": "4729a702199c9ffd5deb77e60a6445a5"
         }
       ]
     }
