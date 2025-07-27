@@ -74,7 +74,7 @@ internal fun KotlinMultiplatformExtension.wireKotestKsp() {
             val target = name.substring(3, name.length - 4).replaceFirstChar { it.lowercase() }
             if (project.getBuildableTargets().firstOrNull { target == it.name } != null) {
                 project.logger.lifecycle("  >>[${project.name}] Adding Kotest symbol processor dependency to $name")
-                project.dependencies.add(
+                if (!name.lowercase().contains("jvm")) project.dependencies.add(
                     name,
                     "io.kotest:kotest-framework-symbol-processor-jvm:${project.AspVersions.kotest}"
                 )
