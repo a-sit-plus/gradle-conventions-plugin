@@ -135,10 +135,10 @@
           "name": "kmpotest-iosx64-20250727-metadata.jar",
           "url": "kmpotest-iosx64-20250727-metadata.jar",
           "size": 261,
-          "sha512": "1d7985a806116cdf90d8626b8acb5b87315f26370633727bcec2a86d267dc99b58fb4c0409273b93b586011da0865d5a51a14e643e6142c19ae05f1dd255ba0c",
-          "sha256": "99e0b0b4ec18d017420779a03db55a60b931360e3cfa767ee6b79dbc7217ec66",
-          "sha1": "2fee3c43385d745f04f6ec7981828ece229d7675",
-          "md5": "d5743cdcb76ce2b5df0ea4d0c5c8915a"
+          "sha512": "415320927fe2a141beafd3ec343bf0cd1f0f83ce5d4aff87030854b7b9c931fed713dadbb680236da16e882d333d3a659ac706a7c0c66fbe035d4c6d297d5fc6",
+          "sha256": "67d028a45292dcca4ce51096d87bca1f49af36be81f5f6734f573b688ba0dc75",
+          "sha1": "47c11788b29ffedb1c8d68f9c11986b9e9e157d4",
+          "md5": "9fd1ff1370a18c9baead299ee0d1deb8"
         }
       ]
     }
