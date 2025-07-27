@@ -69,6 +69,21 @@ internal fun KotlinMultiplatformExtension.wireKotestKsp() {
     if (!project.rootProject.pluginManager.hasPlugin("com.google.devtools.ksp")) throw StopExecutionException("KSP not found in root project, please add 'com.google.devtools.ksp' to the root project's plugins")
 
     project.pluginManager.apply("com.google.devtools.ksp")
+    project.configurations.whenObjectAdded {
+        if (name.startsWith("ksp") && name.endsWith("Test")) {
+            val target = name.substring(3, name.length - 4).replaceFirstChar { it.lowercase() }
+            if (project.getBuildableTargets().firstOrNull { target == it.name } != null) {
+                project.logger.lifecycle("  >>[${project.name}] Adding Kotest symbol processor dependency to $name")
+                project.dependencies.add(
+                    name,
+                    "io.kotest:kotest-framework-symbol-processor-jvm:${project.AspVersions.kotest}"
+                )
+            } else {
+                project.logger.lifecycle("  >>[${project.name}] Not wiring Kotest symbol processor dependency to non-buildable configuration $name")
+            }
+        }
+
+    }
 
 }
 
