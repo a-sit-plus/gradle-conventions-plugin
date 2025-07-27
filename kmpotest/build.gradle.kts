@@ -9,5 +9,3 @@ plugins {
     id("com.android.library") version "8.10.0" apply (false)
 }
 group = "at.asitplus.gradle"
-version = "0.0.1"
-

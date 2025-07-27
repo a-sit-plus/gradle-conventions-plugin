@@ -2,14 +2,11 @@
 
 package at.asitplus.gradle
 
-import at.asitplus.gradle.at.asitplus.gradle.addKotestExtensions
-import at.asitplus.gradle.at.asitplus.gradle.addKotestJvmRunner
-import at.asitplus.gradle.at.asitplus.gradle.defaultSetupKotest
-import at.asitplus.gradle.at.asitplus.gradle.registerKotestCopyTask
-import at.asitplus.gradle.at.asitplus.gradle.wireKotestKsp
+import at.asitplus.gradle.at.asitplus.gradle.*
 import io.github.gradlenexus.publishplugin.NexusPublishExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.artifacts.repositories.MavenArtifactRepository
 import org.gradle.api.tasks.Delete
 import org.gradle.api.tasks.StopExecutionException
 import org.gradle.api.tasks.testing.Test
@@ -193,14 +190,13 @@ open class K2Conventions : Plugin<Project> {
                 repositories {
                     maven("https://github.com/a-sit-plus/gradle-conventions-plugin/raw/mvn/repo/")
                     maven("https://central.sonatype.com/repository/maven-snapshots/")
-                    maven("https://s01.oss.sonatype.org/content/repositories/snapshots")
                     maven("https://oss.sonatype.org/content/repositories/snapshots")
                     google()
                     mavenCentral()
                 }
             }
 
-            Logger.info("  Setting Nexus publishing URL to s01.oss.sonatype.org")
+            Logger.info("  Setting Nexus publishing URL to central.sonatype.com")
             target.extensions.getByType<NexusPublishExtension>().apply {
                 repositories {
                     sonatype {
@@ -229,7 +225,6 @@ open class K2Conventions : Plugin<Project> {
             target.createAndroidJvmSharedSources()
 
             target.afterEvaluate {
-
                 val kmpTargets =
                     extensions.getByType<KotlinMultiplatformExtension>().targets.filter { it.name != "metadata" }
                 if (kmpTargets.isEmpty())

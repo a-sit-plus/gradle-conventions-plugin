@@ -34,7 +34,7 @@ kotlin {
     watchosX64()
     watchosArm32()
     watchosArm64()
-    //watchosDeviceArm64() //TODO for release: enable this target
+    watchosDeviceArm64()
     tvosSimulatorArm64()
     tvosX64()
     tvosArm64()

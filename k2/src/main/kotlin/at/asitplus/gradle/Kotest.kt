@@ -18,7 +18,7 @@ private val kotestReportDir = Path(tempDir, "kotest-report")
 internal fun Project.registerKotestCopyTask() {
     if (System.getProperty("KOTEST_NO_ASP_HELPER") != "true") afterEvaluate {
         //cannot filter for test instance, since kmp tests do not inherit Test
-        tasks.matching { it.name.endsWith("Test") }.forEach {
+        tasks.matching { !it.name.endsWith("Kotest") && it.name.lowercase().endsWith("test") }.forEach {
             it.doLast {
                 runCatching {
                     logger.lifecycle("  >> Copying tests from $kotestReportDir")
@@ -70,21 +70,6 @@ internal fun KotlinMultiplatformExtension.wireKotestKsp() {
 
     project.pluginManager.apply("com.google.devtools.ksp")
 
-    project.configurations.whenObjectAdded {
-        if (name.startsWith("ksp") && name.endsWith("Test")) {
-            val target = name.substring(3, name.length - 4).replaceFirstChar { it.lowercase() }
-            if (project.getBuildableTargets().firstOrNull { target == it.name } != null) {
-                project.logger.lifecycle("  >>[${project.name}] Adding Kotest symbol processor dependency to $name")
-                project.dependencies.add(
-                    name,
-                    "io.kotest:kotest-framework-symbol-processor-jvm:${project.AspVersions.kotest}"
-                )
-            } else {
-                project.logger.lifecycle("  >>[${project.name}] Not wiring Kotest symbol processor dependency to non-buildable configuration $name")
-            }
-        }
-
-    }
 }
 
 

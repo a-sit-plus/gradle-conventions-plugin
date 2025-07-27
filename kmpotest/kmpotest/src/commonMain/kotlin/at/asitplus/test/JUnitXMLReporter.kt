@@ -7,7 +7,9 @@ import io.kotest.core.listeners.AfterTestListener
 import io.kotest.core.spec.Spec
 import io.kotest.core.spec.style.FreeSpec
 import io.kotest.core.test.TestCase
-import io.kotest.core.test.TestResult
+import io.kotest.engine.test.TestResult
+import kotlinx.coroutines.sync.Mutex
+import kotlinx.coroutines.sync.withLock
 import kotlinx.io.buffered
 import kotlinx.io.files.Path
 import kotlinx.io.files.SystemFileSystem
@@ -35,8 +37,8 @@ import kotlin.uuid.ExperimentalUuidApi
 internal expect val target: String
 private val tempPath =
     Path(SystemTemporaryDirectory.let {
-        if(it.toString().split(SystemPathSeparator).last().startsWith("com.apple.CoreSimulator"))
-            Path(it.toString().substring(0,it.toString().lastIndexOf("/")))
+        if (it.toString().split(SystemPathSeparator).last().startsWith("com.apple.CoreSimulator"))
+            Path(it.toString().substring(0, it.toString().lastIndexOf("/")))
         else it
     }, "kotest-report", "test-results", "${target}Test").apply { deleteRecursively() }
 
@@ -56,11 +58,10 @@ private fun deleteRecursivelyInternal(path: Path) {
 
 private fun Path.deleteRecursively() = deleteRecursivelyInternal(this)
 
+
 abstract class FreeSpec(produceJvmReport: Boolean, body: FreeSpec.() -> Unit = {}) :
     io.kotest.core.spec.style.FreeSpec({
-        if (produceJvmReport || (target != "android" && target != "jvm")) {
-            extensions(JUnitXmlReporter())
-        } else println("  >> Skipping report generation on $target")
+        extensions(JUnitXmlReporter)
         body.invoke(this)
     }) {
     constructor(body: FreeSpec.() -> Unit = {}) : this(false, body)
@@ -143,69 +144,76 @@ private data class ErrorTag(
 private class Skipped
 
 /* ---------- Kotest listener that writes the file at engine stop ---------- */
-private class JUnitXmlReporter(
-) : AfterTestListener, AfterProjectListener, AfterSpecListener {
+object JUnitXmlReporter : AfterTestListener, AfterProjectListener, AfterSpecListener {
 
+    private val lock: Mutex = Mutex()
     val bySpec = mutableMapOf<String, MutableList<Pair<TestCase, TestResult>>>()
 
     override suspend fun afterTest(testCase: TestCase, result: TestResult) {
+        if (target == "jvm" || target == "android") return
         val spec = testCase.spec::class.simpleName ?: "UnknownSpec"
-        bySpec.getOrPut(spec) { mutableListOf() } += testCase to result
+        lock.withLock {
+            bySpec.getOrPut(spec) { mutableListOf() } += testCase to result
+        }
     }
 
 
     override suspend fun afterSpec(spec: Spec) {
+        if (target == "jvm" || target == "android") return
         val spec = spec::class.simpleName ?: "UnknownSpec"
-        val suites = bySpec[spec].let { pairs ->
-            var fails = 0;
-            var errs = 0;
-            var skips = 0
-            val cases = pairs!!.map { (tc, res) ->
-                val secs = res.duration.toDouble(DurationUnit.MILLISECONDS) / 1_000
 
-                if (res.isFailure) fails++
-                if (res.isError) errs++
-                if (res.isIgnored) skips++
-                val bld = mutableListOf<String>()
-                var currentCase: TestCase? = tc
-                while (currentCase != null) {
-                    bld += currentCase.name.name
-                    currentCase = currentCase.parent
+        val suites = lock.withLock {
+            bySpec.remove(spec).let { pairs ->
+                var fails = 0;
+                var errs = 0;
+                var skips = 0
+                val cases = pairs!!.map { (tc, res) ->
+                    val secs = res.duration.toDouble(DurationUnit.MILLISECONDS) / 1_000
+
+                    if (res.isFailure) fails++
+                    if (res.isError) errs++
+                    if (res.isIgnored) skips++
+                    val bld = mutableListOf<String>()
+                    var currentCase: TestCase? = tc
+                    while (currentCase != null) {
+                        bld += currentCase.name.name
+                        currentCase = currentCase.parent
+                    }
+                    val name = bld.reversed().joinToString(".")
+                    TestCaseXml(
+                        classname = spec,
+                        name = "[${target}] $name",
+                        time = secs,
+                        failure = res.takeIf { it is TestResult.Failure }?.let {
+                            (res as TestResult.Failure)
+                            Failure(
+                                res.errorOrNull?.message ?: "",
+                                res.errorOrNull?.let { it::class.simpleName } ?: "",
+                                res.errorOrNull?.stackTraceToString() ?: ""
+                            )
+                        },
+                        error = res.takeIf { it is TestResult.Error }?.let {
+                            (res as TestResult.Error)
+                            ErrorTag(
+                                res.errorOrNull?.message ?: "",
+                                res.errorOrNull?.let { it::class.simpleName } ?: "",
+                                res.errorOrNull?.stackTraceToString() ?: ""
+                            )
+                        },
+                        skipped = res.takeIf { it is TestResult.Ignored }?.let { Skipped() }
+                    )
                 }
-                val name = bld.reversed().joinToString(".")
-                TestCaseXml(
-                    classname = spec,
-                    name = "[${target}] $name",
-                    time = secs,
-                    failure = res.takeIf { it is TestResult.Failure }?.let {
-                        (res as TestResult.Failure)
-                        Failure(
-                            res.errorOrNull?.message ?: "",
-                            res.errorOrNull?.let { it::class.simpleName } ?: "",
-                            res.errorOrNull?.stackTraceToString() ?: ""
-                        )
-                    },
-                    error = res.takeIf { it is TestResult.Error }?.let {
-                        (res as TestResult.Error)
-                        ErrorTag(
-                            res.errorOrNull?.message ?: "",
-                            res.errorOrNull?.let { it::class.simpleName } ?: "",
-                            res.errorOrNull?.stackTraceToString() ?: ""
-                        )
-                    },
-                    skipped = res.takeIf { it is TestResult.Ignored }?.let { Skipped() }
+                TestSuite(
+                    spec,
+                    cases.size,
+                    fails,
+                    errs,
+                    skips,
+                    Clock.System.now().toString(),
+                    cases.sumOf { it.time },
+                    cases
                 )
             }
-            TestSuite(
-                spec,
-                cases.size,
-                fails,
-                errs,
-                skips,
-                Clock.System.now().toString(),
-                cases.sumOf { it.time },
-                cases
-            )
         }
 
         val xml = XML {

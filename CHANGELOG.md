@@ -3,6 +3,10 @@
 Starting with May 2025, the conventions plugin does not include a Kotlin version anymore. Instead, it lets any consuming
 project set it, just as with the Android Gradle Plugin. **This is a breaking change, as there is no fallback version specified.**
 
+## 20250727
+* Kotest 6.0.0.M6
+* Removed https://s01.oss.sonatype.org/content/repositories/snapshots from maven repos
+
 ## 20250723+1
 * fix order of XCF export arguments
 
