@@ -1,0 +1,94 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kmpotest/20250728/kmpotest-20250728.module",
+    "group": "at.asitplus.gradle",
+    "module": "kmpotest",
+    "version": "20250728",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "mingwX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M6"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization",
+          "version": {
+            "requires": "0.91.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-io-core",
+          "version": {
+            "requires": "0.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-mingwX64Main-20250728.klib",
+          "url": "kmpotest-mingwx64-20250728.klib",
+          "size": 39665,
+          "sha512": "b3fa2b824de4e3afc917962f60de237301543e464aeb307f754ce52693185f66ba28ff4d35f0699024bba5c473d909f4bb88be194b8fbe7deab6711c087548e7",
+          "sha256": "9c52928f7bec1bb5061faa9c48525e3a4202853ec64e3472ecae7c6a86183737",
+          "sha1": "81fc862d87f7e54be32503a21771e8118ec3c423",
+          "md5": "d685287606e338fabf2c030d96529fad"
+        }
+      ]
+    },
+    {
+      "name": "mingwX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kmpotest-mingwx64-20250728-sources.jar",
+          "url": "kmpotest-mingwx64-20250728-sources.jar",
+          "size": 4294,
+          "sha512": "8a1d9f13df67b5dda1269b8b23aafe63286bf722688e9a311ad33490dfa50ba2638c81dd838052a7e16fc99767e05a56b985bd5dbdf0f8f9384741fd038ef770",
+          "sha256": "4b09ca9abc3cd8db70c13308e5eb236e60de7b56e216ae8db6d45e81218c4b16",
+          "sha1": "d0c6dfcbf76405883acf602bdf0d917268f29e64",
+          "md5": "236392b75cb318d095511b9b3b7f5c91"
+        }
+      ]
+    }
+  ]
+}

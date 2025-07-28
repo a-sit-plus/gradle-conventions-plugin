@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kmpotest/20250728/kmpotest-20250728.module",
+    "group": "at.asitplus.gradle",
+    "module": "kmpotest",
+    "version": "20250728",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M6"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-jvm-20250728.jar",
+          "url": "kmpotest-jvm-20250728.jar",
+          "size": 95280,
+          "sha512": "5ac70d86e36c90395f60c0bc04da7af989823a9ccc292113209f12210519a85f108a3a59c552dd05760bf942ea917fbdf7c3bf2d7fbcaebfc919d9cb1fa0836d",
+          "sha256": "087da7ab27a1126ac68070da27cb607fa8404d88c96bb174e0ee64ce8b8c68ed",
+          "sha1": "f5de578dbd3a65cde1ce24ab0b44289e8bee3ff9",
+          "md5": "649328c017831a09fb340ba505791612"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M6"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization",
+          "version": {
+            "requires": "0.91.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-io-core",
+          "version": {
+            "requires": "0.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-jvm-20250728.jar",
+          "url": "kmpotest-jvm-20250728.jar",
+          "size": 95280,
+          "sha512": "5ac70d86e36c90395f60c0bc04da7af989823a9ccc292113209f12210519a85f108a3a59c552dd05760bf942ea917fbdf7c3bf2d7fbcaebfc919d9cb1fa0836d",
+          "sha256": "087da7ab27a1126ac68070da27cb607fa8404d88c96bb174e0ee64ce8b8c68ed",
+          "sha1": "f5de578dbd3a65cde1ce24ab0b44289e8bee3ff9",
+          "md5": "649328c017831a09fb340ba505791612"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "kmpotest-jvm-20250728-sources.jar",
+          "url": "kmpotest-jvm-20250728-sources.jar",
+          "size": 4249,
+          "sha512": "7a683b126e0139d814bfae3212523b16f6b73633f66acd04d64d951d27791d035f87c9f96ba4675ea22bc91f7f5580dd0217d7529740c62c2aec7be5885f237b",
+          "sha256": "1087bf312a5bd7b296f102a205f7d26944ecfa5d9552fe6964924d79a0d7d88a",
+          "sha1": "8dcd963ffb6cc41aa786685e9fc48c934fcdfa2c",
+          "md5": "df7878274f96d9c846ce285fcd927306"
+        }
+      ]
+    }
+  ]
+}

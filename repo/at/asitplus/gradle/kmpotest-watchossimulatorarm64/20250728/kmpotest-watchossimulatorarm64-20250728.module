@@ -1,0 +1,146 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../kmpotest/20250728/kmpotest-20250728.module",
+    "group": "at.asitplus.gradle",
+    "module": "kmpotest",
+    "version": "20250728",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "watchosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M6"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization",
+          "version": {
+            "requires": "0.91.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-io-core",
+          "version": {
+            "requires": "0.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-watchosSimulatorArm64Main-20250728.klib",
+          "url": "kmpotest-watchossimulatorarm64-20250728.klib",
+          "size": 39777,
+          "sha512": "06ccea8e227f96606bfaaa8b27374da676b05cc6702c6034e523bf329ae1c50979831a8a45fcfeafe9a9eadffaea60e4b23721791b8c05da1c678ff30f822232",
+          "sha256": "215cfb4140f34363ada1d488b6b1d3a89355a2f9354ac7d1f22ddd5c152f3027",
+          "sha1": "80380c682e404beb757351a7b7d05be22b3c3319",
+          "md5": "1a03cb6d8aecf2f580b0d0a590252e0c"
+        }
+      ]
+    },
+    {
+      "name": "watchosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "kmpotest-watchossimulatorarm64-20250728-sources.jar",
+          "url": "kmpotest-watchossimulatorarm64-20250728-sources.jar",
+          "size": 4436,
+          "sha512": "ad740786f0fb56b911c0d31bf86c60c801ceef6e76d9aa932b0377051168d7e91b0ae23bf398601884009bac4b3869d177b26943951eaced151dd9d88a0f3561",
+          "sha256": "7c95e01bc53fe32f20159bafd9ae777a7ce03c191c6e3e72bbb2d86829063612",
+          "sha1": "bff7916c227d981ade358884d15aa3b04894129c",
+          "md5": "38c16b46ee7b254a55f7e68fdb4035c8"
+        }
+      ]
+    },
+    {
+      "name": "watchosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-framework-engine",
+          "version": {
+            "requires": "6.0.0.M6"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "io.github.pdvrieze.xmlutil",
+          "module": "serialization",
+          "version": {
+            "requires": "0.91.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-io-core",
+          "version": {
+            "requires": "0.7.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kmpotest-watchossimulatorarm64-20250728-metadata.jar",
+          "url": "kmpotest-watchossimulatorarm64-20250728-metadata.jar",
+          "size": 261,
+          "sha512": "ac77bb9beddf39e5032932847a4a8bc2d297abe630cdafacaa2d7067441a69089138b00a61b9e3103c07f8f99b2a88f563d8298db8e8d634369e82b46e2280be",
+          "sha256": "c7888275d09786dc5ec0c1e99bce582a5c1ee6bc157561f06e01450343b930ea",
+          "sha1": "80d58235cb8c1146f5140946019b97c6335c64a6",
+          "md5": "14ad317cf00ef41437d5e8358cc349ee"
+        }
+      ]
+    }
+  ]
+}
