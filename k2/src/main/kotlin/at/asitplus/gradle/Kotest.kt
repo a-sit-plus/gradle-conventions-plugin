@@ -72,19 +72,26 @@ internal fun KotlinMultiplatformExtension.wireKotestKsp() {
     project.configurations.whenObjectAdded {
         if (name.startsWith("ksp") && name.endsWith("Test")) {
             val target = name.substring(3, name.length - 4).replaceFirstChar { it.lowercase() }
+            val isJvm = name.lowercase().contains("jvm")
             if (project.getBuildableTargets().firstOrNull { target == it.name } != null) {
                 project.logger.lifecycle("  >>[${project.name}] Adding Kotest symbol processor dependency to $name")
-                if (!name.lowercase().contains("jvm")) project.dependencies.add(
+                if (!isJvm) project.dependencies.add(
                     name,
                     "io.kotest:kotest-framework-symbol-processor-jvm:${project.AspVersions.kotest}"
                 )
             } else {
-                project.logger.lifecycle("  >>[${project.name}] Not wiring Kotest symbol processor dependency to non-buildable configuration $name")
+                if (!isJvm) project.logger.lifecycle("  >>[${project.name}] Not wiring Kotest symbol processor dependency to non-buildable configuration $name")
             }
         }
-
     }
 
+    project.afterEvaluate {
+        tasks.configureEach {
+            if (name == "kspTestKotlinJvm") {
+                enabled = false
+            }
+        }
+    }
 }
 
 

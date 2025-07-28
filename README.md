@@ -1,6 +1,6 @@
 # A-SIT Plus Gradle Conventions Plugin
 
-![Version](https://img.shields.io/badge/20250727-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)
+![Version](https://img.shields.io/badge/20250728-gray.svg?style=flat&logo=kotlin&labelColor=blue&logoColor=white)
 [![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-brightgreen.svg?style=flat&)](http://www.apache.org/licenses/LICENSE-2.0)
 
 **Note: This plugin is used internally at A-SIT Plus and there are no guarantees whatsoever wrt. stability, reliability, and even making any sense at all.
@@ -146,8 +146,20 @@ plugins {
 }
 ```
 
-**Be sure to add the conventions plugin last!**
+#### Test Report Generation
+The conventions plugin ships with a `XmlReportingProjectConfig` Kotest abstract project config.
+Simply extend it as shown below in `commonTest`
+* and be sure to only **add** extensions, and not overwrite them, if you need custom extensions
+* and don't change the FQN!
 
+```kotlin
+package io.kotest.provided
+
+import at.asitplus.test.XmlReportingProjectConfig
+
+/** Wires KMP JUnit XML reporting */
+class ProjectConfig : XmlReportingProjectConfig()
+```
 ### JVM-Only
 
 The same approach show before also works for jvm-only projects:
