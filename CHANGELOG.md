@@ -3,6 +3,10 @@
 Starting with May 2025, the conventions plugin does not include a Kotlin version anymore. Instead, it lets any consuming
 project set it, just as with the Android Gradle Plugin. **This is a breaking change, as there is no fallback version specified.**
 
+## 20250729
+* Add `android.raiseTestToJdkTarget` property to toggle raising Android test compile target JVM version to `jdk.version`.  
+Previously this defaulted to true, now it defaults to false.
+
 ## 20250728
 * Fix Kotest KSP wiring for good
 

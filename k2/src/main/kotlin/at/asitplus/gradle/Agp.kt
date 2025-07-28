@@ -41,6 +41,15 @@ val Project.androidJvmTarget: String?
         androidMinSdk?.let { at.asitplus.gradle.AspVersions.Android.jdkFor(it).toString() }
     }
 
+/**
+ * Switch to raise the JVM target used for Android test compile tasks to `jdk.version`. Defaults to `false`.
+ * Can be specified using `android.raiseTestToJdkTarget`
+ */
+val Project.raiseAndroidTestToJdkTarget: Boolean
+    get() = runCatching { extraProperties["android.raiseTestToJdkTarget"] as String }.getOrElse {
+        "false"
+    }.toBoolean()
+
 internal fun Project.setAndroidOptions() {
     if (hasOldAgp) extensions.getByType<com.android.build.gradle.BaseExtension>().apply {
         compileOptions {
@@ -123,16 +132,31 @@ internal fun KotlinMultiplatformExtension.setupAndroidTarget() {
             if (project.androidJvmTarget == null)
                 throw StopExecutionException("Android target found, but neither android.minSdk set nor android.jvmTarget override set in properties! To fix this add at least android.minSdk=<sdk-version> to gradle.properties")
             else {
-                Logger.lifecycle("  ${H}[AND] Setting $name ${String.format("%-14s", "main sources")} jvmTarget to ${project.androidJvmTarget}$R")
+                Logger.lifecycle(
+                    "  ${H}[AND] Setting $name ${
+                        String.format(
+                            "%-14s",
+                            "main sources"
+                        )
+                    } jvmTarget to ${project.androidJvmTarget}$R"
+                )
                 jvmTarget = JvmTarget.fromTarget(project.androidJvmTarget!!)
             }
             freeCompilerArgs = listOf(
                 "-Xjsr305=strict"
             )
         }
-
-        compilations.filter { it.name.contains("test", ignoreCase = true) }.forEach {
-            Logger.lifecycle("  ${H}[AND] Setting $name ${String.format("%-14s", it.name)} jvmTarget to ${project.jvmTarget}$R")
+        if (project.raiseAndroidTestToJdkTarget) compilations.filter {
+            it.name.contains(
+                "test",
+                ignoreCase = true
+            )
+        }.forEach {
+            Logger.lifecycle(
+                "  ${H}[AND] Setting $name ${
+                    String.format("%-14s", it.name)
+                } jvmTarget to ${project.jvmTarget}$R"
+            )
             it.target.compilerOptions {
                 jvmTarget.set(JvmTarget.fromTarget(project.jvmTarget))
             }
