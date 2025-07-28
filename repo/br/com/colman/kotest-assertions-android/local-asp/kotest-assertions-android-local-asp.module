@@ -1,0 +1,90 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "br.com.colman",
+    "module": "kotest-assertions-android",
+    "version": "local-asp",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-android-local-asp.aar",
+          "url": "kotest-assertions-android-local-asp.aar",
+          "size": 33506,
+          "sha512": "e1d1519f981ee9d6dcf6c9939c666325c615a872917be9e0a084141e1880f352ed17de03b0a3e9a7078808624e343f36e2836e7d3169241a703ed313a97250e6",
+          "sha256": "ad8877dd96b840feabf6d1e2c6cd10084957579b3acae198f1c63551097acf71",
+          "sha1": "ad76bddcf78b85e8671398a8b53a49c555d58a1f",
+          "md5": "113857568835c12b99ceff026c74b627"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.10.0"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-core",
+          "version": {
+            "requires": "6.0.0.M6"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "kotest-assertions-android-local-asp.aar",
+          "url": "kotest-assertions-android-local-asp.aar",
+          "size": 33506,
+          "sha512": "e1d1519f981ee9d6dcf6c9939c666325c615a872917be9e0a084141e1880f352ed17de03b0a3e9a7078808624e343f36e2836e7d3169241a703ed313a97250e6",
+          "sha256": "ad8877dd96b840feabf6d1e2c6cd10084957579b3acae198f1c63551097acf71",
+          "sha1": "ad76bddcf78b85e8671398a8b53a49c555d58a1f",
+          "md5": "113857568835c12b99ceff026c74b627"
+        }
+      ]
+    }
+  ]
+}
