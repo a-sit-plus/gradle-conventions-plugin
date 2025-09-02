@@ -137,14 +137,6 @@ open class K2Conventions : Plugin<Project> {
             }
         target.publishVersionCatalog = true
 
-        target.plugins.withType<KotlinMultiplatformPluginWrapper> {
-            if (target != target.rootProject) {
-                target.registerKotestCopyTask()
-                target.extensions.getByType<KotlinMultiplatformExtension>()
-                    .wireKotestKsp()
-            }
-        }
-
         Logger.lifecycle(
             "\n ASP Conventions ${H}${target.AspVersions.kotlin}+$buildDate$R is using the following dependency versions for project $H${
                 if (target == target.rootProject) target.name
@@ -256,7 +248,6 @@ open class K2Conventions : Plugin<Project> {
 
                 kmp.setupAndroidTarget()
                 kmp.experimentalOptIns()
-                kmp.defaultSetupKotest()
 
                 kmp.linkAgpJvmSharedSources()
                 Logger.lifecycle("") //to make it look less crammed
@@ -290,7 +281,6 @@ open class K2Conventions : Plugin<Project> {
                         kotlin.apply {
                             sourceSets.getByName("test").dependencies {
                                 addKotestExtensions("jvm")
-                                addKotestJvmRunner()
                             }
 
                         }
