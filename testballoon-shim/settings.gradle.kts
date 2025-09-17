@@ -1,6 +1,6 @@
 System.setProperty("KOTEST_NO_ASP_HELPER","true")
 
-rootProject.name = "kmptest-root"
+rootProject.name = "shim-root"
 
 pluginManagement {
     repositories {
@@ -23,4 +23,4 @@ includeBuild("..")
 
 
 
-include("kmpotest")
+include("testballoon-shim")

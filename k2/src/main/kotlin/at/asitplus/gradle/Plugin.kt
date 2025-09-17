@@ -2,11 +2,10 @@
 
 package at.asitplus.gradle
 
-import at.asitplus.gradle.at.asitplus.gradle.*
+import at.asitplus.gradle.at.asitplus.gradle.addTestExtensions
 import io.github.gradlenexus.publishplugin.NexusPublishExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.artifacts.repositories.MavenArtifactRepository
 import org.gradle.api.tasks.Delete
 import org.gradle.api.tasks.StopExecutionException
 import org.gradle.api.tasks.testing.Test
@@ -239,7 +238,7 @@ open class K2Conventions : Plugin<Project> {
                             jvmTarget = JvmTarget.Companion.fromTarget(target.jvmTarget)
                         }
 
-                        Logger.info("  [JVM] Configuring Kotest JVM runner")
+                        Logger.info("  [JVM] Configuring JUnit JVM runner")
                         testRuns["test"].executionTask.configure {
                             useJUnitPlatform()
                         }
@@ -272,7 +271,14 @@ open class K2Conventions : Plugin<Project> {
                         }
                     }
                 }
-
+                target.afterEvaluate {
+                    Logger.lifecycle("  Enabling unsigned types")
+                    Logger.lifecycle("  Enabling context parameters\n")
+                    kotlin.sourceSets.forEach {
+                        it.languageSettings.optIn("kotlin.ExperimentalUnsignedTypes")
+                        it.languageSettings.enableLanguageFeature("ContextParameters")
+                    }
+                }
                 if (!isMultiplatform && hasJvm) {
                     Logger.lifecycle("  Assuming JVM-only Kotlin project")
                     target.afterEvaluate {
@@ -280,7 +286,7 @@ open class K2Conventions : Plugin<Project> {
                         (kotlin as KotlinJvmExtension).forceApiVersion()
                         kotlin.apply {
                             sourceSets.getByName("test").dependencies {
-                                addKotestExtensions("jvm")
+                                addTestExtensions("jvm")
                             }
 
                         }
@@ -301,7 +307,17 @@ open class K2Conventions : Plugin<Project> {
                                 doLast { Logger.lifecycle("> Clean done") }
                             }
                     }
-
+                    runCatching {
+                        if (isMultiplatform) {
+                            target.extensions.getByType<KotlinMultiplatformExtension>().apply {
+                                sourceSets.matching { it.name.endsWith("Test") }.configureEach {
+                                    dependencies {
+                                        addTestExtensions()
+                                    }
+                                }
+                            }
+                        }
+                    }
 
                     Logger.info("  Configuring Test output format")
                     target.tasks.withType<Test> {

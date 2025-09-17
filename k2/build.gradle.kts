@@ -35,7 +35,6 @@ dependencies {
     compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     compileOnly("org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion")
     api("io.ktor.plugin:plugin:$ktor")
-    compileOnly("io.kotest:io.kotest.gradle.plugin:$kotest")
     api("io.github.gradle-nexus:publish-plugin:$nexus")
     api("org.jetbrains.dokka:dokka-gradle-plugin:$dokka")
     implementation("org.tomlj:tomlj:1.1.1")
@@ -57,6 +56,30 @@ gradlePlugin {
     }
 }
 
+afterEvaluate {
+
+
+// Make all tasks whose name starts with "publish" (including publishToMavenLocal, etc.) depend on prePublish
+tasks.matching { it.name.startsWith("publish" ) &&!it.name.contains("plugin", ignoreCase = true) }
+    .forEach {
+        val dependingName = it.name.replace("publishTo", "publishAllPublicationsTo")
+        logger.lifecycle("Task ${it.name} depending on $dependingName")
+        it.dependsOn(
+            tasks.register<Exec>("shim$dependingName") {
+                group = "publishing"
+                description = "$name (shim)"
+                var wd = rootProject.projectDir.path + "/testballoon-shim"
+                println(wd)
+                workingDir(wd)
+
+                executable("./gradlew")
+                // You can override this via: ./gradlew -PprePublishCommand="your command"
+                args(dependingName)
+                isIgnoreExitValue = false
+            }
+        )
+    }
+}
 publishing {
     repositories {
         mavenLocal()

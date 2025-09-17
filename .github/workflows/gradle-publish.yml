@@ -35,18 +35,14 @@ jobs:
         arguments: build
 
     - name: Build KMPotest
-      working-directory: kmpotest
+      working-directory: testballoon-shim
       run: ./gradlew build
 
 
-    - name: Package Plugin
+    - name: Package Plugin + Testballoon Shim
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
         arguments: publishAllPublicationsToGitHubRepository
-
-    - name: Package KMPotest
-      working-directory: kmpotest
-      run: ./gradlew publishAllPublicationsToGitHubRepository
 
     - name: Upload repo as artifact
       uses: actions/upload-artifact@v4

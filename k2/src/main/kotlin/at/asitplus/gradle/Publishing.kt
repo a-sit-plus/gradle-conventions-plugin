@@ -112,7 +112,7 @@ internal fun Project.setupSignDependency() {
 }
 
 /**
- * Adds the `version-catalog` plugin to the build in order to publish version catalogs alongside the project's other maven artefacts.
+ * Adds the `version-catalog` plugin to the build to publish version catalogs alongside the project's other maven artefacts.
  */
 internal fun Project.addVersionCatalogSupport() {
     Logger.lifecycle("  Adding version catalog plugin to project ${rootProject.name}:${project.name}")

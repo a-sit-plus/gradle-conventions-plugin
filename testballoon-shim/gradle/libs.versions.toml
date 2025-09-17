@@ -1,0 +1,4 @@
+[versions]
+kotlin = "2.2.0"
+testballoon = "0.6.0-K2.2.0"
+agp = "8.10.0"
