@@ -34,7 +34,7 @@ jobs:
       with:
         arguments: build
 
-    - name: Build KMPotest
+    - name: Build Shim
       working-directory: testballoon-shim
       run: ./gradlew build
 
