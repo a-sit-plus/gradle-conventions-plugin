@@ -1,0 +1,1209 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "at.asitplus.gradle",
+    "module": "testballoon-shim",
+    "version": "202509019",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "metadataApiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.3"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.0-K2.2.0"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-integration-kotest-assertions",
+          "version": {
+            "requires": "0.6.0-K2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testballoon-shim-metadata-202509019.jar",
+          "url": "testballoon-shim-202509019.jar",
+          "size": 3916,
+          "sha512": "7c0f9861623d85efaf94a58be29a85752d90255fcdf846d2459b1487ce5ef0b25470dedd9232fc6a31073bb14ed69e2b15712d339f92488a7becbaa0687762cd",
+          "sha256": "7630863826a0ca9c77241da78c23b4ebc9bc8e5d64663b081ea242802aeb66e4",
+          "sha1": "4d8e046a33141309ee4a1e78a822a83fecf9c513",
+          "md5": "b239e6463b02e30cd2b01235cb2a3be8"
+        }
+      ]
+    },
+    {
+      "name": "metadataSourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "files": [
+        {
+          "name": "testballoon-shim-kotlin-202509019-sources.jar",
+          "url": "testballoon-shim-202509019-sources.jar",
+          "size": 2311,
+          "sha512": "3e8631d09a95e165ae5b04af092d34d61ea4a99fc9735fcffc8db5824231b597aa3259d1d541629592f7fe8fe96a2808a5dede7ef910a7daaeb08f6f43c64a20",
+          "sha256": "59b726ea88f44c7a205e61677bbaea68e9fb39d98350acb012868601f1e09cf4",
+          "sha1": "843206eb3cceafd8eacbfcfe01f61fdddf83021b",
+          "md5": "2e3e69d62096831980d07f8576d3e37d"
+        }
+      ]
+    },
+    {
+      "name": "releaseApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-android/202509019/testballoon-shim-android-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-android",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "releaseRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-android/202509019/testballoon-shim-android-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-android",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "releaseSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-android/202509019/testballoon-shim-android-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-android",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "androidNativeArm32ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-androidnativearm32/202509019/testballoon-shim-androidnativearm32-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-androidnativearm32",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "androidNativeArm32SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-androidnativearm32/202509019/testballoon-shim-androidnativearm32-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-androidnativearm32",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "androidNativeArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-androidnativearm64/202509019/testballoon-shim-androidnativearm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-androidnativearm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "androidNativeArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-androidnativearm64/202509019/testballoon-shim-androidnativearm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-androidnativearm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "androidNativeX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-androidnativex64/202509019/testballoon-shim-androidnativex64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-androidnativex64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "androidNativeX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-androidnativex64/202509019/testballoon-shim-androidnativex64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-androidnativex64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "androidNativeX86ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-androidnativex86/202509019/testballoon-shim-androidnativex86-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-androidnativex86",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "androidNativeX86SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-androidnativex86/202509019/testballoon-shim-androidnativex86-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-androidnativex86",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-iosarm64/202509019/testballoon-shim-iosarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-iosarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-iosarm64/202509019/testballoon-shim-iosarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-iosarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-iosarm64/202509019/testballoon-shim-iosarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-iosarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-iossimulatorarm64/202509019/testballoon-shim-iossimulatorarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-iossimulatorarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-iossimulatorarm64/202509019/testballoon-shim-iossimulatorarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-iossimulatorarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-iossimulatorarm64/202509019/testballoon-shim-iossimulatorarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-iossimulatorarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-iosx64/202509019/testballoon-shim-iosx64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-iosx64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-iosx64/202509019/testballoon-shim-iosx64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-iosx64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-iosx64/202509019/testballoon-shim-iosx64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-iosx64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-js/202509019/testballoon-shim-js-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-js",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-js/202509019/testballoon-shim-js-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-js",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-js/202509019/testballoon-shim-js-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-js",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-jvm/202509019/testballoon-shim-jvm-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-jvm",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-jvm/202509019/testballoon-shim-jvm-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-jvm",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-jvm/202509019/testballoon-shim-jvm-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-jvm",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "linuxArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-linuxarm64/202509019/testballoon-shim-linuxarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-linuxarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "linuxArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-linuxarm64/202509019/testballoon-shim-linuxarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-linuxarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "linuxX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-linuxx64/202509019/testballoon-shim-linuxx64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-linuxx64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "linuxX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-linuxx64/202509019/testballoon-shim-linuxx64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-linuxx64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "macosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-macosarm64/202509019/testballoon-shim-macosarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-macosarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "macosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-macosarm64/202509019/testballoon-shim-macosarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-macosarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "macosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-macosarm64/202509019/testballoon-shim-macosarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-macosarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "macosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-macosx64/202509019/testballoon-shim-macosx64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-macosx64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "macosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-macosx64/202509019/testballoon-shim-macosx64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-macosx64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "macosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-macosx64/202509019/testballoon-shim-macosx64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-macosx64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "mingwX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-mingwx64/202509019/testballoon-shim-mingwx64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-mingwx64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "mingwX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-mingwx64/202509019/testballoon-shim-mingwx64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-mingwx64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "tvosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-tvosarm64/202509019/testballoon-shim-tvosarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-tvosarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "tvosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-tvosarm64/202509019/testballoon-shim-tvosarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-tvosarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "tvosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-tvosarm64/202509019/testballoon-shim-tvosarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-tvosarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "tvosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-tvossimulatorarm64/202509019/testballoon-shim-tvossimulatorarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-tvossimulatorarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "tvosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-tvossimulatorarm64/202509019/testballoon-shim-tvossimulatorarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-tvossimulatorarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "tvosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-tvossimulatorarm64/202509019/testballoon-shim-tvossimulatorarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-tvossimulatorarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "tvosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-tvosx64/202509019/testballoon-shim-tvosx64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-tvosx64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "tvosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-tvosx64/202509019/testballoon-shim-tvosx64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-tvosx64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "tvosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-tvosx64/202509019/testballoon-shim-tvosx64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-tvosx64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-wasm-js/202509019/testballoon-shim-wasm-js-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-wasm-js",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-wasm-js/202509019/testballoon-shim-wasm-js-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-wasm-js",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-wasm-js/202509019/testballoon-shim-wasm-js-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-wasm-js",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "watchosArm32ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-watchosarm32/202509019/testballoon-shim-watchosarm32-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-watchosarm32",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "watchosArm32SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-watchosarm32/202509019/testballoon-shim-watchosarm32-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-watchosarm32",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "watchosArm32MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-watchosarm32/202509019/testballoon-shim-watchosarm32-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-watchosarm32",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "watchosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-watchosarm64/202509019/testballoon-shim-watchosarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-watchosarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "watchosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-watchosarm64/202509019/testballoon-shim-watchosarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-watchosarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "watchosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-watchosarm64/202509019/testballoon-shim-watchosarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-watchosarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "watchosDeviceArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-watchosdevicearm64/202509019/testballoon-shim-watchosdevicearm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-watchosdevicearm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "watchosDeviceArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-watchosdevicearm64/202509019/testballoon-shim-watchosdevicearm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-watchosdevicearm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "watchosDeviceArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-watchosdevicearm64/202509019/testballoon-shim-watchosdevicearm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-watchosdevicearm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "watchosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-watchossimulatorarm64/202509019/testballoon-shim-watchossimulatorarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-watchossimulatorarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "watchosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-watchossimulatorarm64/202509019/testballoon-shim-watchossimulatorarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-watchossimulatorarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "watchosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-watchossimulatorarm64/202509019/testballoon-shim-watchossimulatorarm64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-watchossimulatorarm64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "watchosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-watchosx64/202509019/testballoon-shim-watchosx64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-watchosx64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "watchosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-watchosx64/202509019/testballoon-shim-watchosx64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-watchosx64",
+        "version": "202509019"
+      }
+    },
+    {
+      "name": "watchosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testballoon-shim-watchosx64/202509019/testballoon-shim-watchosx64-202509019.module",
+        "group": "at.asitplus.gradle",
+        "module": "testballoon-shim-watchosx64",
+        "version": "202509019"
+      }
+    }
+  ]
+}
