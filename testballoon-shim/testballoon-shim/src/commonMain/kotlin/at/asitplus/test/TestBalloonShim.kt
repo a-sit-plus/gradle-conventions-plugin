@@ -1,24 +1,29 @@
 package at.asitplus.testballoon
 
+import de.infix.testBalloon.framework.TestConfig
 import de.infix.testBalloon.framework.TestCoroutineScope
 import de.infix.testBalloon.framework.TestSuite
-import io.kotest.property.Arb
-import io.kotest.property.Constraints
-import io.kotest.property.PropTestConfig
-import io.kotest.property.PropertyContext
-import io.kotest.property.PropertyTesting
-import io.kotest.property.RandomSource
+import de.infix.testBalloon.framework.disable
+import io.kotest.property.*
 
 context(suite: TestSuite)
 operator fun String.invoke(nested: suspend TestCoroutineScope.() -> Unit) {
-    suite.test(this) { nested() }
+    if (this.startsWith("!"))
+        suite.test(this, TestConfig.disable()) { nested() }
+    else suite.test(this) { nested() }
 }
 
 context(suite: TestSuite)
 infix operator fun String.minus(suiteBody: TestSuite.() -> Unit) {
-    suite.testSuite(this) { suiteBody() }
+    suite.testSuite(this) {
+        if (this@minus.startsWith("!")) testConfig = TestConfig.disable()
+        suiteBody()
+        if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
+    }
 }
 
+@Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
+@kotlin.internal.LowPriorityInOverloadResolution
 fun <Data> TestSuite.withData(vararg parameters: Data, action: suspend (Data) -> Unit) {
     for (data in parameters) {
         test("$data") {
@@ -33,11 +38,95 @@ fun <Data> TestSuite.withData(data: Iterable<Data>, action: suspend (Data) -> Un
     }
 }
 
+fun <Data> TestSuite.withData(map: Map<String, Data>, action: suspend (Data) -> Unit) {
+    for (d in map) {
+        test(d.key) { action(d.value) }
+    }
+}
+
 fun <Data> TestSuite.withData(nameFn: (Data) -> String, data: Iterable<Data>, action: suspend (Data) -> Unit) {
     for (d in data) {
         test(nameFn(d)) { action(d) }
     }
 }
+@Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
+@kotlin.internal.LowPriorityInOverloadResolution
+fun <Data> TestSuite.withData(nameFn: (Data) -> String, vararg arguments: Data, action: suspend (Data) -> Unit) {
+    for (d in arguments) {
+        test(nameFn(d)) { action(d) }
+    }
+}
+
+fun <Data> TestSuite.withData(data: Sequence<Data>, action: suspend (Data) -> Unit) {
+    for (d in data) {
+        test("$d") { action(d) }
+    }
+}
+
+fun <Data> TestSuite.withData(nameFn: (Data) -> String, data: Sequence<Data>, action: suspend (Data) -> Unit) {
+    for (d in data) {
+        test(nameFn(d)) { action(d) }
+    }
+}
+
+
+@Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
+@kotlin.internal.LowPriorityInOverloadResolution
+fun <Data> TestSuite.withDataSuites(
+    vararg parameters: Data,
+    action: TestSuite.(Data) -> Unit
+) {
+    for (d in parameters) {
+        testSuite(d.toString()) {
+            action(d)
+            if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
+        }
+    }
+}
+
+fun <Data> TestSuite.withDataSuites(
+    data: Iterable<Data>,
+    action: TestSuite.(Data) -> Unit
+) {
+    for (d in data) {
+        testSuite(d.toString()) {
+            action(d)
+            if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
+        }
+    }
+}
+
+fun <Data> TestSuite.withDataSuites(
+    map: Map<String, Data>,
+    action: TestSuite.(Data) -> Unit
+) {
+    for (d in map) {
+        testSuite(d.key) {
+            action(d.value)
+            if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
+        }
+    }
+}
+
+fun <Data> TestSuite.withDataSuites(
+    data: Sequence<Data>,
+    action: TestSuite.(Data) -> Unit
+) {
+    for (d in data) {
+        testSuite(d.toString()) {
+            action(d)
+            if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
+        }
+    }
+}
+
+@Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
+@kotlin.internal.LowPriorityInOverloadResolution
+fun <Data> TestSuite.withDataSuites(
+    nameFn: (Data) -> String,
+    vararg arguments: Data,
+    action: TestSuite.(Data) -> Unit
+) = withDataSuites(nameFn, arguments.asIterable(), action)
 
 fun <Data> TestSuite.withDataSuites(
     nameFn: (Data) -> String,
@@ -45,17 +134,35 @@ fun <Data> TestSuite.withDataSuites(
     action: TestSuite.(Data) -> Unit
 ) {
     for (d in data) {
-        testSuite(nameFn(d)) { action(d) }
+        testSuite(nameFn(d)) {
+            action(d)
+            if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
+        }
+    }
+}
+
+fun <Data> TestSuite.withDataSuites(
+    nameFn: (Data) -> String,
+    data: Sequence<Data>,
+    action: TestSuite.(Data) -> Unit
+) {
+    for (d in data) {
+        testSuite(nameFn(d)) {
+            action(d)
+            if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
+        }
     }
 }
 
 fun <Value> TestSuite.checkAllTests(
     iterations: Int,
-    genA: Arb<Value>,
+    genA: Gen<Value>,
     content: suspend context(PropertyContext) TestCoroutineScope.(Value) -> Unit
 ) {
+    var count = 0
     checkAllSeries(iterations, genA) { value, context ->
-        test("$value") {
+        count++
+        test("$count/$iterations ${if (value == null) "null" else value::class.simpleName}: $value") {
             with(context) {
                 content(value)
             }
@@ -65,24 +172,28 @@ fun <Value> TestSuite.checkAllTests(
 
 fun <Value> TestSuite.checkAllSuites(
     iterations: Int,
-    genA: Arb<Value>,
+    genA: Gen<Value>,
     content: context(PropertyContext) TestSuite.(Value) -> Unit
 ) {
+
+    var count = 0
     checkAllSeries(iterations, genA) { value, context ->
-        testSuite("$value") {
+        count++
+        testSuite("$count/$iterations ${if (value == null) "null" else value::class.simpleName}: $value") {
             with(context) {
                 content(value)
             }
+            if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
         }
     }
 }
 
 fun <A> TestSuite.checkAllSuites(
-    genA: Arb<A>,
+    genA: Gen<A>,
     content: context(PropertyContext) TestSuite.(A) -> Unit
 ) = checkAllSuites(PropertyTesting.defaultIterationCount, genA, content)
 
-private inline fun <Value> checkAllSeries(iterations: Int, genA: Arb<Value>, series: (Value, PropertyContext) -> Unit) {
+private inline fun <Value> checkAllSeries(iterations: Int, genA: Gen<Value>, series: (Value, PropertyContext) -> Unit) {
     val constraints = Constraints.iterations(iterations)
 
     @Suppress("OPT_IN_USAGE")

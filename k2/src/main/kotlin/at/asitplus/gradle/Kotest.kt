@@ -14,7 +14,6 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
  */
 inline fun KotlinDependencyHandler.addTestExtensions(target: String? = null) {
     val targetInfo = target?.let { " ($it)" } ?: ""
-    Logger.lifecycle("  Adding Test libraries$targetInfo")
     Logger.info("   * Assertions$targetInfo")
     Logger.info("   * Property-based testing$targetInfo")
     if (System.getProperty("KOTEST_NO_ASP_HELPER") != "true")     Logger.info("   * Testballoon$targetInfo")

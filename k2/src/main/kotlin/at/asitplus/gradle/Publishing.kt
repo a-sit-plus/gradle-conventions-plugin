@@ -256,7 +256,7 @@ internal fun Project.compileVersionCatalog() {
     project.extensions.getByType<PublishingExtension>().let { publishingExtension ->
 
         val configured = publishingExtension.publications.filterIsInstance<DefaultMavenPublication>()
-            .firstOrNull { it.pom?.scm != null }
+            .firstOrNull { it.pom.scm != null }
 
         if (project.kotlinExtension is KotlinMultiplatformExtension)
             publishingExtension.publications.create<MavenPublication>("versions") {
