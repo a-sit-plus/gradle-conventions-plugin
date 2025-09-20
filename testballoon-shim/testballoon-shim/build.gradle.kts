@@ -99,8 +99,8 @@ publishing {
     publications {
         withType<MavenPublication> {
             pom {
-                name.set("KMPotest")
-                description.set("Kotlin Multiplatform Kotest JUnit report generator shim")
+                name.set("Testballoon Shim")
+                description.set("Testballoon FreeSpec Shim")
                 url.set("https://github.com/a-sit-plus/gradle-conventions-plugin")
                 licenses {
                     license {

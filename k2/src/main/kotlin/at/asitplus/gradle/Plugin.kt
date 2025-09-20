@@ -237,11 +237,6 @@ open class K2Conventions : Plugin<Project> {
                             Logger.lifecycle("  ${H}[JVM] Setting jvmTarget to ${target.jvmTarget} for $name$R")
                             jvmTarget = JvmTarget.Companion.fromTarget(target.jvmTarget)
                         }
-
-                        Logger.info("  [JVM] Configuring JUnit JVM runner")
-                        testRuns["test"].executionTask.configure {
-                            useJUnitPlatform()
-                        }
                     }
                 }
 
@@ -322,7 +317,6 @@ open class K2Conventions : Plugin<Project> {
                     Logger.info("  Configuring Test output format")
                     target.tasks.withType<Test> {
                         if (name != "testReleaseUnitTest") {
-                            useJUnitPlatform()
                             filter {
                                 isFailOnNoMatchingTests = false
                             }
