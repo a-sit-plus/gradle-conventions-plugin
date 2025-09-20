@@ -59,11 +59,11 @@
         {
           "name": "testballoon-shim-macosX64Main-202509019.klib",
           "url": "testballoon-shim-macosx64-202509019.klib",
-          "size": 18142,
-          "sha512": "426168085d808eeb8ce475ef585c50b864d94cf14e3784b5af18b91449253bbe66a07ab7270b8575552d9dfa0ca0ca375d69edb744924d346d75cde2c58daa25",
-          "sha256": "b827f68a6a0b3af0d6506c21322134faee67aef7cf99b3e264a62c81591a5c6e",
-          "sha1": "632ab3df18603df071f4f5e1b589b44a08f95bab",
-          "md5": "44b5476c51fcda17d67ae5019b77d571"
+          "size": 18973,
+          "sha512": "4c082310ac41f4423781bf4611c0cd30588634ea3e4a5ab4420173a3e4545b316917e2e2ee2251a9ac690fe6c64cbc7f083515031cd268ececa9de479fa5550d",
+          "sha256": "100bde50e1aa5366bb45f3ce1000a77f055d092c3427a02f90e74385daed7947",
+          "sha1": "9ddd772e9b89a22de03577b0ea2d554581481ec7",
+          "md5": "29dd7a3a160230f6092fbb15c29c664a"
         }
       ]
     },
@@ -82,11 +82,11 @@
         {
           "name": "testballoon-shim-macosx64-202509019-sources.jar",
           "url": "testballoon-shim-macosx64-202509019-sources.jar",
-          "size": 3036,
-          "sha512": "5e821bbcefa2a3c71b7b0a4d40c15d025c8ad48408361aeceab8dc3dd6087b2b706e9438846f37bedb64cf34240ecaaf9513b2b9ab1d06dd36d5a7dd2fca4735",
-          "sha256": "3ed42063233e9a30fdf44e3bd84ad4a1cd25841be3665147e683a59c8bebc24e",
-          "sha1": "b4a80960ba4ac459af85ad9abb5eb7b69f783d06",
-          "md5": "6ddc331241fcad1c9615f9a27c585a45"
+          "size": 3178,
+          "sha512": "5b92e5b245272d1e343bc6443d4a9857de9f61e70b780b0c796412259620ea57cfe7034d09a7bf651b858425c49156c021f1a9037bc9730c0a54ecb9aa2ce8f0",
+          "sha256": "c5e81d2d62e5e3a0b03578016b65979eff091128926b7a0c45736d0a0dcd0e2f",
+          "sha1": "9109e078e66994b5c3c23dd13272f027d57c3ed9",
+          "md5": "19dff9fbadbdc664609681d724a416aa"
         }
       ]
     },
@@ -135,10 +135,10 @@
           "name": "testballoon-shim-macosx64-202509019-metadata.jar",
           "url": "testballoon-shim-macosx64-202509019-metadata.jar",
           "size": 261,
-          "sha512": "98e933395e45ea9589d31c65fa945977b36af2deea54a205e3401ee0c2635f0983d26de220a4308a129b787ac40dfcaf51cb3259e26ae33dfb5b8e4a2a279af0",
-          "sha256": "24da81afa424083a7c666bf007b006640c400f21a6c4e002a5982387255e6402",
-          "sha1": "d415b17a2bc1a696063fb8905e2a484726e74fa2",
-          "md5": "1f932fad3bf235527429bf5959f3dbd5"
+          "sha512": "fdbdb09493fac38eb28553de1d0b40bdbcaa1226f211ce144e3c6d398839a058217d45a452f3e684fe87571c7d85555dac760c01debd51220e9f0d8a48737d12",
+          "sha256": "52bc0c6c79abac5e1d4a5aaec928c042b40ee457ed55174e83f70533bb022aec",
+          "sha1": "b060959d856004813e9965ba8c00177764de16ba",
+          "md5": "202864a94bf509137b8e802b7179583f"
         }
       ]
     }

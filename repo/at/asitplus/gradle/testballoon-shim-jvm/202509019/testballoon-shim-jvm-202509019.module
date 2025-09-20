@@ -58,11 +58,11 @@
         {
           "name": "testballoon-shim-jvm-202509019.jar",
           "url": "testballoon-shim-jvm-202509019.jar",
-          "size": 26373,
-          "sha512": "66f68f464a911e3211c77729cc0c0207a37737632f90c3b9af5cc6b225b99205257c9c50d3db9d0eb209f957aad2d58827a65a0cfd04184e762402c8a7be7745",
-          "sha256": "b7e307e3169cf979f89a889126734f44848d32d8147a9cc4f6feaad53962d695",
-          "sha1": "7d9609e3d964427baa99900b9f4537ea4fff9198",
-          "md5": "4ffa865c0b149b9311c9f55c35d792c3"
+          "size": 26707,
+          "sha512": "4e0f5ac63ac196450a087e65a64a72b39d8ce8dd6196deb50a04d4f8c09541813c16a7f241ee2fc19875fc69f0d40b382124c79180f77ab67e609f05d08b4c4b",
+          "sha256": "ac2cfdc0d92eab71374aa9820b018fda33b01ef7965982c7ad2a43ec638f0e0f",
+          "sha1": "c8a362cabdd9906488c7e72ddad0cbc8705d7f53",
+          "md5": "ead9c1e6befc07adec9b65130e998dc4"
         }
       ]
     },
@@ -109,11 +109,11 @@
         {
           "name": "testballoon-shim-jvm-202509019.jar",
           "url": "testballoon-shim-jvm-202509019.jar",
-          "size": 26373,
-          "sha512": "66f68f464a911e3211c77729cc0c0207a37737632f90c3b9af5cc6b225b99205257c9c50d3db9d0eb209f957aad2d58827a65a0cfd04184e762402c8a7be7745",
-          "sha256": "b7e307e3169cf979f89a889126734f44848d32d8147a9cc4f6feaad53962d695",
-          "sha1": "7d9609e3d964427baa99900b9f4537ea4fff9198",
-          "md5": "4ffa865c0b149b9311c9f55c35d792c3"
+          "size": 26707,
+          "sha512": "4e0f5ac63ac196450a087e65a64a72b39d8ce8dd6196deb50a04d4f8c09541813c16a7f241ee2fc19875fc69f0d40b382124c79180f77ab67e609f05d08b4c4b",
+          "sha256": "ac2cfdc0d92eab71374aa9820b018fda33b01ef7965982c7ad2a43ec638f0e0f",
+          "sha1": "c8a362cabdd9906488c7e72ddad0cbc8705d7f53",
+          "md5": "ead9c1e6befc07adec9b65130e998dc4"
         }
       ]
     },
@@ -132,11 +132,11 @@
         {
           "name": "testballoon-shim-jvm-202509019-sources.jar",
           "url": "testballoon-shim-jvm-202509019-sources.jar",
-          "size": 2989,
-          "sha512": "933bc541707ffda0e4415c127f7f1fbd586229cfd43ccaca90e32e77b46fea6d8cb096208b12d12e36b0e137bd84674c48d45508c94c305d85decc637cf3af84",
-          "sha256": "401f522b14d236dcc3904a7fe27942dd0211bf7bbf78585433f8bfedee484cbd",
-          "sha1": "23f4118cfc1894d1efedfd3ce378bcef1899809e",
-          "md5": "a336bcfc060a462deeab4d3efe38df49"
+          "size": 3131,
+          "sha512": "2baa7304b68929b5b56d28717658736d37602ff88264297fd4ba8c689ec282a2d0757b95f962a87547c916fb981dc774f97cbeebf463651c68875370223262ce",
+          "sha256": "975188b6d320d8d214fd2eceeb99a46af87468efcd1c7fd71014a74455e8bc21",
+          "sha1": "80fba31de089827814f1fc51c1b7cd293498ee7d",
+          "md5": "8eee823120e4de2fd7d4435cec124f11"
         }
       ]
     }

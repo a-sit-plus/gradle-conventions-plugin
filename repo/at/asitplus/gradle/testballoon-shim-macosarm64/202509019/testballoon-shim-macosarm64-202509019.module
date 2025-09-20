@@ -59,11 +59,11 @@
         {
           "name": "testballoon-shim-macosArm64Main-202509019.klib",
           "url": "testballoon-shim-macosarm64-202509019.klib",
-          "size": 18162,
-          "sha512": "bb3687b28a1854d1cb72be2a4abc35049e57517ae46dde6e0d3def300a0e150658ed545917507173eda54add0ea3973ef570f4494d07dd58c48291d6aac1cfd1",
-          "sha256": "990c35a768cd93a0dc63811f4ecd3b3d1abf5d527a259263b9f9e4ef3776fed3",
-          "sha1": "49b0c3fad3fa3d1cee513b1da84bd01cd0ff5683",
-          "md5": "4c41a29cc9eda3158b141f094e787490"
+          "size": 18993,
+          "sha512": "b67c43d245c2cc1c069c3b89dca2dc6dc6c003918df7262077d406366aba6963e310d0a8dac2fcb3d1ea858546f612a32b7bc7fea5bfb01ea8a6baccde2bbaf9",
+          "sha256": "d22f0bf19de0cf4feba7fd5af46c0c38a805a589cab7f3f01e7408a8ef503f85",
+          "sha1": "7a14f6b40b7f7565572a0bff32631b8875b5b448",
+          "md5": "f61e2610769e0e5d6a076817d0a4373a"
         }
       ]
     },
@@ -82,11 +82,11 @@
         {
           "name": "testballoon-shim-macosarm64-202509019-sources.jar",
           "url": "testballoon-shim-macosarm64-202509019-sources.jar",
-          "size": 3058,
-          "sha512": "5b41504d5f9b840ac7c016f1d33dc5ca9b88c473f4d1a6b60a38f9e7c524526ec588f8feab24193a49d45c603037399fbe3e0ea370f511f97d079220b5dd3093",
-          "sha256": "319a5367a54713cfbe294af9f15dfe06cf04da4d9678677d03e6ce92dfe082ba",
-          "sha1": "39990eeb1fdc999f9f18c6c6ad78621f4ca0787c",
-          "md5": "ce4a4a18e9895077f991df1a7a614fec"
+          "size": 3200,
+          "sha512": "1531e3dacff32481aac8e98c48c7b4839bf66a2f0ddfc90415758e9df5c6ab4f3dbe4db1a4c938e186b2b6a2a1a98658d207d1286bae05c5cb2af0cf95990ce3",
+          "sha256": "cca15791ca67e20511c61951f786802d7939d11637bb4cae190265f2eebe6285",
+          "sha1": "039b08c9ddeed0ef7bbf442620a004a95ecb38c6",
+          "md5": "3f412823def01b885a502a0c1b56cf6f"
         }
       ]
     },
@@ -135,10 +135,10 @@
           "name": "testballoon-shim-macosarm64-202509019-metadata.jar",
           "url": "testballoon-shim-macosarm64-202509019-metadata.jar",
           "size": 261,
-          "sha512": "98e933395e45ea9589d31c65fa945977b36af2deea54a205e3401ee0c2635f0983d26de220a4308a129b787ac40dfcaf51cb3259e26ae33dfb5b8e4a2a279af0",
-          "sha256": "24da81afa424083a7c666bf007b006640c400f21a6c4e002a5982387255e6402",
-          "sha1": "d415b17a2bc1a696063fb8905e2a484726e74fa2",
-          "md5": "1f932fad3bf235527429bf5959f3dbd5"
+          "sha512": "fdbdb09493fac38eb28553de1d0b40bdbcaa1226f211ce144e3c6d398839a058217d45a452f3e684fe87571c7d85555dac760c01debd51220e9f0d8a48737d12",
+          "sha256": "52bc0c6c79abac5e1d4a5aaec928c042b40ee457ed55174e83f70533bb022aec",
+          "sha1": "b060959d856004813e9965ba8c00177764de16ba",
+          "md5": "202864a94bf509137b8e802b7179583f"
         }
       ]
     }

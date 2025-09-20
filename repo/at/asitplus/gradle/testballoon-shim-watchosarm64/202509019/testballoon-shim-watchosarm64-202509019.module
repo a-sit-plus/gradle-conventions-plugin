@@ -59,11 +59,11 @@
         {
           "name": "testballoon-shim-watchosArm64Main-202509019.klib",
           "url": "testballoon-shim-watchosarm64-202509019.klib",
-          "size": 18150,
-          "sha512": "2619d2e916fe354cc34a0fb72d0a9b65b47f9afa72a88632514833b7df5e948a82a131f6873e78bc8c74c0f3612d5fd5d6a90432266efb773dadc80749388c2f",
-          "sha256": "5b84de5c7649e36e95c1a756c82512da8175f683d3d1b69aab47bbc87f6d9847",
-          "sha1": "66397a43ab8d1e61e91cd83fca618865e29799d4",
-          "md5": "2234309b862fe2d95b060603606ed639"
+          "size": 18981,
+          "sha512": "6e66dd5c3592820893ee855964e475c993230d44b6e0f436eb21953a2510ec00d4e389f6141c494fdad1616f02bb2270a7d569a3021d32e5920133e15b6564d7",
+          "sha256": "122237657ab95d7d681c56b0d53f5a74d400ec4d9b6127e4547c553ad6cc6f83",
+          "sha1": "24b9031628a81b89f8a0d3ad205e93800f6347ca",
+          "md5": "52343ee4886a28a7bde948a4a01eff04"
         }
       ]
     },
@@ -82,11 +82,11 @@
         {
           "name": "testballoon-shim-watchosarm64-202509019-sources.jar",
           "url": "testballoon-shim-watchosarm64-202509019-sources.jar",
-          "size": 3080,
-          "sha512": "e8e1770a23832696c96461de6b69f3483293107c891501fc7777d3dbb076660286963b545a4d2afda811baab2812151c0bd220400c026d2ab8ba50de0d44d878",
-          "sha256": "e4a6e0ba4805472bb825885bdf5efe1bdb976f6efc1e89f9b20989a793898177",
-          "sha1": "2bea1faeead0bfde1bcf9ece1fff185c953b97d5",
-          "md5": "109cee4d0dad58d7d3b28d525d18e480"
+          "size": 3222,
+          "sha512": "984ae2c26662c6ebc6d5ab84a1db53bf73b0ac9be6603b90469c7d5c3b92600bba5f1442582fa153352f375a0da5c214664edc8a025cb1e874e07e6669bd19f6",
+          "sha256": "c0ea0ce1319b4132d5ae85e8dd0621f626966c2f3e711c7166d68f92f89e2c96",
+          "sha1": "ef36835cacf47db0aaa939629cdfc039f1359728",
+          "md5": "90f2a755590c52c67ad57a39856638b4"
         }
       ]
     },
@@ -135,10 +135,10 @@
           "name": "testballoon-shim-watchosarm64-202509019-metadata.jar",
           "url": "testballoon-shim-watchosarm64-202509019-metadata.jar",
           "size": 261,
-          "sha512": "8150b4e2db93abec8485081aa4794a672ac7a4ea86cf9ae62a594f3b632cbe6c0b0b20d921b4991073296947a2cce16fb9080fb9c7428959dc5534943779f841",
-          "sha256": "83af040cafbdfcb87cc57afc41cd4692f7b2ecd5bb2150564168e0e3b9ed9709",
-          "sha1": "d6e9b0d48c27f321d27aae74e274edc84b72900f",
-          "md5": "dec28724b236c478939bef9b18fe84bf"
+          "sha512": "661cedce0f727efcae0a5aa8b1d29328806de84188e7b0fd5f086d199fa8f97f0bab508762277d24bf72e268f6cd3a8b99c6bd72d5508416564d1f2a42cbc2ec",
+          "sha256": "ed288edfb4a40d3bcb61bfddee95fddb2cd52514ca05d948b6ab14fbb09a2a5a",
+          "sha1": "659c386fa611a44e3eb0bfb24fe88242c24fbd22",
+          "md5": "6cabdf8ccf52df4d49402098eaceaeb3"
         }
       ]
     }

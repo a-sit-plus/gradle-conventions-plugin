@@ -59,11 +59,11 @@
         {
           "name": "testballoon-shim-tvosSimulatorArm64Main-202509019.klib",
           "url": "testballoon-shim-tvossimulatorarm64-202509019.klib",
-          "size": 18236,
-          "sha512": "2857a80dbe6bc830c0071a485d60c6d99075f10bb0727587e5e2d5bd2196c581166d3a716021d4249ef660118b399f8ea3abcfde533dd004051e9385dbea3cdc",
-          "sha256": "2040af459f7d4a4b5a3a64787b03c7df339e3c1a920a02a734ed1fd144685b78",
-          "sha1": "18411d7cf9e156264ceb8fad837b27abd6589bba",
-          "md5": "f8764942f8a2fef9101fdf0263d0b889"
+          "size": 19065,
+          "sha512": "f5d587cefa2ddd865113600aea7c0c6662c5fc4fb68740bb9f88bdc5c2db22472a52669ce9062a35f9e103e62a6a47e6bb3164100019e5a5ab7e22744fe5050f",
+          "sha256": "25c4ed0729e7e530fc16ede88ad25c714545848c972aa7eacf9c5c647ca690c2",
+          "sha1": "c7482179f26d9703033dff5dcd9ecb57b8023f01",
+          "md5": "74c811e2ca01da03b0dddbe4e37fe44f"
         }
       ]
     },
@@ -82,11 +82,11 @@
         {
           "name": "testballoon-shim-tvossimulatorarm64-202509019-sources.jar",
           "url": "testballoon-shim-tvossimulatorarm64-202509019-sources.jar",
-          "size": 3143,
-          "sha512": "ba3d2b03ecf296093c5448e7d722af28c84ba17b7bf4a6bb3f3884f4717a3a09e5a7f0253b7a7fbabe39cb6450dafc4cd8574629eda1a85822a7912e35dc2118",
-          "sha256": "5016b3b1c17c55e0439f044564b3ff179d33a2e3414e97ee5b94cc12da2fd5ec",
-          "sha1": "59431746823fec32f91c0171da5f677d6f77345b",
-          "md5": "a48e4299b55722157019b6297a099b96"
+          "size": 3285,
+          "sha512": "25965f47454727d6152fe07aad5e140baa6edf59ec5bd4a4c800b8d41f967696b6f277c7d224c61fa09a586ba50f724f478ed8d68987a0cbf60e4866016a5f95",
+          "sha256": "0c874457974d72fa1e45c0437bc030ff66578cf89d7ca71a3f239a12a8ce2c93",
+          "sha1": "8bc3cab41765290e8e566bdcb6e304d84d06cb94",
+          "md5": "340215075cc69c80d35af427e0c834d8"
         }
       ]
     },
@@ -135,10 +135,10 @@
           "name": "testballoon-shim-tvossimulatorarm64-202509019-metadata.jar",
           "url": "testballoon-shim-tvossimulatorarm64-202509019-metadata.jar",
           "size": 261,
-          "sha512": "98e933395e45ea9589d31c65fa945977b36af2deea54a205e3401ee0c2635f0983d26de220a4308a129b787ac40dfcaf51cb3259e26ae33dfb5b8e4a2a279af0",
-          "sha256": "24da81afa424083a7c666bf007b006640c400f21a6c4e002a5982387255e6402",
-          "sha1": "d415b17a2bc1a696063fb8905e2a484726e74fa2",
-          "md5": "1f932fad3bf235527429bf5959f3dbd5"
+          "sha512": "fdbdb09493fac38eb28553de1d0b40bdbcaa1226f211ce144e3c6d398839a058217d45a452f3e684fe87571c7d85555dac760c01debd51220e9f0d8a48737d12",
+          "sha256": "52bc0c6c79abac5e1d4a5aaec928c042b40ee457ed55174e83f70533bb022aec",
+          "sha1": "b060959d856004813e9965ba8c00177764de16ba",
+          "md5": "202864a94bf509137b8e802b7179583f"
         }
       ]
     }

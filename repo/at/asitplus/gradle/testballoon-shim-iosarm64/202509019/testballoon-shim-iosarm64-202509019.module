@@ -59,11 +59,11 @@
         {
           "name": "testballoon-shim-iosArm64Main-202509019.klib",
           "url": "testballoon-shim-iosarm64-202509019.klib",
-          "size": 18141,
-          "sha512": "743d0a820b5e2a5c5ca3da8d4bc51dd9de2df16d68d07a2ee0254ce85016f46c8967e8ff1cc18651630aece9c8fc9ad0d2eaeeabae47fc36935e40b8a2ff8eb7",
-          "sha256": "caa92ac776cbad06110e9b6099b92c3cff389efcf23c44dd5549c2c0fd793812",
-          "sha1": "5e6ad61daedfcef12a6bb321ec34facc2eba849c",
-          "md5": "495b17f491f12930067a6d25002e178e"
+          "size": 18972,
+          "sha512": "e7f9f9f6f01360f38f5bc4c5bfb58e9a6fd9b24f93860f7cfb06e8da147ffcd296629a90b4acf454ad5011904f6b84b480c4b0b550f7d49a4515f34631dfa42a",
+          "sha256": "0a53d00557e461eed18d2310ce34aecce29f8e7c0da2711e70a87d5cd0d36146",
+          "sha1": "70bf8f9a3cd6d102dd0c3eff7f968cb7eedfa4f3",
+          "md5": "67a09803a731f6c73aeb744321fe35a6"
         }
       ]
     },
@@ -82,11 +82,11 @@
         {
           "name": "testballoon-shim-iosarm64-202509019-sources.jar",
           "url": "testballoon-shim-iosarm64-202509019-sources.jar",
-          "size": 3036,
-          "sha512": "c1333380193ecd53061dfa0e6e45e8899093f865d717bd33a3637a80e7b8fa898b7505cf64e9da7c07fa84b7230eae4bbedd01214314f9faad1179d64b795048",
-          "sha256": "d60d7715338f6a317931c433d6c2f30cbfefdc0f92e3370c55de5eb66d71db33",
-          "sha1": "3815216c1724c633424553ae10b09c3ce4c4bc57",
-          "md5": "2c1a03afea0bea6d6ed43c5822cd9104"
+          "size": 3178,
+          "sha512": "80ddbb8e9ad1106ee37c9bc9a043e4941d1bc2a8599d022022e9e4ee1dc6723103029cf8b66d86bce98705f28a2612392a41296b6bcb364e859485faf92d0c91",
+          "sha256": "7fb6aaaefb5d6da89fd1c3d60a491c32712d34199f2fe53f179cb2571fa62977",
+          "sha1": "b23db06fc71d00b92762000befcd8f6fda0c2690",
+          "md5": "b707d26a7de9cb9f7fdfe35a2d76cefc"
         }
       ]
     },
@@ -135,10 +135,10 @@
           "name": "testballoon-shim-iosarm64-202509019-metadata.jar",
           "url": "testballoon-shim-iosarm64-202509019-metadata.jar",
           "size": 261,
-          "sha512": "9ac1e97b96b49ef480d0f69959efd53172f418d45be7c35d8f6d8871e4d352c03330d79cc6d0abf70d7256b5e6576d8e3e948e788dd6e8fc159b3ce178a25423",
-          "sha256": "88266d0c8a0c7b16e4e2a122f130bc900a54e301aaf738697fa534413398d904",
-          "sha1": "d88ed8187ebc630041749cfda095fee9f579de52",
-          "md5": "ab16f48070c28f7bde3996f55c39808c"
+          "sha512": "cc582fb105e572b89dafa3c5697a9439627cce5e9fecf37d93c6719f3e685324ee0a75ae006ba3aade2930b00c68c51670c286a0e237db1e9ae5e60c65e24ea5",
+          "sha256": "21735570e3478634ae76a7be4a4099bcc3959ea3f3d775df5fd66f7fcab6b510",
+          "sha1": "81b6909384d413e0b8aaa92195d13a1824e6e6dc",
+          "md5": "f70b21bd2751f6a9ee1f98c8a7f7cd2e"
         }
       ]
     }

@@ -58,11 +58,11 @@
         {
           "name": "testballoon-shim-wasm-js-202509019.klib",
           "url": "testballoon-shim-wasm-js-202509019.klib",
-          "size": 17902,
-          "sha512": "1b572bb81ef6cfb43ffdca31c899b8602874e0ef2e4c7d20c218a6e0dd1a4ed2019e4f053ba05d88ecba9a922d3345a288e10afdf632103dee3d861f2aa04567",
-          "sha256": "6c2ecfda8e41a0e8f905779d0e7dc7c1bc4d6a8634fce87889a241ffa4de8395",
-          "sha1": "2665e5ba2446f3b555ac4e3e91e088123ff10f68",
-          "md5": "e4e8db41ae5c717edad2c85f185fafc1"
+          "size": 18732,
+          "sha512": "4f6cd8de246408297ab0da9d80e5a5160b74b609da35553a30aec28f6a6385da67cc549dc2f0f4fb2d5434087682e37bbd0f6732de24eb4fe33423228eb9c31e",
+          "sha256": "7c3869189e65427a20168dd3d053532d24a33a1b4b9cd2be7dbc45caed215035",
+          "sha1": "6a07dc570e895584a0257c00d6c7c2242516bd90",
+          "md5": "095236c0a86739609701c24986b584bf"
         }
       ]
     },
@@ -109,11 +109,11 @@
         {
           "name": "testballoon-shim-wasm-js-202509019.klib",
           "url": "testballoon-shim-wasm-js-202509019.klib",
-          "size": 17902,
-          "sha512": "1b572bb81ef6cfb43ffdca31c899b8602874e0ef2e4c7d20c218a6e0dd1a4ed2019e4f053ba05d88ecba9a922d3345a288e10afdf632103dee3d861f2aa04567",
-          "sha256": "6c2ecfda8e41a0e8f905779d0e7dc7c1bc4d6a8634fce87889a241ffa4de8395",
-          "sha1": "2665e5ba2446f3b555ac4e3e91e088123ff10f68",
-          "md5": "e4e8db41ae5c717edad2c85f185fafc1"
+          "size": 18732,
+          "sha512": "4f6cd8de246408297ab0da9d80e5a5160b74b609da35553a30aec28f6a6385da67cc549dc2f0f4fb2d5434087682e37bbd0f6732de24eb4fe33423228eb9c31e",
+          "sha256": "7c3869189e65427a20168dd3d053532d24a33a1b4b9cd2be7dbc45caed215035",
+          "sha1": "6a07dc570e895584a0257c00d6c7c2242516bd90",
+          "md5": "095236c0a86739609701c24986b584bf"
         }
       ]
     },
@@ -132,11 +132,11 @@
         {
           "name": "testballoon-shim-wasm-js-202509019-sources.jar",
           "url": "testballoon-shim-wasm-js-202509019-sources.jar",
-          "size": 3016,
-          "sha512": "8bbb06707a6db68af7cd82814f6c61eec9338b43dc1d2ce089f54c45eb1879ca2841fda7c176b4808eb97547edb014a25a69d8ed5b4f1eb837984cad59e9c1c8",
-          "sha256": "a1e402ff2ca555170f86c993e3792a5e7887294888d2882837a1f374ee70cd3a",
-          "sha1": "e83180c9cfbec2c8d6ee164eb9a01d4936bd7cf0",
-          "md5": "4a2e6a8e4d66a4c8ece59d5c159bb755"
+          "size": 3158,
+          "sha512": "ff134df8e8c8bd25fea52ac350948446ec54833895e9727aa86d42a3368afe1fe00e5b43f580edf8a780e9f8ff301e08c136adfa46355f2419f82d1eab02fc37",
+          "sha256": "8c0ed5a65418127869913e1e881879770672128abea4348abcafda724ffde756",
+          "sha1": "d815aa3a99f9be4ab3d1d8cf7a17429620432adb",
+          "md5": "ee3523515cfcd45f9fd1b5ef85e13ee4"
         }
       ]
     }

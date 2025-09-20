@@ -59,11 +59,11 @@
         {
           "name": "testballoon-shim-linuxX64Main-202509019.klib",
           "url": "testballoon-shim-linuxx64-202509019.klib",
-          "size": 18141,
-          "sha512": "f49a56a5136e672bd6231409488c76f4d8655e124987adf8feebf6dc2a342a627e3ceee12403e6157d2b6ae2edbfcd3f687e2cedd8b066ef4ac42c0da9a1fe93",
-          "sha256": "98944ff96c2a98601cb8868434ffc55ecbf77e68aa14540b25b947effc5a8148",
-          "sha1": "272d8d76ecf1b6ed808de98ab4b466b47bf4f6db",
-          "md5": "96749a0dad246b53474a0e644a8b3582"
+          "size": 18973,
+          "sha512": "8b650ac462eec3201678e29209fe290e6924e4aaf8911531497bacd497817d2f184f6770eaee23bdf7c80d2025f56752f68096e8f48196397c5674b1e9cfdac3",
+          "sha256": "048ada9761c4fc5d2ee1be3834eab824bbea3605cd1635c4280b868bba940248",
+          "sha1": "e9dd435cdec48b464f8d61a116100585601a9ee4",
+          "md5": "a1fbf62301816d65b4029d78a7656d22"
         }
       ]
     },
@@ -82,11 +82,11 @@
         {
           "name": "testballoon-shim-linuxx64-202509019-sources.jar",
           "url": "testballoon-shim-linuxx64-202509019-sources.jar",
-          "size": 3036,
-          "sha512": "5f7cec9d91d1eca78f7a34dc0b81e1d8baa39ab22e0b1ca5a0f2ac9fa338afdfba1627b4629a3b2f60c0408ae689cc5b99acb2c7db54a1a2c408f5d3a9e53092",
-          "sha256": "d86567a4742e06057f6886d37cbb9a9b82cb64cff6091b1bbaa1dc423059dfbd",
-          "sha1": "864bb5d6e2a423f241925cd28c06efbb38995ce5",
-          "md5": "97bb9b456bbf6b4b084cac752eb82189"
+          "size": 3178,
+          "sha512": "e3121db28c62de943311ee16f88ae74576d66ae1ceee99b268e0e51c7b175b560b224a44047db0517bb7331c83609cba9f873a32e1df2d494f1ce13a4d5824d5",
+          "sha256": "5750924bcef5211378c413108f592bfdb67ab4023350f5182463f48b1f11345e",
+          "sha1": "9c745de40c92fa015fe8e74c55fa4185fa9eb110",
+          "md5": "8cac46eb49200e2f03aff9cc85a0f52d"
         }
       ]
     }

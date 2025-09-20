@@ -59,11 +59,11 @@
         {
           "name": "testballoon-shim-androidNativeX86Main-202509019.klib",
           "url": "testballoon-shim-androidnativex86-202509019.klib",
-          "size": 18123,
-          "sha512": "d2ad28d9a26be4b3f5102ca355a835851f8e8f1023ee52729ea4983eeaac9fe8f16066129097a31fec1063c4c5ce3823282df7cc034f120c532784b3bb626f10",
-          "sha256": "3a704536a84fbd348fe9348022029401fd0d9e72dead3cf37d90deeaba8579a6",
-          "sha1": "48aef6b8dda9a23ffc9a17712dfb0caf1ab345ab",
-          "md5": "05d09cd78926831989956779800e3547"
+          "size": 18961,
+          "sha512": "181105d4542aefa9785151ef649b9b41d30246b1d726ab8fce225151359f6ab66159e88ec21f571b15e18b655f008b2be1bba4ac53e15fc77dd901edae6ef738",
+          "sha256": "433b63223adbf8df2f67d51ce2d4a8dd7f12fef6d5731c1c5a957727d390d027",
+          "sha1": "a97c044af2c9e6b3c6aea9ea0b06b598775439a1",
+          "md5": "a275a866bb96d4c9995aac2bd1134087"
         }
       ]
     },
@@ -82,11 +82,11 @@
         {
           "name": "testballoon-shim-androidnativex86-202509019-sources.jar",
           "url": "testballoon-shim-androidnativex86-202509019-sources.jar",
-          "size": 3122,
-          "sha512": "e075985c7be2550390caee1675fdcf0ccf7f41741c99f9609f60cb7745993a12e54bfc2b85504d72f93a1bfc537cfac7bfdd06258da33ffd2cb02aeb7ad310dc",
-          "sha256": "5261d6a9094e0b5b48813eb2175aace43d017d133bf571e84ef91c0a6ce9f092",
-          "sha1": "cf40e1f71608da4bd50a6a8d2b2e6de1b282270f",
-          "md5": "3917511631c943056ab66b0758232b2f"
+          "size": 3264,
+          "sha512": "ed8391e0a2ef7d01b252f8eccbce6f06974286860b01e807c86924d92e1df7f4c2e23d10a7bc3b6481e58e0e4df496137ef00693980ae821a74c92234842394b",
+          "sha256": "ac68f54bfc15a91a0525e9e56453984b6e73b352b426b957dd73fc3ab5c94f5f",
+          "sha1": "881435a14b967638c917ab2469a2ddeb059688c6",
+          "md5": "1368eda18c570e143ee9cecff234a8fa"
         }
       ]
     }

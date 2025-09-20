@@ -59,11 +59,11 @@
         {
           "name": "testballoon-shim-iosSimulatorArm64Main-202509019.klib",
           "url": "testballoon-shim-iossimulatorarm64-202509019.klib",
-          "size": 18228,
-          "sha512": "bf99407bc28aea5f9fc04f4a4d8da7c3da58bdc9965f707b3c301d7a9e2708c2a0de1cd54300235540fb04151a546a01d394facf1b5d95d4e7671fb4ba33a20f",
-          "sha256": "027eb814e1f50db1ac96fadf5dec96aff0987a6262f06bc37feb0fe509597ce8",
-          "sha1": "8664e27a4c685a6e12ba1fc10ff7e50f2d75e4cc",
-          "md5": "42056ae429296dff557ead2fd4a33dc8"
+          "size": 19057,
+          "sha512": "234923efaa0c3b62e2aa7bdd22ceb82ac3f61262ea005e6d979aa3b54c67d1c74b8e8dc0dd1b143b6b55f9d4f9cc16ab96bfb89b5822215cab18b6ea022f724f",
+          "sha256": "1a9e6d99091bd016a4b7d08c34e0132ba7dd7eecaad61a3d1bd8b8a31d8aa4fd",
+          "sha1": "c8bc6d675c3c5987852b6eeab49f00c94aa6a8a2",
+          "md5": "a8442c9dd9641834321aa00f67fa27c1"
         }
       ]
     },
@@ -82,11 +82,11 @@
         {
           "name": "testballoon-shim-iossimulatorarm64-202509019-sources.jar",
           "url": "testballoon-shim-iossimulatorarm64-202509019-sources.jar",
-          "size": 3132,
-          "sha512": "d9430ef533df3387c95ad559757336d0d75c3e730ef4001a732c9f06e4ccaf2631eb7a462eb6d7006781259bd6a0bda4fc3be255b017645269328a333ae6419d",
-          "sha256": "4030b8cc2248ad3b84a623ae0a007a9017472ef118d2a9d812d47bf81a685a51",
-          "sha1": "cd2f6a26d9f107c191b362109dfc3e3e6d08b67d",
-          "md5": "c4b512c45fbe3191a8770a43e940ecc3"
+          "size": 3274,
+          "sha512": "432a2e20c3fc11f1ba585015d67bfced938285a1dcfedc1f55f8b8b0849d2c7cc0fe833a29d9bb9ac408e860e46bb4f0ba2c73a51c78a96f94b5b7e2e0f520ac",
+          "sha256": "9f40c5a2736109068321cab183e1b1b264ca059fd76ef9080327fe6ed06a4a3a",
+          "sha1": "3ab73a4fec7a152f73248501045d04c62362f208",
+          "md5": "f1bc30e240086061803a6d96dbdd5b3d"
         }
       ]
     },
@@ -135,10 +135,10 @@
           "name": "testballoon-shim-iossimulatorarm64-202509019-metadata.jar",
           "url": "testballoon-shim-iossimulatorarm64-202509019-metadata.jar",
           "size": 261,
-          "sha512": "9ac1e97b96b49ef480d0f69959efd53172f418d45be7c35d8f6d8871e4d352c03330d79cc6d0abf70d7256b5e6576d8e3e948e788dd6e8fc159b3ce178a25423",
-          "sha256": "88266d0c8a0c7b16e4e2a122f130bc900a54e301aaf738697fa534413398d904",
-          "sha1": "d88ed8187ebc630041749cfda095fee9f579de52",
-          "md5": "ab16f48070c28f7bde3996f55c39808c"
+          "sha512": "cc582fb105e572b89dafa3c5697a9439627cce5e9fecf37d93c6719f3e685324ee0a75ae006ba3aade2930b00c68c51670c286a0e237db1e9ae5e60c65e24ea5",
+          "sha256": "21735570e3478634ae76a7be4a4099bcc3959ea3f3d775df5fd66f7fcab6b510",
+          "sha1": "81b6909384d413e0b8aaa92195d13a1824e6e6dc",
+          "md5": "f70b21bd2751f6a9ee1f98c8a7f7cd2e"
         }
       ]
     }

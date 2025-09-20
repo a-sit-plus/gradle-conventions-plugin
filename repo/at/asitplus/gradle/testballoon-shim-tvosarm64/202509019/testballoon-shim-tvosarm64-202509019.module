@@ -59,11 +59,11 @@
         {
           "name": "testballoon-shim-tvosArm64Main-202509019.klib",
           "url": "testballoon-shim-tvosarm64-202509019.klib",
-          "size": 18156,
-          "sha512": "97df5431d0f47f708f0aff0e26d80f8d18a0714c5663539651cac7e62872e84547b3843865fe178a4d754f5e6a47e5eb87b63a7cc434d8657e3a976d9b4eb303",
-          "sha256": "4fb5db3d8b491c7de43ccc04b7be4c8cac528b11441dc8d49f5860fdb6a3ebe7",
-          "sha1": "5d6338a8840a23d64b308d488e27a995e9210f5f",
-          "md5": "020edc762f5367c932bff31264cbc475"
+          "size": 18985,
+          "sha512": "02c9e1e456caf2433429d387c228899d35dee3fd9e8708cc980eebc88c011960d4de7f28dfce3372b40bd26d75711a6e5865c9bb694d11cd58085d55bbc1b00c",
+          "sha256": "b9754404d197e9b482537ef8a59805f2d69b5a3508af5d2641aa98271ba92f60",
+          "sha1": "87456013540f128f0dfb0e9ac3e25f7745bbfcd7",
+          "md5": "af972113b17d368b61ebecdc3660b263"
         }
       ]
     },
@@ -82,11 +82,11 @@
         {
           "name": "testballoon-shim-tvosarm64-202509019-sources.jar",
           "url": "testballoon-shim-tvosarm64-202509019-sources.jar",
-          "size": 3047,
-          "sha512": "befe349d199daaea789934a3a5a51cec327109a7d5aa37c912407ea7a47e1617c881b7f8d297b7ea11f0e1142423fafc7d67796aa5c0d6a68049594b5be9a9c0",
-          "sha256": "764bf7ba40ac8474c18c852e5240ef466746a4276b0c8f5575c320028ee144a7",
-          "sha1": "1132db740a27e94d818b6b747191acf6abe10627",
-          "md5": "1485990ba172beb3a5fb0a10a0cadd42"
+          "size": 3189,
+          "sha512": "8d08de553ee81439d66496c04fc1d0260823745ce9f6e0b997ebe01bdf2908d0d1c42939b6fb4f5144a3da5f4e7bb8bee92b3352093d160b80815401800221d6",
+          "sha256": "387623f4bc75a90d1e3dcfa53a081dff43ba0f1e18c4a858a4d34cc6f21e8dd8",
+          "sha1": "242161eda1a5bbee378159a8d874e04c88a3090b",
+          "md5": "63bef48ba2eb483ef95cd819f594104f"
         }
       ]
     },
@@ -135,10 +135,10 @@
           "name": "testballoon-shim-tvosarm64-202509019-metadata.jar",
           "url": "testballoon-shim-tvosarm64-202509019-metadata.jar",
           "size": 261,
-          "sha512": "98e933395e45ea9589d31c65fa945977b36af2deea54a205e3401ee0c2635f0983d26de220a4308a129b787ac40dfcaf51cb3259e26ae33dfb5b8e4a2a279af0",
-          "sha256": "24da81afa424083a7c666bf007b006640c400f21a6c4e002a5982387255e6402",
-          "sha1": "d415b17a2bc1a696063fb8905e2a484726e74fa2",
-          "md5": "1f932fad3bf235527429bf5959f3dbd5"
+          "sha512": "fdbdb09493fac38eb28553de1d0b40bdbcaa1226f211ce144e3c6d398839a058217d45a452f3e684fe87571c7d85555dac760c01debd51220e9f0d8a48737d12",
+          "sha256": "52bc0c6c79abac5e1d4a5aaec928c042b40ee457ed55174e83f70533bb022aec",
+          "sha1": "b060959d856004813e9965ba8c00177764de16ba",
+          "md5": "202864a94bf509137b8e802b7179583f"
         }
       ]
     }

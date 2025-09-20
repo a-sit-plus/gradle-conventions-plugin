@@ -59,11 +59,11 @@
         {
           "name": "testballoon-shim-watchosX64Main-202509019.klib",
           "url": "testballoon-shim-watchosx64-202509019.klib",
-          "size": 18134,
-          "sha512": "785daccb047146f78c329fac2776e1df66910d058dbe203608b50b3981afbdb0698316a6f72ab1a6dc1240968d91e41e37c990cedbc9a5f5e145cd5dbbade146",
-          "sha256": "d23cfdc61ebe59544771ab928a2983bf58b0ceecdf2ae46c05bf6dcfb1a4a68f",
-          "sha1": "73ff8c565178dccf54d0f72da1e2116a658a37c0",
-          "md5": "dc77abc380a83b75ec2b1f755fa32932"
+          "size": 18965,
+          "sha512": "0093e514cb8f39d0146f3ef226396b722cc1add02b198bdcbddbb94cee3c1c4a2f03061c12d2ae3e5bc2a8c7040f1809c410e450fc55165bf3b762f3b89a9a2c",
+          "sha256": "02ae933fce9f163770cbdc047dd81d21db4505413c2473b73bb0ccd2a21ebd98",
+          "sha1": "def0ff2702f5bba2c20619dfb19197e91932967f",
+          "md5": "711a2d460e296f6ad8876d51756b8c10"
         }
       ]
     },
@@ -82,11 +82,11 @@
         {
           "name": "testballoon-shim-watchosx64-202509019-sources.jar",
           "url": "testballoon-shim-watchosx64-202509019-sources.jar",
-          "size": 3058,
-          "sha512": "ef9ffd11854454de397161e08c92d7db6305452189ad12320cbc3776b18344afd2c4e23bbc123b08c5ee4c57d2c9dd637ee683c841d2faa70f5e723ca72a1daa",
-          "sha256": "92af351163dfd5f71c13f1bf506d5e82a79de4df1901e887986e29e43d2ad819",
-          "sha1": "1db51f300f287759724b07fce0e893a994216267",
-          "md5": "0eeafabc1725f66b244bf5b5e9a92184"
+          "size": 3200,
+          "sha512": "77ce0b468201ae48d89470afb2ab3f73498f11d9c3b4dc95bafb8c513dc7fe4f616d3e345294c307a07929d64ba55c339a3d10682aba49af3bdc963166160197",
+          "sha256": "2eab2efbc828c363ef878c7800581b01fb99a7f10ee9aef91e198715a4c30b53",
+          "sha1": "c4c25d32a07802e522a1fcba7278ae0f96fa5edf",
+          "md5": "44c84cd398c2d9938df0653b5f8d2c6e"
         }
       ]
     },
@@ -135,10 +135,10 @@
           "name": "testballoon-shim-watchosx64-202509019-metadata.jar",
           "url": "testballoon-shim-watchosx64-202509019-metadata.jar",
           "size": 261,
-          "sha512": "8150b4e2db93abec8485081aa4794a672ac7a4ea86cf9ae62a594f3b632cbe6c0b0b20d921b4991073296947a2cce16fb9080fb9c7428959dc5534943779f841",
-          "sha256": "83af040cafbdfcb87cc57afc41cd4692f7b2ecd5bb2150564168e0e3b9ed9709",
-          "sha1": "d6e9b0d48c27f321d27aae74e274edc84b72900f",
-          "md5": "dec28724b236c478939bef9b18fe84bf"
+          "sha512": "661cedce0f727efcae0a5aa8b1d29328806de84188e7b0fd5f086d199fa8f97f0bab508762277d24bf72e268f6cd3a8b99c6bd72d5508416564d1f2a42cbc2ec",
+          "sha256": "ed288edfb4a40d3bcb61bfddee95fddb2cd52514ca05d948b6ab14fbb09a2a5a",
+          "sha1": "659c386fa611a44e3eb0bfb24fe88242c24fbd22",
+          "md5": "6cabdf8ccf52df4d49402098eaceaeb3"
         }
       ]
     }

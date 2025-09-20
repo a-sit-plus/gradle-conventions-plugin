@@ -65,11 +65,11 @@
         {
           "name": "testballoon-shim-js-202509019.klib",
           "url": "testballoon-shim-js-202509019.klib",
-          "size": 18307,
-          "sha512": "befa299e5be3e4e9889ef02be64ae7aa71d7d9a47ac679e4d9d1ecb77764edad1da1e94ef8bd85910565b39637e1de4c19ea537fc06504161ffa88d265aa30d3",
-          "sha256": "3a3366920f039d24844996d695097e47b7207009696bc26541f125c70664afec",
-          "sha1": "ab0abccb9adb62cbe7c7240385271900f45ef784",
-          "md5": "68eab246650b467600f54e124562a76e"
+          "size": 19137,
+          "sha512": "b46030eb09d07a9988d2ae02e254a98620ff193d6c3c8a8be5ae331ccc4ce1b4925b0475ecf8a07dd7f197d6455ddf26bf806b6b30a35683e8eabded39981231",
+          "sha256": "0f3c2396d750fd8520254af26cbd9b7fccd60d86960602ec318cde64afeb99d2",
+          "sha1": "f1b37fed706afe0af1e7b3ec7345a674dc569359",
+          "md5": "fd0a5272d419aa58abae8bf6aa6e6726"
         }
       ]
     },
@@ -123,11 +123,11 @@
         {
           "name": "testballoon-shim-js-202509019.klib",
           "url": "testballoon-shim-js-202509019.klib",
-          "size": 18307,
-          "sha512": "befa299e5be3e4e9889ef02be64ae7aa71d7d9a47ac679e4d9d1ecb77764edad1da1e94ef8bd85910565b39637e1de4c19ea537fc06504161ffa88d265aa30d3",
-          "sha256": "3a3366920f039d24844996d695097e47b7207009696bc26541f125c70664afec",
-          "sha1": "ab0abccb9adb62cbe7c7240385271900f45ef784",
-          "md5": "68eab246650b467600f54e124562a76e"
+          "size": 19137,
+          "sha512": "b46030eb09d07a9988d2ae02e254a98620ff193d6c3c8a8be5ae331ccc4ce1b4925b0475ecf8a07dd7f197d6455ddf26bf806b6b30a35683e8eabded39981231",
+          "sha256": "0f3c2396d750fd8520254af26cbd9b7fccd60d86960602ec318cde64afeb99d2",
+          "sha1": "f1b37fed706afe0af1e7b3ec7345a674dc569359",
+          "md5": "fd0a5272d419aa58abae8bf6aa6e6726"
         }
       ]
     },
@@ -146,11 +146,11 @@
         {
           "name": "testballoon-shim-js-202509019-sources.jar",
           "url": "testballoon-shim-js-202509019-sources.jar",
-          "size": 3104,
-          "sha512": "71d577ad57ea51b2edad30d8e11159f8529aa330f28c8a5bd652e942c9529d0603eeda5f84f20809d4dde25c93472edcac9b3d5ed31fa33f7720b3a5c6199509",
-          "sha256": "814daa2f71cbf23cee49949437c6e3df9c86522e755cf940fbdb04bb59269837",
-          "sha1": "5267db24943a0549674b2fb85ee00301a8a87aad",
-          "md5": "1ad1d5ac661084437489880a2002fbe6"
+          "size": 3246,
+          "sha512": "00eb32145bcda3673257b0d23a5ac6add2e4cdee2ae365981ff5bf50a3da6932de02243cfe51dc02190c57c615c4969bff35cdc260de7c169e885a370478f4a3",
+          "sha256": "25237d21db2dc0c0fc94f6dc31f0d7936f9186dc8c0d756ab5224bc1dca2a4be",
+          "sha1": "91e62918a94607a5187c39d649abb71276a5a7ec",
+          "md5": "80661301e53689c279780ec0d33fa0fd"
         }
       ]
     }
