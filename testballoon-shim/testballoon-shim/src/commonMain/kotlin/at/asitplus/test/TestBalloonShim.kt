@@ -5,17 +5,20 @@ import de.infix.testBalloon.framework.TestCoroutineScope
 import de.infix.testBalloon.framework.TestSuite
 import de.infix.testBalloon.framework.disable
 import io.kotest.property.*
+import kotlin.random.Random
 
 context(suite: TestSuite)
 operator fun String.invoke(nested: suspend TestCoroutineScope.() -> Unit) {
     if (this.startsWith("!"))
-        suite.test(this, TestConfig.disable()) { nested() }
+        suite.test(this, TestConfig.disable()) {
+            nested()
+        }
     else suite.test(this) { nested() }
 }
 
 context(suite: TestSuite)
 infix operator fun String.minus(suiteBody: TestSuite.() -> Unit) {
-    suite.testSuite(this) {
+    suite.testSuite(name = truncate(), displayName = this@minus) {
         if (this@minus.startsWith("!")) testConfig = TestConfig.disable()
         suiteBody()
         if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
@@ -49,6 +52,7 @@ fun <Data> TestSuite.withData(nameFn: (Data) -> String, data: Iterable<Data>, ac
         test(nameFn(d)) { action(d) }
     }
 }
+
 @Suppress("INVISIBLE_MEMBER", "INVISIBLE_REFERENCE")
 @kotlin.internal.LowPriorityInOverloadResolution
 fun <Data> TestSuite.withData(nameFn: (Data) -> String, vararg arguments: Data, action: suspend (Data) -> Unit) {
@@ -77,7 +81,7 @@ fun <Data> TestSuite.withDataSuites(
     action: TestSuite.(Data) -> Unit
 ) {
     for (d in parameters) {
-        testSuite(d.toString()) {
+        testSuite(name = d.toString().truncate(), displayName = d.toString()) {
             action(d)
             if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
         }
@@ -89,7 +93,7 @@ fun <Data> TestSuite.withDataSuites(
     action: TestSuite.(Data) -> Unit
 ) {
     for (d in data) {
-        testSuite(d.toString()) {
+        testSuite(name = d.toString().truncate(), displayName = d.toString()) {
             action(d)
             if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
         }
@@ -101,7 +105,7 @@ fun <Data> TestSuite.withDataSuites(
     action: TestSuite.(Data) -> Unit
 ) {
     for (d in map) {
-        testSuite(d.key) {
+        testSuite(d.key.truncate(), displayName = d.key) {
             action(d.value)
             if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
         }
@@ -113,7 +117,7 @@ fun <Data> TestSuite.withDataSuites(
     action: TestSuite.(Data) -> Unit
 ) {
     for (d in data) {
-        testSuite(d.toString()) {
+        testSuite(name = d.toString().truncate(), displayName = d.toString()) {
             action(d)
             if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
         }
@@ -162,7 +166,7 @@ fun <Value> TestSuite.checkAllTests(
     var count = 0
     checkAllSeries(iterations, genA) { value, context ->
         count++
-        test("$count/$iterations ${if (value == null) "null" else value::class.simpleName}: $value") {
+        test("$count of $iterations ${if (value == null) "null" else value::class.simpleName}: $value") {
             with(context) {
                 content(value)
             }
@@ -179,7 +183,11 @@ fun <Value> TestSuite.checkAllSuites(
     var count = 0
     checkAllSeries(iterations, genA) { value, context ->
         count++
-        testSuite("$count/$iterations ${if (value == null) "null" else value::class.simpleName}: $value") {
+        val prefix = if (value == null) "null" else value::class.simpleName
+        testSuite(
+            name = "$count-${iterations}_${prefix}_${value.toString().truncate()}",
+            displayName = "$count/$iterations $prefix: ${value.toString()}"
+        ) {
             with(context) {
                 content(value)
             }
@@ -207,3 +215,7 @@ private inline fun <Value> checkAllSeries(iterations: Int, genA: Gen<Value>, ser
             context.markSuccess()
         }
 }
+
+
+private var tIndex=0
+private fun String.truncate(): String =(tIndex++).toHexString()
