@@ -135,10 +135,10 @@
           "name": "testballoon-shim-watchosarm32-202509019-metadata.jar",
           "url": "testballoon-shim-watchosarm32-202509019-metadata.jar",
           "size": 261,
-          "sha512": "661cedce0f727efcae0a5aa8b1d29328806de84188e7b0fd5f086d199fa8f97f0bab508762277d24bf72e268f6cd3a8b99c6bd72d5508416564d1f2a42cbc2ec",
-          "sha256": "ed288edfb4a40d3bcb61bfddee95fddb2cd52514ca05d948b6ab14fbb09a2a5a",
-          "sha1": "659c386fa611a44e3eb0bfb24fe88242c24fbd22",
-          "md5": "6cabdf8ccf52df4d49402098eaceaeb3"
+          "sha512": "343f6f53dbb4a429361794becbc88a7e5f464715c159edc8b1470172244ee1d003d2d59627f0cdecdb9a9f627e52858c65e42755b4c467ab3a87a39340d0ecd7",
+          "sha256": "18ec017043ebe746750fa81844c5f780f41aba9435ec54a16eae0d9c4fcf983a",
+          "sha1": "44dbfbba96bd37b0047b1764485791bc94b2fac3",
+          "md5": "51ddb1fc86bc1c234e8131e55b1a4a8c"
         }
       ]
     }

@@ -10,8 +10,8 @@
   <artifactId>testballoon-shim-linuxarm64</artifactId>
   <version>202509019</version>
   <packaging>klib</packaging>
-  <name>KMPotest</name>
-  <description>Kotlin Multiplatform Kotest JUnit report generator shim</description>
+  <name>Testballoon Shim</name>
+  <description>Testballoon FreeSpec Shim</description>
   <url>https://github.com/a-sit-plus/gradle-conventions-plugin</url>
   <licenses>
     <license>

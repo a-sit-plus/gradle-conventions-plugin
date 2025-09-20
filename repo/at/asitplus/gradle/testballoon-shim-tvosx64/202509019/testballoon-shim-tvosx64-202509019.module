@@ -135,10 +135,10 @@
           "name": "testballoon-shim-tvosx64-202509019-metadata.jar",
           "url": "testballoon-shim-tvosx64-202509019-metadata.jar",
           "size": 261,
-          "sha512": "fdbdb09493fac38eb28553de1d0b40bdbcaa1226f211ce144e3c6d398839a058217d45a452f3e684fe87571c7d85555dac760c01debd51220e9f0d8a48737d12",
-          "sha256": "52bc0c6c79abac5e1d4a5aaec928c042b40ee457ed55174e83f70533bb022aec",
-          "sha1": "b060959d856004813e9965ba8c00177764de16ba",
-          "md5": "202864a94bf509137b8e802b7179583f"
+          "sha512": "7c0c0e9bfb43d97beea34244fc1e893c67a3271642698bf1a90554f371e255f399aa425edceab35a0f0cefcdf968b27267ceae8cadc78a0c75bc3cdf13134f36",
+          "sha256": "8b5ce1903a03897d41c8a1585537d832fe67c7cee830683d3d7a6acaaddb1d60",
+          "sha1": "a81d4b6ecd23032950486b23f06b00eab981f286",
+          "md5": "7a955626c6b3d425892e08d7801b71e9"
         }
       ]
     }
