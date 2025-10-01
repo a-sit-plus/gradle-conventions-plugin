@@ -1,6 +1,8 @@
 package at.asitplus.gradle
 
 import at.asitplus.gradle.jvmTarget
+import com.android.build.api.dsl.KotlinMultiplatformAndroidLibraryExtension
+import com.android.build.api.dsl.KotlinMultiplatformAndroidLibraryTarget
 import org.gradle.api.JavaVersion
 import org.gradle.api.NamedDomainObjectContainer
 import org.gradle.api.Project
@@ -9,16 +11,18 @@ import org.gradle.api.tasks.StopExecutionException
 import org.gradle.kotlin.dsl.*
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import org.jetbrains.kotlin.gradle.plugin.extraProperties
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinAndroidTarget
 
 val PluginAware.isAndroidApplication get() = pluginManager.findPlugin("com.android.application") != null
 val PluginAware.isAndroidLibrary get() = pluginManager.findPlugin("com.android.library") != null
+val PluginAware.isNewAndroidLibrary get() = pluginManager.findPlugin("com.android.kotlin.multiplatform.library") != null
 
 internal val PluginAware.hasOldAgp get() = isAndroidApplication || isAndroidLibrary
 
-val PluginAware.agpVersion get() = if (hasOldAgp) com.android.builder.model.Version.ANDROID_GRADLE_PLUGIN_VERSION else null
+val PluginAware.agpVersion get() = if (hasOldAgp|| isNewAndroidLibrary) com.android.builder.model.Version.ANDROID_GRADLE_PLUGIN_VERSION else null
 
 /**
  * Minimum Android SDK version read from the `android.minSdk` property. **This property must be set, if you are targeting Android!**.
@@ -51,7 +55,7 @@ val Project.raiseAndroidTestToJdkTarget: Boolean
     }.toBoolean()
 
 internal fun Project.setAndroidOptions() {
-    if (hasOldAgp) extensions.getByType<com.android.build.gradle.BaseExtension>().apply {
+    if (hasOldAgp ) extensions.getByType<com.android.build.gradle.BaseExtension>().apply {
         compileOptions {
             if (androidMinSdk == null)
                 throw StopExecutionException("Android Gradle Plugin found, but no android.minSdk set in properties! To fix this add android.minSdk=<sdk-version> to gradle.properties")
@@ -67,6 +71,16 @@ internal fun Project.setAndroidOptions() {
         androidCompileSdk?.let {
             Logger.lifecycle("  ${H}Setting Android compileSDK to ${it}$R")
             compileSdkVersion(it)
+        }
+    }else if (isNewAndroidLibrary){
+        extensions.getByType<KotlinMultiplatformAndroidLibraryTarget>().apply {
+            compileSdk = androidCompileSdk
+            minSdk = androidMinSdk
+            compilations.configureEach {
+                compilerOptions.configure {
+                    jvmTarget.set(JvmTarget.fromTarget(androidJvmTarget!!))
+                }
+            }
         }
     }
 }
