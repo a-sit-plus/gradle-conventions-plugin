@@ -16,6 +16,13 @@ version = Properties().apply {
 }.getProperty("buildDate")
 
 
+repositories {
+    mavenLocal()
+    mavenCentral()
+    gradlePluginPortal()
+    google()
+}
+
 publishVersionCatalog = false
 
 kotlin {

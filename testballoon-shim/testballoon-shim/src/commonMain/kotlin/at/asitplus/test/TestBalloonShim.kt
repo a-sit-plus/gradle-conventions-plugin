@@ -1,16 +1,16 @@
 package at.asitplus.testballoon
 
 import de.infix.testBalloon.framework.TestConfig
-import de.infix.testBalloon.framework.TestCoroutineScope
+import de.infix.testBalloon.framework.TestExecutionScope
 import de.infix.testBalloon.framework.TestSuite
 import de.infix.testBalloon.framework.disable
 import io.kotest.property.*
 import kotlin.random.Random
 
 context(suite: TestSuite)
-operator fun String.invoke(nested: suspend TestCoroutineScope.() -> Unit) {
+operator fun String.invoke(nested: suspend TestExecutionScope.() -> Unit) {
     if (this.startsWith("!"))
-        suite.test(this, TestConfig.disable()) {
+        suite.test(this, testConfig = TestConfig.disable()) {
             nested()
         }
     else suite.test(this) { nested() }
@@ -21,7 +21,6 @@ infix operator fun String.minus(suiteBody: TestSuite.() -> Unit) {
     suite.testSuite(name = truncate(), displayName = this@minus) {
         if (this@minus.startsWith("!")) testConfig = TestConfig.disable()
         suiteBody()
-        if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
     }
 }
 
@@ -83,7 +82,6 @@ fun <Data> TestSuite.withDataSuites(
     for (d in parameters) {
         testSuite(name = d.toString().truncate(), displayName = d.toString()) {
             action(d)
-            if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
         }
     }
 }
@@ -95,7 +93,6 @@ fun <Data> TestSuite.withDataSuites(
     for (d in data) {
         testSuite(name = d.toString().truncate(), displayName = d.toString()) {
             action(d)
-            if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
         }
     }
 }
@@ -107,7 +104,6 @@ fun <Data> TestSuite.withDataSuites(
     for (d in map) {
         testSuite(d.key.truncate(), displayName = d.key) {
             action(d.value)
-            if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
         }
     }
 }
@@ -119,7 +115,6 @@ fun <Data> TestSuite.withDataSuites(
     for (d in data) {
         testSuite(name = d.toString().truncate(), displayName = d.toString()) {
             action(d)
-            if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
         }
     }
 }
@@ -140,7 +135,6 @@ fun <Data> TestSuite.withDataSuites(
     for (d in data) {
         testSuite(nameFn(d)) {
             action(d)
-            if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
         }
     }
 }
@@ -153,7 +147,6 @@ fun <Data> TestSuite.withDataSuites(
     for (d in data) {
         testSuite(nameFn(d)) {
             action(d)
-            if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
         }
     }
 }
@@ -161,7 +154,7 @@ fun <Data> TestSuite.withDataSuites(
 fun <Value> TestSuite.checkAllTests(
     iterations: Int,
     genA: Gen<Value>,
-    content: suspend context(PropertyContext) TestCoroutineScope.(Value) -> Unit
+    content: suspend context(PropertyContext) TestExecutionScope.(Value) -> Unit
 ) {
     var count = 0
     checkAllSeries(iterations, genA) { value, context ->
@@ -191,7 +184,6 @@ fun <Value> TestSuite.checkAllSuites(
             with(context) {
                 content(value)
             }
-            if (this.testElementChildren.none()) throw IllegalStateException("Test suite $testElementName is empty!")
         }
     }
 }
