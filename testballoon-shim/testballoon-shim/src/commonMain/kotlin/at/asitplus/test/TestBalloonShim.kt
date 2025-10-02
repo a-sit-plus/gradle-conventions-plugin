@@ -1,25 +1,24 @@
 package at.asitplus.testballoon
 
 import de.infix.testBalloon.framework.TestConfig
+import de.infix.testBalloon.framework.TestDiscoverable
 import de.infix.testBalloon.framework.TestExecutionScope
 import de.infix.testBalloon.framework.TestSuite
 import de.infix.testBalloon.framework.disable
 import io.kotest.property.*
-import kotlin.random.Random
 
 context(suite: TestSuite)
 operator fun String.invoke(nested: suspend TestExecutionScope.() -> Unit) {
     if (this.startsWith("!"))
-        suite.test(this, testConfig = TestConfig.disable()) {
+        suite.testWithLimits(this) {
             nested()
         }
-    else suite.test(this) { nested() }
+    else suite.testWithLimits(this) { nested() }
 }
 
 context(suite: TestSuite)
 infix operator fun String.minus(suiteBody: TestSuite.() -> Unit) {
-    suite.testSuite(name = truncate(), displayName = this@minus) {
-        if (this@minus.startsWith("!")) testConfig = TestConfig.disable()
+    suite.testSuiteWithLimits(name = limited()) {
         suiteBody()
     }
 }
@@ -28,7 +27,7 @@ infix operator fun String.minus(suiteBody: TestSuite.() -> Unit) {
 @kotlin.internal.LowPriorityInOverloadResolution
 fun <Data> TestSuite.withData(vararg parameters: Data, action: suspend (Data) -> Unit) {
     for (data in parameters) {
-        test("$data") {
+        testWithLimits("$data") {
             action(data)
         }
     }
@@ -36,19 +35,19 @@ fun <Data> TestSuite.withData(vararg parameters: Data, action: suspend (Data) ->
 
 fun <Data> TestSuite.withData(data: Iterable<Data>, action: suspend (Data) -> Unit) {
     for (d in data) {
-        test("$d") { action(d) }
+        testWithLimits("$d") { action(d) }
     }
 }
 
 fun <Data> TestSuite.withData(map: Map<String, Data>, action: suspend (Data) -> Unit) {
     for (d in map) {
-        test(d.key) { action(d.value) }
+        testWithLimits(d.key) { action(d.value) }
     }
 }
 
 fun <Data> TestSuite.withData(nameFn: (Data) -> String, data: Iterable<Data>, action: suspend (Data) -> Unit) {
     for (d in data) {
-        test(nameFn(d)) { action(d) }
+        testWithLimits(nameFn(d)) { action(d) }
     }
 }
 
@@ -56,19 +55,19 @@ fun <Data> TestSuite.withData(nameFn: (Data) -> String, data: Iterable<Data>, ac
 @kotlin.internal.LowPriorityInOverloadResolution
 fun <Data> TestSuite.withData(nameFn: (Data) -> String, vararg arguments: Data, action: suspend (Data) -> Unit) {
     for (d in arguments) {
-        test(nameFn(d)) { action(d) }
+        testWithLimits(nameFn(d)) { action(d) }
     }
 }
 
 fun <Data> TestSuite.withData(data: Sequence<Data>, action: suspend (Data) -> Unit) {
     for (d in data) {
-        test("$d") { action(d) }
+        testWithLimits("$d") { action(d) }
     }
 }
 
 fun <Data> TestSuite.withData(nameFn: (Data) -> String, data: Sequence<Data>, action: suspend (Data) -> Unit) {
     for (d in data) {
-        test(nameFn(d)) { action(d) }
+        testWithLimits(nameFn(d)) { action(d) }
     }
 }
 
@@ -80,7 +79,7 @@ fun <Data> TestSuite.withDataSuites(
     action: TestSuite.(Data) -> Unit
 ) {
     for (d in parameters) {
-        testSuite(name = d.toString().truncate(), displayName = d.toString()) {
+        testSuiteWithLimits(name = d.toString()) {
             action(d)
         }
     }
@@ -91,7 +90,7 @@ fun <Data> TestSuite.withDataSuites(
     action: TestSuite.(Data) -> Unit
 ) {
     for (d in data) {
-        testSuite(name = d.toString().truncate(), displayName = d.toString()) {
+        testSuiteWithLimits(name = d.toString()) {
             action(d)
         }
     }
@@ -102,7 +101,7 @@ fun <Data> TestSuite.withDataSuites(
     action: TestSuite.(Data) -> Unit
 ) {
     for (d in map) {
-        testSuite(d.key.truncate(), displayName = d.key) {
+        testSuiteWithLimits(d.key) {
             action(d.value)
         }
     }
@@ -113,7 +112,7 @@ fun <Data> TestSuite.withDataSuites(
     action: TestSuite.(Data) -> Unit
 ) {
     for (d in data) {
-        testSuite(name = d.toString().truncate(), displayName = d.toString()) {
+        testSuiteWithLimits(name = d.toString()) {
             action(d)
         }
     }
@@ -133,7 +132,7 @@ fun <Data> TestSuite.withDataSuites(
     action: TestSuite.(Data) -> Unit
 ) {
     for (d in data) {
-        testSuite(nameFn(d)) {
+        testSuiteWithLimits(nameFn(d)) {
             action(d)
         }
     }
@@ -145,7 +144,7 @@ fun <Data> TestSuite.withDataSuites(
     action: TestSuite.(Data) -> Unit
 ) {
     for (d in data) {
-        testSuite(nameFn(d)) {
+        testSuiteWithLimits(nameFn(d)) {
             action(d)
         }
     }
@@ -159,7 +158,7 @@ fun <Value> TestSuite.checkAllTests(
     var count = 0
     checkAllSeries(iterations, genA) { value, context ->
         count++
-        test("$count of $iterations ${if (value == null) "null" else value::class.simpleName}: $value") {
+        testWithLimits("$count of $iterations ${if (value == null) "null" else value::class.simpleName}: $value") {
             with(context) {
                 content(value)
             }
@@ -177,10 +176,7 @@ fun <Value> TestSuite.checkAllSuites(
     checkAllSeries(iterations, genA) { value, context ->
         count++
         val prefix = if (value == null) "null" else value::class.simpleName
-        testSuite(
-            name = "$count-${iterations}_${prefix}_${value.toString().truncate()}",
-            displayName = "$count/$iterations $prefix: ${value.toString()}"
-        ) {
+        testSuiteWithLimits(name = "$count-${iterations}_${prefix}_${value.toString()}") {
             with(context) {
                 content(value)
             }
@@ -208,6 +204,23 @@ private inline fun <Value> checkAllSeries(iterations: Int, genA: Gen<Value>, ser
         }
 }
 
+@TestDiscoverable
+private fun TestSuite.testSuiteWithLimits(
+    name: String,
+    testConfig: TestConfig = TestConfig,
+    content: TestSuite.() -> Unit
+) =
+    testSuite(name.limited(), testConfig = testConfig, content = content)
 
-private var tIndex=0
-private fun String.truncate(): String =(tIndex++).toHexString()
+@TestDiscoverable
+private fun TestSuite.testWithLimits(
+    name: String,
+    testConfig: TestConfig = TestConfig,
+    action: suspend TestExecutionScope.() -> Unit
+) =
+    test(name.limited(), testConfig = testConfig.disableByName(name), action = action)
+
+private fun String.limited() = this.take(30)
+
+private fun TestConfig.disableByName(name: String) =
+    if (name.startsWith("!")) TestConfig.disable() else this
