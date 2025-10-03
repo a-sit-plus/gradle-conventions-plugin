@@ -101,7 +101,6 @@ internal fun Project.createAndroidJvmSharedSources() {
     kmp.targets.whenObjectAdded {
         if (sharedAdded) return@whenObjectAdded
         kmp.applyDefaultHierarchyTemplate()
-        Logger.lifecycle("  ${H}HasOldAGP: $hasOldAgp, isNewAndroidLibrary: $isNewAndroidLibrary$R")
         if ((hasOldAgp || isNewAndroidLibrary) && kmp.hasJvmTarget()) kmp.apply {
             if (hasAndroidTarget) {
                 sharedAdded = true

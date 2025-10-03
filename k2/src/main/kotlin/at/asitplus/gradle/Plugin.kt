@@ -173,10 +173,10 @@ open class K2Conventions : Plugin<Project> {
             }
 
             Logger.lifecycle("  Adding maven repositories")
+            Logger.info("    * ASP")
             Logger.info("    * maven snapshots")
             Logger.info("    * maven central")
             Logger.info("    * google")
-            Logger.info("    * ASP")
             target.allprojects {
                 repositories {
                     maven("https://github.com/a-sit-plus/gradle-conventions-plugin/raw/mvn/repo/")
