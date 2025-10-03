@@ -1,0 +1,104 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-framework-abstractions/0.6.2-K2.2.20-SNAPSHOT/testBalloon-framework-abstractions-0.6.2-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-framework-abstractions",
+    "version": "0.6.2-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-iosX64Main-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-framework-abstractions-iosx64-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "size": 12973,
+          "sha512": "476dd0c0c6e79845826ca4cbd552514f49532b87b049b91d52f3b9ba30c2eb7331748138fb97bf42af884f4e38ddd96b4a5f66cbc63d43d2bffe6dfac549b612",
+          "sha256": "f99b35e7b71238e8a7bfbbeb8adaa969f31a9f8cc68225362588e3632c210a20",
+          "sha1": "38af371efb4b7f74455ee1b498b25770c2a64bc6",
+          "md5": "a220912d264812f9165dd99aa75aeeb0"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-iosx64-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-framework-abstractions-iosx64-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 4485,
+          "sha512": "42335bf895d62c60cd54de1e78ac4e40e866f964e1062241f535f8b9c344a387d7e777cad621c5cb80957b8a41b4e34849267af87fe77959f9969bccad2abe9b",
+          "sha256": "4382afccd7fa6898884ec9fe2dede57b841a3eecf446fe1c91f0deb4d9f96fb5",
+          "sha1": "8ca47ceb50e2e391cdcc35f56020386337353c00",
+          "md5": "e72cc5198d7bce9b8acff403bbd70dc3"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-iosx64-0.6.2-K2.2.20-SNAPSHOT-metadata.jar",
+          "url": "testBalloon-framework-abstractions-iosx64-0.6.2-K2.2.20-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

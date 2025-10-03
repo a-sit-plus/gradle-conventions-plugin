@@ -1,0 +1,129 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-compiler-plugin",
+    "version": "0.6.2-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-compiler-plugin-0.6.2-K2.2.20-SNAPSHOT.jar",
+          "url": "testBalloon-compiler-plugin-0.6.2-K2.2.20-SNAPSHOT.jar",
+          "size": 53402,
+          "sha512": "a8dcbb2671dd438a4dd58e71886ccf87d49b11bd82182b97a1507677e5ae9b36c14e3d38b1be9be04ca64cd5f3b30a053cf90ad0f75d4dc285e028abd61ea2f1",
+          "sha256": "ad9cec3e9519162ac33b2ab1b6814ee2ab1ed0b7bac1eadd503cfb0dc9847f38",
+          "sha1": "3218ec44a94381b52f18d66bef187ff06b3d9c4e",
+          "md5": "20836bf80776480f56ec50a8dcffe141"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-abstractions",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-compiler-embeddable"
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "dependencyConstraints": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-compiler-embeddable",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-compiler-plugin-0.6.2-K2.2.20-SNAPSHOT.jar",
+          "url": "testBalloon-compiler-plugin-0.6.2-K2.2.20-SNAPSHOT.jar",
+          "size": 53402,
+          "sha512": "a8dcbb2671dd438a4dd58e71886ccf87d49b11bd82182b97a1507677e5ae9b36c14e3d38b1be9be04ca64cd5f3b30a053cf90ad0f75d4dc285e028abd61ea2f1",
+          "sha256": "ad9cec3e9519162ac33b2ab1b6814ee2ab1ed0b7bac1eadd503cfb0dc9847f38",
+          "sha1": "3218ec44a94381b52f18d66bef187ff06b3d9c4e",
+          "md5": "20836bf80776480f56ec50a8dcffe141"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "testBalloon-compiler-plugin-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-compiler-plugin-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 11127,
+          "sha512": "ac7dde9555bef213da1f2aa5a621f801a33f2faaeeef3c31aced6373ad9fa41110b0ce3c71356c7d7dfc83cf6140d0fa1140a1352a31547ea204cf8bd1094741",
+          "sha256": "4f3824a5b4d4cb28cd5a4dac9fb16373174d23dacce112888913a3da3d5f47b5",
+          "sha1": "22529be0dacfdcff2855648c636d07290a1f7a34",
+          "md5": "773bc3b3d9e9fc46922977005da09d9b"
+        }
+      ]
+    }
+  ]
+}

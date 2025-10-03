@@ -1,0 +1,73 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-framework-abstractions/0.6.2-K2.2.20-SNAPSHOT/testBalloon-framework-abstractions-0.6.2-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-framework-abstractions",
+    "version": "0.6.2-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidNativeArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-androidNativeArm64Main-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-framework-abstractions-androidnativearm64-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "size": 13011,
+          "sha512": "804a1329f1c408bb12833f2e48dbea442ba3d247c91071128415df2849626aa6f199d047e55e751a6ff023d9a23df8a262476b0fb25634de369a21a4be1b0a1b",
+          "sha256": "6efbde8d8a80dc9388d7ce7b2c2fd83e7bdaa9e9e611e0ca87016316c6c9ece1",
+          "sha1": "02f43477a80769e8bc335f9bf9eaa8ecde2302d5",
+          "md5": "394c2d6cc729df1581e1421aa03a575c"
+        }
+      ]
+    },
+    {
+      "name": "androidNativeArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-androidnativearm64-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-framework-abstractions-androidnativearm64-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 4485,
+          "sha512": "42335bf895d62c60cd54de1e78ac4e40e866f964e1062241f535f8b9c344a387d7e777cad621c5cb80957b8a41b4e34849267af87fe77959f9969bccad2abe9b",
+          "sha256": "4382afccd7fa6898884ec9fe2dede57b841a3eecf446fe1c91f0deb4d9f96fb5",
+          "sha1": "8ca47ceb50e2e391cdcc35f56020386337353c00",
+          "md5": "e72cc5198d7bce9b8acff403bbd70dc3"
+        }
+      ]
+    }
+  ]
+}

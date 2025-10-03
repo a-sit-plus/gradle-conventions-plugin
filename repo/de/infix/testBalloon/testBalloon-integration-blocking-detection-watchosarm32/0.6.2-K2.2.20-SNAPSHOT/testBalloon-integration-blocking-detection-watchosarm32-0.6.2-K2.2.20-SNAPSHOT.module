@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-integration-blocking-detection/0.6.2-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-0.6.2-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-integration-blocking-detection",
+    "version": "0.6.2-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "watchosArm32ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-integration-blocking-detection-watchosArm32Main-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-integration-blocking-detection-watchosarm32-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "size": 5400,
+          "sha512": "f350e141600925234dbdcba25dbc4a2318822b87b16c38a7bd26402e183a8258884a1440408ff64112b1497d11aced7ac8f15e03517f1d72706941ce518f05d8",
+          "sha256": "afbf46b56d2b344b53eb56699a681a1de90cbb1aaa92ee988b10b13b0809a0be",
+          "sha1": "76b1b36832963288cc13cfb09477edcd7a3c5460",
+          "md5": "9d2b385bd30278ad1e1136d63a9c293d"
+        }
+      ]
+    },
+    {
+      "name": "watchosArm32SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testBalloon-integration-blocking-detection-watchosarm32-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-integration-blocking-detection-watchosarm32-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 2945,
+          "sha512": "39e3fe2d09dea6d751c781c9d54c2842a097b0e2a250f1df01abef596da12daba9f9a32861f806a37955f2b86c658c90e0f6408a391dd83b23f3f0e98bce9450",
+          "sha256": "dbafc44bb6acf30f004893b05f9105de88a0d9a62512048ce98f2a05fcdbb66c",
+          "sha1": "18ff2f39110b3aef01c2c19e1a931081965bbd0a",
+          "md5": "184265814655eb8c10190843abd92a1b"
+        }
+      ]
+    },
+    {
+      "name": "watchosArm32MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-integration-blocking-detection-watchosarm32-0.6.2-K2.2.20-SNAPSHOT-metadata.jar",
+          "url": "testBalloon-integration-blocking-detection-watchosarm32-0.6.2-K2.2.20-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

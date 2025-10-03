@@ -1,0 +1,158 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-framework-core/0.6.2-K2.2.20-SNAPSHOT/testBalloon-framework-core-0.6.2-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-framework-core",
+    "version": "0.6.2-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-abstractions",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-test",
+          "version": {
+            "requires": "1.10.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-core-wasm-js-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-framework-core-wasm-js-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "size": 127905,
+          "sha512": "a12fd25c7705a8c6a589762787ecbe7251b6ec7ff5b4d8b1d8b87db862a45b26dd844076eb3a75156b08c3db5f8750f8be32ac82e98fe9ba68a2c97bf08327d3",
+          "sha256": "d55f428f4d9bdcd1ff5770658db8b83685bba840b79c0a8592ade69089aefc36",
+          "sha1": "c060976c2d378fbc332b1a6410bef2d7ed532ff7",
+          "md5": "a760c6ea45eb84b125a41e31e6120d33"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-abstractions",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-test",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-datetime",
+          "version": {
+            "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "atomicfu",
+          "version": {
+            "requires": "0.29.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-core-wasm-js-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-framework-core-wasm-js-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "size": 127905,
+          "sha512": "a12fd25c7705a8c6a589762787ecbe7251b6ec7ff5b4d8b1d8b87db862a45b26dd844076eb3a75156b08c3db5f8750f8be32ac82e98fe9ba68a2c97bf08327d3",
+          "sha256": "d55f428f4d9bdcd1ff5770658db8b83685bba840b79c0a8592ade69089aefc36",
+          "sha1": "c060976c2d378fbc332b1a6410bef2d7ed532ff7",
+          "md5": "a760c6ea45eb84b125a41e31e6120d33"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "files": [
+        {
+          "name": "testBalloon-framework-core-wasm-js-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-framework-core-wasm-js-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 37342,
+          "sha512": "c33f369e393151470a35440b357a035ee5f57872053a9c93b92392f8b55389a192adfbd6a0829607adf8acce1f4dba6daa1818d50c5dd85280861650ed55d1ca",
+          "sha256": "ddf470981cc7ea4c374d10793a1d0669e64ada50c8559a4820b7df748bed2c03",
+          "sha1": "64f2fd07540b1cb3ddebc059743fedd8d99e4296",
+          "md5": "36b567aed60d18bdcc734fa8e6b6e32b"
+        }
+      ]
+    }
+  ]
+}

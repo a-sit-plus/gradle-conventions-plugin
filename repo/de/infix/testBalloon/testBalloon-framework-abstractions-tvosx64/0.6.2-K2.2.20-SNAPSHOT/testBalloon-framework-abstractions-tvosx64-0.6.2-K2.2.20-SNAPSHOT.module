@@ -1,0 +1,104 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-framework-abstractions/0.6.2-K2.2.20-SNAPSHOT/testBalloon-framework-abstractions-0.6.2-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-framework-abstractions",
+    "version": "0.6.2-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "tvosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-tvosX64Main-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-framework-abstractions-tvosx64-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "size": 12979,
+          "sha512": "02a4df625dbc671a51d52e04e58e2dd592b596425ed603fce140ff306d19e52309f58f8aef7264fb231ba716a832a0e797bacd59eaf97363108c8bda8b96fe9b",
+          "sha256": "363a4965671f2e2a039a40b595dafb9a7e20b79afa87d464fb9f72b56fec92bd",
+          "sha1": "d112c8b894df2bce5c4f5cc71367b7b7becbad29",
+          "md5": "9d1eaf3aa20df1117a7d33c47a506ba4"
+        }
+      ]
+    },
+    {
+      "name": "tvosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-tvosx64-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-framework-abstractions-tvosx64-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 4485,
+          "sha512": "42335bf895d62c60cd54de1e78ac4e40e866f964e1062241f535f8b9c344a387d7e777cad621c5cb80957b8a41b4e34849267af87fe77959f9969bccad2abe9b",
+          "sha256": "4382afccd7fa6898884ec9fe2dede57b841a3eecf446fe1c91f0deb4d9f96fb5",
+          "sha1": "8ca47ceb50e2e391cdcc35f56020386337353c00",
+          "md5": "e72cc5198d7bce9b8acff403bbd70dc3"
+        }
+      ]
+    },
+    {
+      "name": "tvosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-tvosx64-0.6.2-K2.2.20-SNAPSHOT-metadata.jar",
+          "url": "testBalloon-framework-abstractions-tvosx64-0.6.2-K2.2.20-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

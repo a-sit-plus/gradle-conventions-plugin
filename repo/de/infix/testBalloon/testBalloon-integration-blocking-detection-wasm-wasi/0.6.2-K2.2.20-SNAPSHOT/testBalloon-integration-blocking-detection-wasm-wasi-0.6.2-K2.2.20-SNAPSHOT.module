@@ -1,0 +1,116 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-integration-blocking-detection/0.6.2-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-0.6.2-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-integration-blocking-detection",
+    "version": "0.6.2-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmWasiApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-integration-blocking-detection-wasm-wasi-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-integration-blocking-detection-wasm-wasi-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "size": 5214,
+          "sha512": "cf4e5c1427ad30600f538c685ed6fb3a7de383a67efc0c8e75386ab76f77792f2b5243316f71b82ae5e94afe85839ae04193e49dbdeed1e9d2152ecf08902543",
+          "sha256": "c00e01ad732bf98d0affcafd75a01a62e7e0b7b1b3418ef04a486b5b1bc7e446",
+          "sha1": "dc3b293ef4f8fd4c5b0c50a3f9ec20562d8c259d",
+          "md5": "6202cae697073d73c543f70b2d741249"
+        }
+      ]
+    },
+    {
+      "name": "wasmWasiRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-integration-blocking-detection-wasm-wasi-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-integration-blocking-detection-wasm-wasi-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "size": 5214,
+          "sha512": "cf4e5c1427ad30600f538c685ed6fb3a7de383a67efc0c8e75386ab76f77792f2b5243316f71b82ae5e94afe85839ae04193e49dbdeed1e9d2152ecf08902543",
+          "sha256": "c00e01ad732bf98d0affcafd75a01a62e7e0b7b1b3418ef04a486b5b1bc7e446",
+          "sha1": "dc3b293ef4f8fd4c5b0c50a3f9ec20562d8c259d",
+          "md5": "6202cae697073d73c543f70b2d741249"
+        }
+      ]
+    },
+    {
+      "name": "wasmWasiSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "files": [
+        {
+          "name": "testBalloon-integration-blocking-detection-wasm-wasi-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-integration-blocking-detection-wasm-wasi-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 2945,
+          "sha512": "39e3fe2d09dea6d751c781c9d54c2842a097b0e2a250f1df01abef596da12daba9f9a32861f806a37955f2b86c658c90e0f6408a391dd83b23f3f0e98bce9450",
+          "sha256": "dbafc44bb6acf30f004893b05f9105de88a0d9a62512048ce98f2a05fcdbb66c",
+          "sha1": "18ff2f39110b3aef01c2c19e1a931081965bbd0a",
+          "md5": "184265814655eb8c10190843abd92a1b"
+        }
+      ]
+    }
+  ]
+}

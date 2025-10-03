@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-integration-blocking-detection/0.6.2-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-0.6.2-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-integration-blocking-detection",
+    "version": "0.6.2-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-integration-blocking-detection-iosX64Main-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-integration-blocking-detection-iosx64-0.6.2-K2.2.20-SNAPSHOT.klib",
+          "size": 5360,
+          "sha512": "b8aac34631a72b3d7c413957591b6daa928736c2b54457419fe2e36b2c7edcc463414520f54d9195a9d35d6bb154757f7af2c8df51a9ceff4d7b54aedd604a8d",
+          "sha256": "b6ac7c90137c5fae19f713e438522d554d9231ba7ba840e3599dcee2d63c2132",
+          "sha1": "9e9e3e72c59512fe8106455d51534c19de20ee8a",
+          "md5": "8f824df3dd842a2c7b5f8f17de2865b4"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testBalloon-integration-blocking-detection-iosx64-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-integration-blocking-detection-iosx64-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 2945,
+          "sha512": "39e3fe2d09dea6d751c781c9d54c2842a097b0e2a250f1df01abef596da12daba9f9a32861f806a37955f2b86c658c90e0f6408a391dd83b23f3f0e98bce9450",
+          "sha256": "dbafc44bb6acf30f004893b05f9105de88a0d9a62512048ce98f2a05fcdbb66c",
+          "sha1": "18ff2f39110b3aef01c2c19e1a931081965bbd0a",
+          "md5": "184265814655eb8c10190843abd92a1b"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-integration-blocking-detection-iosx64-0.6.2-K2.2.20-SNAPSHOT-metadata.jar",
+          "url": "testBalloon-integration-blocking-detection-iosx64-0.6.2-K2.2.20-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

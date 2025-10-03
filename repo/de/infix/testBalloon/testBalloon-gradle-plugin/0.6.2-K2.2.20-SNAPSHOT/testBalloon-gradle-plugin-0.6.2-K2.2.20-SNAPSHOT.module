@@ -1,0 +1,116 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-gradle-plugin",
+    "version": "0.6.2-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-gradle-plugin-0.6.2-K2.2.20-SNAPSHOT.jar",
+          "url": "testBalloon-gradle-plugin-0.6.2-K2.2.20-SNAPSHOT.jar",
+          "size": 34980,
+          "sha512": "7a3097e7ed40e87c727ef35bf6ce60983da7b14af96cf250f713e780d258e5af16cb436c126894348b8c9a5d8e36ce31b17bab5e8a08cbdacd0676a0b7590dae",
+          "sha256": "60f75087c0557167c497b8b408ce963dd77e4115c7f27ad649c8afb548fce96e",
+          "sha1": "69cc5c81fb83503ebad1a69d93f964c2aed1068a",
+          "md5": "e9817ad1db17cc8c4d248fbbeb9b85aa"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 11,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-gradle-plugin",
+          "version": {
+            "requires": "2.2.20"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-abstractions",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-gradle-plugin-0.6.2-K2.2.20-SNAPSHOT.jar",
+          "url": "testBalloon-gradle-plugin-0.6.2-K2.2.20-SNAPSHOT.jar",
+          "size": 34980,
+          "sha512": "7a3097e7ed40e87c727ef35bf6ce60983da7b14af96cf250f713e780d258e5af16cb436c126894348b8c9a5d8e36ce31b17bab5e8a08cbdacd0676a0b7590dae",
+          "sha256": "60f75087c0557167c497b8b408ce963dd77e4115c7f27ad649c8afb548fce96e",
+          "sha1": "69cc5c81fb83503ebad1a69d93f964c2aed1068a",
+          "md5": "e9817ad1db17cc8c4d248fbbeb9b85aa"
+        }
+      ]
+    },
+    {
+      "name": "sourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "testBalloon-gradle-plugin-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-gradle-plugin-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 5645,
+          "sha512": "d78d5442af47618d59750974ce307d153b24bd0f51279034c264dfaf27b3700a755aad3d92a8976afddd42f916ad70190b7fe7d946a91189bea12725283d8726",
+          "sha256": "f40775866532f8c1bf5c9e0e6bbbaf5eccf2d272d9883df48541c56659f32667",
+          "sha1": "d86bed956cad57fdfd76a443a865041a14acdade",
+          "md5": "d1045a7dee3878d34473266290a72ec8"
+        }
+      ]
+    }
+  ]
+}

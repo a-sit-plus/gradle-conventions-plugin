@@ -1,0 +1,172 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-framework-core/0.6.2-K2.2.20-SNAPSHOT/testBalloon-framework-core-0.6.2-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-framework-core",
+    "version": "0.6.2-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-abstractions",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-test",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-core.aar",
+          "url": "testBalloon-framework-core-android-0.6.2-K2.2.20-SNAPSHOT.aar",
+          "size": 220602,
+          "sha512": "2f169a8f08f9dad2e8eed9802c2d7fd8470a27c2d5b822518ea9a6cb7bf5e5e97cfcac8101c6204167a1c831f7208beeb262d76c0e433b3144c8f12c371dd165",
+          "sha256": "e6cb321cd55f8ca2ab3fe06f425147cc3c50a91a62d2add49ef6ae9950941228",
+          "sha1": "23d803e8cba768b32089a4e5a3df5e2e9f54c44f",
+          "md5": "e7720eaaa4a7efd5b262d0539ed5d7f0"
+        }
+      ]
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-abstractions",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-test",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        },
+        {
+          "group": "androidx.test",
+          "module": "core",
+          "version": {
+            "requires": "1.7.0"
+          }
+        },
+        {
+          "group": "junit",
+          "module": "junit",
+          "version": {
+            "requires": "4.13.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-datetime",
+          "version": {
+            "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "atomicfu",
+          "version": {
+            "requires": "0.29.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-core.aar",
+          "url": "testBalloon-framework-core-android-0.6.2-K2.2.20-SNAPSHOT.aar",
+          "size": 220602,
+          "sha512": "2f169a8f08f9dad2e8eed9802c2d7fd8470a27c2d5b822518ea9a6cb7bf5e5e97cfcac8101c6204167a1c831f7208beeb262d76c0e433b3144c8f12c371dd165",
+          "sha256": "e6cb321cd55f8ca2ab3fe06f425147cc3c50a91a62d2add49ef6ae9950941228",
+          "sha1": "23d803e8cba768b32089a4e5a3df5e2e9f54c44f",
+          "md5": "e7720eaaa4a7efd5b262d0539ed5d7f0"
+        }
+      ]
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "testBalloon-framework-core-android-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-framework-core-android-0.6.2-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 33824,
+          "sha512": "a055ecc3bc3b894998e9ad5a8557f8fcc36318375daa539774101d23f09eb914f40cef59b39e2f1bdeb76d857b9d968c69be512e77960866cbab15aec43f8ad4",
+          "sha256": "c1138cf7688f3d210ae1bac5ae3997b384aa45ed0d56ce6df295426c60aeab31",
+          "sha1": "2f08ea435abc28e738fdba7ccc494c989fee7023",
+          "md5": "c3b789530eed57d9a6d4b0fa60eb2200"
+        }
+      ]
+    }
+  ]
+}

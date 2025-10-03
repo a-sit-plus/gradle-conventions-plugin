@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>de.infix.testBalloon</groupId>
+  <artifactId>testBalloon-framework-core-iosx64</artifactId>
+  <versioning>
+    <latest>0.6.2-K2.2.20-SNAPSHOT</latest>
+    <versions>
+      <version>0.6.2-K2.2.20-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20251001191045</lastUpdated>
+  </versioning>
+</metadata>
