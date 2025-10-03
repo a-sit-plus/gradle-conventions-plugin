@@ -2,11 +2,10 @@
 
 package at.asitplus.gradle
 
-import at.asitplus.gradle.at.asitplus.gradle.*
+import at.asitplus.gradle.at.asitplus.gradle.addTestExtensions
 import io.github.gradlenexus.publishplugin.NexusPublishExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.artifacts.repositories.MavenArtifactRepository
 import org.gradle.api.tasks.Delete
 import org.gradle.api.tasks.StopExecutionException
 import org.gradle.api.tasks.testing.Test
@@ -137,14 +136,6 @@ open class K2Conventions : Plugin<Project> {
             }
         target.publishVersionCatalog = true
 
-        target.plugins.withType<KotlinMultiplatformPluginWrapper> {
-            if (target != target.rootProject) {
-                target.registerKotestCopyTask()
-                target.extensions.getByType<KotlinMultiplatformExtension>()
-                    .wireKotestKsp()
-            }
-        }
-
         Logger.lifecycle(
             "\n ASP Conventions ${H}${target.AspVersions.kotlin}+$buildDate$R is using the following dependency versions for project $H${
                 if (target == target.rootProject) target.name
@@ -182,10 +173,10 @@ open class K2Conventions : Plugin<Project> {
             }
 
             Logger.lifecycle("  Adding maven repositories")
+            Logger.info("    * ASP")
             Logger.info("    * maven snapshots")
             Logger.info("    * maven central")
             Logger.info("    * google")
-            Logger.info("    * ASP")
             target.allprojects {
                 repositories {
                     maven("https://github.com/a-sit-plus/gradle-conventions-plugin/raw/mvn/repo/")
@@ -246,17 +237,11 @@ open class K2Conventions : Plugin<Project> {
                             Logger.lifecycle("  ${H}[JVM] Setting jvmTarget to ${target.jvmTarget} for $name$R")
                             jvmTarget = JvmTarget.Companion.fromTarget(target.jvmTarget)
                         }
-
-                        Logger.info("  [JVM] Configuring Kotest JVM runner")
-                        testRuns["test"].executionTask.configure {
-                            useJUnitPlatform()
-                        }
                     }
                 }
 
                 kmp.setupAndroidTarget()
                 kmp.experimentalOptIns()
-                kmp.defaultSetupKotest()
 
                 kmp.linkAgpJvmSharedSources()
                 Logger.lifecycle("") //to make it look less crammed
@@ -281,7 +266,14 @@ open class K2Conventions : Plugin<Project> {
                         }
                     }
                 }
-
+                target.afterEvaluate {
+                    Logger.lifecycle("  Enabling unsigned types")
+                    Logger.lifecycle("  Enabling context parameters\n")
+                    kotlin.sourceSets.forEach {
+                        it.languageSettings.optIn("kotlin.ExperimentalUnsignedTypes")
+                        it.languageSettings.enableLanguageFeature("ContextParameters")
+                    }
+                }
                 if (!isMultiplatform && hasJvm) {
                     Logger.lifecycle("  Assuming JVM-only Kotlin project")
                     target.afterEvaluate {
@@ -289,8 +281,7 @@ open class K2Conventions : Plugin<Project> {
                         (kotlin as KotlinJvmExtension).forceApiVersion()
                         kotlin.apply {
                             sourceSets.getByName("test").dependencies {
-                                addKotestExtensions("jvm")
-                                addKotestJvmRunner()
+                                addTestExtensions("jvm")
                             }
 
                         }
@@ -311,12 +302,21 @@ open class K2Conventions : Plugin<Project> {
                                 doLast { Logger.lifecycle("> Clean done") }
                             }
                     }
-
+                    runCatching {
+                        if (isMultiplatform) {
+                            target.extensions.getByType<KotlinMultiplatformExtension>().apply {
+                                sourceSets.matching { it.name.endsWith("Test") }.configureEach {
+                                    dependencies {
+                                        addTestExtensions()
+                                    }
+                                }
+                            }
+                        }
+                    }
 
                     Logger.info("  Configuring Test output format")
                     target.tasks.withType<Test> {
                         if (name != "testReleaseUnitTest") {
-                            useJUnitPlatform()
                             filter {
                                 isFailOnNoMatchingTests = false
                             }

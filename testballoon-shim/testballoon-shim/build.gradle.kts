@@ -6,9 +6,8 @@ import java.util.*
 System.setProperty("KOTEST_NO_ASP_HELPER", "true")
 
 plugins {
-    id("com.android.library")
+    id("com.android.kotlin.multiplatform.library")
     kotlin("multiplatform")
-    kotlin("plugin.serialization")
     id("at.asitplus.gradle.conventions")
 }
 group = "at.asitplus.gradle"
@@ -17,11 +16,37 @@ version = Properties().apply {
 }.getProperty("buildDate")
 
 
+repositories {
+    mavenLocal()
+    mavenCentral()
+    gradlePluginPortal()
+    google()
+}
+
 publishVersionCatalog = false
 
 kotlin {
     jvm()
-    androidTarget { publishLibraryVariants("release") }
+    androidLibrary{
+        namespace = "at.asitplus.gradle.testballoonshim"
+        packaging {
+            listOf(
+                "org/bouncycastle/pqc/crypto/picnic/lowmcL5.bin.properties",
+                "org/bouncycastle/pqc/crypto/picnic/lowmcL3.bin.properties",
+                "org/bouncycastle/pqc/crypto/picnic/lowmcL1.bin.properties",
+                "org/bouncycastle/x509/CertPathReviewerMessages_de.properties",
+                "org/bouncycastle/x509/CertPathReviewerMessages.properties",
+                "org/bouncycastle/pkix/CertPathReviewerMessages_de.properties",
+                "org/bouncycastle/pkix/CertPathReviewerMessages.properties",
+                "/META-INF/{AL2.0,LGPL2.1}",
+                "win32-x86-64/attach_hotspot_windows.dll",
+                "win32-x86/attach_hotspot_windows.dll",
+                "META-INF/versions/9/OSGI-INF/MANIFEST.MF",
+                "META-INF/licenses/*",
+            ).forEach { resources.excludes.add(it) }
+        }
+
+    }
     macosArm64()
     macosX64()
     tvosArm64()
@@ -42,9 +67,9 @@ kotlin {
     androidNativeX86()
     androidNativeArm32()
     androidNativeArm64()
-
+    //wasmWasi(nodeJs())
     listOf(
-        js(IR).apply { browser { testTask { enabled = false } } },
+        js().apply { browser { testTask { enabled = false } } },
         @OptIn(ExperimentalWasmDsl::class)
         wasmJs().apply { browser { testTask { enabled = false } } }
     ).forEach {
@@ -57,57 +82,23 @@ kotlin {
     mingwX64()
 
     sourceSets {
-        all {
-            languageSettings.optIn("kotlin.ExperimentalUnsignedTypes")
-        }
-
         commonMain {
             dependencies {
-                implementation(libs.xmlutil)
-                implementation(libs.kotlinx.io.core)
-                api(kotest("framework-engine"))
+                api(kotest("property"))
+                api("de.infix.testBalloon:testBalloon-framework-core:${libs.versions.testballoon.get()}")
+                api("de.infix.testBalloon:testBalloon-integration-kotest-assertions:${libs.versions.testballoon.get()}")
             }
         }
-
-
     }
 }
 
-android {
-    namespace = "at.asitplus.signum.kmpotest"
-    packaging {
-        listOf(
-            "org/bouncycastle/pqc/crypto/picnic/lowmcL5.bin.properties",
-            "org/bouncycastle/pqc/crypto/picnic/lowmcL3.bin.properties",
-            "org/bouncycastle/pqc/crypto/picnic/lowmcL1.bin.properties",
-            "org/bouncycastle/x509/CertPathReviewerMessages_de.properties",
-            "org/bouncycastle/x509/CertPathReviewerMessages.properties",
-            "org/bouncycastle/pkix/CertPathReviewerMessages_de.properties",
-            "org/bouncycastle/pkix/CertPathReviewerMessages.properties",
-            "/META-INF/{AL2.0,LGPL2.1}",
-            "win32-x86-64/attach_hotspot_windows.dll",
-            "win32-x86/attach_hotspot_windows.dll",
-            "META-INF/versions/9/OSGI-INF/MANIFEST.MF",
-            "META-INF/licenses/*",
-        ).forEach { resources.excludes.add(it) }
-    }
-
-}
-
-// we don't have native android tests independent of our regular test suite.
-// this task expect those and fails, since no tests are present, so we disable it.
-project.gradle.taskGraph.whenReady {
-    tasks.getByName("testDebugUnitTest") {
-        enabled = false
-    }
-}
 
 publishing {
     publications {
         withType<MavenPublication> {
             pom {
-                name.set("KMPotest")
-                description.set("Kotlin Multiplatform Kotest JUnit report generator shim")
+                name.set("Testballoon Shim")
+                description.set("Testballoon FreeSpec Shim")
                 url.set("https://github.com/a-sit-plus/gradle-conventions-plugin")
                 licenses {
                     license {

@@ -55,6 +55,11 @@ class AspVersions(private val project: Project) {
     val kotest = System.getenv("KOTEST_VERSION_OVERRIDE")?.ifBlank { null } ?:versionOf("kotest")
 
     /**
+     *  Testballoon version (libraries and plugin). Override by adding setting a `testballoon` in `libs.versions.toml`.
+     */
+    val testballoon = System.getenv("TESTBALLOON_VERSION_OVERRIDE")?.ifBlank { null } ?:versionOf("testballoon")
+
+    /**
      * Ktor version.  Override by adding setting a `ktor` in `libs.versions.toml`.
      */
     val ktor = versionOf("ktor")

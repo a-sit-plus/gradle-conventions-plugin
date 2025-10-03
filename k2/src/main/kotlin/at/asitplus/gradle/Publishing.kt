@@ -112,7 +112,7 @@ internal fun Project.setupSignDependency() {
 }
 
 /**
- * Adds the `version-catalog` plugin to the build in order to publish version catalogs alongside the project's other maven artefacts.
+ * Adds the `version-catalog` plugin to the build to publish version catalogs alongside the project's other maven artefacts.
  */
 internal fun Project.addVersionCatalogSupport() {
     Logger.lifecycle("  Adding version catalog plugin to project ${rootProject.name}:${project.name}")
@@ -256,7 +256,7 @@ internal fun Project.compileVersionCatalog() {
     project.extensions.getByType<PublishingExtension>().let { publishingExtension ->
 
         val configured = publishingExtension.publications.filterIsInstance<DefaultMavenPublication>()
-            .firstOrNull { it.pom?.scm != null }
+            .firstOrNull { it.pom.scm != null }
 
         if (project.kotlinExtension is KotlinMultiplatformExtension)
             publishingExtension.publications.create<MavenPublication>("versions") {
