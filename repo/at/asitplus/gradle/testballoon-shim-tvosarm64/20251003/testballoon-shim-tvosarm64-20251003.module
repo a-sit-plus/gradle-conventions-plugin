@@ -1,0 +1,146 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testballoon-shim/20251003/testballoon-shim-20251003.module",
+    "group": "at.asitplus.gradle",
+    "module": "testballoon-shim",
+    "version": "20251003",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "tvosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.3"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-integration-kotest-assertions",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testballoon-shim-tvosArm64Main-20251003.klib",
+          "url": "testballoon-shim-tvosarm64-20251003.klib",
+          "size": 17941,
+          "sha512": "a8eb21fb37ff0c869d060bb3934fee684f4c16074c0c1f54b0cc540871a007e19d208a99ed14bb6ee7909e5f99ed55b1e4cd05f98806ec9094df2f158377058e",
+          "sha256": "a4c80157b420d277aae615a0660ca77d09bb303fadc3f9845282054166eb0954",
+          "sha1": "62feb9c3456bae6e97891abd339c767f0aaa8e26",
+          "md5": "63877d21cc744fae8aaa414bf96ad71d"
+        }
+      ]
+    },
+    {
+      "name": "tvosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testballoon-shim-tvosarm64-20251003-sources.jar",
+          "url": "testballoon-shim-tvosarm64-20251003-sources.jar",
+          "size": 3141,
+          "sha512": "17a4b070df353bf38860513894975084dd6ac9987d64a0e17e98cc6d8323bcf0c29df4db4e27435be0719d67597d9f261f5af043d6cf3a548d21b923f9ce0d2d",
+          "sha256": "a1861f37e6ddb50f9ab6342a89503f669652e3cac451f1a3e029d16ccc505286",
+          "sha1": "50767dcf7064fa506fcb9d68299294d2c40065f2",
+          "md5": "6ef24ac4b50a924565133a509f03999c"
+        }
+      ]
+    },
+    {
+      "name": "tvosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.3"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-integration-kotest-assertions",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testballoon-shim-tvosarm64-20251003-metadata.jar",
+          "url": "testballoon-shim-tvosarm64-20251003-metadata.jar",
+          "size": 261,
+          "sha512": "c58a234cd95c5ffafd871145b7f20204c9b9715120ec7137f623fe185e598773be8846223e8e67ea7a5c92c2d9a523d00c4d3017aa8fe025f3dbc1f25f7ced63",
+          "sha256": "42aee0519d43f19e3ba52b81c125b8697b3ab0c1baeffbaa8c9cf094b148b501",
+          "sha1": "829b61a39aac526836512dc82f231d0f36ecf761",
+          "md5": "3ddd8038e715b466e22648fcec950c63"
+        }
+      ]
+    }
+  ]
+}

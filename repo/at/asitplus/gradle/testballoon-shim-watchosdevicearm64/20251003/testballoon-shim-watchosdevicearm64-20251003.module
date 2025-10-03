@@ -1,0 +1,146 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testballoon-shim/20251003/testballoon-shim-20251003.module",
+    "group": "at.asitplus.gradle",
+    "module": "testballoon-shim",
+    "version": "20251003",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "watchosDeviceArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.3"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-integration-kotest-assertions",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testballoon-shim-watchosDeviceArm64Main-20251003.klib",
+          "url": "testballoon-shim-watchosdevicearm64-20251003.klib",
+          "size": 18020,
+          "sha512": "4f4a397b742e9ab8b319f79639c294423057376a64633a7221f05195208e63fd41b641a5c0065730108b50039544c775e95a8ae888bc1ee6b6db1c0a60d3d048",
+          "sha256": "761ca8ecebea9b517a803dcd05b37a9ff7e67bba73588534707d7597f62d9221",
+          "sha1": "b9c2e13b5b5d9d64b6197048106322ec6300e7fd",
+          "md5": "368b001fe752aa30925fa96b33a45315"
+        }
+      ]
+    },
+    {
+      "name": "watchosDeviceArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testballoon-shim-watchosdevicearm64-20251003-sources.jar",
+          "url": "testballoon-shim-watchosdevicearm64-20251003-sources.jar",
+          "size": 3278,
+          "sha512": "f09454ab597a4e82f874441708e8354fd38e329573b3a0cb530e4f5ef5a2d53b64fba8c989910f891520838115262a74d3bd90b4dc6acf9c00a2d36db2fcb294",
+          "sha256": "8c9aaa5ccae138f548a7b8a04536cbd79295eb4b8a4e2baedb81c60b759dc25b",
+          "sha1": "8dd54bc19ab4bc6a5a8a0f323c1d21888cc49f25",
+          "md5": "400d769a2612718ca7c7a87d2c17d56c"
+        }
+      ]
+    },
+    {
+      "name": "watchosDeviceArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.3"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-integration-kotest-assertions",
+          "version": {
+            "requires": "0.6.2-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testballoon-shim-watchosdevicearm64-20251003-metadata.jar",
+          "url": "testballoon-shim-watchosdevicearm64-20251003-metadata.jar",
+          "size": 261,
+          "sha512": "bc2deda13662b22e824678be859cca71db32902d84e9511e54fc6d51c38c1e24b38790b0615c763f84c159f9eb3093848449fed5f70be40ff43643b7f66c424c",
+          "sha256": "e408301c7953e7a34165fe104d27297e16c8175c5c2b5022b028b57276e7ca9a",
+          "sha1": "b3e3d480acf6ffd28883a3078e579cb0e7251bd5",
+          "md5": "fcd89eb36e1030a258b555587e7646c0"
+        }
+      ]
+    }
+  ]
+}

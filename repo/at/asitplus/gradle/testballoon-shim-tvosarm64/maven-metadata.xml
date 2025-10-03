@@ -3,11 +3,11 @@
   <groupId>at.asitplus.gradle</groupId>
   <artifactId>testballoon-shim-tvosarm64</artifactId>
   <versioning>
-    <latest>202509019</latest>
-    <release>202509019</release>
+    <latest>20251003</latest>
+    <release>20251003</release>
     <versions>
-      <version>202509019</version>
+      <version>20251003</version>
     </versions>
-    <lastUpdated>20250920092802</lastUpdated>
+    <lastUpdated>20251003135321</lastUpdated>
   </versioning>
 </metadata>
