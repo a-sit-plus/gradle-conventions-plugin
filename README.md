@@ -18,7 +18,6 @@ This plugin targets Kotlin JVM and multiplatform projects and provides the follo
   ~~KSP plugin~~, and JVM toolchain (can be overridden)
 * Shorthands for various commonly-used dependencies
 * Natural extension functions to add common dependencies
-* Autoconfiguration of Kotest for multiplatform projects
 * Automatically adding of Google and maven central repository
 * Auto-setup of gradle-nexus-plugin (but no configuration of publishing)
 * Experimental opt-ins for multiplatform projects
@@ -110,7 +109,7 @@ below.
 ```kotlin
 plugins {
     kotlin("jvm") version "<kotlin version here>" apply false //or multiplatform
-    id("io.kotest.multiplatform") version libs.versions.kotest //if you want to keep plugin and extensions in sync
+    id("de.infix.testBalloon") version "<kotlin version here>" apply false //if you want to keep plugin and extensions in sync
     id("at.asitplus.gradle.conventions") version "$version" //Version can be omitted for composite build
 }
 ```
@@ -146,20 +145,6 @@ plugins {
 }
 ```
 
-#### Test Report Generation
-The conventions plugin ships with a `XmlReportingProjectConfig` Kotest abstract project config.
-Simply extend it as shown below in `commonTest`
-* and be sure to only **add** extensions, and not overwrite them, if you need custom extensions
-* and don't change the FQN!
-
-```kotlin
-package io.kotest.provided
-
-import at.asitplus.test.XmlReportingProjectConfig
-
-/** Wires KMP JUnit XML reporting */
-class ProjectConfig : XmlReportingProjectConfig()
-```
 ### JVM-Only
 
 The same approach show before also works for jvm-only projects:
@@ -216,7 +201,7 @@ that this property is not a compile-time constant.
 
 ## Extensions and Shorthands
 
-Common compiler options (opt-ins for serialization, coroutines, datetime, and `RequiresOptIn`), and Kotest are applied
+Common compiler options (opt-ins for serialization, coroutines, datetime, and `RequiresOptIn`) are applied
 by default
 In addition, shorthand for dependencies and other extensions are available to streamline project setup.
 
