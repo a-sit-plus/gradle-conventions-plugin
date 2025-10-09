@@ -1,0 +1,73 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-framework-abstractions/0.6.3-K2.2.20-SNAPSHOT/testBalloon-framework-abstractions-0.6.3-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-framework-abstractions",
+    "version": "0.6.3-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "linuxX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-linuxX64Main-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-framework-abstractions-linuxx64-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "size": 14994,
+          "sha512": "15681a370377ccee907559bbe608ac5d4a641d1624b2f400baa9a49c8bb32e951423846589857b1dba9fe336276457570d262511e6e7044b84906836a6e1a22b",
+          "sha256": "d7b5566d5e0d8b4ca3f47b57d2e315e13cfcecb0f37d9963dcaf6101d0381dea",
+          "sha1": "4cb192b065658d0b8824f5ea9319e7792ca512f3",
+          "md5": "de6507d8718ce471adff3682baa683cd"
+        }
+      ]
+    },
+    {
+      "name": "linuxX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-linuxx64-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-framework-abstractions-linuxx64-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 4561,
+          "sha512": "1625b7ea3d45e1bd5b355a254ed37e3890ab1b9494577f85cd30a85f0d86992d952b22539a50dc873e54df06232babbc88f852580cdd965e1d4a7a0f9a7fa9c1",
+          "sha256": "3c89768eeb8c755715c538dfea3beeb35eb677f8719f69fbfda9a52d6dc6b965",
+          "sha1": "9951d068e7ad5536413de9eb38e876943b2f5c24",
+          "md5": "5f36a0aa3fb3b1ad89f0898bdf1e5a6a"
+        }
+      ]
+    }
+  ]
+}

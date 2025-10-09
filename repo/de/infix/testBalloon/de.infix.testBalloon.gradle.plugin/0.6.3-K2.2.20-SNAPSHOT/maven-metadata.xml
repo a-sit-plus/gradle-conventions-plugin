@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>de.infix.testBalloon</groupId>
+  <artifactId>de.infix.testBalloon.gradle.plugin</artifactId>
+  <versioning>
+    <lastUpdated>20251009135704</lastUpdated>
+    <snapshot>
+      <timestamp>20251009.135704</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.6.3-K2.2.20-20251009.135704-1</value>
+        <updated>20251009135704</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+  <version>0.6.3-K2.2.20-SNAPSHOT</version>
+</metadata>

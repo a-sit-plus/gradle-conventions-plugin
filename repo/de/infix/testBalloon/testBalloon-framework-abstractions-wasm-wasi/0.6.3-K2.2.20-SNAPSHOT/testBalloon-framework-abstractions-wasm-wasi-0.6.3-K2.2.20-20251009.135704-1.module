@@ -1,0 +1,102 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-framework-abstractions/0.6.3-K2.2.20-SNAPSHOT/testBalloon-framework-abstractions-0.6.3-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-framework-abstractions",
+    "version": "0.6.3-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmWasiApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-wasm-wasi-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-framework-abstractions-wasm-wasi-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "size": 13585,
+          "sha512": "11f3b0bc96ab1c3b38b0f1df9661d32b66619f5fff2abfdd078651511326879387acfb0ddc739adb0b7ce6631caacaffed15de6361ad5164248caeeed86d3d31",
+          "sha256": "7d1a7463364445a9d175b94796e5aa58376c90ed6ba368bd7eae42751f6e9c36",
+          "sha1": "e35cae05d13a2251d63be2142be697d4affdcfbb",
+          "md5": "543cf5ce05e60f49b1037de6f420c24b"
+        }
+      ]
+    },
+    {
+      "name": "wasmWasiRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-wasm-wasi-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-framework-abstractions-wasm-wasi-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "size": 13585,
+          "sha512": "11f3b0bc96ab1c3b38b0f1df9661d32b66619f5fff2abfdd078651511326879387acfb0ddc739adb0b7ce6631caacaffed15de6361ad5164248caeeed86d3d31",
+          "sha256": "7d1a7463364445a9d175b94796e5aa58376c90ed6ba368bd7eae42751f6e9c36",
+          "sha1": "e35cae05d13a2251d63be2142be697d4affdcfbb",
+          "md5": "543cf5ce05e60f49b1037de6f420c24b"
+        }
+      ]
+    },
+    {
+      "name": "wasmWasiSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-wasm-wasi-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-framework-abstractions-wasm-wasi-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 4561,
+          "sha512": "1625b7ea3d45e1bd5b355a254ed37e3890ab1b9494577f85cd30a85f0d86992d952b22539a50dc873e54df06232babbc88f852580cdd965e1d4a7a0f9a7fa9c1",
+          "sha256": "3c89768eeb8c755715c538dfea3beeb35eb677f8719f69fbfda9a52d6dc6b965",
+          "sha1": "9951d068e7ad5536413de9eb38e876943b2f5c24",
+          "md5": "5f36a0aa3fb3b1ad89f0898bdf1e5a6a"
+        }
+      ]
+    }
+  ]
+}
