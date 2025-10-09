@@ -1,0 +1,80 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-integration-blocking-detection/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-0.6.3-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-integration-blocking-detection",
+    "version": "0.6.3-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidNativeArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-integration-blocking-detection-androidNativeArm64Main-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-integration-blocking-detection-androidnativearm64-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "size": 5400,
+          "sha512": "16929342b942ad4a46f021037e568f38fb5dfdeb0f2dab2c0db18599177d6e1590678fdd643ac74d2548e59754465dee75e518a348e3766ef89db65dc20dd32e",
+          "sha256": "e2407a6b7f4f2d7f1775f042831b50f337ec6b9ae835bd024601bdd5a7abd976",
+          "sha1": "1e401aa9ca307a7d6156a4bbe8fc4baf19f18ae6",
+          "md5": "7ec9075df006ad47d30ad038f7296833"
+        }
+      ]
+    },
+    {
+      "name": "androidNativeArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testBalloon-integration-blocking-detection-androidnativearm64-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-integration-blocking-detection-androidnativearm64-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 2945,
+          "sha512": "39e3fe2d09dea6d751c781c9d54c2842a097b0e2a250f1df01abef596da12daba9f9a32861f806a37955f2b86c658c90e0f6408a391dd83b23f3f0e98bce9450",
+          "sha256": "dbafc44bb6acf30f004893b05f9105de88a0d9a62512048ce98f2a05fcdbb66c",
+          "sha1": "18ff2f39110b3aef01c2c19e1a931081965bbd0a",
+          "md5": "184265814655eb8c10190843abd92a1b"
+        }
+      ]
+    }
+  ]
+}
