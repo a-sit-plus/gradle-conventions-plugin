@@ -1,0 +1,104 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-framework-abstractions/0.6.3-K2.2.20-SNAPSHOT/testBalloon-framework-abstractions-0.6.3-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-framework-abstractions",
+    "version": "0.6.3-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "watchosDeviceArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-watchosDeviceArm64Main-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-framework-abstractions-watchosdevicearm64-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "size": 14976,
+          "sha512": "adaa509b89867d0d519cdae0438376e669576a49bba9486558d42024968196965dc0d325760f5f0665803c98f8a9bfad990562a92f3ccdaa36e7e7f58992c2f8",
+          "sha256": "571b6fd9b8479e1defda51c0965c737241bd6cb6c1d111a3ea760d3cd01a869d",
+          "sha1": "126303331995f1aea9b87309adaa51dd634e6059",
+          "md5": "6bb7f370042a0a16a41d248abb58e874"
+        }
+      ]
+    },
+    {
+      "name": "watchosDeviceArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-watchosdevicearm64-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-framework-abstractions-watchosdevicearm64-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 4544,
+          "sha512": "770f8a49918581f1ae4ac5ec5a8f843e667b664ec0b2866671e347129d7472132f99969491334f6a6983c8b89728733e64b8a4047cd78702ea7b41010322338c",
+          "sha256": "c90328f3b88d6f1934c713b76d42238c5c175aa4a954ea3b979b166497a1c87f",
+          "sha1": "b33957d811ade4793d0444ebbcbe3c21b12a487c",
+          "md5": "ef9e584c7898ed13e7aaa0ce4fe9bc78"
+        }
+      ]
+    },
+    {
+      "name": "watchosDeviceArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-watchosdevicearm64-0.6.3-K2.2.20-SNAPSHOT-metadata.jar",
+          "url": "testBalloon-framework-abstractions-watchosdevicearm64-0.6.3-K2.2.20-SNAPSHOT-metadata.jar",
+          "size": 261,
+          "sha512": "1487e5a20c9e4d74f298e07c42e96a61be11b7a768c3fbc199ee138cd68e1fc2267d1cfe3f11f288acc05df755315344d052cc5f6f751f126ab4fe1caa5125ea",
+          "sha256": "c6deada2fac53b8ea6523dbda77597b128006674616f140f04df23264c6d1aa3",
+          "sha1": "2ad14aed781c4a73ed4dbb421966d408a0a06686",
+          "md5": "f43436d6bec321290f6af228ad602604"
+        }
+      ]
+    }
+  ]
+}

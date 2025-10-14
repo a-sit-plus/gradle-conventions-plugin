@@ -1,0 +1,116 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-framework-abstractions/0.6.3-K2.2.20-SNAPSHOT/testBalloon-framework-abstractions-0.6.3-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-framework-abstractions",
+    "version": "0.6.3-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-js-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-framework-abstractions-js-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "size": 13530,
+          "sha512": "da513a8fad02aa1d241d72cdc78c57edc1b08401f3bb6e124f607f27b6f7105b34a3c1e258ec7740176c2ed8b3eaa78f361a0a14689fda665b936baeea2e4813",
+          "sha256": "9960290cf21201e7e30e5e52120928634dadf208993d7a8068ca9cd1ab1cb020",
+          "sha1": "f1509e4371ecbf70c0dd1f8c19e057267add8fa4",
+          "md5": "1d3ed71319039bd0213e2ab4e1570698"
+        }
+      ]
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-js-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-framework-abstractions-js-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "size": 13530,
+          "sha512": "da513a8fad02aa1d241d72cdc78c57edc1b08401f3bb6e124f607f27b6f7105b34a3c1e258ec7740176c2ed8b3eaa78f361a0a14689fda665b936baeea2e4813",
+          "sha256": "9960290cf21201e7e30e5e52120928634dadf208993d7a8068ca9cd1ab1cb020",
+          "sha1": "f1509e4371ecbf70c0dd1f8c19e057267add8fa4",
+          "md5": "1d3ed71319039bd0213e2ab4e1570698"
+        }
+      ]
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-js-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-framework-abstractions-js-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 4544,
+          "sha512": "770f8a49918581f1ae4ac5ec5a8f843e667b664ec0b2866671e347129d7472132f99969491334f6a6983c8b89728733e64b8a4047cd78702ea7b41010322338c",
+          "sha256": "c90328f3b88d6f1934c713b76d42238c5c175aa4a954ea3b979b166497a1c87f",
+          "sha1": "b33957d811ade4793d0444ebbcbe3c21b12a487c",
+          "md5": "ef9e584c7898ed13e7aaa0ce4fe9bc78"
+        }
+      ]
+    }
+  ]
+}

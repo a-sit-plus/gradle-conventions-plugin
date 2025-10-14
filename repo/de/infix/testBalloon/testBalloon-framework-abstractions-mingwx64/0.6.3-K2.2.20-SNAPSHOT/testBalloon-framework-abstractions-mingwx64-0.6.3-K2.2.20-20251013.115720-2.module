@@ -1,0 +1,73 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-framework-abstractions/0.6.3-K2.2.20-SNAPSHOT/testBalloon-framework-abstractions-0.6.3-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-framework-abstractions",
+    "version": "0.6.3-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "mingwX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-mingwX64Main-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-framework-abstractions-mingwx64-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "size": 14904,
+          "sha512": "8d663985c00e0626e49404f02590d81b7a0b0c9f321164effe0d29c87ca79e802b3e9c4cc6678274a0662f404872af421068762d3699c89e6f1cd196ddb07d7e",
+          "sha256": "c1c969d189a8fbc622edc1b68b4e601319dc89a00f7923770654f84d833db6bd",
+          "sha1": "120f5850791b149901fc71931b7a9e4a484a1bee",
+          "md5": "258605d6bd8fca6a74a1fef612826c6d"
+        }
+      ]
+    },
+    {
+      "name": "mingwX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-mingwx64-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-framework-abstractions-mingwx64-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 4544,
+          "sha512": "770f8a49918581f1ae4ac5ec5a8f843e667b664ec0b2866671e347129d7472132f99969491334f6a6983c8b89728733e64b8a4047cd78702ea7b41010322338c",
+          "sha256": "c90328f3b88d6f1934c713b76d42238c5c175aa4a954ea3b979b166497a1c87f",
+          "sha1": "b33957d811ade4793d0444ebbcbe3c21b12a487c",
+          "md5": "ef9e584c7898ed13e7aaa0ce4fe9bc78"
+        }
+      ]
+    }
+  ]
+}

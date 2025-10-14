@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-integration-kotest-assertions/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-kotest-assertions-0.6.3-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-integration-kotest-assertions",
+    "version": "0.6.3-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-core",
+          "version": {
+            "requires": "5.9.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-integration-kotest-assertions-jvm-0.6.3-K2.2.20-SNAPSHOT.jar",
+          "url": "testBalloon-integration-kotest-assertions-jvm-0.6.3-K2.2.20-SNAPSHOT.jar",
+          "size": 2221,
+          "sha512": "5815cf4d18f621e9dffe49131d280ed633da03190c5c757b661ee7b3af3562694c0efe222e22712a0fd3916b473b6a389908b3c61cc71740cfd41e5ca35b9e87",
+          "sha256": "aec1bcb29698378cfda65822ee08edec36ce9813eeb808427c0a53b666902ad5",
+          "sha1": "4e50e7857fb7bdc3c2bfe9daef9aaf789d5a62dc",
+          "md5": "dcfb1dcb5cd2a85c93e53fd142a0678d"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-core",
+          "version": {
+            "requires": "5.9.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-integration-kotest-assertions-jvm-0.6.3-K2.2.20-SNAPSHOT.jar",
+          "url": "testBalloon-integration-kotest-assertions-jvm-0.6.3-K2.2.20-SNAPSHOT.jar",
+          "size": 2221,
+          "sha512": "5815cf4d18f621e9dffe49131d280ed633da03190c5c757b661ee7b3af3562694c0efe222e22712a0fd3916b473b6a389908b3c61cc71740cfd41e5ca35b9e87",
+          "sha256": "aec1bcb29698378cfda65822ee08edec36ce9813eeb808427c0a53b666902ad5",
+          "sha1": "4e50e7857fb7bdc3c2bfe9daef9aaf789d5a62dc",
+          "md5": "dcfb1dcb5cd2a85c93e53fd142a0678d"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "testBalloon-integration-kotest-assertions-jvm-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-integration-kotest-assertions-jvm-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 3141,
+          "sha512": "8d0292a7a62992effe4d69e41d635172a1498db488a106acea5c06b0dcf18d0d754d6e6eebcdcddd80ee4624864ad5121971a8dcf5902f8944c1be22faaf1f0f",
+          "sha256": "0dd3ccec0b577ac7ab7761786c93468ca2710acc76a515b213039ce60dbd823c",
+          "sha1": "5bd736c18a3e0732475ae78d8b1af9b1487c22b3",
+          "md5": "10a3753161fc3e5c93fb494652ff1e57"
+        }
+      ]
+    }
+  ]
+}

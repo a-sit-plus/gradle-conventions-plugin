@@ -1,0 +1,172 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-framework-core/0.6.3-K2.2.20-SNAPSHOT/testBalloon-framework-core-0.6.3-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-framework-core",
+    "version": "0.6.3-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.20"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-abstractions",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-test",
+          "version": {
+            "requires": "1.10.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-core-js-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-framework-core-js-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "size": 144567,
+          "sha512": "15a05756ccb326fb8d77310d91a70fd1c392a3c6c188281810bbe05c806d73f2e3a29f8761cf2c2ea4bdcc6435a811066c22768ca8f2419f002a82b853f88a88",
+          "sha256": "847f6bcd3ad4dd47e3f739ef8454a9ddb86f356cfb1b5dedfd1d27810bee1fb7",
+          "sha1": "7455be31b6804fa88cd7bee3d9d3ac525067ea77",
+          "md5": "302c1e8717ef2f0e60c07eba5b506545"
+        }
+      ]
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.20"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-abstractions",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-core",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-test",
+          "version": {
+            "requires": "1.10.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-datetime",
+          "version": {
+            "requires": "0.7.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "atomicfu",
+          "version": {
+            "requires": "0.29.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-core-js-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-framework-core-js-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "size": 144567,
+          "sha512": "15a05756ccb326fb8d77310d91a70fd1c392a3c6c188281810bbe05c806d73f2e3a29f8761cf2c2ea4bdcc6435a811066c22768ca8f2419f002a82b853f88a88",
+          "sha256": "847f6bcd3ad4dd47e3f739ef8454a9ddb86f356cfb1b5dedfd1d27810bee1fb7",
+          "sha1": "7455be31b6804fa88cd7bee3d9d3ac525067ea77",
+          "md5": "302c1e8717ef2f0e60c07eba5b506545"
+        }
+      ]
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "testBalloon-framework-core-js-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-framework-core-js-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 41799,
+          "sha512": "a62ab0d625694d6c23ffa8d515a0f8b389667640b44182601438e04348a5780e19bfc03c70f820112c6f601f83b809e9f7eff45d615354ecdf3b44fbc45b07ef",
+          "sha256": "2ead19129cec7cde6a6e884c4c2221e980c7a307f9a2a67ea4bf86b2595b6dc3",
+          "sha1": "8c99053baf2ee3ae8363de6b2ae5421d184163c3",
+          "md5": "0a9eb0ea66e1dd383f4f0a73b863e9e5"
+        }
+      ]
+    }
+  ]
+}

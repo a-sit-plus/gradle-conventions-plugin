@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-integration-kotest-assertions/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-kotest-assertions-0.6.3-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-integration-kotest-assertions",
+    "version": "0.6.3-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-core",
+          "version": {
+            "requires": "5.9.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-integration-kotest-assertions-wasm-js-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-integration-kotest-assertions-wasm-js-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "size": 4301,
+          "sha512": "daefcd69845c94c40fe2a565193e3301f4ff15d833874907c6e987b4fb52ea2a4a8cdbd708407094f6fb99b85027f967c1a8a4e5b58533d57d809dac378403f1",
+          "sha256": "01c6273f14695207657c4808f29e098b02505f38d15edd0b18cf22f1aab088e9",
+          "sha1": "c76efaaec53ef009617bddac9d393552b18b4694",
+          "md5": "9a33a8952c78d3fcac7b475288c09a72"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "io.kotest",
+          "module": "kotest-assertions-core",
+          "version": {
+            "requires": "5.9.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-integration-kotest-assertions-wasm-js-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "url": "testBalloon-integration-kotest-assertions-wasm-js-0.6.3-K2.2.20-SNAPSHOT.klib",
+          "size": 4301,
+          "sha512": "daefcd69845c94c40fe2a565193e3301f4ff15d833874907c6e987b4fb52ea2a4a8cdbd708407094f6fb99b85027f967c1a8a4e5b58533d57d809dac378403f1",
+          "sha256": "01c6273f14695207657c4808f29e098b02505f38d15edd0b18cf22f1aab088e9",
+          "sha1": "c76efaaec53ef009617bddac9d393552b18b4694",
+          "md5": "9a33a8952c78d3fcac7b475288c09a72"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "files": [
+        {
+          "name": "testBalloon-integration-kotest-assertions-wasm-js-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-integration-kotest-assertions-wasm-js-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 3228,
+          "sha512": "31212c7babf8b5b4fa9b564296b615ba5bb30656ff6f5f23fb7c27bfd214205d6a83e256a9d8a3a314243107f493c3bec5becff683db597558aac5e391524997",
+          "sha256": "54f5b6a8eacbd9581931da7de58e6f5e33b7b5f3a890425bc5ed59aacdf44c1f",
+          "sha1": "953585d699003149061bb63205c9c0143c874b36",
+          "md5": "c91aa499b9f36c00fd79f687b304c33a"
+        }
+      ]
+    }
+  ]
+}

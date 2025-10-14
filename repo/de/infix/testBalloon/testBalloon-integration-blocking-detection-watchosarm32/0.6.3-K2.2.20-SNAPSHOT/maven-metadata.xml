@@ -3,44 +3,44 @@
   <groupId>de.infix.testBalloon</groupId>
   <artifactId>testBalloon-integration-blocking-detection-watchosarm32</artifactId>
   <versioning>
-    <lastUpdated>20251009135704</lastUpdated>
+    <lastUpdated>20251013115720</lastUpdated>
     <snapshot>
-      <timestamp>20251009.135704</timestamp>
-      <buildNumber>1</buildNumber>
+      <timestamp>20251013.115720</timestamp>
+      <buildNumber>2</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <classifier>javadoc</classifier>
         <extension>jar</extension>
-        <value>0.6.3-K2.2.20-20251009.135704-1</value>
-        <updated>20251009135704</updated>
+        <value>0.6.3-K2.2.20-20251013.115720-2</value>
+        <updated>20251013115720</updated>
       </snapshotVersion>
       <snapshotVersion>
-        <classifier>metadata</classifier>
-        <extension>jar</extension>
-        <value>0.6.3-K2.2.20-20251009.135704-1</value>
-        <updated>20251009135704</updated>
-      </snapshotVersion>
-      <snapshotVersion>
-        <extension>pom</extension>
-        <value>0.6.3-K2.2.20-20251009.135704-1</value>
-        <updated>20251009135704</updated>
-      </snapshotVersion>
-      <snapshotVersion>
-        <extension>module</extension>
-        <value>0.6.3-K2.2.20-20251009.135704-1</value>
-        <updated>20251009135704</updated>
+        <extension>klib</extension>
+        <value>0.6.3-K2.2.20-20251013.115720-2</value>
+        <updated>20251013115720</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>0.6.3-K2.2.20-20251009.135704-1</value>
-        <updated>20251009135704</updated>
+        <value>0.6.3-K2.2.20-20251013.115720-2</value>
+        <updated>20251013115720</updated>
       </snapshotVersion>
       <snapshotVersion>
-        <extension>klib</extension>
-        <value>0.6.3-K2.2.20-20251009.135704-1</value>
-        <updated>20251009135704</updated>
+        <classifier>metadata</classifier>
+        <extension>jar</extension>
+        <value>0.6.3-K2.2.20-20251013.115720-2</value>
+        <updated>20251013115720</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.6.3-K2.2.20-20251013.115720-2</value>
+        <updated>20251013115720</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>module</extension>
+        <value>0.6.3-K2.2.20-20251013.115720-2</value>
+        <updated>20251013115720</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>

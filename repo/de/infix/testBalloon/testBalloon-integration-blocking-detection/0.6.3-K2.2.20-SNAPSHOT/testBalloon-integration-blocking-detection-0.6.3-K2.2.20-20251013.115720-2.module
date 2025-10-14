@@ -1,0 +1,1247 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-integration-blocking-detection",
+    "version": "0.6.3-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "metadataApiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-integration-blocking-detection-metadata-0.6.3-K2.2.20-SNAPSHOT.jar",
+          "url": "testBalloon-integration-blocking-detection-0.6.3-K2.2.20-SNAPSHOT.jar",
+          "size": 4608,
+          "sha512": "68aeede8205bb1b637929a548318dd8ce504c3310a8cbad9864e9989ffef8f909c6cba5b55fc055d6f420efdfed1e6442bdb9f820d20959fae7248a0a7f38863",
+          "sha256": "760073efbd224773cca94b2c9c604d9bfba324d2ae20cdffca925be5f226b00b",
+          "sha1": "d674d94dd80f362ce07aeef2dd4d1478658b4212",
+          "md5": "e3cda05a8eb55ede72c45953f7f6f52e"
+        }
+      ]
+    },
+    {
+      "name": "metadataSourcesElements",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "common"
+      },
+      "files": [
+        {
+          "name": "testBalloon-integration-blocking-detection-kotlin-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-integration-blocking-detection-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 2945,
+          "sha512": "3a6ffd841a76c83fa5eb32beda5c04fbba6ccd5478a6571f871d9baf91e37280375182070833a5a9cfa2a808d90dcfe28e523fe271e3bad465e10c464cb685fb",
+          "sha256": "c0406b8268c345c0671c09f5a0eeab8fcd152c25e7132c5c31ad0f25d7483ef0",
+          "sha1": "e78f2caa91e06c010dce75eea7ae669a622cd299",
+          "md5": "08716f9c53284aed393df921de230d27"
+        }
+      ]
+    },
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-android/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-android-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-android",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-android/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-android-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-android",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-android/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-android-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-android",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidNativeArm32ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-androidnativearm32/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-androidnativearm32-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-androidnativearm32",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidNativeArm32SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-androidnativearm32/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-androidnativearm32-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-androidnativearm32",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidNativeArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-androidnativearm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-androidnativearm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-androidnativearm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidNativeArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-androidnativearm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-androidnativearm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-androidnativearm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidNativeX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-androidnativex64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-androidnativex64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-androidnativex64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidNativeX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-androidnativex64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-androidnativex64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-androidnativex64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidNativeX86ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-androidnativex86/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-androidnativex86-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-androidnativex86",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "androidNativeX86SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_x86",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-androidnativex86/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-androidnativex86-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-androidnativex86",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-iosarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-iosarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-iosarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-iosarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-iosarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-iosarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-iosarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-iosarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-iosarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-iossimulatorarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-iossimulatorarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-iossimulatorarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-iossimulatorarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-iossimulatorarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-iossimulatorarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-iossimulatorarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-iossimulatorarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-iossimulatorarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-iosx64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-iosx64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-iosx64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-iosx64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-iosx64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-iosx64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-iosx64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-iosx64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-iosx64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-js/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-js-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-js",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-js/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-js-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-js",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-js/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-js-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-js",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-jvm/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-jvm-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-jvm",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-jvm/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-jvm-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-jvm",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-jvm/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-jvm-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-jvm",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "linuxArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-linuxarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-linuxarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-linuxarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "linuxArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-linuxarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-linuxarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-linuxarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "linuxX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-linuxx64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-linuxx64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-linuxx64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "linuxX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-linuxx64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-linuxx64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-linuxx64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "macosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-macosarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-macosarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-macosarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "macosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-macosarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-macosarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-macosarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "macosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-macosarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-macosarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-macosarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "macosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-macosx64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-macosx64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-macosx64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "macosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-macosx64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-macosx64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-macosx64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "macosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-macosx64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-macosx64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-macosx64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "mingwX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-mingwx64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-mingwx64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-mingwx64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "mingwX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-mingwx64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-mingwx64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-mingwx64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "tvosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-tvosarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-tvosarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-tvosarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "tvosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-tvosarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-tvosarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-tvosarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "tvosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-tvosarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-tvosarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-tvosarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "tvosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-tvossimulatorarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-tvossimulatorarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-tvossimulatorarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "tvosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-tvossimulatorarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-tvossimulatorarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-tvossimulatorarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "tvosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-tvossimulatorarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-tvossimulatorarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-tvossimulatorarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "tvosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-tvosx64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-tvosx64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-tvosx64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "tvosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-tvosx64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-tvosx64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-tvosx64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "tvosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-tvosx64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-tvosx64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-tvosx64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-wasm-js/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-wasm-js-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-wasm-js",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-wasm-js/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-wasm-js-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-wasm-js",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-wasm-js/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-wasm-js-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-wasm-js",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "wasmWasiApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-wasm-wasi/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-wasm-wasi-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-wasm-wasi",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "wasmWasiRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-wasm-wasi/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-wasm-wasi-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-wasm-wasi",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "wasmWasiSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "wasi"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-wasm-wasi/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-wasm-wasi-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-wasm-wasi",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "watchosArm32ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-watchosarm32/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-watchosarm32-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-watchosarm32",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "watchosArm32SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-watchosarm32/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-watchosarm32-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-watchosarm32",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "watchosArm32MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-watchosarm32/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-watchosarm32-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-watchosarm32",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "watchosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-watchosarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-watchosarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-watchosarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "watchosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-watchosarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-watchosarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-watchosarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "watchosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-watchosarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-watchosarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-watchosarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "watchosDeviceArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-watchosdevicearm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-watchosdevicearm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-watchosdevicearm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "watchosDeviceArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-watchosdevicearm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-watchosdevicearm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-watchosdevicearm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "watchosDeviceArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_device_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-watchosdevicearm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-watchosdevicearm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-watchosdevicearm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "watchosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-watchossimulatorarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-watchossimulatorarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-watchossimulatorarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "watchosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-watchossimulatorarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-watchossimulatorarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-watchossimulatorarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "watchosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-watchossimulatorarm64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-watchossimulatorarm64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-watchossimulatorarm64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "watchosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-watchosx64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-watchosx64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-watchosx64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "watchosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-watchosx64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-watchosx64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-watchosx64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    },
+    {
+      "name": "watchosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "available-at": {
+        "url": "../../testBalloon-integration-blocking-detection-watchosx64/0.6.3-K2.2.20-SNAPSHOT/testBalloon-integration-blocking-detection-watchosx64-0.6.3-K2.2.20-SNAPSHOT.module",
+        "group": "de.infix.testBalloon",
+        "module": "testBalloon-integration-blocking-detection-watchosx64",
+        "version": "0.6.3-K2.2.20-SNAPSHOT"
+      }
+    }
+  ]
+}

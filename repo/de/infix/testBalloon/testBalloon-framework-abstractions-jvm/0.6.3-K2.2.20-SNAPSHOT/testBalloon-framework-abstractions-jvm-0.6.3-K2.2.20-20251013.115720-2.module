@@ -1,0 +1,102 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testBalloon-framework-abstractions/0.6.3-K2.2.20-SNAPSHOT/testBalloon-framework-abstractions-0.6.3-K2.2.20-SNAPSHOT.module",
+    "group": "de.infix.testBalloon",
+    "module": "testBalloon-framework-abstractions",
+    "version": "0.6.3-K2.2.20-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-jvm-0.6.3-K2.2.20-SNAPSHOT.jar",
+          "url": "testBalloon-framework-abstractions-jvm-0.6.3-K2.2.20-SNAPSHOT.jar",
+          "size": 13809,
+          "sha512": "af6103acb530ae50010747ac6078b0708d244ddf2c5ec87d17c81260b5da649aae736f7c058fd3d0d1a76e4e6628ff4c9ae93c6313517bc63b7adbf17b8a5443",
+          "sha256": "a1541980edd5aa3c00d79a651568085df2ca98df6d989e63d4951ae2e2c6c7c3",
+          "sha1": "bcf95faab52d70508592f1738db0b3ef2209e81f",
+          "md5": "ff2c40f42f241e58b84d26625471f99b"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-jvm-0.6.3-K2.2.20-SNAPSHOT.jar",
+          "url": "testBalloon-framework-abstractions-jvm-0.6.3-K2.2.20-SNAPSHOT.jar",
+          "size": 13809,
+          "sha512": "af6103acb530ae50010747ac6078b0708d244ddf2c5ec87d17c81260b5da649aae736f7c058fd3d0d1a76e4e6628ff4c9ae93c6313517bc63b7adbf17b8a5443",
+          "sha256": "a1541980edd5aa3c00d79a651568085df2ca98df6d989e63d4951ae2e2c6c7c3",
+          "sha1": "bcf95faab52d70508592f1738db0b3ef2209e81f",
+          "md5": "ff2c40f42f241e58b84d26625471f99b"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "testBalloon-framework-abstractions-jvm-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "url": "testBalloon-framework-abstractions-jvm-0.6.3-K2.2.20-SNAPSHOT-sources.jar",
+          "size": 4544,
+          "sha512": "770f8a49918581f1ae4ac5ec5a8f843e667b664ec0b2866671e347129d7472132f99969491334f6a6983c8b89728733e64b8a4047cd78702ea7b41010322338c",
+          "sha256": "c90328f3b88d6f1934c713b76d42238c5c175aa4a954ea3b979b166497a1c87f",
+          "sha1": "b33957d811ade4793d0444ebbcbe3c21b12a487c",
+          "md5": "ef9e584c7898ed13e7aaa0ce4fe9bc78"
+        }
+      ]
+    }
+  ]
+}
