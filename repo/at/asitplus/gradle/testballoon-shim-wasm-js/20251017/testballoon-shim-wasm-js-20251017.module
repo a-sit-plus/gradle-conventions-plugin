@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testballoon-shim/20251017/testballoon-shim-20251017.module",
+    "group": "at.asitplus.gradle",
+    "module": "testballoon-shim",
+    "version": "20251017",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "wasmJsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.3"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-integration-kotest-assertions",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testballoon-shim-wasm-js-20251017.klib",
+          "url": "testballoon-shim-wasm-js-20251017.klib",
+          "size": 17732,
+          "sha512": "cccc063ca75a8134838255ec14ff628fe4928043b56327f8490faac03c12bc6ce7c04b0024a9659b9a3dd2fcaa1445f154d2448cb3fa2a65addfec02f9675790",
+          "sha256": "d30b94909e63bd70105bba5ce345d79343076ff15b9b82ced21056e463536ab8",
+          "sha1": "081a7d548e2a683e56327fb617bc39cf4cec725d",
+          "md5": "f74d34ccf1dcd1a1bd69bfa530c76089"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.3"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-integration-kotest-assertions",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testballoon-shim-wasm-js-20251017.klib",
+          "url": "testballoon-shim-wasm-js-20251017.klib",
+          "size": 17732,
+          "sha512": "cccc063ca75a8134838255ec14ff628fe4928043b56327f8490faac03c12bc6ce7c04b0024a9659b9a3dd2fcaa1445f154d2448cb3fa2a65addfec02f9675790",
+          "sha256": "d30b94909e63bd70105bba5ce345d79343076ff15b9b82ced21056e463536ab8",
+          "sha1": "081a7d548e2a683e56327fb617bc39cf4cec725d",
+          "md5": "f74d34ccf1dcd1a1bd69bfa530c76089"
+        }
+      ]
+    },
+    {
+      "name": "wasmJsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.platform.type": "wasm",
+        "org.jetbrains.kotlin.wasm.target": "js"
+      },
+      "files": [
+        {
+          "name": "testballoon-shim-wasm-js-20251017-sources.jar",
+          "url": "testballoon-shim-wasm-js-20251017-sources.jar",
+          "size": 3110,
+          "sha512": "e05776bc689f1df2660e75fc4634d54b4bdef61558833784db05e130eb20ddb624e63b877c83112a2ac4aba5899108d271ecf26124dc85e88fd3f3d367229e6f",
+          "sha256": "f9c32aa5f03ef8c9b4bfc377edb9cf131d3c896e17192d03d8d5046b9c1923fc",
+          "sha1": "663785a51ace5fd12c228162bfd1d3b8730415a1",
+          "md5": "d9ef40d5ebe9687da00276282cbbfef6"
+        }
+      ]
+    }
+  ]
+}

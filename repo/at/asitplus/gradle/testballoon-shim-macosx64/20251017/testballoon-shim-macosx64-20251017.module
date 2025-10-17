@@ -1,0 +1,146 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testballoon-shim/20251017/testballoon-shim-20251017.module",
+    "group": "at.asitplus.gradle",
+    "module": "testballoon-shim",
+    "version": "20251017",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "macosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.3"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-integration-kotest-assertions",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testballoon-shim-macosX64Main-20251017.klib",
+          "url": "testballoon-shim-macosx64-20251017.klib",
+          "size": 17948,
+          "sha512": "c7d6e21a75c7b923d4ba32c19d4ecc825732114f2a63e5cc7e0b9211b46908622351bb18049b69909f4198d706058659e1bcdae32210c48864ca445a2dd7926b",
+          "sha256": "e4df7be9dc6446d0226fb01b8d07ce58d67718ab8de38c7283a6bc05108ca38d",
+          "sha1": "42d6caeeccc6104e1be3a91b0d456f54d6192ab5",
+          "md5": "9d77d9df3d0106200b89725ad178d65c"
+        }
+      ]
+    },
+    {
+      "name": "macosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testballoon-shim-macosx64-20251017-sources.jar",
+          "url": "testballoon-shim-macosx64-20251017-sources.jar",
+          "size": 3130,
+          "sha512": "a6e4033d9f179f34932985328934ad1610c199a7ce6a6ca727d325527fb5c6a63a203f4e3931d0dca7540ac0f15d6eb1ceebedb7821fa19fe9c4b36267a7613b",
+          "sha256": "ec494664cd71e939431a63aeabdfc354de13ee2cc5fb318c3df75f107b20bfcc",
+          "sha1": "06f1dd8a013d917e8655712e5b41f55e026cda9c",
+          "md5": "33c771af8b8f2670d947d9f1fbcfb24d"
+        }
+      ]
+    },
+    {
+      "name": "macosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.3"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-integration-kotest-assertions",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testballoon-shim-macosx64-20251017-metadata.jar",
+          "url": "testballoon-shim-macosx64-20251017-metadata.jar",
+          "size": 261,
+          "sha512": "65e87c2f548a31ec43852fcf26bd7b5290b81ae5521f29eadae3c944032a594f8bd90e3e2f14ce3ba3550c7c827ff3ff4a27bdc9255a05179546225f1e68d858",
+          "sha256": "36a27e5c57a451fb7912c0ff8d5ae0bfbffb846f4344e956549c4fe91ccc2bfb",
+          "sha1": "7826fa2e2ef61f66d79cb968eb26c0da4183b863",
+          "md5": "dde17a0d34282d4f7b93bfccc0864e24"
+        }
+      ]
+    }
+  ]
+}

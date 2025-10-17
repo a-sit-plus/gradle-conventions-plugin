@@ -1,0 +1,144 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testballoon-shim/20251017/testballoon-shim-20251017.module",
+    "group": "at.asitplus.gradle",
+    "module": "testballoon-shim",
+    "version": "20251017",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.3"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-integration-kotest-assertions",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testballoon-shim-jvm-20251017.jar",
+          "url": "testballoon-shim-jvm-20251017.jar",
+          "size": 26782,
+          "sha512": "4a63fd05d1a02b1ac4b433dfe3ff4303a630f0810f9bafb3f1a285c14c44b480b95b8dd477ab6bf30fa586cf49f6037ceab14e33f89cb493cfb60e6dc1531fa3",
+          "sha256": "6e3499e3b55e2e07a874aaf44983f3abb6f1233b893280845eec0e8eadb2dd43",
+          "sha1": "9c62893a74fce3fc6088e28f68dd4c070161321d",
+          "md5": "25d4951ff51768ea548094489af9ac4b"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.3"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-integration-kotest-assertions",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testballoon-shim-jvm-20251017.jar",
+          "url": "testballoon-shim-jvm-20251017.jar",
+          "size": 26782,
+          "sha512": "4a63fd05d1a02b1ac4b433dfe3ff4303a630f0810f9bafb3f1a285c14c44b480b95b8dd477ab6bf30fa586cf49f6037ceab14e33f89cb493cfb60e6dc1531fa3",
+          "sha256": "6e3499e3b55e2e07a874aaf44983f3abb6f1233b893280845eec0e8eadb2dd43",
+          "sha1": "9c62893a74fce3fc6088e28f68dd4c070161321d",
+          "md5": "25d4951ff51768ea548094489af9ac4b"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "testballoon-shim-jvm-20251017-sources.jar",
+          "url": "testballoon-shim-jvm-20251017-sources.jar",
+          "size": 3083,
+          "sha512": "39ddc453526399a732458d9a7e8901822a0e8545f509f61afd754c168dd589f63fe89506164cc969dd6e225365607b305a7c63de0d1109f8cdf4915f685761aa",
+          "sha256": "c269f17544c4f7045b57154017e50cb166c8071e0fd790067f4398efd474a7bb",
+          "sha1": "a84defd4c2dff4c6e0c0959e5a37cfcc8b44375e",
+          "md5": "914abb7363fd446e2494b117dfa0a255"
+        }
+      ]
+    }
+  ]
+}

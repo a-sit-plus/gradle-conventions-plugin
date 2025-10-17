@@ -1,0 +1,94 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testballoon-shim/20251017/testballoon-shim-20251017.module",
+    "group": "at.asitplus.gradle",
+    "module": "testballoon-shim",
+    "version": "20251017",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidNativeArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "io.kotest",
+          "module": "kotest-property",
+          "version": {
+            "requires": "6.0.3"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-integration-kotest-assertions",
+          "version": {
+            "requires": "0.6.3-K2.2.20-SNAPSHOT"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testballoon-shim-androidNativeArm64Main-20251017.klib",
+          "url": "testballoon-shim-androidnativearm64-20251017.klib",
+          "size": 17941,
+          "sha512": "6249d62c22e0cf8c55e4a6a7dc1c4fcb13ef7866c66fb1587521364b4695c1aa284a9428fd4fd9aa84c036ad9c73db2aa89ff899efe1dc413f34fcf816efce39",
+          "sha256": "587ed6bad27e3660356923e96b964950593c53530df84bcb4100ecd8013968e6",
+          "sha1": "604ceb4f0245edfa9e4cab754cc8a70e9a3e38d0",
+          "md5": "11b026b10aa607624f2c20b635c22618"
+        }
+      ]
+    },
+    {
+      "name": "androidNativeArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testballoon-shim-androidnativearm64-20251017-sources.jar",
+          "url": "testballoon-shim-androidnativearm64-20251017-sources.jar",
+          "size": 3238,
+          "sha512": "fcd4ad383744582231810aee54f0633a1f243ee87ff1af89e337a2c7f7dc131966d4cc809450d5266fe78914a030b26494ce33f8f45489b36f46fb5563964250",
+          "sha256": "6d168d4886b305b7548019dcca1e842b031d40d57ce691a0fed407724ac70070",
+          "sha1": "e293b96251905bcc1b96423ad9a618cff4ca64a7",
+          "md5": "0767e9d1b1b4e450d9c91b28d6613335"
+        }
+      ]
+    }
+  ]
+}
