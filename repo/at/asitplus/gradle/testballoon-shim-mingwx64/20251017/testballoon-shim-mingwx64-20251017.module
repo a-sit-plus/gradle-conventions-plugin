@@ -59,11 +59,11 @@
         {
           "name": "testballoon-shim-mingwX64Main-20251017.klib",
           "url": "testballoon-shim-mingwx64-20251017.klib",
-          "size": 17949,
-          "sha512": "a459218aafea4bbcdbcbe8f82cf108236ba2085732485307675a0bd61edb26f89306a1276d5b48dfc6a14719b4bc04d26695b867ff97b841dbe349868e6212f6",
-          "sha256": "0661c34cd1acca270fb0cd7b70674911837c81c3a3e0fd3dd03535abf88b5dcb",
-          "sha1": "e61fed2e545fc91c351849b317bae860993ef02b",
-          "md5": "2b88f5b290c87e8a74922caaf391e63f"
+          "size": 19844,
+          "sha512": "a2f616c736baed2b05f6e10daa76e205d151b7e4cb02004609cb14fc4b2202daf19c5f1d2c4c0fc6b2f511146e08c959c802ba9838dc20431ca97d4cb7b4e253",
+          "sha256": "087b3013b8fe7d86c159588025eddaba3644d16a109b4083d050a0f25ab01d85",
+          "sha1": "633a3d5061c4c41aaf27923e26e6550b67fd7ea9",
+          "md5": "de15578c1558ede57b55947824131a33"
         }
       ]
     },
@@ -82,11 +82,11 @@
         {
           "name": "testballoon-shim-mingwx64-20251017-sources.jar",
           "url": "testballoon-shim-mingwx64-20251017-sources.jar",
-          "size": 3128,
-          "sha512": "a10542520bf7f37bcfda7955fbb7b80fa92aec05eb74059f74aa67717993f02c81a8793e1339051c77af417cc05a07f7993b2c362702ad59b4f9317d609cd415",
-          "sha256": "52ad4ee37be8bacac465ecd5f3c160d417a4f2810a0f32e2500c4a3983ac4053",
-          "sha1": "3dd3adc833986630d62245f40d20a7560d2d68e5",
-          "md5": "f8e258b6a354829dc281411eaf1049c3"
+          "size": 3338,
+          "sha512": "61e0ddc34075032c6c47e22da4486184d940afea215f9275e6b3f8c35f63f6424189db516c4922629b8abcd91bd5ef7e1b86d3ef9060a808377add78625a89c6",
+          "sha256": "2a761cda65f374cfd0e8de3c18e46c28b1bc3861dd3dd1e231cc6f8662e69131",
+          "sha1": "4b3e506c7935e6d30cde9da1843e3e2376cb0e84",
+          "md5": "2ed490dacf7924bb10c306d623cf364a"
         }
       ]
     }

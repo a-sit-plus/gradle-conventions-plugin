@@ -58,11 +58,11 @@
         {
           "name": "testballoon-shim-wasm-js-20251017.klib",
           "url": "testballoon-shim-wasm-js-20251017.klib",
-          "size": 17732,
-          "sha512": "cccc063ca75a8134838255ec14ff628fe4928043b56327f8490faac03c12bc6ce7c04b0024a9659b9a3dd2fcaa1445f154d2448cb3fa2a65addfec02f9675790",
-          "sha256": "d30b94909e63bd70105bba5ce345d79343076ff15b9b82ced21056e463536ab8",
-          "sha1": "081a7d548e2a683e56327fb617bc39cf4cec725d",
-          "md5": "f74d34ccf1dcd1a1bd69bfa530c76089"
+          "size": 19633,
+          "sha512": "a656fb27b4a7fdd2442cac654a7f28928e20c82c233c18742cdd0180856fcc1498e4b481e0d9808126006e2097a35800fbd1ce543450f87778650a22a0221b64",
+          "sha256": "d00be29edb0eddc86116db4d5c9a304eb0226d3a2a6ad2f4663448d8ce27b0a0",
+          "sha1": "c54d9482bb18d367932bc30e645a4baab157fda1",
+          "md5": "ca86ae20012753e82eaff898278c4cfa"
         }
       ]
     },
@@ -109,11 +109,11 @@
         {
           "name": "testballoon-shim-wasm-js-20251017.klib",
           "url": "testballoon-shim-wasm-js-20251017.klib",
-          "size": 17732,
-          "sha512": "cccc063ca75a8134838255ec14ff628fe4928043b56327f8490faac03c12bc6ce7c04b0024a9659b9a3dd2fcaa1445f154d2448cb3fa2a65addfec02f9675790",
-          "sha256": "d30b94909e63bd70105bba5ce345d79343076ff15b9b82ced21056e463536ab8",
-          "sha1": "081a7d548e2a683e56327fb617bc39cf4cec725d",
-          "md5": "f74d34ccf1dcd1a1bd69bfa530c76089"
+          "size": 19633,
+          "sha512": "a656fb27b4a7fdd2442cac654a7f28928e20c82c233c18742cdd0180856fcc1498e4b481e0d9808126006e2097a35800fbd1ce543450f87778650a22a0221b64",
+          "sha256": "d00be29edb0eddc86116db4d5c9a304eb0226d3a2a6ad2f4663448d8ce27b0a0",
+          "sha1": "c54d9482bb18d367932bc30e645a4baab157fda1",
+          "md5": "ca86ae20012753e82eaff898278c4cfa"
         }
       ]
     },
@@ -132,11 +132,11 @@
         {
           "name": "testballoon-shim-wasm-js-20251017-sources.jar",
           "url": "testballoon-shim-wasm-js-20251017-sources.jar",
-          "size": 3110,
-          "sha512": "e05776bc689f1df2660e75fc4634d54b4bdef61558833784db05e130eb20ddb624e63b877c83112a2ac4aba5899108d271ecf26124dc85e88fd3f3d367229e6f",
-          "sha256": "f9c32aa5f03ef8c9b4bfc377edb9cf131d3c896e17192d03d8d5046b9c1923fc",
-          "sha1": "663785a51ace5fd12c228162bfd1d3b8730415a1",
-          "md5": "d9ef40d5ebe9687da00276282cbbfef6"
+          "size": 3319,
+          "sha512": "ad82c21858e87f05ed00cd7b07a86e4855b809996aa4cddc031f303fcae6e930d385cba393e6cb9df566ac072fd8bb3f2c77163d3bd5987d2479191d65640b03",
+          "sha256": "22b8b89f8d8919950dd9c398e83bbeb494760c0a18f1d6e6e4f438d1ba43e4b4",
+          "sha1": "061a4201855bae78613cef7904bd338f9837ff14",
+          "md5": "d9684fa32fa313282cc0a1e8c415156e"
         }
       ]
     }

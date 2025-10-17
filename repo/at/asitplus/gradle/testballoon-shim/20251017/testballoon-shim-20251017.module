@@ -56,11 +56,11 @@
         {
           "name": "testballoon-shim-metadata-20251017.jar",
           "url": "testballoon-shim-20251017.jar",
-          "size": 4012,
-          "sha512": "a25b493499ffe46fe122185260c6168b66ab5daffb42a6c18dff23f1583931659860ade651a0ba17bef93fc99ad97652e004452fd54b91c46048529b2990ce80",
-          "sha256": "a745493f61e28ff833331a7c98d1e37490327e1de994087fd40cf2afd3c9a492",
-          "sha1": "e489218f3f156fb5b8adb9f589b6fed15cb1dfe4",
-          "md5": "f36526d6fdd308337b8100645e100b99"
+          "size": 4354,
+          "sha512": "1998f6b7c025b2aefc5655ca9b42d615cdf711a85f85edf6c8e6e5e9ebbc3f5603b2e89491238d72da91d2ecab48eb703454a73de5c36660cc05aea165a8108c",
+          "sha256": "932ae2b9051a53b213bf4ba20eb34447afa8218e9ccae9f4a2f1d4b81d384903",
+          "sha1": "729a750578e11c067effbdd58c381167920b5197",
+          "md5": "e73233d60860578712c24e80a9fa2942"
         }
       ]
     },
@@ -78,11 +78,11 @@
         {
           "name": "testballoon-shim-kotlin-20251017-sources.jar",
           "url": "testballoon-shim-20251017-sources.jar",
-          "size": 2405,
-          "sha512": "04e19c0dba117bc0006c0bbbefad017818ba67ba693280d947036231d47fa8ce437f6c2c6feca33b6f2fe32b6cbb71593b88fe2282d39691722443b3ebf3d4c0",
-          "sha256": "ae929e49f4c3ea56b15ece81bd8e5de22ec724ee5a46b89bddf4bcd7165f8f0c",
-          "sha1": "5c158453afe42728619738a06b0c6c99c347b524",
-          "md5": "5b8e87401699f5592440c344bdb5a373"
+          "size": 2619,
+          "sha512": "8b5205299093130f11b685d05c6fd1635efb67786130b87e9f7ca6eff579c5ed1ca8ce7d45dfc04eabe87807f7f776a70acbd44b5da11157d6eb9b27bea02ec1",
+          "sha256": "d42df230c67ea0d39141b1283d63c90117ab3f5762ca26a0dd3db1abbc697e72",
+          "sha1": "4da5ae14660fddce449a12c5065b086eb04c8ec3",
+          "md5": "e205afe9294c842c1e3f913e590d40da"
         }
       ]
     },

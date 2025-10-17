@@ -59,11 +59,11 @@
         {
           "name": "testballoon-shim-macosX64Main-20251017.klib",
           "url": "testballoon-shim-macosx64-20251017.klib",
-          "size": 17948,
-          "sha512": "c7d6e21a75c7b923d4ba32c19d4ecc825732114f2a63e5cc7e0b9211b46908622351bb18049b69909f4198d706058659e1bcdae32210c48864ca445a2dd7926b",
-          "sha256": "e4df7be9dc6446d0226fb01b8d07ce58d67718ab8de38c7283a6bc05108ca38d",
-          "sha1": "42d6caeeccc6104e1be3a91b0d456f54d6192ab5",
-          "md5": "9d77d9df3d0106200b89725ad178d65c"
+          "size": 19843,
+          "sha512": "4023f0ac9c2f792f40f3c8d5f3f1c9381d8104a149694fc97af6b631f0f8246bc4f53ef7255c45ff5e65860b38ce86ffdc1ed69c364ad85723420b716c7dc43e",
+          "sha256": "6f28bdf495800bb310cfd0d1fdb3df9e53f6033ad7f6edd16dc4ab5fcb26445f",
+          "sha1": "847168c1ea3f360f942417446555b572db972af0",
+          "md5": "f5afe6e0458c577fd13c605b72a63cfa"
         }
       ]
     },
@@ -82,11 +82,11 @@
         {
           "name": "testballoon-shim-macosx64-20251017-sources.jar",
           "url": "testballoon-shim-macosx64-20251017-sources.jar",
-          "size": 3130,
-          "sha512": "a6e4033d9f179f34932985328934ad1610c199a7ce6a6ca727d325527fb5c6a63a203f4e3931d0dca7540ac0f15d6eb1ceebedb7821fa19fe9c4b36267a7613b",
-          "sha256": "ec494664cd71e939431a63aeabdfc354de13ee2cc5fb318c3df75f107b20bfcc",
-          "sha1": "06f1dd8a013d917e8655712e5b41f55e026cda9c",
-          "md5": "33c771af8b8f2670d947d9f1fbcfb24d"
+          "size": 3341,
+          "sha512": "1680f907191ef133e290c5abc2199043a3d281e79c91e8eed691071b209119cc9efd7dce60f0f599b37d54c10040f570c2a40e6a7aa0a7ac2384788333f4c8f4",
+          "sha256": "8b7d6bace87c2f759c04c48a5147d59a6ac5374d69465c59b1d5763357cc4263",
+          "sha1": "8aae1ac4981c2800b8f2f7ca2b48275341371500",
+          "md5": "ed6c424ee53234ac28ed858f2b8694fb"
         }
       ]
     },
@@ -135,10 +135,10 @@
           "name": "testballoon-shim-macosx64-20251017-metadata.jar",
           "url": "testballoon-shim-macosx64-20251017-metadata.jar",
           "size": 261,
-          "sha512": "65e87c2f548a31ec43852fcf26bd7b5290b81ae5521f29eadae3c944032a594f8bd90e3e2f14ce3ba3550c7c827ff3ff4a27bdc9255a05179546225f1e68d858",
-          "sha256": "36a27e5c57a451fb7912c0ff8d5ae0bfbffb846f4344e956549c4fe91ccc2bfb",
-          "sha1": "7826fa2e2ef61f66d79cb968eb26c0da4183b863",
-          "md5": "dde17a0d34282d4f7b93bfccc0864e24"
+          "sha512": "31bacefa30f4fc1985b37ba141ecdd9ee342ef79bc8e24bc3a4d5550b7f42447fa8acbe49f6193e54d688c8a7c3ef8ccdf9112f58acf7de688a791b3e2f0ce88",
+          "sha256": "4e71414c2d14d6203b5e8100879350c94f1e1d04f68cbe1fe9a333d658c9df40",
+          "sha1": "1790cb474f2001eec55586ea6651c02a81c920d0",
+          "md5": "681328b72f70227f287f57d113ed9047"
         }
       ]
     }

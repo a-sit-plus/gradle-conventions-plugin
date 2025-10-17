@@ -59,11 +59,11 @@
         {
           "name": "testballoon-shim-tvosX64Main-20251017.klib",
           "url": "testballoon-shim-tvosx64-20251017.klib",
-          "size": 17943,
-          "sha512": "e759f0bd0b3c3557822af46705293ad7b2998c341153300f9157952f5881e6d44b95cd9cb5b64a936fab47b0b23b093250c020b88bde506583e5474b7dbea4e8",
-          "sha256": "6db7aa60ea932680adb19b8477ed437bd9d0164e9ff0d74efc16efc1634068b6",
-          "sha1": "6f5b53177efe486d92822a350bfc7f52da647657",
-          "md5": "6c703c3b28c21c2e9170858f4943762e"
+          "size": 19835,
+          "sha512": "90a7861a8a2cbeaa35285103e096b0006492385c778469011096df2be4e5b1d2684245ff4f5cbe0c4de02d5b5ed8c730516155a8825768cb1b30fd39063a342f",
+          "sha256": "b17e9d4a9b9211a772886f7922b27f80f21153dbad294120acfb022a90a25bac",
+          "sha1": "308ae4207ab8c45487c16392f500d143e6a42469",
+          "md5": "450edb1db6a287d5085e42042ba4969d"
         }
       ]
     },
@@ -82,11 +82,11 @@
         {
           "name": "testballoon-shim-tvosx64-20251017-sources.jar",
           "url": "testballoon-shim-tvosx64-20251017-sources.jar",
-          "size": 3119,
-          "sha512": "38c170ae2524db72ecd267e6fb8f38d56fd0146cc5e4f47afdb70a07c516c2afe1363e9d108b20acf86676102b1f4353d6f9122761ea87b6cff6530affabaa2e",
-          "sha256": "4e8b4c00ee62797c072595b50b819cd71ce1fbc60ad8e168fd918ba283356832",
-          "sha1": "9f84c0eda4e3cdb6172f1a5270cde8ab458edd16",
-          "md5": "5fa14d90f01a902627527b6eb9865b55"
+          "size": 3327,
+          "sha512": "b5d5de59f71def5c1cde9ffbc2401d0285dd865d9ebd783fee2c0d8758c0f4a8748f062ca760e8b23ab457cf67cc329729f6a1ea33b944be143b046cdc8a7310",
+          "sha256": "e9ab9efb51498416080704fd7a5d6af8f6290bb98e4ba352a6660b0568df400a",
+          "sha1": "f3da840060683bdfde7757090d84d298daa51a55",
+          "md5": "21facdf178bcdf374187620529b0435d"
         }
       ]
     },
@@ -135,10 +135,10 @@
           "name": "testballoon-shim-tvosx64-20251017-metadata.jar",
           "url": "testballoon-shim-tvosx64-20251017-metadata.jar",
           "size": 261,
-          "sha512": "65e87c2f548a31ec43852fcf26bd7b5290b81ae5521f29eadae3c944032a594f8bd90e3e2f14ce3ba3550c7c827ff3ff4a27bdc9255a05179546225f1e68d858",
-          "sha256": "36a27e5c57a451fb7912c0ff8d5ae0bfbffb846f4344e956549c4fe91ccc2bfb",
-          "sha1": "7826fa2e2ef61f66d79cb968eb26c0da4183b863",
-          "md5": "dde17a0d34282d4f7b93bfccc0864e24"
+          "sha512": "31bacefa30f4fc1985b37ba141ecdd9ee342ef79bc8e24bc3a4d5550b7f42447fa8acbe49f6193e54d688c8a7c3ef8ccdf9112f58acf7de688a791b3e2f0ce88",
+          "sha256": "4e71414c2d14d6203b5e8100879350c94f1e1d04f68cbe1fe9a333d658c9df40",
+          "sha1": "1790cb474f2001eec55586ea6651c02a81c920d0",
+          "md5": "681328b72f70227f287f57d113ed9047"
         }
       ]
     }

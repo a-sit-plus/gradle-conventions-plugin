@@ -59,11 +59,11 @@
         {
           "name": "testballoon-shim-watchosDeviceArm64Main-20251017.klib",
           "url": "testballoon-shim-watchosdevicearm64-20251017.klib",
-          "size": 18039,
-          "sha512": "e8d811ad79fb045ffdb8dba4429f9af07531297d7ace8ac9151e87ee383c649af3f06dcd97dc477b0816cda36e638d60c587f1619f86c5f8584c628048153f54",
-          "sha256": "dd06463392bd2c05a441b6a2309a05bbf44d022ee49eda9bedef25296c809514",
-          "sha1": "fd50470e956cdc21c60013d38a1fc56b13290a51",
-          "md5": "a8cd5c52e4a35f29ad5751e17dfc8456"
+          "size": 19922,
+          "sha512": "3377e5ee0f4252bc29d00b2e6fce6a3ddbff0125aba7f9442c72b3d46e9d65bb582facc467956160d087bca4eb5daed507a99eee4669e9b16a06fa2be8fd2d5b",
+          "sha256": "a470a4c8563fb64a8ca8101b40bf45bcf544e5d689447f699c3ebacee494c70c",
+          "sha1": "372d3a0aaa58ebebb820636648ba36935fbb64e5",
+          "md5": "683e0fd4d81771a494c2f2b0f1bf79d5"
         }
       ]
     },
@@ -82,11 +82,11 @@
         {
           "name": "testballoon-shim-watchosdevicearm64-20251017-sources.jar",
           "url": "testballoon-shim-watchosdevicearm64-20251017-sources.jar",
-          "size": 3278,
-          "sha512": "f09454ab597a4e82f874441708e8354fd38e329573b3a0cb530e4f5ef5a2d53b64fba8c989910f891520838115262a74d3bd90b4dc6acf9c00a2d36db2fcb294",
-          "sha256": "8c9aaa5ccae138f548a7b8a04536cbd79295eb4b8a4e2baedb81c60b759dc25b",
-          "sha1": "8dd54bc19ab4bc6a5a8a0f323c1d21888cc49f25",
-          "md5": "400d769a2612718ca7c7a87d2c17d56c"
+          "size": 3488,
+          "sha512": "4cddde59339266773999af514d7ea03ab761e7ae11253a87edc838bc30727d3f59641c68cc218f76851cff95e20458a301a675dfd79fc3edddeea53c83fb6dd8",
+          "sha256": "d124428c6411f62b9459ceaa2a4e959da5ddbaf58dc694aa5d38698698dd820f",
+          "sha1": "a3c67766ea07bc8765ef492396b76edee636c3d6",
+          "md5": "5813dba3e58a7e14b44f9aa3404de26f"
         }
       ]
     },
@@ -135,10 +135,10 @@
           "name": "testballoon-shim-watchosdevicearm64-20251017-metadata.jar",
           "url": "testballoon-shim-watchosdevicearm64-20251017-metadata.jar",
           "size": 261,
-          "sha512": "6f8195a7b5ce3f63d98b0c425166670bd22b08fd8acf61c6d36082bc3ad57d136e795b4fd382bfc970c653cc4642371456e38cd7438319ace52f3ac12f7cb698",
-          "sha256": "7b096e302c1732c4e9c4f15ec108d62537cde3972b715714214e085af00f825a",
-          "sha1": "3f31201bc300ac9a8dcf737cfef3821b84a68fa0",
-          "md5": "97f79232de6d22b66d27d19751cb1a3f"
+          "sha512": "1cb00e1405de0ababa09d2c25be10f251751902c82a767741d3e4c9869b66e6c6c11ba93d8a2e1f8dfc42b1e0d5e6389ca56860b41bb67609c43cb3900cf94d8",
+          "sha256": "627d200b1e395157c0ea11dc150d19101239f147c46e4a961db496ee43ebcb5f",
+          "sha1": "244868bb9910e530af689bacf5c1e3f936a1b4fd",
+          "md5": "4d8cbd39e26ee4afd14155ce033eda95"
         }
       ]
     }
