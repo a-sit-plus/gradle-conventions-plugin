@@ -1,3 +1,3 @@
 package at.asitplus.test
 
-internal actual val target: String ="linuxX64"
+internal actual val target = Target.LINUX_IA64

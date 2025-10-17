@@ -1,3 +1,3 @@
 package at.asitplus.test
 
-internal actual val target: String ="android"
+internal actual val target = Target.ANDROID_ART

@@ -1,3 +1,3 @@
 package at.asitplus.test
 
-internal actual val target: String ="macosX64"
+internal actual val target = Target.MACOS_IA64

@@ -1,3 +1,3 @@
 package at.asitplus.test
 
-internal actual val target: String ="androidNativeArm64"
+internal actual val target = Target.ANDROID_AMR64

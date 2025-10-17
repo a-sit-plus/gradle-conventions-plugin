@@ -1,3 +1,3 @@
 package at.asitplus.test
 
-internal actual val target: String = "watchOsDeviceArm64"
+internal actual val target = Target.WATCHOS_DEVICEARM64

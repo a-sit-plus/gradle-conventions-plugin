@@ -1,3 +1,3 @@
 package at.asitplus.test
 
-internal actual val target: String ="iosSimulatorArm64"
+internal actual val target = Target.IOS_SIMULATORARM64

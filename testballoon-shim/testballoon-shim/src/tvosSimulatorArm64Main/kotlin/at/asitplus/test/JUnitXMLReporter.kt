@@ -1,3 +1,3 @@
 package at.asitplus.test
 
-internal actual val target: String ="tvosSimulatorArm64"
+internal actual val target = Target.TVOS_SIMULATORARM64

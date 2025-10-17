@@ -1,3 +1,3 @@
 package at.asitplus.test
 
-internal actual val target: String ="iosX64"
+internal actual val target = Target.IOS_IA64

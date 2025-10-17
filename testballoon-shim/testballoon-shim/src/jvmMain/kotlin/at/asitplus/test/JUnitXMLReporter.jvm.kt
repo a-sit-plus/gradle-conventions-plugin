@@ -1,3 +1,3 @@
 package at.asitplus.test
 
-internal actual val target: String ="jvm"
+internal actual val target=Target.JVM

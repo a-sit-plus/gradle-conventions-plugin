@@ -1,3 +1,3 @@
 package at.asitplus.test
 
-internal actual val target: String ="linuxArm64"
+internal actual val target = Target.LINUX_ARM64

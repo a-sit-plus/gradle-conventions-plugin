@@ -1,3 +1,3 @@
 package at.asitplus.test
 
-internal actual val target: String ="mingwX64"
+internal actual val target=Target.MINGW_IA64
