@@ -1,4 +1,4 @@
 [versions]
-kotlin = "2.2.0"
-testballoon = "0.6.2-K2.2.20-SNAPSHOT"
+kotlin = "2.2.20"
+testballoon = "0.6.3-K2.2.20-SNAPSHOT"
 agp = "8.12.3"

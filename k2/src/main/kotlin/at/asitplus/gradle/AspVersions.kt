@@ -50,14 +50,22 @@ class AspVersions(private val project: Project) {
     val datetime = versionOf("datetime")
 
     /**
-     *  Kotest version (libraries and plugin). Override by adding setting a `kotest` in `libs.versions.toml`.
+     *  Kotest version (libraries and plugin). Override by adding setting a `kotest` in `libs.versions.toml`
+     *      *  or by setting the `KOTEST_VERSION_OVERRIDE` environment variable.
      */
     val kotest = System.getenv("KOTEST_VERSION_OVERRIDE")?.ifBlank { null } ?:versionOf("kotest")
 
     /**
-     *  Testballoon version (libraries and plugin). Override by adding setting a `testballoon` in `libs.versions.toml`.
+     *  Testballoon version (libraries and plugin). Override by adding setting a `testballoon` in `libs.versions.toml`
+     *      *  or by setting the `TESTBALLOON_VERSION_OVERRIDE` environment variable.
      */
     val testballoon = System.getenv("TESTBALLOON_VERSION_OVERRIDE")?.ifBlank { null } ?:versionOf("testballoon")
+
+    /**
+     *  Android Test Runner version. Override by adding setting a `testballoon` in `libs.versions.toml`
+     *  or by setting the `ATR_VERSION_OVERRIDE` environment variable.
+     */
+    val androidTestRunner = System.getenv("ATR_VERSION_OVERRIDE")?.ifBlank { null } ?:versionOf("androidTestRunner")
 
     /**
      * Ktor version.  Override by adding setting a `ktor` in `libs.versions.toml`.

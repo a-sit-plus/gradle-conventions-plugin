@@ -3,6 +3,9 @@
 Starting with May 2025, the conventions plugin does not include a Kotlin version anymore. Instead, it lets any consuming
 project set it, just as with the Android Gradle Plugin. **This is a breaking change, as there is no fallback version specified.**
 
+## 20251017
+* Fully integrated test configs
+
 ## 20251003
 * Migrations thanks to [@Oliver02](https://github.com/OliverO2)
   * Migrate from Kotest to [TestBalloon](https://github.com/infix-de/testBalloon)

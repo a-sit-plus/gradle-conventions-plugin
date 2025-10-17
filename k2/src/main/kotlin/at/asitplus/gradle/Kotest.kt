@@ -22,5 +22,7 @@ inline fun KotlinDependencyHandler.addTestExtensions(target: String? = null) {
     implementation(project.kotest("property", target))
     if (System.getProperty("KOTEST_NO_ASP_HELPER") != "true") {
         implementation("at.asitplus.gradle:testballoon-shim" + (target?.let { "-$it" } ?: "") + ":$buildDate")
+        implementation(project.kotest("property"))
+        implementation("de.infix.testBalloon:testBalloon-framework-core:${project.AspVersions.testballoon}")
     }
 }

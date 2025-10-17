@@ -87,6 +87,18 @@ internal fun Project.setAndroidOptions() {
                     }
                 }
             }
+            sourceSets.whenObjectAdded {
+                if (this.name == "androidDeviceTest") {
+                    dependencies {
+                        implementation("de.infix.testBalloon:testBalloon-framework-core:${AspVersions.testballoon}")
+                        implementation("androidx.test:runner:${AspVersions.androidTestRunner}")
+                    }
+                }
+            }
+            sourceSets.findByName("androidDeviceTest")?.dependencies {
+                implementation("de.infix.testBalloon:testBalloon-framework-core:${AspVersions.testballoon}")
+                implementation("androidx.test:runner:${AspVersions.androidTestRunner}")
+            }
         }
     }
 }
@@ -147,7 +159,7 @@ internal fun KotlinMultiplatformExtension.setupAndroidTarget() {
         }
         Logger.info("  [AND] Setting jsr305=strict for JVM nullability annotations")
 
-      compilerOptions {
+        compilerOptions {
             if (project.androidJvmTarget == null)
                 throw StopExecutionException("Android target found, but neither android.minSdk set nor android.jvmTarget override set in properties! To fix this add at least android.minSdk=<sdk-version> to gradle.properties")
             else {
