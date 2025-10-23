@@ -135,10 +135,10 @@
           "name": "testballoon-shim-iosarm64-20251017-metadata.jar",
           "url": "testballoon-shim-iosarm64-20251017-metadata.jar",
           "size": 261,
-          "sha512": "94248673b9b4deca3405b7a249059ccfeb0f293031164041986e159620f980053d87875e874ac57aa2ba2d0ae87dedc8986c7391cf12b6c653488e21d82ff531",
-          "sha256": "943e4875df6644c6bba8841cd8af8cab1b0a4b3bff855a0110f1ede5291d7157",
-          "sha1": "49e4c19b7d00e58e9591105d40398df66e6d6d79",
-          "md5": "c7ec3c20c700acd71f8290f8373df891"
+          "sha512": "aa70baad94b7c5ae611e53d4e546e7f89a058ee771617ac5cd0bcfab489efa7570b88cd20dc6f1ec3ac0b61a5830a85cfe75d34aeb55abcc810d61add4bef04c",
+          "sha256": "c505b69f316759fb6197de9bb8ce2225fa5e2f15d8e6bc65bfa0d0bc7fcbd758",
+          "sha1": "57f75660dee2c132beb7f3908327762beb4c444a",
+          "md5": "f09fd8ae6ea68bc38b5ffe8c2cdba5fc"
         }
       ]
     }
