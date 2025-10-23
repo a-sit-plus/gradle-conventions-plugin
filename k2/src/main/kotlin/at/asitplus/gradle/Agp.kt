@@ -7,7 +7,12 @@ import org.gradle.api.NamedDomainObjectContainer
 import org.gradle.api.Project
 import org.gradle.api.plugins.PluginAware
 import org.gradle.api.tasks.StopExecutionException
-import org.gradle.kotlin.dsl.*
+import org.gradle.kotlin.dsl.assign
+import org.gradle.kotlin.dsl.creating
+import org.gradle.kotlin.dsl.get
+import org.gradle.kotlin.dsl.getByType
+import org.gradle.kotlin.dsl.getValue
+import org.gradle.kotlin.dsl.getting
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
@@ -21,6 +26,21 @@ val PluginAware.isNewAndroidLibrary get() = pluginManager.findPlugin("com.androi
 internal val PluginAware.hasOldAgp get() = isAndroidApplication || isAndroidLibrary
 
 val PluginAware.agpVersion get() = if (hasOldAgp || isNewAndroidLibrary) com.android.builder.model.Version.ANDROID_GRADLE_PLUGIN_VERSION else null
+
+/**
+ * A project extension property that determines whether to keep Android-specific JVM main source sets.
+ *
+ * This property is used when working with shared source sets between Android and JVM platforms,
+ * allowing the shared Android/JVM sources to persist even when no Android Plugin is applied.
+ * By default, this property is `false`
+ */
+var Project.keepAndroidJvmTarget: Boolean
+    set(value) {
+        extensions.extraProperties["keepAndroidJvmTarget"] = value
+        logger.info("Keeping shared Android JVM main sources")
+    }
+    get() = extensions.extraProperties.has("keepAndroidJvmTarget") &&
+            (extensions.extraProperties["keepAndroidJvmTarget"] as? Boolean ?: false)
 
 /**
  * Minimum Android SDK version read from the `android.minSdk` property. **This property must be set, if you are targeting Android!**.
@@ -113,8 +133,8 @@ internal fun Project.createAndroidJvmSharedSources() {
     kmp.targets.whenObjectAdded {
         if (sharedAdded) return@whenObjectAdded
         kmp.applyDefaultHierarchyTemplate()
-        if ((hasOldAgp || isNewAndroidLibrary) && kmp.hasJvmTarget()) kmp.apply {
-            if (hasAndroidTarget) {
+        if ((hasOldAgp || isNewAndroidLibrary || keepAndroidJvmTarget) && kmp.hasJvmTarget()) kmp.apply {
+            if (hasAndroidTarget || keepAndroidJvmTarget) {
                 sharedAdded = true
                 Logger.lifecycle("  ${H}Creating androidJvmMain shared source set$R")
                 sourceSets.apply {
@@ -137,16 +157,14 @@ fun NamedDomainObjectContainer<KotlinSourceSet>.androidJvmMain(configure: Kotlin
     } ?: throw IllegalStateException("No androidJvmMain source set found!")
 
 internal fun KotlinMultiplatformExtension.linkAgpJvmSharedSources() {
-    if ((project.hasOldAgp || project.isNewAndroidLibrary) && hasJvmTarget()) {
-        if (hasAndroidTarget) {
-            Logger.lifecycle("  ${H}Linking androidJvmMain shared source set$R")
-            sourceSets.apply {
-
-                val androidJvmMain by getting
-                get("androidMain").dependsOn(androidJvmMain)
-                get("jvmMain").dependsOn(androidJvmMain)
-            }
+    if ((project.hasOldAgp || project.isNewAndroidLibrary || project.keepAndroidJvmTarget) && hasJvmTarget()) {
+        Logger.lifecycle("  ${H}Linking androidJvmMain shared source set$R")
+        sourceSets.apply {
+            val androidJvmMain by getting
+            if (hasAndroidTarget) get("androidMain").dependsOn(androidJvmMain)
+            get("jvmMain").dependsOn(androidJvmMain)
         }
+
     }
 }
 

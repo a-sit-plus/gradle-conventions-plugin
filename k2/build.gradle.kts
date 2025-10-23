@@ -69,7 +69,6 @@ tasks.matching { it.name.startsWith("publish" ) &&!it.name.contains("plugin", ig
                 group = "publishing"
                 description = "$name (shim)"
                 var wd = rootProject.projectDir.path + "/testballoon-shim"
-                println(wd)
                 workingDir(wd)
 
                 executable("./gradlew")
