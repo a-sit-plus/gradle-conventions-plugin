@@ -1,4 +1,4 @@
-System.setProperty("KOTEST_NO_ASP_HELPER","true")
+System.setProperty("TESTBALLOON_NO_ASP_HELPER","true")
 
 plugins {
     id("at.asitplus.gradle.conventions")

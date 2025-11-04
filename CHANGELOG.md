@@ -3,6 +3,8 @@
 Starting with May 2025, the conventions plugin does not include a Kotlin version anymore. Instead, it lets any consuming
 project set it, just as with the Android Gradle Plugin. **This is a breaking change, as there is no fallback version specified.**
 
+## 20251106
+* TestBalloon 0.7 support
 
 ## 20251023
 * auto-setup configured JDK matching JVM target
