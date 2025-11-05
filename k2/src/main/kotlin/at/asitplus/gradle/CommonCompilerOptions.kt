@@ -26,6 +26,7 @@ internal inline fun KotlinMultiplatformExtension.experimentalOptIns() {
         freeCompilerArgs.addAll(
             listOf(
                 "-Xexpect-actual-classes",
+                "-Xnested-type-aliases"
             )
         )
     }
@@ -34,6 +35,7 @@ internal inline fun KotlinMultiplatformExtension.experimentalOptIns() {
         compilations.configureEach {
             compileTaskProvider.get().compilerOptions {
                 freeCompilerArgs.add("-Xexpect-actual-classes")
+                freeCompilerArgs.add("-Xnested-type-aliases")
             }
         }
     }
