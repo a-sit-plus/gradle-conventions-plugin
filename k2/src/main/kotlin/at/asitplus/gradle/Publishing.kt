@@ -58,7 +58,7 @@ fun Project.setupDokka(
  * Makes all publishing tasks depend on all signing tasks. Hampers parallelization but works around dodgy task dependencies
  * that (more often than anticipated) make the build process stumble over its own feet.
  */
-internal fun Project.setupSignDependency() {
+fun Project.setupSignDependency() {
 
     Logger.lifecycle("")
     Logger.lifecycle("  Making signing tasks of project $H${name}$R run after publish tasks")
@@ -140,7 +140,7 @@ private fun Project.getDependencies(type: String): List<Dependency> =
  *
  *  Once the version catalog is compiled, it is added to the maven publication
  */
-internal fun Project.compileVersionCatalog() {
+fun Project.compileVersionCatalog() {
     if (!publishVersionCatalog) {
         Logger.lifecycle(("\n  NOT publishing version catalog for project $project"))
         return
