@@ -87,6 +87,10 @@ kotlin {
                 api("de.infix.testBalloon:testBalloon-framework-core:${libs.versions.testballoon.get()}")
             }
         }
+
+        jvmMain.dependencies {
+            implementation(kotlin("reflect"))
+        }
     }
 }
 
