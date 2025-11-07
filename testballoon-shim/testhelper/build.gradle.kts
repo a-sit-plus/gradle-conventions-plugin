@@ -3,7 +3,7 @@ import at.asitplus.gradle.publishVersionCatalog
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import java.util.*
 
-System.setProperty("KOTEST_NO_ASP_HELPER", "true")
+System.setProperty("TESTBALLOON_NO_ASP_HELPER", "true")
 
 plugins {
     id("com.android.kotlin.multiplatform.library")
@@ -28,7 +28,7 @@ publishVersionCatalog = false
 kotlin {
     jvm()
     androidLibrary{
-        namespace = "at.asitplus.gradle.testballoonshim"
+        namespace = "at.asitplus.gradle.test"
         packaging {
             listOf(
                 "org/bouncycastle/pqc/crypto/picnic/lowmcL5.bin.properties",
@@ -84,9 +84,7 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                api(kotest("property"))
                 api("de.infix.testBalloon:testBalloon-framework-core:${libs.versions.testballoon.get()}")
-                api("de.infix.testBalloon:testBalloon-integration-kotest-assertions:${libs.versions.testballoon.get()}")
             }
         }
     }

@@ -5,6 +5,8 @@ project set it, just as with the Android Gradle Plugin. **This is a breaking cha
 
 ## TBA
 * Allow nested typealias
+* TestBalloon 0.7 support
+
 
 ## 20251023
 * auto-setup configured JDK matching JVM target

@@ -1,4 +1,4 @@
-System.setProperty("KOTEST_NO_ASP_HELPER","true")
+System.setProperty("TESTBALLOON_NO_ASP_HELPER","true")
 
 rootProject.name = "shim-root"
 
@@ -23,4 +23,4 @@ includeBuild("..")
 
 
 
-include("testballoon-shim")
+include("testhelper")
