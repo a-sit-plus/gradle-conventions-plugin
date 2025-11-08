@@ -60,7 +60,7 @@ class AspVersions(private val project: Project) {
      *      *  or by setting the `TESTBALLOON_VERSION_OVERRIDE` environment variable.
      */
     val testballoon = System.getenv("TESTBALLOON_VERSION_OVERRIDE")?.ifBlank { null } ?:versionOf("testballoon")
-    val testballoonAddons = versionOf("testballoon-addons")
+    val testballoonAddons = versionOf("testballoonAddons")
 
     /**
      *  Android Test Runner version. Override by adding setting a `testballoon` in `libs.versions.toml`
