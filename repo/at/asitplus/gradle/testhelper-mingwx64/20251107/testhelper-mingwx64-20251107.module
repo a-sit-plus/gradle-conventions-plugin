@@ -1,0 +1,80 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testhelper/20251107/testhelper-20251107.module",
+    "group": "at.asitplus.gradle",
+    "module": "testhelper",
+    "version": "20251107",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "mingwX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-mingwX64Main-20251107.klib",
+          "url": "testhelper-mingwx64-20251107.klib",
+          "size": 6095,
+          "sha512": "a7d11ddd4f0bb5c5acd77cde1d25cecd5a0138073a2d5a23c1abe4a982b1e1b09f900da08259426b7f69e29a190067a3f8e26f8a52dd53263cc643643363681e",
+          "sha256": "573eddf61bf7e46b6c96515c1a00f15495ad65b7c9098334d2b105ddb8161bfa",
+          "sha1": "e030e083a57894f34b413852ef21da784b730e12",
+          "md5": "0634c6e26af7955541be93e031cc3e6b"
+        }
+      ]
+    },
+    {
+      "name": "mingwX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "mingw_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testhelper-mingwx64-20251107-sources.jar",
+          "url": "testhelper-mingwx64-20251107-sources.jar",
+          "size": 1880,
+          "sha512": "5d9701237ce1b37154cc957653502a77c205a065b0d5080f0ec0e7a6e4ebc2541cfcf0f25338845c579118e7610bd647b3e5ea4d5434681dccaa6ba99e7cd884",
+          "sha256": "062600fed4de5b8d8b7fbde396870b22d5aff977e3690b33f0b5c91ebf032e41",
+          "sha1": "fb0d4e95d2e6ad13daa7a0bcd6ac62b1c83ebc7a",
+          "md5": "9fa446f66915a8b9300c0e633429f53b"
+        }
+      ]
+    }
+  ]
+}

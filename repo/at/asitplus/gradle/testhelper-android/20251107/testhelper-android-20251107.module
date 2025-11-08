@@ -1,0 +1,116 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testhelper/20251107/testhelper-20251107.module",
+    "group": "at.asitplus.gradle",
+    "module": "testhelper",
+    "version": "20251107",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper.aar",
+          "url": "testhelper-android-20251107.aar",
+          "size": 4321,
+          "sha512": "025bb70bdc6d52b0e42e47349a674a356a7b220ec2b3402c585ffd039e54e49867eceec0ca0aac6725eff326989e5ebe3ac6ddf27a63ae20c12c6df36a684e3a",
+          "sha256": "919679818c8de1092957013ef60d942c8698d3777b64cc2ff7b3c6963efe0ff7",
+          "sha1": "99a04515d6b044704526483ad2d2f9d6759a7236",
+          "md5": "643592e212112161cd20ec01842cc0ca"
+        }
+      ]
+    },
+    {
+      "name": "androidRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper.aar",
+          "url": "testhelper-android-20251107.aar",
+          "size": 4321,
+          "sha512": "025bb70bdc6d52b0e42e47349a674a356a7b220ec2b3402c585ffd039e54e49867eceec0ca0aac6725eff326989e5ebe3ac6ddf27a63ae20c12c6df36a684e3a",
+          "sha256": "919679818c8de1092957013ef60d942c8698d3777b64cc2ff7b3c6963efe0ff7",
+          "sha1": "99a04515d6b044704526483ad2d2f9d6759a7236",
+          "md5": "643592e212112161cd20ec01842cc0ca"
+        }
+      ]
+    },
+    {
+      "name": "androidSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "testhelper-android-20251107-sources.jar",
+          "url": "testhelper-android-20251107-sources.jar",
+          "size": 1890,
+          "sha512": "f1db43b5f248fe1bb2dedddb32a88621b055b37fc449aaa7ea883b64b7e0dd2c736c906762559108227091384b3a53a15f7a4e2c934f5c23b5dc4c4b51cf9780",
+          "sha256": "2dda32d53b6a2b2ae705ed156cd568b1c6fef409c7c797f4aa44bc1bb6e7855a",
+          "sha1": "3084bf4df61420f4956bf32e517b7531b7f58104",
+          "md5": "5499553db159024aa637eb20466d5a1b"
+        }
+      ]
+    }
+  ]
+}

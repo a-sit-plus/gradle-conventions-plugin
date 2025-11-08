@@ -1,0 +1,80 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testhelper/20251107/testhelper-20251107.module",
+    "group": "at.asitplus.gradle",
+    "module": "testhelper",
+    "version": "20251107",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "androidNativeX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-androidNativeX64Main-20251107.klib",
+          "url": "testhelper-androidnativex64-20251107.klib",
+          "size": 6118,
+          "sha512": "eba15fae76059eb2c85e78ee041881217a80a645b7a08d49671a72289307efa2780b62f462d2e1b66acb4f238f43d1d105f2233640f08f9ac5e314c71fa2f7ca",
+          "sha256": "b43da6af5d2be939885cdae7531f1808ae5e9b253e361fa66bc9f460d7232784",
+          "sha1": "b71c148d0b6d38abfdcf351cb457325920db76e8",
+          "md5": "5ce4e7d2d4b153d8933b4eac3a9ff3f0"
+        }
+      ]
+    },
+    {
+      "name": "androidNativeX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "android_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testhelper-androidnativex64-20251107-sources.jar",
+          "url": "testhelper-androidnativex64-20251107-sources.jar",
+          "size": 1965,
+          "sha512": "14d660d56552bf9e4fa62adfaa3ef6e1492c34faf7a5bb8d0baf26237a39c205d23919cc61422c44b816939b21f4c4b38118a87c116d61088114cd4910ed061c",
+          "sha256": "d4ca853e0cc280a18cbe25a3796ea6a380fab9904d46a37c92909839fcd70530",
+          "sha1": "a708a35d0317c8c8ec98555f933bc6da2de101ca",
+          "md5": "1b880ccb6128c0d84014af51490dd33e"
+        }
+      ]
+    }
+  ]
+}
