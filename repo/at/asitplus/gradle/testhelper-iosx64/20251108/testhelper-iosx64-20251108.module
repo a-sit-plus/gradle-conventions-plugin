@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testhelper/20251108/testhelper-20251108.module",
+    "group": "at.asitplus.gradle",
+    "module": "testhelper",
+    "version": "20251108",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-iosX64Main-20251108.klib",
+          "url": "testhelper-iosx64-20251108.klib",
+          "size": 6081,
+          "sha512": "89e4147afac00b1443649d6b419b7f991f73e721ea940f88b54dfa077fd2948cceab4cd0ec5e544484b95c178bb525612a94479430ff092eeaf7c9b190fd3bb9",
+          "sha256": "9b95b2f1b01625a42780572028f10e347bf43eee26f6b790b5ec8093de07e28e",
+          "sha1": "666ce0f21e7e48627e1c83b44deb5e78313b7e23",
+          "md5": "30d3d8c78317a57a3e891a60bbc22882"
+        }
+      ]
+    },
+    {
+      "name": "iosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testhelper-iosx64-20251108-sources.jar",
+          "url": "testhelper-iosx64-20251108-sources.jar",
+          "size": 1861,
+          "sha512": "1ab823f7f171c6a334c8514e0978b4503bca673a5cae978400fa34b1f912b0b39560cb77e93bb7d0a80000ca1f0acd8989657027ebc772f441de1ba81d178833",
+          "sha256": "d04e6aed967ae86408ddc101965e9677ee0d73ec2f33c3ed7a92d661cd09621a",
+          "sha1": "89b1d68512cf12e9be3702c3fcefaa56f0d62f57",
+          "md5": "aec98f996063d2195576bb4e0129e41e"
+        }
+      ]
+    },
+    {
+      "name": "iosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-iosx64-20251108-metadata.jar",
+          "url": "testhelper-iosx64-20251108-metadata.jar",
+          "size": 261,
+          "sha512": "d2baf18c2f50fbaf6cbcd442e42769de537cc1a81d2352faae0c65fde06ff655b7b35bca2c0419e3de1402c9e0f6f1b4a2f61a924df515321e7def65b4d4ce80",
+          "sha256": "0e9b236656ddfce88319a0a115f4b246e14ccabe09d1ad0489b4ef016f8c6e5f",
+          "sha1": "6beb1c2fbecbd10ad1e4fb19b31bb275c6cad651",
+          "md5": "24652dd36df51cdc0a24532ce0ff058e"
+        }
+      ]
+    }
+  ]
+}

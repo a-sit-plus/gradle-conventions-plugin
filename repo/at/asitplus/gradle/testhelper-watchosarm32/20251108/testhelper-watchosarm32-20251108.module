@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testhelper/20251108/testhelper-20251108.module",
+    "group": "at.asitplus.gradle",
+    "module": "testhelper",
+    "version": "20251108",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "watchosArm32ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-watchosArm32Main-20251108.klib",
+          "url": "testhelper-watchosarm32-20251108.klib",
+          "size": 6125,
+          "sha512": "20549bdd7679bd745138b0110604e2a31030ed5fd52fbcc5bac2393dc97c91ea31ebf602926fcdfe83e81df79fdd53ca22174b57dabf5023ad20e62bbda111af",
+          "sha256": "b7a50fbe30348864566105c7c0d54cf620f261d4b981a50ac6378e12c23fc8df",
+          "sha1": "67e34921cf4771083d4932b669cd8adde84cc2d0",
+          "md5": "bb12ef5fc7add6476d1b5e44a5116cb2"
+        }
+      ]
+    },
+    {
+      "name": "watchosArm32SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testhelper-watchosarm32-20251108-sources.jar",
+          "url": "testhelper-watchosarm32-20251108-sources.jar",
+          "size": 1926,
+          "sha512": "e34bc7de3e320e5e4e5bc9111d9a6f2ccd8c66f9d281eb2119e99c35982a4cbcb7d2cdd441a34453df3fe63749780be1465bee911960f522c54176207af7b986",
+          "sha256": "d9535b9926c20a6eb3925f446d3b3cfb1d3f6da87ece3ece7681e3d231dc5ff1",
+          "sha1": "62d06333a78a302d4f891257d94da002c12efce8",
+          "md5": "972a4ebd30ba96fe682279b20456a31e"
+        }
+      ]
+    },
+    {
+      "name": "watchosArm32MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_arm32",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-watchosarm32-20251108-metadata.jar",
+          "url": "testhelper-watchosarm32-20251108-metadata.jar",
+          "size": 261,
+          "sha512": "3969baedd8627ccea5abf6939d7cf2954e0632f4994d9d5b0df1a53a6641bacfefb6ce22c75565ca9bc08cf1e227c9103113837c7fcd67cb83e7a215a48b468b",
+          "sha256": "6900c08344122c3da0534ad44dde9c76e7adb7b1e1656a08166467461a01c5e4",
+          "sha1": "1212ba80aaceb71170807ba4b35842bb5b3bee8e",
+          "md5": "0aa6101f84acc86285f92336f4a4ecc8"
+        }
+      ]
+    }
+  ]
+}
