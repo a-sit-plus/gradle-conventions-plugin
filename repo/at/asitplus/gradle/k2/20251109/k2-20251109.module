@@ -1,0 +1,124 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "at.asitplus.gradle",
+    "module": "k2",
+    "version": "20251109",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "io.ktor.plugin",
+          "module": "plugin",
+          "version": {
+            "requires": "3.2.2"
+          }
+        },
+        {
+          "group": "io.github.gradle-nexus",
+          "module": "publish-plugin",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.dokka",
+          "module": "dokka-gradle-plugin",
+          "version": {
+            "requires": "1.9.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "k2-20251109.jar",
+          "url": "k2-20251109.jar",
+          "size": 183535,
+          "sha512": "d9c0593243dcad3522cbf21505feb46c46343a78313ce9e32e3170d56e6bad7c3e172a90df6f413fa1aa8a52752d6e26e03122cc16314879f47aaabf73d3f8c2",
+          "sha256": "fa3372da88c03030b779137c9523a74288f8093346243726bf5eac550702286e",
+          "sha1": "1b4379320ea22e7c262e1beefba2a51a25d1da82",
+          "md5": "aa345409f6e2e5f4afd38fa49be49bf6"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.tomlj",
+          "module": "tomlj",
+          "version": {
+            "requires": "1.1.1"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-io-core",
+          "version": {
+            "requires": "0.7.0"
+          }
+        },
+        {
+          "group": "io.ktor.plugin",
+          "module": "plugin",
+          "version": {
+            "requires": "3.2.2"
+          }
+        },
+        {
+          "group": "io.github.gradle-nexus",
+          "module": "publish-plugin",
+          "version": {
+            "requires": "2.0.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.dokka",
+          "module": "dokka-gradle-plugin",
+          "version": {
+            "requires": "1.9.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "k2-20251109.jar",
+          "url": "k2-20251109.jar",
+          "size": 183535,
+          "sha512": "d9c0593243dcad3522cbf21505feb46c46343a78313ce9e32e3170d56e6bad7c3e172a90df6f413fa1aa8a52752d6e26e03122cc16314879f47aaabf73d3f8c2",
+          "sha256": "fa3372da88c03030b779137c9523a74288f8093346243726bf5eac550702286e",
+          "sha1": "1b4379320ea22e7c262e1beefba2a51a25d1da82",
+          "md5": "aa345409f6e2e5f4afd38fa49be49bf6"
+        }
+      ]
+    }
+  ]
+}

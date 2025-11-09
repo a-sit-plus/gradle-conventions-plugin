@@ -3,11 +3,11 @@
   <groupId>at.asitplus.gradle</groupId>
   <artifactId>testhelper-jvm</artifactId>
   <versioning>
-    <latest>20251108</latest>
-    <release>20251108</release>
+    <latest>20251109</latest>
+    <release>20251109</release>
     <versions>
-      <version>20251108</version>
+      <version>20251109</version>
     </versions>
-    <lastUpdated>20251108183217</lastUpdated>
+    <lastUpdated>20251109214723</lastUpdated>
   </versioning>
 </metadata>

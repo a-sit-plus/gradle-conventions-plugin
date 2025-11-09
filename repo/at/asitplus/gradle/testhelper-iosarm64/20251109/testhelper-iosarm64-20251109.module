@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testhelper/20251109/testhelper-20251109.module",
+    "group": "at.asitplus.gradle",
+    "module": "testhelper",
+    "version": "20251109",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-iosArm64Main-20251109.klib",
+          "url": "testhelper-iosarm64-20251109.klib",
+          "size": 6097,
+          "sha512": "75d80c3fdefb031db5a9eb1d6b1eb864c6cf6d33d55738adc3ebc746368a8d484c31f1b1324d5c12dc55a2a6e5bb5b548b0305e78645d3694d377946f750bce5",
+          "sha256": "b87cc397442d26d6718524eee4ff7dd71b3580127f5d1adedd28bb3da7ce55ee",
+          "sha1": "cf3520095afa0ab3cdf986efe264bd7d60d888c8",
+          "md5": "e7684aa69c987a1e266191e921a6acf3"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testhelper-iosarm64-20251109-sources.jar",
+          "url": "testhelper-iosarm64-20251109-sources.jar",
+          "size": 1882,
+          "sha512": "223146363b034f72e80f22f3c2d7c139c34537403ed2b8fbc2cf2535d076c6771642344b8478f4278fd6dd8d7c082996588d9fa117cc12906b50c37798dd54e9",
+          "sha256": "4a0def48a8cb1197c7d99873ed10e34e53fb9b45d20afacb6d95da422018c23b",
+          "sha1": "86b7004f9a47c1c6a92f4b0a260cccec64405d34",
+          "md5": "08523c7036e4db905b90ac2f8a1d68aa"
+        }
+      ]
+    },
+    {
+      "name": "iosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-iosarm64-20251109-metadata.jar",
+          "url": "testhelper-iosarm64-20251109-metadata.jar",
+          "size": 261,
+          "sha512": "0181e8c6a726479c64faa1b3e1d97dd17d2c2eda86b5ebc5de1f9efec1aaa4dd4814656877d5c93b7250a7bf486e5cdb64f4e6a029bc48fbff6cbb377b061b4a",
+          "sha256": "2ea53908854525fae7978186d41581731c703a406355a2fb4393e25ba316b520",
+          "sha1": "8e40d6d73a4673a07814c9dbfae5fe7610b1905d",
+          "md5": "71af01ef3c3219a3a74d3eedef3385d3"
+        }
+      ]
+    }
+  ]
+}

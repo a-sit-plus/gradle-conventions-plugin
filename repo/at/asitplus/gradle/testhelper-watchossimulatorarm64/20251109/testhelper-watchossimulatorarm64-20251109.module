@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testhelper/20251109/testhelper-20251109.module",
+    "group": "at.asitplus.gradle",
+    "module": "testhelper",
+    "version": "20251109",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "watchosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-watchosSimulatorArm64Main-20251109.klib",
+          "url": "testhelper-watchossimulatorarm64-20251109.klib",
+          "size": 6202,
+          "sha512": "22c022337b7c6ec9d859fdafa6a74020fa53b28b373399fa303886851cbcc1443d67c74e13ff4ff6039a672cf3ca20ffb85336e0782792b0fb741c7bcb30ae86",
+          "sha256": "9183adc26be2c4e18e6f1c35c52cb7cfc3514d103cc259b77a313195adfc1e84",
+          "sha1": "55f7fd420cfee1301f4e5375a37aec8e34efb77a",
+          "md5": "e6cabf7474d8f08c1b0d245ea9d39132"
+        }
+      ]
+    },
+    {
+      "name": "watchosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testhelper-watchossimulatorarm64-20251109-sources.jar",
+          "url": "testhelper-watchossimulatorarm64-20251109-sources.jar",
+          "size": 2025,
+          "sha512": "811ba8801be5d0505076bdc0c6af245b2b0b664ab6f41b8468a80a55e6fb2a097e17650f75883c1bed3e2bd238cae9a0221fc415588df61470566b6f230825de",
+          "sha256": "19708bb50d3aafa1c3cd3c7696fca9132464276862aad75bca4dec9a0fb336b3",
+          "sha1": "9297554bc21ef0058232eb31307aad3eec8ea4c7",
+          "md5": "815e984a3f9da8a1e763b90bf812f80b"
+        }
+      ]
+    },
+    {
+      "name": "watchosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-watchossimulatorarm64-20251109-metadata.jar",
+          "url": "testhelper-watchossimulatorarm64-20251109-metadata.jar",
+          "size": 261,
+          "sha512": "6c0a76c069258c0e30ae6d100f6c935173f1ea208b8f6815e8c9be5f3780e032a9eba693f32a06cd70af2d6b6d2dd8a783f63a1bb4074fe373e212cbda9c9dad",
+          "sha256": "ed35cb1256ed5be9452524e67c91fa0c6fda832339935bc384916061abb1f7bf",
+          "sha1": "82ebe9c71e46de6e6ab653d0e1ff19cab63d8037",
+          "md5": "ea7f96ffcb01dd077418f463e0de2438"
+        }
+      ]
+    }
+  ]
+}

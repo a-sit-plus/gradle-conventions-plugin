@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testhelper/20251109/testhelper-20251109.module",
+    "group": "at.asitplus.gradle",
+    "module": "testhelper",
+    "version": "20251109",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "tvosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-tvosSimulatorArm64Main-20251109.klib",
+          "url": "testhelper-tvossimulatorarm64-20251109.klib",
+          "size": 6177,
+          "sha512": "306b43af083c3dafbf871b7eeab97731c25017d2a54dbb88834b675d6f1d319bbf5eba0ec41dd61159f2dfb6e50dccb92704aa29b7ea7573954735c2978b1da3",
+          "sha256": "3fcff66e2df7bfc000d2e94f0fcd9ecb386862f1426dd643ed0c8ce080eb9630",
+          "sha1": "87419b9a797c3ad3364e54ef3e60d3d5ce45f8b5",
+          "md5": "c34369d0b2e6524a95b5e881ed17e313"
+        }
+      ]
+    },
+    {
+      "name": "tvosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testhelper-tvossimulatorarm64-20251109-sources.jar",
+          "url": "testhelper-tvossimulatorarm64-20251109-sources.jar",
+          "size": 1992,
+          "sha512": "d59241213c5a42272a088b17c7cb7b2ecced9e6d3d82e39ad122dcee76e30a947c506a7bf66cc8e37434f4a143fada45d79c4ac593f9894b8371a300dcb234e3",
+          "sha256": "715c633869f87a7e8b5ea8e62926479534b524784b384afee73d0b0e682b8817",
+          "sha1": "4d211cd102adb0961e8091b638c66a717db8f059",
+          "md5": "28771d492630f6107407a1abb51b3a03"
+        }
+      ]
+    },
+    {
+      "name": "tvosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-tvossimulatorarm64-20251109-metadata.jar",
+          "url": "testhelper-tvossimulatorarm64-20251109-metadata.jar",
+          "size": 261,
+          "sha512": "0181e8c6a726479c64faa1b3e1d97dd17d2c2eda86b5ebc5de1f9efec1aaa4dd4814656877d5c93b7250a7bf486e5cdb64f4e6a029bc48fbff6cbb377b061b4a",
+          "sha256": "2ea53908854525fae7978186d41581731c703a406355a2fb4393e25ba316b520",
+          "sha1": "8e40d6d73a4673a07814c9dbfae5fe7610b1905d",
+          "md5": "71af01ef3c3219a3a74d3eedef3385d3"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testhelper/20251109/testhelper-20251109.module",
+    "group": "at.asitplus.gradle",
+    "module": "testhelper",
+    "version": "20251109",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "linuxX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-linuxX64Main-20251109.klib",
+          "url": "testhelper-linuxx64-20251109.klib",
+          "size": 6097,
+          "sha512": "c4ddedeaee90ad7a47632140206b72f22291fe21c4faf9023d1cd991f6562a8ff5b808aebd9a00da1017805f79a7087444e6cd0dd31eb5469126b12b1cadae13",
+          "sha256": "7f2305a1ef56038b977b963cf29a0b9b983504310c7f040f1ccc40d7c2b730e4",
+          "sha1": "958b9b04f0dc612f4d7da8292720a5a1b1f7f99d",
+          "md5": "74f24bb0353f36169c8da682411a968b"
+        }
+      ]
+    },
+    {
+      "name": "linuxX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testhelper-linuxx64-20251109-sources.jar",
+          "url": "testhelper-linuxx64-20251109-sources.jar",
+          "size": 1883,
+          "sha512": "eadb6c2bbb01bf9a741968e4d34d7b4ac08aaabc0c4ff3c5b64a8a56b5a2be6c4e07f63b88df6e443f9c9bd10d6f6ed266b837aedee34f77b3235328c075c0ff",
+          "sha256": "d3147435fc9c9b7dff68d26b72b6aa1a49e8453eb083d92aa42ebe861f492552",
+          "sha1": "c097b354aa93ca0feae2355ed742c1ac17e8354a",
+          "md5": "09be203bb0d898a778dece8b0ecbd8d3"
+        }
+      ]
+    }
+  ]
+}

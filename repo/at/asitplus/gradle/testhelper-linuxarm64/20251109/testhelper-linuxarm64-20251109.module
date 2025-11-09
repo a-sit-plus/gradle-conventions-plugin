@@ -1,0 +1,80 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testhelper/20251109/testhelper-20251109.module",
+    "group": "at.asitplus.gradle",
+    "module": "testhelper",
+    "version": "20251109",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "linuxArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-linuxArm64Main-20251109.klib",
+          "url": "testhelper-linuxarm64-20251109.klib",
+          "size": 6113,
+          "sha512": "14414b340060f65899792840586388658353f3aa66a12dd2a0adf357ac6731e8718246f7ea867508d6616e588905434e93e6fac2d9f619df49af78200e8018a0",
+          "sha256": "f2bb1ce0ffbb7dc420b2efca7340bba486adc216410f53cdfb22a50223723aa7",
+          "sha1": "e110118f223f3232f6b41a2e273de73ce6997c49",
+          "md5": "3fd13da539da1068172cf1d04036b913"
+        }
+      ]
+    },
+    {
+      "name": "linuxArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "linux_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testhelper-linuxarm64-20251109-sources.jar",
+          "url": "testhelper-linuxarm64-20251109-sources.jar",
+          "size": 1904,
+          "sha512": "f61f033f4f23116f86dd1aaef93dd10fe51a14c468256b5c334cbd7f6dffcc907b2d36f1cbcb0f4a43593631b839915f24b7e6f53b1864c1f7ecdb0044b4124d",
+          "sha256": "53ceecef418f2077fa399231763ca2b19d9e3ef124ce818574a42af982e1e5e0",
+          "sha1": "ac61e49a6cc7e5839b176e50a9256cb5a9b19bb2",
+          "md5": "13dc39b54097b198acc92fe75ba7da78"
+        }
+      ]
+    }
+  ]
+}
