@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testhelper/20251110/testhelper-20251110.module",
+    "group": "at.asitplus.gradle",
+    "module": "testhelper",
+    "version": "20251110",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "watchosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-watchosArm64Main-20251110.klib",
+          "url": "testhelper-watchosarm64-20251110.klib",
+          "size": 6127,
+          "sha512": "ad59fe80753cbf1784347d9e41e30b20ffd70208f8f532721e3c0c0dfa07f2c810182114a3109cda6c9569157d6a5d771cf0febcff7c50a85e96af2ac8a3697f",
+          "sha256": "864158217155547e8d5d2ecb31bfed0d1bc092d6e633ac4125d824f8e2cbb724",
+          "sha1": "8d3ad124948be85d1969ebb84adcbeeeba51bd73",
+          "md5": "9cc6699af9f4d9729e5be997d9fda8a0"
+        }
+      ]
+    },
+    {
+      "name": "watchosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testhelper-watchosarm64-20251110-sources.jar",
+          "url": "testhelper-watchosarm64-20251110-sources.jar",
+          "size": 1923,
+          "sha512": "c4a92dd4ff93fb88841161e1e01cb9142123ef762c18ab5fefc503ea318ab3eb2bc921e18d3829b2a24343ab45831ce9e636e2ad71d9aafaa2ddf7b9e2471db0",
+          "sha256": "a167f6daf826a1fbdb56ce41e671d1e24bff04c9971f2c0344d9c43a7e1804fe",
+          "sha1": "9645721792088a9ed14553ee549586311b2e1062",
+          "md5": "43c6f4e7033fb3d374b95de4241c490d"
+        }
+      ]
+    },
+    {
+      "name": "watchosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "watchos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-watchosarm64-20251110-metadata.jar",
+          "url": "testhelper-watchosarm64-20251110-metadata.jar",
+          "size": 261,
+          "sha512": "381e063c92837ccf20ddb631a9b0708b381af22b0dc10c0f83553e5b5a562a811862dbb506222548950a4931d34c78e1c85030895f548f8fcad5067e1242f9de",
+          "sha256": "a21b6a67251ea4719f372c81d235a94ab8f2999ce8c216d0024aa72f155e6964",
+          "sha1": "1ace565993c4d294ff1cca6de42829fd3ad92806",
+          "md5": "647ad46b14644c63b5f91c04315052db"
+        }
+      ]
+    }
+  ]
+}
