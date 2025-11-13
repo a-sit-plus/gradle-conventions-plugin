@@ -107,10 +107,10 @@
           "name": "testhelper-macosarm64-20251114-metadata.jar",
           "url": "testhelper-macosarm64-20251114-metadata.jar",
           "size": 261,
-          "sha512": "496140a1b8712773b136158f315962c5ac8acbbf9d6e0dc058766606db8eefbd0ed04a5ddf9bb8480fb657c91ba7547eb03576da659c66ad2cf3190e84d30acc",
-          "sha256": "eb430ca0659c4c16af3ed54f92be38cd9087d548d6c7d754f70539af2af9d22c",
-          "sha1": "cf60fe3ae54540715e6e7483d5df0177be483ae0",
-          "md5": "de1265c3620a80dec48bfe5fdeaaecb6"
+          "sha512": "366828b0e692123f2872c4e3321ca3835517403040a95b09430ab5785d51302f2e4af6eab4bdbb29b002279923908fc711788a262a544c09550623f632ab76e7",
+          "sha256": "95931f2cd50dadf25ccd6c2cae8486f49e552f4641bd99c8b6b336fc5612d927",
+          "sha1": "4ba9bd66a26568a88ec8bd1b891210614758d005",
+          "md5": "e7d1986dd4bc4b0fc3869bfc0a2d2789"
         }
       ]
     }

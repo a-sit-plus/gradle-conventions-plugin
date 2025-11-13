@@ -107,10 +107,10 @@
           "name": "testhelper-watchosdevicearm64-20251114-metadata.jar",
           "url": "testhelper-watchosdevicearm64-20251114-metadata.jar",
           "size": 261,
-          "sha512": "a6d3b112dbe7c3c0e4d3a191fbcee6000d0c14dba9fdd1823f414d421bd72641f1d076f96d4938bd7058c81caafc46ab5498033c52c3a2f9978d7ab7a24a3e6f",
-          "sha256": "5d4e630e8ad270150dda33fbff0ea9cdfdb4798e29c6e47e3a2aada790962760",
-          "sha1": "89904b12b1c600d46eb4f1b98717324ce6d82d38",
-          "md5": "8e80af8e9953bd0e38e0462ebdf3d3da"
+          "sha512": "366828b0e692123f2872c4e3321ca3835517403040a95b09430ab5785d51302f2e4af6eab4bdbb29b002279923908fc711788a262a544c09550623f632ab76e7",
+          "sha256": "95931f2cd50dadf25ccd6c2cae8486f49e552f4641bd99c8b6b336fc5612d927",
+          "sha1": "4ba9bd66a26568a88ec8bd1b891210614758d005",
+          "md5": "e7d1986dd4bc4b0fc3869bfc0a2d2789"
         }
       ]
     }
