@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testhelper/20251114/testhelper-20251114.module",
+    "group": "at.asitplus.gradle",
+    "module": "testhelper",
+    "version": "20251114",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "iosSimulatorArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-iosSimulatorArm64Main-20251114.klib",
+          "url": "testhelper-iossimulatorarm64-20251114.klib",
+          "size": 6144,
+          "sha512": "ec21b271b68f6bba5b30ecc72bac4c9e78674337dcd5a022baa3236d180ee2c8626672c48ab63aacc282d19bfb5e43e09cc8dfe599bf9b3b8447e84ee22df645",
+          "sha256": "53be10afcb10c4076900ee5e7a076eef6de23e7fa91e3a464cfe433efeacdd2b",
+          "sha1": "cb2e90b025f4d76114d855317224b15caf695e14",
+          "md5": "3a4ce48403f2a66bab4221d4717642da"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testhelper-iossimulatorarm64-20251114-sources.jar",
+          "url": "testhelper-iossimulatorarm64-20251114-sources.jar",
+          "size": 1981,
+          "sha512": "79c121d4c49477da8be7f70752a225314813836af6492457e02d61636d22d6b1f06b96b4f81119e396b8a7c9a1609fecfb91cbed4e7d5fc7726ef80c73fee1d9",
+          "sha256": "779564a6f99e60544cfadc340dcd0bf3a09eac04cac01145bb64ef60c720c50a",
+          "sha1": "c66b9b22c43e775d58891dbd5eb759b95624458a",
+          "md5": "b55a67ea91b9e35c726e1ecb5c0e5dfb"
+        }
+      ]
+    },
+    {
+      "name": "iosSimulatorArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "ios_simulator_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-iossimulatorarm64-20251114-metadata.jar",
+          "url": "testhelper-iossimulatorarm64-20251114-metadata.jar",
+          "size": 261,
+          "sha512": "920b506c7da2bd79ccee6f4b4a2b9de088ae0b631aa0b44472657cb3b4170899899c84fd601e649769fa0899cb52cb1ac011e4594c73163f6ab46a6b8196fd26",
+          "sha256": "5c3df1c90e90370377a2b139c39e00c69887ef8ab74a2d4b397e7fd108412427",
+          "sha1": "229151730f4b7346b4b17d156835f113fffd0041",
+          "md5": "c691fa745586c6a7053aad11c509bbd7"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testhelper/20251114/testhelper-20251114.module",
+    "group": "at.asitplus.gradle",
+    "module": "testhelper",
+    "version": "20251114",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "tvosArm64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-tvosArm64Main-20251114.klib",
+          "url": "testhelper-tvosarm64-20251114.klib",
+          "size": 6080,
+          "sha512": "c055c0292dadd5e8782b870ff9e34550b88664161dc20b33fa809a1b38fce05f5527d2f19ec97fe59b8a0bd18e701138136dd74449a5cf16f084501ca591c438",
+          "sha256": "c07826585582cca64d377e3327445790c2c9d5ec21716ea5c1dfe426efba0de2",
+          "sha1": "bba1190a7ed46975624d349e342932c3c6107127",
+          "md5": "8309b6646540a1b2a8d90d085da719e1"
+        }
+      ]
+    },
+    {
+      "name": "tvosArm64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testhelper-tvosarm64-20251114-sources.jar",
+          "url": "testhelper-tvosarm64-20251114-sources.jar",
+          "size": 1893,
+          "sha512": "bb5087befcfd6508fae56423bd174bb43d903aa8c1bc047f9ab20a7d423f572378ffa7df31970158569f72d0c3166048737b769dd49c7e2e2baa2398aa80b548",
+          "sha256": "aa4a7e40ce246874dac8361f6944ed7a475c8426f467c331dea3b1914f460f5e",
+          "sha1": "c69ead1e020c4430f8684df1c55b592795c288ed",
+          "md5": "d796c3688f878effae51e15cb434c10f"
+        }
+      ]
+    },
+    {
+      "name": "tvosArm64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "tvos_arm64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-tvosarm64-20251114-metadata.jar",
+          "url": "testhelper-tvosarm64-20251114-metadata.jar",
+          "size": 261,
+          "sha512": "496140a1b8712773b136158f315962c5ac8acbbf9d6e0dc058766606db8eefbd0ed04a5ddf9bb8480fb657c91ba7547eb03576da659c66ad2cf3190e84d30acc",
+          "sha256": "eb430ca0659c4c16af3ed54f92be38cd9087d548d6c7d754f70539af2af9d22c",
+          "sha1": "cf60fe3ae54540715e6e7483d5df0177be483ae0",
+          "md5": "de1265c3620a80dec48bfe5fdeaaecb6"
+        }
+      ]
+    }
+  ]
+}

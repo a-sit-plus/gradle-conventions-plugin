@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testhelper/20251114/testhelper-20251114.module",
+    "group": "at.asitplus.gradle",
+    "module": "testhelper",
+    "version": "20251114",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "jsApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-js-20251114.klib",
+          "url": "testhelper-js-20251114.klib",
+          "size": 6239,
+          "sha512": "59f45766bf2f23d2ec1525f592e18d3e162d0c83c638eab6320a9031771636c48edd5287150bf3fa8f76a309c38d6f00717a216c52132010430cc196e5ec3a8b",
+          "sha256": "26774cdcbe897f3d3784216d9da224397c989c79a1b3e01426384e605185895f",
+          "sha1": "4b703850edd75f18c5e07b3e643291913aeaed24",
+          "md5": "26f33e762c72410b288a7f37f56ac613"
+        }
+      ]
+    },
+    {
+      "name": "jsRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-dom-api-compat",
+          "version": {
+            "requires": "2.2.21"
+          }
+        },
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-js-20251114.klib",
+          "url": "testhelper-js-20251114.klib",
+          "size": 6239,
+          "sha512": "59f45766bf2f23d2ec1525f592e18d3e162d0c83c638eab6320a9031771636c48edd5287150bf3fa8f76a309c38d6f00717a216c52132010430cc196e5ec3a8b",
+          "sha256": "26774cdcbe897f3d3784216d9da224397c989c79a1b3e01426384e605185895f",
+          "sha1": "4b703850edd75f18c5e07b3e643291913aeaed24",
+          "md5": "26f33e762c72410b288a7f37f56ac613"
+        }
+      ]
+    },
+    {
+      "name": "jsSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.js.compiler": "ir",
+        "org.jetbrains.kotlin.platform.type": "js"
+      },
+      "files": [
+        {
+          "name": "testhelper-js-20251114-sources.jar",
+          "url": "testhelper-js-20251114-sources.jar",
+          "size": 1926,
+          "sha512": "ef9c636706b1ce7ce4b61786d1ed0b094929021677a32b65bf3a18d05c25167236a5c41593ade54f1c7321528de8bff136b63d455695375065250ca78a1b0f99",
+          "sha256": "561056091f9e7ce2e9bd1a375512e16b14190e7f03abe8c74e41fee49dfd91ca",
+          "sha1": "558a3da7ea5a49891075332860b552c5cd8c2c1d",
+          "md5": "315764dbb83ea6538e0007adebbdc85f"
+        }
+      ]
+    }
+  ]
+}

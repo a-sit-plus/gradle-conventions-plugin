@@ -1,0 +1,118 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../testhelper/20251114/testhelper-20251114.module",
+    "group": "at.asitplus.gradle",
+    "module": "testhelper",
+    "version": "20251114",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14"
+    }
+  },
+  "variants": [
+    {
+      "name": "macosX64ApiElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-api",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-macosX64Main-20251114.klib",
+          "url": "testhelper-macosx64-20251114.klib",
+          "size": 6073,
+          "sha512": "ad1ee4ba578749108409942502eb43a58810f413ceb63af7927fdef634b8b396845a7ff53121eec781f58ed4e53569351cc83635f60ff9e30e2071bb457baafc",
+          "sha256": "0dc8e67a55bd72b108a00f0382fb34e61446c7852016ca24102d35d5d9ed130b",
+          "sha1": "f580d80660b8b01c599cf9ce7d572e9379b42200",
+          "md5": "07cf9626a2f5bd5ff8a47f6128205530"
+        }
+      ]
+    },
+    {
+      "name": "macosX64SourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-runtime",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "files": [
+        {
+          "name": "testhelper-macosx64-20251114-sources.jar",
+          "url": "testhelper-macosx64-20251114-sources.jar",
+          "size": 1883,
+          "sha512": "a0c7cd3b3b28351e8ca472900b8d4766b7500519ee07d1afeebc10f68677266ab9be7d4c775fe10aacba9ee168e36a999600b00b30a5e12ec550966614b2c7d7",
+          "sha256": "62b8fda7e77997d88add60ff5e498859e5c6626ab710fcaf4a5842fa0e8d9849",
+          "sha1": "191ec1bea72b8bf42746a070783ffe2fa42ab055",
+          "md5": "5553b412f52f7eec93e436d8042f47b3"
+        }
+      ]
+    },
+    {
+      "name": "macosX64MetadataElements-published",
+      "attributes": {
+        "artifactType": "org.jetbrains.kotlin.klib",
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "non-jvm",
+        "org.gradle.usage": "kotlin-metadata",
+        "org.jetbrains.kotlin.native.target": "macos_x64",
+        "org.jetbrains.kotlin.platform.type": "native"
+      },
+      "dependencies": [
+        {
+          "group": "de.infix.testBalloon",
+          "module": "testBalloon-framework-core",
+          "version": {
+            "requires": "0.7.1-K2.2.21"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.21"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "testhelper-macosx64-20251114-metadata.jar",
+          "url": "testhelper-macosx64-20251114-metadata.jar",
+          "size": 261,
+          "sha512": "496140a1b8712773b136158f315962c5ac8acbbf9d6e0dc058766606db8eefbd0ed04a5ddf9bb8480fb657c91ba7547eb03576da659c66ad2cf3190e84d30acc",
+          "sha256": "eb430ca0659c4c16af3ed54f92be38cd9087d548d6c7d754f70539af2af9d22c",
+          "sha1": "cf60fe3ae54540715e6e7483d5df0177be483ae0",
+          "md5": "de1265c3620a80dec48bfe5fdeaaecb6"
+        }
+      ]
+    }
+  ]
+}
