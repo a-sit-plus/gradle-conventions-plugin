@@ -3,6 +3,9 @@
 Starting with May 2025, the conventions plugin does not include a Kotlin version anymore. Instead, it lets any consuming
 project set it, just as with the Android Gradle Plugin. **This is a breaking change, as there is no fallback version specified.**
 
+## 20251114
+* TestBalloon Addon 0.4.1
+* Revert nested type aliases
 
 ## 20251110
 * Updated to TestBalloon Addons 0.3.0

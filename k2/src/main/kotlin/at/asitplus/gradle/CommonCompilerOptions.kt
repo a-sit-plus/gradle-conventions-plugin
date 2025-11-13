@@ -23,19 +23,13 @@ internal inline fun KotlinMultiplatformExtension.experimentalOptIns() {
         optIn.add("kotlin.time.ExperimentalTime")
         optIn.add("kotlin.RequiresOptIn")
 
-        freeCompilerArgs.addAll(
-            listOf(
-                "-Xexpect-actual-classes",
-                "-Xnested-type-aliases"
-            )
-        )
+        freeCompilerArgs.add("-Xexpect-actual-classes")
     }
 
     targets.configureEach {
         compilations.configureEach {
             compileTaskProvider.get().compilerOptions {
                 freeCompilerArgs.add("-Xexpect-actual-classes")
-                freeCompilerArgs.add("-Xnested-type-aliases")
             }
         }
     }
