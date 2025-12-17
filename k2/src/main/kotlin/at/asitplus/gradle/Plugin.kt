@@ -57,19 +57,22 @@ class EnvExtraDelegate(private val project: Project) {
      * * Returns `null` if the property is not set.
      *
      */
-    operator fun getValue(thisRef: Any?, property: KProperty<*>): String? =
-        System.getenv(property.name)
-            ?.also { Logger.lifecycle("  > Property ${property.name} set to $it from environment") }
+    operator fun getValue(thisRef: Any?, property: KProperty<*>): String? = get(property.name)
+
+    operator fun get(name: String) =
+        System.getenv(name)
+            ?.also { Logger.lifecycle("  > Property $name set to $it from environment") }
             ?: runCatching {
-                (project.extraProperties[property.name] as String).also {
-                    Logger.lifecycle("  > Property ${property.name} set to $it from extra properties")
+                (project.extraProperties[name] as String).also {
+                    Logger.lifecycle("  > Property $name set to $it from extra properties")
                 }
             }.getOrElse {
                 Logger.lifecycle("")
-                Logger.warn("w: Property ${property.name} could could be read from neither environment nor extra")
+                Logger.warn("w: Property $name could could be read from neither environment nor extra")
                 Logger.lifecycle("")
                 null
             }
+
 
 }
 
