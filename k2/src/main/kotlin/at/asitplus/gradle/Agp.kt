@@ -7,12 +7,7 @@ import org.gradle.api.NamedDomainObjectContainer
 import org.gradle.api.Project
 import org.gradle.api.plugins.PluginAware
 import org.gradle.api.tasks.StopExecutionException
-import org.gradle.kotlin.dsl.assign
-import org.gradle.kotlin.dsl.creating
-import org.gradle.kotlin.dsl.get
-import org.gradle.kotlin.dsl.getByType
-import org.gradle.kotlin.dsl.getValue
-import org.gradle.kotlin.dsl.getting
+import org.gradle.kotlin.dsl.*
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
@@ -157,18 +152,20 @@ fun NamedDomainObjectContainer<KotlinSourceSet>.androidJvmMain(configure: Kotlin
     } ?: throw IllegalStateException("No androidJvmMain source set found!")
 
 internal fun KotlinMultiplatformExtension.linkAgpJvmSharedSources() {
-    if ((project.hasOldAgp || project.isNewAndroidLibrary || project.keepAndroidJvmTarget) && hasJvmTarget()) {
-        Logger.lifecycle("  ${H}Linking androidJvmMain shared source set$R")
-        sourceSets.apply {
-            val androidJvmMain by getting
-            if (hasAndroidTarget) get("androidMain").dependsOn(androidJvmMain)
-            get("jvmMain").dependsOn(androidJvmMain)
+    targets.whenObjectAdded {
+        if ((project.hasOldAgp || project.isNewAndroidLibrary || project.keepAndroidJvmTarget) && this@linkAgpJvmSharedSources.hasJvmTarget()) {
+            Logger.lifecycle("  ${H}Linking androidJvmMain shared source set$R")
+            this@linkAgpJvmSharedSources.sourceSets.apply {
+                val androidJvmMain by getting
+                if (this@linkAgpJvmSharedSources.hasAndroidTarget) get("androidMain").dependsOn(androidJvmMain)
+                get("jvmMain").dependsOn(androidJvmMain)
+            }
+            this@linkAgpJvmSharedSources.setupAndroidTarget()
         }
-
     }
 }
 
-internal fun KotlinMultiplatformExtension.setupAndroidTarget() {
+private fun KotlinMultiplatformExtension.setupAndroidTarget() {
     if (project.hasOldAgp) androidTarget {
         if (project.isAndroidLibrary) publishLibraryVariants.let {
             if (it == null || it.isEmpty())
