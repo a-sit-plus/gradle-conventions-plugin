@@ -1,5 +1,6 @@
 package at.asitplus.gradle
 
+import org.gradle.api.Action
 import org.gradle.api.Project
 import org.gradle.api.artifacts.Dependency
 import org.gradle.api.artifacts.FileCollectionDependency
@@ -14,8 +15,6 @@ import org.gradle.api.tasks.TaskProvider
 import org.gradle.api.tasks.bundling.Jar
 import org.gradle.kotlin.dsl.*
 import org.gradle.plugins.signing.Sign
-import org.jetbrains.dokka.gradle.DokkaTask
-import org.jetbrains.dokka.gradle.DokkaTaskPartial
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
@@ -30,25 +29,28 @@ import kotlin.jvm.optionals.getOrNull
 fun Project.setupDokka(
     outputDir: String = layout.buildDirectory.dir("dokka").get().asFile.canonicalPath,
     baseUrl: String,
-    multiModuleDoc: Boolean = false,
     remoteLineSuffix: String = "#L"
 ): TaskProvider<Jar> {
-    val dokkaHtml = (tasks["dokkaHtml"] as DokkaTask).apply { outputDirectory.set(file(outputDir)) }
+
 
     val deleteDokkaOutput = tasks.register<Delete>("deleteDokkaOutputDirectory") {
         delete(outputDir)
     }
-    val sourceLinktToConfigure = if (multiModuleDoc) (tasks["dokkaHtmlPartial"] as DokkaTaskPartial) else dokkaHtml
-    sourceLinktToConfigure.dokkaSourceSets.configureEach {
-        sourceLink {
-            localDirectory.set(file("src/$name/kotlin"))
-            remoteUrl.set(uri("$baseUrl/${project.name}/src/$name/kotlin").toURL())
-            this@sourceLink.remoteLineSuffix.set(remoteLineSuffix)
+
+
+    extensions.getByType<org.jetbrains.dokka.gradle.DokkaExtension>().apply {
+        basePublicationsDirectory.set(file(outputDir))
+        dokkaSourceSets.configureEach {
+            sourceLink {
+                localDirectory.set(file("src/$name/kotlin"))
+                remoteUrl("$baseUrl/${project.name}/src/$name/kotlin")
+                this@sourceLink.remoteLineSuffix.set(remoteLineSuffix)
+            }
         }
     }
 
     return tasks.register<Jar>("javadocJar") {
-        dependsOn(deleteDokkaOutput, dokkaHtml)
+        dependsOn(deleteDokkaOutput, tasks["dokkaGenerate"])
         archiveClassifier.set("javadoc")
         from(outputDir)
     }
