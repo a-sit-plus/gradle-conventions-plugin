@@ -2,20 +2,17 @@
 
 package at.asitplus.gradle
 
-import at.asitplus.gradle.at.asitplus.gradle.addTestExtensions
+import at.asitplus.gradle.at.asitplus.gradle.setJvmToolchain
+import at.asitplus.gradle.at.asitplus.gradle.setupJvmOpts
+import at.asitplus.gradle.at.asitplus.gradle.setupTestExtensions
+import at.asitplus.gradle.at.asitplus.gradle.setupTestReportFormat
 import io.github.gradlenexus.publishplugin.NexusPublishExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.Delete
 import org.gradle.api.tasks.StopExecutionException
-import org.gradle.api.tasks.testing.Test
-import org.gradle.api.tasks.testing.logging.TestExceptionFormat
-import org.gradle.api.tasks.testing.logging.TestLogEvent
-import org.gradle.jvm.toolchain.JavaLanguageVersion
 import org.gradle.kotlin.dsl.*
 import org.gradle.plugins.ide.idea.model.IdeaModel
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinBasePlugin
@@ -60,19 +57,22 @@ class EnvExtraDelegate(private val project: Project) {
      * * Returns `null` if the property is not set.
      *
      */
-    operator fun getValue(thisRef: Any?, property: KProperty<*>): String? =
-        System.getenv(property.name)
-            ?.also { Logger.lifecycle("  > Property ${property.name} set to $it from environment") }
+    operator fun getValue(thisRef: Any?, property: KProperty<*>): String? = get(property.name)
+
+    operator fun get(name: String) =
+        System.getenv(name)
+            ?.also { Logger.lifecycle("  > Property $name set to $it from environment") }
             ?: runCatching {
-                (project.extraProperties[property.name] as String).also {
-                    Logger.lifecycle("  > Property ${property.name} set to $it from extra properties")
+                (project.extraProperties[name] as String).also {
+                    Logger.lifecycle("  > Property $name set to $it from extra properties")
                 }
             }.getOrElse {
                 Logger.lifecycle("")
-                Logger.warn("w: Property ${property.name} could could be read from neither environment nor extra")
+                Logger.warn("w: Property $name could could be read from neither environment nor extra")
                 Logger.lifecycle("")
                 null
             }
+
 
 }
 
@@ -134,6 +134,7 @@ open class K2Conventions : Plugin<Project> {
                 target.extraProperties[KEY_ASP_VERSIONS] = it
                 versionOverrides(it)
             }
+        target.apply(plugin = "org.jetbrains.dokka")
         target.publishVersionCatalog = true
 
         Logger.lifecycle(
@@ -198,7 +199,7 @@ open class K2Conventions : Plugin<Project> {
             }
         }
 
-        var isMultiplatform = false
+        //var isMultiplatform = false
         runCatching {
             target.plugins.withType<KotlinBasePlugin>().let {
                 Logger.lifecycle("  ${H}Using Kotlin version ${it.first().pluginVersion} for project ${target.name}$R")
@@ -206,7 +207,6 @@ open class K2Conventions : Plugin<Project> {
         }
 
         target.plugins.withType<KotlinMultiplatformPluginWrapper> {
-            isMultiplatform = true
             Logger.lifecycle("  ${H}Multiplatform project detected$R")
         }
 
@@ -214,83 +214,43 @@ open class K2Conventions : Plugin<Project> {
 
         target.plugins.withType<KotlinMultiplatformPluginWrapper> {
             target.createAndroidJvmSharedSources()
-
+            val kmp = target.extensions.getByType<KotlinMultiplatformExtension>()
+            kmp.linkAgpJvmSharedSources()
+            kmp.setupJvmOpts()
+            kmp.setJvmToolchain()
             target.afterEvaluate {
+                //All of this can stay in afterEvaluate, because we really want to know whether we have buildable targets AFTER EVALUATE
                 val kmpTargets =
                     extensions.getByType<KotlinMultiplatformExtension>().targets.filter { it.name != "metadata" }
                 if (kmpTargets.isEmpty())
                     throw StopExecutionException("No buildable targets found! Declare at least a single one explicitly as per https://kotlinlang.org/docs/multiplatform-hierarchy.html#default-hierarchy-template")
 
-
-                val kmp = extensions.getByType<KotlinMultiplatformExtension>()
-
                 Logger.lifecycle("\n  This project will be built for the following targets:")
                 kmpTargets.forEach { Logger.lifecycle("   * ${it.name}") }
-
-                if (kmp.hasJvmTarget()) runCatching {
-                    kmp.jvm {
-                        Logger.info("  [JVM] Setting jsr305=strict for JVM nullability annotations")
-                        compilerOptions {
-                            freeCompilerArgs = listOf(
-                                "-Xjsr305=strict"
-                            )
-                            Logger.lifecycle("  ${H}[JVM] Setting jvmTarget to ${target.jvmTarget} for $name$R")
-                            jvmTarget = JvmTarget.Companion.fromTarget(target.jvmTarget)
-                        }
-                    }
-                }
-
-                kmp.setupAndroidTarget()
                 kmp.experimentalOptIns()
 
-                kmp.linkAgpJvmSharedSources()
                 Logger.lifecycle("") //to make it look less crammed
             }
         }
 
 
         runCatching {
-
+            target.setupTestExtensions()
             val kotlin = target.kotlinExtension
 
             if (target != target.rootProject) {
-                val hasJvm = target.extensions.findByType<KotlinMultiplatformExtension>()?.hasJvmTarget()
-                    ?: target.extensions.findByType<KotlinJvmExtension>()?.let { true } ?: false
-                if (!hasJvm) Logger.info("  ${H}No JVM target found for project ${target.name}.$R")
+                Logger.lifecycle("  Enabling unsigned types")
+                Logger.lifecycle("  Enabling context parameters\n")
+                kotlin.sourceSets.whenObjectAdded {
+                    languageSettings.optIn("kotlin.ExperimentalUnsignedTypes")
+                    languageSettings.enableLanguageFeature("ContextParameters")
+                }
 
-                kotlin.apply {
-                    if (hasJvm) {
-                        Logger.lifecycle("  ${H}Setting jvmToolchain to JDK ${target.jvmTarget} for ${target.name}$R")
-                        jvmToolchain {
-                            languageVersion.set(JavaLanguageVersion.of(target.jvmTarget))
-                        }
-                    }
-                }
-                target.afterEvaluate {
-                    Logger.lifecycle("  Enabling unsigned types")
-                    Logger.lifecycle("  Enabling context parameters\n")
-                    kotlin.sourceSets.forEach {
-                        it.languageSettings.optIn("kotlin.ExperimentalUnsignedTypes")
-                        it.languageSettings.enableLanguageFeature("ContextParameters")
-                    }
-                }
-                if (!isMultiplatform && hasJvm) {
-                    Logger.lifecycle("  Assuming JVM-only Kotlin project")
-                    target.afterEvaluate {
-                        //work around IDEA bug
-                        (kotlin as KotlinJvmExtension).forceApiVersion()
-                        kotlin.apply {
-                            sourceSets.getByName("test").dependencies {
-                                addTestExtensions("jvm")
-                            }
-
-                        }
-                    }
-                }
                 Logger.lifecycle("  Adding maven publish plugin\n")
                 target.plugins.apply("maven-publish")
 
                 target.afterEvaluate {
+                    //again fine in afterEvaluate
                     runCatching {
                         if (target.tasks.findByName(("clean")) == null)
                             target.tasks.register<Delete>("clean") {
@@ -302,35 +262,7 @@ open class K2Conventions : Plugin<Project> {
                                 doLast { Logger.lifecycle("> Clean done") }
                             }
                     }
-                    runCatching {
-                        if (isMultiplatform) {
-                            target.extensions.getByType<KotlinMultiplatformExtension>().apply {
-                                sourceSets.matching { it.name.endsWith("Test") }.configureEach {
-                                    dependencies {
-                                        addTestExtensions()
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    Logger.info("  Configuring Test output format")
-                    target.tasks.withType<Test> {
-                        if (name != "testReleaseUnitTest") {
-                            filter {
-                                isFailOnNoMatchingTests = false
-                            }
-                            testLogging {
-                                showExceptions = true
-                                showStandardStreams = true
-                                events = setOf(
-                                    TestLogEvent.FAILED,
-                                    TestLogEvent.PASSED
-                                )
-                                exceptionFormat = TestExceptionFormat.FULL
-                            }
-                        }
-                    }
+                    target.setupTestReportFormat()
                     target.compileVersionCatalog()
                     target.setupSignDependency()
                 }

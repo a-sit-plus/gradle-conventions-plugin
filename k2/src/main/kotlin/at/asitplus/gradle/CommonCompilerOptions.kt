@@ -7,10 +7,12 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 
 internal inline fun KotlinMultiplatformExtension.experimentalOptIns() {
+    val returnValueChecker = project.envExtra["returnValueChecker"] ?: "check"
     Logger.lifecycle("  Adding opt ins")
     Logger.info("   * Serialization")
     Logger.info("   * Coroutines")
     Logger.info("   * kotlinx.datetime")
+    Logger.lifecycle("   * return value checker: $returnValueChecker")
     Logger.info("   * RequiresOptIn\n")
 
 
@@ -26,10 +28,12 @@ internal inline fun KotlinMultiplatformExtension.experimentalOptIns() {
         freeCompilerArgs.add("-Xexpect-actual-classes")
     }
 
-    targets.configureEach {
+    targets.whenObjectAdded {
         compilations.configureEach {
             compileTaskProvider.get().compilerOptions {
                 freeCompilerArgs.add("-Xexpect-actual-classes")
+                if (returnValueChecker == "check" || returnValueChecker == "full")
+                    freeCompilerArgs.add("-Xreturn-value-checker=$returnValueChecker")
             }
         }
     }

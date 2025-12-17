@@ -1,3 +1,17 @@
+# Gradle 9
+
+## 20251217
+* Gradle 9.20
+* Kotlin 2.3.0
+* Dokka 2.10.0
+* Return value checker defaults to `check`
+* Dependency Updates:
+  * AGP 8.12.3
+  * Ktor 3.3.3
+  * Bouncy Castle 1.83 (no more forcing exact version)
+  * TestBalloon 0.7.1-K2.3.0
+  * TestBalloon Addons 0.6.1
+
 # No-Kotlin-Version
 
 Starting with May 2025, the conventions plugin does not include a Kotlin version anymore. Instead, it lets any consuming
