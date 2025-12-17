@@ -4,6 +4,7 @@
 * Gradle 9.20
 * Kotlin 2.3.0
 * Dokka 2.10.0
+* Return value checker defaults to `check`
 * Dependency Updates:
   * AGP 8.12.3
   * Ktor 3.3.3

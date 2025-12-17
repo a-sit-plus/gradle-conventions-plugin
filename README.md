@@ -209,6 +209,9 @@ Common compiler options (opt-ins for serialization, coroutines, datetime, and `R
 by default
 In addition, shorthand for dependencies and other extensions are available to streamline project setup.
 
+### Return Value Checker
+Defaults to `check`, can be overridden by setting `returnValueChecker` property either in `gradle.properties` or `local.properties`.
+
 ### JDK Version Management and Android Targets
 
 `jvmToolchain(17)`, `jvmTarget = 17`, and `jdkName = 17` are applied by default, **unless**

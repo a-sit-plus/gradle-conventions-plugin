@@ -5,12 +5,15 @@ package at.asitplus.gradle
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
+import org.jetbrains.kotlin.gradle.plugin.extraProperties
 
 internal inline fun KotlinMultiplatformExtension.experimentalOptIns() {
+    val returnValueChecker = project.extraProperties.get("returnValueChecker") ?: "check"
     Logger.lifecycle("  Adding opt ins")
     Logger.info("   * Serialization")
     Logger.info("   * Coroutines")
     Logger.info("   * kotlinx.datetime")
+    Logger.lifecycle("   * return value checker: $returnValueChecker")
     Logger.info("   * RequiresOptIn\n")
 
 
@@ -26,10 +29,11 @@ internal inline fun KotlinMultiplatformExtension.experimentalOptIns() {
         freeCompilerArgs.add("-Xexpect-actual-classes")
     }
 
-    targets.configureEach {
+    targets.whenObjectAdded {
         compilations.configureEach {
             compileTaskProvider.get().compilerOptions {
                 freeCompilerArgs.add("-Xexpect-actual-classes")
+                freeCompilerArgs.add("-Xreturn-value-checker=$returnValueChecker")
             }
         }
     }
