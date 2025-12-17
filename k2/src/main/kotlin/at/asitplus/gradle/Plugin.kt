@@ -131,6 +131,7 @@ open class K2Conventions : Plugin<Project> {
                 target.extraProperties[KEY_ASP_VERSIONS] = it
                 versionOverrides(it)
             }
+        target.apply(plugin = "org.jetbrains.dokka")
         target.publishVersionCatalog = true
 
         Logger.lifecycle(

@@ -1,6 +1,7 @@
 package at.asitplus.gradle
 
 import org.gradle.api.Action
+import org.gradle.api.NamedDomainObjectProvider
 import org.gradle.api.Project
 import org.gradle.api.artifacts.Dependency
 import org.gradle.api.artifacts.FileCollectionDependency
@@ -20,6 +21,13 @@ import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 import kotlin.jvm.optionals.getOrNull
 
+
+fun Project.dokka(configure: Action<org.jetbrains.dokka.gradle.DokkaExtension>): Unit =
+    (this as org.gradle.api.plugins.ExtensionAware).extensions.configure("dokka", configure)
+
+val org.gradle.api.NamedDomainObjectContainer<org.jetbrains.dokka.gradle.formats.DokkaPublication>.html: NamedDomainObjectProvider<org.jetbrains.dokka.gradle.formats.DokkaPublication>
+    get() = named<org.jetbrains.dokka.gradle.formats.DokkaPublication>("html")
+
 /**
  * Configures Dokka to publish documentation to [outputDir]. Also add a `deleteDokkaOutputDirectory` task which is executed
  * before documentation is written, s.t. [outputDir] is always clean.
@@ -36,7 +44,6 @@ fun Project.setupDokka(
     val deleteDokkaOutput = tasks.register<Delete>("deleteDokkaOutputDirectory") {
         delete(outputDir)
     }
-
 
     extensions.getByType<org.jetbrains.dokka.gradle.DokkaExtension>().apply {
         basePublicationsDirectory.set(file(outputDir))

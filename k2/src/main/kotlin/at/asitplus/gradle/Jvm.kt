@@ -10,18 +10,17 @@ import org.gradle.kotlin.dsl.assign
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
-import kotlin.apply
 
 internal fun KotlinMultiplatformExtension.setupJvmOpts() {
+    Logger.lifecycle("  ${H}[JVM] Setting jvmTarget to ${project.jvmTarget} for ${project.name}$R")
+    Logger.info("  [JVM] Setting jsr305=strict for JVM nullability annotations")
     targets.whenObjectAdded {
         if (this@setupJvmOpts.hasJvmTarget()) runCatching {
             this@setupJvmOpts.jvm {
-                Logger.info("  [JVM] Setting jsr305=strict for JVM nullability annotations")
                 compilerOptions {
                     freeCompilerArgs = listOf(
                         "-Xjsr305=strict"
                     )
-                    Logger.lifecycle("  ${H}[JVM] Setting jvmTarget to ${project.jvmTarget} for $name$R")
                     jvmTarget = JvmTarget.Companion.fromTarget(project.jvmTarget)
                 }
             }
@@ -30,10 +29,10 @@ internal fun KotlinMultiplatformExtension.setupJvmOpts() {
 }
 
 internal fun KotlinMultiplatformExtension.setJvmToolchain() {
+    Logger.lifecycle("  ${H}Setting jvmToolchain to JDK ${project.jvmTarget} for ${project.name}$R")
     targets.whenObjectAdded {
         if (this@setJvmToolchain.hasJvmTarget()) {
             project.kotlinExtension.apply {
-                Logger.lifecycle("  ${H}Setting jvmToolchain to JDK ${project.jvmTarget} for ${project.name}$R")
                 jvmToolchain {
                     languageVersion.set(JavaLanguageVersion.of(project.jvmTarget))
                 }

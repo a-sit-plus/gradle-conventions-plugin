@@ -152,9 +152,9 @@ fun NamedDomainObjectContainer<KotlinSourceSet>.androidJvmMain(configure: Kotlin
     } ?: throw IllegalStateException("No androidJvmMain source set found!")
 
 internal fun KotlinMultiplatformExtension.linkAgpJvmSharedSources() {
+    Logger.lifecycle("  ${H}Linking androidJvmMain shared source set$R")
     targets.whenObjectAdded {
         if ((project.hasOldAgp || project.isNewAndroidLibrary || project.keepAndroidJvmTarget) && this@linkAgpJvmSharedSources.hasJvmTarget()) {
-            Logger.lifecycle("  ${H}Linking androidJvmMain shared source set$R")
             this@linkAgpJvmSharedSources.sourceSets.apply {
                 val androidJvmMain by getting
                 if (this@linkAgpJvmSharedSources.hasAndroidTarget) get("androidMain").dependsOn(androidJvmMain)

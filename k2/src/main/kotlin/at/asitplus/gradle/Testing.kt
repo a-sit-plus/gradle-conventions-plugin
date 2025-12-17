@@ -25,10 +25,11 @@ inline fun KotlinDependencyHandler.addTestExtensions(target: String? = null) {
     Logger.info("   * Assertions$targetInfo")
     Logger.info("   * Property-based testing$targetInfo")
     if (System.getProperty("KOTEST_NO_ASP_HELPER") != "true") Logger.info("   * Testballoon$targetInfo")
+
     implementation(kotlin("reflect"))
     implementation(project.kotest("assertions-core", target))
     implementation(project.kotest("property", target))
-    implementation("at.asitplus.gradle:testhelper" + (target?.let { "-$it" } ?: "") + ":$buildDate")
+    implementation("at.asitplus.gradle:testhelper" + (target?.let { "-$it" } ?: "") + ":20251114")
     if (System.getProperty("KOTEST_NO_ASP_HELPER") != "true") {
         implementation(project.kotest("property"))
         implementation("de.infix.testBalloon:testBalloon-framework-core:${project.AspVersions.testballoon}")
@@ -50,7 +51,7 @@ internal fun Project.setupTestExtensions() {
 
 private fun KotlinMultiplatformExtension.setupTestExtensions() {
     sourceSets.whenObjectAdded {
-        if (this.name.endsWith(("Test"))) {
+        if (name.endsWith(("Test"))) {
             this.dependencies {
                 addTestExtensions()
             }

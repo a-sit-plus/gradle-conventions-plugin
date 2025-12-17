@@ -34,14 +34,10 @@ jobs:
       with:
         arguments: build
 
-    - name: Build Shim
-      working-directory: testballoon-shim
-      run: ./gradlew build
-
-    - name: Package Plugin + Testballoon Shim
+    - name: Package Plugin
       uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
       with:
-        arguments: publishAllPublicationsToGitHubRepository
+        arguments: publishToMavenLocal
 
     - name: Upload repo as artifact
       uses: actions/upload-artifact@v4
