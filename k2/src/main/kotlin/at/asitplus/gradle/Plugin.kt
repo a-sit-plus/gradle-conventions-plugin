@@ -13,12 +13,14 @@ import org.gradle.api.tasks.Delete
 import org.gradle.api.tasks.StopExecutionException
 import org.gradle.kotlin.dsl.*
 import org.gradle.plugins.ide.idea.model.IdeaModel
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinBasePlugin
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
 import org.jetbrains.kotlin.gradle.plugin.extraProperties
 import org.jetbrains.kotlin.gradle.targets.jvm.KotlinJvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 import kotlin.random.Random
 import kotlin.reflect.KProperty
 
@@ -241,9 +243,17 @@ open class K2Conventions : Plugin<Project> {
             if (target != target.rootProject) {
                 Logger.lifecycle("  Enabling unsigned types")
                 Logger.lifecycle("  Enabling context parameters\n")
-                kotlin.sourceSets.whenObjectAdded {
+                if (kotlin is KotlinMultiplatformExtension) kotlin.sourceSets.whenObjectAdded {
                     languageSettings.optIn("kotlin.ExperimentalUnsignedTypes")
                     languageSettings.enableLanguageFeature("ContextParameters")
+                } else (kotlin as KotlinJvmExtension).apply {
+                    jvmToolchain(target.jvmTarget.toInt())
+                    forceApiVersion()
+                    target.tasks.withType<KotlinJvmCompile>().configureEach {
+                        compilerOptions {
+                            freeCompilerArgs.add("-Xcontext-parameters")
+                        }
+                    }
                 }
 
                 Logger.lifecycle("  Adding maven publish plugin\n")

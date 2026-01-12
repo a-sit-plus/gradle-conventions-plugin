@@ -1,5 +1,8 @@
 # Gradle 9
 
+## 20260112
+* Fix JVM-only project setup
+
 ## 20251217
 * Gradle 9.20
 * Kotlin 2.3.0

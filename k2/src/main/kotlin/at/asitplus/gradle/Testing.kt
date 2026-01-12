@@ -1,6 +1,9 @@
 package at.asitplus.gradle.at.asitplus.gradle
 
-import at.asitplus.gradle.*
+import at.asitplus.gradle.AspVersions
+import at.asitplus.gradle.Logger
+import at.asitplus.gradle.forceApiVersion
+import at.asitplus.gradle.kotest
 import org.gradle.api.Project
 import org.gradle.api.tasks.testing.Test
 import org.gradle.api.tasks.testing.logging.TestExceptionFormat
@@ -20,25 +23,36 @@ import org.jetbrains.kotlin.gradle.plugin.KotlinDependencyHandler
  *
  * Also adds `kotlin-reflect` to make kotest work smoothly with IDEA
  */
-inline fun KotlinDependencyHandler.addTestExtensions(target: String? = null) {
+
+
+private fun Project.testDeps(target: String?=null) :List<String> {
+    val list= mutableListOf<String>(
+        "org.jetbrains.kotlin:kotlin-reflect",
+        kotest("assertions-core", target),
+        kotest("property", target),
+        "at.asitplus.gradle:testhelper" + (target?.let { "-$it" } ?: "") + ":20251114",
+        )
+    if (System.getProperty("KOTEST_NO_ASP_HELPER") != "true") {
+        list.add(project.kotest("property"))
+        list.add("de.infix.testBalloon:testBalloon-framework-core:${project.AspVersions.testballoon}")
+    }
+    if (System.getProperty("TESTBALLOON_NO_ASP_HELPER") != "true") {
+        list.add("de.infix.testBalloon:testBalloon-framework-core:${project.AspVersions.testballoon}")
+        list.add("at.asitplus.testballoon:fixturegen-freespec:${project.AspVersions.testballoonAddons}")
+        list.add("at.asitplus.testballoon:datatest:${project.AspVersions.testballoonAddons}")
+        list.add("at.asitplus.testballoon:property:${project.AspVersions.testballoonAddons}")
+    }
+    return list
+}
+
+ fun KotlinDependencyHandler.addTestExtensions(target: String? = null) {
     val targetInfo = target?.let { " ($it)" } ?: ""
     Logger.info("   * Assertions$targetInfo")
     Logger.info("   * Property-based testing$targetInfo")
     if (System.getProperty("KOTEST_NO_ASP_HELPER") != "true") Logger.info("   * Testballoon$targetInfo")
 
-    implementation(kotlin("reflect"))
-    implementation(project.kotest("assertions-core", target))
-    implementation(project.kotest("property", target))
-    implementation("at.asitplus.gradle:testhelper" + (target?.let { "-$it" } ?: "") + ":20251114")
-    if (System.getProperty("KOTEST_NO_ASP_HELPER") != "true") {
-        implementation(project.kotest("property"))
-        implementation("de.infix.testBalloon:testBalloon-framework-core:${project.AspVersions.testballoon}")
-    }
-    if (System.getProperty("TESTBALLOON_NO_ASP_HELPER") != "true") {
-        implementation("de.infix.testBalloon:testBalloon-framework-core:${project.AspVersions.testballoon}")
-        implementation("at.asitplus.testballoon:fixturegen-freespec:${project.AspVersions.testballoonAddons}")
-        implementation("at.asitplus.testballoon:datatest:${project.AspVersions.testballoonAddons}")
-        implementation("at.asitplus.testballoon:property:${project.AspVersions.testballoonAddons}")
+    project.testDeps(target).forEach {
+        implementation(it)
     }
 }
 
@@ -60,9 +74,8 @@ private fun KotlinMultiplatformExtension.setupTestExtensions() {
 }
 
 private fun Project.setupJvmOnlyTestExtensions() {
-    extensions.findByType<KotlinJvmExtension>()?.let { jvmExt ->
-        jvmExt.forceApiVersion()
-        jvmExt.sourceSets.whenObjectAdded { if (name == "test") dependencies { addTestExtensions("jvm") } }
+    testDeps("jvm").forEach {
+        dependencies.add("testImplementation",it)
     }
 }
 
