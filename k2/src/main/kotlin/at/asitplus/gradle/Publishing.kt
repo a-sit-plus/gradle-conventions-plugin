@@ -50,7 +50,7 @@ fun Project.setupDokka(
         dokkaSourceSets.configureEach {
             sourceLink {
                 localDirectory.set(file("src/$name/kotlin"))
-                remoteUrl("$baseUrl/${project.name}/src/$name/kotlin")
+                remoteUrl("$baseUrl/${project.layout.projectDirectory.asFile.name}/src/$name/kotlin")
                 this@sourceLink.remoteLineSuffix.set(remoteLineSuffix)
             }
         }

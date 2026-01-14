@@ -1,5 +1,8 @@
 # Gradle 9
 
+## 20260114
+* Fix dokka remoteUrl
+
 ## 20260112
 * Fix JVM-only project setup
 
