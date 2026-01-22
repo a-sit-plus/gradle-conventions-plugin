@@ -69,9 +69,7 @@ class EnvExtraDelegate(private val project: Project) {
                     Logger.lifecycle("  > Property $name set to $it from extra properties")
                 }
             }.getOrElse {
-                Logger.lifecycle("")
-                Logger.warn("w: Property $name could could be read from neither environment nor extra")
-                Logger.lifecycle("")
+                Logger.warn("w: Property $name could be read from neither environment nor extra")
                 null
             }
 
@@ -140,7 +138,7 @@ open class K2Conventions : Plugin<Project> {
         target.publishVersionCatalog = true
 
         Logger.lifecycle(
-            "\n ASP Conventions ${H}${target.AspVersions.kotlin}+$buildDate$R is using the following dependency versions for project $H${
+            "\n  ASP Conventions ${H}${target.AspVersions.kotlin}+$buildDate$R is using the following dependency versions for project $H${
                 if (target == target.rootProject) target.name
                 else "${target.rootProject.name}:${target.name}"
             }$R:"
@@ -150,12 +148,10 @@ open class K2Conventions : Plugin<Project> {
                 .filterNot { (k, _) -> k == "agp" }.filterNot { (k, _) -> k == "kotlin" }
                 .sortedBy { (k, _) -> k.toString() }
                 .forEach { (t, _) ->
-                    Logger.lifecycle(
-                        "    ${String.format("%-14s", "$t:")} ${target.AspVersions.versionOf(t as String)}"
-                    )
+                    Logger.lifecycle(formatDepWithVersion(t as String, target.AspVersions.versionOf(t)))
                 }
             if (target.agpVersion != null)
-                Logger.lifecycle("    ${String.format("%-14s", "AGP:")} ${target.agpVersion}")
+                Logger.lifecycle(formatDepWithVersion("AGP", target.agpVersion))
 
             Logger.lifecycle("")
         }
@@ -227,7 +223,7 @@ open class K2Conventions : Plugin<Project> {
                 if (kmpTargets.isEmpty())
                     throw StopExecutionException("No buildable targets found! Declare at least a single one explicitly as per https://kotlinlang.org/docs/multiplatform-hierarchy.html#default-hierarchy-template")
 
-                Logger.lifecycle("\n  This project will be built for the following targets:")
+                Logger.lifecycle("  This project will be built for the following targets:")
                 kmpTargets.forEach { Logger.lifecycle("   * ${it.name}") }
                 kmp.experimentalOptIns()
 
@@ -242,7 +238,7 @@ open class K2Conventions : Plugin<Project> {
 
             if (target != target.rootProject) {
                 Logger.lifecycle("  Enabling unsigned types")
-                Logger.lifecycle("  Enabling context parameters\n")
+                Logger.lifecycle("  Enabling context parameters")
                 if (kotlin is KotlinMultiplatformExtension) kotlin.sourceSets.whenObjectAdded {
                     languageSettings.optIn("kotlin.ExperimentalUnsignedTypes")
                     languageSettings.enableLanguageFeature("ContextParameters")
@@ -256,7 +252,7 @@ open class K2Conventions : Plugin<Project> {
                     }
                 }
 
-                Logger.lifecycle("  Adding maven publish plugin\n")
+                Logger.lifecycle("  Adding maven publish plugin")
                 target.plugins.apply("maven-publish")
 
                 target.afterEvaluate {
@@ -283,4 +279,8 @@ open class K2Conventions : Plugin<Project> {
             else Logger.lifecycle("  This is usually fine.")
         }
     }
+
+    private fun formatDepWithVersion(dep: String, version: String?): String =
+        "    ${String.format("%-18s", "${dep}:")} ${String.format("%12s", version)}"
+
 }
