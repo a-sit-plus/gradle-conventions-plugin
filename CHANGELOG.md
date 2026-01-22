@@ -1,5 +1,8 @@
 # Gradle 9
 
+## 20260122
+ * Cleanup log output, removing blank lines
+
 ## 20260114
 * Fix dokka remoteUrl
 
