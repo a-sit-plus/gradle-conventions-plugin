@@ -151,10 +151,10 @@ private fun Project.getDependencies(type: String): List<Dependency> =
  */
 fun Project.compileVersionCatalog() {
     if (!publishVersionCatalog) {
-        Logger.lifecycle(("\n  NOT publishing version catalog for project $project"))
+        Logger.lifecycle(("  NOT publishing version catalog for project $project"))
         return
     }
-    Logger.lifecycle("\n  Compiling version catalog of project ${rootProject.name}:${project.name}")
+    Logger.lifecycle("  Compiling version catalog of project ${rootProject.name}:${project.name}")
 
     //Get `libs` version catalog, which is the default and only supported one
     val userDefinedCatalog = extensions.getByType(VersionCatalogsExtension::class).find("libs").getOrNull()
