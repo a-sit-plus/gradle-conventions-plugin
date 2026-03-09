@@ -94,6 +94,11 @@ class AspVersions(private val project: Project) {
     val nexus = versionOf("nexus")
 
     /**
+     * CycloneDX Gradle plugin version.
+     */
+    val cyclonedx = versionOf("cyclonedx")
+
+    /**
      * KmmResult version.  Override by adding setting a `kmmresult` in `libs.versions.toml`.
      */
     val kmmresult = versionOf("kmmresult")

@@ -43,6 +43,10 @@ This plugin targets Kotlin JVM and multiplatform projects and provides the follo
       if absent.
 * Automatic compilation and publication of Gradle version catalog for all non-test dependencies
   * Can be disabled by setting `publishVersionCatalog = false` in a module's `build.gradle.kts`
+* Publication-specific CycloneDX SBOM generation and publication
+  * Enabled by default through `enableSbom`
+  * Generates normalized SBOMs for each published Maven publication
+  * Attaches normalized `cyclonedx` JSON and XML artifacts to Maven publications
 
 **Do read the section on JDK version management!**
 
@@ -163,6 +167,49 @@ plugins {
 ```
 
 **Be sure to add the conventions plugin last!**
+
+## SBOM Support
+
+When `enableSbom` is enabled, the conventions plugin applies CycloneDX automatically. Consumers do not need to apply
+the CycloneDX plugin themselves.
+
+The plugin generates SBOMs per published Maven publication and treats those normalized publication-specific SBOMs as
+the canonical output. In particular, it:
+
+* creates a raw CycloneDX BOM for each publishable `MavenPublication`
+* normalizes the BOM so published coordinates and package types reflect the actual published artifact contract
+* emits normalized `bom.json` and `bom.xml` under `build/reports/cyclonedx-publications/<publication>/`
+* attaches those normalized files to the Maven publication with the `cyclonedx` classifier
+* verifies internal SBOM consistency
+* verifies the root component's direct dependencies against the generated publication POM
+* makes publish tasks depend on SBOM generation and verification
+
+The stock aggregate CycloneDX tasks are intentionally disabled when this feature is enabled, because the conventions
+plugin treats the normalized publication-specific pipeline as the supported output.
+
+### SBOM Toggle
+
+SBOM creation is enabled by default. It can be disabled through the same cascading environment / extra-property lookup
+used elsewhere in the plugin:
+
+```properties
+enableSbom=false
+```
+
+This can be provided either as an environment variable or as an extra property.
+
+### Interpreting the Resulting SBOMs
+
+The generated SBOMs are publication-oriented.
+
+* Root metadata publications such as `kotlinMultiplatform` may legitimately reference metadata-style artifacts such as
+  `pom` and metadata `jar` packages.
+* Concrete target publications such as `jvm`, `android`, `iosArm64`, or `wasmJs` are normalized to the actual
+  published artifact coordinates and package types, such as `jar`, `aar`, or `klib`.
+* Metadata wrapper components may still appear transitively when they are part of the real published dependency graph.
+
+This means the direct dependencies of the root SBOM component are intended to match the published artifact contract of
+that publication, while the rest of the graph remains faithful to the broader published dependency graph.
 
 ### Usage with other Kotlin Plugins
 

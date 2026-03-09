@@ -1,5 +1,16 @@
 # Gradle 9
 
+## 20260309
+* Add publication-specific CycloneDX SBOM support to the conventions plugin
+  * applies CycloneDX automatically when `enableSbom=true`
+  * generates normalized per-publication SBOMs
+  * publishes normalized `cyclonedx` JSON and XML artifacts with Maven publications
+  * verifies internal SBOM consistency and direct dependencies against the publication POM
+  * wires publish tasks to depend on SBOM generation
+  * disables the stock aggregate CycloneDX tasks in favor of the normalized publication-specific pipeline
+* Manage the CycloneDX plugin version through `AspVersions`
+* Scope the ASP GitHub Maven repository to `at.asitplus` dependencies only
+
 ## 20260122
  * Cleanup log output, removing blank lines
 

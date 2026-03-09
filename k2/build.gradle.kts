@@ -27,6 +27,7 @@ val nexus = versions["nexus"]
 val kotest = versions["kotest"]
 val ktor = versions["ktor"]
 val agp = versions["agp"]
+val cyclonedx = versions["cyclonedx"]
 
 version = buildDate
 group = groupId
@@ -37,6 +38,8 @@ dependencies {
     api("io.ktor.plugin:plugin:$ktor")
     api("io.github.gradle-nexus:publish-plugin:$nexus")
     api("org.jetbrains.dokka:dokka-gradle-plugin:$dokka")
+    implementation("org.cyclonedx:cyclonedx-gradle-plugin:$cyclonedx")
+    implementation("org.cyclonedx:cyclonedx-core-java:11.0.0")
     implementation("org.tomlj:tomlj:1.1.1")
     compileOnly("com.android.tools.build:gradle:$agp")
     implementation("org.jetbrains.kotlinx:kotlinx-io-core:0.8.2")
