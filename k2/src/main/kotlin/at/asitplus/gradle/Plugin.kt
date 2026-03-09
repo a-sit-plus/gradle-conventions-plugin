@@ -158,6 +158,7 @@ open class K2Conventions : Plugin<Project> {
 
         if (target != target.rootProject) {
             target.addVersionCatalogSupport()
+            target.setupSbomSupport()
         }
 
         if (target == target.rootProject) {
@@ -178,7 +179,11 @@ open class K2Conventions : Plugin<Project> {
             Logger.info("    * google")
             target.allprojects {
                 repositories {
-                    maven("https://github.com/a-sit-plus/gradle-conventions-plugin/raw/mvn/repo/")
+                    maven("https://github.com/a-sit-plus/gradle-conventions-plugin/raw/mvn/repo/") {
+                        content {
+                            includeGroupByRegex("at\\.asitplus(\\..+)?")
+                        }
+                    }
                     maven("https://central.sonatype.com/repository/maven-snapshots/")
                     maven("https://oss.sonatype.org/content/repositories/snapshots")
                     google()
