@@ -87,6 +87,10 @@ internal fun Project.setupSbomSupport() {
                     group = LifecycleBasePlugin.VERIFICATION_GROUP
                     description = "Normalizes CycloneDX package types for Maven publication '${publication.name}'."
                     dependsOn(cyclonedxTask)
+                    dependsOn(tasks.matching {
+                        it.name == "generatePomFileFor${publication.name.replaceFirstChar { ch -> if (ch.isLowerCase()) ch.titlecase(Locale.US) else ch.toString() }}Publication" ||
+                            it.name == "generateMetadataFileFor${publication.name.replaceFirstChar { ch -> if (ch.isLowerCase()) ch.titlecase(Locale.US) else ch.toString() }}Publication"
+                    })
                     publicationName.set(publication.name)
                     includeConfigs.set(publicationConfigNames)
                     inputJson.set(cyclonedxTask.flatMap { it.jsonOutput })
