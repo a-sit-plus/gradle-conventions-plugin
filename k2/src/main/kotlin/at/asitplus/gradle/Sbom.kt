@@ -4,9 +4,7 @@ import org.cyclonedx.Version
 import org.cyclonedx.generators.BomGeneratorFactory
 import org.cyclonedx.gradle.CyclonedxDirectTask
 import org.cyclonedx.gradle.CyclonedxPlugin
-import org.cyclonedx.model.Bom
-import org.cyclonedx.model.Component
-import org.cyclonedx.model.Dependency
+import org.cyclonedx.model.*
 import org.cyclonedx.parsers.JsonParser
 import org.gradle.api.DefaultTask
 import org.gradle.api.Project
@@ -22,26 +20,121 @@ import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.TaskAction
-import org.gradle.kotlin.dsl.configureEach
 import org.gradle.kotlin.dsl.findByType
-import org.gradle.kotlin.dsl.getByName
-import org.gradle.kotlin.dsl.getByType
 import org.gradle.kotlin.dsl.register
 import org.gradle.kotlin.dsl.withType
 import org.gradle.language.base.plugins.LifecycleBasePlugin
 import java.io.File
-import java.util.Locale
+import java.util.*
 import javax.xml.XMLConstants
 import javax.xml.parsers.DocumentBuilderFactory
 
 val Project.enableSbom: Boolean
-    get() = envExtra["enableSbom"]?.toBooleanStrictOrNull() ?: true
+    get() = envExtra["enableSbom"]?.toBooleanStrictOrNull() ?: false
+
+
+val Project.licenseId get() = envExtra["licenseId"]?.trim()
+val Project.licenseName get() = envExtra["licenseName"]?.trim()
+val Project.licenseUrl get() = envExtra["licenseUrl"]?.trim()
+
+
+private data class SupplierInfo(
+    val name: String,
+    val urls: List<String>,
+    val contactName: String?,
+    val email: String?,
+)
+
+
+private fun Bom.patchLicenseMetadata(
+    licenseId: String,
+    licenseName: String?,
+    licenseUrl: String?,
+) {
+
+    val license = org.cyclonedx.model.License().apply {
+        id = licenseId
+        name = licenseName
+        url = licenseUrl
+    }
+    val choice = org.cyclonedx.model.LicenseChoice().apply {
+        addLicense(license)
+    }
+
+    if (metadata == null) {
+        metadata = Metadata()
+    }
+
+    metadata!!.component?.licenses = choice
+
+}
+
+private fun Bom.patchFirstPartyComponentLicenses(
+    licenseId: String?,
+    licenseName: String?,
+    licenseUrl: String?,
+) {
+
+    val rootGroup = metadata?.component?.group ?: return
+    components?.forEach { component ->
+        if (component.group == rootGroup) {
+            component.licenses = org.cyclonedx.model.LicenseChoice().apply {
+                addLicense(
+                    org.cyclonedx.model.License().apply {
+                        id = licenseId
+                        name = licenseName
+                        url = licenseUrl
+                    }
+                )
+            }
+        }
+    }
+}
+
+
+private fun Project.supplierInfoFromEnvExtra(): SupplierInfo? {
+    val name = envExtra["supplierName"]?.trim().orEmpty()
+    if (name.isBlank()) return null
+
+    val urls = envExtra["supplierUrls"]
+        ?.trim()
+        .orEmpty()
+        .split(Regex("\\s+"))
+        .filter { it.isNotBlank() }
+
+    val contactName = envExtra["supplierContactName"]?.trim()?.ifBlank { null }
+    val email = envExtra["supplierEmail"]?.trim()?.ifBlank { null }
+
+    return SupplierInfo(
+        name = name,
+        urls = urls,
+        contactName = contactName,
+        email = email,
+    )
+}
+
+private fun SupplierInfo.toOrganizationalEntity(): OrganizationalEntity =
+    OrganizationalEntity().apply {
+        name = this@toOrganizationalEntity.name
+        urls = this@toOrganizationalEntity.urls
+        if (contactName != null || email != null) {
+            addContact(
+                OrganizationalContact().apply {
+                    name = contactName
+                    this.email = this@toOrganizationalEntity.email
+                }
+            )
+        }
+    }
 
 internal fun Project.setupSbomSupport() {
     if (!enableSbom) {
         Logger.lifecycle("  > SBOM generation disabled for project $path")
         return
     }
+
+
+    val supplierInfo = supplierInfoFromEnvExtra()
 
     pluginManager.apply(CyclonedxPlugin::class.java)
 
@@ -81,6 +174,10 @@ internal fun Project.setupSbomSupport() {
                     componentVersion.set(project.version.toString())
                     jsonOutput.set(layout.buildDirectory.file("reports/cyclonedx-publications/${publication.name}/bom.raw.json"))
                     xmlOutput.set(layout.buildDirectory.file("reports/cyclonedx-publications/${publication.name}/bom.raw.xml"))
+
+                    supplierInfo?.let {
+                        organizationalEntity.set(it.toOrganizationalEntity())
+                    }
                 }
 
                 val normalizeTask = tasks.register<NormalizeCyclonedxBomTask>("${cyclonedxTaskName}Normalized") {
@@ -88,28 +185,48 @@ internal fun Project.setupSbomSupport() {
                     description = "Normalizes CycloneDX package types for Maven publication '${publication.name}'."
                     dependsOn(cyclonedxTask)
                     dependsOn(tasks.matching {
-                        it.name == "generatePomFileFor${publication.name.replaceFirstChar { ch -> if (ch.isLowerCase()) ch.titlecase(Locale.US) else ch.toString() }}Publication" ||
-                            it.name == "generateMetadataFileFor${publication.name.replaceFirstChar { ch -> if (ch.isLowerCase()) ch.titlecase(Locale.US) else ch.toString() }}Publication"
+                        it.name == "generatePomFileFor${
+                            publication.name.replaceFirstChar { ch ->
+                                if (ch.isLowerCase()) ch.titlecase(
+                                    Locale.US
+                                ) else ch.toString()
+                            }
+                        }Publication" ||
+                                it.name == "generateMetadataFileFor${
+                            publication.name.replaceFirstChar { ch ->
+                                if (ch.isLowerCase()) ch.titlecase(
+                                    Locale.US
+                                ) else ch.toString()
+                            }
+                        }Publication"
                     })
                     publicationName.set(publication.name)
                     includeConfigs.set(publicationConfigNames)
                     inputJson.set(cyclonedxTask.flatMap { it.jsonOutput })
                     outputJson.set(layout.buildDirectory.file("reports/cyclonedx-publications/${publication.name}/bom.json"))
                     outputXml.set(layout.buildDirectory.file("reports/cyclonedx-publications/${publication.name}/bom.xml"))
+
+                    supplierName.set(supplierInfo?.name.orEmpty())
+                    supplierUrls.set(supplierInfo?.urls ?: emptyList())
+                    supplierContactName.set(supplierInfo?.contactName.orEmpty())
+                    supplierEmail.set(supplierInfo?.email.orEmpty())
                 }
                 val verifyTask = tasks.register<VerifyCyclonedxBomConsistencyTask>("${cyclonedxTaskName}Consistency") {
                     group = LifecycleBasePlugin.VERIFICATION_GROUP
-                    description = "Verifies CycloneDX SBOM graph consistency for Maven publication '${publication.name}'."
+                    description =
+                        "Verifies CycloneDX SBOM graph consistency for Maven publication '${publication.name}'."
                     dependsOn(normalizeTask)
                     inputJson.set(normalizeTask.flatMap { it.outputJson })
                 }
-                val compareTask = tasks.register<VerifyCyclonedxBomDirectDependenciesTask>("${cyclonedxTaskName}DirectDependencies") {
-                    group = LifecycleBasePlugin.VERIFICATION_GROUP
-                    description = "Verifies CycloneDX SBOM direct dependencies for Maven publication '${publication.name}' against the publication POM."
-                    dependsOn(normalizeTask)
-                    publicationName.set(publication.name)
-                    inputJson.set(normalizeTask.flatMap { it.outputJson })
-                }
+                val compareTask =
+                    tasks.register<VerifyCyclonedxBomDirectDependenciesTask>("${cyclonedxTaskName}DirectDependencies") {
+                        group = LifecycleBasePlugin.VERIFICATION_GROUP
+                        description =
+                            "Verifies CycloneDX SBOM direct dependencies for Maven publication '${publication.name}' against the publication POM."
+                        dependsOn(normalizeTask)
+                        publicationName.set(publication.name)
+                        inputJson.set(normalizeTask.flatMap { it.outputJson })
+                    }
 
                 publicationSbomTasks += normalizeTask.name
                 publicationSbomTasks += verifyTask.name
@@ -197,6 +314,18 @@ abstract class NormalizeCyclonedxBomTask : DefaultTask() {
     @get:Input
     abstract val includeConfigs: ListProperty<String>
 
+    @get:Input
+    abstract val supplierName: Property<String>
+
+    @get:Input
+    abstract val supplierUrls: ListProperty<String>
+
+    @get:Input
+    abstract val supplierContactName: Property<String>
+
+    @get:Input
+    abstract val supplierEmail: Property<String>
+
     @get:InputFile
     abstract val inputJson: org.gradle.api.file.RegularFileProperty
 
@@ -211,9 +340,23 @@ abstract class NormalizeCyclonedxBomTask : DefaultTask() {
         val normalizationPlan = project.buildNormalizationPlan(publicationName.get(), includeConfigs.get())
         val publicationCoordinates = project.projectPublicationCoordinates(publicationName.get())
             ?: error("Missing publication metadata for ${project.path}:${publicationName.get()}")
+
+        val supplierInfo = supplierName.orNull
+            ?.trim()
+            ?.takeIf { it.isNotBlank() }
+            ?.let {
+                SupplierInfo(
+                    name = it,
+                    urls = supplierUrls.get().filter { url -> url.isNotBlank() },
+                    contactName = supplierContactName.orNull?.trim()?.ifBlank { null },
+                    email = supplierEmail.orNull?.trim()?.ifBlank { null },
+                )
+            }
+
+
         val refRewrites = LinkedHashMap<String, String>()
         val jsonBom = JsonParser().parse(inputJson.get().asFile)
-            .normalizeBom(normalizationPlan, publicationCoordinates, refRewrites)
+            .normalizeBom(normalizationPlan, publicationCoordinates, refRewrites, supplierInfo)
 
         outputJson.get().asFile.apply {
             parentFile.mkdirs()
@@ -229,12 +372,39 @@ abstract class NormalizeCyclonedxBomTask : DefaultTask() {
         normalizationPlan: SbomNormalizationPlan,
         publicationCoordinates: PublishedCoordinates,
         refRewrites: MutableMap<String, String>,
+        supplierInfo: SupplierInfo?,
     ): Bom {
         metadata?.component?.rewriteComponent(normalizationPlan, refRewrites)
         components?.forEach { component -> component.rewriteComponent(normalizationPlan, refRewrites) }
         dependencies = dependencies?.map { it.rewrittenDependency(refRewrites) }?.toMutableList()
         alignRootDependenciesToPublicationPom(publicationCoordinates)
+        patchSupplierMetadata(supplierInfo)
+
+        project.licenseId?.let {
+            patchLicenseMetadata(it, project.licenseName, project.licenseUrl)
+            patchFirstPartyComponentLicenses(it, project.licenseName, project.licenseUrl)
+        }
         return this
+    }
+
+    private fun Bom.patchSupplierMetadata(supplierInfo: SupplierInfo?) {
+        if (supplierInfo == null) return
+
+        val supplier = supplierInfo.toOrganizationalEntity()
+
+        if (metadata == null) {
+            metadata = Metadata()
+        }
+
+        metadata!!.supplier = supplier
+        metadata!!.component?.supplier = supplier
+
+        val ownGroup = metadata!!.component?.group
+        components?.forEach { component ->
+            if (component.group != null && component.group == ownGroup) {
+                component.supplier = supplier
+            }
+        }
     }
 
     private fun Bom.alignRootDependenciesToPublicationPom(publicationCoordinates: PublishedCoordinates) {
@@ -332,7 +502,9 @@ abstract class NormalizeCyclonedxBomTask : DefaultTask() {
             .filter { it.isNotBlank() }
             .mapNotNull { qualifier ->
                 val separatorIndex = qualifier.indexOf('=')
-                if (separatorIndex < 0) null else qualifier.substring(0, separatorIndex) to qualifier.substring(separatorIndex + 1)
+                if (separatorIndex < 0) null else qualifier.substring(0, separatorIndex) to qualifier.substring(
+                    separatorIndex + 1
+                )
             }
             .toMutableList()
         val existingTypeIndex = qualifiers.indexOfFirst { it.first == "type" }
@@ -452,9 +624,14 @@ private fun Project.buildNormalizationPlan(
     val coordinateAliases = linkedMapOf<SbomComponentCoordinates, SbomComponentCoordinates>()
 
     projectPublicationCoordinates(publicationName)?.let { publicationCoordinates ->
-        pomPackagings.getOrPut(publicationCoordinates.coordinates) { linkedSetOf() }.add(publicationCoordinates.packaging)
+        pomPackagings.getOrPut(publicationCoordinates.coordinates) { linkedSetOf() }
+            .add(publicationCoordinates.packaging)
         publicationCoordinates.directDependencies.forEach { dependencyCoordinates ->
-            packagingFromCachedPom(dependencyCoordinates.group, dependencyCoordinates.name, dependencyCoordinates.version)?.let { packaging ->
+            packagingFromCachedPom(
+                dependencyCoordinates.group,
+                dependencyCoordinates.name,
+                dependencyCoordinates.version
+            )?.let { packaging ->
                 pomPackagings.getOrPut(dependencyCoordinates) { linkedSetOf() }.add(packaging)
             }
         }
@@ -475,6 +652,7 @@ private fun Project.buildNormalizationPlan(
                     }
                     c
                 }
+
                 is ProjectComponentIdentifier -> {
                     val dependencyProject = rootProject.findProject(id.projectPath) ?: return@forEach
                     val fallbackCoordinates = SbomComponentCoordinates(
@@ -484,10 +662,12 @@ private fun Project.buildNormalizationPlan(
                     )
                     dependencyProject.projectPublicationCoordinates(publicationName)?.let { publicationCoordinates ->
                         coordinateAliases[fallbackCoordinates] = publicationCoordinates.coordinates
-                        pomPackagings.getOrPut(publicationCoordinates.coordinates) { linkedSetOf() }.add(publicationCoordinates.packaging)
+                        pomPackagings.getOrPut(publicationCoordinates.coordinates) { linkedSetOf() }
+                            .add(publicationCoordinates.packaging)
                         publicationCoordinates.coordinates
                     } ?: fallbackCoordinates
                 }
+
                 else -> return@forEach
             }
             artifactTypes.getOrPut(coordinates) { linkedSetOf() }.add(extension)
@@ -505,7 +685,8 @@ private fun Project.buildNormalizationPlan(
 private fun packagingFromCachedPom(group: String, module: String, version: String): String? {
     val cacheRoot = File(System.getProperty("user.home"), ".gradle/caches/modules-2/files-2.1")
     val moduleDir = cacheRoot.resolve(group).resolve(module).resolve(version)
-    val pomFile = moduleDir.takeIf(File::exists)?.walkTopDown()?.firstOrNull { it.isFile && it.extension == "pom" } ?: return null
+    val pomFile =
+        moduleDir.takeIf(File::exists)?.walkTopDown()?.firstOrNull { it.isFile && it.extension == "pom" } ?: return null
     val documentBuilderFactory = DocumentBuilderFactory.newInstance().apply {
         isNamespaceAware = true
         setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true)
@@ -531,8 +712,9 @@ private fun Project.packagingForCoordinates(coordinates: SbomComponentCoordinate
             ?.packaging
 
 private fun Project.projectPublicationCoordinates(publicationName: String): PublishedCoordinates? {
-    val pomFile = layout.buildDirectory.file("publications/$publicationName/pom-default.xml").get().asFile.takeIf(File::exists)
-        ?: return null
+    val pomFile =
+        layout.buildDirectory.file("publications/$publicationName/pom-default.xml").get().asFile.takeIf(File::exists)
+            ?: return null
     return readPomCoordinates(pomFile)
 }
 
@@ -568,7 +750,8 @@ private fun readPomCoordinates(pomFile: File): PublishedCoordinates {
     }
 
     val packagingNodes = document.getElementsByTagName("packaging")
-    val packaging = if (packagingNodes.length == 0) "jar" else packagingNodes.item(0).textContent.trim().ifBlank { "jar" }
+    val packaging =
+        if (packagingNodes.length == 0) "jar" else packagingNodes.item(0).textContent.trim().ifBlank { "jar" }
     return PublishedCoordinates(
         coordinates = SbomComponentCoordinates(first("groupId"), first("artifactId"), first("version")),
         packaging = packaging,

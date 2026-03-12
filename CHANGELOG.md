@@ -14,6 +14,9 @@
 ## 20260122
  * Cleanup log output, removing blank lines
 
+## 20260312
+* SBOM generation support.
+
 ## 20260114
 * Fix dokka remoteUrl
 

@@ -189,11 +189,18 @@ plugin treats the normalized publication-specific pipeline as the supported outp
 
 ### SBOM Toggle
 
-SBOM creation is enabled by default. It can be disabled through the same cascading environment / extra-property lookup
-used elsewhere in the plugin:
+SBOM creation is disabled by default. It can be enabled through the same cascading environment / extra-property lookup
+used elsewhere in the plugin. If enabled it needs supplier infos:
 
 ```properties
-enableSbom=false
+enableSbom=true
+supplierName=A-SIT Plus GmbH
+supplierUrls=https://plus.a-sit.at https://github.com/a-sit-plus
+supplierContactName=A-SIT Plus Opensource
+supplierEmail=opensource@a-sit.at
+licenseId=Apache-2.0
+licenseName=Apache License 2.0
+licenseUrl=https://www.apache.org/licenses/LICENSE-2.0.txt
 ```
 
 This can be provided either as an environment variable or as an extra property.
