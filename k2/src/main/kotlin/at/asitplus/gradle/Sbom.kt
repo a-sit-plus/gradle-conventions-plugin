@@ -11,6 +11,9 @@ import org.gradle.api.Project
 import org.gradle.api.artifacts.component.ModuleComponentIdentifier
 import org.gradle.api.artifacts.component.ProjectComponentIdentifier
 import org.gradle.api.artifacts.result.ResolvedArtifactResult
+import org.gradle.api.attributes.Category
+import org.gradle.api.attributes.DocsType
+import org.gradle.api.attributes.Usage
 import org.gradle.api.provider.ListProperty
 import org.gradle.api.provider.Property
 import org.gradle.api.publish.PublishingExtension
@@ -21,22 +24,22 @@ import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.TaskAction
 import org.gradle.kotlin.dsl.findByType
+import org.gradle.kotlin.dsl.named
 import org.gradle.kotlin.dsl.register
 import org.gradle.kotlin.dsl.withType
 import org.gradle.language.base.plugins.LifecycleBasePlugin
+import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import java.io.File
-import java.util.*
+import java.util.Locale
 import javax.xml.XMLConstants
 import javax.xml.parsers.DocumentBuilderFactory
 
 val Project.enableSbom: Boolean
     get() = envExtra["enableSbom"]?.toBooleanStrictOrNull() ?: false
 
-
 val Project.licenseId get() = envExtra["licenseId"]?.trim()
 val Project.licenseName get() = envExtra["licenseName"]?.trim()
 val Project.licenseUrl get() = envExtra["licenseUrl"]?.trim()
-
 
 private data class SupplierInfo(
     val name: String,
@@ -45,19 +48,17 @@ private data class SupplierInfo(
     val email: String?,
 )
 
-
 private fun Bom.patchLicenseMetadata(
     licenseId: String,
     licenseName: String?,
     licenseUrl: String?,
 ) {
-
-    val license = org.cyclonedx.model.License().apply {
+    val license = License().apply {
         id = licenseId
         name = licenseName
         url = licenseUrl
     }
-    val choice = org.cyclonedx.model.LicenseChoice().apply {
+    val choice = LicenseChoice().apply {
         addLicense(license)
     }
 
@@ -66,7 +67,6 @@ private fun Bom.patchLicenseMetadata(
     }
 
     metadata!!.component?.licenses = choice
-
 }
 
 private fun Bom.patchFirstPartyComponentLicenses(
@@ -74,13 +74,12 @@ private fun Bom.patchFirstPartyComponentLicenses(
     licenseName: String?,
     licenseUrl: String?,
 ) {
-
     val rootGroup = metadata?.component?.group ?: return
     components?.forEach { component ->
         if (component.group == rootGroup) {
-            component.licenses = org.cyclonedx.model.LicenseChoice().apply {
+            component.licenses = LicenseChoice().apply {
                 addLicense(
-                    org.cyclonedx.model.License().apply {
+                    License().apply {
                         id = licenseId
                         name = licenseName
                         url = licenseUrl
@@ -90,7 +89,6 @@ private fun Bom.patchFirstPartyComponentLicenses(
         }
     }
 }
-
 
 private fun Project.supplierInfoFromEnvExtra(): SupplierInfo? {
     val name = envExtra["supplierName"]?.trim().orEmpty()
@@ -117,11 +115,11 @@ private fun SupplierInfo.toOrganizationalEntity(): OrganizationalEntity =
     OrganizationalEntity().apply {
         name = this@toOrganizationalEntity.name
         urls = this@toOrganizationalEntity.urls
-        if (contactName != null || email != null) {
+        if (this@toOrganizationalEntity.contactName != null || this@toOrganizationalEntity.email != null) {
             addContact(
                 OrganizationalContact().apply {
-                    name = contactName
-                    this.email = this@toOrganizationalEntity.email
+                    name = this@toOrganizationalEntity.contactName
+                    email = this@toOrganizationalEntity.email
                 }
             )
         }
@@ -132,7 +130,6 @@ internal fun Project.setupSbomSupport() {
         Logger.lifecycle("  > SBOM generation disabled for project $path")
         return
     }
-
 
     val supplierInfo = supplierInfoFromEnvExtra()
 
@@ -155,7 +152,11 @@ internal fun Project.setupSbomSupport() {
             publishing.publications.withType<MavenPublication>().configureEach {
                 val publication = this
                 val publicationConfigNames = cyclonedxConfigsForPublication(publication.name)
-                if (publication.name == "relocation" || publication.artifactId.endsWith("-versionCatalog") || publicationConfigNames.isEmpty()) {
+                if (
+                    publication.name == "relocation" ||
+                    publication.artifactId.endsWith("-versionCatalog") ||
+                    publicationConfigNames.isEmpty()
+                ) {
                     return@configureEach
                 }
 
@@ -187,16 +188,7 @@ internal fun Project.setupSbomSupport() {
                     dependsOn(tasks.matching {
                         it.name == "generatePomFileFor${
                             publication.name.replaceFirstChar { ch ->
-                                if (ch.isLowerCase()) ch.titlecase(
-                                    Locale.US
-                                ) else ch.toString()
-                            }
-                        }Publication" ||
-                                it.name == "generateMetadataFileFor${
-                            publication.name.replaceFirstChar { ch ->
-                                if (ch.isLowerCase()) ch.titlecase(
-                                    Locale.US
-                                ) else ch.toString()
+                                if (ch.isLowerCase()) ch.titlecase(Locale.US) else ch.toString()
                             }
                         }Publication"
                     })
@@ -211,6 +203,11 @@ internal fun Project.setupSbomSupport() {
                     supplierContactName.set(supplierInfo?.contactName.orEmpty())
                     supplierEmail.set(supplierInfo?.email.orEmpty())
                 }
+
+                if (publication.name == "kotlinMultiplatform") {
+                    registerRootKmpSbomVariants(normalizeTask)
+                }
+
                 val verifyTask = tasks.register<VerifyCyclonedxBomConsistencyTask>("${cyclonedxTaskName}Consistency") {
                     group = LifecycleBasePlugin.VERIFICATION_GROUP
                     description =
@@ -218,6 +215,7 @@ internal fun Project.setupSbomSupport() {
                     dependsOn(normalizeTask)
                     inputJson.set(normalizeTask.flatMap { it.outputJson })
                 }
+
                 val compareTask =
                     tasks.register<VerifyCyclonedxBomDirectDependenciesTask>("${cyclonedxTaskName}DirectDependencies") {
                         group = LifecycleBasePlugin.VERIFICATION_GROUP
@@ -232,15 +230,17 @@ internal fun Project.setupSbomSupport() {
                 publicationSbomTasks += verifyTask.name
                 publicationSbomTasks += compareTask.name
 
-                publication.artifact(normalizeTask.flatMap { it.outputJson }) {
-                    classifier = "cyclonedx"
-                    extension = "json"
-                    builtBy(normalizeTask)
-                }
-                publication.artifact(normalizeTask.flatMap { it.outputXml }) {
-                    classifier = "cyclonedx"
-                    extension = "xml"
-                    builtBy(normalizeTask)
+                if (publication.name != "kotlinMultiplatform") {
+                    publication.artifact(normalizeTask.flatMap { it.outputJson }) {
+                        classifier = "cyclonedx"
+                        extension = "json"
+                        builtBy(normalizeTask)
+                    }
+                    publication.artifact(normalizeTask.flatMap { it.outputXml }) {
+                        classifier = "cyclonedx"
+                        extension = "xml"
+                        builtBy(normalizeTask)
+                    }
                 }
             }
 
@@ -259,6 +259,56 @@ internal fun Project.setupSbomSupport() {
             }
         }
     }
+}
+
+private fun Project.registerRootKmpSbomVariants(
+    normalizeTask: org.gradle.api.tasks.TaskProvider<NormalizeCyclonedxBomTask>,
+) {
+    val kotlin = extensions.findByType<KotlinMultiplatformExtension>()
+        ?: error("kotlinMultiplatform publication exists in $path, but KotlinMultiplatformExtension was not found")
+
+    val jsonElements = configurations.maybeCreate("kotlinMultiplatformSbomJsonElements").apply {
+        isCanBeConsumed = true
+        isCanBeResolved = false
+        isVisible = false
+        description = "Documentation-only CycloneDX JSON SBOM variant for the kotlinMultiplatform publication"
+
+        attributes {
+            attribute(Category.CATEGORY_ATTRIBUTE, objects.named(Category.DOCUMENTATION))
+            attribute(DocsType.DOCS_TYPE_ATTRIBUTE, objects.named("sbom-cyclonedx-json"))
+            attribute(Usage.USAGE_ATTRIBUTE, objects.named(Usage.JAVA_RUNTIME))
+        }
+
+        outgoing.artifacts.clear()
+        outgoing.artifact(normalizeTask.flatMap { it.outputJson }) {
+            classifier = "cyclonedx"
+            extension = "json"
+            builtBy(normalizeTask)
+        }
+    }
+
+    val xmlElements = configurations.maybeCreate("kotlinMultiplatformSbomXmlElements").apply {
+        isCanBeConsumed = true
+        isCanBeResolved = false
+        isVisible = false
+        description = "Documentation-only CycloneDX XML SBOM variant for the kotlinMultiplatform publication"
+
+        attributes {
+            attribute(Category.CATEGORY_ATTRIBUTE, objects.named(Category.DOCUMENTATION))
+            attribute(DocsType.DOCS_TYPE_ATTRIBUTE, objects.named("sbom-cyclonedx-xml"))
+            attribute(Usage.USAGE_ATTRIBUTE, objects.named(Usage.JAVA_RUNTIME))
+        }
+
+        outgoing.artifacts.clear()
+        outgoing.artifact(normalizeTask.flatMap { it.outputXml }) {
+            classifier = "cyclonedx"
+            extension = "xml"
+            builtBy(normalizeTask)
+        }
+    }
+
+    kotlin.publishing.adhocSoftwareComponent.addVariantsFromConfiguration(jsonElements) {}
+    kotlin.publishing.adhocSoftwareComponent.addVariantsFromConfiguration(xmlElements) {}
 }
 
 private fun Project.cyclonedxConfigsForPublication(publicationName: String): List<String> {
@@ -352,7 +402,6 @@ abstract class NormalizeCyclonedxBomTask : DefaultTask() {
                     email = supplierEmail.orNull?.trim()?.ifBlank { null },
                 )
             }
-
 
         val refRewrites = LinkedHashMap<String, String>()
         val jsonBom = JsonParser().parse(inputJson.get().asFile)
@@ -476,7 +525,6 @@ abstract class NormalizeCyclonedxBomTask : DefaultTask() {
             !purl.startsWith("pkg:maven/") -> purl
             else -> {
                 val queryIndex = purl.indexOf('?').let { if (it < 0) purl.length else it }
-                val atIndex = purl.indexOf('@').takeIf { it in "pkg:maven/".length until queryIndex } ?: queryIndex
                 buildString {
                     append("pkg:maven/")
                     append(coordinates.group)
