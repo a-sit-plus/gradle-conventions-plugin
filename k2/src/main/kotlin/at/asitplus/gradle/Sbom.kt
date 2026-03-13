@@ -1,5 +1,6 @@
 package at.asitplus.gradle
 
+import groovy.json.JsonSlurper
 import org.cyclonedx.Version
 import org.cyclonedx.generators.BomGeneratorFactory
 import org.cyclonedx.gradle.CyclonedxDirectTask
@@ -30,6 +31,8 @@ import org.gradle.kotlin.dsl.withType
 import org.gradle.language.base.plugins.LifecycleBasePlugin
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import java.io.File
+import java.net.URL
+import java.net.URLConnection
 import java.util.Locale
 import javax.xml.XMLConstants
 import javax.xml.parsers.DocumentBuilderFactory
@@ -47,6 +50,103 @@ private data class SupplierInfo(
     val contactName: String?,
     val email: String?,
 )
+
+private data class SupplierMapping(
+    val prefixes: List<String>,
+    val supplier: SupplierInfo,
+)
+
+private fun List<SupplierMapping>.findSupplierForGroup(group: String?): SupplierInfo? {
+    if (group.isNullOrBlank()) return null
+
+    return asSequence()
+        .flatMap { mapping -> mapping.prefixes.asSequence().map { prefix -> prefix to mapping.supplier } }
+        .filter { (prefix, _) -> group == prefix || group.startsWith("$prefix.") }
+        .maxByOrNull { (prefix, _) -> prefix.length }
+        ?.second
+}
+
+private fun openSupplierMappingConnection(urlString: String): URLConnection {
+    val url = URL(urlString)
+    require(url.protocol.lowercase(Locale.ROOT) != "http") {
+        "Plain http is not allowed for supplier mapping URL: $urlString"
+    }
+    return url.openConnection().apply {
+        connectTimeout = 5_000
+        readTimeout = 10_000
+    }
+}
+
+/*
+Expected JSON shape:
+
+[
+  {
+    "prefixes": ["org.jetbrains.kotlin", "org.jetbrains"],
+    "supplier": {
+      "name": "JetBrains",
+      "urls": ["https://www.jetbrains.com"],
+      "contactName": "JetBrains",
+      "email": "support@jetbrains.com"
+    }
+  }
+]
+*/
+private fun loadSupplierMappings(urlString: String): List<SupplierMapping> {
+    val connection = openSupplierMappingConnection(urlString)
+    val parsed = connection.getInputStream().bufferedReader().use { reader ->
+        JsonSlurper().parse(reader)
+    }
+
+    require(parsed is List<*>) {
+        "Supplier mapping JSON must be a top-level array: $urlString"
+    }
+
+    return parsed.mapIndexed { index, rawEntry ->
+        require(rawEntry is Map<*, *>) {
+            "Supplier mapping entry #$index must be an object"
+        }
+
+        val prefixes = (rawEntry["prefixes"] as? List<*>)
+            ?.mapNotNull { it?.toString()?.trim() }
+            ?.filter { it.isNotBlank() }
+            .orEmpty()
+
+        require(prefixes.isNotEmpty()) {
+            "Supplier mapping entry #$index must contain a non-empty 'prefixes' list"
+        }
+
+        val rawSupplier = rawEntry["supplier"] as? Map<*, *>
+            ?: error("Supplier mapping entry #$index must contain a 'supplier' object")
+
+        val name = rawSupplier["name"]?.toString()?.trim().orEmpty()
+        require(name.isNotBlank()) {
+            "Supplier mapping entry #$index has supplier with missing/blank 'name'"
+        }
+
+        val urls = when (val rawUrls = rawSupplier["urls"]) {
+            is List<*> -> rawUrls.mapNotNull { it?.toString()?.trim() }.filter { it.isNotBlank() }
+            null -> emptyList()
+            else -> error("Supplier mapping entry #$index has supplier 'urls' that is not a list")
+        }
+
+        val contactName = rawSupplier["contactName"]?.toString()?.trim()?.ifBlank { null }
+        val email = rawSupplier["email"]?.toString()?.trim()?.ifBlank { null }
+
+        SupplierMapping(
+            prefixes = prefixes,
+            supplier = SupplierInfo(
+                name = name,
+                urls = urls,
+                contactName = contactName,
+                email = email,
+            ),
+        )
+    }
+}
+
+private fun Project.supplierMappingsUrlFromEnvExtra(): String? =
+    envExtra["supplierMappingsUrl"]?.trim()?.ifBlank { null }
 
 private fun Bom.patchLicenseMetadata(
     licenseId: String,
@@ -202,6 +302,7 @@ internal fun Project.setupSbomSupport() {
                     supplierUrls.set(supplierInfo?.urls ?: emptyList())
                     supplierContactName.set(supplierInfo?.contactName.orEmpty())
                     supplierEmail.set(supplierInfo?.email.orEmpty())
+                    supplierMappingsUrl.set(project.supplierMappingsUrlFromEnvExtra().orEmpty())
                 }
 
                 if (publication.name == "kotlinMultiplatform") {
@@ -376,6 +477,9 @@ abstract class NormalizeCyclonedxBomTask : DefaultTask() {
     @get:Input
     abstract val supplierEmail: Property<String>
 
+    @get:Input
+    abstract val supplierMappingsUrl: Property<String>
+
     @get:InputFile
     abstract val inputJson: org.gradle.api.file.RegularFileProperty
 
@@ -403,9 +507,21 @@ abstract class NormalizeCyclonedxBomTask : DefaultTask() {
                 )
             }
 
+        val thirdPartySupplierMappings = supplierMappingsUrl.orNull
+            ?.trim()
+            ?.takeIf { it.isNotBlank() }
+            ?.let(::loadSupplierMappings)
+            .orEmpty()
+
         val refRewrites = LinkedHashMap<String, String>()
         val jsonBom = JsonParser().parse(inputJson.get().asFile)
-            .normalizeBom(normalizationPlan, publicationCoordinates, refRewrites, supplierInfo)
+            .normalizeBom(
+                normalizationPlan = normalizationPlan,
+                publicationCoordinates = publicationCoordinates,
+                refRewrites = refRewrites,
+                supplierInfo = supplierInfo,
+                thirdPartySupplierMappings = thirdPartySupplierMappings,
+            )
 
         outputJson.get().asFile.apply {
             parentFile.mkdirs()
@@ -422,12 +538,13 @@ abstract class NormalizeCyclonedxBomTask : DefaultTask() {
         publicationCoordinates: PublishedCoordinates,
         refRewrites: MutableMap<String, String>,
         supplierInfo: SupplierInfo?,
+        thirdPartySupplierMappings: List<SupplierMapping>,
     ): Bom {
         metadata?.component?.rewriteComponent(normalizationPlan, refRewrites)
         components?.forEach { component -> component.rewriteComponent(normalizationPlan, refRewrites) }
         dependencies = dependencies?.map { it.rewrittenDependency(refRewrites) }?.toMutableList()
         alignRootDependenciesToPublicationPom(publicationCoordinates)
-        patchSupplierMetadata(supplierInfo)
+        patchSupplierMetadata(supplierInfo, thirdPartySupplierMappings)
 
         project.licenseId?.let {
             patchLicenseMetadata(it, project.licenseName, project.licenseUrl)
@@ -436,22 +553,43 @@ abstract class NormalizeCyclonedxBomTask : DefaultTask() {
         return this
     }
 
-    private fun Bom.patchSupplierMetadata(supplierInfo: SupplierInfo?) {
-        if (supplierInfo == null) return
-
-        val supplier = supplierInfo.toOrganizationalEntity()
+    private fun Bom.patchSupplierMetadata(
+        supplierInfo: SupplierInfo?,
+        thirdPartySupplierMappings: List<SupplierMapping>,
+    ) {
+        if (supplierInfo == null && thirdPartySupplierMappings.isEmpty()) return
 
         if (metadata == null) {
             metadata = Metadata()
         }
 
-        metadata!!.supplier = supplier
-        metadata!!.component?.supplier = supplier
-
         val ownGroup = metadata!!.component?.group
+        val firstPartySupplier = supplierInfo?.toOrganizationalEntity()
+
+        if (firstPartySupplier != null) {
+            metadata!!.supplier = firstPartySupplier
+            metadata!!.component?.supplier = firstPartySupplier
+        }
+
         components?.forEach { component ->
-            if (component.group != null && component.group == ownGroup) {
-                component.supplier = supplier
+            val group = component.group ?: return@forEach
+
+            when {
+                ownGroup != null && group == ownGroup -> {
+                    if (firstPartySupplier != null) {
+                        component.supplier = firstPartySupplier
+                    }
+                }
+
+                else -> {
+                    val thirdPartySupplier = thirdPartySupplierMappings
+                        .findSupplierForGroup(group)
+                        ?.toOrganizationalEntity()
+
+                    if (thirdPartySupplier != null) {
+                        component.supplier = thirdPartySupplier
+                    }
+                }
             }
         }
     }
