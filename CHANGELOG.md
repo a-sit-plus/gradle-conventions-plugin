@@ -1,5 +1,8 @@
 # Gradle 9
 
+## 20160214
+* Externalise SBOM support into dedicated plugin
+
 ## 20260309
 * Add publication-specific CycloneDX SBOM support to the conventions plugin
   * applies CycloneDX automatically when `enableSbom=true`
