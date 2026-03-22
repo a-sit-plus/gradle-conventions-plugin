@@ -158,7 +158,6 @@ open class K2Conventions : Plugin<Project> {
 
         if (target != target.rootProject) {
             target.addVersionCatalogSupport()
-            target.setupSbomSupport()
         }
 
         if (target == target.rootProject) {
