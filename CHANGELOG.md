@@ -1,5 +1,10 @@
 # Gradle 9
 
+## 20260429
+* remove bogis CycloneDX dependency
+* kotlinx.serialization 1.11.0
+* TestBalloonAddons 0.8.0
+
 ## 20160214
 * Externalise SBOM support into dedicated plugin
 
