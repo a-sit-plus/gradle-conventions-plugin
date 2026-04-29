@@ -3,11 +3,11 @@
   <groupId>at.asitplus.gradle.conventions</groupId>
   <artifactId>at.asitplus.gradle.conventions.gradle.plugin</artifactId>
   <versioning>
-    <latest>20260314</latest>
-    <release>20260314</release>
+    <latest>20260428</latest>
+    <release>20260428</release>
     <versions>
-      <version>20260314</version>
+      <version>20260428</version>
     </versions>
-    <lastUpdated>20260322172449</lastUpdated>
+    <lastUpdated>20260429104140</lastUpdated>
   </versioning>
 </metadata>
