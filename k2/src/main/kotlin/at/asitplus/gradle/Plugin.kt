@@ -82,11 +82,8 @@ private val KEY_VERSION_CATALOG_PUBLISH = Random.nextBits(32).toString(36)
 /**
  * Toggle automagic version catalog publishing as `${artefactName}-versionCatalog`
  */
-var Project.publishVersionCatalog: Boolean
-    get() = kotlin.runCatching { extraProperties[KEY_VERSION_CATALOG_PUBLISH] as Boolean }.getOrElse { false }
-    set(value) {
-        extraProperties[KEY_VERSION_CATALOG_PUBLISH] = value
-    }
+val Project.publishVersionCatalog: Boolean
+    get() = runCatching { (extraProperties["publishVersionCatalog"] as String).toBooleanStrictOrNull() ?: true }.getOrElse { true }
 
 /**
  * access to [at.asitplus.gradle.AspVersions]
@@ -135,7 +132,6 @@ open class K2Conventions : Plugin<Project> {
                 versionOverrides(it)
             }
         target.apply(plugin = "org.jetbrains.dokka")
-        target.publishVersionCatalog = true
 
         Logger.lifecycle(
             "\n  ASP Conventions ${H}${target.AspVersions.kotlin}+$buildDate$R is using the following dependency versions for project $H${
