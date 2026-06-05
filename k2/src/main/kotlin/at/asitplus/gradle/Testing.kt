@@ -38,9 +38,7 @@ private fun Project.testDeps(target: String?=null) :List<String> {
     }
     if (System.getProperty("TESTBALLOON_NO_ASP_HELPER") != "true") {
         list.add("de.infix.testBalloon:testBalloon-framework-core:${project.AspVersions.testballoon}")
-        list.add("at.asitplus.testballoon:fixturegen-freespec:${project.AspVersions.testballoonAddons}")
-        list.add("at.asitplus.testballoon:datatest:${project.AspVersions.testballoonAddons}")
-        list.add("at.asitplus.testballoon:property:${project.AspVersions.testballoonAddons}")
+        list.add("at.asitplus.testballoon:matrix:${project.AspVersions.testballoonAddons}")
     }
     return list
 }

@@ -1,5 +1,16 @@
 # Gradle 9
 
+## 20260606
+* Use only Matrix test DSL
+  * Add `tbAddons` shorthand to conveniently add other addon modules
+* Dependency Updates:
+  * TestBalloon 1.0.0
+  * TestBalloon Addons 0.12.0
+  * Ktor 3.5.0
+  * Dokka 2.2.0
+  * Bouncy Castle 1.84
+  * kotlinx.coroutines 1.11.0
+
 ## 20260526
 * fix version catalog toggle
 

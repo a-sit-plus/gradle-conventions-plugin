@@ -46,6 +46,12 @@ private fun String?.toSuffix() = this?.let { "-$it" } ?: ""
 @JvmOverloads
 fun Project.kotest(module: String, target: String? = null) =
     "io.kotest:kotest-$module${target.toSuffix()}:${AspVersions.kotest}"
+/**
+ * Shorthand function to get the coordinates for a specific TestBalloon Addons dependency (*NOT added to the version catalog*)
+ */
+@JvmOverloads
+fun Project.tbAddons(module: String, target: String? = null) =
+    "at.asitplus.testballoon:$module${target.toSuffix()}:${project.AspVersions.testballoonAddons}"
 
 
 /**
