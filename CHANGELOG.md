@@ -1,5 +1,11 @@
 # Gradle 9
 
+## 20260701
+* Actually removed https://s01.oss.sonatype.org/content/repositories/snapshots from maven repos
+* Ktor 3.5.1
+* kotlinx.datetime 0.8.0
+* TestBalloon 1.0.1
+
 ## 20260610
 * TestBalloon Addons 0.15.0
 

@@ -180,7 +180,6 @@ open class K2Conventions : Plugin<Project> {
                         }
                     }
                     maven("https://central.sonatype.com/repository/maven-snapshots/")
-                    maven("https://oss.sonatype.org/content/repositories/snapshots")
                     google()
                     mavenCentral()
                 }
