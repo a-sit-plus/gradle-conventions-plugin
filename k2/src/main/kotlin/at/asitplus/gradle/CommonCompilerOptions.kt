@@ -28,12 +28,17 @@ internal inline fun KotlinMultiplatformExtension.experimentalOptIns() {
         freeCompilerArgs.add("-Xexpect-actual-classes")
     }
 
-    targets.whenObjectAdded {
+    // `configureEach` (not `whenObjectAdded`): this runs from within `afterEvaluate`, so every target is
+    // already registered — `whenObjectAdded` would fire for none of them and the return-value checker would
+    // silently never be applied. `configureEach` covers both already-registered and future targets.
+    targets.configureEach {
         compilations.configureEach {
-            compileTaskProvider.get().compilerOptions {
-                freeCompilerArgs.add("-Xexpect-actual-classes")
-                if (returnValueChecker == "check" || returnValueChecker == "full")
-                    freeCompilerArgs.add("-Xreturn-value-checker=$returnValueChecker")
+            compileTaskProvider.configure {
+                compilerOptions {
+                    freeCompilerArgs.add("-Xexpect-actual-classes")
+                    if (returnValueChecker == "check" || returnValueChecker == "full")
+                        freeCompilerArgs.add("-Xreturn-value-checker=$returnValueChecker")
+                }
             }
         }
     }

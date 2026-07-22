@@ -83,7 +83,9 @@ private val KEY_VERSION_CATALOG_PUBLISH = Random.nextBits(32).toString(36)
  * Toggle automagic version catalog publishing as `${artefactName}-versionCatalog`
  */
 val Project.publishVersionCatalog: Boolean
-    get() = runCatching { (extraProperties["publishVersionCatalog"] as String).toBooleanStrictOrNull() ?: true }.getOrElse { true }
+    get() = runCatching {
+        (extraProperties["publishVersionCatalog"] as String).toBooleanStrictOrNull() ?: true
+    }.getOrElse { true }
 
 /**
  * access to [at.asitplus.gradle.AspVersions]
@@ -238,9 +240,20 @@ open class K2Conventions : Plugin<Project> {
             if (target != target.rootProject) {
                 Logger.lifecycle("  Enabling unsigned types")
                 Logger.lifecycle("  Enabling context parameters")
-                if (kotlin is KotlinMultiplatformExtension) kotlin.sourceSets.whenObjectAdded {
-                    languageSettings.optIn("kotlin.ExperimentalUnsignedTypes")
-                    languageSettings.enableLanguageFeature("ContextParameters")
+                if (kotlin is KotlinMultiplatformExtension) {
+                    // `configureEach` (not `whenObjectAdded`): AGP 9's KMP android target creates `androidMain`
+                    // eagerly at apply time — before this callback — so `whenObjectAdded` would miss it while the
+                    // conventions-created `androidJvmMain` gets the opt-in, and KGP then rejects the inconsistency
+                    // (`androidMain` depends on `androidJvmMain` but lacks its opt-ins). configureEach covers all.
+                    kotlin.sourceSets.configureEach {
+                        languageSettings.optIn("kotlin.ExperimentalUnsignedTypes")
+                    }
+                    // `languageSettings.enableLanguageFeature(...)` is deprecated-to-error (it sets an internal
+                    // compiler arg); enable context parameters via the sanctioned compiler flag instead.
+                    kotlin.compilerOptions {
+                        freeCompilerArgs.add("-Xcontext-parameters")
+                        freeCompilerArgs.add("-Xexplicit-backing-fields")
+                    }
                 } else (kotlin as KotlinJvmExtension).apply {
                     jvmToolchain(target.jvmTarget.toInt())
                     forceApiVersion()

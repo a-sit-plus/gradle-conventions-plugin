@@ -1,5 +1,10 @@
 # Gradle 9
 
+## 20260722
+* AGP 9-only
+* Remove support for old Android plugin
+* TestBalloonAddons 0.16.0 by default
+
 ## 20260701
 * Actually removed https://s01.oss.sonatype.org/content/repositories/snapshots from maven repos
 * Ktor 3.5.1

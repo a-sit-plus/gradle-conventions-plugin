@@ -1,7 +1,6 @@
 package at.asitplus.gradle
 
 import com.android.build.api.dsl.KotlinMultiplatformAndroidLibraryTarget
-import com.android.build.api.dsl.androidLibrary
 import org.gradle.api.JavaVersion
 import org.gradle.api.NamedDomainObjectContainer
 import org.gradle.api.Project
@@ -15,12 +14,10 @@ import org.jetbrains.kotlin.gradle.plugin.extraProperties
 import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinAndroidTarget
 
 val PluginAware.isAndroidApplication get() = pluginManager.findPlugin("com.android.application") != null
-val PluginAware.isAndroidLibrary get() = pluginManager.findPlugin("com.android.library") != null
 val PluginAware.isNewAndroidLibrary get() = pluginManager.findPlugin("com.android.kotlin.multiplatform.library") != null
 
-internal val PluginAware.hasOldAgp get() = isAndroidApplication || isAndroidLibrary
 
-val PluginAware.agpVersion get() = if (hasOldAgp || isNewAndroidLibrary) com.android.builder.model.Version.ANDROID_GRADLE_PLUGIN_VERSION else null
+val PluginAware.agpVersion get() = if (isAndroidApplication || isNewAndroidLibrary) com.android.builder.model.Version.ANDROID_GRADLE_PLUGIN_VERSION else null
 
 /**
  * A project extension property that determines whether to keep Android-specific JVM main source sets.
@@ -68,7 +65,7 @@ val Project.raiseAndroidTestToJdkTarget: Boolean
     }.toBoolean()
 
 internal fun Project.setAndroidOptions() {
-    if (hasOldAgp) extensions.getByType<com.android.build.gradle.BaseExtension>().apply {
+    if (isAndroidApplication) extensions.getByType<com.android.build.gradle.BaseExtension>().apply {
         compileOptions {
             if (androidMinSdk == null)
                 throw StopExecutionException("Android Gradle Plugin found, but no android.minSdk set in properties! To fix this add android.minSdk=<sdk-version> to gradle.properties")
@@ -89,16 +86,20 @@ internal fun Project.setAndroidOptions() {
         val compat = androidJvmTarget
         Logger.lifecycle("  ${H}Setting Android source and target compatibility to ${compat}.$R")
         extensions.getByType<KotlinMultiplatformExtension>().apply {
-            androidLibrary {
+            // AGP 9.0 removed the `androidLibrary { }` extension function on KotlinMultiplatformExtension;
+            // the `com.android.kotlin.multiplatform.library` target is now a normal KMP target that also
+            // carries the compileSdk/minSdk DSL. Configure it via the targets container instead.
+            targets.withType<KotlinMultiplatformAndroidLibraryTarget>().configureEach {
                 compileSdk = androidCompileSdk
                 minSdk = androidMinSdk
                 compilations.configureEach {
-                    if (name.contains("test", ignoreCase = true)) {
-                        if (raiseAndroidTestToJdkTarget) compilerOptions.configure {
-                            jvmTarget.set(JvmTarget.fromTarget(project.jvmTarget))
+                    val targetVersion = if (name.contains("test", ignoreCase = true)) {
+                        if (raiseAndroidTestToJdkTarget) project.jvmTarget else null
+                    } else compat
+                    targetVersion?.let { v ->
+                        compileTaskProvider.configure {
+                            compilerOptions.jvmTarget.set(JvmTarget.fromTarget(v))
                         }
-                    } else compilerOptions.configure {
-                        jvmTarget.set(JvmTarget.fromTarget(compat!!))
                     }
                 }
             }
@@ -128,7 +129,7 @@ internal fun Project.createAndroidJvmSharedSources() {
     kmp.targets.whenObjectAdded {
         if (sharedAdded) return@whenObjectAdded
         kmp.applyDefaultHierarchyTemplate()
-        if ((hasOldAgp || isNewAndroidLibrary || keepAndroidJvmTarget) && kmp.hasJvmTarget()) kmp.apply {
+        if ((isAndroidApplication || isNewAndroidLibrary || keepAndroidJvmTarget) && kmp.hasJvmTarget()) kmp.apply {
             if (hasAndroidTarget || keepAndroidJvmTarget) {
                 sharedAdded = true
                 Logger.lifecycle("  ${H}Creating androidJvmMain shared source set$R")
@@ -154,7 +155,7 @@ fun NamedDomainObjectContainer<KotlinSourceSet>.androidJvmMain(configure: Kotlin
 internal fun KotlinMultiplatformExtension.linkAgpJvmSharedSources() {
     Logger.lifecycle("  ${H}Linking androidJvmMain shared source set$R")
     targets.whenObjectAdded {
-        if ((project.hasOldAgp || project.isNewAndroidLibrary || project.keepAndroidJvmTarget) && this@linkAgpJvmSharedSources.hasJvmTarget()) {
+        if ((project.isAndroidApplication || project.isNewAndroidLibrary || project.keepAndroidJvmTarget) && this@linkAgpJvmSharedSources.hasJvmTarget()) {
             this@linkAgpJvmSharedSources.sourceSets.apply {
                 val androidJvmMain by getting
                 if (this@linkAgpJvmSharedSources.hasAndroidTarget) get("androidMain").dependsOn(androidJvmMain)
@@ -166,12 +167,7 @@ internal fun KotlinMultiplatformExtension.linkAgpJvmSharedSources() {
 }
 
 private fun KotlinMultiplatformExtension.setupAndroidTarget() {
-    if (project.hasOldAgp) androidTarget {
-        if (project.isAndroidLibrary) publishLibraryVariants.let {
-            if (it == null || it.isEmpty())
-                throw StopExecutionException("Android target found, but no publishing variant set. Setting publishing variants is mandatory for Android libraries! Otherwise no Android library artefact will be created.")
-
-        }
+    if (project.isAndroidApplication) androidTarget {
         Logger.info("  [AND] Setting jsr305=strict for JVM nullability annotations")
 
         compilerOptions {
