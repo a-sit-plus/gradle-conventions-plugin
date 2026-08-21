@@ -3,6 +3,7 @@
 ## 20260722
 * AGP 9-only
 * Remove support for old Android plugin
+* Configure Android applications through the AGP 9 `ApplicationExtension` and built-in Kotlin extension
 * TestBalloonAddons 0.16.0 by default
 
 ## 20260701

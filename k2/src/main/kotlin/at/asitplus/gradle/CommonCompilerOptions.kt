@@ -2,6 +2,7 @@
 
 package at.asitplus.gradle
 
+import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
@@ -54,6 +55,15 @@ internal fun KotlinMultiplatformExtension.forceApiVersion() {
 }
 
 internal fun KotlinJvmExtension.forceApiVersion() {
+    val kotlinVer = coreLibrariesVersion.split(".").let { it.first() + "." + it[1] }
+    Logger.info("  [ForceApi] Forcing Api Version: $kotlinVer")
+    compilerOptions {
+        apiVersion.set(KotlinVersion.fromVersion(kotlinVer))
+        languageVersion.set(KotlinVersion.fromVersion(kotlinVer))
+    }
+}
+
+internal fun KotlinAndroidProjectExtension.forceApiVersion() {
     val kotlinVer = coreLibrariesVersion.split(".").let { it.first() + "." + it[1] }
     Logger.info("  [ForceApi] Forcing Api Version: $kotlinVer")
     compilerOptions {

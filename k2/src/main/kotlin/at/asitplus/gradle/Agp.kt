@@ -1,5 +1,6 @@
 package at.asitplus.gradle
 
+import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.dsl.KotlinMultiplatformAndroidLibraryTarget
 import org.gradle.api.JavaVersion
 import org.gradle.api.NamedDomainObjectContainer
@@ -65,7 +66,7 @@ val Project.raiseAndroidTestToJdkTarget: Boolean
     }.toBoolean()
 
 internal fun Project.setAndroidOptions() {
-    if (isAndroidApplication) extensions.getByType<com.android.build.gradle.BaseExtension>().apply {
+    if (isAndroidApplication) extensions.getByType<ApplicationExtension>().apply {
         compileOptions {
             if (androidMinSdk == null)
                 throw StopExecutionException("Android Gradle Plugin found, but no android.minSdk set in properties! To fix this add android.minSdk=<sdk-version> to gradle.properties")
@@ -80,7 +81,7 @@ internal fun Project.setAndroidOptions() {
         defaultConfig.minSdk = androidMinSdk!!
         androidCompileSdk?.let {
             Logger.lifecycle("  ${H}Setting Android compileSDK to ${it}$R")
-            compileSdkVersion(it)
+            compileSdk = it
         }
     } else if (isNewAndroidLibrary) {
         val compat = androidJvmTarget
