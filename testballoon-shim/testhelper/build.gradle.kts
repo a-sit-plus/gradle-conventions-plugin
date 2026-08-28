@@ -1,5 +1,5 @@
 import at.asitplus.gradle.kotest
-import at.asitplus.gradle.publishVersionCatalog
+import com.android.build.api.dsl.KotlinMultiplatformAndroidLibraryTarget
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import java.util.*
 
@@ -23,11 +23,11 @@ repositories {
     google()
 }
 
-publishVersionCatalog = false
+extensions.extraProperties["publishVersionCatalog"] = "false"
 
 kotlin {
     jvm()
-    androidLibrary{
+    targets.withType<KotlinMultiplatformAndroidLibraryTarget>().configureEach {
         namespace = "at.asitplus.gradle.test"
         packaging {
             listOf(

@@ -14,6 +14,7 @@ import org.gradle.api.tasks.StopExecutionException
 import org.gradle.kotlin.dsl.*
 import org.gradle.plugins.ide.idea.model.IdeaModel
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmExtension
+import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinBasePlugin
@@ -235,7 +236,7 @@ open class K2Conventions : Plugin<Project> {
 
         runCatching {
             target.setupTestExtensions()
-            val kotlin = target.kotlinExtension
+            val kotlin = target.extensions.findByType<KotlinAndroidProjectExtension>() ?: target.kotlinExtension
 
             if (target != target.rootProject) {
                 Logger.lifecycle("  Enabling unsigned types")
@@ -254,13 +255,27 @@ open class K2Conventions : Plugin<Project> {
                         freeCompilerArgs.add("-Xcontext-parameters")
                         freeCompilerArgs.add("-Xexplicit-backing-fields")
                     }
-                } else (kotlin as KotlinJvmExtension).apply {
-                    jvmToolchain(target.jvmTarget.toInt())
-                    forceApiVersion()
-                    target.tasks.withType<KotlinJvmCompile>().configureEach {
-                        compilerOptions {
-                            freeCompilerArgs.add("-Xcontext-parameters")
+                } else {
+                    when (kotlin) {
+                        is KotlinAndroidProjectExtension -> kotlin.apply {
+                            jvmToolchain(target.jvmTarget.toInt())
+                            forceApiVersion()
+                            compilerOptions {
+                                jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.fromTarget(target.androidJvmTarget!!))
+                                optIn.add("kotlin.ExperimentalUnsignedTypes")
+                                freeCompilerArgs.add("-Xcontext-parameters")
+                            }
                         }
+                        is KotlinJvmExtension -> kotlin.apply {
+                            jvmToolchain(target.jvmTarget.toInt())
+                            forceApiVersion()
+                            target.tasks.withType<KotlinJvmCompile>().configureEach {
+                                compilerOptions {
+                                    freeCompilerArgs.add("-Xcontext-parameters")
+                                }
+                            }
+                        }
+                        else -> error("Unsupported Kotlin extension ${kotlin::class.qualifiedName}")
                     }
                 }
 
