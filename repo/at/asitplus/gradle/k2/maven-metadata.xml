@@ -3,11 +3,11 @@
   <groupId>at.asitplus.gradle</groupId>
   <artifactId>k2</artifactId>
   <versioning>
-    <latest>20260722</latest>
-    <release>20260722</release>
+    <latest>20260828</latest>
+    <release>20260828</release>
     <versions>
-      <version>20260722</version>
+      <version>20260828</version>
     </versions>
-    <lastUpdated>20260722154020</lastUpdated>
+    <lastUpdated>20260828171652</lastUpdated>
   </versioning>
 </metadata>
