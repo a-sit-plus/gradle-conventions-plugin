@@ -1,5 +1,11 @@
 # Gradle 9
 
+## 20260914
+* BouncyCastle 1.85 by default
+* TestBalloon 1.1.0 by default
+* TestBalloon Addons 0.16.2 by default
+* Ktor 3.5.2 by default
+
 ## 20260722
 * AGP 9-only
 * Remove support for old Android plugin

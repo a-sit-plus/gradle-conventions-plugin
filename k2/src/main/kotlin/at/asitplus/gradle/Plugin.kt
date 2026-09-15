@@ -264,6 +264,7 @@ open class K2Conventions : Plugin<Project> {
                                 jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.fromTarget(target.androidJvmTarget!!))
                                 optIn.add("kotlin.ExperimentalUnsignedTypes")
                                 freeCompilerArgs.add("-Xcontext-parameters")
+                                freeCompilerArgs.add("-Xexplicit-backing-fields")
                             }
                         }
                         is KotlinJvmExtension -> kotlin.apply {
@@ -272,6 +273,7 @@ open class K2Conventions : Plugin<Project> {
                             target.tasks.withType<KotlinJvmCompile>().configureEach {
                                 compilerOptions {
                                     freeCompilerArgs.add("-Xcontext-parameters")
+                                    freeCompilerArgs.add("-Xexplicit-backing-fields")
                                 }
                             }
                         }
