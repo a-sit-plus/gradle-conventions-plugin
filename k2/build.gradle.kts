@@ -27,11 +27,13 @@ val nexus = versions["nexus"]
 val kotest = versions["kotest"]
 val ktor = versions["ktor"]
 val agp = versions["agp"]
+val tba = versions["testballoonAddons"]
 
 version = buildDate
 group = groupId
 
 dependencies {
+    api("at.asitplus.testballoon:gradle-plugin:$tba")
     compileOnly("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     compileOnly("org.jetbrains.kotlin:kotlin-serialization:$kotlinVersion")
     api("io.ktor.plugin:plugin:$ktor")

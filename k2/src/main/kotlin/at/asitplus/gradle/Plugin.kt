@@ -162,7 +162,10 @@ open class K2Conventions : Plugin<Project> {
         if (target == target.rootProject) {
             Logger.lifecycle("  Adding Nexus Publish plugin ${target.AspVersions.nexus}")
             target.plugins.apply("io.github.gradle-nexus.publish-plugin")
-
+            if (System.getProperty("KOTEST_NO_ASP_HELPER") != "true") {
+                Logger.lifecycle("  Adding Nexus TestBalloon Addons plugin ${target.AspVersions.testballoonAddons}")
+                target.plugins.apply("at.asitplus.testballoon.addons")
+            }
             target.plugins.apply("idea")
 
             Logger.lifecycle("  ${H}Configuring IDEA to use Java ${target.jvmTarget}$R")

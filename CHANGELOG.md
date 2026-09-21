@@ -1,5 +1,9 @@
 # Gradle 9
 
+## 20260918
+* Bouncy Castle 1.86 by defauls
+* TestBalloon Addons 0.17.0 by default
+
 ## 20260914
 * BouncyCastle 1.85 by default
 * TestBalloon 1.1.0 by default
